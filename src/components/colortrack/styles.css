@@ -1,0 +1,102 @@
+.color-track {
+	display: flex;
+	font-size: 18px;
+}
+
+.color-track__column {
+}
+.color-track__column.mod_title {
+	flex-grow: 0;
+
+}
+
+.color-track__column.mod_palette {
+	flex-grow: 1;
+}
+
+.color-track__cell {
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px
+}
+
+.color-track__cell.mod_header {
+	font-size: 24px;
+}
+
+.color-track__column.mod_palette > .color-track__cell {
+	text-align: center;
+}
+.color-track__icon {
+	width: 60px;
+	height: 60px;
+	padding: 30px;
+	display: inline;
+}
+
+/* Pallette red - Fire */
+
+.color-track__column.mod_palette.mod_red > .color-track__cell.main_color {
+	color: #000000;
+	background-color: #FF5A37;
+}
+.color-track__column.mod_palette.mod_red > .color-track__cell.main_color > .color-track__icon{
+	background: transparent url("./phoenix_black.png") no-repeat center;
+}
+
+.color-track__column.mod_palette.mod_red > .color-track__cell.secondary_color {
+	 color: #000000;
+	 background-color: #FFA42C;
+ }
+.color-track__column.mod_palette.mod_red > .color-track__cell.secondary_color > .color-track__icon{
+	background: transparent url("./phoenix_black.png") no-repeat center;
+}
+
+.color-track__column.mod_palette.mod_red > .color-track__cell.background_color {
+	color: #FFFFFF;
+	background-color: #000000;
+}
+.color-track__column.mod_palette.mod_red > .color-track__cell.background_color > .color-track__icon{
+	background: transparent url("./phoenix_orange_tiny.png") no-repeat center;
+}
+
+/* Palette blue - Water */
+.color-track__column.mod_palette.mod_blue > .color-track__cell.main_color {
+	color: #FFFFFF;
+	background-color: #1873B4;
+}
+.color-track__column.mod_palette.mod_blue > .color-track__cell.main_color > .color-track__icon{
+	background: transparent url("./phoenix_white.png") no-repeat center;
+}
+
+.color-track__column.mod_palette.mod_blue > .color-track__cell.secondary_color {
+	color: #FFFFFF;
+	background-color: #53B8DE;
+}
+.color-track__column.mod_palette.mod_blue > .color-track__cell.secondary_color > .color-track__icon{
+	background: transparent url("./phoenix_white.png") no-repeat center;
+}
+
+.color-track__column.mod_palette.mod_blue > .color-track__cell.background_color {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+.color-track__column.mod_palette.mod_blue > .color-track__cell.background_color > .color-track__icon{
+	background: transparent url("./phoenix_blue_tiny.png") no-repeat center;
+}
+
+@media (max-width: 568px) {
+	.color-track {
+		flex-wrap: wrap;
+	}
+	.color-track__column {
+		width: 100%;
+	}
+	.color-track__column:not(:first-child) {
+		margin-top: 30px;
+	}
+
+	.color-track__column.mod_title {
+		display: none;
+	}
+}

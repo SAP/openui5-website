@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "8"
+script:
+  - set -e
+  - npm run build
+# deploy:
+#   provider: script
+#   script: ./bin/deploy.sh
+#   skip_cleanup: true
+#   on:
+#     all_branches: true

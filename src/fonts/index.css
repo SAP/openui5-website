@@ -1,0 +1,11 @@
+@font-face {
+	font-family: '72-Regular';
+	src: url('./72-Regular.woff2') format('woff2'),
+		 url('./72-Regular.woff') format('woff');
+	}
+
+@font-face {
+	font-family: '72-Light';
+	src: url('./72-Light.woff2') format('woff2'),
+		 url('./72-Light.woff') format('woff');
+	}

@@ -1,0 +1,11 @@
+html {
+	 font: 16px/24px "72-Regular";
+ }
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html.noscroll {
+	overflow: hidden;
+	}

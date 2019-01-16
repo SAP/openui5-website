@@ -1,0 +1,25 @@
+.link {
+	transition: color 0.2s ease-out;
+	text-decoration: none;
+	}
+	.link:link, .link:active, .link:visited {
+		transition: color 0.2s ease-out;
+		color: #1873b4;
+		}
+	.link:hover {
+		border-bottom: 1px solid #b9d5e8;
+		}
+
+.link.size_2 {
+	font-size: 16px;
+	}
+.link.size_1 {
+	font-size: 20px;
+	}
+.link.mod_offsite {
+	}
+.link.mod_offsite:after {
+	content: '';
+	padding-right: 20px;
+	background: url('./offsite.svg') no-repeat center center;
+	}

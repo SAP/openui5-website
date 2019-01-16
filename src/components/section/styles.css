@@ -1,0 +1,143 @@
+.section {
+	width: 100%;
+	}
+	.section.color_lightblue {
+		background-color: #f4f9fb;
+		}
+	.section__content {
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 80px 40px;
+		}
+	.section .section__title {
+		line-height: 1em;
+		margin-bottom: 40px;
+		}
+		.section .section__title.size_1 {
+			font-size: 44px;
+			}
+		.section .section__title.size_2 {
+			font-size: 32px;
+			}
+		.section__bar {
+			width: 100%;
+			max-width: 1280px;
+			display: flex;
+			padding-top: 40px;
+			}
+		.section__bar:not(:last-child) {
+			padding-bottom: 80px;
+			}
+			.bar__item {
+				}
+	.section.mod_features {
+		}
+		.section.mod_features .section__content {
+			}
+	.section.mod_startcoding {
+		text-align: center;
+		}
+		.section.mod_startcoding .section__content {
+			padding-top: 70px;
+			}
+		.section.mod_startcoding .section__title.size_2 {
+			font-family: "72-Light";
+			line-height: 44px;
+			margin: 30px auto 0;
+			width: 73%;
+			max-width: 1024px;
+			}
+		.section.mod_startcoding .section__editor {
+			margin-top: 30px;
+			margin-bottom: 80px;
+			}
+	.section.mod_documentation {
+		}
+		.section.mod_documentation .section__content {
+			padding-bottom: 40px;
+			}
+	.section.mod_comparison {
+		}
+		.section.mod_comparison .section__content {
+			border-top: 1px solid #f4f9fb;
+			}
+		.section.mod_comparison .section__title.size_2 {
+			color: #1873b4;
+			font-size: 20px;
+			margin-bottom: 20px;
+			}
+		.section.mod_comparison .section__text {
+			width: 100%;
+			max-width: 700px;
+			}
+	.section.mod_guidelines{
+		}
+		.section.mod_guidelines > .section__content {
+			padding: 20px 40px;
+			}
+		.section.mod_guidelines_intro{
+			}
+		.section.mod_guidelines_intro > .section__content {
+			padding-bottom: 20px;
+			}
+		.section.mod_releases > .section__content {
+			padding-top: 60px;
+			padding-bottom: 60px;
+			}
+	.section.mod_releases .section__content {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		}
+	.section.mod_releasesHeader .section__content {
+		padding-bottom: 40px;
+		}
+	.section.mod_consume .section__content {
+		padding-bottom: 40px;
+		}
+	.section.mod_allreleases .section__content {
+		padding-top: 40px;
+		}
+
+@media (max-width: 767px) {
+	.section__content {
+		padding: 40px 20px;
+		}
+	.section.mod_guidelines > .section__content{
+		padding: 20px;
+		}
+	.section .section__title {
+		margin-bottom: 20px;
+		}
+		.section .section__title.size_1 {
+			font-size: calc(44px * 0.75);
+			line-height: calc(44px * 0.75);
+			}
+		.section .section__title.size_2 {
+			font-size: calc(32px * 0.75);
+			line-height: calc(32px * 0.75);
+			}
+	.section.mod_startcoding .section__content {
+		padding: 35px 20px 40px;
+		}
+		.section.mod_startcoding .section__title.size_2 {
+			line-height: calc(44px * 0.75);
+			margin-top: 15px;
+			}
+		.section.mod_startcoding .section__editor {
+			margin-top: 15px;
+			margin-bottom: 40px;
+			}
+	.section.mod_documentation .section__content {
+		padding-bottom: 20px;
+		}
+	.section.mod_releasesHeader .section__content {
+		padding-bottom: 20px;
+		}
+	.section.mod_consume .section__content {
+		padding-bottom: 20px;
+		}
+	.section.mod_allreleases .section__content {
+		padding-top: 20px;
+		}
+}

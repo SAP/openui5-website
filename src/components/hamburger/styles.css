@@ -1,0 +1,41 @@
+.hamburger {
+	display: inline-block;
+	width: 34px;
+	height: 34px;
+	position: relative;
+	cursor: pointer;
+	}
+	.hamburger__item {
+		width: 18px;
+		height: 2px;
+		background-color: #fff;
+		position: absolute;
+		left: 8px;
+		transition: .125s ease-in-out;
+		}
+		.hamburger__item:nth-child(1) {
+			top: 10px;
+			}
+		.hamburger__item:nth-child(2),
+		.hamburger__item:nth-child(3) {
+			top: 16px;
+			}
+		.hamburger__item:nth-child(4) {
+			bottom: 10px;
+		}
+	.hamburger.state_open .hamburger__item:nth-child(1) {
+		top: 16px;
+		width: 0;
+		left: 50%;
+		}
+	.hamburger.state_open .hamburger__item:nth-child(2) {
+		transform: rotate(45deg);
+		}
+	.hamburger.state_open .hamburger__item:nth-child(3) {
+		transform: rotate(-45deg);
+		}
+	.hamburger.state_open .hamburger__item:nth-child(4) {
+		top: 16px;
+		width: 0;
+		left: 50%;
+		}

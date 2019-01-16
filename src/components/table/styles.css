@@ -1,0 +1,36 @@
+.table {
+	display: table;
+	}
+	.table__row {
+		display: table-row;
+		}
+		.table__row.type_header {
+			font-size: 16px;
+			color: rgba(29, 29, 29, 0.8);
+			}
+		.table__row:last-child .table__cell {
+			border-bottom: none;
+			}
+	.table__cell {
+		display: table-cell;
+		padding: 5px;
+		border-bottom: 1px solid #f4f9fb;
+		}
+		.table__cell.column_version {
+			width: 120px;
+			}
+		.table__cell.column_download {
+			width: 300px;
+			}
+		.table__cell.column_documentation {
+			width: 200px;
+			}
+		.table__cell.column_date {
+			width: 120px;
+			}
+
+@media (max-width: 767px) {
+	.table__cell:last-child {
+		display: none;
+		}
+}
