@@ -36,11 +36,11 @@ Name | Owner | Category | Description | License
 
 ## Add a new project
 
-1. Open the [SAP/openui5](https://github.com/SAP/openui5) Git repository.
-2. Login or register on GitHub.
-3. Fork the `SAP/openui5` project to your repository.
-4. Switch to the `gh-pages` branch.
-5. Select the `docs/CommunityProjects.md` file and open it.
-6. Add a new entry to the end of the table.
-7. Commit your changes.
-8. Make a new pull request.
+You are welcome to share your community project:
+
+1. Fork the [SAP/openui5](https://github.com/SAP/openui5) Git repository.
+2. In your fork, switch to the `gh-pages` branch.
+3. Edit this file located under `docs/CommunityProjects.md`.
+4. Add a new entry for your project in alphabetical order.
+5. Commit your changes and make a new pull request.
+6. After review, your project will be listed here on this page.
