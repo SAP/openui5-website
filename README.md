@@ -6,6 +6,8 @@
 
 We welcome your contributions to our website. If you have a proposal you want to share with us, simply keep the following things in mind.
 
+> You only need to follow the installation instructions below if you want to contribute something.
+
 ### Requirements
 
 To make a contribution, you need to install the following
@@ -38,7 +40,7 @@ To make a contribution, you need to install the following
 Create a pull request from the feature branch of the forked repository to the master branch of the original repository. For more information, take a look at the [GitHub instructions](https://help.github.com/articles/creating-a-pull-request).
 
 ## Known Issues
-See the [GitHub issue tracker](https://github.com/SAP/openui5-website/issues).
+There are no known major issues at the moment.
 
 ## Support
 To report a bug on the website, please use the [GitHub issue tracker](https://github.com/SAP/openui5-website/issues). For other questions you can reach us in `#openui5_website` channel of the [OpenUI5 Community Slack](https://slackui5invite.herokuapp.com).
