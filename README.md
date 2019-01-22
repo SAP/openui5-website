@@ -2,11 +2,11 @@
 
 > This repository contains the source files for the [openui5.org](openui5.org) website of [OpenUI5](https://github.com/SAP/openui5) framework.
 
-## Contributing
-
 We welcome your contributions to our website. If you have a proposal you want to share with us, simply keep the following things in mind.
 
-> You only need to follow the installation instructions below if you want to contribute something.
+## Contributing
+
+You only need to follow the installation instructions below if you want to contribute something.
 
 ### Requirements
 
