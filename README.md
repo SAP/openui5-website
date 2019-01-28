@@ -1,8 +1,10 @@
-# Repository for OpenUI5 website
+[![Build Status](https://travis-ci.org/SAP/openui5-website.svg?branch=master)](https://travis-ci.org/SAP/openui5-website)
+![OpenUI5 logo](http://openui5.org/images/OpenUI5_new_big_side.png)
 
-This repository contains the source files for the [openui5.org](openui5.org) website of [OpenUI5](https://github.com/SAP/openui5) framework.
+# OpenUI5 Website
 
-We welcome your contributions to our website. If you have a proposal you want to share with us, simply keep the following things in mind.
+This is the repository for the [openui5.org](openui5.org) website of the [OpenUI5](https://github.com/SAP/openui5) framework.
+We welcome contributions to our website. If you have a proposal you want to share with us, follow the instructions below.
 
 ## Contributing
 
@@ -10,7 +12,7 @@ You only need to follow the installation instructions below if you want to contr
 
 ### Requirements
 
-To make a contribution, you need to install the following
+You need to have the following tools installed:
 
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org) 8.x
