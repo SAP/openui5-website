@@ -3,15 +3,16 @@
 
 # openui5-website
 
-Repository for the [openui5.org](openui5.org) website of the [OpenUI5](https://github.com/SAP/openui5) framework.
+This is the repository for the [openui5.org](openui5.org) website of the [OpenUI5](https://github.com/SAP/openui5) framework.
+We welcome contributions to our website. If you have a proposal you want to share with us, follow the instructions below.
 
 ## Contributing
 
-Contributions welcome! If you have a proposal you want to share with us, please follow the steps listed below.
+You only need to follow the installation instructions below if you want to contribute something.
 
 ### Requirements
 
-To make a contribution, you need to install the following
+You need to have the following tools installed:
 
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org) 8.x
