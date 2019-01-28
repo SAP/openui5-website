@@ -1,12 +1,13 @@
-# Repository for OpenUI5 website
+[![Build Status](https://travis-ci.org/SAP/openui5-website.svg?branch=master)](https://travis-ci.org/SAP/openui5-website)
+![OpenUI5 logo](http://openui5.org/images/OpenUI5_new_big_side.png)
 
-This repository contains the source files for the [openui5.org](openui5.org) website of [OpenUI5](https://github.com/SAP/openui5) framework.
+# openui5-website
 
-We welcome your contributions to our website. If you have a proposal you want to share with us, simply keep the following things in mind.
+Repository for the [openui5.org](openui5.org) website of the [OpenUI5](https://github.com/SAP/openui5) framework.
 
 ## Contributing
 
-You only need to follow the installation instructions below if you want to contribute something.
+Contributions welcome! If you have a proposal you want to share with us, please follow the steps listed below.
 
 ### Requirements
 
