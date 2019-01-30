@@ -4,3 +4,4 @@ require('./pages/projects.html');
 require('./pages/community.html');
 require('./pages/guidelines.html');
 require('./pages/releases.html');
+require('./pages/ga_disclaimer.html');
