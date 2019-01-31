@@ -19,7 +19,7 @@ You need to have the following tools installed:
 - Open `http://localhost:3030`.
 
 ### Make Your Changes
-- Make sure the `master` branch of your fork is up to date by [syncing your fork](https://help.github.com/articles/configuring-a-remote-for-a-fork/). 
+- Make sure the `master` branch of your fork is up to date by [syncing your fork](https://help.github.com/articles/syncing-a-fork/). 
 - Create a new feature branch from the latest `master`:
 	- Run `git checkout -b the-feature-name`.
 - Make your changes, and save your files.
