@@ -1,6 +1,6 @@
 ## Contributing
 
-Follow the installation instructions below to contribute to our website.
+If you have a proposal you want to share with us, follow the description below. You only need to follow the installation instructions if you want to contribute something.
 
 ### Requirements
 
