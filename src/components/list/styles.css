@@ -62,12 +62,10 @@
 
 /* type_vertical */
 .list.type_vertical {
-	counter-reset: number;
 	flex-direction: column;
 	}
 	.list.type_vertical .list__item {
-		flex-basis: 100%;
-		counter-increment: number;
+		flex-basis: auto;
 		position: relative;
 		margin-bottom: 25px;
 		}
