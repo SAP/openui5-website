@@ -38,9 +38,8 @@ Name | Owner | Category | Description | License
 
 You are welcome to share your community project:
 
-1. Fork the [SAP/openui5](https://github.com/SAP/openui5) Git repository.
-2. In your fork, switch to the `gh-pages` branch.
-3. Edit this file located under `docs/CommunityProjects.md`.
-4. Add a new entry for your project in alphabetical order.
-5. Commit your changes and make a new pull request.
-6. After review, your project will be listed here on this page.
+1. Fork this repository.
+2. Edit this file located under `docs/CommunityProjects.md`.
+3. Add a new entry for your project in alphabetical order.
+4. Commit your changes and make a new pull request.
+5. After review, your project will be listed here on this page.
