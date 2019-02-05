@@ -22,7 +22,7 @@ Name | Owner | Category | Description | License
 [OpenUI5 Password](https://github.com/mauriciolauffer/openui5-password) | [@mauriciolauffer](https://github.com/mauriciolauffer) | JS Library | An OpenUI5 Control which checks your password strength and validates it. | MIT
 [OpenUI5 Tour](https://github.com/mauriciolauffer/openui5-tour) | [@mauriciolauffer](https://github.com/mauriciolauffer) | JS Library | OpenUI5 Tour enables an user-friendly way to showcase products and features in your website. | MIT
 [OpenUI5 Validator](https://github.com/mauriciolauffer/openui5-validator) | [@mauriciolauffer](https://github.com/mauriciolauffer) | JS Library | An OpenUI5 library to validate fields. | MIT
-[ui5-codecompletion](https://github.com/vobujs/ui5-codecompletion) | [@vobu](https://github.com/vobu) | Tool | node module (CLI) to configure WebStorm with UI5 code completion in *.js files | WTFPL
+[ui5-codecompletion](https://github.com/vobujs/ui5-codecompletion) | [@vobu](https://github.com/vobu) | Tool | node module (CLI) to configure WebStorm with UI5 code completion in \*.js files | WTFPL
 [UI5 CRUDModel for php data services](https://github.com/BarryDam/OpenUI5-SAPUI5-CRUDModel) | [@BarryDam](https://github.com/BarryDam) | Model | UI5 Model implementation which allows you to use a php Web server as a data service | MIT
 [UI5 Interactive Model Inspector (Custom Control)](https://github.com/mitch-b/ui5-model-inspector) | [@mitch-b](https://github.com/mitch-b) | Control | This custom control allows you to view (and modify) state of your client and server models for debugging and development. | MIT
 [ui5lab](https://github.com/ui5lab/ui5lab-central) | [@ui5lab](https://github.com/ui5lab) | Tool | UI5Lab is a community driven project to establish a repository for UI5 Custom Control Libraries. It is meant to enable everyone to use UI5 Custom Controls easily. | Apache 2.0
@@ -32,6 +32,7 @@ Name | Owner | Category | Description | License
 [vscode-ui5-explorer](https://github.com/kozubikmichal/vscode-ui5-explorer) | [@kozubikmichal](https://github.com/kozubikmichal) | Extension | UI5 Explorer for Visual Studio Code | MIT
 [XMPPJSONPatchSyncModel](https://github.com/ManuelB/XMPPJSONPatchSyncModel) | [@ManuelB](https://github.com/ManuelB) | Model | This OpenUI5 data model uses a node on an XMPP server to synchronize itself to different connected clients. | Apache 2.0
 [yii2-openui5](https://github.com/rockman84/yii2-openui5) | [Wong Hansen](https://github.com/Wong%20Hansen) | Yii2 Extension | Yii2-openui5 is extension for Yii2 Framework to integrate with OpenUI5. | Apache 2.0
+[Easy UI5](https://github.com/SAP/generator-easy-ui5) | [@IObert](https://github.com/IObert) | Tool | Generator for OpenUI5 apps using the official UI5 tooling and supporting deployment to SAP Cloud Platform. | Apache 2.0
 
 ## Add a new project
 
