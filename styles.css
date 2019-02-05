@@ -1350,7 +1350,6 @@ html.noscroll {
 /* type_vertical */
 
 .list.type_vertical {
-	counter-reset: number;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: column;
@@ -1358,9 +1357,8 @@ html.noscroll {
 	}
 
 .list.type_vertical .list__item {
-		-ms-flex-preferred-size: 100%;
-		    flex-basis: 100%;
-		counter-increment: number;
+		-ms-flex-preferred-size: auto;
+		    flex-basis: auto;
 		position: relative;
 		margin-bottom: 25px;
 		}
