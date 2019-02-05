@@ -32,7 +32,7 @@ Name | Owner | Category | Description | License
 [vscode-ui5-explorer](https://github.com/kozubikmichal/vscode-ui5-explorer) | [@kozubikmichal](https://github.com/kozubikmichal) | Extension | UI5 Explorer for Visual Studio Code | MIT
 [XMPPJSONPatchSyncModel](https://github.com/ManuelB/XMPPJSONPatchSyncModel) | [@ManuelB](https://github.com/ManuelB) | Model | This OpenUI5 data model uses a node on an XMPP server to synchronize itself to different connected clients. | Apache 2.0
 [yii2-openui5](https://github.com/rockman84/yii2-openui5) | [Wong Hansen](https://github.com/Wong%20Hansen) | Yii2 Extension | Yii2-openui5 is extension for Yii2 Framework to integrate with OpenUI5. | Apache 2.0
-[Easy UI5](https://github.com/SAP/generator-easy-ui5) | [@IObert](https://github.com/IObert) | Tool | Generator for OpenUI5-based web-apps which use the official UI5 tooling and support deployment targets such as the SAP Cloud Platform | Apache 2.0
+[Easy UI5](https://github.com/SAP/generator-easy-ui5) | [@IObert](https://github.com/IObert) | Tool | Generator for OpenUI5 apps using the official UI5 tooling and supporting deployment to SAP Cloud Platform. | Apache 2.0
 
 ## Add a new project
 
