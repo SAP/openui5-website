@@ -5,27 +5,14 @@
 	}
 	.slider__item {
 		display: block;
-		width: 345px;
+		width: 413px;
 		height: 130px;
 		margin: 0 auto;
 		background: url("./ui5-webcomponents.png") 50% 50% no-repeat;
-		background-size: 345px 80px;
+		background-size: 413px 80px;
 		}
 
-
-/*@media (max-width: 980px) {
-	.slider__item {
-		background-size: 60% ;
-		}
-}
-
-@media (max-width: 767px) {
-	.slider__item {
-		background-size: 70%;
-		}
-}
-*/
-@media (max-width: 375px) {
+@media (max-width: 450px) {
 	.slider__item {
 		width: 100%;
 		background-size: 100%;
