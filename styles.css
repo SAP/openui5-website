@@ -971,6 +971,14 @@ html.noscroll {
 		padding-top: 40px;
 		}
 
+.section.mod_slider {
+		}
+
+.section.mod_slider .section__content {
+			padding-top: 0;
+			padding-bottom: 0;
+			}
+
 @media (max-width: 767px) {
 	.section__content {
 		padding: 40px 20px;
@@ -1231,30 +1239,29 @@ html.noscroll {
 		}
 }
 
-.sticker {
-	width: 240px;
-	height: 240px;
-	background: url(553070effaad8af2d3a4fe1ed7d0dba7.png) no-repeat;
-	position: absolute;
-	bottom: 40px;
-	right: 40px;
+.slider {
+	width: 100%;
+	height: 130px;
+	position: relative;
 	}
 
-@media (max-width: 1200px) {
-	.sticker {
-		width: 170px;
-		height: 170px;
-		background-size: contain;
-		bottom: 20px;
-		right: 20px;
-	}
+.slider__item {
+		display: block;
+		width: 461px;
+		height: 130px;
+		margin: 0 auto;
+		background: url(370fdec2cd000839448d97eedaa83821.png) 50% 50% no-repeat;
+		background-size: 461px 80px;
+		}
+
+@media (max-width: 575px) {
+	.slider__item {
+		width: 100%;
+		background-size: 100%;
+		}
 }
 
-@media (max-width: 780px) {
-	.sticker {
-		display: none;
-	}
-}
+/*@import "./components/sticker/styles.css";*/
 
 .list {
 	display: -webkit-box;
