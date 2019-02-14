@@ -18,13 +18,12 @@
 		.footer__item:nth-child(1) {
 			flex-grow: 1;
 			}
-		.footer__item a:link,
-		.footer__item a:visited,
-		.footer__item a:active {
+		.footer__item .link:link,
+		.footer__item .link:visited,
+		.footer__item .link:active {
 			color: rgba(255, 255, 255, 0.64);
-			text-decoration: none;
 			}
-		.footer__item a:hover {
+		.footer__item .link:hover {
 			color: rgba(255, 255, 255, 1);
 			}
 
