@@ -16,7 +16,7 @@ You need to have the following tools installed:
 	- Run `npm install`
 - Start the web server:
 	- Run `npm start`
-- Open `http://localhost:3030`.
+- Open `http://localhost:3030` (or `http://localhost:3030/index` on Windows)
 
 ### Make Your Changes
 - Make sure the `master` branch of your fork is up to date by [syncing your fork](https://help.github.com/articles/syncing-a-fork/). 
