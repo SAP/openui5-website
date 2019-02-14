@@ -43,9 +43,9 @@
 			margin-bottom: 10px;
 			}
 		.footer__item:not(:last-child) {
-			margin-right: 0;
-			}
-		.footer__item:nth-child(2) {
 			margin-right: 10px;
+			}
+		.footer__item:last-child {
+			margin-right: 0px;
 		}
 }
