@@ -37,22 +37,23 @@
 	color: #1873b4;
 	border: 2px solid #1873b4;
 	background-color: transparent;
-	}
-	.button.color_transparent:hover {
-		color: #fff;
-		background-color: #1873b4;
-		}
+}
+.button.color_transparent:hover {
+	color: #fff;
+	background-color: #1873b4;
+}
 .button.mod_download {
-	}
-.button.mod_download:not(:first-child) {
-	margin-left: 20px;
-	}
-	.button.mod_download:hover .button__icon g {
-		fill: #fff;
-		}
-	.button.mod_download:hover .button__version {
-		color: rgba(255, 255, 255, 0.5);
-		}
+	margin-bottom: 7px;
+}
+.button.mod_download:not(:last-child) {
+	margin-right: 20px;
+}
+.button.mod_download:hover .button__icon g {
+	fill: #fff;
+}
+.button.mod_download:hover .button__version {
+	color: rgba(255, 255, 255, 0.5);
+}
 
 @media (max-width: 568px) {
 	.button.mod_download {
@@ -60,8 +61,9 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		width: 100%;
-		}
-	.button.mod_download:not(:first-child) {
-		margin-left: 0;
-		}
+		margin-bottom: 0;
 	}
+	.button.mod_download:not(:last-child) {
+		margin-right: 0;
+	}
+}
