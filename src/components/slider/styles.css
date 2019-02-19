@@ -1,20 +1,34 @@
 .slider {
 	width: 100%;
+	max-width: 500px;
 	height: 130px;
 	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
 	}
 	.slider__item {
 		display: block;
-		width: 461px;
+		width: 100%;
 		height: 130px;
-		margin: 0 auto;
-		background: url("./ui5-webcomponents.png") 50% 50% no-repeat;
-		background-size: 461px 80px;
+		position: absolute;
+		transition: opacity 1s ease-in-out;
 		}
+		.slider__item.mod_ui5con {
+			background: url("./ui5con-is-coming.png") 50% 50% no-repeat;
+			background-size: 410px 100px;
+			}
+		.slider__item.mod_ui5-webcomponents {
+			background: url("./ui5-webcomponents.png") 50% 50% no-repeat;
+			background-size: 461px 80px;
+			}
+		.slider__item.state_invisible {
+			opacity: 0;
+			z-index: -1;
+			}
 
 @media (max-width: 575px) {
-	.slider__item {
-		width: 100%;
+	.slider__item.mod_ui5con,
+	.slider__item.mod_ui5-webcomponents{
 		background-size: 100%;
 		}
 }
