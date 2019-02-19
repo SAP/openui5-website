@@ -1241,22 +1241,40 @@ html.noscroll {
 
 .slider {
 	width: 100%;
+	max-width: 500px;
 	height: 130px;
 	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
 	}
 
 .slider__item {
 		display: block;
-		width: 461px;
+		width: 100%;
 		height: 130px;
-		margin: 0 auto;
-		background: url(370fdec2cd000839448d97eedaa83821.png) 50% 50% no-repeat;
-		background-size: 461px 80px;
+		position: absolute;
+		-webkit-transition: opacity 1s ease-in-out;
+		transition: opacity 1s ease-in-out;
 		}
 
+.slider__item.mod_ui5con {
+			background: url(ef0c19688c49f99d3d66d2530eb726c2.png) 50% 50% no-repeat;
+			background-size: 410px 100px;
+			}
+
+.slider__item.mod_ui5-webcomponents {
+			background: url(370fdec2cd000839448d97eedaa83821.png) 50% 50% no-repeat;
+			background-size: 461px 80px;
+			}
+
+.slider__item.state_invisible {
+			opacity: 0;
+			z-index: -1;
+			}
+
 @media (max-width: 575px) {
-	.slider__item {
-		width: 100%;
+	.slider__item.mod_ui5con,
+	.slider__item.mod_ui5-webcomponents{
 		background-size: 100%;
 		}
 }
@@ -2101,3 +2119,5 @@ html.noscroll .list > .list__item {
 
 
 
+
+/*# sourceMappingURL=styles.css.map*/
