@@ -1,3 +1,18 @@
+a.fill-div {
+     display: block;
+	width: 96px;
+	height: 96px;
+     border-radius: 60px;
+     text-decoration: none;
+ }
+
+a.fill-div {
+	display: block;
+	height: 100%;
+	width: 100%;
+	border-radius: 60px;
+	text-decoration: none;
+}
 .icon {
 	position: relative;
 	}
@@ -12,16 +27,24 @@
 	.icon.size_96x96::before {
 		display: block;
 		content: '';
-		width: 96px;
-		height: 96px;
 		top: 0;
 		left: 0;
+		bottom: 0;
+		right: 0;
 		position: absolute;
 		background-color: #f4f9fb;
 		border-radius: 48px;
 		z-index: -1;
 		}
 
+		.icon.size_96x96:hover:before {
+			top: -1px;
+			bottom: -1px;
+			left: -1px;
+			right: -1px;
+			border: #b9d5e8 solid 1px;
+			border-radius: 48px;
+		}
 .icon.size_120x120 {
 	width: 120px;
 	height: 120px;
@@ -29,18 +52,47 @@
 	background-position: 50% 50%;
 	background-size: 64px 64px;
 	}
-	.icon.size_120x120::before {
-		display: block;
-		content: '';
-		width: 120px;
-		height: 120px;
-		top: 0;
-		left: 0;
-		position: absolute;
-		background-color: #f4f9fb;
-		border-radius: 60px;
-		z-index: -1;
+		.icon.size_120x120::before {
+			display: block;
+			content: '';
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			position: absolute;
+			background-color: #f4f9fb;
+			border-radius: 148px;
+			z-index: -1;
 		}
+
+			.icon.size_120x120:hover:before {
+				top: -1px;
+				bottom: -1px;
+				left: -1px;
+				right: -1px;
+				border: #b9d5e8 solid 1px;
+				border-radius: 64px;
+			}
+
+.icon.leftalligned_size_120x120 {
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 80px 80px;
+}
+.icon.leftalligned_size_120x120::before {
+    display: block;
+    content: '';
+    width: 120px;
+    height: 120px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #f4f9fb;
+    border-radius: 60px;
+    z-index: -1;
+}
 
 /* Placeholder */
 .icon.name_placeholder {
@@ -163,3 +215,7 @@
 .icon.name_whatsnew {
 	background-image: url("./img/megaphone.svg");
 	}
+
+.icon.name_addproject {
+    background-image: url("./img/add.svg");
+}
