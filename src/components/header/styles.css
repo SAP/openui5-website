@@ -4,7 +4,7 @@
 	color: #fff;
 	background-color: #1366a2;
 	position: relative;
-	z-index: 0;
+	z-index: 1;
 	}
 	.header::before {
 		position: absolute;
@@ -17,7 +17,7 @@
 		background-repeat: no-repeat;
 		background-size: 1920px 1398px;
 		background-position: -500px 50%;
-		z-index: 1;
+		z-index: 2;
 		opacity: 0.5;
 		}
 

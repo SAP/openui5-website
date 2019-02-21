@@ -104,6 +104,7 @@ const config = {
 			path.resolve(PROJECT_ROOT, 'src/public/')
 		]),
 	],
+	devtool: DEBUG ? 'source-map'  : false,
 	target: 'web',
 };
 
