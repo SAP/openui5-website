@@ -12,6 +12,7 @@ Name | Owner | Category | Description | License
 ----------- | -------- | ----------- | ----------- | -----------
 [Brackets UI5](https://github.com/wozjac/brackets-ui5) | [@wozjac](https://github.com/wozjac) | Brackets extension | An extension for Brackets providing support (code hints, quick docs and more) for OpenUI5/SAPUI5 libraries. | MIT
 [Deoplete sap-icon](https://github.com/Trulsaa/deoplete-sap-icon) | [@Trulsaa](https://github.com/Trulsaa) | nvim plugin | Neovim deoplete sap-icon plugin | MIT License
+[Easy UI5](https://github.com/SAP/generator-easy-ui5) | [@IObert](https://github.com/IObert) | Tool | Generator for OpenUI5 apps using the official UI5 tooling and supporting deployment to SAP Cloud Platform. | Apache 2.0
 [Express UI5](https://github.com/handy-man/Expressui5) | [@handy-man](https://github.com/handy-man) | Tool | CLI tool to create ui5 projects quickly from developer maintained templates. | Apache 2.0
 [grunt-nwabap-ui5uploader](https://github.com/pfefferf/grunt-nwabap-ui5uploader) | [@pfefferf](https://github.com/pfefferf) | Tool | A Grunt plugin to upload UI5 sources to a SAP NetWeaver ABAP system. | Apache 2.0
 [JSX to UI5 Babel Plugin](https://github.com/serban-petrescu/ui5-jsx-rm) | [@serban-petrescu](https://github.com/serban-petrescu) | Tool | A Babel plugin for converting JSX to UI5 render manager calls. | Apache 2.0
@@ -32,7 +33,6 @@ Name | Owner | Category | Description | License
 [vscode-ui5-explorer](https://github.com/kozubikmichal/vscode-ui5-explorer) | [@kozubikmichal](https://github.com/kozubikmichal) | Extension | UI5 Explorer for Visual Studio Code | MIT
 [XMPPJSONPatchSyncModel](https://github.com/ManuelB/XMPPJSONPatchSyncModel) | [@ManuelB](https://github.com/ManuelB) | Model | This OpenUI5 data model uses a node on an XMPP server to synchronize itself to different connected clients. | Apache 2.0
 [yii2-openui5](https://github.com/rockman84/yii2-openui5) | [Wong Hansen](https://github.com/Wong%20Hansen) | Yii2 Extension | Yii2-openui5 is extension for Yii2 Framework to integrate with OpenUI5. | Apache 2.0
-[Easy UI5](https://github.com/SAP/generator-easy-ui5) | [@IObert](https://github.com/IObert) | Tool | Generator for OpenUI5 apps using the official UI5 tooling and supporting deployment to SAP Cloud Platform. | Apache 2.0
 
 ## Add a new project
 
