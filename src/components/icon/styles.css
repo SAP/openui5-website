@@ -39,7 +39,7 @@ a.fill-div {
 	z-index: -1;
 }
 
-.icon.size_96x96:hover:before {
+.icon.size_96x96:not(.noref):hover:before{
 	top: -1px;
 	bottom: -1px;
 	left: -1px;
