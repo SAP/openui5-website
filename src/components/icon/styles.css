@@ -78,7 +78,11 @@ a.icon__fill-div {
 	border-radius: 60px;
 }
 
-.icon.leftalligned_size_120x120 {
+/* Add Project */
+.icon.add_project{
+}
+
+.icon.size_120x120.name_addproject {
 	width: 80px;
 	height: 80px;
 	margin-top: 40px;
@@ -88,13 +92,13 @@ a.icon__fill-div {
 }
 
 
-.icon.leftalligned_size_120x120:hover:before {
+.icon.size_120x120.name_addproject:hover:before {
 	background-color: #e5f0f6;
 	z-index: auto;
 	background-image: url("./img/add.svg");
 }
 
-.icon.leftalligned_size_120x120::before {
+.icon.size_120x120.name_addproject::before {
 	display: block;
 	content: '';
 	width: 80px;
@@ -105,6 +109,7 @@ a.icon__fill-div {
 	background-color: #f4f9fb;
 	border-radius: 60px;
 	z-index: -1;
+	border: 0;
 }
 
 /* Placeholder */
