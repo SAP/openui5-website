@@ -768,11 +768,12 @@ html.noscroll {
 		}
 
 .button.mod_download {
+	margin-bottom: 7px;
 	}
 
-.button.mod_download:not(:first-child) {
-	margin-left: 20px;
-	}
+.button.mod_download:not(:last-child) {
+		margin-right: 20px;
+		}
 
 .button.mod_download:hover .button__icon g {
 		fill: #fff;
@@ -788,11 +789,12 @@ html.noscroll {
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		width: 100%;
+		margin-bottom: 0;
 		}
-	.button.mod_download:not(:first-child) {
-		margin-left: 0;
+	.button.mod_download:not(:last-child) {
+		margin-right: 0;
 		}
-	}
+}
 
 .table {
 	display: table;
@@ -952,7 +954,7 @@ html.noscroll {
 
 .section.mod_releases .section__content {
 		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-bottom: 53px;
 		}
 
 .section.mod_releasesHeader .section__content {
