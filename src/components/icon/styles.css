@@ -1,4 +1,4 @@
-a.fill-div {
+a.icon__fill-div {
 	display: block;
 	width: 96px;
 	height: 96px;
@@ -6,7 +6,7 @@ a.fill-div {
 	text-decoration: none;
 }
 
-a.fill-div {
+a.icon__fill-div {
 	display: block;
 	height: 100%;
 	width: 100%;
