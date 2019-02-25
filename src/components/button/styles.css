@@ -43,10 +43,11 @@
 		background-color: #1873b4;
 		}
 .button.mod_download {
+	margin-bottom: 7px;
 	}
-.button.mod_download:not(:first-child) {
-	margin-left: 20px;
-	}
+	.button.mod_download:not(:last-child) {
+		margin-right: 20px;
+		}
 	.button.mod_download:hover .button__icon g {
 		fill: #fff;
 		}
@@ -60,8 +61,9 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		width: 100%;
+		margin-bottom: 0;
 		}
-	.button.mod_download:not(:first-child) {
-		margin-left: 0;
+	.button.mod_download:not(:last-child) {
+		margin-right: 0;
 		}
-	}
+}
