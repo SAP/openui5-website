@@ -45,11 +45,11 @@
 /* type_addproject */
 .tile.type_addproject {
 	width: 30%;
+	padding-top: 120px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	}
-	.tile.type_addproject .tile__icon {
-		margin-bottom: 24px;
+	background-image: url("./type_addproject/add.svg");
+	background-size: 96px 96px;
 	}
 	.tile.type_addproject .tile__title {
 		color: #1873b4;
