@@ -35,12 +35,12 @@
 	.tile.type_project .tile__icon {
 		margin-bottom: 24px;
 		}
-	.tile.type_project .tile__title {
-		color: #1873b4;
-		}
-	.tile.type_project .tile__text {
-		margin-top: 15px;
-		}
+.tile.type_project .tile__title {
+	color: #1873b4;
+}
+.tile.type_project .tile__text {
+	margin-top: 15px;
+}
 
 /* type_addproject */
 .tile.type_addproject {
@@ -62,7 +62,7 @@
 .tile.type_documentation {
 	}
 	.tile.type_documentation .tile__icon {
-		margin-bottom: 24px;
+		margin-bottom: 20px;
 		}
 	.tile.type_documentation .tile__title {
 		font-size: 32px;

@@ -59,9 +59,6 @@
 			}
 	.section.mod_comparison {
 		}
-		.section.mod_comparison .section__content {
-			border-top: 1px solid #f4f9fb;
-			}
 		.section.mod_comparison .section__title.size_2 {
 			color: #1873b4;
 			font-size: 20px;
@@ -87,7 +84,7 @@
 			}
 	.section.mod_releases .section__content {
 		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-bottom: 53px;
 		}
 	.section.mod_releasesHeader .section__content {
 		padding-bottom: 40px;
