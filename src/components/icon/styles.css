@@ -78,6 +78,41 @@ a.icon__fill-div {
 	border-radius: 60px;
 }
 
+/* Add Project */
+.icon.add_project{
+}
+
+.icon.size_120x120.name_addproject {
+	width: 96px;
+	height: 96px;
+	background-repeat: no-repeat;
+	background-position: 0% 100%;
+	background-size: 96px 96px;
+}
+
+
+.icon.size_120x120.name_addproject:hover:before {
+	background-color: #e5f0f6;
+	z-index: auto;
+	background-image: url("./img/add.svg");
+	pointer-events: none;
+}
+
+.icon.size_120x120.name_addproject::before {
+	display: block;
+	content: '';
+	width: 96px;
+	height: 96px;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-color: #f4f9fb;
+	border-radius: 60px;
+	z-index: -1;
+	border: 0;
+}
+
+
 /* Placeholder */
 .icon.name_placeholder {
 }
@@ -224,4 +259,8 @@ a.icon__fill-div {
 
 .icon.name_whatsnew {
 	background-image: url("./img/megaphone.svg");
+}
+
+.icon.name_addproject {
+	background-image: url("./img/add.svg");
 }

@@ -45,17 +45,17 @@
 /* type_addproject */
 .tile.type_addproject {
 	width: 30%;
-	padding-top: 120px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	background-image: url("./type_addproject/add.svg");
-	background-size: 96px 96px;
 	}
+	.tile.type_addproject .tile__icon {
+		margin-bottom: 24px;
+		}
 	.tile.type_addproject .tile__title {
-		color: #1873b4;
+			color: #1873b4;
 		}
 	.tile.type_addproject .tile__text {
-		margin-top: 15px;
+			margin-top: 15px;
 		}
 
 /* type_documentation */
