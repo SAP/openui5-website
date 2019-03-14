@@ -1,24 +1,38 @@
 .sticker {
-	width: 240px;
-	height: 240px;
-	background: url('./sticker.png') no-repeat;
+	background: url("./openSAP-ui52.png") 50% 50% no-repeat;
+	width: 200px;
+	height: 200px;
 	position: absolute;
-	bottom: 40px;
-	right: 40px;
-	}
+	top: 210px;
 
-@media (max-width: 1200px) {
+}
+
+@media (max-width: 1440px) {
 	.sticker {
-		width: 170px;
-		height: 170px;
-		background-size: contain;
-		bottom: 20px;
-		right: 20px;
+		top: 160px;
 	}
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1130px) {
 	.sticker {
-		display: none;
+		display: block;
+		position: relative;
+		top: 10px;
+		margin: 0px auto;
+	}
+}
+
+@media (max-width: 767px) {
+	.sticker {
+		width: 175px;
+		height: 175px;
+		top: 20px;
+		background-size: 100%;
+	}
+}
+
+@media (max-width: 530px) {
+	.sticker {
+		top: 7px;
 	}
 }
