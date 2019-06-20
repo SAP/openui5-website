@@ -1350,45 +1350,6 @@ a.icon__fill-div {
 		}
 }
 
-.sticker {
-	background: url(9e24bce1ca196e8057163f3b2f7f0013.png) 50% 50% no-repeat;
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	top: 210px;
-
-}
-
-@media (max-width: 1440px) {
-	.sticker {
-		top: 160px;
-	}
-}
-
-@media (max-width: 1130px) {
-	.sticker {
-		display: block;
-		position: relative;
-		top: 10px;
-		margin: 0px auto;
-	}
-}
-
-@media (max-width: 767px) {
-	.sticker {
-		width: 175px;
-		height: 175px;
-		top: 20px;
-		background-size: 100%;
-	}
-}
-
-@media (max-width: 530px) {
-	.sticker {
-		top: 7px;
-	}
-}
-
 .list {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1633,12 +1594,6 @@ html.noscroll .list > .list__item {
 		}
 }
 
-@media (max-width: 1130px) {
-	.header__title {
-		margin-top: 50px;
-	}
-}
-
 @media (max-width: 980px) {
 	.header {
 		height: 465px;
@@ -1654,7 +1609,7 @@ html.noscroll .list > .list__item {
 
 @media (max-width: 767px) {
 	.header {
-		height: 435px;
+		height: 300px;
 		background-size: cover;
 		}
 	.header::before {
