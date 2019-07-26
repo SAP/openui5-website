@@ -6,10 +6,23 @@
 	<title>UI5con@SAP 2019</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
+	<link rel="manifest" href="manifest.json">
 	<script
 		src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
+
+	<script>
+		// service worker registration
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/sw.js').then(() => {
+					console.log('service worker successfully registered');
+				});
+			});
+		}
+	</script>
+
 </head>
 <body>
 <script>
@@ -99,7 +112,7 @@
 
 	<div class="b-section mod_info">
 		<div class="b-section-h">
-				
+
 			<div class="b-ui b-list mod_info margin_40">
 				<div class="b-list__item">
 					<svg class="b-list__icon" x="0px" y="0px" viewBox="0 0 80 80" xml:space="preserve">
