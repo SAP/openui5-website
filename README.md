@@ -12,7 +12,7 @@ We welcome contributions to our website. If you have a proposal you want to shar
 There are no known major issues at the moment.
 
 ## Support
-To report a bug on the website, please use the [GitHub issue tracker](https://github.com/SAP/openui5-website/issues). For other questions you can reach us in `#openui5_website` channel of the [OpenUI5 Community Slack](https://slackui5invite.herokuapp.com).
+To report a bug on the website, please use the [GitHub issue tracker](https://github.com/SAP/openui5-website/issues). For other questions you can reach us in `#openui5_website` channel of the [OpenUI5 Community Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/).
 
 ## License
 Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
