@@ -39,7 +39,7 @@ TARGET_REPO_DIR="${HOME_DIR}/${PROJECT_NAME}_${TARGET_BRANCH}" # E.g. /home/trav
 git clone --depth=1 --branch=$TARGET_BRANCH $REPOSITORY_SSH $TARGET_REPO_DIR
 cd $TARGET_REPO_DIR
 
-SOURCE_DIR="${SOURCE_REPO_DIR}/build"
+SOURCE_DIR="${SOURCE_REPO_DIR}/public"
 
 if [[ $DEPLOY_ENV = "production" ]]
 then

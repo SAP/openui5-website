@@ -3,40 +3,46 @@
   "description": "OpenUI5 website",
   "version": "0.0.1",
   "private": true,
-  "bugs": {
-    "url": "https://github.com/SAP/openui5-website/issues"
-  },
-  "scripts": {
-    "start": "webpack-dev-server --config configs/webpack.config.js --port 3030",
-    "build": "webpack --display-error-details -p --config configs/webpack.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SAP/openui5-website.git"
-  },
   "author": "SAP SE",
   "contributors": [
     "SAP SE <*@sap.com>"
   ],
   "license": "License 2.0",
-  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git@github.wdf.sap.corp:D068547/openui5-website_gatsby.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SAP/openui5-website/issues"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "gatsby": "^2.0.117",
+    "gatsby-image": "^2.0.29",
+    "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-offline": "^2.0.23",
+    "gatsby-plugin-postcss": "^2.0.7",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-sharp": "^2.0.20",
+    "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-transformer-json": "^2.1.11",
+    "gatsby-transformer-sharp": "^2.1.13",
+    "normalize.css": "^8.0.1",
+    "postcss-env-function": "^2.0.2",
+    "postcss-nesting": "^7.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-helmet": "^5.2.0",
+    "react-markdown": "^4.1.0"
+  },
   "devDependencies": {
-    "autoprefixer": "^9.1.5",
-    "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^1.0.0",
-    "extract-loader": "^3.1.0",
-    "file-loader": "^2.0.0",
-    "html-loader": "^0.5.5",
-    "mini-css-extract-plugin": "^0.4.4",
-    "normalize.css": "8.0.0",
-    "postcss-import": "^12.0.0",
-    "postcss-loader": "^3.0.0",
-    "postcss-url": "^8.0.0",
-    "style-loader": "^0.23.0",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14"
+    "lodash": "^4.17.11"
   },
   "browserslist": [
     ">1%",

@@ -1,0 +1,13 @@
+{
+    "header": {
+        "description": "<nobr>Create Enterprise-Ready</nobr> <nobr>Web Apps with Ease</nobr>"
+    },
+    "startCoding": {
+        "title": "Start Coding",
+        "description": "Explore key concepts of OpenUI5 in this minimalist web app using the MVC pattern and bootstrapping from our CDN",
+        "button": {
+            "title": "Dig Deeper",
+            "url": "https://openui5.hana.ondemand.com/#/topic/8b49fc198bf04b2d9800fc37fecbb218"
+        }
+    }
+}
