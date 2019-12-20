@@ -1288,6 +1288,10 @@ html {
                 filter: blur(1px);
     }
 
+.hero.view_lasthero .hero_image {
+        opacity: 1;
+    }
+
 .hero_image {
     position: absolute;
     top: 0;
@@ -1298,11 +1302,16 @@ html {
     background-size: cover;
     -webkit-filter: blur(20px);
             filter: blur(20px);
-    -webkit-transition: 1s -webkit-filter ease-in-out;
-    transition: 1s -webkit-filter ease-in-out;
-    transition: 1s filter ease-in-out;
-    transition: 1s filter ease-in-out, 1s -webkit-filter ease-in-out;
+    -webkit-transition: 0.5s opacity ease-in-out, 1s -webkit-filter ease-in-out;
+    transition: 0.5s opacity ease-in-out, 1s -webkit-filter ease-in-out;
+    transition: 1s filter ease-in-out, 0.5s opacity ease-in-out;
+    transition: 1s filter ease-in-out, 0.5s opacity ease-in-out, 1s -webkit-filter ease-in-out
 }
+
+.hero_image.mod_lasthero {
+        background-image: url(3731d291b78c65b2199937e8a79cc13e.jpg);
+        opacity: 0;
+    }
 
 .hero_overlay {
     position: absolute;
