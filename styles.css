@@ -1313,7 +1313,7 @@ a.icon__fill-div {
 .slider {
 	width: 100%;
 	max-width: 540px;
-	height: 130px;
+	height: 150px;
 	position: relative;
 	margin: 0 auto;
 	overflow: hidden;
@@ -1322,14 +1322,14 @@ a.icon__fill-div {
 .slider__item {
 		display: block;
 		width: 100%;
-		height: 130px;
+		height: 150px;
 		position: absolute;
 		-webkit-transition: opacity 1s ease-in-out;
 		transition: opacity 1s ease-in-out;
 		}
 
-.slider__item.mod_template {
-			background: url(370fdec2cd000839448d97eedaa83821.png) 50% 50% no-repeat;
+.slider__item.mod_ui5con2020 {
+			background: url(4e02cebf649c8d737ed868e38887a17f.png) 50% 50% no-repeat;
 			background-size: 533px 130px;
 			}
 
@@ -1339,8 +1339,7 @@ a.icon__fill-div {
 			}
 
 @media (max-width: 575px) {
-	.slider__item.mod_ui5con,
-	.slider__item.mod_ui5-webcomponents{
+	.slider__item.mod_ui5con {
 		background-size: 100%;
 		}
 }
