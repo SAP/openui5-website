@@ -14,8 +14,8 @@
 		transition: opacity 1s ease-in-out;
 		}
 		.slider__item.mod_ui5con2020 {
-			background: url("./ui5con2020.png") 50% 50% no-repeat;
-			background-size: 533px 130px;
+			background: url("./ui5con2020cfp.png") 50% 50% no-repeat;
+			background-size: 615px 150px;
 			}
 		.slider__item.state_invisible {
 			opacity: 0;
