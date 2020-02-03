@@ -1222,33 +1222,40 @@ html {
 .mosaic__plate.view_1 .mosaic__item {
         --item-height: 203px;
         width: calc(20% - 10px);
+        height: 203px;;
         height: var(--item-height)
     }
 
 .mosaic__plate.view_1 .mosaic__item img {
             width: 100%;
+            height: 203px;
             height: var(--item-height);
             -o-object-fit: cover;
                object-fit: cover;
         }
 
 .mosaic__plate.view_1 .mosaic__item:nth-child(3) {
+            height: 416px;
             --item-height: 416px;
         }
 
 .mosaic__plate.view_1 .mosaic__item:nth-child(4) {
+            height: 143px;
             --item-height: 143px;
         }
 
 .mosaic__plate.view_1 .mosaic__item:nth-child(5) {
+            height: 263px;
             --item-height: 263px;
         }
 
 .mosaic__plate.view_1 .mosaic__item:nth-child(8) {
+            height: 282px;
             --item-height: 282px;
         }
 
 .mosaic__plate.view_1 .mosaic__item:nth-child(9) {
+            height: 124px;
             --item-height: 124px;
         }
 
@@ -1268,6 +1275,7 @@ html {
 
 .mosaic__plate.view_1 .mosaic__item {
             width: 220px;
+            height: 203px !important;
             --item-height: 203px !important
     }
         }
@@ -1326,10 +1334,12 @@ html {
         }
             }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
 
 .mosaic__plate.view_2 .mosaic__item {
-            --item-width: calc(25% - 10px)
+            img {
+                height: 203px !important;
+            }
     }
         }
 
@@ -1339,6 +1349,30 @@ html {
         display: none
 }
     }
+
+_:-ms-fullscreen .mosaic__plate.view_1 .mosaic__item:nth-child(3) img, :root .mosaic__plate.view_1 .mosaic__item:nth-child(3) img {
+                    height: 416px;
+                }
+
+_:-ms-fullscreen .mosaic__plate.view_1 .mosaic__item:nth-child(4) img, :root .mosaic__plate.view_1 .mosaic__item:nth-child(4) img {
+                    height: 143px;
+                }
+
+_:-ms-fullscreen .mosaic__plate.view_1 .mosaic__item:nth-child(5) img, :root .mosaic__plate.view_1 .mosaic__item:nth-child(5) img {
+                    height: 263px;
+                }
+
+_:-ms-fullscreen .mosaic__plate.view_1 .mosaic__item:nth-child(8) img, :root .mosaic__plate.view_1 .mosaic__item:nth-child(8) img {
+                    height: 282px;
+                }
+
+_:-ms-fullscreen .mosaic__plate.view_1 .mosaic__item:nth-child(9) img, :root .mosaic__plate.view_1 .mosaic__item:nth-child(9) img {
+                    height: 124px;
+                }
+
+_:-ms-fullscreen .mosaic__plate.view_2 .mosaic__item, :root .mosaic__plate.view_2 .mosaic__item {
+            width: calc(25% - 10px);
+        }
 
 .hero {
     position: absolute;
@@ -1404,19 +1438,36 @@ html {
     z-index: 10;
 }
 
-.dialog {
-    --sapUiGroupContentBackground: transparent;
-    --sapUiPageFooterBorderColor: transparent;
-    --sapUiShadowLevel2: none;
-    --_ui5_popover_content_padding: 0;
+_:-ms-fullscreen .hero_image, :root .hero_image {
+        min-height: 100%;
+        min-width: 100%;
+        height: auto;
+        width: 100%;
+        background: url(55de9fd7cea711aecdcc50f0d45e952f.jpg) no-repeat;
+        background-size: cover;
+    }
 
+_:-ms-fullscreen .hero_video, :root .hero_video {
+        min-height: 100%;
+        min-width: 100%;
+        height: auto;
+    }
+
+.dialog {
+
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.8);
+    -webkit-backdrop-filter: blur(40px);
+            backdrop-filter: blur(40px);
     color: #fff
 }
-
-.dialog .dialog__header {
-        margin-bottom: 40px;
-        padding: 0 calc(20px + var(--_ui5_popover_content_padding))
-    }
 
 .dialog .dialog__close {
         position: fixed;
@@ -1451,6 +1502,10 @@ html {
             left: 20px
     }
         }
+
+_:-ms-fullscreen, :root .dialog {
+    background-color: rgba(0,0,0,0.95);
+}
 
 .tile {
     padding: 30px;
@@ -1665,6 +1720,10 @@ html {
             overflow: hidden;
         }
 
+.slider__container.state_iframe iframe {
+            display: block;
+        }
+
 .slider__item {
     display: inline-block;
     width: calc(100vw);
@@ -1699,7 +1758,7 @@ html {
 .slider__item iframe {
         max-width: 980px;
         margin: 0 auto;
-        display: block;
+        display: none;
         height: 100%;
         width: 100%;
     }
