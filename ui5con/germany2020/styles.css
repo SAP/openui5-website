@@ -1334,12 +1334,10 @@ html {
         }
             }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
 
 .mosaic__plate.view_2 .mosaic__item {
-            img {
-                height: 203px !important;
-            }
+            --item-width: calc(25% - 10px)
     }
         }
 
@@ -1371,8 +1369,15 @@ _:-ms-fullscreen .mosaic__plate.view_1 .mosaic__item:nth-child(9) img, :root .mo
                 }
 
 _:-ms-fullscreen .mosaic__plate.view_2 .mosaic__item, :root .mosaic__plate.view_2 .mosaic__item {
-            width: calc(25% - 10px);
+            width: calc(25% - 10px)
         }
+
+@media (max-width: 1023px) {
+
+_:-ms-fullscreen .mosaic__plate.view_2 .mosaic__item, :root .mosaic__plate.view_2 .mosaic__item {
+                width: calc(33% - 10px)
+        }
+            }
 
 .hero {
     position: absolute;
@@ -1451,6 +1456,7 @@ _:-ms-fullscreen .hero_video, :root .hero_video {
         min-height: 100%;
         min-width: 100%;
         height: auto;
+        width: auto;
     }
 
 .dialog {
@@ -1468,6 +1474,14 @@ _:-ms-fullscreen .hero_video, :root .hero_video {
             backdrop-filter: blur(40px);
     color: #fff
 }
+
+.dialog .dialog__content {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+    }
 
 .dialog .dialog__close {
         position: fixed;
@@ -1630,8 +1644,21 @@ _:-ms-fullscreen, :root .dialog {
             -webkit-transition: opacity 0.2s ease-in-out, top 0.3s ease-in-out;
             transition: opacity 0.2s ease-in-out, top 0.3s ease-in-out;
             top: 100px;
-            opacity: 0
+            opacity: 0;
+            margin-right: 30px
         }
+
+.sessions .sessions__list .sessions_list-item:last-child {
+                margin: 0;
+            }
+
+@supports (justify-content: space-between) {
+
+.sessions .sessions__list .sessions_list-item {
+                /* IE does not support supports and space-between*/
+                margin: 0
+        }
+            }
 
 @media (max-width: 960px) {
 
@@ -1690,7 +1717,7 @@ _:-ms-fullscreen, :root .dialog {
     overflow: hidden
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px), (max-height: 800px) {
 
 .slider.fullscreen_mobile {
             height: 100vh
