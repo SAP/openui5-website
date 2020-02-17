@@ -677,6 +677,10 @@ html {
             bottom: -6px;
         }
 
+.title .title__link-container {
+        position: relative;
+    }
+
 .text {
     color: #141212;
     font-family: "72-Light"
@@ -1689,7 +1693,7 @@ _:-ms-fullscreen, :root .dialog {
 
 .sessions .sessions__date {
         margin-top: 20px;
-        color: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 0.8);
         font-size: 13px;
         font-family: "72-Light", Arial, Sans-Serif;
     }
@@ -1802,6 +1806,34 @@ _:-ms-fullscreen, :root .dialog {
         display: none;
         height: 100%;
         width: 100%;
+    }
+
+.tooltip {
+    position: absolute;
+    display: inline-block;
+}
+
+.tooltip.view_cfp {
+    top: auto !important;
+    bottom: -80px;
+    left: 0;
+    border-radius: 28px;
+    background-color: #ff4700;
+    font-size: 24px;
+    line-height: 1.3;
+    height: 40px;
+    color: rgba(20, 18, 18, 0.6);
+    padding: 5px 10px
+}
+
+.tooltip.view_cfp::before {
+        position: absolute;
+        top: -11px;
+        left: 50px;
+        content: '';
+        width: 26px;
+        height: 12px;
+        background: url(6ab12a668ebb2ab342dd75025ea4c6b7.svg) no-repeat;
     }
 
 
