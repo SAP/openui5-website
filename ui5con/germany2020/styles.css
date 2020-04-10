@@ -488,8 +488,8 @@ html {
 
 .section.mod_hero .section__content > * {
                 position: relative;
-                -webkit-transition: color 0.07s ease-in-out;
-                transition: color 0.07s ease-in-out;
+                -webkit-transition: color 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out;
             }
 
 .section.mod_hero .section__content :nth-child(1) {
@@ -1461,6 +1461,8 @@ _:-ms-fullscreen .mosaic__plate.view_2 .mosaic__item, :root .mosaic__plate.view_
 
 .hero.view_lightOff .hero_image2{
         opacity: 0.8;
+        -webkit-transition: 12s opacity ease-in-out;
+        transition: 12s opacity ease-in-out;
     }
 
 .hero_image {
@@ -1473,10 +1475,10 @@ _:-ms-fullscreen .mosaic__plate.view_2 .mosaic__item, :root .mosaic__plate.view_
     background-size: cover;
     -webkit-filter: blur(20px);
             filter: blur(20px);
-    -webkit-transition: 0.2s opacity ease-in-out, 1s -webkit-filter ease-in-out;
-    transition: 0.2s opacity ease-in-out, 1s -webkit-filter ease-in-out;
-    transition: 1s filter ease-in-out, 0.2s opacity ease-in-out;
-    transition: 1s filter ease-in-out, 0.2s opacity ease-in-out, 1s -webkit-filter ease-in-out;
+    -webkit-transition: 0.3s opacity ease-in-out, 1s -webkit-filter ease-in-out;
+    transition: 0.3s opacity ease-in-out, 1s -webkit-filter ease-in-out;
+    transition: 1s filter ease-in-out, 0.3s opacity ease-in-out;
+    transition: 1s filter ease-in-out, 0.3s opacity ease-in-out, 1s -webkit-filter ease-in-out;
     z-index: 5;
 }
 
@@ -1486,10 +1488,10 @@ _:-ms-fullscreen .mosaic__plate.view_2 .mosaic__item, :root .mosaic__plate.view_
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(ed0ddce935a0ba4c34f8a4c1edabc283.png) no-repeat 50% 50%;
+    background: url(d6d5ef04b9fae21a6d7f217ed8139ba6.png) no-repeat 50% 50%;
     background-size: contain;
-    -webkit-transition: 0.2s opacity ease-in-out;
-    transition: 0.2s opacity ease-in-out;
+    -webkit-transition: 0s opacity ease-in-out;
+    transition: 0s opacity ease-in-out;
     z-index: 5;
     opacity: 0
 }
@@ -1511,8 +1513,8 @@ _:-ms-fullscreen .mosaic__plate.view_2 .mosaic__item, :root .mosaic__plate.view_
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    -webkit-filter: blur(20px);
-            filter: blur(20px);
+    -webkit-filter: blur(1px);
+            filter: blur(1px);
     -webkit-transition: 1s -webkit-filter ease-in-out;
     transition: 1s -webkit-filter ease-in-out;
     transition: 1s filter ease-in-out;
