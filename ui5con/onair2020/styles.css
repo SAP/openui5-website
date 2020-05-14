@@ -368,7 +368,7 @@ html {
 .section.mod_hero {
         position: relative;
         height: 100vh;
-        min-height: 600px;
+        min-height: 700px;
         width: 100%;
         overflow: hidden
     }
@@ -736,6 +736,13 @@ html {
 
 .title.has_margin {
             margin-bottom: 15vh
+    }
+        }
+
+@media (max-height: 700px) {
+
+.title.has_margin {
+            margin-bottom: 10vh
     }
         }
 
