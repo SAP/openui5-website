@@ -537,7 +537,7 @@ html {
 @media (max-width: 767px) {
 
 .section.mod_hero .section__content {
-                padding-top: 5vh
+                padding-top: 10vh
         }
             }
 
@@ -675,7 +675,7 @@ html {
 @media (max-width: 767px) {
 
 .title.size_1 {
-            font-size: 55px
+            font-size: 50px
     }
         }
 
@@ -739,17 +739,10 @@ html {
     }
         }
 
-@media (max-height: 700px) {
-
-.title.has_margin {
-            margin-bottom: 10vh
-    }
-        }
-
 @media (max-width: 767px) {
 
 .title.has_margin {
-            margin-bottom: 8vh
+            margin-bottom: 10vh
     }
         }
 
