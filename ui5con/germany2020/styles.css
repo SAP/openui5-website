@@ -488,9 +488,21 @@ html {
 
 .section.mod_hero .section__content > * {
                 position: relative;
-                -webkit-transition: color 0.3s ease-in-out;
-                transition: color 0.3s ease-in-out;
+                -webkit-transition: opacity 0.3s ease-in-out;
+                transition: opacity 0.3s ease-in-out;
             }
+
+.section.mod_hero .section__content a {
+                color: #ffa42c;
+                text-decoration: none;
+                -webkit-transition: opacity 0.2s ease-in-out;
+                transition: opacity 0.2s ease-in-out;
+                opacity: 0.7
+            }
+
+.section.mod_hero .section__content a:hover {
+                    opacity: 1;
+                }
 
 .section.mod_hero .section__content :nth-child(1) {
                 opacity: 1;
@@ -541,7 +553,7 @@ html {
             }
 
 .section.mod_hero.view_lightOff .section__content .title {
-                color: rgba(255, 255, 255, 0.1) !important;
+                opacity: 0.1;
             }
 
 .section.mod_sponsor {
