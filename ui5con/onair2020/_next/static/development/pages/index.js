@@ -7433,7 +7433,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var AgendaJSON = __webpack_require__(/*! ../../../data/agenda.json */ "./data/agenda.json").map(function (s) {
   var startTime = new Date(s.startTime.replace(/(\d{2}).(\d{2}).(\d{4})/, "$2/$1/$3"));
+  var endTime = new Date(s.endTime.replace(/(\d{2}).(\d{2}).(\d{4})/, "$2/$1/$3"));
   s.startTime = startTime;
+  s.endTime = endTime;
   return s;
 }).sort(function (s1, s2) {
   return s1.startTime - s2.startTime;
@@ -7547,7 +7549,7 @@ var Agenda = function Agenda() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 120,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -7556,7 +7558,7 @@ var Agenda = function Agenda() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 121,
       columnNumber: 13
     }
   }, __jsx(_title__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -7566,7 +7568,7 @@ var Agenda = function Agenda() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 122,
       columnNumber: 17
     }
   }), __jsx(_toggleButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -7577,7 +7579,7 @@ var Agenda = function Agenda() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 123,
       columnNumber: 17
     }
   })), __jsx("div", {
@@ -7585,7 +7587,7 @@ var Agenda = function Agenda() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 125,
       columnNumber: 13
     }
   }, __jsx(_toggleButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -7595,7 +7597,7 @@ var Agenda = function Agenda() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 126,
       columnNumber: 17
     }
   })), sessions.map(function (session, index) {
@@ -7605,7 +7607,7 @@ var Agenda = function Agenda() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127,
+        lineNumber: 129,
         columnNumber: 17
       }
     }, __jsx("div", {
@@ -7613,7 +7615,7 @@ var Agenda = function Agenda() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134,
+        lineNumber: 136,
         columnNumber: 21
       }
     }, selectedTime === "venueTime" ? venueTimeFormatter.format(session.startTime) : userTimeFormatter.format(session.startTime)), __jsx("div", {
@@ -7621,7 +7623,7 @@ var Agenda = function Agenda() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137,
+        lineNumber: 139,
         columnNumber: 21
       }
     }, session.type === 'break' || session.type === 'pre_event' ? __jsx(_SessionIcon__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -7629,7 +7631,7 @@ var Agenda = function Agenda() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141,
+        lineNumber: 143,
         columnNumber: 37
       }
     }) : session.speakers.map(function (speaker, speakerIndex) {
@@ -7643,7 +7645,7 @@ var Agenda = function Agenda() {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145,
+          lineNumber: 147,
           columnNumber: 41
         }
       });
@@ -7652,7 +7654,7 @@ var Agenda = function Agenda() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 155,
+        lineNumber: 157,
         columnNumber: 21
       }
     }, __jsx(_Session__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -7664,7 +7666,7 @@ var Agenda = function Agenda() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 156,
+        lineNumber: 158,
         columnNumber: 25
       }
     })));
@@ -7676,7 +7678,7 @@ var Agenda = function Agenda() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162,
+      lineNumber: 164,
       columnNumber: 21
     }
   }, __jsx(_Session__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -7684,7 +7686,7 @@ var Agenda = function Agenda() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163,
+      lineNumber: 165,
       columnNumber: 25
     }
   })) : null);
@@ -8751,7 +8753,6 @@ var Grid = function Grid(_ref) {
       var relacedItem = dispayedItems[index];
       dispayedItems[index] = cachedItems.splice(0, 1)[0];
       cachedItems.push(relacedItem);
-      console.log("t1");
       setDisplayedItems(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(dispayedItems));
       setCachedItems(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(cachedItems));
     }, 5000);
@@ -8765,7 +8766,7 @@ var Grid = function Grid(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 70,
       columnNumber: 9
     }
   }, dispayedItems.map(function (item, index) {
@@ -8775,7 +8776,7 @@ var Grid = function Grid(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73,
+        lineNumber: 72,
         columnNumber: 17
       }
     }, __jsx(_sticker__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -8783,7 +8784,7 @@ var Grid = function Grid(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74,
+        lineNumber: 73,
         columnNumber: 21
       }
     }));
