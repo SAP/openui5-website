@@ -1,1 +1,0 @@
-self.__BUILD_MANIFEST = (function(a){return {"/":[a],"/index":[a]}}("static\u002Fcss\u002F4835274c460e83d42d95.css"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
