@@ -1,17 +1,4 @@
 <svg viewBox="0 0 120 38" xmlns="http://www.w3.org/2000/svg">
-    <script type="text/javascript">
-        window.addEventListener('load', function() {
-            var svg = document.rootElement;
-            function toggleClass() {
-                svg.setAttribute("class", "PlayAnimation");
-                setTimeout(function () {
-                    svg.setAttribute("class", "");
-                }, 2000);
-            }
-            toggleClass();
-            setInterval(toggleClass, 5000);
-        }, false);
-    </script>
     <style>
         @keyframes wave {
             0% {
@@ -24,20 +11,20 @@
             }
         }
 
-        .PlayAnimation .Wave1 {
+        .Wave1 {
             opacity: 1;
             animation:
                 wave 0.45s ease-out 0.5s,
                 wave 0.45s ease-out 1.4s;
         }
     
-        .PlayAnimation .Wave2 {
+        .Wave2 {
             animation:
                 wave 0.45s ease-out 0.6s,
                 wave 0.45s ease-out 1.5s;
         }
     
-        .PlayAnimation .Wave3 {
+        .Wave3 {
             animation:
                 wave 0.45s ease-out 0.7s,
                 wave 0.45s ease-out 1.6s;

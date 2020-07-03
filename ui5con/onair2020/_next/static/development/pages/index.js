@@ -7545,6 +7545,7 @@ var Agenda = function Agenda() {
   };
 
   return __jsx(_section__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    id: "agenda",
     cssClass: _Agenda_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.Agenda,
     __self: _this,
     __source: {
@@ -7553,7 +7554,6 @@ var Agenda = function Agenda() {
       columnNumber: 9
     }
   }, __jsx("div", {
-    id: "agenda",
     className: _Agenda_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.agenda__title,
     __self: _this,
     __source: {
@@ -9997,9 +9997,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var Section = function Section(_ref) {
   var children = _ref.children,
+      _ref$id = _ref.id,
+      id = _ref$id === void 0 ? null : _ref$id,
       _ref$cssClass = _ref.cssClass,
       cssClass = _ref$cssClass === void 0 ? "" : _ref$cssClass;
   return __jsx("div", {
+    id: id,
     className: "".concat(_Section_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.section, " ").concat(cssClass),
     __self: _this,
     __source: {
