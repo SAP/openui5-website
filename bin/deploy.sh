@@ -112,7 +112,7 @@ fi
 
 
 # Move built assets:
-mv $SOURCE_DIR/* $SOURCE_DIR/.* $TARGET_DIR
+mv $SOURCE_DIR/* $SOURCE_DIR/.* $TARGET_DIR 2> /dev/null
 
 # Commit changes:
 git config user.name "UI5.Bot"
