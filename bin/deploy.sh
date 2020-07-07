@@ -2,6 +2,8 @@
 
 set -e # Exit with nonzero exit code if anything fails
 
+shopt -s dotglob # Allow copy dot files
+
 if [ -z ${SSH_KEY_BASE64+x} ]; then
 	echo "DEPLOY SKIPPED. Reason: env variable SSH_KEY_BASE64 is not set"
 	exit 0
