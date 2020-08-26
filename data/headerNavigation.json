@@ -1,18 +1,18 @@
 [
     {
-        "to": "documentation/",
+        "to": "/documentation/",
         "name": "Documentation"
     },
     {
-        "to": "releases/",
+        "to": "/releases/",
         "name": "Releases"
     },
     {
-        "to": "projects/",
+        "to": "/projects/",
         "name": "Projects"
     },
     {
-        "to": "community/",
+        "to": "/community/",
         "name": "Community"
     }
 ]
