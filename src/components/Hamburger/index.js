@@ -10,6 +10,10 @@ const Hamburger = ({ open, onClick }) => (
             open ? styles.view_open : null
         )}
         onClick={onClick}
+        onKeyDown={onClick}
+        tabIndex="0"
+        role="button"
+        
     >
         <div className={styles.HamburgerItem}></div>
         <div className={styles.HamburgerItem}></div>
