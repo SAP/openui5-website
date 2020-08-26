@@ -77,13 +77,13 @@ const ReleasesPage = ({ data: { releasesJson, allVersionsJson, allConsumeJson, a
                         <Row key={idx}>
                             <Cell>{version}</Cell>
                             <Cell>
-                                <Link href={`https://github.com/SAP/openui5/releases/download/${version}/openui5-sdk-${version}.zip`}>SDK</Link><br/>
-                                <Link href={`https://github.com/SAP/openui5/releases/download/${version}/openui5-runtime-${version}.zip`}>Runtime</Link><br/>
-                                <Link href={`https://github.com/SAP/openui5/releases/download/${version}/openui5-runtime-mobile-${version}.zip`}>Runtime Mobile</Link>
+                                <Link href={url_download_sdk}>SDK</Link><br/>
+                                <Link href={url_download_runtime}>Runtime</Link><br/>
+                                <Link href={url_download_mobile}>Runtime Mobile</Link>
                             </Cell>
                             <Cell>
-                                <Link href={`https://openui5.hana.ondemand.com/${version}/#/topic/99ac68a5b1c3416ab5c84c99fefa250d`}>Demo Kit</Link><br/>
-                                <Link href={`https://openui5.hana.ondemand.com/${version}/#releasenotes.html`}>Release Notes</Link>
+                                <Link href={url_demokit}>Demo Kit</Link><br/>
+                                <Link href={url_releasenotes}>Release Notes</Link>
                             </Cell>
                             <Cell>{release_date}</Cell>
                         </Row>
