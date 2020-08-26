@@ -8,8 +8,10 @@ import Button from "../components/Button";
 import {List, ListItem} from "../components/List";
 import Tile from "../components/Tile";
 import Icon from "../components/Icon";
+import Link from "../components/Link";
+import { Table, Row, Cell } from "../components/Table";
 
-const ReleasesPage = ({ data: { releasesJson, allConsumeJson, allExploreJson } }) => (
+const ReleasesPage = ({ data: { releasesJson, allVersionsJson, allConsumeJson, allExploreJson } }) => (
     <DefaultTemplate>
         <SEO title={releasesJson.title} />
         <Section>
@@ -54,7 +56,40 @@ const ReleasesPage = ({ data: { releasesJson, allConsumeJson, allExploreJson } }
         </Section>
         <Section>
             <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>All Releases</Text>
-
+            <Table>
+                <Row type="header">
+                    <Cell style={{ width: "120px" }}>Version</Cell>
+                    <Cell style={{ width: "300px" }}>Download</Cell>
+                    <Cell style={{ width: "200px" }}>Documentation</Cell>
+                    <Cell style={{ width: "120px" }}>Release Date</Cell>
+                </Row>
+                { allVersionsJson.edges.map(({ node }, idx) => {
+                    const {
+                        version,
+                        url_download_runtime,
+                        url_download_sdk,
+                        url_download_mobile,
+                        url_demokit,
+                        url_releasenotes,
+                        release_date
+                    } = node;
+                    return (
+                        <Row key={idx}>
+                            <Cell>{version}</Cell>
+                            <Cell>
+                                <Link href={`https://github.com/SAP/openui5/releases/download/${version}/openui5-sdk-${version}.zip`}>SDK</Link><br/>
+                                <Link href={`https://github.com/SAP/openui5/releases/download/${version}/openui5-runtime-${version}.zip`}>Runtime</Link><br/>
+                                <Link href={`https://github.com/SAP/openui5/releases/download/${version}/openui5-runtime-mobile-${version}.zip`}>Runtime Mobile</Link>
+                            </Cell>
+                            <Cell>
+                                <Link href={`https://openui5.hana.ondemand.com/${version}/#/topic/99ac68a5b1c3416ab5c84c99fefa250d`}>Demo Kit</Link><br/>
+                                <Link href={`https://openui5.hana.ondemand.com/${version}/#releasenotes.html`}>Release Notes</Link>
+                            </Cell>
+                            <Cell>{release_date}</Cell>
+                        </Row>
+                    );
+                })}
+            </Table>
         </Section>
     </DefaultTemplate>
 );
