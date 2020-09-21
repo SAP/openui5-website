@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/SAP/openui5-website.svg?branch=master)](https://travis-ci.org/SAP/openui5-website)
 ![OpenUI5 logo](http://openui5.org/images/OpenUI5_new_big_side.png)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/openui5-website)](https://api.reuse.software/info/github.com/SAP/openui5-website)
+
 
 # OpenUI5 Website
 
@@ -13,7 +15,3 @@ There are no known major issues at the moment.
 
 ## Support
 To report a bug on the website, please use the [GitHub issue tracker](https://github.com/SAP/openui5-website/issues). For other questions you can reach us in `#openui5_website` channel of the [OpenUI5 Community Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/).
-
-## License
-Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
-This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the [LICENSE](/LICENSE) file.
