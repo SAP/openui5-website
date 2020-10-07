@@ -1271,6 +1271,11 @@ a.icon__fill-div {
 
 .tile.type_event .tile__title {
 		margin-bottom: 5px;
+	}
+
+.tile.type_event .tile__description {
+		margin-bottom: 5px;
+		color: rgba(29, 29, 29, 0.8);
 		}
 
 /* type_asset */
@@ -1328,8 +1333,8 @@ a.icon__fill-div {
 		transition: opacity 1s ease-in-out;
 		}
 
-.slider__item.mod_ui5con2020onair {
-			background: url(77c81b1a76708d8fab4adc8962dc19fa.png) 50% 50% no-repeat;
+.slider__item.mod_ui5ers_live {
+			background: url(bd977a20e1496ee7dda9b7cd4f144976.png) 50% 50% no-repeat;
 			background-size: 615px 150px;
 			}
 
@@ -1339,7 +1344,13 @@ a.icon__fill-div {
 			}
 
 @media (max-width: 575px) {
-	.slider__item.mod_ui5con {
+	.slider {
+		height: 120px;
+		}
+	.slider__item {
+		height: 120px;
+		}
+	.slider__item.mod_ui5ers_live {
 		background-size: 100%;
 		}
 }
