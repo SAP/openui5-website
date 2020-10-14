@@ -105,6 +105,10 @@
 	}
 	.tile.type_event .tile__title {
 		margin-bottom: 5px;
+	}
+	.tile.type_event .tile__description {
+		margin-bottom: 5px;
+		color: rgba(29, 29, 29, 0.8);
 		}
 
 /* type_asset */
