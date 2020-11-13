@@ -9,6 +9,7 @@
                 color 0.1s ease-out;
     color: #ffffff;
     border-radius: 5px;
+    text-align: center;
     }
     .Button:hover {
         background-color: #49abd6;

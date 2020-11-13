@@ -44,6 +44,19 @@
     }
 }
 
+/* type_assert */
+.Tile.type_assert {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    & .TileDescription {
+        margin: 15px 0;
+        flex-grow: 1;
+    }
+}
+
 /*!* type_project *!*/
 /*.tile.type_project {*/
     /*}*/
