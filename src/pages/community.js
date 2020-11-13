@@ -60,7 +60,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, events, conne
             events.items
                 ? (
                     <Section color="lightblue">
-                        <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>{events.title}</Text>
+                        <Text size="2" id="events" style={{ marginBottom: "var(--default-margin-half)" }}>{events.title}</Text>
                         <List column="1">
                             {
                                 events.items.map(({ date, location, ...rest }, idx) => {
@@ -134,7 +134,7 @@ export const query = graphql`
                     icon {
                         publicURL
                     }
-                } 
+                }
             }
         }
     }
