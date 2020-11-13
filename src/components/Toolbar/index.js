@@ -16,7 +16,7 @@ const ToolbarItem = ({ mod, children }) => (
     </div>
 );
 
-const Toolbar = () => {
+const Toolbar = ({ version }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     function onHamburgerClick() {
@@ -32,7 +32,7 @@ const Toolbar = () => {
         >
             <ToolbarItem mod="hamburger"><Hamburger open={isOpen} onClick={onHamburgerClick} /></ToolbarItem>
             <ToolbarItem mod="logo"><Link to="/" style={{ display: 'inline-block' }}><Logo /></Link></ToolbarItem>
-            <ToolbarItem mod="version"><Version>v1.61.2</Version></ToolbarItem>
+            <ToolbarItem mod="version"><Version>{version}</Version></ToolbarItem>
             <ToolbarItem mod="navigation"><Navigation /></ToolbarItem>
             <ToolbarItem mod="github"><GitHub /></ToolbarItem>
         </div>

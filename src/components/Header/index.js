@@ -15,6 +15,9 @@ const query = graphql`
                 description
             }
         }
+        versionsJson {
+            version
+        }
     }
 `;
 
@@ -22,7 +25,7 @@ const Header = ({ view }) => {
     return (
         <StaticQuery
             query={query}
-            render={({ indexJson }) => (
+            render={({ indexJson, versionsJson }) => (
                 <div
                     className={classnames(
                         styles.Header,
@@ -30,7 +33,7 @@ const Header = ({ view }) => {
                     )}
                 >
                     <div className={styles.HeaderContent}>
-                        <Toolbar/>
+                        <Toolbar version={versionsJson.version} />
                         { view === "full"
                             ? (
                                 <div className={styles.HeaderTitle}>
