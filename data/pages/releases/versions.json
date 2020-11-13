@@ -1,6 +1,7 @@
 [
     {
         "version": "1.84.0",
+        "type": "stable",
         "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.84.0/openui5-runtime-1.84.0.zip",
         "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.84.0/openui5-sdk-1.84.0.zip",
         "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.84.0/openui5-runtime-mobile-1.84.0.zip",
@@ -10,6 +11,7 @@
     },
     {
         "version": "1.78.11",
+        "type": "stable",
         "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.78.11/openui5-runtime-1.78.11.zip",
         "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.78.11/openui5-sdk-1.78.11.zip",
         "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.78.11/openui5-runtime-mobile-1.78.11.zip",
@@ -19,6 +21,7 @@
     },
     {
         "version": "1.71.23",
+        "type": "stable",
         "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.71.23/openui5-runtime-1.71.23.zip",
         "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.71.23/openui5-sdk-1.71.23.zip",
         "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.71.23/openui5-runtime-mobile-1.71.23.zip",
@@ -28,6 +31,7 @@
     },
     {
         "version": "1.60.31",
+        "type": "stable",
         "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.60.31/openui5-runtime-1.60.31.zip",
         "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.60.31/openui5-sdk-1.60.31.zip",
         "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.60.31/openui5-runtime-mobile-1.60.31.zip",
@@ -37,6 +41,7 @@
     },
     {
         "version": "1.52.45",
+        "type": "stable",
         "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.52.45/openui5-runtime-1.52.45.zip",
         "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.52.45/openui5-sdk-1.52.45.zip",
         "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.52.45/openui5-runtime-mobile-1.52.45.zip",

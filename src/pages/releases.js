@@ -11,88 +11,92 @@ import Icon from "../components/Icon";
 import Link from "../components/Link";
 import { Table, Row, Cell } from "../components/Table";
 
-const ReleasesPage = ({ data: { releasesJson, allVersionsJson, allConsumeJson, allExploreJson } }) => (
-    <DefaultTemplate>
-        <SEO title={releasesJson.title} />
-        <Section>
-            <Text size="1">{releasesJson.title}</Text>
-        </Section>
-        <Section color="lightblue">
-            <Button href="https://openui5.hana.ondemand.com/" rel="noopener" target="_blank" size="1" style={{ marginRight: "20px" }}>Download Stable Release (1.71.1)</Button>
-            <Button href="https://openui5nightly.hana.ondemand.com/" rel="noopener" target="_blank" size="1">Browse Nightly Demo Kit</Button>
-        </Section>
-        <Section>
-            <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>Consume</Text>
-            <List column="3" justifyContent="spaceBetween">
-                { allConsumeJson.edges.map(({ node }, idx) => {
-                    const { icon, ...rest } = node;
-                    return (
-                        <ListItem key={idx}>
-                            <Tile
-                                icon={() => <Icon size="96x96" src={icon.publicURL} />}
-                                {...rest}
-                            />
-                        </ListItem>
-                    );
-                })}
-            </List>
-        </Section>
-        <Section>
-            <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>Explore</Text>
-            <List column="3">
-                { allExploreJson.edges.map(({ node }, idx) => {
-                    const { icon, ...rest } = node;
-                    return (
-                        <ListItem key={idx}>
-                            <Tile
-                                icon={() => <Icon size="96x96" src={icon.publicURL} />}
-                                {...rest}
-                            />
-                        </ListItem>
-                    );
-                })}
-                <ListItem />
-            </List>
-        </Section>
-        <Section>
-            <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>All Releases</Text>
-            <Table>
-                <Row type="header">
-                    <Cell style={{ width: "120px" }}>Version</Cell>
-                    <Cell style={{ width: "300px" }}>Download</Cell>
-                    <Cell style={{ width: "200px" }}>Documentation</Cell>
-                    <Cell style={{ width: "120px" }}>Release Date</Cell>
-                </Row>
-                { allVersionsJson.edges.map(({ node }, idx) => {
-                    const {
-                        version,
-                        url_download_runtime,
-                        url_download_sdk,
-                        url_download_mobile,
-                        url_demokit,
-                        url_releasenotes,
-                        release_date
-                    } = node;
-                    return (
-                        <Row key={idx}>
-                            <Cell>{version}</Cell>
-                            <Cell>
-                                <Link href={url_download_sdk}>SDK</Link><br/>
-                                <Link href={url_download_runtime}>Runtime</Link><br/>
-                                <Link href={url_download_mobile}>Runtime Mobile</Link>
-                            </Cell>
-                            <Cell>
-                                <Link href={url_demokit}>Demo Kit</Link><br/>
-                                <Link href={url_releasenotes}>Release Notes</Link>
-                            </Cell>
-                            <Cell>{release_date}</Cell>
-                        </Row>
-                    );
-                })}
-            </Table>
-        </Section>
-    </DefaultTemplate>
-);
+const ReleasesPage = ({ data: { releasesJson, allVersionsJson, allConsumeJson, allExploreJson } }) => {
+    const lastStableRelease = allVersionsJson.edges.find(({ node }) => node.type === "stable").node;
+
+    return (
+        <DefaultTemplate>
+            <SEO title={releasesJson.title} />
+            <Section>
+                <Text size="1">{releasesJson.title}</Text>
+            </Section>
+            <Section color="lightblue">
+                <Button href={lastStableRelease.url_download_runtime} rel="noopener" target="_blank" size="1" style={{ marginRight: "20px" }}>{`Download Stable Release (${lastStableRelease.version})`}</Button>
+                <Button href="https://openui5nightly.hana.ondemand.com/" rel="noopener" target="_blank" size="1">Browse Nightly Demo Kit</Button>
+            </Section>
+            <Section>
+                <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>Consume</Text>
+                <List column="3" justifyContent="spaceBetween">
+                    { allConsumeJson.edges.map(({ node }, idx) => {
+                        const { icon, ...rest } = node;
+                        return (
+                            <ListItem key={idx}>
+                                <Tile
+                                    icon={() => <Icon size="96x96" src={icon.publicURL} />}
+                                    {...rest}
+                                />
+                            </ListItem>
+                        );
+                    })}
+                </List>
+            </Section>
+            <Section>
+                <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>Explore</Text>
+                <List column="3">
+                    { allExploreJson.edges.map(({ node }, idx) => {
+                        const { icon, ...rest } = node;
+                        return (
+                            <ListItem key={idx}>
+                                <Tile
+                                    icon={() => <Icon size="96x96" src={icon.publicURL} />}
+                                    {...rest}
+                                />
+                            </ListItem>
+                        );
+                    })}
+                    <ListItem />
+                </List>
+            </Section>
+            <Section>
+                <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>All Releases</Text>
+                <Table>
+                    <Row type="header">
+                        <Cell style={{ width: "120px" }}>Version</Cell>
+                        <Cell style={{ width: "300px" }}>Download</Cell>
+                        <Cell style={{ width: "200px" }}>Documentation</Cell>
+                        <Cell style={{ width: "120px" }}>Release Date</Cell>
+                    </Row>
+                    { allVersionsJson.edges.map(({ node }, idx) => {
+                        const {
+                            version,
+                            url_download_runtime,
+                            url_download_sdk,
+                            url_download_mobile,
+                            url_demokit,
+                            url_releasenotes,
+                            release_date
+                        } = node;
+                        return (
+                            <Row key={idx}>
+                                <Cell>{version}</Cell>
+                                <Cell>
+                                    <Link href={url_download_sdk}>SDK</Link><br/>
+                                    <Link href={url_download_runtime}>Runtime</Link><br/>
+                                    <Link href={url_download_mobile}>Runtime Mobile</Link>
+                                </Cell>
+                                <Cell>
+                                    <Link href={url_demokit}>Demo Kit</Link><br/>
+                                    <Link href={url_releasenotes}>Release Notes</Link>
+                                </Cell>
+                                <Cell>{release_date}</Cell>
+                            </Row>
+                        );
+                    })}
+                </Table>
+            </Section>
+        </DefaultTemplate>
+    );
+};
 
 export default ReleasesPage;
 
@@ -110,7 +114,8 @@ export const query = graphql`
                     url_download_mobile,
                     url_demokit,
                     url_releasenotes,
-                    release_date
+                    release_date,
+                    type
                 }
             }
         }
