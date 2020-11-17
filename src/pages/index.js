@@ -43,18 +43,18 @@ const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
                         margin: "0 auto 30px"
                     }}
                 >{startCoding.description}</Text>
+
                 <iframe
                     title={startCoding.title}
+                    src="https://codesandbox.io/embed/ui5-example-pglil?fontsize=14&hidenavigation=1&module=%2Fwebapp%2Findex.html&theme=light"
                     style={{
                         width: '100%',
                         height: '500px',
                         marginBottom: 'var(--default-margin)'
                     }}
-                    src="https://embed.plnkr.co/MDAG4XxSJ4TXt1Ms/"
                     frameBorder="0"
                     allowfullscren="allowfullscren"
-                    className="plunkerEmbedded"
-                />
+                ></iframe>
                 {
                     startCoding.button
                     ? (
