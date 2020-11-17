@@ -37,10 +37,16 @@
     }
 }
 
-/* type_event */
-.Tile.type_event {
+/* type_assert */
+.Tile.type_assert {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
     & .TileDescription {
-        margin-top: 5px;
+        margin: 15px 0;
+        flex-grow: 1;
     }
 }
 

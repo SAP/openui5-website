@@ -1,26 +1,48 @@
 [
     {
-        "title": "UI5con 2019 Bangalore",
-        "url": "https://openui5.org/ui5conblr/",
-        "date": "July 4, 2019",
-        "location": "Bangalore, India"
+        "title": "UI5ers live #03",
+        "url": "https://sap-se.zoom.com/j/94833714827",
+        "date": "December 10, 2020 / 15:15-15:45 CET",
+        "location": "Webcast (Online) via Zoom.us"
     },
     {
-        "title": "UI5con 2019",
-        "url": "https://openui5.org/ui5con/",
-        "date": "June 28, 2019",
-        "location": "St. Leon Rot, Germany"
+        "title": "UI5ers live #02",
+        "url": "https://sap-se.zoom.com/j/94833714827",
+        "date": "November 12, 2020 / 15:15-15:45 CET",
+        "location": "Webcast (Online) via Zoom.us"
     },
     {
-        "title": "UI5con 2018 Bangalore",
-        "url": "https://openui5.org/ui5conblr/material2018.html",
-        "date": "July 20, 2018",
-        "location": "Bangalore, India"
+        "title": "UI5ers live #01",
+        "description": "30-minute interactive webcast on UI5 to inform about latest features, exchange views and ideas, and discuss current topics.",
+        "url": "https://youtu.be/Hw6-ICD7CP0",
+        "date": "October 15, 2020 / 15:15-15:45 CEST",
+        "location": "Webcast (Online) via Zoom.us"
     },
     {
-        "title": "UI5con 2018",
-        "url": "https://openui5.org/ui5con/material2018.html",
-        "date": "June 22, 2018",
-        "location": "St. Leon Rot, Germany"
+        "title": "UI5con ON AIR 2020",
+        "url": "../ui5con/onair2020/",
+        "date": "July 9-10, 2020",
+        "location": "Global online event"
+    },
+    {
+        "title": "UI5con 2020",
+        "url": "../ui5con/germany2020/",
+        "date": "June 19, 2020",
+        "location": "St. Leon Rot, Germany",
+        "cancelled": true
+    },
+    {
+        "title": "SAP Community call: The UI5 Tooling — a modern CLI-based development experience!",
+        "url": "https://www.youtube.com/watch?v=v6ImEbZRRlg&list=PLpQebylHrdh5XQts8bKoMUKexpun_YPvU&index=2",
+        "date": "April 1, 2020",
+        "location": "Webinar (Online)"
+    },
+    {
+        "title": "UI5con 2020 Belgium",
+        "url": "../ui5con/belgium2020/",
+        "date": "February 14, 20020",
+        "location": "Brussels, Belgium"
     }
 ]
+
+

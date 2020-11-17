@@ -52,35 +52,6 @@
             ]
         }
     ],
-    "events": {
-        "title": "Events",
-        "items": [
-            {
-                "title": "UI5con 2019 Bangalore",
-                "url": "https://openui5.org/ui5conblr/",
-                "date": "July 4, 2019",
-                "location": "Bangalore, India"
-            },
-            {
-                "title": "UI5con 2019",
-                "url": "https://openui5.org/ui5con/",
-                "date": "June 28, 2019",
-                "location": "St. Leon Rot, Germany"
-            },
-            {
-                "title": "UI5con 2018 Bangalore",
-                "url": "https://openui5.org/ui5conblr/material2018.html",
-                "date": "July 20, 2018",
-                "location": "Bangalore, India"
-            },
-            {
-                "title": "UI5con 2018",
-                "url": "https://openui5.org/ui5con/material2018.html",
-                "date": "June 22, 2018",
-                "location": "St. Leon Rot, Germany"
-            }
-        ]
-    },
     "connect": {
         "title": "Connect",
         "items": [

@@ -8,9 +8,10 @@ import Text from "../components/Text";
 import { List, ListItem } from "../components/List";
 import Tile from "../components/Tile";
 import Icon from "../components/Icon";
+import Event from "../components/Event"
 
 
-const CommunityPage = ({ data: { communityJson: { title, channels, events, connect } } }) => (
+const CommunityPage = ({ data: { communityJson: { title, channels, connect }, allEventsJson } }) => (
     <DefaultTemplate>
         <SEO title={title} />
         <Section>
@@ -56,32 +57,24 @@ const CommunityPage = ({ data: { communityJson: { title, channels, events, conne
                 })
             }
         </Section>
-        {
-            events.items
-                ? (
-                    <Section color="lightblue">
-                        <Text size="2" id="events" style={{ marginBottom: "var(--default-margin-half)" }}>{events.title}</Text>
-                        <List column="1">
-                            {
-                                events.items.map(({ date, location, ...rest }, idx) => {
-                                    return (
-                                        <ListItem
-                                            key={idx}
-                                        >
-                                            <Tile
-                                                type="event"
-                                                description={`${date} / ${location}`}
-                                                {...rest}
-                                            />
-                                        </ListItem>
-                                    );
-                                })
-                            }
-                        </List>
-                    </Section>
-                )
-                : null
-        }
+        <Section color="lightblue">
+            <Text size="2" id="events" style={{ marginBottom: "var(--default-margin-half)" }}>Events</Text>
+            <List column="1">
+                {
+                    allEventsJson.edges.map(({ node: { ...event }}, idx) => {
+                        return (
+                            <ListItem
+                                key={idx}
+                            >
+                                <Event
+                                    {...event}
+                                />
+                            </ListItem>
+                        );
+                    })
+                }
+            </List>
+        </Section>
         <Section>
             <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>{connect.title}</Text>
             <List column="3" justifyContent="spaceBetween">
@@ -116,15 +109,6 @@ export const query = graphql`
                     }
                 }
             }
-            events {
-                title
-                items {
-                    title
-                    url
-                    date
-                    location
-                }
-            }
             connect {
                 title
                 items {
@@ -137,5 +121,17 @@ export const query = graphql`
                 }
             }
         }
+        allEventsJson {
+            edges {
+              node {
+                title
+                description
+                url
+                date
+                location
+                cancelled
+              }
+            }
+          }
     }
 `

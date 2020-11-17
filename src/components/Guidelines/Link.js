@@ -1,9 +1,10 @@
 import React from "react";
 
 import Button from "../Button";
+import Link from "../Link";
 
 
-const Link = ({ children, type, ...props }) => {
+const GuidelinesLink = ({ children, type, ...props }) => {
     if (type === "button") {
         return (
             <Button
@@ -13,8 +14,8 @@ const Link = ({ children, type, ...props }) => {
         )
     }
     return (
-        <a{...props}>{children}</a>
+        <Link{...props}>{children}</Link>
     );
 };
 
-export default Link;
+export default GuidelinesLink;
