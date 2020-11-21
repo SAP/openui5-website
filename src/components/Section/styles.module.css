@@ -10,6 +10,10 @@
         margin: 0 auto;
         padding: 80px 40px;
         }
+    .SectionContent.no_padding {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     .SectionContent.align_center {
         text-align: center;
         }

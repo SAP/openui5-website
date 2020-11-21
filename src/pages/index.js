@@ -13,7 +13,9 @@ const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
     const { startCoding } = indexJson;
     return (
         <DefaultTemplate headerView="full">
-            <Slider />
+            <Section color="lightblue" hasPadding={false}>
+                <Slider />
+            </Section>
             <Section>
                 <List column="3">
                     { allFeaturesJson.edges.map(({ node }, idx) => {

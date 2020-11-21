@@ -4,7 +4,7 @@ import classnames from "classnames";
 import styles from "./styles.module.css";
 import getCssModifiers from "../../utils/getCssModifiers";
 
-const Section = ({ children, color, align }) => (
+const Section = ({ children, hasPadding, color, align }) => (
     <div
         className={classnames(
             styles.Section,
@@ -14,7 +14,8 @@ const Section = ({ children, color, align }) => (
         <div
             className={classnames(
                 styles.SectionContent,
-                align ? styles[`align_${align}`] : null
+                align ? styles[`align_${align}`] : null,
+                hasPadding ? null : styles.no_padding,
             )}
         >
            { children }
@@ -25,6 +26,7 @@ const Section = ({ children, color, align }) => (
 Section.defaultProps = {
     color: null,
     align: null,
+    hasPadding: true,
 };
 
 Section.propTypes = {
