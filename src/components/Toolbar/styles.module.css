@@ -1,0 +1,91 @@
+.Toolbar {
+    display: flex;
+
+    & .ToolbarItem {
+        flex-grow: 0;
+        margin-left: 25px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &.mod_logo {
+            text-align: center;
+            margin-left: 0;
+            line-height: 0;
+
+            @media (max-width: env(--screen-breakpoint-767)) {
+                flex-grow: 1;
+            }
+        }
+        &.mod_version {
+            flex-basis: 80px;
+            position: relative;
+
+            @media (max-width: env(--screen-breakpoint-980)) {
+                display: none;
+            }
+
+            & :first-child {
+                position: absolute;
+                top: 23px;
+            }
+        }
+        &.mod_navigation {
+            text-align: right;
+            flex-grow: 1;
+
+            @media (max-width: env(--screen-breakpoint-767)) {
+                display: none;
+            }
+        }
+        &.mod_github {
+            margin-left: 60px;
+            padding-top: 24px;
+            line-height: 0;
+
+            @media (max-width: env(--screen-breakpoint-1100)) {
+                margin-left: 40px;
+            }
+            @media (max-width: env(--screen-breakpoint-980)) {
+                margin-left: 20px;
+                padding-top: 12px;
+            }
+            @media (max-width: env(--screen-breakpoint-767)) {
+                margin-left: 0;
+                padding-top: 4px;
+            }
+        }
+        &.mod_hamburger {
+            flex-basis: 24px;
+            display: none;
+            line-height: 0;
+
+            @media (max-width: env(--screen-breakpoint-767)) {
+                display: block;
+            }
+        }
+    }
+
+    &.state_open {
+        & .ToolbarItem {
+            &.mod_hamburger,
+            &.mod_logo,
+            &.mod_github {
+                z-index: 2;
+            }
+            &.mod_navigation {
+                display: block;
+                margin-left: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #1366a2;
+                padding-top: 75px;
+                z-index: 1;
+            }
+        }
+    }
+}

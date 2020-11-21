@@ -1,0 +1,70 @@
+.Navigation {
+    font-family: "72-Light", Arial;
+    font-size: 18px;
+    line-height: 21px;
+    display: inline-block;
+    margin-top: 15px;
+    text-align: right;
+
+    @media (max-width: env(--screen-breakpoint-980)) {
+        margin-top: 4px;
+    }
+
+    @media (max-width: env(--screen-breakpoint-767)) {
+        text-align: left;
+        display: block;
+        padding: 0 20px
+    }
+
+    & .NavigationItem {
+        position: relative;
+        color: rgba(255, 255, 255, 0.64);
+        text-decoration: none;
+        display: inline-block;
+        margin: 11px 30px;
+        vertical-align: middle;
+
+        @media (max-width: env(--screen-breakpoint-1100)) {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        @media (max-width: env(--screen-breakpoint-980)) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        @media (max-width: env(--screen-breakpoint-767)) {
+            display: block;
+            margin: 0;
+            line-height: 44px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+        &.state_active {
+            color: #fff;
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                border-bottom: 4px solid #fff;
+                left: 0;
+                right: 0;
+                bottom: -13px;
+
+                @media (max-width: env(--screen-breakpoint-767)) {
+                    content: none;
+                }
+            }
+        }
+    }
+}

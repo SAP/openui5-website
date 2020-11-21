@@ -1,11 +1,23 @@
+@import "./fonts/index.css";
+
 html {
-	 font: 16px/24px "72-Regular";
+    font: 16px/24px "72-Regular", Arial;
  }
 
 *, *:before, *:after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html.noscroll {
-	overflow: hidden;
-	}
+    overflow: hidden;
+    }
+
+:root {
+    --default-margin: 80px;
+    --default-margin-half: calc(var(--default-margin) / 2);
+
+    @media (max-width: env(--screen-breakpoint-767)) {
+        --default-margin: 40px;
+    }
+}
+

@@ -1,0 +1,78 @@
+{
+    "title": "Community",
+    "channels": [
+        {
+            "title": "Ask Questions and Discuss",
+            "items": [
+                {
+                    "title": "Slack",
+                    "url": "https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/",
+                    "icon": "../../icons/slack.svg"
+                },
+                {
+                    "title": "Stack Overflow",
+                    "url": "https://stackoverflow.com/questions/tagged/openui5",
+                    "icon": "../../icons/stackoverflow.svg"
+                },
+                {
+                    "title": "SAP Community",
+                    "url": "https://www.sap.com/community/tag.html?id=500983881501772639608291559920477",
+                    "icon": "../../icons/sap.svg"
+                }
+            ]
+        },
+        {
+            "title": "Stay Up to Date",
+            "items": [
+                {
+                    "title": "UI5ers Buzz",
+                    "url": "https://blogs.sap.com/tag/ui5ers-buzz/",
+                    "icon": "../../icons/ui5er-buzz.svg"
+                },
+                {
+                    "title": "UI5 Official",
+                    "url": "https://blogs.sap.com/tag/ui5official/",
+                    "icon": "../../icons/ui5.svg"
+                },
+                {
+                    "title": "Twitter",
+                    "url": "https://twitter.com/openui5",
+                    "icon": "../../icons/twitter.svg"
+                },
+                {
+                    "title": "YouTube",
+                    "url": "https://www.youtube.com/user/openui5videos",
+                    "icon": "../../icons/youtube.svg"
+                },
+                {
+                    "title": "UI5 NewsCast",
+                    "url": "https://open.sap.com/static/ui5-newscast/index.php",
+                    "icon": "../../icons/ui5-newscast.svg"
+                }
+            ]
+        }
+    ],
+    "connect": {
+        "title": "Connect",
+        "items": [
+            {
+                "title": "UI5 Logo Guidelines",
+                "description": "Learn more about how you can use the UI5 Logo.",
+                "url": "/guidelines/",
+                "icon": "../../icons/ui5.svg"
+            },
+            {
+                "title": "Buy Gear",
+                "description": "Personalize clothes and other stuff with the UI5 logo at Spreadshirt in Europe ([US-Shop](https://www.spreadshirt.com/ui5))",
+                "url": "https://www.spreadshirt.de/ui5",
+                "icon": "../../icons/merchandise.svg"
+            },
+            {
+                "title": "Contact us",
+                "description": "Send us an email: [openui5@sap.com](mailto:openui5@sap.com)",
+                "url": "mailto:openui5@sap.com",
+                "icon": "../../icons/contact.svg"
+            }
+        ]
+    }
+}

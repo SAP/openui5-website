@@ -1,0 +1,14 @@
+[
+    {
+        "to": "https://www.sap.com/about/legal/impressum.html",
+        "name": "Legal Disclosure"
+    },
+    {
+        "to": "https://www.sap.com/corporate/en/legal/terms-of-use.html",
+        "name": "Terms of Use"
+    },
+    {
+        "to": "https://www.sap.com/about/legal/privacy.html",
+        "name": "Privacy"
+    }
+]
