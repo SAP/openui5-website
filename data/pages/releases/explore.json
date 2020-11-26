@@ -8,7 +8,7 @@
     {
         "title": "Roadmap",
         "description": "Learn about planned features and upcoming innovations.",
-        "url": "./OpenUI5_Roadmap.pdf",
+        "url": "/OpenUI5_Roadmap.pdf",
         "icon": "../../icons/npm.svg"
     }
 ]
