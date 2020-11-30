@@ -1,6 +1,6 @@
 ![OpenUI5 logo](http://openui5.org/images/OpenUI5_new_big_side.png)
 
-[![Build Status](https://travis-ci.org/SAP/openui5-website.svg?branch=master)](https://travis-ci.org/SAP/openui5-website)
+[![Build Status](https://travis-ci.com/SAP/openui5-website.svg?branch=master)](https://travis-ci.com/SAP/openui5-website)
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/openui5-website)](https://api.reuse.software/info/github.com/SAP/openui5-website)
 
 # OpenUI5 Website

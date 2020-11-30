@@ -18,7 +18,8 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "updateVersions": "node ./bin/fetchVersions.mjs"
   },
   "devDependencies": {
     "classnames": "^2.2.6",
@@ -53,5 +54,8 @@
   ],
   "engines": {
     "node": ">8"
+  },
+  "dependencies": {
+    "node-fetch": "2.6.1"
   }
 }
