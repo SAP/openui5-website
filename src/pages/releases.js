@@ -12,7 +12,7 @@ import Link from "../components/Link";
 import { Table, Row, Cell } from "../components/Table";
 
 const ReleasesPage = ({ data: { releasesJson, allVersionsJson, allConsumeJson, allExploreJson } }) => {
-    const lastStableRelease = allVersionsJson.edges.find(({ node }) => node.type === "stable").node;
+    const lastStableRelease = allVersionsJson.edges.find(({ node }) => !!node.eom).node;
 
     return (
         <DefaultTemplate>
@@ -115,7 +115,7 @@ export const query = graphql`
                     url_demokit,
                     url_releasenotes,
                     release_date,
-                    type
+                    eom
                 }
             }
         }
