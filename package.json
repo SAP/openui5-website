@@ -19,7 +19,7 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "updateVersions": "node ./bin/versions/fetchVersions.mjs"
+    "fetchVersions": "node ./bin/versions/fetchVersions.js"
   },
   "devDependencies": {
     "classnames": "^2.2.6",

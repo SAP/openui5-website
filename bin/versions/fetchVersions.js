@@ -1,8 +1,8 @@
-import fetch from "node-fetch";
-import { writeFileSync } from "fs";
-import path from "path";
+const fetch = require("node-fetch");
+const { writeFileSync } = require("fs");
+const path = require("path");
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+// const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const FILE_PATH = path.resolve(__dirname, "../../data/pages/releases/versions.json");
 const VERSIONS_URL = "https://openui5versiontracker.cfapps.eu10.hana.ondemand.com/OpenUI5ReleasesInfo";
 
