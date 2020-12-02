@@ -1,13 +1,8 @@
 name: Update Versions
 
-# on:
-#   schedule:
-#     - cron: "*/15 * * * *"
-
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: "*/15 * * * *"
 
 jobs:
   build:
