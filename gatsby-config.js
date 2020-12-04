@@ -2,6 +2,7 @@ module.exports = {
     siteMetadata: {
         title: `OpenUI5`,
         description: ``,
+        faviconUrl: `/favicon/favicon.png`,
         copyright: `&copy; ${new Date().getFullYear()} SAP SE. Made available under <nobr>Apache License 2.0</nobr>`,
     },
     plugins: [
@@ -19,13 +20,14 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
+                name: `OpenUI5 Website`,
+                short_name: `OpenUI5`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
-                display: `minimal-ui`,
-                // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+                background_color: `#ffffff`,
+                theme_color: `#ffffff`,
+                display: `standalone`,
+                icon: `data/logo.png`, // This path is relative to the root of the site.
+                include_favicon: false // This will exclude favicon link tag, because icon without background is used
             },
         },
         {
