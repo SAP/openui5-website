@@ -18,6 +18,9 @@ function SEO({description, lang, meta, keywords, title}) {
                         title={title}
                         titleTemplate={`%s — ${data.site.siteMetadata.title}`}
                         defaultTitle={data.site.siteMetadata.title}
+                        link={[
+                            {"rel": "icon", "href": data.site.siteMetadata.faviconUrl}
+                        ]}
                         meta={[
                             {
                                 name: `description`,
@@ -60,7 +63,8 @@ const detailsQuery = graphql`
     query DefaultSEOQuery {
         site {
             siteMetadata {
-                title
+                title,
+                faviconUrl
             }
         }
     }
