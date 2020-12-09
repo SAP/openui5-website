@@ -12,15 +12,22 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v2
 
-    - name: Install NPM dependencies
-      uses: borales/actions-yarn@v2.0.0
+    - name: Setup Node.js
+      uses: actions/setup-node@v2-beta
       with:
-        cmd: install # will run `yarn install` command
+        node-version: '14'
+
+    - name: Print Node.js version
+      run: node -v
+
+    - name: Install Yarn
+      run: npm install -g yarn
+
+    - name: Install NPM dependencies
+      run: yarn
 
     - name: Fetch versions
-      uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: fetchVersions
+      run: yarn run fetchVersions
 
     - name: Branch protection OFF
       uses: octokit/request-action@v2.x
