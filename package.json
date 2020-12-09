@@ -38,7 +38,7 @@
     "lodash": "^4.17.20",
     "node-fetch": "2.6.1",
     "normalize.css": "^8.0.1",
-    "postcss-env-function": "^2.0.2",
+    "postcss-env-function": "^3.0.0",
     "postcss-nesting": "^7.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
