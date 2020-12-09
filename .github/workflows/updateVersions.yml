@@ -17,17 +17,11 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Print Node.js version
-      run: node -v
-
-    - name: Install Yarn
-      run: npm install -g yarn
-
     - name: Install NPM dependencies
-      run: yarn
+      run: npm ci
 
     - name: Fetch versions
-      run: yarn run fetchVersions
+      run: npm run fetchVersions
 
     - name: Branch protection OFF
       uses: octokit/request-action@v2.x
