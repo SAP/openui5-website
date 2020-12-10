@@ -14,5 +14,6 @@ const VERSIONS_URL = "https://openui5versiontracker.cfapps.eu10.hana.ondemand.co
   } catch (e) {
     console.error("Cannot fetch versions from the remote server!");
     console.error("Error: ", e);
+    process.exit(1);
   }
 })();
