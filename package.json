@@ -31,7 +31,7 @@
     "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-plugin-sharp": "^2.9.0",
     "gatsby-remark-copy-linked-files": "^2.5.0",
-    "gatsby-source-filesystem": "^2.8.0",
+    "gatsby-source-filesystem": "^2.8.1",
     "gatsby-transformer-json": "^2.8.0",
     "gatsby-transformer-remark": "^2.13.1",
     "gatsby-transformer-sharp": "^2.7.0",
