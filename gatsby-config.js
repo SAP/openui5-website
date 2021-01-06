@@ -6,6 +6,7 @@ module.exports = {
         copyright: `&copy; ${new Date().getFullYear()} SAP SE. Made available under <nobr>Apache License 2.0</nobr>`,
     },
     plugins: [
+        `gatsby-plugin-layout`,
         `gatsby-plugin-react-helmet`,
         `gatsby-transformer-json`,
         {

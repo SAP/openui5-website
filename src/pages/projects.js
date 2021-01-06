@@ -1,5 +1,4 @@
 import React from "react";
-import DefaultTemplate from "../templates/default";
 import Section from "../components/Section";
 import SEO from "../components/seo";
 import Text from "../components/Text";
@@ -10,7 +9,7 @@ import Icon from "../components/Icon";
 import Button from "../components/Button";
 
 const ProjectsPage = ({ data: { projectsJson, allOfficialProjectsJson, allCommunityProjectsJson, file } }) => (
-    <DefaultTemplate>
+    <>
         <SEO title={projectsJson.title} />
         <Section>
             <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{projectsJson.title}</Text>
@@ -71,7 +70,7 @@ const ProjectsPage = ({ data: { projectsJson, allOfficialProjectsJson, allCommun
                 </ListItem>
             </List>
         </Section>
-    </DefaultTemplate>
+    </>
 );
 
 export default ProjectsPage;

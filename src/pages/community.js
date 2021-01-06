@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import {graphql} from "gatsby";
 
-import DefaultTemplate from "../templates/default";
 import Section from "../components/Section";
 import SEO from "../components/seo";
 import Text from "../components/Text";
@@ -12,7 +11,7 @@ import Event from "../components/Event"
 
 
 const CommunityPage = ({ data: { communityJson: { title, channels, connect }, allEventsJson } }) => (
-    <DefaultTemplate>
+    <>
         <SEO title={title} />
         <Section>
             <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{title}</Text>
@@ -90,7 +89,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                 })}
             </List>
         </Section>
-    </DefaultTemplate>
+    </>
 );
 
 export default CommunityPage;
