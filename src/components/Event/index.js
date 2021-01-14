@@ -1,41 +1,50 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import styles from "./styles.module.css";
-import Link from "../Link";
-import Markdown from "../Markdown";
 
-const Event = ({ title, description, url, date, location, cancelled }) => {
-
-    return (
-        <div className={styles.Event}>
-            <div className={styles.EventTitle}>
-                {url ? <Link href={url} target="_blank" rel="noopener">{title}</Link> : title}
-                {cancelled ? " [CANCELLED]" : null}
+const Event = (props) => {
+  const {
+    title,
+    description,
+    date,
+    location,
+    logo,
+    emphasized,
+    showAddToCalendar,
+  } = props;
+  return (
+    <div className={classnames(
+      styles.Event,
+      emphasized ? styles.view_emphasized : null,
+    )}>
+      <div className={styles.Header}>
+        <div className={styles.HeaderTitle}>{title}</div>
+        <div className={styles.HeaderDescription}>{description}</div>
+      </div>
+      <div className={styles.Content}>
+        <div className={styles.Date} dangerouslySetInnerHTML={{__html: date }} />
+        <div className={styles.Location}>{location}</div>
+      </div>
+      {
+        showAddToCalendar
+          ? (
+            <div className={styles.AddToCalendar}>
+              + Add to calendar
             </div>
-            <div className={styles.EventLocation}>
-                {`${date} / ${location}`}
-            </div>
-            { description
-                ? <div className={styles.EventDescription}><Markdown source={description} /></div>
-                : null
-            }
-        </div>
-    );
+          )
+          : null
+      }
+    </div>
+  );
 };
 
 Event.defaultProps = {
-    description: null,
-    url: null,
-    cancelled: false,
+  emphasized: false
 };
 
 Event.propTypes = {
     title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    url: PropTypes.string,
-    date: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    cancelled: PropTypes.bool
 };
 
 export default Event;

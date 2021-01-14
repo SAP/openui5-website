@@ -12,6 +12,10 @@
         "name": "Projects"
     },
     {
+        "to": "/events/",
+        "name": "Events"
+    },
+    {
         "to": "/community/",
         "name": "Community"
     }

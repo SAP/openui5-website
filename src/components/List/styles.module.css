@@ -30,7 +30,7 @@
     margin-bottom: calc(-1 * var(--default-margin-half));
 
     & .ListItem {
-        flex-basis: 30%;
+        flex-basis: 32%;
         margin-bottom: var(--default-margin-half);
 
         @media (max-width: env(--screen-breakpoint-980)) {
