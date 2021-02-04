@@ -1,0 +1,38 @@
+.Content {
+  border-radius: 12px;
+  background-color: #f6fafd;
+  padding: 40px;
+}
+
+.Header {
+  flex: 1;
+
+  & .HeaderTitle {
+    font-size: 32px;
+    line-height: 1.2em;
+    font-weight: bold;
+  }
+
+  & .HeaderSubTitle {
+    font-size: 22px;
+    line-height: 1.2em;
+    margin-top: 12px;
+  }
+}
+
+.Speakers {
+  padding: 40px;
+}
+
+.SpeakersList {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

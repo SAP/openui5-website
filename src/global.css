@@ -1,7 +1,7 @@
 @import "./fonts/index.css";
 
 html {
-    font: 16px/24px "72-Regular", Arial;
+    font: 16px/24px "72", Arial;
  }
 
 *, *:before, *:after {

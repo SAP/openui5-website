@@ -7,67 +7,69 @@ import Text from "../components/Text";
 import Event from "../components/Event";
 import { List, ListItem } from "../components/List";
 
+const prepareData = (events) => {
+    return events.map(({ node }) => {
+        const {
+            logo,
+            ...rest
+        } = node.frontmatter;
 
+        return ({
+            ...rest,
+            logo: logo && logo.publicURL || null,
+            description: node.html
+        })
+    });
+};
 
-const CommunityPage = ({ data: { eventsJson: { title, upcomingTitle, pastTitle } } }) => (
-    <>
-        <SEO title={title} />
-        <Section>
-            <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{upcomingTitle}</Text>
-            <div style={{ width: "45%" }}>
-                <Event
-                    emphasized
-                    title="UI5ers live #04"
-                    description="30-minute interactive webcast"
-                    date="<b>January 14, 2021,</b> 15:15 — 15:45 CET"
-                    location="Online"
-                    logo="..."
-                    showAddToCalendar={true}
-                />
-            </div>
-            <div style={{ marginTop: "80px" }}>
-                <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>{pastTitle}</Text>
-                <List column="3" justifyContent="spaceBetween">
-                    <ListItem>
-                        <Event
-                            title="UI5ers live #03"
-                            description="30-minute interactive webcast"
-                            date="December 10"
-                            location="Online"
-                            logo="..."
-                        />
-                    </ListItem>
-                    <ListItem>
-                        <Event
-                            title="UI5ers live #02"
-                            description="30-minute interactive webcast"
-                            date="November 12"
-                            location="Online"
-                            logo="..."
-                        />
-                    </ListItem>
-                    <ListItem>
-                        <Event
-                            title="UI5ers live #01"
-                            description="30-minute interactive webcast"
-                            date="October 15"
-                            location="Online"
-                            logo="..."
-                        />
-                    </ListItem>
-                    <ListItem>
-                        <Event
-                            title="UI5con ON AIR 2020"
-                            date="July 9-10"
-                            location="Online"
-                            logo="..."
-                        />
-                    </ListItem>
+const CommunityPage = ({ data }) => {
+    const {
+        title,
+        upcomingTitle,
+        pastTitle
+    } = data.eventsJson;
+
+    const events = prepareData(data.allMarkdownRemark.edges);
+
+    const upcomingEvents = events.slice(0, 1);
+    const pastEvents = events.slice(1);
+
+    return (
+        <>
+            <SEO title={title} />
+            <Section>
+                <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{upcomingTitle}</Text>
+                <List column="2" justifyContent="spaceBetween">
+                    {
+                        upcomingEvents.map((event) => (
+                            <ListItem>
+                                <Event
+                                    emphasized
+                                    showAddToCalendar={true}
+                                    {...event}
+                                />
+                            </ListItem>
+                        ))
+                    }
                 </List>
-            </div>
-        </Section>
-    </>
-);
+                <div style={{ marginTop: "80px" }}>
+                    <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>{pastTitle}</Text>
+                    <List column="3" justifyContent="spaceBetween">
+                        {
+                            pastEvents.map((event) => (
+                                <ListItem>
+                                    <Event
+                                        {...event}
+                                    />
+                                </ListItem>
+                            ))
+                        }
+                    </List>
+                </div>
+            </Section>
+        </>
+    );
+};
 
 export default CommunityPage;
 
@@ -77,6 +79,38 @@ export const query = graphql`
             title
             upcomingTitle
             pastTitle
+        }
+        allMarkdownRemark(
+            sort: {
+            order: DESC,
+            fields: [frontmatter___startDate]
+            },
+            filter: {
+            fields: {
+                type: {
+                eq: "event"
+                }
+            }
+            }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        subTitle
+                        logo {
+                            publicURL
+                        }
+                        startDate
+                        endDate
+                        location
+                        speakers
+                        joinUrl
+                        recordingUrl
+                    }
+                    html
+                }
+            }
         }
     }
 `

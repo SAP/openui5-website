@@ -121,6 +121,19 @@ module.exports = {
               ],
             },
         },
+        {
+          resolve: 'gatsby-plugin-pathdata',
+          options: {
+            matchNodeType: 'MarkdownRemark',
+            extract: [
+              {
+                name: 'type',
+                selector: /.+\/data\/events\/.+\.md$/,
+                replacer: 'event'
+              }
+            ]
+          }
+        }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

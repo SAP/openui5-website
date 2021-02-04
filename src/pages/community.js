@@ -56,24 +56,6 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                 })
             }
         </Section>
-        <Section color="lightblue">
-            <Text size="2" id="events" style={{ marginBottom: "var(--default-margin-half)" }}>Events</Text>
-            <List column="1">
-                {
-                    allEventsJson.edges.map(({ node: { ...event }}, idx) => {
-                        return (
-                            <ListItem
-                                key={idx}
-                            >
-                                <Event
-                                    {...event}
-                                />
-                            </ListItem>
-                        );
-                    })
-                }
-            </List>
-        </Section>
         <Section>
             <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>{connect.title}</Text>
             <List column="3" justifyContent="spaceBetween">
@@ -120,17 +102,5 @@ export const query = graphql`
                 }
             }
         }
-        allEventsJson {
-            edges {
-              node {
-                title
-                description
-                url
-                date
-                location
-                cancelled
-              }
-            }
-          }
     }
 `

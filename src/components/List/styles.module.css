@@ -25,6 +25,20 @@
     }
 }
 
+/* 2 columns */
+.List.column_2 {
+    margin-bottom: calc(-1 * var(--default-margin-half));
+
+    & .ListItem {
+        flex-basis: 45%;
+        margin-bottom: var(--default-margin-half);
+
+        @media (max-width: env(--screen-breakpoint-568)) {
+            flex-basis: 100%;
+        }
+    }
+}
+
 /* 3 columns */
 .List.column_3 {
     margin-bottom: calc(-1 * var(--default-margin-half));

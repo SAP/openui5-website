@@ -28,6 +28,7 @@
     "gatsby-plugin-layout": "1.8.0",
     "gatsby-plugin-manifest": "^2.9.1",
     "gatsby-plugin-offline": "^3.7.1",
+    "gatsby-plugin-pathdata": "1.1.0",
     "gatsby-plugin-postcss": "^3.4.0",
     "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-plugin-sharp": "^2.11.2",
@@ -57,5 +58,8 @@
   "engines": {
     "node": "^14"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@ui5/webcomponents": "1.0.0-rc.11",
+    "@ui5/webcomponents-react": "0.13.1"
+  }
 }
