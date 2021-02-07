@@ -14,6 +14,7 @@ const Event = (props) => {
     endDate,
     location,
     logo,
+    speakers,
     emphasized,
     showAddToCalendar,
     url,
@@ -91,6 +92,7 @@ const Event = (props) => {
                 endDate,
                 location,
                 logo,
+                speakers
               }}
             />
           )

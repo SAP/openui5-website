@@ -44,7 +44,7 @@ export default GuidelinesPage;
 
 export const query = graphql`
   query {
-    markdownRemark {
+    markdownRemark (fields: {type: {eq: "page"}}, frontmatter: {name: {eq: "guideline"}}) {
       htmlAst
     }
   }

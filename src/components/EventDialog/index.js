@@ -21,6 +21,7 @@ const EventDialog = (props) => {
     endDate,
     location,
     logo,
+    speakers
   } = eventData;
 
   return (
@@ -35,36 +36,19 @@ const EventDialog = (props) => {
       <div className={styles.Speakers}>
         <Text size="5" style={{ marginBottom: "calc(var(--default-margin-half) / 2)" }}>Speakers</Text>
         <div className={styles.SpeakersList}>
-          <Speaker
-            name="Stefan Back"
-            company="SAP"
-            photo="https://www.cats.org.uk/media/1500/our-strategy-cover-image.jpg?width=400"
-            socialMedia={{
-              twitter: "...",
-              linkedin: "...",
-              github: "..."
-            }}
-          />
-          <Speaker
-            name="Peter Muessig"
-            company="SAP"
-            photo="./path/to/photo"
-            socialMedia={{
-              twitter: "...",
-              linkedin: "...",
-              github: "..."
-            }}
-          />
-          <Speaker
-            name="Oliver Pehnke"
-            company="eXXcellent Solutions GmbH"
-            photo="./path/to/photo"
-            socialMedia={{
-              twitter: "...",
-              linkedin: "...",
-              github: "..."
-            }}
-          />
+          {speakers.map((speaker, key) =>
+            <Speaker
+              key={key}
+              name={speaker.frontmatter.name}
+              company={speaker.frontmatter.company}
+              photo={speaker.frontmatter.photo ? speaker.frontmatter.photo.publicURL : null}
+              socialMedia={{
+                twitter: speaker.frontmatter.twitter,
+                linkedin: speaker.frontmatter.linkedin,
+                github: speaker.frontmatter.github
+              }}
+            />)
+          }
         </div>
       </div>
     </Dialog>

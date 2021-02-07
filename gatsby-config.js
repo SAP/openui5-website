@@ -130,6 +130,16 @@ module.exports = {
                 name: 'type',
                 selector: /.+\/data\/events\/.+\.md$/,
                 replacer: 'event'
+              },
+              {
+                name: 'type',
+                selector: /.+\/data\/persons\/.+\.md$/,
+                replacer: 'person'
+              },
+              {
+                name: 'type',
+                selector: /.+\/data\/pages\/.+\.md$/,
+                replacer: 'page'
               }
             ]
           }

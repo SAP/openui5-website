@@ -104,7 +104,21 @@ export const query = graphql`
                         startDate
                         endDate
                         location
-                        speakers
+                        speakers {
+                            ... on MarkdownRemark {
+                                frontmatter {
+                                    name
+                                    company
+                                    twitter
+                                    github
+                                    linkedin
+                                    photo {
+                                        publicURL
+                                    }
+                                }
+                                html
+                            }
+                        }
                         joinUrl
                         recordingUrl
                     }
