@@ -22,6 +22,16 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
           speakers: {
             type: "[Node]",
             resolve: (source, args, context, info) => {
+                let speakers = source.speakers
+
+                if (!speakers || (typeof speakers !== "string" && !Array.isArray(speakers))) {
+                    return []
+                }
+
+                if (typeof speakers === "string") {
+                    speakers = [speakers]
+                }
+
                 return context.nodeModel.runQuery({
                     type: `MarkdownRemark`,
                     query: {
@@ -33,7 +43,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
                             },
                             frontmatter: {
                                 name: {
-                                    in: source.speakers
+                                    in: speakers
                                 }
                             }
                         }
