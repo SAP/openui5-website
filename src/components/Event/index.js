@@ -7,18 +7,20 @@ import styles from "./styles.module.css";
 
 const Event = (props) => {
   const {
+    data,
+    emphasized,
+    showAddToCalendar,
+  } = props;
+
+  const {
     title,
     subTitle,
-    description,
     startDate,
     endDate,
     location,
     logo,
-    speakers,
-    emphasized,
-    showAddToCalendar,
     url,
-  } = props;
+  } = data;
 
   const [ isDialogOpen, setIsDialogOpen ] = useState(false);
   const addToCalendarRef = useRef();
@@ -71,7 +73,7 @@ const Event = (props) => {
                 <div className={styles.AddToCalendar} onClick={onCalendarClick} ref={addToCalendarRef}>
                   + Add to calendar
                 </div>
-                <AddToCalendarPopover isOpen={isPopoverOpen} targetRef={addToCalendarRef.current} />
+                <AddToCalendarPopover event={data} isOpen={isPopoverOpen} targetRef={addToCalendarRef.current} />
               </>
             )
             : null
@@ -84,16 +86,7 @@ const Event = (props) => {
               isOpen={isDialogOpen}
               onAfterClose={onAfterClose}
               showAddToCalendar={showAddToCalendar}
-              eventData={{
-                title,
-                subTitle,
-                description,
-                startDate,
-                endDate,
-                location,
-                logo,
-                speakers
-              }}
+              data={data}
             />
           )
           : null

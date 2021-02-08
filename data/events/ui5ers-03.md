@@ -1,15 +1,27 @@
 ---
-title: "UI5ers live #03"
-subTitle: 30-minute interactive webcast
+title: "UI5ers live (Dec '20)"
+external: true
+subTitle: 45 minute interactive webcast
 startDate: 2020-12-10 15:15 CET
-endDate: 2020-12-10 15:45 CET
+endDate: 2020-12-10 16:00 CET
 location: Online
 logo: ./logos/ui5ers.svg
 speakers:
   - Margot Wollny
-  - Andreas Kunz
+  - Stefan Beck
+  - Marita Kruempelmann
+  - Hansi Richstein
+  - Peter Muessig
 joinUrl: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/QEt4hkBFKXE
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This episode continues from where we left off in the last episode, so we will start off by presenting the results of our discussion on upcoming topics.
+
+Then we will share the latest news from the UI5 labs led by Stefan.
+
+Since many of you wanted to know more about SAP Fiori elements for OData V4, we invited Hans-Juergen Richstein and Marita Kruempelmann, Area Product Owners for SAP Fiori elements, to tell you more about their work.
+
+Another topic that was ranked very high are best practices. Therefore, we will regularly point out some special features, starting with the correct handling of module loading in UI5, explained by Peter.
+
+As this is the last episode for 2020, we want to wrap up with sharing our thoughts on 2020, our highlights and what kept us busy over the past months.

@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import generateHref from "./generator";
-
+import generateHref from "./generator"
 
 const isIE = () => {
     if (typeof window !== 'undefined') {
@@ -18,8 +17,7 @@ const onClickDownloadIE = (session) => {
     }
 }
 
-const CalendarButton = ({ session, type, className, children }) => {
-    const isIcs = ["outlook", "ical"].includes(type);
+const CalendarButton = ({ event, type, className, children }) => {
     return (
         <>
             {
@@ -28,24 +26,24 @@ const CalendarButton = ({ session, type, className, children }) => {
                         <a
                             className={className}
                             target="_blank"
-                            href={generateHref(type, session)}
+                            // href={generateHref(type, event)}
                         >{children}</a>
                     )
                     : null
             }
             {
-                isIcs && isIE()
-                    ? <a className={className} onClick={() => onClickDownloadIE(session)}>{children}</a>
+                type === 'ics' && isIE()
+                    ? <a className={className} onClick={() => onClickDownloadIE(event)}>{children}</a>
                     : null
             }
             {
-                isIcs && !isIE()
+                type === 'ics' && !isIE()
                     ? (
                         <a
                             className={className}
                             target="_blank"
-                            href={generateHref(type, session)}
-                            download={type === 'ics' ? `${session.title.replace(" ", "_")}.ics` : ''}
+                            // href={generateHref(type, event)}
+                            download={type === 'ics' ? `${event.title.replace(" ", "_")}.ics` : ''}
                         >{children}</a>
                     )
                     : null
@@ -54,15 +52,9 @@ const CalendarButton = ({ session, type, className, children }) => {
     );
 };
 
-CalendarButton.defaultProps = {
-    session: {},
-};
-
 CalendarButton.propTypes = {
-    // session: PropTypes.object.isRequired,
-    type: PropTypes.oneOf(["google", "office365", "outlook", "ical"]).isRequired,
-};
-
-
+    event: PropTypes.object.isRequired,
+    type: PropTypes.oneOf(["google", "office365", "ics"]).isRequired,
+}
 
 export default CalendarButton;

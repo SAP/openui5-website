@@ -1,15 +1,24 @@
 ---
-title: "UI5ers live #02"
-subTitle: 30-minute interactive webcast
+title: "UI5ers live (Nov '20)"
+external: true
+subTitle: 45 minute interactive webcast
 startDate: 2020-11-12 15:15 CET
-endDate: 2020-11-12 15:45 CET
+endDate: 2020-11-12 16:00 CET
 location: Online
 logo: ./logos/ui5ers.svg
 speakers:
-  - Margot Wollny
-  - Andreas Kunz
+  - Stefan Beck
+  - Nikolay Kolarov
+  - Tobias Hoffmann
+  - Peter Muessig
 joinUrl: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/QEt4hkBFKXE
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+You might have realized that UI5 1.83 has been skipped. Stefan will say a few words about the reasons for this at the beginning of this session.
+
+Afterwards Nikolay, accessibility expert for UI5, gives an overview of what has been done lately to align UI5 with the latest ARIA 1.1 specifications.
+
+We are happy that we can feature a contribution from the community already in this second episode of the webcast and welcome Tobias Hofmann to our round. He will review the contributions to OpenUI5 together with Peter.
+
+To conclude our webcast, we invite all participants to discuss with us topics of interest for the upcoming UI5ers live in December. To collect and rank the topics according to your level of interest, we will use an [idea collection board](https://app.sli.do/event/bw1oo15n/live/ideas). Everyone can access this board and share their opinions.

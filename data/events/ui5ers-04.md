@@ -1,15 +1,22 @@
 ---
-title: "UI5ers live #04"
-subTitle: 30-minute interactive webcast
+title: "UI5ers live (Jan '21)"
+external: true
+subTitle: 45 minute interactive webcast
 startDate: 2021-01-14 15:15 CET
-endDate: 2021-01-14 15:45 CET
+endDate: 2021-01-14 16:00 CET
 location: Online
 logo: ./logos/ui5ers.svg
 speakers:
-  - peter.muessig@sap.com
   - Stefan Beck
+  - Kristian Kralijc
+  - Peter Muessig
+  - Andreas Kunz
 joinUrl: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/QEt4hkBFKXE
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+We're rested and refreshed and ready for another chat with you! As always, we will start with latest news from the UI5 labs led by Stefan. One of the topics will be the discontinuation of support for IE11 starting with UI5 1.88.
+
+For our discussion on performance, we invited Kristian Kraljic, Technical Lead Architect of SAP for Me and the SAP ONE Support launchpad, to join our webcast. He will share with us how his team optimized the bootstrap flow to boost the performance of their UI5 app.
+
+Then we will take a closer look at the recently published full-stack sample app showcasing CAP, OData V4, and draft mode. Peter and Andreas, who were involved in this project, will guide us through the app and explain some basics, methods and tricks.

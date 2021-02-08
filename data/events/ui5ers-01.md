@@ -1,15 +1,25 @@
 ---
-title: "UI5ers live #01"
-subTitle: 30-minute interactive webcast
+title: "UI5ers live (Oct '20)"
+external: true
+subTitle: 45 minute interactive webcast
 startDate: 2020-11-12 15:15 CET
-endDate: 2020-11-12 15:45 CET
+endDate: 2020-11-12 16:00 CET
 location: Online
 logo: ./logos/ui5ers.svg
 speakers:
-  - Margot Wollny
-  - Andreas Kunz
+  - Thorsten Hochreuter
+  - Alexandar Mitsev
+  - Diana Mihaylova
 joinUrl: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/QEt4hkBFKXE
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Welcome to our new webcast series!
+
+In our first episode, we have some experts from our UI5 teams with us. First, Thorsten talks about what had to be done to upgrade UI5 to jQuery 3.5.1. This was not at all an easy thing. We introduced a compatibility layer to ensure that most of the existing application or control code won’t need any adjustment. Nevertheless, there are some things you should know to understand any current and possible future impact.
+
+The cards topic is actually not new but was already introduced at UI5con@SAP 2019. However, a lot has happened since then and Alexandar summarizes everything for us and demonstrates some of the latest features.
+
+With UI5 1.81, we introduced the badge control. Diana presents this new control and explains how you can use it.
+
+No registration needed, just join the webcast at the assigned time.

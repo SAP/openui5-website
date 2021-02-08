@@ -11,18 +11,31 @@ const prepareData = (events) => {
     return events.map(({ node }) => {
         const {
             logo,
+            speakers = [],
             ...rest
         } = node.frontmatter;
 
-        return ({
+        return {
             ...rest,
             logo: logo && logo.publicURL || null,
-            description: node.html
-        })
+            description: node.html,
+            speakers: speakers.map(speaker => {
+                const {
+                    photo,
+                    ...rest
+                } = speaker.frontmatter;
+
+                return {
+                    ...rest,
+                    photo: photo && photo.publicURL || null,
+                    description: speaker.html,
+                };
+            })
+        };
     });
 };
 
-const CommunityPage = ({ data }) => {
+const EventsPage = ({ data }) => {
     const {
         title,
         upcomingTitle,
@@ -46,7 +59,7 @@ const CommunityPage = ({ data }) => {
                                 <Event
                                     emphasized
                                     showAddToCalendar={true}
-                                    {...event}
+                                    data={event}
                                 />
                             </ListItem>
                         ))
@@ -58,9 +71,7 @@ const CommunityPage = ({ data }) => {
                         {
                             pastEvents.map((event) => (
                                 <ListItem>
-                                    <Event
-                                        {...event}
-                                    />
+                                    <Event data={event} />
                                 </ListItem>
                             ))
                         }
@@ -71,7 +82,7 @@ const CommunityPage = ({ data }) => {
     );
 };
 
-export default CommunityPage;
+export default EventsPage;
 
 export const query = graphql`
     query {
@@ -105,7 +116,7 @@ export const query = graphql`
                         endDate
                         location
                         speakers {
-                            ... on MarkdownRemark {
+                            ...on MarkdownRemark {
                                 frontmatter {
                                     name
                                     company

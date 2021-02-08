@@ -1,22 +1,66 @@
+@keyframes iconUp {
+  0% {
+      opacity: 0;
+      transform: translateY(50px) ;
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0) ;
+  }
+}
+
+.Popover {
+  --sapContent_Shadow2: 0 3px 12px 0 rgba(49, 51, 65, 0.12);
+  --sapContent_Shadow3: none;
+}
+
+.Content {
+  display: flex;
+}
+
 .CalendarButton {
-  color: #fff;
+  color: #1d1d1d;
   text-decoration: none;
   opacity: 0;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+
+  &:hover {
+    border-radius: 4px;
+    background-color: #e7f2fb;
+  }
+
+  &:active {
+    color: #1d1d1d80;
+
+    & > * {
+      transform: translateY(8px);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &.animate {
-      opacity: 0;
+    opacity: 0;
 
-      &.icon_1 {
-          animation: iconUp 0.3s ease-out 0s 1 normal forwards;
-      }
-      &.icon_2 {
-          animation: iconUp 0.3s ease-out 0.1s 1 normal forwards;
-      }
-      &.icon_3 {
-          animation: iconUp 0.3s ease-out 0.2s 1 normal forwards;
-      }
-      &.icon_4 {
-          animation: iconUp 0.3s ease-out 0.3s 1 normal forwards;
-      }
+    &.icon_1 {
+      animation: iconUp 0.3s ease-out 0s 1 normal forwards;
+    }
+    &.icon_2 {
+      animation: iconUp 0.3s ease-out 0.1s 1 normal forwards;
+    }
+    &.icon_3 {
+      animation: iconUp 0.3s ease-out 0.2s 1 normal forwards;
+    }
+    &.icon_4 {
+      animation: iconUp 0.3s ease-out 0.3s 1 normal forwards;
+    }
   }
 }

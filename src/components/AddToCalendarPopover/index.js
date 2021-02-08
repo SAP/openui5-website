@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 import Popover from "../Popover";
 import CalendarButton from "../CalendarButton";
-import CalendarIcon from "./CalendarIcon"
+import IconText from "../IconText"
 import styles from "./styles.module.css";
 
+// Icons:
+import GoogleIcon from "./images/google.svg";
+import Office365Icon from "./images/office365.svg";
+import OutlookIcon from "./images/outlook.svg";
+import iCalIcon from "./images/ical.png";
 
-const AddToCalendarPopover = ({ isOpen, targetRef }) => {
-  // const [classNames, setClassNames] = useState([]);
 
-  // const onAfterShow = () => {
-  //     setClassNames([styleModule.animate]);
-  // };
+const AddToCalendarPopover = ({ isOpen, event, targetRef }) => {
+  const [classNames, setClassNames] = useState([]);
 
-  // const onAfterHide = () => {
-  //     setClassNames([]);
-  // };
+  const onAfterOpen = () => {
+    setClassNames([styles.animate]);
+  };
+
+  const onAfterClose = () => {
+    setClassNames([]);
+  };
 
   return (
     <Popover
@@ -24,68 +30,56 @@ const AddToCalendarPopover = ({ isOpen, targetRef }) => {
       horizontalAlign="Left"
       targetRef={targetRef}
       noArrow={true}
-      // onBeforeClose={togglePopover}
+      onAfterOpen={onAfterOpen}
+      onAfterClose={onAfterClose}
       className={styles.Popover}
     >
-      {/* <CalendarButton
-          type="google"
-          className={styles.CalendarButton}
-      />
-      <CalendarButton
-          type="office365"
-          className={styles.CalendarButton}
-      />
-      <CalendarButton
-          type="outlook"
-          className={styles.CalendarButton}
-      />
-      <CalendarButton
-          type="ical"
-          className={styles.CalendarButton}
-      /> */}
-      <CalendarButton
-          type="google"
-          className={classnames(
-              styles.CalendarButton,
-              styles.icon_1,
-              // ...classNames
-          )}
-      >
-          <CalendarIcon type="google" />
-      </CalendarButton>
-      {/* <CalendarButton
-          type="office365"
-          session={session}
-          className={classnames(
-              styles.CalendarButton,
-              styles.icon_2,
-              ...classNames
-          )}
-      >
-          Office 365
-      </CalendarButton>
-      <CalendarButton
-          type="ics"
-          session={session}
-          className={classnames(
-              styles.CalendarButton,
-              styles.icon_3,
-              ...classNames
-          )}
-      >
-          Apple iCal
-      </CalendarButton>
-      <CalendarButton
-          type="ics"
-          session={session}
-          className={classnames(
-              styles.CalendarButton,
-              styles.icon_4,
-              ...classNames
-          )}
-      >
-          Outlook
-      </CalendarButton> */}
+      <div className={styles.Content}>
+        <CalendarButton
+            type="google"
+            event={event}
+            className={classnames(
+                styles.CalendarButton,
+                styles.icon_1,
+                ...classNames
+            )}
+        >
+            <IconText icon={<img src={GoogleIcon}/>} text="Google" />
+        </CalendarButton>
+        <CalendarButton
+            type="office365"
+            event={event}
+            className={classnames(
+                styles.CalendarButton,
+                styles.icon_2,
+                ...classNames
+            )}
+        >
+            <IconText icon={<img src={Office365Icon}/>} text="Office 365" />
+        </CalendarButton>
+        <CalendarButton
+            type="ics"
+            event={event}
+            className={classnames(
+                styles.CalendarButton,
+                styles.icon_3,
+                ...classNames
+            )}
+        >
+            <IconText icon={<img src={iCalIcon}/>} text="iCal" />
+        </CalendarButton>
+        <CalendarButton
+            type="ics"
+            event={event}
+            className={classnames(
+                styles.CalendarButton,
+                styles.icon_4,
+                ...classNames
+            )}
+        >
+            <IconText icon={<img src={OutlookIcon}/>} text="Outlook" />
+        </CalendarButton>
+      </div>
     </Popover>
   );
 };

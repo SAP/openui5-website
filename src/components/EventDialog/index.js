@@ -5,10 +5,11 @@ import Text from "../Text";
 import classnames from "classnames";
 import styles from "./styles.module.css";
 import Speaker from "./Speaker";
+import _ from "lodash";
 
 const EventDialog = (props) => {
   const {
-    eventData,
+    data,
     showAddToCalendar,
     ...rest
   } = props;
@@ -22,7 +23,7 @@ const EventDialog = (props) => {
     location,
     logo,
     speakers
-  } = eventData;
+  } = data;
 
   return (
     <Dialog {...rest}>
@@ -33,24 +34,23 @@ const EventDialog = (props) => {
         </div>
         <div className={styles.Description}>{description}</div>
       </div>
-      <div className={styles.Speakers}>
-        <Text size="5" style={{ marginBottom: "calc(var(--default-margin-half) / 2)" }}>Speakers</Text>
-        <div className={styles.SpeakersList}>
-          {speakers.map((speaker, key) =>
-            <Speaker
-              key={key}
-              name={speaker.frontmatter.name}
-              company={speaker.frontmatter.company}
-              photo={speaker.frontmatter.photo ? speaker.frontmatter.photo.publicURL : null}
-              socialMedia={{
-                twitter: speaker.frontmatter.twitter,
-                linkedin: speaker.frontmatter.linkedin,
-                github: speaker.frontmatter.github
-              }}
-            />)
-          }
-        </div>
-      </div>
+      {
+        _.isEmpty(speakers)
+          ? null
+          : (
+            <div className={styles.Speakers}>
+              <Text size="5" style={{ marginBottom: "calc(var(--default-margin-half) / 2)" }}>Speakers</Text>
+              <div className={styles.SpeakersList}>
+                {speakers.map((speaker, key) =>
+                  <Speaker
+                    key={key}
+                    {...speaker}
+                  />)
+                }
+              </div>
+            </div>
+          )
+      }
     </Dialog>
   );
 };

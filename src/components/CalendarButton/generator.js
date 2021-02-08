@@ -12,7 +12,6 @@ const getLocation = (session) => {
 };
 
 const generator = {
-
     google: function (session) {
         let startTime = formatTime(session.startTime);
         let endTime = formatTime(session.endTime);
@@ -28,7 +27,6 @@ const generator = {
             '&sprop=&sprop=name:'
         ].join(''));
     },
-
     office365: function (session) {
         let startTime = formatTime(session.startTime);
         let endTime = formatTime(session.endTime);
@@ -44,7 +42,6 @@ const generator = {
             '&body=' + session.description + '\n\n ' + getLocation(session)
         ].join(''));
     },
-
     ics: function (session) {
         let startTime = formatTime(session.startTime);
         let endTime = formatTime(session.endTime);
@@ -64,7 +61,6 @@ const generator = {
             'END:VCALENDAR'].join('\n');
 
         return encodeURI('data:text/calendar;charset=utf8,' + cal);
-
     }
 };
 

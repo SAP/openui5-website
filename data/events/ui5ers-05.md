@@ -1,16 +1,21 @@
 ---
-title: "UI5ers live #05"
+title: "UI5ers live (Feb '21)"
 external: true
-subTitle: 30-minute interactive webcast
+subTitle: 45 minute interactive webcast
 startDate: 2021-02-11 15:15 CET
 endDate: 2021-02-11 16:00 CET
 location: Online
 logo: ./logos/ui5ers.svg
 speakers:
-  - Peter Muessig
   - Stefan Beck
+  - Volker Buzek
+  - Marco Beier
+  - Matthias Osswald
+  - Peter Muessig
 joinUrl: https://sap-se.zoom.com/j/94833714827
-recordingUrl: https://youtu.be/QEt4hkBFKXE
+
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In this episode, everything revolves around custom libraries. We have therefore invited Volker Buzek and Marco Beier from the community to our talk. Together with Peter and Matthias Osswald they started a project aimed at providing a general concept how custom libraries can be reused in UI5 projects. It also addresses how to create libraries so they can be published and finally consumed (as nmp dependencies).
+
+As always, there are also news from the UI5 labs led by Stefan. One of the topics to be covered is the planned removal of outdated UI5 resources from the CDN in Q3/2021.

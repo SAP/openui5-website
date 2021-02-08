@@ -5,7 +5,7 @@ import Text from "../../Text";
 import Avatar from "../../Avatar";
 import styles from "./styles.module.css";
 
-const EventDialog = (props) => {
+const Speaker = (props) => {
   const {
     name,
     company,
@@ -27,10 +27,10 @@ const EventDialog = (props) => {
   );
 };
 
-EventDialog.defaultProps = {
+Speaker.defaultProps = {
 };
 
-EventDialog.propTypes = {
+Speaker.propTypes = {
 };
 
-export default EventDialog;
+export default Speaker;
