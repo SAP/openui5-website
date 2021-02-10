@@ -1,17 +1,16 @@
 ---
 title: "UI5ers live (Mar '21)"
-external: true
 subTitle: 45 minute interactive webcast
 startDate: 2021-03-11 15:15 CET
 endDate: 2021-03-11 16:00 CET
-location: Online
+location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:
   - Stefan Beck
   - Peter Muessig
   - Andreas Kunz
   - Margot Wollny
-joinUrl: https://sap-se.zoom.com/j/94833714827
+url: https://sap-se.zoom.com/j/94833714827
 ---
 
 The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here as soon as we're ready.

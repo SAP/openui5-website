@@ -1,18 +1,17 @@
 ---
 title: "UI5ers live (Jan '21)"
-external: true
 subTitle: 45 minute interactive webcast
 startDate: 2021-01-14 15:15 CET
 endDate: 2021-01-14 16:00 CET
-location: Online
+location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:
   - Stefan Beck
   - Kristian Kralijc
   - Peter Muessig
   - Andreas Kunz
-joinUrl: https://sap-se.zoom.com/j/94833714827
-recordingUrl: https://youtu.be/QEt4hkBFKXE
+url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/zQL1g1-kwg8
 ---
 
 We're rested and refreshed and ready for another chat with you! As always, we will start with latest news from the UI5 labs led by Stefan. One of the topics will be the discontinuation of support for IE11 starting with UI5 1.88.

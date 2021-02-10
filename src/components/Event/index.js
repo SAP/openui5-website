@@ -20,6 +20,8 @@ const Event = (props) => {
     location,
     logo,
     url,
+    recordingUrl,
+    external
   } = data;
 
   const [ isDialogOpen, setIsDialogOpen ] = useState(false);
@@ -27,20 +29,25 @@ const Event = (props) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
   const onClick = () => {
-    if (url) {
-      // open URL
+    if (external) {
+      const win = window.open(url || recordingUrl, "_blank");
+      win.focus();
     } else {
       setIsDialogOpen(true);
     }
   };
-  const onAfterClose = () => {
+  const onAfterDialogClose = () => {
     setIsDialogOpen(false);
+  };
+
+  const onAfterPopoverClose = () => {
+    setIsPopoverOpen(false);
   };
 
   const onCalendarClick = (e) => {
     setIsPopoverOpen((isPopoverOpen) => !isPopoverOpen);
     e.stopPropagation();
-  }
+  };
 
   return (
     <>
@@ -73,18 +80,23 @@ const Event = (props) => {
                 <div className={styles.AddToCalendar} onClick={onCalendarClick} ref={addToCalendarRef}>
                   + Add to calendar
                 </div>
-                <AddToCalendarPopover event={data} isOpen={isPopoverOpen} targetRef={addToCalendarRef.current} />
+                <AddToCalendarPopover
+                  event={data}
+                  isOpen={isPopoverOpen}
+                  targetRef={addToCalendarRef.current}
+                  onAfterClose={onAfterPopoverClose}
+                />
               </>
             )
             : null
         }
       </div>
       {
-        !url
+        !external
           ? (
             <EventDialog
               isOpen={isDialogOpen}
-              onAfterClose={onAfterClose}
+              onAfterClose={onAfterDialogClose}
               showAddToCalendar={showAddToCalendar}
               data={data}
             />
@@ -100,7 +112,7 @@ Event.defaultProps = {
 };
 
 Event.propTypes = {
-    title: PropTypes.string.isRequired,
+    data: PropTypes.object.isRequired,
 };
 
 export default Event;

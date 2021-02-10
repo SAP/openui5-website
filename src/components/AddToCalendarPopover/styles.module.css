@@ -1,11 +1,11 @@
 @keyframes iconUp {
   0% {
       opacity: 0;
-      transform: translateY(50px) ;
+      transform: translateY(50px);
   }
   100% {
       opacity: 1;
-      transform: translateY(0) ;
+      transform: translateY(0);
   }
 }
 
@@ -16,6 +16,7 @@
 
 .Content {
   display: flex;
+  overflow: hidden;
 }
 
 .CalendarButton {
@@ -48,8 +49,6 @@
   }
 
   &.animate {
-    opacity: 0;
-
     &.icon_1 {
       animation: iconUp 0.3s ease-out 0s 1 normal forwards;
     }

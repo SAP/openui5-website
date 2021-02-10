@@ -6,6 +6,8 @@ import SEO from "../components/seo";
 import Text from "../components/Text";
 import Event from "../components/Event";
 import { List, ListItem } from "../components/List";
+import Grid from "../components/Grid";
+
 
 const prepareData = (events) => {
     return events.map(({ node }) => {
@@ -44,38 +46,32 @@ const EventsPage = ({ data }) => {
 
     const events = prepareData(data.allMarkdownRemark.edges);
 
-    const upcomingEvents = events.slice(0, 1);
-    const pastEvents = events.slice(1);
+    const upcomingEvents = events.slice(0, 2);
+    const pastEvents = events.slice(2);
 
     return (
         <>
             <SEO title={title} />
             <Section>
                 <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{upcomingTitle}</Text>
-                <List column="2" justifyContent="spaceBetween">
+                <Grid column="2">
                     {
                         upcomingEvents.map((event) => (
-                            <ListItem>
-                                <Event
-                                    emphasized
-                                    showAddToCalendar={true}
-                                    data={event}
-                                />
-                            </ListItem>
+                            <Event
+                                emphasized
+                                showAddToCalendar={true}
+                                data={event}
+                            />
                         ))
                     }
-                </List>
+                </Grid>
                 <div style={{ marginTop: "80px" }}>
                     <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>{pastTitle}</Text>
-                    <List column="3" justifyContent="spaceBetween">
+                    <Grid column="3">
                         {
-                            pastEvents.map((event) => (
-                                <ListItem>
-                                    <Event data={event} />
-                                </ListItem>
-                            ))
+                            pastEvents.map((event) => <Event data={event} />)
                         }
-                    </List>
+                    </Grid>
                 </div>
             </Section>
         </>
@@ -109,6 +105,7 @@ export const query = graphql`
                     frontmatter {
                         title
                         subTitle
+                        external
                         logo {
                             publicURL
                         }
@@ -130,7 +127,7 @@ export const query = graphql`
                                 html
                             }
                         }
-                        joinUrl
+                        url
                         recordingUrl
                     }
                     html

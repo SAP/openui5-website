@@ -12,15 +12,24 @@ import OutlookIcon from "./images/outlook.svg";
 import iCalIcon from "./images/ical.png";
 
 
-const AddToCalendarPopover = ({ isOpen, event, targetRef }) => {
+const AddToCalendarPopover = (props) => {
+  const {
+    isOpen,
+    event,
+    targetRef,
+    onAfterOpen,
+    onAfterClose,
+  } = props;
   const [classNames, setClassNames] = useState([]);
 
-  const onAfterOpen = () => {
+  const _onAfterOpen = () => {
     setClassNames([styles.animate]);
+    onAfterOpen();
   };
 
-  const onAfterClose = () => {
+  const _onAfterClose = () => {
     setClassNames([]);
+    onAfterClose();
   };
 
   return (
@@ -30,11 +39,11 @@ const AddToCalendarPopover = ({ isOpen, event, targetRef }) => {
       horizontalAlign="Left"
       targetRef={targetRef}
       noArrow={true}
-      onAfterOpen={onAfterOpen}
-      onAfterClose={onAfterClose}
+      onAfterOpen={_onAfterOpen}
+      onAfterClose={_onAfterClose}
       className={styles.Popover}
     >
-      <div className={styles.Content}>
+      <div className={styles.Content} onClick={(e) => e.stopPropagation()}>
         <CalendarButton
             type="google"
             event={event}
@@ -82,6 +91,11 @@ const AddToCalendarPopover = ({ isOpen, event, targetRef }) => {
       </div>
     </Popover>
   );
+};
+
+AddToCalendarPopover.defaultProps = {
+  onAfterOpen: () => {},
+  onAfterClose: () => {},
 };
 
 export default AddToCalendarPopover;

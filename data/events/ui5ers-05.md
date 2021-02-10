@@ -1,10 +1,9 @@
 ---
 title: "UI5ers live (Feb '21)"
-external: true
 subTitle: 45 minute interactive webcast
 startDate: 2021-02-11 15:15 CET
 endDate: 2021-02-11 16:00 CET
-location: Online
+location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:
   - Stefan Beck
@@ -12,7 +11,7 @@ speakers:
   - Marco Beier
   - Matthias Osswald
   - Peter Muessig
-joinUrl: https://sap-se.zoom.com/j/94833714827
+url: https://sap-se.zoom.com/j/94833714827
 
 ---
 

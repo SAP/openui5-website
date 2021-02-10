@@ -26,7 +26,7 @@ const CalendarButton = ({ event, type, className, children }) => {
                         <a
                             className={className}
                             target="_blank"
-                            // href={generateHref(type, event)}
+                            href={generateHref(type, event)}
                         >{children}</a>
                     )
                     : null
@@ -42,7 +42,7 @@ const CalendarButton = ({ event, type, className, children }) => {
                         <a
                             className={className}
                             target="_blank"
-                            // href={generateHref(type, event)}
+                            href={generateHref(type, event)}
                             download={type === 'ics' ? `${event.title.replace(" ", "_")}.ics` : ''}
                         >{children}</a>
                     )

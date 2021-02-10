@@ -2,49 +2,44 @@ const formatTime = (date) => {
     return date ? new Date(date).toISOString().replace(/-|:|\.\d+/g, '') : '';
 };
 
-const getLocation = (session) => {
-    if (session.type === 'pre_event') {
-        const link = session.presentationLinks.find(({linkType}) => linkType === 'zoom').url;
-        return `ZOOM Meeting: ${link}`;
-    } else {
-        return 'Broadcast: https://broadcast.co.sap.com/go/ui5con';
-    }
+const getJoinLink = (url) => {
+    return 'Join: ' + url;
 };
 
 const generator = {
-    google: function (session) {
-        let startTime = formatTime(session.startTime);
-        let endTime = formatTime(session.endTime);
+    google: function (event) {
+        let startTime = formatTime(event.startTime);
+        let endTime = formatTime(event.endTime);
 
         return encodeURI([
             'https://www.google.com/calendar/render',
             '?action=TEMPLATE',
-            '&text=' + session.title,
+            '&text=' + event.title,
             '&dates=' + startTime ,
             '/' + endTime,
-            '&location='+getLocation(session),
-            '&details=' + session.description + '\n\n ' + getLocation(session),
+            '&location='+ event.location,
+            '&details=' + event.description + '\n\n ' + getJoinLink(event.url),
             '&sprop=&sprop=name:'
         ].join(''));
     },
-    office365: function (session) {
-        let startTime = formatTime(session.startTime);
-        let endTime = formatTime(session.endTime);
+    office365: function (event) {
+        let startTime = formatTime(event.startTime);
+        let endTime = formatTime(event.endTime);
 
         return encodeURI([
             'https://outlook.office365.com/owa/',
             '?path=/calendar/action/compose',
             '&rru=addevent',
-            '&subject=' + session.title,
+            '&subject=' + event.title,
             '&startdt=' + startTime,
             '&enddt=' + endTime,
-            '&location=' + getLocation(session),
-            '&body=' + session.description + '\n\n ' + getLocation(session)
+            '&location=' + event.location,
+            '&body=' + event.description + '\n\n ' + getJoinLink(event.url)
         ].join(''));
     },
-    ics: function (session) {
-        let startTime = formatTime(session.startTime);
-        let endTime = formatTime(session.endTime);
+    ics: function (event) {
+        let startTime = formatTime(event.startTime);
+        let endTime = formatTime(event.endTime);
 
         var cal = [
             'BEGIN:VCALENDAR',
@@ -53,10 +48,10 @@ const generator = {
             // 'URL:' + document.URL, work without it. Not sure if it is required...
             'DTSTART:' + startTime,
             'DTEND:' + endTime,
-            'SUMMARY:' + session.title,
-            'LOCATION:' + getLocation(session),
-            'DESCRIPTION:' + session.description + '\\n\\n ' + getLocation(session),
-            'UID:' + session.id,
+            'SUMMARY:' + event.title,
+            'LOCATION:' + event.location,
+            'DESCRIPTION:' + event.description + '\\n\\n ' + getJoinLink(event.url),
+            'UID:' + event.id,
             'END:VEVENT',
             'END:VCALENDAR'].join('\n');
 
@@ -65,6 +60,6 @@ const generator = {
 };
 
 
-export default (sType, session) => {
-    return generator[sType] ? generator[sType](session) : "";
+export default (sType, event) => {
+    return generator[sType] ? generator[sType](event) : "";
 }

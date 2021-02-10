@@ -1,8 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 import { Popover as Ui5Popover } from "@ui5/webcomponents-react/lib/Popover";
 import { PopoverPlacementType } from "@ui5/webcomponents-react/lib/PopoverPlacementType";
 import classnames from "classnames";
+import getPortalNode from "../../utils/getPortalNode";
 import styles from "./styles.module.css";
+
+const PORTAL_ID = "app-popovers";
 
 const Popover = ({
   isOpen,
@@ -39,20 +43,29 @@ const Popover = ({
     }
   }, [isOpen, targetRef]);
 
-  console.log("isOpen => ", isOpen);
-
-  return isOpen ? (
-    <Ui5Popover
-      ref={ref}
-      onAfterOpen={_onAfterOpen}
-      onAfterClose={_onAfterClose}
-      className={classnames(...classNameList, ...className.split(" "))}
-      placementType={PopoverPlacementType[placementType]}
-      {...props}
-    >
-      {children}
-    </Ui5Popover>
-  ) : null;
+  return (
+      ReactDOM.createPortal(
+        <>
+          {
+            isOpen
+            ? (
+              <Ui5Popover
+                ref={ref}
+                onAfterOpen={_onAfterOpen}
+                onAfterClose={_onAfterClose}
+                className={classnames(...classNameList, ...className.split(" "))}
+                placementType={PopoverPlacementType[placementType]}
+                {...props}
+              >
+                {children}
+              </Ui5Popover>
+            )
+            : null
+          }
+        </>,
+        getPortalNode(PORTAL_ID)
+      )
+  );
 };
 
 export default Popover;

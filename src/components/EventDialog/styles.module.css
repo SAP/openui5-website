@@ -36,3 +36,22 @@
     }
   }
 }
+
+.Description {
+  & a {
+    transition: color 0.2s ease-out;
+    text-decoration: none;
+
+    &:link, &:active, &:visited {
+        transition: color 0.2s ease-out;
+        color: #1873b4;
+    }
+    &:hover {
+        border-bottom: 1px solid #b9d5e8;
+    }
+  }
+}
+
+.Actions {
+  margin: 40px 0 -20px;
+}

@@ -1,10 +1,9 @@
 ---
 title: "UI5ers live (Dec '20)"
-external: true
 subTitle: 45 minute interactive webcast
 startDate: 2020-12-10 15:15 CET
 endDate: 2020-12-10 16:00 CET
-location: Online
+location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:
   - Margot Wollny
@@ -12,8 +11,8 @@ speakers:
   - Marita Kruempelmann
   - Hansi Richstein
   - Peter Muessig
-joinUrl: https://sap-se.zoom.com/j/94833714827
-recordingUrl: https://youtu.be/QEt4hkBFKXE
+url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/yevYCV5i5z8
 ---
 
 This episode continues from where we left off in the last episode, so we will start off by presenting the results of our discussion on upcoming topics.

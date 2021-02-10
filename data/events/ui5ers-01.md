@@ -1,17 +1,16 @@
 ---
 title: "UI5ers live (Oct '20)"
-external: true
 subTitle: 45 minute interactive webcast
 startDate: 2020-11-12 15:15 CET
 endDate: 2020-11-12 16:00 CET
-location: Online
+location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:
   - Thorsten Hochreuter
   - Alexandar Mitsev
   - Diana Mihaylova
-joinUrl: https://sap-se.zoom.com/j/94833714827
-recordingUrl: https://youtu.be/QEt4hkBFKXE
+url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/Hw6-ICD7CP0
 ---
 
 Welcome to our new webcast series!
