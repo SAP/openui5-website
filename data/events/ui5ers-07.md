@@ -1,8 +1,8 @@
 ---
 title: "UI5ers live (Apr '21)"
 subTitle: 45 minute interactive webcast
-startDate: 2021-04-08 15:15 CEST
-endDate: 2021-04-08 16:00 CEST
+startDate: 2021-04-08 15:15 (CEST)
+endDate: 2021-04-08 16:00 (CEST)
 location: Online
 logo: ./logos/ui5ers.svg
 speakers:
@@ -10,7 +10,7 @@ speakers:
   - Peter.Muessig
   - Andreas.Kunz
   - Margot.Wollny
-joinUrl: https://sap-se.zoom.com/j/94833714827
+url: https://sap-se.zoom.com/j/94833714827
 ---
 
 The agenda is not finalized yet, but we some good ideas already up our sleeves and will publish them here once confirmed!

@@ -54,6 +54,11 @@ const Event = (props) => {
     win.focus();
     e.stopPropagation();
   };
+  let eventDate = new Date(startDate);
+  let monthFormatter = new Intl.DateTimeFormat('en-GB', {month: "long"})
+  let dayFormatter = new Intl.DateTimeFormat('en-GB', {day: "numeric"})
+  let yearFormatter = new Intl.DateTimeFormat('en-GB', {year: "numeric"})
+  let timeFormatter = new Intl.DateTimeFormat('en-GB', {hour: "numeric", minute: "numeric", timeZoneName: "short"})
 
   return (
     <>
@@ -76,7 +81,7 @@ const Event = (props) => {
           }
         </div>
         <div className={styles.Content}>
-          <div className={styles.Date} dangerouslySetInnerHTML={{__html: startDate }} />
+          <div className={styles.Date}>{`${monthFormatter.format(eventDate)} ${dayFormatter.format(eventDate)}, ${yearFormatter.format(eventDate)}, ${timeFormatter.format(eventDate)}`}</div>
           <div className={styles.Location}>{location}</div>
         </div>
         {

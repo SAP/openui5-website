@@ -1,8 +1,8 @@
 ---
 title: "UI5ers live (Dec '20)"
 subTitle: 45 minute interactive webcast
-startDate: 2020-12-10 15:15 CET
-endDate: 2020-12-10 16:00 CET
+startDate: 2020-12-10 15:15 (CET)
+endDate: 2020-12-10 16:00 (CET)
 location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:

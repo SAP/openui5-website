@@ -1,8 +1,8 @@
 ---
 title: "UI5ers live (Feb '21)"
 subTitle: 45 minute interactive webcast
-startDate: 2021-02-11 15:15 CET
-endDate: 2021-02-11 16:00 CET
+startDate: 2021-02-11 15:15 (CET)
+endDate: 2021-02-11 16:00 (CET)
 location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:

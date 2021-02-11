@@ -1,6 +1,5 @@
 const formatTime = (date, bReplaceColon) => {
     if (date) {
-        date = date.replace("CET", "(CET)");
         let sDate = new Date(date).toISOString()
         return bReplaceColon ? sDate.replace(/-|:|\.\d+/g, '') : sDate;
     }
