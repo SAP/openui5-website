@@ -4,6 +4,7 @@ import classnames from "classnames";
 import Text from "../../Text";
 import Avatar from "../../Avatar";
 import styles from "./styles.module.css";
+import "@ui5/webcomponents-icons/dist/employee";
 
 const Speaker = (props) => {
   const {
@@ -16,6 +17,7 @@ const Speaker = (props) => {
     <div className={styles.Speaker}>
       <Avatar
         image={photo}
+        icon="employee"
         className={styles.Avatar}
       />
       <div className={styles.Content}>

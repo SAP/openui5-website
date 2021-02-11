@@ -49,6 +49,12 @@ const Event = (props) => {
     e.stopPropagation();
   };
 
+  const onJoinClick = (e) => {
+    const win = window.open(url, "_blank");
+    win.focus();
+    e.stopPropagation();
+  };
+
   return (
     <>
       <div
@@ -74,7 +80,7 @@ const Event = (props) => {
           <div className={styles.Location}>{location}</div>
         </div>
         {
-          showAddToCalendar
+          showAddToCalendar && title !== "UI5ers live (Feb '21)"
             ? (
               <>
                 <div className={styles.AddToCalendar} onClick={onCalendarClick} ref={addToCalendarRef}>
@@ -87,6 +93,15 @@ const Event = (props) => {
                   onAfterClose={onAfterPopoverClose}
                 />
               </>
+            )
+            : null
+        }
+        {
+          title === "UI5ers live (Feb '21)"
+            ? (
+              <div className={styles.AddToCalendar} onClick={onJoinClick}>
+                Join now
+              </div>
             )
             : null
         }

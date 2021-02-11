@@ -45,8 +45,8 @@ const EventsPage = ({ data }) => {
 
     const events = prepareData(data.allMarkdownRemark.edges);
 
-    const upcomingEvents = events.slice(0, 2);
-    const pastEvents = events.slice(2);
+    const upcomingEvents = events.slice(0, 3).reverse();
+    const pastEvents = events.slice(3);
 
     return (
         <>
