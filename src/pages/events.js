@@ -5,7 +5,6 @@ import Section from "../components/Section";
 import SEO from "../components/seo";
 import Text from "../components/Text";
 import Event from "../components/Event";
-import { List, ListItem } from "../components/List";
 import Grid from "../components/Grid";
 
 
@@ -56,8 +55,9 @@ const EventsPage = ({ data }) => {
                 <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{upcomingTitle}</Text>
                 <Grid column="2">
                     {
-                        upcomingEvents.map((event) => (
+                        upcomingEvents.map((event, key) => (
                             <Event
+                                key={key}
                                 emphasized
                                 showAddToCalendar={true}
                                 data={event}
@@ -69,7 +69,7 @@ const EventsPage = ({ data }) => {
                     <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>{pastTitle}</Text>
                     <Grid column="3">
                         {
-                            pastEvents.map((event) => <Event data={event} />)
+                            pastEvents.map((event, key) => <Event key={key} data={event} />)
                         }
                     </Grid>
                 </div>

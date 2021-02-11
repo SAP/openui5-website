@@ -1,16 +1,20 @@
-const formatTime = (date) => {
-    return date ? new Date(date).toISOString().replace(/-|:|\.\d+/g, '') : '';
+const formatTime = (date, bReplaceColon) => {
+    if (date) {
+        date = date.replace("CET", "(CET)");
+        let sDate = new Date(date).toISOString()
+        return bReplaceColon ? sDate.replace(/-|:|\.\d+/g, '') : sDate;
+    }
+    return '';
 };
 
 const getJoinLink = (url) => {
-    return 'Join: ' + url;
+    return `Join the event: <a href="${url}">${url}</a>`;
 };
 
 const generator = {
     google: function (event) {
-        let startTime = formatTime(event.startTime);
-        let endTime = formatTime(event.endTime);
-
+        let startTime = formatTime(event.startDate, true);
+        let endTime = formatTime(event.endDate, true);
         return encodeURI([
             'https://www.google.com/calendar/render',
             '?action=TEMPLATE',
@@ -18,14 +22,13 @@ const generator = {
             '&dates=' + startTime ,
             '/' + endTime,
             '&location='+ event.location,
-            '&details=' + event.description + '\n\n ' + getJoinLink(event.url),
+            '&details=' + event.description.replaceAll('#', '') + '<br/>' + getJoinLink(event.url),
             '&sprop=&sprop=name:'
         ].join(''));
     },
     office365: function (event) {
-        let startTime = formatTime(event.startTime);
-        let endTime = formatTime(event.endTime);
-
+        let startTime = formatTime(event.startDate);
+        let endTime = formatTime(event.endDate);
         return encodeURI([
             'https://outlook.office365.com/owa/',
             '?path=/calendar/action/compose',
@@ -34,13 +37,12 @@ const generator = {
             '&startdt=' + startTime,
             '&enddt=' + endTime,
             '&location=' + event.location,
-            '&body=' + event.description + '\n\n ' + getJoinLink(event.url)
+            '&body=' + event.description.replaceAll('#', '') + '<br/>' + getJoinLink(event.url)
         ].join(''));
     },
     ics: function (event) {
-        let startTime = formatTime(event.startTime);
-        let endTime = formatTime(event.endTime);
-
+        let startTime = formatTime(event.startDate);
+        let endTime = formatTime(event.endDate);
         var cal = [
             'BEGIN:VCALENDAR',
             'VERSION:2.0',
@@ -50,7 +52,7 @@ const generator = {
             'DTEND:' + endTime,
             'SUMMARY:' + event.title,
             'LOCATION:' + event.location,
-            'DESCRIPTION:' + event.description + '\\n\\n ' + getJoinLink(event.url),
+            'DESCRIPTION:' + 'Find more details about the event: https://openui5.org/events\\n\\n Join the event: ' + event.url,
             'UID:' + event.id,
             'END:VEVENT',
             'END:VCALENDAR'].join('\n');
