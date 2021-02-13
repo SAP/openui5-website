@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 import getCssModifiers from "../../utils/getCssModifiers";
 
 import Text from "../Text";
-import Toolbar from "../Toolbar";
+import Toolbar from "./Toolbar";
 
 const query = graphql`
     query {

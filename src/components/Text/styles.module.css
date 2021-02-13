@@ -14,6 +14,9 @@
     &.size_2 {
         --font-size: 32px;
     }
+    &.size_5 {
+        --font-size: 24px;
+    }
     &.size_3 {
         --font-size: 20px;
         @media (max-width: env(--screen-breakpoint-767)) {
@@ -23,5 +26,8 @@
     &.font_regular {}
     &.font_light {
         font-family: "72-Light", Arial;
+    }
+    &.weight_bold {
+        font-weight: bold;
     }
 }

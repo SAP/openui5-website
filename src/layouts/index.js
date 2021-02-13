@@ -4,19 +4,19 @@ import Header from "../components/Header/index";
 import Footer from "../components/Footer";
 import SEO from "../components/seo";
 
-const DefaultTemplate = ({ headerView, children }) => {
+const DefaultLayout = ({ children, location }) => {
     return (
         <>
             <SEO />
-            <Header view={headerView} />
+            <Header view={location.pathname === "/" ? "full" : null} />
             { children }
             <Footer/>
         </>
     );
 };
 
-DefaultTemplate.propTypes = {
+DefaultLayout.propTypes = {
     headerView: PropTypes.any,
 };
 
-export default DefaultTemplate;
+export default DefaultLayout;

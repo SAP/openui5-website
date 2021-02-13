@@ -1,3 +1,6 @@
+---
+name: guideline
+---
 # UI5 Logo Guidelines
 
 <text size="2" font="light">Feel free to spread the word about OpenUI5 and use our icon.</text>

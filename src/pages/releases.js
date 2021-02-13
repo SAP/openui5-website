@@ -1,5 +1,4 @@
 import React from "react";
-import DefaultTemplate from "../templates/default";
 import Section from "../components/Section";
 import SEO from "../components/seo";
 import {graphql} from "gatsby";
@@ -15,7 +14,7 @@ const ReleasesPage = ({ data: { releasesJson, allVersionsJson, allConsumeJson, a
     const lastStableRelease = allVersionsJson.edges.find(({ node }) => !!node.eom).node;
 
     return (
-        <DefaultTemplate>
+        <>
             <SEO title={releasesJson.title} />
             <Section>
                 <Text size="1">{releasesJson.title}</Text>
@@ -94,7 +93,7 @@ const ReleasesPage = ({ data: { releasesJson, allVersionsJson, allConsumeJson, a
                     })}
                 </Table>
             </Section>
-        </DefaultTemplate>
+        </>
     );
 };
 

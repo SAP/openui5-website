@@ -1,7 +1,6 @@
 import React from "react";
 import {graphql} from "gatsby";
 import SEO from "../components/seo";
-import DefaultTemplate from "../templates/default";
 import rehypeReact from "rehype-react"
 
 import Section  from "../components/Section";
@@ -31,21 +30,21 @@ const renderAst = new rehypeReact({
 
 
 const GuidelinesPage = ({data: {markdownRemark}}) => (
-    <DefaultTemplate>
+    <>
         <SEO title="UI5 Logo Guidelines" />
         <Section>
           {
             renderAst(markdownRemark.htmlAst)
           }
         </Section>
-    </DefaultTemplate>
+    </>
 );
 
 export default GuidelinesPage;
 
 export const query = graphql`
   query {
-    markdownRemark {
+    markdownRemark (fields: {type: {eq: "page"}}, frontmatter: {name: {eq: "guideline"}}) {
       htmlAst
     }
   }
