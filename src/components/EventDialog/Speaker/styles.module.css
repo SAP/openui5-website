@@ -1,0 +1,27 @@
+.Speaker {
+  border: solid 2px #eaf0f5;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+}
+
+.Avatar {
+  font-size: 0;
+  margin-right: 8px;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Social {
+
+}
+
+.Company {
+  font-size: 13px;
+  line-height: 1.2em;
+  margin-top: 2px;
+}

@@ -6,6 +6,7 @@ module.exports = {
         copyright: `&copy; ${new Date().getFullYear()} SAP SE. Made available under <nobr>Apache License 2.0</nobr>`,
     },
     plugins: [
+        `gatsby-plugin-layout`,
         `gatsby-plugin-react-helmet`,
         `gatsby-transformer-json`,
         {
@@ -120,6 +121,29 @@ module.exports = {
               ],
             },
         },
+        {
+          resolve: 'gatsby-plugin-pathdata',
+          options: {
+            matchNodeType: 'MarkdownRemark',
+            extract: [
+              {
+                name: 'type',
+                selector: /.+\/data\/events\/.+\.md$/,
+                replacer: 'event'
+              },
+              {
+                name: 'type',
+                selector: /.+\/data\/persons\/.+\.md$/,
+                replacer: 'person'
+              },
+              {
+                name: 'type',
+                selector: /.+\/data\/pages\/.+\.md$/,
+                replacer: 'page'
+              }
+            ]
+          }
+        }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

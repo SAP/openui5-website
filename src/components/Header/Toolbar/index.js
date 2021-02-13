@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import classnames from "classnames";
 
 import Hamburger from "../Hamburger";
-import Logo from "../Logo";
+import Logo from "../../Logo";
 import Version from "../Version";
 import Navigation from "../Navigation";
 import GitHub from "../GitHub";

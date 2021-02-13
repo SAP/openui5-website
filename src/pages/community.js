@@ -1,18 +1,17 @@
 import React, { Fragment } from "react";
 import {graphql} from "gatsby";
 
-import DefaultTemplate from "../templates/default";
 import Section from "../components/Section";
 import SEO from "../components/seo";
 import Text from "../components/Text";
 import { List, ListItem } from "../components/List";
 import Tile from "../components/Tile";
 import Icon from "../components/Icon";
-import Event from "../components/Event"
+import Event from "../components/CommunityEvent"
 
 
 const CommunityPage = ({ data: { communityJson: { title, channels, connect }, allEventsJson } }) => (
-    <DefaultTemplate>
+    <>
         <SEO title={title} />
         <Section>
             <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{title}</Text>
@@ -57,24 +56,6 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                 })
             }
         </Section>
-        <Section color="lightblue">
-            <Text size="2" id="events" style={{ marginBottom: "var(--default-margin-half)" }}>Events</Text>
-            <List column="1">
-                {
-                    allEventsJson.edges.map(({ node: { ...event }}, idx) => {
-                        return (
-                            <ListItem
-                                key={idx}
-                            >
-                                <Event
-                                    {...event}
-                                />
-                            </ListItem>
-                        );
-                    })
-                }
-            </List>
-        </Section>
         <Section>
             <Text size="2" style={{ marginBottom: "var(--default-margin-half)" }}>{connect.title}</Text>
             <List column="3" justifyContent="spaceBetween">
@@ -90,7 +71,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                 })}
             </List>
         </Section>
-    </DefaultTemplate>
+    </>
 );
 
 export default CommunityPage;
@@ -121,17 +102,5 @@ export const query = graphql`
                 }
             }
         }
-        allEventsJson {
-            edges {
-              node {
-                title
-                description
-                url
-                date
-                location
-                cancelled
-              }
-            }
-          }
     }
 `
