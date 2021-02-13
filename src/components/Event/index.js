@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import EventDialog from "../EventDialog";
-import AddToCalendarPopover from "../AddToCalendarPopover";
 import styles from "./styles.module.css";
+import loadable from '@loadable/component'
+
+const EventDialog = loadable(() => import("../EventDialog"))
+const AddToCalendarPopover = loadable(() => import("../AddToCalendarPopover"))
 
 const Event = (props) => {
   const {
