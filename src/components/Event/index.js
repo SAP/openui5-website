@@ -60,7 +60,7 @@ const Event = (props) => {
   let monthFormatter = new Intl.DateTimeFormat('en-GB', {month: "long"})
   let dayFormatter = new Intl.DateTimeFormat('en-GB', {day: "numeric"})
   let yearFormatter = new Intl.DateTimeFormat('en-GB', {year: "numeric"})
-  let timeFormatter = new Intl.DateTimeFormat('en-GB', {hour: "numeric", minute: "numeric", timeZoneName: "short"})
+  let timeFormatter = new Intl.DateTimeFormat('en-GB', {hour: "numeric", minute: "numeric"})
 
   return (
     <>
@@ -87,7 +87,7 @@ const Event = (props) => {
           <div className={styles.Location}>{location}</div>
         </div>
         {
-          showAddToCalendar && title !== "UI5ers live (Feb '21)"
+          showAddToCalendar
             ? (
               <>
                 <div className={styles.AddToCalendar} onClick={onCalendarClick} ref={addToCalendarRef}>
@@ -104,7 +104,7 @@ const Event = (props) => {
             : null
         }
         {
-          title === "UI5ers live (Feb '21)"
+          false
             ? (
               <div className={styles.AddToCalendar} onClick={onJoinClick}>
                 Join now

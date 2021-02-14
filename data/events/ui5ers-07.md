@@ -1,9 +1,9 @@
 ---
 title: "UI5ers live (Apr '21)"
 subTitle: 45 minute interactive webcast
-startDate: 2021-04-08 15:15 (CEST)
-endDate: 2021-04-08 16:00 (CEST)
-location: Online
+startDate: 2021/04/08 15:15 UTC+2
+endDate: 2021/04/08 16:00 UTC+2
+location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:
   - Stefan.Beck
