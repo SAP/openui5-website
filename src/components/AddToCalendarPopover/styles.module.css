@@ -50,16 +50,16 @@
 
   &.animate {
     &.icon_1 {
-      animation: iconUp 0.3s ease-out 0s 1 normal forwards;
-    }
-    &.icon_2 {
       animation: iconUp 0.3s ease-out 0.1s 1 normal forwards;
     }
-    &.icon_3 {
+    &.icon_2 {
       animation: iconUp 0.3s ease-out 0.2s 1 normal forwards;
     }
-    &.icon_4 {
+    &.icon_3 {
       animation: iconUp 0.3s ease-out 0.3s 1 normal forwards;
+    }
+    &.icon_4 {
+      animation: iconUp 0.3s ease-out 0.4s 1 normal forwards;
     }
   }
 }
