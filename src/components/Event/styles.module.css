@@ -9,6 +9,11 @@
   position: relative;
   color: #1d1d1d;
 
+  @media only screen and (max-width: 767px) {
+    min-height: 200px;
+    height: auto;
+  }
+
   &.view_emphasized:after{
     border-color: #2381c5;
   }
@@ -38,7 +43,7 @@
 
 .Header {
   flex: 1;
-  padding: 24px;
+  padding: 24px 24px 0;
   display: flex;
 
 }
@@ -49,10 +54,28 @@
   & .HeaderTitle {
     font-size: 22px;
     font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    @media only screen and (max-width: 767px) {
+      -webkit-line-clamp: 5;
+    }
   }
 
   & .HeaderSubTitle {
     margin-top: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @media only screen and (max-width: 767px) {
+      -webkit-line-clamp: 4;
+    }
   }
 }
 

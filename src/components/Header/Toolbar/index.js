@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import styles from "./styles.module.css";
 import classnames from "classnames";
+import { useLocation } from "@reach/router"
 
 import Hamburger from "../Hamburger";
 import Logo from "../../Logo";
@@ -18,10 +19,15 @@ const ToolbarItem = ({ mod, children }) => (
 
 const Toolbar = ({ version }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
     function onHamburgerClick() {
         setIsOpen(!isOpen);
     }
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location]);
 
     return (
         <div
