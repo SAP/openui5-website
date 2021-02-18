@@ -1,5 +1,5 @@
 ---
-name: Peter Muessig
+name: Stefan Beck
 company: SAP
 photo: ./stefan-beck.jpg
 twitter: StefanBeck3
