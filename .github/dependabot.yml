@@ -6,5 +6,4 @@ updates:
     interval: weekly
     day: monday
   reviewers:
-  - pavelkornev
   - evgenysegeda
