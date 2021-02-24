@@ -17,3 +17,5 @@ As always, we will start our discussion with the latest news from the UI5 labs l
 CSP compliance is a high-priority topic - not only for us. We already made some good progress here, but still need to remove some obstacles to support strict CSP. Jens will introduce this topic and the current status.
 
 Tobias will be with us to show how the Service Worker API, which is available in modern web browsers, could be used in a UI5 app to realize different caching strategies.
+
+Test
