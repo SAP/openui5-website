@@ -45,8 +45,9 @@ const EventsPage = ({ data }) => {
 
     const events = prepareData(data.allMarkdownRemark.edges);
 
-    const upcomingEvents = events.slice(0, 2).reverse();
-    const pastEvents = events.slice(2);
+    const indexOfPastEvent = events.findIndex((e) => new Date().getTime() > new Date(e.startDate).getTime())
+    const upcomingEvents = events.slice(0, indexOfPastEvent).reverse();
+    const pastEvents = events.slice(indexOfPastEvent);
 
     return (
         <>
