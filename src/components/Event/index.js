@@ -7,6 +7,11 @@ import loadable from '@loadable/component'
 const EventDialog = loadable(() => import("../EventDialog"))
 const AddToCalendarPopover = loadable(() => import("../AddToCalendarPopover"))
 
+const monthFormatter = new Intl.DateTimeFormat('en-GB', {month: "long"})
+const dayFormatter = new Intl.DateTimeFormat('en-GB', {day: "numeric"})
+const yearFormatter = new Intl.DateTimeFormat('en-GB', {year: "numeric"})
+const timeFormatter = new Intl.DateTimeFormat('en-GB', {hour: "numeric", minute: "numeric"})
+
 const Event = (props) => {
   const {
     data,
@@ -56,11 +61,21 @@ const Event = (props) => {
     win.focus();
     e.stopPropagation();
   };
-  let eventDate = new Date(startDate);
-  let monthFormatter = new Intl.DateTimeFormat('en-GB', {month: "long"})
-  let dayFormatter = new Intl.DateTimeFormat('en-GB', {day: "numeric"})
-  let yearFormatter = new Intl.DateTimeFormat('en-GB', {year: "numeric"})
-  let timeFormatter = new Intl.DateTimeFormat('en-GB', {hour: "numeric", minute: "numeric"})
+  let eventStart = new Date(startDate);
+  let eventEnd = new Date(endDate);
+
+  let formattedDate
+  if (startDate.match(/^\d{4}\/\d{2}\/\d{2}$/)) {
+    //only date given
+    let endDateFormatted = ''
+    if (eventStart.getDate() != eventEnd.getDate()) {
+      endDateFormatted = eventStart.getMonth() !== eventEnd.getMonth() ? ` - ${monthFormatter.format(eventEnd)} ${dayFormatter.format(eventEnd)}` : ` - ${dayFormatter.format(eventEnd)}`;
+    }
+    formattedDate = `${monthFormatter.format(eventStart)} ${dayFormatter.format(eventStart)}${endDateFormatted}, ${yearFormatter.format(eventStart)}`;
+  } else {
+    //the date with time
+    formattedDate = `${monthFormatter.format(eventStart)} ${dayFormatter.format(eventStart)}, ${yearFormatter.format(eventStart)}, ${timeFormatter.format(eventStart)}`;
+  }
 
   return (
     <>
@@ -83,7 +98,7 @@ const Event = (props) => {
           }
         </div>
         <div className={styles.Content}>
-          <div className={styles.Date}>{`${monthFormatter.format(eventDate)} ${dayFormatter.format(eventDate)}, ${yearFormatter.format(eventDate)}, ${timeFormatter.format(eventDate)}`}</div>
+          <div className={styles.Date}>{formattedDate}</div>
           <div className={styles.Location}>{location}</div>
         </div>
         {
