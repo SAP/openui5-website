@@ -6,14 +6,33 @@ const formatTime = (date, bReplaceColon) => {
     return '';
 };
 
+const formatDateWithoutTime = (date, bNextDate, bReplaceColon) => {
+    let [year, month, day] = date.split('/');
+    //month from 0 to 11
+    let utcDate = new Date(Date.UTC(year, month - 1, day));
+    if (bNextDate) {
+        utcDate.setDate(utcDate.getDate() + 1)
+    }
+    let sDate = utcDate.toISOString();
+    sDate = sDate.substr(0, sDate.indexOf('T'))
+    return bReplaceColon ? sDate.replace(/-|:|\.\d+/g, '') : sDate;;
+}
+
 const getJoinLink = (url) => {
     return `Join the event: <a href="${url}">${url}</a>`;
 };
 
 const generator = {
     google: function (event) {
-        let startTime = formatTime(event.startDate, true);
-        let endTime = formatTime(event.endDate, true);
+        let startTime;
+        let endTime;
+        if (event.startDate.match(/^\d{4}\/\d{2}\/\d{2}$/)) {
+            startTime = formatDateWithoutTime(event.startDate, false, true)
+            endTime = formatDateWithoutTime(event.endDate, true, true)
+        } else {
+            startTime = formatTime(event.startDate, true);
+            endTime = formatTime(event.endDate, true);
+        }
         return encodeURI([
             'https://www.google.com/calendar/render',
             '?action=TEMPLATE',
@@ -26,22 +45,39 @@ const generator = {
         ].join(''));
     },
     office365: function (event) {
-        let startTime = formatTime(event.startDate);
-        let endTime = formatTime(event.endDate);
-        return encodeURI([
+        let startTime;
+        let endTime;
+        if (event.startDate.match(/^\d{4}\/\d{2}\/\d{2}$/)) {
+            startTime = formatDateWithoutTime(event.startDate, false);
+            endTime = formatDateWithoutTime(event.endDate, true);
+        } else {
+            startTime = formatTime(event.startDate);
+            endTime = formatTime(event.endDate);
+        }
+        let url = encodeURI([
             'https://outlook.office365.com/owa/',
             '?path=/calendar/action/compose',
             '&rru=addevent',
             '&subject=' + event.title,
             '&startdt=' + startTime,
             '&enddt=' + endTime,
+            !!event.startDate.match(/^\d{4}\/\d{2}\/\d{2}$/) ? '&allday=true' : '',
             '&location=' + event.location,
             '&body=' + event.description.replaceAll('#', '') + '<br/>' + getJoinLink(event.url)
         ].join(''));
+        return url
     },
     ics: function (event) {
-        let startTime = formatTime(event.startDate);
-        let endTime = formatTime(event.endDate);
+        let startTime;
+        let endTime;
+        if (event.startDate.match(/^\d{4}\/\d{2}\/\d{2}$/)) {
+            startTime = formatDateWithoutTime(event.startDate, false);
+            endTime = formatDateWithoutTime(event.endDate, true);
+        } else {
+            startTime = formatTime(event.startDate);
+            endTime = formatTime(event.endDate);
+        }
+
         var cal = [
             'BEGIN:VCALENDAR',
             'VERSION:2.0',
