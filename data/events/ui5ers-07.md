@@ -6,10 +6,10 @@ endDate: 2021/04/08 16:00 UTC+2
 location: Webinar
 logo: ./logos/ui5ers.svg
 speakers:
-  - Stefan.Beck
-  - Peter.Muessig
-  - Andreas.Kunz
-  - Margot.Wollny
+  - Stefan Beck
+  - Peter Muessig
+  - Andreas Kunz
+  - Margot Wollny
 url: https://sap-se.zoom.com/j/94833714827
 ---
 
