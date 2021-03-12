@@ -5,8 +5,8 @@ import styles from "./styles.module.css";
 
 const slides = [
   {
-    url: "/community/#events",
-    className: styles.mod_ui5ers_live,
+    url: "/ui5con/onair2021/",
+    className: styles.mod_onair2021,
   }
 ];
 
