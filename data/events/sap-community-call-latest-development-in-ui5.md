@@ -1,5 +1,5 @@
 ---
-title: SAP Community Call: Latest Developments in UI5
+title: SAP Community Call - Latest Developments in UI5
 subTitle: 60 minute webinar
 startDate: 2020/04/14 16:00 UTC+1
 endDate: 2020/04/14 17:00 UTC+1
