@@ -1,7 +1,7 @@
 ---
 title: "UI5ers live (May '21)"
 subTitle: 45 minute interactive webcast
-startDate: 2021/05/13 15:15 UTC+2
+startDate: 2021/05/20 15:15 UTC+2
 endDate: 2021/05/20 16:00 UTC+2
 location: Webinar
 logo: ./logos/ui5ers.svg
