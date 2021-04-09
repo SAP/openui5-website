@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
 import Text from "../../Text";
 import Avatar from "../../Avatar";
 import styles from "./styles.module.css";

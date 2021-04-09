@@ -87,7 +87,7 @@ const generator = {
             'DTEND:' + endTime,
             'SUMMARY:' + event.title,
             'LOCATION:' + event.location,
-            'DESCRIPTION:' + 'Find more details about the event: https://openui5.org/events\\n\\n Join the event: ' + event.url,
+            `DESCRIPTION:Find more details about the event: https://openui5.org/events\\n\\n Join the event: ${event.url}`,
             'UID:' + event.id,
             'END:VEVENT',
             'END:VCALENDAR'].join('\n');
