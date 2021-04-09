@@ -7,7 +7,6 @@ import Text from "../components/Text";
 import { List, ListItem } from "../components/List";
 import Tile from "../components/Tile";
 import Icon from "../components/Icon";
-import Event from "../components/CommunityEvent"
 
 
 const CommunityPage = ({ data: { communityJson: { title, channels, connect }, allEventsJson } }) => (

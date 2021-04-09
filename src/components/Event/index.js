@@ -68,7 +68,7 @@ const Event = (props) => {
   if (startDate.match(/^\d{4}\/\d{2}\/\d{2}$/)) {
     //only date given
     let endDateFormatted = ''
-    if (eventStart.getDate() != eventEnd.getDate()) {
+    if (eventStart.getDate() !== eventEnd.getDate()) {
       endDateFormatted = eventStart.getMonth() !== eventEnd.getMonth() ? ` - ${monthFormatter.format(eventEnd)} ${dayFormatter.format(eventEnd)}` : ` - ${dayFormatter.format(eventEnd)}`;
     }
     formattedDate = `${monthFormatter.format(eventStart)} ${dayFormatter.format(eventStart)}${endDateFormatted}, ${yearFormatter.format(eventStart)}`;
