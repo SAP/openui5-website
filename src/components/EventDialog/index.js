@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
 import _ from "lodash";
 import Dialog from "../Dialog";
 import Text from "../Text";
@@ -24,12 +22,9 @@ const EventDialog = (props) => {
     title,
     subTitle,
     description,
-    startDate,
-    endDate,
-    location,
-    logo,
     url,
     recordingUrl,
+    registrationUrl,
     speakers
   } = data;
 
@@ -55,6 +50,11 @@ const EventDialog = (props) => {
     win.focus();
   };
 
+  const onRegisterClick = (e) => {
+    const win = window.open(registrationUrl, "_blank");
+    win.focus();
+  };
+
   return (
     <Dialog {...rest}>
       <div className={styles.Content}>
@@ -75,15 +75,13 @@ const EventDialog = (props) => {
                     targetRef={addToCalendarRef.current}
                     onAfterClose={onAfterPopoverClose}
                   />
+                  { registrationUrl && <Button onClick={onRegisterClick}>Register</Button> }
+                  { url && <Button onClick={onJoinClick}>Join</Button> }
                 </>
               )
-              : null
+              : recordingUrl && <Button icon={<Icon name="video" />} onClick={onRecordingClick}>Recording</Button>
           }
-          {
-            recordingUrl
-              ? <Button icon={<Icon name="video" />} onClick={onRecordingClick}>Recording</Button>
-              : <Button onClick={onJoinClick}>Join</Button>
-          }
+
         </div>
       </div>
       {
