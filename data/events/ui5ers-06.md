@@ -11,9 +11,10 @@ speakers:
   - Tobias Sorn
   - Peter Muessig
 url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/tLHuRt29ytI
 ---
 
-As always, we will start our discussion with the latest news from the UI5 labs led by Stefan. After that, we will deal with the two following topics: Content Security Policy (CSP) and caching. For this, we have Jens Ittel and Tobias Sorn with us, both colleagues from the UI5 Core development.
+In this episode we deal with the two following topics: Content Security Policy (CSP) and caching. For this, we have Jens Ittel and Tobias Sorn with us, both colleagues from the UI5 Core development.
 
 CSP compliance is a high-priority topic - not only for us. We already made some good progress here, but still need to remove some obstacles to support strict CSP. Jens will introduce this topic and the current status.
 
