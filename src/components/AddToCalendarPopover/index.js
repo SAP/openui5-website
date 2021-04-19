@@ -53,7 +53,7 @@ const AddToCalendarPopover = (props) => {
                 ...classNames
             )}
         >
-            <IconText icon={<img src={GoogleIcon}/>} text="Google" />
+            <IconText icon={<img src={GoogleIcon} alt="Google"/>} text="Google" />
         </CalendarButton>
         <CalendarButton
             type="office365"
@@ -64,7 +64,7 @@ const AddToCalendarPopover = (props) => {
                 ...classNames
             )}
         >
-            <IconText icon={<img src={Office365Icon}/>} text="Office 365" />
+            <IconText icon={<img src={Office365Icon} alt="Office 365"/>} text="Office 365" />
         </CalendarButton>
         <CalendarButton
             type="ics"
@@ -75,7 +75,7 @@ const AddToCalendarPopover = (props) => {
                 ...classNames
             )}
         >
-            <IconText icon={<img src={iCalIcon}/>} text="iCal" />
+            <IconText icon={<img src={iCalIcon} alt="iCal"/>} text="iCal" />
         </CalendarButton>
         <CalendarButton
             type="ics"
@@ -86,7 +86,7 @@ const AddToCalendarPopover = (props) => {
                 ...classNames
             )}
         >
-            <IconText icon={<img src={OutlookIcon}/>} text="Outlook" />
+            <IconText icon={<img src={OutlookIcon} alt="Outlook"/>} text="Outlook" />
         </CalendarButton>
       </div>
     </Popover>

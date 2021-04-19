@@ -18,7 +18,7 @@ const prepareData = (events) => {
 
         return {
             ...rest,
-            logo: logo && logo.publicURL || null,
+            logo: logo?.publicURL,
             description: node.html,
             speakers: speakers.map(speaker => {
                 const {
@@ -28,7 +28,7 @@ const prepareData = (events) => {
 
                 return {
                     ...rest,
-                    photo: photo && photo.publicURL || null,
+                    photo: photo?.publicURL,
                     description: speaker.html,
                 };
             })
@@ -129,6 +129,7 @@ export const query = graphql`
                             }
                         }
                         url
+                        registrationUrl
                         recordingUrl
                     }
                     html
