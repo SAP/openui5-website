@@ -12,16 +12,16 @@ const Paragraph = ({ children }) => (
 export default ({ source }) => {
     return (
         <ReactMarkdown
-            source={source}
-            allowedTypes={[
-                "text",
-                "link",
-                "paragraph",
+            allowedElements={[
+                "a",
+                "p",
             ]}
-            renderers={{
-                link: Link,
-                paragraph: Paragraph,
+            components={{
+                a: Link,
+                p: Paragraph,
             }}
-        />
+        >
+            {source}
+        </ReactMarkdown>
     )
 };
