@@ -84,6 +84,7 @@ module.exports = {
                             {
                                 environmentVariables: {
                                     '--screen-breakpoint-1440': '1440px',
+                                    '--screen-breakpoint-1200': '1200px',
                                     '--screen-breakpoint-1100': '1100px',
                                     '--screen-breakpoint-980': '980px',
                                     '--screen-breakpoint-767': '767px',
