@@ -4,6 +4,7 @@
     height: 34px;
     position: relative;
     cursor: pointer;
+    outline: none;
 
     & .HamburgerItem {
         width: 18px;
