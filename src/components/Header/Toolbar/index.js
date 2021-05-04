@@ -52,11 +52,7 @@ const Toolbar = ({ version }) => {
                 isOpen ? styles.view_open : null
             )}
         >
-            {
-                isMobile
-                    ? <ToolbarItem mod="hamburger"><Hamburger open={isOpen} onClick={onHamburgerClick} /></ToolbarItem>
-                    : null
-            }
+            <ToolbarItem mod="hamburger"><Hamburger open={isOpen} onClick={onHamburgerClick} /></ToolbarItem>
             <ToolbarItem mod="logo"><Link to="/" style={{ display: 'inline-block' }}><Logo /></Link></ToolbarItem>
             <ToolbarItem mod="version"><Version>{version}</Version></ToolbarItem>
             <ToolbarItem mod="navigation"><Navigation className={styles.Navigation} /></ToolbarItem>

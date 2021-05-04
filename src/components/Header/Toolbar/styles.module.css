@@ -117,6 +117,11 @@
             flex-basis: 34px;
             line-height: 0;
             z-index: 2;
+            display: none;
+
+            @media (max-width: env(--screen-breakpoint-767)) {
+                display: block;
+            }
         }
     }
 
