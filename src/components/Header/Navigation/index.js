@@ -4,6 +4,7 @@ import classnames from "classnames";
 import _ from "lodash";
 import {StaticQuery, graphql, Link} from "gatsby";
 import { useLocation } from "@reach/router";
+import isWindow from "../../../utils/isWindow";
 import styles from "./styles.module.css";
 
 const LINK_HORIZONTAL_PADDING = 10;
@@ -28,12 +29,15 @@ const query = graphql`
     }
 `;
 
-const Navigation = ({ version, className = "" }) => {
+const Navigation = ({ className = "" }) => {
   const navRef = useRef();
   const lineRef = useRef();
   const [lineStyle, setLineStyle] = useState({});
   const location = useLocation();
   const isMobile = useMediaQuery("(max-width: 767px)");
+  const isScreen1200 = useMediaQuery("(max-width: 1200px)");
+  const isScreen1100 = useMediaQuery("(max-width: 1100px)");
+  const isScreen980 = useMediaQuery("(max-width: 980px)");
 
   const onMouseEnter = useCallback((e) => {
     calculateLineGeometry(e.target);
@@ -44,6 +48,7 @@ const Navigation = ({ version, className = "" }) => {
   }, []);
 
   const calculateLineGeometry = (activeElement) => {
+    console.log("geometry!");
     const lineDomNode = lineRef.current;
     const navigationNode = navRef.current;
 
@@ -68,6 +73,9 @@ const Navigation = ({ version, className = "" }) => {
         const lineWidth = activeElementGeometry.width - LINK_HORIZONTAL_PADDING;
         const lineLeft = activeElementGeometry.left - parentLeftOffset + LINK_HORIZONTAL_PADDING / 2;
 
+        console.log("activeElementGeometry.left => ", activeElementGeometry.left);
+        console.log("parentLeftOffset => ", parentLeftOffset);
+
         style = {
           left: `${lineLeft}px`,
           transform: `scaleX(1)`,
@@ -90,7 +98,7 @@ const Navigation = ({ version, className = "" }) => {
 
   useEffect(() => {
     calculateLineGeometry();
-  }, [navRef, lineRef, location, isMobile]);
+  }, [navRef, lineRef, location, isMobile, isScreen1200, isScreen1100, isScreen980]);
 
   return (
     <StaticQuery
@@ -115,7 +123,7 @@ const Navigation = ({ version, className = "" }) => {
                       </div>
                     ))
                 }
-                {!isMobile ? <div ref={lineRef} style={lineStyle} className={styles.Line} /> : null}
+                {!isMobile && isWindow ? <div ref={lineRef} style={lineStyle} className={styles.Line} /> : null}
             </div>
         )}
     />
