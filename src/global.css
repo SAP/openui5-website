@@ -8,9 +8,9 @@ html {
     box-sizing: border-box;
 }
 
-html.noscroll {
+.noScroll {
     overflow: hidden;
-    }
+}
 
 :root {
     --default-margin: 80px;
