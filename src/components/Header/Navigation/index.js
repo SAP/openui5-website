@@ -48,7 +48,6 @@ const Navigation = ({ className = "" }) => {
   }, []);
 
   const calculateLineGeometry = (activeElement) => {
-    console.log("geometry!");
     const lineDomNode = lineRef.current;
     const navigationNode = navRef.current;
 
@@ -72,9 +71,6 @@ const Navigation = ({ className = "" }) => {
         const activeElementGeometry = activeElement.getBoundingClientRect();
         const lineWidth = activeElementGeometry.width - LINK_HORIZONTAL_PADDING;
         const lineLeft = activeElementGeometry.left - parentLeftOffset + LINK_HORIZONTAL_PADDING / 2;
-
-        console.log("activeElementGeometry.left => ", activeElementGeometry.left);
-        console.log("parentLeftOffset => ", parentLeftOffset);
 
         style = {
           left: `${lineLeft}px`,
