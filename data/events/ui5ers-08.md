@@ -12,5 +12,5 @@ speakers:
 url: https://sap-se.zoom.com/j/94833714827
 ---
 
-In this episode, we reinforce our team by two developers from our controls teams. With Tereza Chobanova everything turns around time. She demostrates the most important time related UI elements to deliver a user-friendly, efficient application UI and shares some tips and best practices working with these controls.
+In this episode, we reinforce our team by two developers from our controls teams. With Tereza Chobanova everything turns around time. She demonstrates the most important time related UI elements to deliver a user-friendly, efficient application UI and shares some tips and best practices working with these controls.
 Then with Sebastian Bender it is about tables. He brings some latest features with him and talks about configuration and formatting options to expert spreadsheets. Both are looking forward to your feedback and answer your questions. So don't miss it! Of course, there will also be the usual update from Stefan on what the UI5 teams are up to right now.
