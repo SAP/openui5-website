@@ -7,14 +7,10 @@ location: ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
   - Stefan Beck
-  - Peter Muessig
-  - Andreas Kunz
-  - Margot Wollny
+  - Tereza Chobanova
+  - Sebastian Bender
 url: https://sap-se.zoom.com/j/94833714827
 ---
 
-**Caution:** May 13 is a public holiday in Germany, so we had to change our usual schedule. This means that we will meet on the *third* Tuesday in May.
-
-We don't have concrete topics for this episode yet, but we will announce them here soon. So stay tuned!
-
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=[UI5ers live]) or in the [#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+In this episode, we reinforce our team by two developers from our controls teams. With Tereza Chobanova everything turns around time. She demonstrates the most important time related UI elements to deliver a user-friendly, efficient application UI and shares some tips and best practices working with these controls.
+Then with Sebastian Bender it is about tables. He brings some latest features with him and talks about configuration and formatting options to expert spreadsheets. Both are looking forward to your feedback and answer your questions. So don't miss it! Of course, there will also be the usual update from Stefan on what the UI5 teams are up to right now.
