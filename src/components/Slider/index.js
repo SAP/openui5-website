@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 const slides = [
   {
-    url: "/ui5con/onair2021/",
+    url: "https://broadcast.co.sap.com/go/ui5con",
     className: styles.mod_onair2021,
   }
 ];
@@ -40,6 +40,7 @@ const Slider = () => {
       {
         slides.map((slide, idx) => (
           <Link
+            target="_blank"
             key={idx}
             to={slide.url}
             className={classnames(
