@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 const slides = [
   {
-    url: "https://broadcast.co.sap.com/go/ui5con",
+    url: "/ui5con/onair2021/",
     className: styles.mod_onair2021,
   }
 ];
