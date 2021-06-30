@@ -6,14 +6,10 @@ endDate: 2021/07/08 16:00 UTC+2
 location: ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  - Stefan Beck
-  - Peter Muessig
-  - Andreas Kunz
-  - Margot Wollny
+  -  Sebastian Bender
+  -  Jay Barbhaiya
 url: https://sap-se.zoom.com/j/94833714827
 ---
 
 
-We don't have concrete topics for this episode yet, but we will announce them here soon. So stay tuned!
-
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=[UI5ers live]) or in the [#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+In this episode, we focus once again on tables. In addition to Sebastian Bender, we will have Jay Barbhaiya from the UI5 Tables team with us. Jay will show the new Column Resizer plug-in plus the auto pop-in feature for responsive tables. After that, there’s plenty of time for your questions. We will also address the remaining open questions about tables from last time. We hope you tune in!
