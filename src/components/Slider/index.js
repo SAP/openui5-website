@@ -40,6 +40,7 @@ const Slider = () => {
       {
         slides.map((slide, idx) => (
           <Link
+            target="_blank"
             key={idx}
             to={slide.url}
             className={classnames(
