@@ -6,12 +6,11 @@ endDate: 2021/08/12 16:00 UTC+2
 location: ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Stefan Beck
+  -  Jiawei Cao
   -  Peter Muessig
-  -  Andreas Kunz
-  -  Margot Wollny
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
+In this episode we treat the topics Perceived Performance and Web Components.
+Content placeholders reduce the perceived load time by informing the user of what interface to expect as early as possible in the loading process. We looked at the best way to enable content placeholders in our framework so they can be easily integrated into your UI5 app. Jiawei Cao will present our approach and demonstrate how you can display content placeholders in your UI5 app.
+Next up, Peter Muessig will give an update on transitioning the UI controls to using UI5 Web Components and demonstrate, in this line, three brand new libraries.
 
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the [#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
