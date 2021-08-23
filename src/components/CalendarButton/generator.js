@@ -71,11 +71,11 @@ const generator = {
         let startTime;
         let endTime;
         if (event.startDate.match(/^\d{4}\/\d{2}\/\d{2}$/)) {
-            startTime = formatDateWithoutTime(event.startDate, false);
-            endTime = formatDateWithoutTime(event.endDate, true);
+            startTime = formatDateWithoutTime(event.startDate, false, true);
+            endTime = formatDateWithoutTime(event.endDate, true, true);
         } else {
-            startTime = formatTime(event.startDate);
-            endTime = formatTime(event.endDate);
+            startTime = formatTime(event.startDate, true);
+            endTime = formatTime(event.endDate, true);
         }
 
         var cal = [
@@ -83,8 +83,8 @@ const generator = {
             'VERSION:2.0',
             'BEGIN:VEVENT',
             // 'URL:' + document.URL, work without it. Not sure if it is required...
-            'DTSTART:' + startTime,
-            'DTEND:' + endTime,
+            'DTSTART;TZID="Berlin":' + startTime,
+            'DTEND;TZID="Berlin":' + endTime,
             'SUMMARY:' + event.title,
             'LOCATION:' + event.location,
             `DESCRIPTION:Find more details about the event: https://openui5.org/events\\n\\n Join the event: ${event.url}`,
