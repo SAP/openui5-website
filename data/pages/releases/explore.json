@@ -4,11 +4,5 @@
         "description": "Find out what's new in the latest versions of OpenUI5.",
         "url": "https://openui5.hana.ondemand.com/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
         "icon": "../../icons/megaphone.svg"
-    },
-    {
-        "title": "Roadmap",
-        "description": "Learn about planned features and upcoming innovations.",
-        "url": "/OpenUI5_Roadmap.pdf",
-        "icon": "../../icons/npm.svg"
     }
 ]
