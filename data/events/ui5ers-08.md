@@ -10,6 +10,7 @@ speakers:
   - Tereza Chobanova
   - Sebastian Bender
 url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/eGyklhGkeJg
 ---
 
 In this episode, we reinforce our team by two developers from our controls teams. With Tereza Chobanova everything turns around time. She demonstrates the most important time related UI elements to deliver a user-friendly, efficient application UI and shares some tips and best practices working with these controls.
