@@ -9,6 +9,7 @@ speakers:
   -  Sebastian Bender
   -  Jay Barbhaiya
 url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/qak4CciCxGY
 ---
 
 
