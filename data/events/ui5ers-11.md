@@ -6,13 +6,12 @@ endDate: 2021/10/14 16:00 UTC+2
 location: ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
+  -  James Zhang
+  -  Johannes Gluch
   -  Stefan Beck
   -  Peter Muessig
   -  Andreas Kunz
   -  Margot Wollny
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
-
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+UI5ers live is back from its summer break and starts with a packed agenda. Many of you may have heard that the SAP Mobile team improved their SAPUI5 barcode scanner control so that it can be used natively in the browser. We have invited James Zhang from SAP Mobile to answer your question on this subject. Next, we're going to look at  asychronous loading of XML content. Johannes Gluch from the UI5 Core development team will explain the relevant new factory APIs and showcase how to enable the asychronous loading for XML views or fragments. And finally, we'd like to discuss our plans to remove outdated UI5 versions and patches from our CDN with you, including the timeline and our approach to provide an "evergreen" URL for versions with LTS.
