@@ -9,6 +9,7 @@ speakers:
   -  Jiawei Cao
   -  Peter Muessig
 url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/lUZ0A-OUJaY
 ---
 In this episode we treat the topics Perceived Performance and Web Components.
 Content placeholders reduce the perceived load time by informing the user of what interface to expect as early as possible in the loading process. We looked at the best way to enable content placeholders in our framework so they can be easily integrated into your UI5 app. Jiawei Cao will present our approach and demonstrate how you can display content placeholders in your UI5 app.
