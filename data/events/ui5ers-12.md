@@ -12,7 +12,4 @@ speakers:
   -  Margot Wollny
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
-
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+This time, we’re starting with news about the UI5 Web Components and the upcoming first major release 1.0.0. You’ll learn about everything that will come with it and what this means for the UI5 framework. Also in the first part, Peter Muessig will showcase an easy way to integrate any OSS library into your UI5 project using TypeScript as well as two enhancements to the UI5 Tooling that he contributed to the UI5 community project. In the second part, we invite you to have an active discussion with us to learn about your preferred options to get informed about major announcements, such as new security pages, discontinuations, and the like. We won’t record this second part of the episode to ensure a trusting atmosphere and encourage you to speak your mind freely.
