@@ -1,8 +1,8 @@
 ---
 title: "UI5ers live (November '21)"
 subTitle: 45 minute interactive webcast
-startDate: 2021/11/11 15:15 UTC+2
-endDate: 2021/11/11 16:00 UTC+2
+startDate: 2021/11/11 15:15 UTC+1
+endDate: 2021/11/11 16:00 UTC+1
 location: ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
