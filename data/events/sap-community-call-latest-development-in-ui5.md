@@ -8,6 +8,7 @@ logo: ./logos/sap.svg
 speakers:
   - Peter Muessig
 registrationUrl: https://sap-se.zoom.us/webinar/register/95894288263?tk
+recordingUrl: https://youtu.be/OuNMb9kPhTg?list=PLpQebylHrdh5XQts8bKoMUKexpun_YPvU
 ---
 
 Join Peter Muessig, Chief Product Architect of the UI5 family, on a journey of discovery through the main recent innovation features of UI5.
