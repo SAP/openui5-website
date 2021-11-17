@@ -1,5 +1,5 @@
 ---
-title: UI5 Web Components: Build Enterprise Ready UIs with your Technology of Choice
+title: UI5 Web Components - Build Enterprise Ready UIs with your Technology of Choice
 subTitle: SAP Community Call (1h)
 startDate: 2021/11/30 15:00 UTC+1
 endDate: 2021/11/30 16:00 UTC+1
