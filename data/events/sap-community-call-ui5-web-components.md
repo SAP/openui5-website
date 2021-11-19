@@ -3,7 +3,7 @@ title: UI5 Web Components - Build Enterprise Ready UIs with your Technology of C
 subTitle: SAP Community Call (1h)
 startDate: 2021/11/30 15:00 UTC+1
 endDate: 2021/11/30 16:00 UTC+1
-location: ZOOM
+location: via ZOOM
 logo: ./logos/sap.svg
 speakers:
   - Stanislava Baltova

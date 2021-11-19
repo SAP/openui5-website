@@ -3,7 +3,7 @@ title: Latest Developments in UI5
 subTitle: SAP Community Call (60min)
 startDate: 2021/04/14 16:00 UTC+2
 endDate: 2021/04/14 17:00 UTC+2
-location: ZOOM
+location: via ZOOM
 logo: ./logos/sap.svg
 speakers:
   - Peter Muessig

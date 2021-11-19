@@ -3,7 +3,7 @@ title: "UI5ers live (August '21)"
 subTitle: 45 minute interactive webcast
 startDate: 2021/08/12 15:15 UTC+2
 endDate: 2021/08/12 16:00 UTC+2
-location: ZOOM
+location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
   -  Jiawei Cao
