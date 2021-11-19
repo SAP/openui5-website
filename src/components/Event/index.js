@@ -6,14 +6,9 @@ import loadable from '@loadable/component'
 import formatEventDate from "../../utils/formatEventDate";
 import Button from "../ButtonNew";
 
-loadable(() => import("@ui5/webcomponents-icons/dist/shortcut"))
-// import "@ui5/webcomponents-icons/dist/shortcut";
-
 const EventDialog = loadable(() => import("../EventDialog"))
 const AddToCalendarPopover = loadable(() => import("../AddToCalendarPopover"))
-const IconComponent = loadable(() => import("@ui5/webcomponents-react/lib/Icon"), {
-  resolveComponent: (components) => components.Icon,
-})
+const ShortcutIcon = loadable(() => import("./ShortcutIcon"))
 
 // const monthFormatter = new Intl.DateTimeFormat('en-GB', {month: "long"})
 // const dayFormatter = new Intl.DateTimeFormat('en-GB', {day: "numeric"})
@@ -84,7 +79,7 @@ const Event = (props) => {
       >
         {
           external
-            ? <div className={styles.ExternalIcon} title="Opens in New window"><IconComponent name="shortcut" /></div>
+            ? <div className={styles.ExternalIcon} title="Opens in New window"><ShortcutIcon /></div>
             : null
         }
         <div className={styles.Header}>
