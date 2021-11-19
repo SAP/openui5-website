@@ -29,8 +29,11 @@ const prepareData = (events) => {
             status = "active";
         }
 
+        let id = node.fileAbsolutePath.split("/").pop().split('.').shift();
+
         return {
             ...rest,
+            id,
             startDate,
             endDate,
             status,
@@ -74,9 +77,9 @@ const EventsPage = ({ data }) => {
                 <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{upcomingTitle}</Text>
                 <Grid column="2">
                     {
-                        upcomingEvents.map((event, key) => (
+                        upcomingEvents.map((event) => (
                             <Event
-                                key={key}
+                                key={event.id}
                                 emphasized
                                 data={event}
                             />
@@ -92,7 +95,7 @@ const EventsPage = ({ data }) => {
                                 <Text size="5" style={{ marginBottom: "calc(var(--default-margin)*0.375)", marginTop: "var(--default-margin-half)" }}>{year}</Text>
                                 <Grid column="3">
                                     {
-                                        pastEventByYears[year].map((event, key) => <Event key={key} data={event} />)
+                                        pastEventByYears[year].map((event) => <Event key={event.id} data={event} />)
                                     }
                                 </Grid>
                             </>
@@ -157,6 +160,7 @@ export const query = graphql`
                         recordingUrl
                         registrationUrl
                     }
+                    fileAbsolutePath
                     html
                 }
             }
