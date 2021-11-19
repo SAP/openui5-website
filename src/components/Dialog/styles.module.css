@@ -1,5 +1,5 @@
 .Dialog {
-    width: 720px;
+    width: 920px;
     opacity: 0;
     transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
     transform: translateY(200px);

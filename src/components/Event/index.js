@@ -3,20 +3,26 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import styles from "./styles.module.css";
 import loadable from '@loadable/component'
+import formatEventDate from "../../utils/formatEventDate";
+import Button from "../ButtonNew";
+
+import "@ui5/webcomponents-icons/dist/shortcut";
 
 const EventDialog = loadable(() => import("../EventDialog"))
 const AddToCalendarPopover = loadable(() => import("../AddToCalendarPopover"))
+const IconComponent = loadable(() => import("@ui5/webcomponents-react/lib/Icon"), {
+  resolveComponent: (components) => components.Icon,
+})
 
-const monthFormatter = new Intl.DateTimeFormat('en-GB', {month: "long"})
-const dayFormatter = new Intl.DateTimeFormat('en-GB', {day: "numeric"})
-const yearFormatter = new Intl.DateTimeFormat('en-GB', {year: "numeric"})
-const timeFormatter = new Intl.DateTimeFormat('en-GB', {hour: "numeric", minute: "numeric"})
+// const monthFormatter = new Intl.DateTimeFormat('en-GB', {month: "long"})
+// const dayFormatter = new Intl.DateTimeFormat('en-GB', {day: "numeric"})
+// const yearFormatter = new Intl.DateTimeFormat('en-GB', {year: "numeric"})
+// const timeFormatter = new Intl.DateTimeFormat('en-GB', {hour: "numeric", minute: "numeric"})
 
 const Event = (props) => {
   const {
     data,
     emphasized,
-    showAddToCalendar,
   } = props;
 
   const {
@@ -61,21 +67,9 @@ const Event = (props) => {
     win.focus();
     e.stopPropagation();
   };
-  let eventStart = new Date(startDate);
-  let eventEnd = new Date(endDate);
 
-  let formattedDate
-  if (startDate.match(/^\d{4}\/\d{2}\/\d{2}$/)) {
-    //only date given
-    let endDateFormatted = ''
-    if (eventStart.getDate() !== eventEnd.getDate()) {
-      endDateFormatted = eventStart.getMonth() !== eventEnd.getMonth() ? ` - ${monthFormatter.format(eventEnd)} ${dayFormatter.format(eventEnd)}` : ` - ${dayFormatter.format(eventEnd)}`;
-    }
-    formattedDate = `${monthFormatter.format(eventStart)} ${dayFormatter.format(eventStart)}${endDateFormatted}, ${yearFormatter.format(eventStart)}`;
-  } else {
-    //the date with time
-    formattedDate = `${monthFormatter.format(eventStart)} ${dayFormatter.format(eventStart)}, ${yearFormatter.format(eventStart)}, ${timeFormatter.format(eventStart)}`;
-  }
+  const isPastEvent = data.status === "past";
+  const isActive = data.status === "active";
 
   return (
     <>
@@ -83,12 +77,22 @@ const Event = (props) => {
         className={classnames(
           styles.Event,
           emphasized ? styles.view_emphasized : null,
+          isActive ? styles.mod_active : null,
         )}
         onClick={onClick}
       >
+        {
+          external
+            ? <div className={styles.ExternalIcon} title="Opens in New window"><IconComponent name="shortcut" /></div>
+            : null
+        }
         <div className={styles.Header}>
           <div className={styles.HeaderContent}>
-            <div className={styles.HeaderTitle}>{title}</div>
+            <div className={styles.HeaderTitle}>
+              <span>
+                {title}
+              </span>
+            </div>
             <div className={styles.HeaderSubTitle}>{subTitle}</div>
           </div>
           {
@@ -98,34 +102,44 @@ const Event = (props) => {
           }
         </div>
         <div className={styles.Content}>
-          <div className={styles.Date}>{formattedDate}</div>
+          <div className={styles.Date}>
+            {formatEventDate(startDate, endDate, { showYear: false })}
+            {
+              !isPastEvent
+                ? (
+                  <div className={classnames(styles.Countdown, isActive ? styles.mod_active : null)}>
+                    { isActive ? "Just Now" : "12 days, 12:00:31"}
+                  </div>
+                )
+                : null
+            }
+          </div>
           <div className={styles.Location}>{location}</div>
         </div>
         {
-          showAddToCalendar
+          isActive
             ? (
-              <>
-                <div className={styles.AddToCalendar} onClick={onCalendarClick} ref={addToCalendarRef}>
-                  + Add to calendar
-                </div>
-                <AddToCalendarPopover
-                  event={data}
-                  isOpen={isPopoverOpen}
-                  targetRef={addToCalendarRef.current}
-                  onAfterClose={onAfterPopoverClose}
-                />
-              </>
+              <div className={styles.Actions} onClick={onJoinClick}>
+                <Button color="orange">JOIN EVENT</Button>
+              </div>              
             )
-            : null
-        }
-        {
-          false
-            ? (
-              <div className={styles.AddToCalendar} onClick={onJoinClick}>
-                Join now
-              </div>
+            : (
+              isPastEvent
+                ? null
+                : (
+                  <>
+                    <div className={styles.Actions}>
+                      <Button color="blue" onClick={onCalendarClick} ref={addToCalendarRef}>+ Add to calendar</Button>
+                    </div>
+                    <AddToCalendarPopover
+                      event={data}
+                      isOpen={isPopoverOpen}
+                      targetRef={addToCalendarRef.current}
+                      onAfterClose={onAfterPopoverClose}
+                    />
+                  </>
+                )
             )
-            : null
         }
       </div>
       {
@@ -134,7 +148,6 @@ const Event = (props) => {
             <EventDialog
               isOpen={isDialogOpen}
               onAfterClose={onAfterDialogClose}
-              showAddToCalendar={showAddToCalendar}
               data={data}
             />
           )
@@ -145,11 +158,12 @@ const Event = (props) => {
 };
 
 Event.defaultProps = {
-  emphasized: false
+  emphasized: false,
 };
 
 Event.propTypes = {
     data: PropTypes.object.isRequired,
+    emphasized: PropTypes.bool,
 };
 
 export default Event;

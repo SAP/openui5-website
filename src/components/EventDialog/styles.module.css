@@ -5,12 +5,15 @@
 }
 
 .Header {
+  display: flex;
+}
+
+.HeaderContent {
   flex: 1;
 
   & .HeaderTitle {
     font-size: 32px;
     line-height: 1.2em;
-    font-weight: bold;
   }
 
   & .HeaderSubTitle {
@@ -20,16 +23,44 @@
   }
 }
 
+.Logo {
+  margin-left: 20px;
+  max-width: 150px;
+  max-height: 150px;
+
+  & img {
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
+.Bar {
+  border-bottom: 1px solid #ddecf8;
+  display: flex;
+  margin: var(--default-margin-half) 0 calc(var(--default-margin-half)/2) 0;
+  padding-bottom: 5px;
+
+  & .Date {
+    flex: 1;
+  }
+
+  & .Location {
+    opacity: 0.5;
+  }
+}
+
 .Speakers {
-  padding: 40px;
+  padding: 40px 40px 0;
 }
 
 .SpeakersList {
   display: flex;
-  flex-direction: column;
+  gap: 12px;
+  margin-right: -12px;
+  flex-wrap: wrap;
 
   & > * {
-    margin-bottom: 12px;
+    width: calc(50% - 12px);
 
     &:last-child {
       margin-bottom: 0;
@@ -54,4 +85,6 @@
 
 .Actions {
   margin: 40px 0 -20px;
+  display: flex;
+  gap: 10px;
 }
