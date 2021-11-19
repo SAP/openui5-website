@@ -10,8 +10,6 @@ speakers:
   - Ilhan Myumyun
   - Filip Siderov
 registrationUrl: https://sap-se.zoom.us/webinar/register/WN_3ge8aSRiTT6njTHjsqJU3w
-recordingUrl: https://sap-se.zoom.us/webinar/register/WN_3ge8aSRiTT6njTHjsqJU3w
-url: https://sap-se.zoom.us/webinar/register/WN_3ge8aSRiTT6njTHjsqJU3w
 ---
 
 In this session we will explore the UI5 Web Components – the latest SAP UI Open Source offering. UI5 Web Components are lightweight and easy to consume UI building blocks that allow you to build enterprise ready UIs with your framework of choice. As they are also a carrier of SAP Fiori design language, apps built with UI5 Web Components perfectly support the SAP Fiori UX.

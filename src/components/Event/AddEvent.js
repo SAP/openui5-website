@@ -20,7 +20,7 @@ const AddEvent = () => (
     <div className={styles.AddEvent}>
       <div className={styles.AddEventIcon}><IconComponent name="add" /></div>
       <div className={styles.AddEventTitle}>Add Event</div>
-      <div className={styles.AddEventText}>Are you or someone you know speaking about UI5at an upcoming meetup or conference? Let us know</div>
+      <div className={styles.AddEventText}>Are you or someone you know speaking about UI5 at an upcoming meetup or conference? Let us know</div>
     </div>
   </a>
 );
