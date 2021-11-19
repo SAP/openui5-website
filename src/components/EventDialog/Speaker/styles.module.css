@@ -3,25 +3,46 @@
   border-radius: 12px;
   padding: 16px;
   display: flex;
+  gap: 8px;
 }
 
 .Avatar {
   font-size: 0;
-  margin-right: 8px;
 }
 
 .Content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .Social {
-
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .Company {
   font-size: 13px;
   line-height: 1.2em;
   margin-top: 2px;
+}
+
+.Icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.Icon.view_github {
+  background: url("./images/github.png")
+}
+
+.Icon.view_linkedin {
+  background: url("./images/linkedin.png")
+}
+
+.Icon.view_twitter {
+  background: url("./images/twitter.png")
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import classnames from "classnames";
 import Text from "../../Text";
 import Avatar from "../../Avatar";
 import styles from "./styles.module.css";
@@ -9,6 +10,9 @@ const Speaker = (props) => {
     name,
     company,
     photo,
+    twitter,
+    linkedin,
+    github,
   } = props;
 
   return (
@@ -22,15 +26,40 @@ const Speaker = (props) => {
         <Text weight="bold">{name}</Text>
         <div className={styles.Company}>{company}</div>
       </div>
-      <div className={styles.Social}></div>
+      <div className={styles.Social}>
+        {
+          github
+          ? (
+            <a href={`https://github.com/${github}`} className={classnames(
+              styles.Icon,
+              styles.view_github,
+            )}></a>
+          )
+          : null
+        }
+        {
+          twitter
+          ? (
+            <a href={`https://linkedin.com/in/${linkedin}`} className={classnames(
+              styles.Icon,
+              styles.view_linkedin,
+            )}></a>
+          )
+          : null
+        }
+        {
+          twitter
+          ? (
+            <a href={`https://twitter.com/${twitter}`} className={classnames(
+              styles.Icon,
+              styles.view_twitter,
+            )}></a>
+          )
+          : null
+        }
+      </div>
     </div>
   );
-};
-
-Speaker.defaultProps = {
-};
-
-Speaker.propTypes = {
 };
 
 export default Speaker;

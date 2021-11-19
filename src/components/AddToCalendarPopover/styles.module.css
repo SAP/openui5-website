@@ -12,6 +12,8 @@
 .Popover {
   --sapContent_Shadow2: 0 3px 12px 0 rgba(49, 51, 65, 0.12);
   --sapContent_Shadow3: none;
+  transform: translateY(-5px);
+  border-radius: 12px;
 }
 
 .Content {
@@ -31,7 +33,7 @@
   margin-right: 8px;
 
   &:hover {
-    border-radius: 4px;
+    border-radius: 12px;
     background-color: #e7f2fb;
   }
 
@@ -39,8 +41,8 @@
     color: #1d1d1d80;
 
     & > * {
-      transform: translateY(8px);
-      transition: transform 0.2s ease-in-out;
+      transform: translateY(4px);
+      transition: transform 0.1s ease-in-out;
     }
   }
 
@@ -50,16 +52,16 @@
 
   &.animate {
     &.icon_1 {
-      animation: iconUp 0.3s ease-out 0.1s 1 normal forwards;
+      animation: iconUp 0.2s ease-out 0.04s 1 normal forwards;
     }
     &.icon_2 {
-      animation: iconUp 0.3s ease-out 0.2s 1 normal forwards;
+      animation: iconUp 0.2s ease-out 0.08s 1 normal forwards;
     }
     &.icon_3 {
-      animation: iconUp 0.3s ease-out 0.3s 1 normal forwards;
+      animation: iconUp 0.2s ease-out 0.12s 1 normal forwards;
     }
     &.icon_4 {
-      animation: iconUp 0.3s ease-out 0.4s 1 normal forwards;
+      animation: iconUp 0.2s ease-out 0.16s 1 normal forwards;
     }
   }
 }
