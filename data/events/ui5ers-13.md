@@ -3,7 +3,7 @@ title: "UI5ers live (December '21)"
 subTitle: 45 minute interactive webcast
 startDate: 2021/12/09 15:15 UTC+1
 endDate: 2021/12/09 16:00 UTC+1
-location: ZOOM
+location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
   -  Stefan Beck

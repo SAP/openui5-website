@@ -3,7 +3,7 @@ title: UI5 Web Components - The Latest Member of SAP’s UI Open Source Products
 subTitle: SAP Open Source Webinar (1h)
 startDate: 2021/12/14 15:00 UTC+1
 endDate: 2021/12/14 16:00 UTC+1
-location: ZOOM
+location: via ZOOM
 logo: ./logos/sap.svg
 speakers:
   - Stanislava Baltova
