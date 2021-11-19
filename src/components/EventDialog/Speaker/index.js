@@ -30,30 +30,42 @@ const Speaker = (props) => {
         {
           github
           ? (
-            <a href={`https://github.com/${github}`} className={classnames(
-              styles.Icon,
-              styles.view_github,
-            )}></a>
+            <a
+              href={`https://github.com/${github}`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_github,
+              )}
+            ></a>
           )
           : null
         }
         {
           twitter
           ? (
-            <a href={`https://linkedin.com/in/${linkedin}`} className={classnames(
-              styles.Icon,
-              styles.view_linkedin,
-            )}></a>
+            <a
+              href={`https://linkedin.com/in/${linkedin}`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_linkedin,
+              )}
+            ></a>
           )
           : null
         }
         {
           twitter
           ? (
-            <a href={`https://twitter.com/${twitter}`} className={classnames(
-              styles.Icon,
-              styles.view_twitter,
-            )}></a>
+            <a
+              href={`https://twitter.com/${twitter}`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_twitter,
+              )}
+            ></a>
           )
           : null
         }
