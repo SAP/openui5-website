@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useLocation, useNavigate } from "@reach/router"
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import styles from "./styles.module.css";
@@ -16,12 +17,16 @@ const ShortcutIcon = loadable(() => import("./ShortcutIcon"))
 // const timeFormatter = new Intl.DateTimeFormat('en-GB', {hour: "numeric", minute: "numeric"})
 
 const Event = (props) => {
+  const routerLocation = useLocation();
+  const navigate = useNavigate();
+
   const {
     data,
     emphasized,
   } = props;
 
   const {
+    id,
     title,
     subTitle,
     startDate,
@@ -37,16 +42,23 @@ const Event = (props) => {
   const addToCalendarRef = useRef();
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
+  useEffect(() => {
+    const match = routerLocation.hash.match(/#id=(.*)/);
+    const routerId = match && match[1];
+    const isCurrentEvent = routerId === id;
+    setTimeout(() => setIsDialogOpen(isCurrentEvent), 200); // workaround due to WC rendering delay on initial page load
+  }, [routerLocation, id]);
+
   const onClick = () => {
     if (external) {
       const win = window.open(url || recordingUrl, "_blank");
       win.focus();
     } else {
-      setIsDialogOpen(true);
+      navigate(`#id=${id}`, { replace: true })
     }
   };
   const onAfterDialogClose = () => {
-    setIsDialogOpen(false);
+    navigate("#", { replace: true })
   };
 
   const onAfterPopoverClose = () => {
