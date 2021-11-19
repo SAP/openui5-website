@@ -105,7 +105,7 @@ const Event = (props) => {
           <div className={styles.Date}>
             {formatEventDate(startDate, endDate, { showYear: false })}
             {
-              !isPastEvent
+              isActive //!isPastEvent
                 ? (
                   <div className={classnames(styles.Countdown, isActive ? styles.mod_active : null)}>
                     { isActive ? "Just Now" : "12 days, 12:00:31"}
