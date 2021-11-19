@@ -6,7 +6,8 @@ import loadable from '@loadable/component'
 import formatEventDate from "../../utils/formatEventDate";
 import Button from "../ButtonNew";
 
-import "@ui5/webcomponents-icons/dist/shortcut";
+loadable(() => import("@ui5/webcomponents-icons/dist/shortcut"))
+// import "@ui5/webcomponents-icons/dist/shortcut";
 
 const EventDialog = loadable(() => import("../EventDialog"))
 const AddToCalendarPopover = loadable(() => import("../AddToCalendarPopover"))
