@@ -7,6 +7,8 @@ export default (startDate, endDate, options = {}) => {
   const {
     timezone,
     showYear = true,
+    showStartTime = true,
+    showEndTime = false
   } = options;
 
   const isDateTime = !startDate.match(/^\d{4}\/\d{2}\/\d{2}$/);
@@ -38,10 +40,6 @@ export default (startDate, endDate, options = {}) => {
       if (isSameDay) {
         // April 1
         result += ` ${startDay}`;
-
-        if (isDateTime) {
-          result += ""
-        }
       } else {
         // April 1-2
         result += ` ${startDay}-${endDay}`;
@@ -56,6 +54,19 @@ export default (startDate, endDate, options = {}) => {
     if (showYear) {
       // April 30 - May 5, 2021
       result += `, ${startYear}`;
+    }
+
+    if (isDateTime) {
+      // April 1, 2021, 15:00
+      if (showStartTime) {
+        const startTime = timeFormatter.format(eventStart);
+        result += `, ${startTime}`
+      }
+      // April 1, 2021, 15:00-16:00
+      if (showEndTime) {
+        const endTime = timeFormatter.format(eventEnd);
+        result += `-${endTime}`
+      }
     }
   } else {
     // December 25, 2021 - 10 January, 2022
