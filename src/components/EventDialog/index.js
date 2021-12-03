@@ -78,7 +78,7 @@ const EventDialog = (props) => {
           }
         </div>
         <div className={styles.Bar}>
-          <div className={styles.Date}>{formatEventDate(startDate, endDate)}</div>
+          <div className={styles.Date}>{formatEventDate(startDate, endDate, {showStartTime: true, showEndTime: true})}</div>
           <div className={styles.Location}>{location}</div>
         </div>
         <div className={styles.Description} dangerouslySetInnerHTML={{__html: description}}></div>

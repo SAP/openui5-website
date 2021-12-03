@@ -111,7 +111,7 @@ const Event = (props) => {
         </div>
         <div className={styles.Content}>
           <div className={styles.Date}>
-            {formatEventDate(startDate, endDate, { showYear: false })}
+            {formatEventDate(startDate, endDate, { showYear: false, showStartTime: !isPastEvent })}
             {
               isActive //!isPastEvent
                 ? (
@@ -129,7 +129,7 @@ const Event = (props) => {
             ? (
               <div className={styles.Actions} onClick={onJoinClick}>
                 <Button color="orange">JOIN EVENT</Button>
-              </div>              
+              </div>
             )
             : (
               isPastEvent
