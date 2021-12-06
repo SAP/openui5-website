@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { graphql } from "gatsby";
 import _ from "lodash";
 
@@ -8,6 +8,7 @@ import Text from "../components/Text";
 import Event from "../components/Event";
 import AddEvent from "../components/Event/AddEvent";
 import Grid from "../components/Grid";
+import EventPageHeader from "../components/EventPageHeader"
 
 
 const prepareData = (events) => {
@@ -62,6 +63,8 @@ const EventsPage = ({ data }) => {
         pastTitle
     } = data.eventsJson;
 
+    const [selectedTime, setSelectedTime] = useState("userTime")
+
     const events = prepareData(data.allMarkdownRemark.edges);
 
     const indexOfPastEvent = events.findIndex(({ status }) => status === "past");
@@ -74,7 +77,7 @@ const EventsPage = ({ data }) => {
         <>
             <SEO title={title} />
             <Section>
-                <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{upcomingTitle}</Text>
+                <EventPageHeader title={upcomingTitle} selectedTime={selectedTime} onSelectedTimeChange={setSelectedTime} />
                 <Grid column="2">
                     {
                         upcomingEvents.map((event) => (
@@ -82,6 +85,7 @@ const EventsPage = ({ data }) => {
                                 key={event.id}
                                 emphasized
                                 data={event}
+                                isLocalTime={selectedTime === "userTime"}
                             />
                         ))
                     }
@@ -95,7 +99,7 @@ const EventsPage = ({ data }) => {
                                 <Text size="5" style={{ marginBottom: "calc(var(--default-margin)*0.375)", marginTop: "var(--default-margin-half)" }}>{year}</Text>
                                 <Grid column="3">
                                     {
-                                        pastEventByYears[year].map((event) => <Event key={event.id} data={event} />)
+                                        pastEventByYears[year].map((event) => <Event key={event.id} data={event} isLocalTime={selectedTime === "userTime"}/>)
                                     }
                                 </Grid>
                             </>
