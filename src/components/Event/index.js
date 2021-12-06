@@ -23,6 +23,7 @@ const Event = (props) => {
   const {
     data,
     emphasized,
+    isLocalTime
   } = props;
 
   const {
@@ -111,7 +112,7 @@ const Event = (props) => {
         </div>
         <div className={styles.Content}>
           <div className={styles.Date}>
-            {formatEventDate(startDate, endDate, { showYear: false, showStartTime: !isPastEvent })}
+            {formatEventDate(startDate, endDate, { showYear: false, showStartTime: !isPastEvent, isLocalTime })}
             {
               isActive //!isPastEvent
                 ? (
@@ -156,6 +157,7 @@ const Event = (props) => {
             <EventDialog
               isOpen={isDialogOpen}
               onAfterClose={onAfterDialogClose}
+              isLocalTime={isLocalTime}
               data={data}
             />
           )
