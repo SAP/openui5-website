@@ -1,13 +1,14 @@
 ---
-title: SAP Community Call - Latest Developments in UI5
-subTitle: 60 minute webinar
+title: Latest Developments in UI5
+subTitle: SAP Community Call (60min)
 startDate: 2021/04/14 16:00 UTC+2
 endDate: 2021/04/14 17:00 UTC+2
-location: ZOOM
+location: via ZOOM
 logo: ./logos/sap.svg
 speakers:
   - Peter Muessig
 registrationUrl: https://sap-se.zoom.us/webinar/register/95894288263?tk
+recordingUrl: https://youtu.be/OuNMb9kPhTg?list=PLpQebylHrdh5XQts8bKoMUKexpun_YPvU
 ---
 
 Join Peter Muessig, Chief Product Architect of the UI5 family, on a journey of discovery through the main recent innovation features of UI5.

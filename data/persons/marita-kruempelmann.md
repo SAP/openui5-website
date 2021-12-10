@@ -1,6 +1,6 @@
 ---
-name: Marita Krümpelmann
+name: Marita Kruempelmann
 company: SAP
-photo: ./marita-krümpelmann.jpg
+photo: ./marita-kruempelmann.jpg
 twitter: mkruempelmann
 ---

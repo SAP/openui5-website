@@ -4,17 +4,18 @@ import Dialog from "../Dialog";
 import Text from "../Text";
 import styles from "./styles.module.css";
 import Speaker from "./Speaker";
-import Button from "./Button";
+import Button from "../ButtonNew";
 import AddToCalendarPopover from "../AddToCalendarPopover";
 import "@ui5/webcomponents-icons/dist/add";
 import "@ui5/webcomponents-icons/dist/video";
 import { Icon } from '@ui5/webcomponents-react/lib/Icon';
+import formatEventDate from "../../utils/formatEventDate";
 
 
 const EventDialog = (props) => {
   const {
     data,
-    showAddToCalendar,
+    isLocalTime,
     ...rest
   } = props;
 
@@ -23,9 +24,14 @@ const EventDialog = (props) => {
     subTitle,
     description,
     url,
+    logo,
     recordingUrl,
     registrationUrl,
-    speakers
+    location,
+    startDate,
+    endDate,
+    speakers,
+    status,
   } = data;
 
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
@@ -55,33 +61,47 @@ const EventDialog = (props) => {
     win.focus();
   };
 
+  const isPastEvent = status === "past";
+  const isActive = status === "active";
+
   return (
     <Dialog {...rest}>
       <div className={styles.Content}>
         <div className={styles.Header}>
-          <div className={styles.HeaderTitle}>{title}</div>
-          <div className={styles.HeaderSubTitle}>{subTitle}</div>
+          <div className={styles.HeaderContent}>
+            <div className={styles.HeaderTitle}>{title}</div>
+            <div className={styles.HeaderSubTitle}>{subTitle}</div>
+          </div>
+          {
+            logo
+              ? <div className={styles.Logo}><img src={logo} /></div>
+              : null
+          }
+        </div>
+        <div className={styles.Bar}>
+          <div className={styles.Date}>{formatEventDate(startDate, endDate, {showStartTime: true, showEndTime: true, isLocalTime})}</div>
+          <div className={styles.Location}>{location}</div>
         </div>
         <div className={styles.Description} dangerouslySetInnerHTML={{__html: description}}></div>
         <div className={styles.Actions}>
           {
-            showAddToCalendar
+            status === "scheduled"
               ? (
                 <>
-                  <Button icon={<Icon name="add" />} onClick={onCalendarClick} ref={addToCalendarRef}>Add to calendar</Button>
+                  <Button color="darkBlue" icon={<Icon name="add" />} onClick={onCalendarClick} ref={addToCalendarRef}>Add to calendar</Button>
                   <AddToCalendarPopover
                     event={data}
                     isOpen={isPopoverOpen}
                     targetRef={addToCalendarRef.current}
                     onAfterClose={onAfterPopoverClose}
                   />
-                  { registrationUrl && <Button onClick={onRegisterClick}>Register</Button> }
-                  { url && <Button onClick={onJoinClick}>Join</Button> }
+                  { registrationUrl && <Button color="darkBlue" onClick={onRegisterClick}>Register</Button> }
                 </>
               )
-              : recordingUrl && <Button icon={<Icon name="video" />} onClick={onRecordingClick}>Recording</Button>
+              : null
           }
-
+          { isActive && url && <Button color="orange" onClick={onJoinClick}>JOIN EVENT</Button> }
+          { isPastEvent && recordingUrl && <Button color="darkBlue" icon={<Icon name="video" />} onClick={onRecordingClick}>Recording</Button> }
         </div>
       </div>
       {
@@ -103,14 +123,6 @@ const EventDialog = (props) => {
       }
     </Dialog>
   );
-};
-
-EventDialog.defaultProps = {
-  // emphasized: false
-};
-
-EventDialog.propTypes = {
-    // title: PropTypes.string.isRequired,
 };
 
 export default EventDialog;

@@ -3,7 +3,7 @@ title: "UI5ers live (October '21)"
 subTitle: 45 minute interactive webcast
 startDate: 2021/10/14 15:15 UTC+2
 endDate: 2021/10/14 16:00 UTC+2
-location: ZOOM
+location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
   -  James Zhang
