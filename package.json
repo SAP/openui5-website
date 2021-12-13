@@ -22,7 +22,7 @@
     "fetchVersions": "node ./scripts/fetchVersions.js"
   },
   "devDependencies": {
-    "@loadable/component": "5.15.0",
+    "@loadable/component": "5.15.2",
     "@react-hook/media-query": "^1.1.1",
     "@ui5/webcomponents": "1.0.0-rc.11",
     "@ui5/webcomponents-react": "0.13.9",
