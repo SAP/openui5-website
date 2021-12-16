@@ -9,10 +9,9 @@ speakers:
   -  Stefan Beck
   -  Peter Muessig
   -  Andreas Kunz
-  -  Margot Wollny
+  -  Wouter Lemaire
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
-
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+UI5ers live is back on the scene again to keep you update on current projects in and around UI5. This starts with Stefan Beck. He will give you an insight into the major milestones for UI5 he has set for 2022.
+Then, we are really happy to have again a contribution from the community. Wouter Lemaire has dealt a lot with TypeScript in UI5 lately and used it for several projects already. This gave him the idea to create a flexible column layout template to kick-start Ui5 projects with TypeScript, he will showcase to you. 
+In addition, Peter Muessig and Andreas Kunz worked on a tutorial for TypeScript in UI5 they will explain to you.
