@@ -3,23 +3,30 @@ const monthFormatter = new Intl.DateTimeFormat('en-GB', { month: "long" });
 const dayFormatter = new Intl.DateTimeFormat('en-GB', { day: "numeric" });
 const timeFormatter = new Intl.DateTimeFormat('en-GB', { hour: "numeric", minute: "numeric" });
 
+const yearFormatterBerlin = new Intl.DateTimeFormat('en-GB', { year: "numeric", timeZone: "Europe/Berlin" });
+const monthFormatterBerlin = new Intl.DateTimeFormat('en-GB', { month: "long", timeZone: "Europe/Berlin" });
+const dayFormatterBerlin = new Intl.DateTimeFormat('en-GB', { day: "numeric", timeZone: "Europe/Berlin" });
+const timeFormatterBerlin = new Intl.DateTimeFormat('en-GB', { hour: "numeric", minute: "numeric", timeZone: "Europe/Berlin" });
+
 export default (startDate, endDate, options = {}) => {
   const {
-    timezone,
+    isLocalTime = true,
     showYear = true,
+    showStartTime = true,
+    showEndTime = false
   } = options;
 
   const isDateTime = !startDate.match(/^\d{4}\/\d{2}\/\d{2}$/);
   const eventStart = new Date(startDate);
   const eventEnd = new Date(endDate);
 
-  const startYear = yearFormatter.format(eventStart);
-  const startMonth = monthFormatter.format(eventStart);
-  const startDay = dayFormatter.format(eventStart);
+  const startYear = isLocalTime ? yearFormatter.format(eventStart) : yearFormatterBerlin.format(eventStart);
+  const startMonth = isLocalTime ? monthFormatter.format(eventStart) : monthFormatterBerlin.format(eventStart);
+  const startDay = isLocalTime ? dayFormatter.format(eventStart) : dayFormatterBerlin.format(eventStart);
 
-  const endYear = yearFormatter.format(eventEnd);
-  const endMonth = monthFormatter.format(eventEnd);
-  const endDay = dayFormatter.format(eventEnd);
+  const endYear = isLocalTime ? yearFormatter.format(eventEnd) : yearFormatterBerlin.format(eventEnd);
+  const endMonth = isLocalTime ? monthFormatter.format(eventEnd) : monthFormatterBerlin.format(eventEnd);
+  const endDay = isLocalTime ? dayFormatter.format(eventEnd) : dayFormatterBerlin.format(eventEnd);
 
   const isSameYear = startYear === endYear;
   const isSameMonth = startMonth === endMonth;
@@ -38,10 +45,6 @@ export default (startDate, endDate, options = {}) => {
       if (isSameDay) {
         // April 1
         result += ` ${startDay}`;
-
-        if (isDateTime) {
-          result += ""
-        }
       } else {
         // April 1-2
         result += ` ${startDay}-${endDay}`;
@@ -56,6 +59,19 @@ export default (startDate, endDate, options = {}) => {
     if (showYear) {
       // April 30 - May 5, 2021
       result += `, ${startYear}`;
+    }
+
+    if (isDateTime) {
+      // April 1, 2021, 15:00
+      if (showStartTime) {
+        const startTime = isLocalTime ? timeFormatter.format(eventStart) : timeFormatterBerlin.format(eventStart);
+        result += `, ${startTime}`
+      }
+      // April 1, 2021, 15:00-16:00
+      if (showEndTime) {
+        const endTime = isLocalTime ? timeFormatter.format(eventEnd) : timeFormatterBerlin.format(eventEnd);
+        result += `-${endTime}`
+      }
     }
   } else {
     // December 25, 2021 - 10 January, 2022

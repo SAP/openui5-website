@@ -1,0 +1,16 @@
+.pageHeader {
+  display: flex;
+
+  @media only screen and (max-width: 812px) {
+    display: block;
+  }
+}
+
+.toggle {
+  margin-left: 20px;
+
+  @media only screen and (max-width: 812px) {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}

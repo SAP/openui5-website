@@ -6,13 +6,10 @@ endDate: 2021/12/09 16:00 UTC+1
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Stefan Beck
-  -  Peter Muessig
+  -  Volker Buzek
   -  Andreas Kunz
-  -  Margot Wollny
+  -  Tobias Queck
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
-
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+For this episode we’re joined by Tobias Queck from SAP UX Engineering and Volker Buzek, SAP Mentor and UI5 enthusiast from the beginning. The two got together to drive forward the open sourcing of major parts of the SAP Fiori tools extension set while making sure that this is compatible with the UI5 Community tools. The main focus for the initial release of the Open UX Tools was to extract the SAP Fiori freestyle templates from the SAP Fiori application generator and provide them as a reusable writer module for the SAP Fiori application generator and the community-driven Easy-UI5 generator. Tobias and Volker will explain how this collaboration came about, how the modules work, and what else is possible.
+Our second topic is about TypeScript in UI5. Andreas Kunz has been quite busy the last weeks and created a central entry point for TypeScript in UI5 with documentation, best practices and examples. In addition he will showcase how you can develop a custom control using TypeScript.
