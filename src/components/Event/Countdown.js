@@ -19,8 +19,10 @@ const Countdown = ({startDate}) => {
           setRemainTime(`${days} days, ${time}`);
         } else if (days === 1) {
           setRemainTime(`1 day, ${time}`);
+        } else if (startDate.getDate() !== new Date().getDate()) {
+          setRemainTime(`Tomorrow, ${time}`)
         } else {
-          setRemainTime(time)
+          setRemainTime(`Today, ${time}`);
         }
       } else {
         setRemainTime(null)

@@ -113,7 +113,7 @@ const Event = (props) => {
         </div>
         <div className={styles.Content}>
           <div className={styles.Date}>
-            {formatEventDate(startDate, endDate, { showYear: false, showStartTime: !isPastEvent, isLocalTime })}
+            <span className={styles.StartDate}>{formatEventDate(startDate, endDate, { showYear: false, showStartTime: !isPastEvent, isLocalTime })}</span>
             {!isPastEvent && <Countdown startDate={new Date(startDate)} endDate={new Date(endDate)} />}
           </div>
           <div className={styles.Location}>{location}</div>

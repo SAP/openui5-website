@@ -83,9 +83,8 @@
   padding: 0 8px;
   background-color: #1366a2;
   border-radius: 8px;
-  margin-left: 10px;
   font-size: 14px;
-  
+
   &.mod_active {
     background-color: #ff6301;
   }
@@ -171,11 +170,15 @@
 .Date {
   flex: 1;
   /* font-weight: bold; */
-  
+
 
   & b {
     font-weight: bold;
   }
+}
+
+.StartDate {
+  margin-right: 10px;
 }
 
 .Location {
@@ -215,7 +218,7 @@
   justify-content: center;
   padding: 24px;
   flex-direction: column;
-    
+
   @media only screen and (max-width: 767px) {
     min-height: 200px;
     height: auto;
