@@ -10,6 +10,7 @@ import Button from "../ButtonNew";
 const EventDialog = loadable(() => import("../EventDialog"))
 const AddToCalendarPopover = loadable(() => import("../AddToCalendarPopover"))
 const ShortcutIcon = loadable(() => import("./ShortcutIcon"))
+const Countdown = loadable(() => import("./Countdown"))
 
 // const monthFormatter = new Intl.DateTimeFormat('en-GB', {month: "long"})
 // const dayFormatter = new Intl.DateTimeFormat('en-GB', {day: "numeric"})
@@ -113,15 +114,7 @@ const Event = (props) => {
         <div className={styles.Content}>
           <div className={styles.Date}>
             {formatEventDate(startDate, endDate, { showYear: false, showStartTime: !isPastEvent, isLocalTime })}
-            {
-              isActive //!isPastEvent
-                ? (
-                  <div className={classnames(styles.Countdown, isActive ? styles.mod_active : null)}>
-                    { isActive ? "Just Now" : "12 days, 12:00:31"}
-                  </div>
-                )
-                : null
-            }
+            {!isPastEvent && <Countdown startDate={new Date(startDate)} endDate={new Date(endDate)} />}
           </div>
           <div className={styles.Location}>{location}</div>
         </div>
