@@ -1,5 +1,6 @@
 ---
 name: Thomas Allmer
 company: IBM
-twitter: @daKmoR
+twitter: daKmoR
+github: daKmoR
 ---
