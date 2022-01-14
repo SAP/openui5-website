@@ -2,7 +2,7 @@
 title: "UI5ers live (February '22)"
 subTitle: 45 minute interactive webcast
 startDate: 2022/02/10 15:15 UTC+1
-endDate: 2021/02/10 16:00 UTC+1
+endDate: 2022/02/10 16:00 UTC+1
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
