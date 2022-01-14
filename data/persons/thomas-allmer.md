@@ -1,5 +1,5 @@
 ---
 name: Thomas Allmer
-company: Adobe
+company: IBM
 twitter: @daKmoR
 ---
