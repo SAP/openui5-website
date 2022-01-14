@@ -2,7 +2,7 @@
 title: "Web Components, Design Systems and Accessibility"
 subTitle: Webinar hosted by Vaadin
 startDate: 2022/01/20 19:00 UTC+1
-endDate: 2021/01/20 20:00 UTC+1
+endDate: 2022/01/20 20:00 UTC+1
 location: via YouTube
 speakers:
   -  Ari Gilmore
