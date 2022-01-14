@@ -1,6 +1,6 @@
 ---
 name: Thomas Allmer
-company: IBM
+company: ING
 twitter: daKmoR
 github: daKmoR
 ---
