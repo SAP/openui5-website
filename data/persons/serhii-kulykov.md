@@ -1,6 +1,6 @@
 ---
 name: Serhii Kulykov
 company: Vaadin
-twitter: WestbrookJ
+twitter: serhiikulykov
 github: web-padawan
 ---
