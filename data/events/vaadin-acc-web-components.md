@@ -9,6 +9,7 @@ speakers:
   -  Thomas Allmer
   -  Westbrook Johnson
   -  Elena Stoyanova
+  -  Serhii Kulykov
 url: https://www.youtube.com/watch?v=xz8yRVJMP2k
 ---
 Web Components are an excellent basis for building Design Systems, but providing good accessibility can seem like a daunting challenge.
