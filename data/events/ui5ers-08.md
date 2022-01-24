@@ -9,7 +9,6 @@ speakers:
   - Stefan Beck
   - Tereza Chobanova
   - Sebastian Bender
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/eGyklhGkeJg
 ---
 
