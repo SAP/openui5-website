@@ -13,7 +13,6 @@ speakers:
   - Peter Muessig
   - Andreas Kunz
   - Margot Wollny
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/_TP5gomVjuo
 ---
 
