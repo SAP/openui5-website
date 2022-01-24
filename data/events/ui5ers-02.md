@@ -10,7 +10,6 @@ speakers:
   - Nikolay Kolarov
   - Tobias Hoffmann
   - Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/QEt4hkBFKXE
 ---
 
