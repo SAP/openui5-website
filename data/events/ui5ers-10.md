@@ -8,7 +8,6 @@ logo: ./logos/ui5ers.svg
 speakers:
   -  Jiawei Cao
   -  Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/lUZ0A-OUJaY
 ---
 In this episode we treat the topics Perceived Performance and Web Components.
