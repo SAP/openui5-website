@@ -9,7 +9,6 @@ speakers:
   - Thorsten Hochreuter
   - Alexandar Mitsev
   - Diana Mihaylova
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/Hw6-ICD7CP0
 ---
 
