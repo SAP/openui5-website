@@ -9,7 +9,6 @@ speakers:
   - Geert-Jan Klaps
   - Marius Obert
   - Andreas Kunz
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/0notj9PPTho
 ---
 
