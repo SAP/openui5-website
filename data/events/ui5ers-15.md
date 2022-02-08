@@ -6,13 +6,9 @@ endDate: 2022/02/10 16:00 UTC+1
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Stefan Beck
-  -  Peter Muessig
-  -  Andreas Kunz
-  -  Margot Wollny
+  -  Marcel Schork
+  -  Jakob Marius Kjaer
+  -  Nicolai Geburek
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+We are pleased to again have some great contributions from the UI5 community this time: Jakob Kjaer and Marcel Schork are so kind as to share their current work around UI5 with us. Jakob recently created a universal login provider for the UI5 tooling, which will be especially useful in case authentication is requested in several components. He’s going to tell us in detail how he came up with this idea and how it all works. Furthermore, he will address the feedback on the [current structure of the UI5 ecosystem showcase] (https://github.com/ui5-community/ui5-ecosystem-showcase/issues/562). Feel free to add your 2 cents to the issue. For a good while Marcel dealt with the creation of private UI5 templates for specific use cases and thought about configuration options to link private and public UI5 templates. He will talk about the needs from the customer's point of view, good reasons for private templates, and the way he deals with them in his projects. Nico Geburek from the SAP Advocates team will also attend the episode and share the latest news around Easy-UI5. And as always, you can be curious about news from our UI5 experts.
