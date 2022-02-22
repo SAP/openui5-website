@@ -729,13 +729,13 @@ time {
   text-decoration: none;
   flex-direction: column;
   outline-offset: 1.25rem;
+  transition: all 0.5s ease-in-out;
   outline: 0.25rem solid transparent;
   color: var(--sapTextContrastColor);
 }
 
 .ui5con__link:hover svg {
   transform: rotateY(180deg);
-  transition: all 0.5s ease-in-out;
 }
 
 .ui5con__link:focus {
@@ -813,7 +813,7 @@ time {
 .ui5con-sap-links a:link {
   text-decoration: none;
   outline-offset: 1.25rem;
-  transition: all 0.2s ease-out;
+  transition: all 0.5s ease-in-out;
   color: var(--sapTextColor);
   outline: 0.25rem solid transparent;
 }
