@@ -6,12 +6,14 @@
   --sapBackgroundContrastColor: #f5f6f7;
   --sapTextColor: #223548;
   --sapTextContrastColor: #f5f6f7;
+  --sapGradientColor: #E86330;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --sapBackgroundColor: var(--dark-brand-color);
     --sapTextColor: var(--sapTextContrastColor);
+    --sapGradientColor: #f5f6f7;
   }
 }
 
@@ -452,7 +454,7 @@ h1, h2, h3, h4 {
 time {
   -webkit-text-stroke: 0;
   margin-bottom: 4rem;
-  background: linear-gradient(130deg, var(--brand-color-alt), var(--brand-color), #fff, var(--brand-color), var(--brand-color-alt));
+  background: linear-gradient(130deg, var(--brand-color-alt), var(--brand-color), var(--sapGradientColor), var(--brand-color), var(--brand-color-alt));
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% 100%;
@@ -697,8 +699,8 @@ time {
 
 .ui5con-container--links {
   position: relative;
-  gap: 1rem;
-  padding: 5rem 20%;
+  gap: 10vw;
+  padding: 5rem 0;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(30deg, var(--brand-color), var(--brand-color-alt));
@@ -707,7 +709,14 @@ time {
 
 @media screen and (max-width: 800px) {
   .ui5con-container--links {
-    padding: 3rem 2%;
+    /* gap: 5vw; */
+    padding: 3rem 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .ui5con-container--links {
+    /* gap: 3vw; */
   }
 }
 
@@ -725,8 +734,8 @@ time {
 }
 
 .ui5con__link:hover svg {
-  transform: rotateY(360deg);
-  transition: all 0.5s ease-out;
+  transform: rotateY(180deg);
+  transition: all 0.5s ease-in-out;
 }
 
 .ui5con__link:focus {
