@@ -1,6 +1,6 @@
 ---
-title: UI5con ON AIR
-subTitle: Community conference around the UI5 framework
+title: UI5con ON AIR 2022
+subTitle: Free community conference for UI5 enthusiasts
 external: true
 startDate: 2022/07/07 
 endDate: 2022/07/08 
