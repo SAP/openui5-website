@@ -417,6 +417,37 @@ h1, h2, h3, h4 {
   vertical-align: baseline;
 }
 
+
+@keyframes wave {
+  0% {
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.ui5con-header__logo:hover .Wave1 {
+  opacity: 1;
+  animation:
+    wave 0.45s ease-out 0.5s,
+    wave 0.45s ease-out 1.4s;
+}
+
+.ui5con-header__logo:hover .Wave2 {
+  animation:
+    wave 0.45s ease-out 0.6s,
+    wave 0.45s ease-out 1.5s;
+}
+
+.ui5con-header__logo:hover .Wave3 {
+  animation:
+    wave 0.45s ease-out 0.7s,
+    wave 0.45s ease-out 1.6s;
+}
+
 .onair {
   fill: var(--sapTextColor);
 }
