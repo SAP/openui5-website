@@ -36,8 +36,8 @@
 		}
 	}
 
-	&.mod_onair2021 {
-		background: url("./onair_2021_thank_you.png") 50% 50% no-repeat;
+	&.mod_germany2022 {
+		background: url("./germany_2022.png") 50% 50% no-repeat;
 		background-size: 615px 150px;
 
 		@media (max-width: 575px) {
