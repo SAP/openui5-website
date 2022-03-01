@@ -5,8 +5,8 @@ import styles from "./styles.module.css";
 
 const slides = [
   {
-    url: "/ui5con/onair2021/",
-    className: styles.mod_onair2021,
+    url: "/ui5con/germany2022/",
+    className: styles.mod_germany2022,
   }
 ];
 

@@ -6,11 +6,15 @@ import { List, ListItem } from "../components/List";
 import Tile from "../components/Tile";
 import Button from "../components/Button";
 import Text from "../components/Text";
+import Slider from "../components/Slider";
 
 const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
     const { startCoding } = indexJson;
     return (
         <>
+            <Section color="lightblue" hasPadding={false}>
+                <Slider />
+            </Section>
             <Section>
                 <List column="3">
                     { allFeaturesJson.edges.map(({ node }, idx) => {
