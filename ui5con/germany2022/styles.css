@@ -427,7 +427,7 @@ h1, h2, h3, h4 {
   margin-top: 6rem;
   position: relative;
   margin-bottom: 2rem;
-  color: var(--brand-color);
+  color: #fff;
 }
 
 .ui5con-header__date, time {
@@ -564,7 +564,7 @@ time {
   font-weight: 900;
   font-size: 1.5rem;
   text-align: center;
-  color: var(--brand-color-alt);
+  color: #fff;
   white-space: nowrap;
   text-transform: uppercase;
   background-image: url(images/stripes-triangle.svg);
