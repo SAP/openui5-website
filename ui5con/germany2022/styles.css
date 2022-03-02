@@ -554,15 +554,18 @@ time {
 .ui5con-header__announcement {
   margin: auto;
   display: flex;
-  flex-wrap: wrap;
   max-width: 25rem;
   align-items: center;
+  flex-direction: column;
   border: 0.0625rem solid var(--brand-color);
 }
 
 .ui5con-header__announcement-left {
+  order: 2;
+  width: 100%;
   flex: 1 0 auto;
-  border-bottom: 0.0625rem solid var(--brand-color);
+  text-align: center;
+  border-top: 0.0625rem solid var(--brand-color);
 }
 
 .ui5con-header__announcement-left p {
@@ -581,27 +584,50 @@ time {
   left: 0.625rem;
   width: 0.0625rem;
   position: absolute;
-  background-color: var(--brand-color);
 }
 
 .ui5con-header__announcement-left p:first-child {
+  margin-top: 0.5rem;
+  border-top: 0.0625rem solid var(--brand-color);
   border-bottom: 0.0625rem solid var(--brand-color);
 }
 
 .ui5con-header__announcement-right {
   margin: auto;
-  flex: 1 0 100%;
-  line-height: 2;
-  font-weight: 900;
-  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 2.5;
   text-align: center;
-  color: #fff;
-  white-space: nowrap;
-  text-transform: uppercase;
-  background-image: url(images/stripes-triangle.svg);
+  position: relative;
   background-size: contain;
   background-position: 50% 0;
   background-repeat: no-repeat;
+  background-image: url(images/stripes-triangle.svg);
+}
+
+.ui5con-header__announcement-right a {
+  font-weight: 800;
+  overflow: hidden;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--sapTextColor);
+}
+
+.ui5con-header__announcement-right a::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  color: var(--brand-color);
+  content: attr(data-content);
+  transition: width 450ms ease-in-out;
+}
+
+.ui5con-header__announcement-right a:hover::before {
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -615,19 +641,40 @@ time {
   }
 
   .ui5con-header__announcement-left p {
-    border-right: 0.0625rem solid var(--brand-color);
     font-size: 1.3rem;
   }
 
-  .ui5con-header__announcement-right {
-    font-size: 2.5rem;
+  .ui5con-header__announcement-right a{
     flex: 1 0 auto;
+    font-size: 2.5rem;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .ui5con-header__announcement {
-    max-width: 30rem;
+    max-width: 35rem;
+    flex-direction: row;
+  }
+
+  .ui5con-header__announcement-left {
+    order: 0;
+    width: auto;
+    text-align: left;
+    border-top: none;
+    border-right: 0.0625rem solid var(--brand-color);
+  }
+
+  .ui5con-header__announcement-right a {
+    line-height: 2;
+  }
+
+  .ui5con-header__announcement-left p:before {
+    background-color: var(--brand-color);
+  }
+
+  .ui5con-header__announcement-left p:first-child {
+    margin-top: 0;
+    border-top: none;
   }
 }
 
