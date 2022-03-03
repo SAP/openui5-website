@@ -561,7 +561,6 @@ time {
 }
 
 .ui5con-header__announcement-left {
-  order: 2;
   width: 100%;
   flex: 1 0 auto;
   text-align: center;
@@ -623,7 +622,7 @@ time {
   white-space: nowrap;
   color: var(--brand-color);
   content: attr(data-content);
-  transition: width 450ms ease-in-out;
+  transition: width 400ms ease-in-out;
 }
 
 .ui5con-header__announcement-right a:hover::before {
@@ -646,7 +645,7 @@ time {
 
   .ui5con-header__announcement-right a{
     flex: 1 0 auto;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -657,11 +656,10 @@ time {
   }
 
   .ui5con-header__announcement-left {
-    order: 0;
     width: auto;
     text-align: left;
     border-top: none;
-    border-right: 0.0625rem solid var(--brand-color);
+    border-left: 0.0625rem solid var(--brand-color);
   }
 
   .ui5con-header__announcement-right a {
