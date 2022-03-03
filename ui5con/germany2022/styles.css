@@ -563,6 +563,7 @@ time {
 .ui5con-header__announcement-left {
   width: 100%;
   flex: 1 0 auto;
+  line-height: 2;
   text-align: center;
   border-top: 0.0625rem solid var(--brand-color);
 }
@@ -570,7 +571,6 @@ time {
 .ui5con-header__announcement-left p {
   margin: 0;
   font-size: 1rem;
-  line-height: 2.3;
   padding: 0 1.5rem;
   position: relative;
   border-right: none;
@@ -593,8 +593,8 @@ time {
 
 .ui5con-header__announcement-right {
   margin: auto;
+  display: flex;
   cursor: pointer;
-  line-height: 2.5;
   text-align: center;
   position: relative;
   background-size: contain;
@@ -606,7 +606,9 @@ time {
 .ui5con-header__announcement-right a {
   font-weight: 800;
   overflow: hidden;
+  line-height: 2.5;
   font-size: 1.5rem;
+  padding: 0.5rem 0;
   white-space: nowrap;
   text-decoration: none;
   text-transform: uppercase;
@@ -614,8 +616,8 @@ time {
 }
 
 .ui5con-header__announcement-right a::before {
-  top: 0;
-  left: 0;
+  top: 0.4rem;
+  left: 0.1rem;
   width: 0;
   overflow: hidden;
   position: absolute;
@@ -645,6 +647,7 @@ time {
 
   .ui5con-header__announcement-right a{
     flex: 1 0 auto;
+    line-height: 2;
     font-size: 2rem;
   }
 }
@@ -818,6 +821,15 @@ time {
   right: -28rem;
   max-width: 600px;
   transform: translateY(-50%);
+  z-index: 0;
+}
+
+.ui5con__banner-4 {
+  position: absolute;
+  bottom: 0;
+  left: -28rem;
+  max-width: 600px;
+  transform: translateY(50%);
   z-index: 0;
 }
 
