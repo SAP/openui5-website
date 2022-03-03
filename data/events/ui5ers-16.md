@@ -6,13 +6,10 @@ endDate: 2022/03/10 16:00 UTC+1
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Stefan Beck
+  -  Volker Buzek
   -  Peter Muessig
-  -  Andreas Kunz
-  -  Margot Wollny
+  -  Tobias Sorn
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+Also in March we gather for UI5ers live. There are some excellent news to spread around, you may be curious!
+As always, we have invited some additional panelists to our round and looking forward to interesting discussions with Volker Buzek, co-author of [wdi5](https://js-soft.github.io/wdi5/#/), and Tobias Sorn, from among the UI5 development team. Now that it was officially announced that wdi5 becomes the legitimate successor of UIVeri5, we want to talk with him about what is currently happening in the project and the roadmap planning for wdi5. And for sure there will be enough time to answer any question you might have to this. Tobias is in charge of two new features or rather changes in the UI5 framework, which were recently delivered, he wants to showcase to you. First, it concerns the parsing of numbers and its change to strict parsing. What this means and how this affects your UI5 app, more in our episode from Tobias. As a second topic, Tobias will introduce the new timezone configuration for timestamps. As always we are looking forward to a lively exchange with you and our community!
