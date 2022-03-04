@@ -611,6 +611,15 @@ time {
   border-left: 0.0625rem solid var(--brand-color);
 }
 
+.ui5con-header__announcement-left a:focus {
+  outline-offset: -0.25rem;
+  outline-color: var(--brand-color-alt);
+}
+
+.ui5con-header__announcement-left a:not(:focus) {
+  transition-duration: 0s;
+}
+
 .ui5con-header__announcement-right::before {
   top: 0;
   content: '';
