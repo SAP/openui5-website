@@ -552,130 +552,128 @@ time {
 }
 
 .ui5con-header__announcement {
-  margin: auto;
   display: flex;
-  max-width: 25rem;
+  max-width: 36rem;
   align-items: center;
-  flex-direction: column;
+  align-items: stretch;
+  flex-direction: row;
   border: 0.0625rem solid var(--brand-color);
 }
 
 .ui5con-header__announcement-left {
-  width: 100%;
-  flex: 1 0 auto;
-  line-height: 2;
-  text-align: center;
-  border-top: 0.0625rem solid var(--brand-color);
-}
-
-.ui5con-header__announcement-left p {
-  margin: 0;
-  font-size: 1rem;
-  padding: 0 1.5rem;
-  position: relative;
-  border-right: none;
-}
-
-.ui5con-header__announcement-left p:before {
-  top: 0;
-  bottom: 0;
-  content: "";
-  left: 0.625rem;
-  width: 0.0625rem;
-  position: absolute;
-}
-
-.ui5con-header__announcement-left p:first-child {
-  margin-top: 0.5rem;
-  border-top: 0.0625rem solid var(--brand-color);
-  border-bottom: 0.0625rem solid var(--brand-color);
-}
-
-.ui5con-header__announcement-right {
-  margin: auto;
   display: flex;
-  cursor: pointer;
-  text-align: center;
-  position: relative;
+  align-items: center;
   background-size: contain;
   background-position: 50% 0;
+  background-color: var(--dark-brand-color);
   background-repeat: no-repeat;
   background-image: url(images/stripes-triangle.svg);
 }
 
-.ui5con-header__announcement-right a {
+.ui5con-header__announcement-left:hover {
+  background-color: #0F0F0F;
+}
+
+.ui5con-header__announcement-left a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  font-size: 2rem;
+  padding: 0 1rem;
   font-weight: 800;
   overflow: hidden;
-  line-height: 2.5;
-  font-size: 1.5rem;
-  padding: 0.5rem 0;
+  position: relative;
+  align-items: center;
   white-space: nowrap;
   text-decoration: none;
   text-transform: uppercase;
   color: var(--sapTextColor);
 }
 
-.ui5con-header__announcement-right a::before {
-  top: 0.4rem;
-  left: 0.1rem;
+.ui5con-header__announcement-left a::before {
+  left: 1rem;
   width: 0;
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
   color: var(--brand-color);
   content: attr(data-content);
-  transition: width 400ms ease-in-out;
+  transition: width 400ms ease;
 }
 
-.ui5con-header__announcement-right a:hover::before {
+.ui5con-header__announcement-left a:hover::before {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+.ui5con-header__announcement-right {
+  width: 100%;
+  position: relative;
+  border-left: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-header__announcement-right::before {
+  top: 0;
+  content: '';
+  height: 100%;
+  left: 0.5rem;
+  width: 0.0625rem;
+  position: absolute;
+  background-color: var(--brand-color);
+}
+
+.ui5con-header__announcement-right p {
+  margin: 0;
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.ui5con-header__announcement-right p:first-child {
+  border-bottom: 0.0625rem solid var(--brand-color);
+}
+
+@media screen and (max-width: 768px) {
   .ui5con-header__announcement {
-    margin: unset;
-  }
-
-  .ui5con-header__announcement-left {
-    flex: 0 0 auto;
-    border-bottom: none;
-  }
-
-  .ui5con-header__announcement-left p {
-    font-size: 1.3rem;
-  }
-
-  .ui5con-header__announcement-right a{
-    flex: 1 0 auto;
-    line-height: 2;
-    font-size: 2rem;
+    margin: auto;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .ui5con-header__announcement {
-    max-width: 35rem;
-    flex-direction: row;
+    width: fit-content;
+    flex-direction: column;
   }
 
   .ui5con-header__announcement-left {
-    width: auto;
-    text-align: left;
-    border-top: none;
-    border-left: 0.0625rem solid var(--brand-color);
+    justify-content: center;
   }
 
-  .ui5con-header__announcement-right a {
-    line-height: 2;
+  .ui5con-header__announcement-left a {
+    font-size: 1.5rem;
+    padding: 1.5rem 4vw;
+    text-align: unset;
   }
 
-  .ui5con-header__announcement-left p:before {
-    background-color: var(--brand-color);
+  .ui5con-header__announcement-left a::before {
+    left: 4vw;
   }
 
-  .ui5con-header__announcement-left p:first-child {
-    margin-top: 0;
-    border-top: none;
+  .ui5con-header__announcement-right {
+    border-left: none;
+    padding-top: 0.7rem;
+    border-top: 0.0625rem solid var(--brand-color);
+  }
+
+  .ui5con-header__announcement-right::before {
+    left: 0;
+    width: 100%;
+    top: 0.7rem;
+    height: 0.0625rem;
+  }
+
+  .ui5con-header__announcement-right p {
+    font-size: 1rem;
+    text-align: center;
   }
 }
 
