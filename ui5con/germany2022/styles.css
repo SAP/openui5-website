@@ -399,8 +399,30 @@ h1, h2, h3, h4 {
   }
 }
 
+.ui5con-header_nav {
+  line-height: 2rem;
+  text-align: center;
+}
+
+.ui5con-header_nav a {
+  color: var(--brand-color);
+  text-decoration: none;
+  outline-offset: 1.25rem;
+  outline: 0.25rem solid transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.ui5con-header_nav a:hover {
+  text-decoration: underline;
+}
+
+.ui5con-header_nav a:focus {
+  outline-offset: 0.25rem;
+  outline-color: var(--brand-color-alt);
+}
+
 .ui5con-header__container {
-  padding: 2rem 2rem 12rem;
+  padding: 0 2rem 8rem;
 }
 
 .ui5con-header__container h1 {
@@ -504,9 +526,71 @@ time {
   transform: translateX(-50%);
 }
 
+.ui5con-header_socials {
+  color: var(--brand-color);
+  text-align: center;
+  font-size: .85rem;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 4rem;
+}
+
+.ui5con-header_socials p {
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.ui5con-header_social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 50%;
+  margin: auto;
+}
+
+.ui5con-header_social-list svg {
+  height: 20px;
+  width: 20px;
+}
+
+.ui5con-header_social-list a {
+  color: var(--brand-color);
+  line-height: 1.5;
+  transition: color .2s, outline .2s;
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 2.7;
+  text-align: center;
+}
+
+.ui5con-header_social-list a:hover,
+.ui5con-header_social-list a:focus {
+  color: var(--sapTextColor);
+  border-radius: 50%;
+  outline: 2px solid var(--brand-color-alt);
+}
+
+.ui5con-header_social-list a:focus {
+  outline: 2px solid var(--brand-color-alt);
+}
+
+
 @media screen and (min-width: 768px) {
+
+  .ui5con-header_nav {
+    position: relative;
+    z-index: 1;
+    line-height: 10vh;
+    padding-right: 3rem;
+    text-align: right;
+  }
+
   .ui5con-header__container {
-    padding: 10vh;
+    padding: 0 10vh;
   }
 
   .ui5con-header__container h1 {
@@ -533,6 +617,23 @@ time {
     position: absolute;
     bottom: -15vh;
     left: 80vw;
+  }
+
+  .ui5con-header_socials {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-bottom: 0;
+  }
+
+  .ui5con-header_social-list {
+    margin-top: 2rem;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
