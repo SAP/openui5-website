@@ -6,13 +6,9 @@ endDate: 2022/04/14 16:00 UTC+2
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Peter Muessig
-  -  Andreas Kunz
-  -  Margot Wollny
-  -  Stefan Beck
+  -  Mauricio Lauffer
+  -  Dirk Becker
+  -  Vladimir Velinov
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+In this episode, our special panelist is Mauricio Lauffer who is an experienced UI5 developer as well as a busy contributor to OpenUI5. Mauricio will showcase a project he published recently: a [UI5 library](https://www.npmjs.com/package/openui5-error-collector) you can use to seamlessly collect all JavaScript and UI5 errors and send them to a back end if errors need to be logged and saved for further analysis. In addition, we plan to talk about an issue that reached us via different channels: open sourcing further parts of SAPUI5, especially the smart controls. For this, Dirk Becker and Vladimir Velinov from the smart controls team extend our round of panelists. They both have seriously considered to open source the smart controls. However, they need to better understand how the smart controls could be used outside the SAP ecosystem. So, if you are a supporter of open sourcing the smart controls, this is your unique chance to speak up and raise your concern with the creators directly! As you can see, there is a lot to talk about and we are looking forward to it!
