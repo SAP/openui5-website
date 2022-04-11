@@ -386,23 +386,14 @@ h1, h2, h3, h4 {
  * ====================================  Navbar ====================================
  */
 .navbar {
-  background-color: #0e0e1bdb;
+  background-color: rgba(25, 23, 23, .8);
   padding: .5rem 1rem 1rem 3rem;
-}
-
-.fixed-top {
   position: sticky;
   top: 0;
   right: 0;
   left: 0;
   z-index: 10;
-}
-
-@media screen and (min-width: 576px) {
-  .navbar-expand-sm {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-  }
+  backdrop-filter: blur(2px);
 }
 
 /*
@@ -424,8 +415,10 @@ h1, h2, h3, h4 {
 }
 
 .ui5con-header_nav {
+  position: relative;
   line-height: 2rem;
   text-align: center;
+  z-index: 1;
 }
 
 .ui5con-header_nav a {
@@ -434,6 +427,10 @@ h1, h2, h3, h4 {
   outline-offset: 1.25rem;
   outline: 0.25rem solid transparent;
   transition: all 0.5s ease-in-out;
+}
+
+.ui5con-header_nav a:last-child {
+  margin-left: 2rem;
 }
 
 .ui5con-header_nav a:hover {
@@ -929,6 +926,7 @@ time {
 
 .ui5con-committee-member img {
   max-width: 9rem;
+  min-width: 9rem;
   max-height: 9rem;
   padding: 0.625rem;
   object-fit: contain;
@@ -997,6 +995,7 @@ time {
 @media screen and (min-width: 600px) {
   .ui5con-committee-member img {
     max-width: 12rem;
+    min-width: 12rem;
     max-height: 12rem;
   }
 
@@ -1264,10 +1263,14 @@ time {
  * ====================================  CoC (Code of Conduct) ====================================
  */
 
-.ui5-coc-container {
+.ui5con-content-container {
   padding: 3rem 10%;
 }
-.ui5con-coc-header-container {
+.ui5con-content-header-container {
   background-image: linear-gradient(208deg, var(--brand-color), var(--brand-color-alt));
-  padding: 5rem 3rem 3rem 3rem;
+  padding: 4rem 3rem;
+}
+
+.ui5con-content-header-container h1 {
+  font-weight: 800;
 }
