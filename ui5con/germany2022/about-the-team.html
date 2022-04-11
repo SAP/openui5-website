@@ -1,354 +1,99 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UI5con ON AIR in July 2022 - About the UI5Con Team</title>
-  <meta name="description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP">
-  <meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
-  <meta name="robots" content="index, follow">
-
-  <meta name="author" content="SAP SE">
-
-  <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:url" content="https://openui5.org/ui5con/germany2022">
-  <meta property="twitter:title" content="UI5con ON AIR in July 2022"/>
-  <meta property="twitter:description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free."/>
-  <meta property="twitter:image" content="https://openui5.org/ui5con/germany2022/images/share.png?2"/>
-
-  <meta property="og:title" content="UI5con ON AIR in July 2022"/>
-  <meta property="og:description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free."/>
-  <meta property="og:image" content="https://openui5.org/ui5con/germany2022/images/share.png?2"/>
-
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
-  <link rel="icon" type="image/svg+xml" href="images/icon.svg"/>
-  <link rel="icon" sizes="any" href="images/android-chrome-192x192.png"/>
-
-  <link rel="stylesheet" href="styles.css">
-
-</head>
-
-<body>
-  <nav class="navbar">
-    <div class="container">
-      <a class="navbar-brand" href="https://openui5.org/ui5con/germany2022/">
-        <svg class="ui5con-header__logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 38">
-          <g fill="#f16a36">
-            <path d="M0 27.3V10.9h5.9v16.3a7.46 7.46 0 0 0 1.2 4.5 4.49 4.49 0 0 0 3.8 1.5 4.28 4.28 0 0 0 3.7-1.5 7.11 7.11 0 0 0 1.2-4.5V10.9h5.8v16.4a16.33 16.33 0 0 1-.6 4.4 9 9 0 0 1-2 3.4 7.54 7.54 0 0 1-3.4 2.1 14.22 14.22 0 0 1-4.8.7 14.22 14.22 0 0 1-4.8-.7 8.34 8.34 0 0 1-5.3-5.5 13.16 13.16 0 0 1-.7-4.4zM26.8 37.5V10.9h5.8v26.6zM36.3 34.5l3-3.8a12.09 12.09 0 0 0 3 2 9.12 9.12 0 0 0 3.6.8c1.8 0 3.1-.4 3.9-1.3a4.87 4.87 0 0 0 1.2-3.4 4.82 4.82 0 0 0-1.2-3.5 4.25 4.25 0 0 0-3.4-1.3 5.87 5.87 0 0 0-2.6.6 7 7 0 0 0-2.3 1.9l-3.8-1.2L38.8 11H55l-.3 4.3H43.3l-.5 6a8.64 8.64 0 0 1 2-1.2 10.61 10.61 0 0 1 3.4-.5 9.37 9.37 0 0 1 3.7.7 7.37 7.37 0 0 1 4.4 4.7 9 9 0 0 1 .5 3.6 10.85 10.85 0 0 1-.7 3.9 9.1 9.1 0 0 1-2.1 3 11.26 11.26 0 0 1-3.3 2 13.16 13.16 0 0 1-4.4.7 14.24 14.24 0 0 1-5.7-1 20.86 20.86 0 0 1-4.3-2.7z"></path>
-          </g>
-          <g fill="#f79b36">
-            <path d="M59.2 28.5a10.76 10.76 0 0 1 .7-4.2 8.25 8.25 0 0 1 1.9-2.9 10.7 10.7 0 0 1 2.6-1.7 7.89 7.89 0 0 1 3-.5 7.44 7.44 0 0 1 2.6.4 8 8 0 0 1 2 1.1 6.89 6.89 0 0 1 1.4 1.6 11.48 11.48 0 0 1 1 1.9l-2.5 1a5.78 5.78 0 0 0-1.8-2.6 4.29 4.29 0 0 0-2.8-.9 4 4 0 0 0-1.9.4 6.54 6.54 0 0 0-1.7 1.2 7.2 7.2 0 0 0-1.2 2.1 11.19 11.19 0 0 0-.5 3.2 8.31 8.31 0 0 0 1.4 5.1 4.92 4.92 0 0 0 3.7 1.8 4.65 4.65 0 0 0 2.8-.8 7.25 7.25 0 0 0 2-2.8l2.4.9a11.18 11.18 0 0 1-1.2 2.1 6.09 6.09 0 0 1-1.6 1.6 8 8 0 0 1-2 1.1 7.44 7.44 0 0 1-2.6.4 7.73 7.73 0 0 1-3-.6 6.42 6.42 0 0 1-2.5-1.8 7.87 7.87 0 0 1-1.8-2.9 29.56 29.56 0 0 1-.4-4.2zM77.1 28.5a11.45 11.45 0 0 1 .7-4.1 7.87 7.87 0 0 1 1.8-2.9 8 8 0 0 1 2.7-1.8 8.57 8.57 0 0 1 6.3 0 8 8 0 0 1 2.7 1.8 7.87 7.87 0 0 1 1.8 2.9 11.45 11.45 0 0 1 .7 4.1 11.45 11.45 0 0 1-.7 4.1 7.87 7.87 0 0 1-1.8 2.9 8 8 0 0 1-2.7 1.8 8.57 8.57 0 0 1-6.3 0 8 8 0 0 1-2.7-1.8 7.87 7.87 0 0 1-1.8-2.9 12.44 12.44 0 0 1-.7-4.1zm3 0a12.28 12.28 0 0 0 .3 2.7 6.36 6.36 0 0 0 1 2.2 5 5 0 0 0 1.7 1.5 4 4 0 0 0 2.4.5 5.91 5.91 0 0 0 2.3-.5 3.87 3.87 0 0 0 1.7-1.4 9.06 9.06 0 0 0 1.1-2.2 12.61 12.61 0 0 0 .4-2.8 11.33 11.33 0 0 0-.3-2.6 8.75 8.75 0 0 0-1-2.2 5 5 0 0 0-1.7-1.5 3.87 3.87 0 0 0-2.4-.5 5.91 5.91 0 0 0-2.3.5 3.87 3.87 0 0 0-1.7 1.4 8.58 8.58 0 0 0-1.1 2.1 8.87 8.87 0 0 0-.4 2.8zM98 37.5V19.6h2.9v2.7a6.83 6.83 0 0 1 1.3-1.1 8.57 8.57 0 0 1 1.6-1 12.66 12.66 0 0 1 1.8-.7 7.46 7.46 0 0 1 2.1-.3 5.74 5.74 0 0 1 4 1.4 5.54 5.54 0 0 1 1.4 4v12.9h-2.9V25.2a4.14 4.14 0 0 0-.8-2.7 3.14 3.14 0 0 0-2.5-.8 6.07 6.07 0 0 0-3 .8 15.06 15.06 0 0 0-2.8 2.1v12.9z"></path>
-          </g>
-          <g class="onair" fill="#fff">
-            <path d="M81 14.1a3.25 3.25 0 0 1-1.1-1.2 3.4 3.4 0 0 1-.4-1.8 4 4 0 0 1 .4-1.8A2.56 2.56 0 0 1 81 8.1a3.82 3.82 0 0 1 3.3 0 3.25 3.25 0 0 1 1.1 1.2 4.25 4.25 0 0 1 0 3.6 2.56 2.56 0 0 1-1.1 1.2 3 3 0 0 1-1.6.4 2.44 2.44 0 0 1-1.7-.4zm2.8-.7a1.54 1.54 0 0 0 .7-.9 2.18 2.18 0 0 0 .2-1.4 2.79 2.79 0 0 0-.3-1.3 1.8 1.8 0 0 0-.8-.9 2 2 0 0 0-1.1-.3 2.63 2.63 0 0 0-1.2.3 1.54 1.54 0 0 0-.7.9 3.09 3.09 0 0 0-.3 1.3 2.79 2.79 0 0 0 .3 1.3 1.8 1.8 0 0 0 .8.9 2 2 0 0 0 1.1.3 1.47 1.47 0 0 0 1.3-.2zM87.5 7.9h1l3.3 5.6V7.9h.8v6.6h-1.1L88.2 9v5.6h-.8zM101.3 12.7h-2.9l-.6 1.8h-.9l2.5-6.6h1l2.4 6.6h-.9zm-.3-.8-.8-2.2a1.42 1.42 0 0 1-.2-.6 1.07 1.07 0 0 1-.1-.4 1.69 1.69 0 0 1-.2.5 1.42 1.42 0 0 0-.2.6l-.8 2.2h2.3zM104.3 7.9h.9v6.6h-.9zM107.4 7.9h2.5a5.68 5.68 0 0 1 1.3.2 1.81 1.81 0 0 1 .8.7 2 2 0 0 1 .3 1 1.86 1.86 0 0 1-.2.8 1.84 1.84 0 0 1-.5.7 3.64 3.64 0 0 1-.9.4l1.9 2.7h-1l-1.7-2.6h-1.5v2.6h-.9V7.9zm2.5 3.1a1.09 1.09 0 0 0 .8-.2 1 1 0 0 0 .5-.4 1.42 1.42 0 0 0 .2-.6.91.91 0 0 0-.4-.8 2 2 0 0 0-1.1-.3h-1.5V11z"></path>
-            <path class="Wave1" d="M113.8 8.5a3.84 3.84 0 0 0-.9-1.5 3 3 0 0 0-1.6-.8.47.47 0 0 1-.5-.44V5.6c0-.3.3-.4.5-.4a4.43 4.43 0 0 1 2.2 1 3.76 3.76 0 0 1 1.2 2 .5.5 0 0 1-.3.6c-.2.2-.5 0-.6-.3.1.1.1 0 0 0z"></path>
-            <path class="Wave2" d="M116.5 7.9a5.7 5.7 0 0 0-1.7-2.8 5 5 0 0 0-3-1.4.47.47 0 0 1-.5-.44V3.2c0-.3.3-.4.5-.4a7.05 7.05 0 0 1 3.6 1.7 6.55 6.55 0 0 1 2 3.4.5.5 0 0 1-.3.6c-.3-.2-.6-.3-.6-.6z"></path>
-            <path class="Wave3" d="M119.1 7.2a8.13 8.13 0 0 0-2.6-4.2 9 9 0 0 0-4.4-2.1.47.47 0 0 1-.5-.44V.4c0-.3.3-.4.5-.4a9.55 9.55 0 0 1 7.8 7 .5.5 0 0 1-.3.6c-.2.1-.5-.1-.5-.4z"></path>
-          </g>
-        </svg>
-      </a>
-    </div>
-  </nav>
-
-  <main>
-    <section>
-      <header class="ui5con-content-header-container">
-        <h1>About the UI5con Team</h1>
-      </header>
-
-      <div class="ui5con-content-container">
-
-        <ul class="ui5con-committee-list">
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/team/uliana-caceres.png" alt="Portrait of Uliana Caceres">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://github.com/UlianaMunich" aria-label="Github Profile of Uliana Caceres" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 42" aria-hidden="true">
-                      <path d="M15.125 34.308c-8.959 2.687-8.959-4.48-12.542-5.375m25.083 10.75v-6.934a6.037 6.037 0 0 0-1.684-4.676c5.626-.627 11.538-2.76 11.538-12.542a9.747 9.747 0 0 0-2.687-6.719 9.084 9.084 0 0 0-.161-6.754s-2.114-.627-7.006 2.651a23.972 23.972 0 0 0-12.541 0c-4.892-3.278-7.006-2.651-7.006-2.651a9.084 9.084 0 0 0-.161 6.754 9.747 9.747 0 0 0-2.687 6.773c0 9.71 5.912 11.843 11.538 12.541a6.039 6.039 0 0 0-1.684 4.623v6.934" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/ulianaa/" aria-label="LinkedIn Profile of Uliana Caceres" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Uliana Caceres</h3>
-              <p class="ui5con-committee-country">Munich</p>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/team/eniela.jpg" alt="Portrait of Eniela Vela">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://ca.linkedin.com/in/eniela-vela-67aba3135" aria-label="LinkedIn Profile of Eniela Vela" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Eniela Vela</h3>
-              <p class="ui5con-committee-country">Montreal</p>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/team/victoria-maslova.jpeg" alt="Portrait of Victoria Maslova">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://www.linkedin.com/in/victoria-maslova/" aria-label="LinkedIn Profile of Victoria Maslova" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Victoria Maslova</h3>
-              <p class="ui5con-committee-country">Vancouver</p>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/team/margot-wollny.png" alt="Portrait of Margot Wollny">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://www.linkedin.com/in/margot-wollny-864ba96" aria-label="LinkedIn Profile of Margot Wollny" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Margot Wollny</h3>
-              <p class="ui5con-committee-country">Heidelberg</p>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/team/Inna.jpg" alt="Portrait of Inna Atanasova">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://www.linkedin.com/in/inna-atanasova-654933137/" aria-label="LinkedIn Profile of Inna Atanasova" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Inna Atanasova</h3>
-              <p class="ui5con-committee-country">Montreal</p>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/team/frederic_berg.jpg" alt="Portrait of Frederic Berg">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://twitter.com/frdrcbrg" aria-label="Twitter Profile of Frederic Berg" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 36" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M22.075 2.87C23.382 1.128 25.483 0 28.375 0c1.778 0 3.395.899 4.465 1.773.38.31.739.655 1.053 1.021l3.771-1.508a2.25 2.25 0 0 1 2.4 3.706l-3.88 3.755c.033.438.066.97.066 1.378 0 5.335-1.176 11.726-4.597 16.857-3.504 5.256-9.263 9.018-17.903 9.018-4.68 0-7.743-.584-9.712-1.24-.986-.33-1.7-.677-2.203-.979a6.061 6.061 0 0 1-.602-.408C.25 32.626.158 31.275.42 30.64A2.25 2.25 0 0 1 2.5 29.251c4.144 0 7.227-.996 9.415-2.148-1.308-.093-2.717-.289-3.9-.703-1.197-.418-3.265-1.487-3.265-3.899A2.25 2.25 0 0 1 7 20.251c.146 0 .597-.078 1.382-.327-1.033-.317-2.07-.71-2.958-1.2-1.137-.625-2.924-1.9-2.924-4.098a2.25 2.25 0 0 1 2.25-2.25c.051 0 .104 0 .16-.002C2.727 10.709.25 8.072.25 4.5a2.25 2.25 0 0 1 4.104-1.274l.005.006c.013.018.044.058.094.118.1.12.277.318.544.571.533.505 1.43 1.232 2.8 1.979C10.24 7.234 14.257 8.669 20.5 8.95V7.876c0-1.439.35-3.373 1.575-5.006Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/frederic-berg-2433b388/" aria-label="LinkedIn Profile of Frederic Berg" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Frederic Berg</h3>
-              <p class="ui5con-committee-country">Walldorf</p>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/team/fabian-tempel.jpg" alt="Portrait of Fabian Tempel">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://www.twitter.com/trilodge" aria-label="Twitter Profile of Fabian Tempel" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 36" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M22.075 2.87C23.382 1.128 25.483 0 28.375 0c1.778 0 3.395.899 4.465 1.773.38.31.739.655 1.053 1.021l3.771-1.508a2.25 2.25 0 0 1 2.4 3.706l-3.88 3.755c.033.438.066.97.066 1.378 0 5.335-1.176 11.726-4.597 16.857-3.504 5.256-9.263 9.018-17.903 9.018-4.68 0-7.743-.584-9.712-1.24-.986-.33-1.7-.677-2.203-.979a6.061 6.061 0 0 1-.602-.408C.25 32.626.158 31.275.42 30.64A2.25 2.25 0 0 1 2.5 29.251c4.144 0 7.227-.996 9.415-2.148-1.308-.093-2.717-.289-3.9-.703-1.197-.418-3.265-1.487-3.265-3.899A2.25 2.25 0 0 1 7 20.251c.146 0 .597-.078 1.382-.327-1.033-.317-2.07-.71-2.958-1.2-1.137-.625-2.924-1.9-2.924-4.098a2.25 2.25 0 0 1 2.25-2.25c.051 0 .104 0 .16-.002C2.727 10.709.25 8.072.25 4.5a2.25 2.25 0 0 1 4.104-1.274l.005.006c.013.018.044.058.094.118.1.12.277.318.544.571.533.505 1.43 1.232 2.8 1.979C10.24 7.234 14.257 8.669 20.5 8.95V7.876c0-1.439.35-3.373 1.575-5.006Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/trilodge" aria-label="Github Profile of Fabian Tempel" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 42" aria-hidden="true">
-                      <path d="M15.125 34.308c-8.959 2.687-8.959-4.48-12.542-5.375m25.083 10.75v-6.934a6.037 6.037 0 0 0-1.684-4.676c5.626-.627 11.538-2.76 11.538-12.542a9.747 9.747 0 0 0-2.687-6.719 9.084 9.084 0 0 0-.161-6.754s-2.114-.627-7.006 2.651a23.972 23.972 0 0 0-12.541 0c-4.892-3.278-7.006-2.651-7.006-2.651a9.084 9.084 0 0 0-.161 6.754 9.747 9.747 0 0 0-2.687 6.773c0 9.71 5.912 11.843 11.538 12.541a6.039 6.039 0 0 0-1.684 4.623v6.934" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/fabian-tempel/" aria-label="LinkedIn Profile of Fabian Tempel" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Fabian Tempel</h3>
-              <p class="ui5con-committee-country">Potsdam</p>
-            </figcaption>
-          </figure>
-        </li>
-
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/team/peter-muessig.jpg" alt="Portrait of Peter Muessig">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://twitter.com/pmuessig" aria-label="Twitter Profile of Peter Muessig" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 36" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M22.075 2.87C23.382 1.128 25.483 0 28.375 0c1.778 0 3.395.899 4.465 1.773.38.31.739.655 1.053 1.021l3.771-1.508a2.25 2.25 0 0 1 2.4 3.706l-3.88 3.755c.033.438.066.97.066 1.378 0 5.335-1.176 11.726-4.597 16.857-3.504 5.256-9.263 9.018-17.903 9.018-4.68 0-7.743-.584-9.712-1.24-.986-.33-1.7-.677-2.203-.979a6.061 6.061 0 0 1-.602-.408C.25 32.626.158 31.275.42 30.64A2.25 2.25 0 0 1 2.5 29.251c4.144 0 7.227-.996 9.415-2.148-1.308-.093-2.717-.289-3.9-.703-1.197-.418-3.265-1.487-3.265-3.899A2.25 2.25 0 0 1 7 20.251c.146 0 .597-.078 1.382-.327-1.033-.317-2.07-.71-2.958-1.2-1.137-.625-2.924-1.9-2.924-4.098a2.25 2.25 0 0 1 2.25-2.25c.051 0 .104 0 .16-.002C2.727 10.709.25 8.072.25 4.5a2.25 2.25 0 0 1 4.104-1.274l.005.006c.013.018.044.058.094.118.1.12.277.318.544.571.533.505 1.43 1.232 2.8 1.979C10.24 7.234 14.257 8.669 20.5 8.95V7.876c0-1.439.35-3.373 1.575-5.006Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/petermuessig" aria-label="Github Profile of Peter Muessig" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 42" aria-hidden="true">
-                      <path d="M15.125 34.308c-8.959 2.687-8.959-4.48-12.542-5.375m25.083 10.75v-6.934a6.037 6.037 0 0 0-1.684-4.676c5.626-.627 11.538-2.76 11.538-12.542a9.747 9.747 0 0 0-2.687-6.719 9.084 9.084 0 0 0-.161-6.754s-2.114-.627-7.006 2.651a23.972 23.972 0 0 0-12.541 0c-4.892-3.278-7.006-2.651-7.006-2.651a9.084 9.084 0 0 0-.161 6.754 9.747 9.747 0 0 0-2.687 6.773c0 9.71 5.912 11.843 11.538 12.541a6.039 6.039 0 0 0-1.684 4.623v6.934" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/peter-muessig-7b40576/" aria-label="LinkedIn Profile of Peter Muessig" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Peter Muessig</h3>
-              <p class="ui5con-committee-country">Walldorf</p>
-            </figcaption>
-          </figure>
-        </li>
-
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/committee/andreas-kunz.jpg" alt="Portrait of Andreas Kunz">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://twitter.com/aku_dev" aria-label="Twitter Profile of Andreas Kunz" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 36" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M22.075 2.87C23.382 1.128 25.483 0 28.375 0c1.778 0 3.395.899 4.465 1.773.38.31.739.655 1.053 1.021l3.771-1.508a2.25 2.25 0 0 1 2.4 3.706l-3.88 3.755c.033.438.066.97.066 1.378 0 5.335-1.176 11.726-4.597 16.857-3.504 5.256-9.263 9.018-17.903 9.018-4.68 0-7.743-.584-9.712-1.24-.986-.33-1.7-.677-2.203-.979a6.061 6.061 0 0 1-.602-.408C.25 32.626.158 31.275.42 30.64A2.25 2.25 0 0 1 2.5 29.251c4.144 0 7.227-.996 9.415-2.148-1.308-.093-2.717-.289-3.9-.703-1.197-.418-3.265-1.487-3.265-3.899A2.25 2.25 0 0 1 7 20.251c.146 0 .597-.078 1.382-.327-1.033-.317-2.07-.71-2.958-1.2-1.137-.625-2.924-1.9-2.924-4.098a2.25 2.25 0 0 1 2.25-2.25c.051 0 .104 0 .16-.002C2.727 10.709.25 8.072.25 4.5a2.25 2.25 0 0 1 4.104-1.274l.005.006c.013.018.044.058.094.118.1.12.277.318.544.571.533.505 1.43 1.232 2.8 1.979C10.24 7.234 14.257 8.669 20.5 8.95V7.876c0-1.439.35-3.373 1.575-5.006Z" fill="currentColor">
-                      </path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/akudev" aria-label="Github Profile of Andreas Kunz" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 42" aria-hidden="true">
-                      <path d="M15.125 34.308c-8.959 2.687-8.959-4.48-12.542-5.375m25.083 10.75v-6.934a6.037 6.037 0 0 0-1.684-4.676c5.626-.627 11.538-2.76 11.538-12.542a9.747 9.747 0 0 0-2.687-6.719 9.084 9.084 0 0 0-.161-6.754s-2.114-.627-7.006 2.651a23.972 23.972 0 0 0-12.541 0c-4.892-3.278-7.006-2.651-7.006-2.651a9.084 9.084 0 0 0-.161 6.754 9.747 9.747 0 0 0-2.687 6.773c0 9.71 5.912 11.843 11.538 12.541a6.039 6.039 0 0 0-1.684 4.623v6.934" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-                      </path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/andreas-kunz-dev" aria-label="LinkedIn Profile of Andreas Kunz" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Andreas Kunz</h3>
-              <p class="ui5con-committee-country">Walldorf</p>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="ui5con-committee-list-item">
-          <figure class="ui5con-committee-member">
-            <img src="images/committee/stefan-beck.jpg" alt="Portrait of Stefan Beck">
-            <figcaption>
-              <ul class="ui5con-committee-socials">
-                <li>
-                  <a href="https://twitter.com/StefanBeck3" aria-label="Twitter Profile of Stefan Beck" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 36" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M22.075 2.87C23.382 1.128 25.483 0 28.375 0c1.778 0 3.395.899 4.465 1.773.38.31.739.655 1.053 1.021l3.771-1.508a2.25 2.25 0 0 1 2.4 3.706l-3.88 3.755c.033.438.066.97.066 1.378 0 5.335-1.176 11.726-4.597 16.857-3.504 5.256-9.263 9.018-17.903 9.018-4.68 0-7.743-.584-9.712-1.24-.986-.33-1.7-.677-2.203-.979a6.061 6.061 0 0 1-.602-.408C.25 32.626.158 31.275.42 30.64A2.25 2.25 0 0 1 2.5 29.251c4.144 0 7.227-.996 9.415-2.148-1.308-.093-2.717-.289-3.9-.703-1.197-.418-3.265-1.487-3.265-3.899A2.25 2.25 0 0 1 7 20.251c.146 0 .597-.078 1.382-.327-1.033-.317-2.07-.71-2.958-1.2-1.137-.625-2.924-1.9-2.924-4.098a2.25 2.25 0 0 1 2.25-2.25c.051 0 .104 0 .16-.002C2.727 10.709.25 8.072.25 4.5a2.25 2.25 0 0 1 4.104-1.274l.005.006c.013.018.044.058.094.118.1.12.277.318.544.571.533.505 1.43 1.232 2.8 1.979C10.24 7.234 14.257 8.669 20.5 8.95V7.876c0-1.439.35-3.373 1.575-5.006Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://linkedin.com/in/stefan-beck-a9319a82" aria-label="LinkedIn Profile of Stefan Beck" rel="nofollow" target="_blank" class="ui5con-committee-socials-item">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.778A3.778 3.778 0 0 1 10.778 7 3.222 3.222 0 0 1 14 10.222V13a1 1 0 1 1-2 0v-2.778C12 9.547 11.453 9 10.778 9 9.796 9 9 9.796 9 10.778V13a1 1 0 1 1-2 0v-2.222Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <h3 class="ui5con-committee-name">Stefan Beck</h3>
-              <p class="ui5con-committee-country">Walldorf</p>
-            </figcaption>
-          </figure>
-        </li>
-        </ul>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UI5con ON AIR in July 2022 - About the UI5Con Team</title>
+    <meta name="description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP">
+    <meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SAP SE">
+    <meta property="twitter:card" content="summary"/>
+    <meta property="twitter:url" content="https://openui5.org/ui5con/germany2022">
+    <meta property="twitter:title" content="UI5con ON AIR in July 2022"/>
+    <meta property="twitter:description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free."/>
+    <meta property="twitter:image" content="https://openui5.org/ui5con/germany2022/images/share.png?2"/>
+    <meta property="og:title" content="UI5con ON AIR in July 2022"/>
+    <meta property="og:description" content="If you want to learn more about UI5, you can't miss UI5con 2022. 2 days of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 7-8, online & free."/>
+    <meta property="og:image" content="https://openui5.org/ui5con/germany2022/images/share.png?2"/>
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg"/>
+    <link rel="icon" sizes="any" href="images/android-chrome-192x192.png"/>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="./js/svgs.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="https://openui5.org/ui5con/germany2022/">
+          <svg class="ui5con-header__logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 38">
+            <g fill="#f16a36">
+              <path d="M0 27.3V10.9h5.9v16.3a7.46 7.46 0 0 0 1.2 4.5 4.49 4.49 0 0 0 3.8 1.5 4.28 4.28 0 0 0 3.7-1.5 7.11 7.11 0 0 0 1.2-4.5V10.9h5.8v16.4a16.33 16.33 0 0 1-.6 4.4 9 9 0 0 1-2 3.4 7.54 7.54 0 0 1-3.4 2.1 14.22 14.22 0 0 1-4.8.7 14.22 14.22 0 0 1-4.8-.7 8.34 8.34 0 0 1-5.3-5.5 13.16 13.16 0 0 1-.7-4.4zM26.8 37.5V10.9h5.8v26.6zM36.3 34.5l3-3.8a12.09 12.09 0 0 0 3 2 9.12 9.12 0 0 0 3.6.8c1.8 0 3.1-.4 3.9-1.3a4.87 4.87 0 0 0 1.2-3.4 4.82 4.82 0 0 0-1.2-3.5 4.25 4.25 0 0 0-3.4-1.3 5.87 5.87 0 0 0-2.6.6 7 7 0 0 0-2.3 1.9l-3.8-1.2L38.8 11H55l-.3 4.3H43.3l-.5 6a8.64 8.64 0 0 1 2-1.2 10.61 10.61 0 0 1 3.4-.5 9.37 9.37 0 0 1 3.7.7 7.37 7.37 0 0 1 4.4 4.7 9 9 0 0 1 .5 3.6 10.85 10.85 0 0 1-.7 3.9 9.1 9.1 0 0 1-2.1 3 11.26 11.26 0 0 1-3.3 2 13.16 13.16 0 0 1-4.4.7 14.24 14.24 0 0 1-5.7-1 20.86 20.86 0 0 1-4.3-2.7z"></path>
+            </g>
+            <g fill="#f79b36">
+              <path d="M59.2 28.5a10.76 10.76 0 0 1 .7-4.2 8.25 8.25 0 0 1 1.9-2.9 10.7 10.7 0 0 1 2.6-1.7 7.89 7.89 0 0 1 3-.5 7.44 7.44 0 0 1 2.6.4 8 8 0 0 1 2 1.1 6.89 6.89 0 0 1 1.4 1.6 11.48 11.48 0 0 1 1 1.9l-2.5 1a5.78 5.78 0 0 0-1.8-2.6 4.29 4.29 0 0 0-2.8-.9 4 4 0 0 0-1.9.4 6.54 6.54 0 0 0-1.7 1.2 7.2 7.2 0 0 0-1.2 2.1 11.19 11.19 0 0 0-.5 3.2 8.31 8.31 0 0 0 1.4 5.1 4.92 4.92 0 0 0 3.7 1.8 4.65 4.65 0 0 0 2.8-.8 7.25 7.25 0 0 0 2-2.8l2.4.9a11.18 11.18 0 0 1-1.2 2.1 6.09 6.09 0 0 1-1.6 1.6 8 8 0 0 1-2 1.1 7.44 7.44 0 0 1-2.6.4 7.73 7.73 0 0 1-3-.6 6.42 6.42 0 0 1-2.5-1.8 7.87 7.87 0 0 1-1.8-2.9 29.56 29.56 0 0 1-.4-4.2zM77.1 28.5a11.45 11.45 0 0 1 .7-4.1 7.87 7.87 0 0 1 1.8-2.9 8 8 0 0 1 2.7-1.8 8.57 8.57 0 0 1 6.3 0 8 8 0 0 1 2.7 1.8 7.87 7.87 0 0 1 1.8 2.9 11.45 11.45 0 0 1 .7 4.1 11.45 11.45 0 0 1-.7 4.1 7.87 7.87 0 0 1-1.8 2.9 8 8 0 0 1-2.7 1.8 8.57 8.57 0 0 1-6.3 0 8 8 0 0 1-2.7-1.8 7.87 7.87 0 0 1-1.8-2.9 12.44 12.44 0 0 1-.7-4.1zm3 0a12.28 12.28 0 0 0 .3 2.7 6.36 6.36 0 0 0 1 2.2 5 5 0 0 0 1.7 1.5 4 4 0 0 0 2.4.5 5.91 5.91 0 0 0 2.3-.5 3.87 3.87 0 0 0 1.7-1.4 9.06 9.06 0 0 0 1.1-2.2 12.61 12.61 0 0 0 .4-2.8 11.33 11.33 0 0 0-.3-2.6 8.75 8.75 0 0 0-1-2.2 5 5 0 0 0-1.7-1.5 3.87 3.87 0 0 0-2.4-.5 5.91 5.91 0 0 0-2.3.5 3.87 3.87 0 0 0-1.7 1.4 8.58 8.58 0 0 0-1.1 2.1 8.87 8.87 0 0 0-.4 2.8zM98 37.5V19.6h2.9v2.7a6.83 6.83 0 0 1 1.3-1.1 8.57 8.57 0 0 1 1.6-1 12.66 12.66 0 0 1 1.8-.7 7.46 7.46 0 0 1 2.1-.3 5.74 5.74 0 0 1 4 1.4 5.54 5.54 0 0 1 1.4 4v12.9h-2.9V25.2a4.14 4.14 0 0 0-.8-2.7 3.14 3.14 0 0 0-2.5-.8 6.07 6.07 0 0 0-3 .8 15.06 15.06 0 0 0-2.8 2.1v12.9z"></path>
+            </g>
+            <g class="onair" fill="#fff">
+              <path d="M81 14.1a3.25 3.25 0 0 1-1.1-1.2 3.4 3.4 0 0 1-.4-1.8 4 4 0 0 1 .4-1.8A2.56 2.56 0 0 1 81 8.1a3.82 3.82 0 0 1 3.3 0 3.25 3.25 0 0 1 1.1 1.2 4.25 4.25 0 0 1 0 3.6 2.56 2.56 0 0 1-1.1 1.2 3 3 0 0 1-1.6.4 2.44 2.44 0 0 1-1.7-.4zm2.8-.7a1.54 1.54 0 0 0 .7-.9 2.18 2.18 0 0 0 .2-1.4 2.79 2.79 0 0 0-.3-1.3 1.8 1.8 0 0 0-.8-.9 2 2 0 0 0-1.1-.3 2.63 2.63 0 0 0-1.2.3 1.54 1.54 0 0 0-.7.9 3.09 3.09 0 0 0-.3 1.3 2.79 2.79 0 0 0 .3 1.3 1.8 1.8 0 0 0 .8.9 2 2 0 0 0 1.1.3 1.47 1.47 0 0 0 1.3-.2zM87.5 7.9h1l3.3 5.6V7.9h.8v6.6h-1.1L88.2 9v5.6h-.8zM101.3 12.7h-2.9l-.6 1.8h-.9l2.5-6.6h1l2.4 6.6h-.9zm-.3-.8-.8-2.2a1.42 1.42 0 0 1-.2-.6 1.07 1.07 0 0 1-.1-.4 1.69 1.69 0 0 1-.2.5 1.42 1.42 0 0 0-.2.6l-.8 2.2h2.3zM104.3 7.9h.9v6.6h-.9zM107.4 7.9h2.5a5.68 5.68 0 0 1 1.3.2 1.81 1.81 0 0 1 .8.7 2 2 0 0 1 .3 1 1.86 1.86 0 0 1-.2.8 1.84 1.84 0 0 1-.5.7 3.64 3.64 0 0 1-.9.4l1.9 2.7h-1l-1.7-2.6h-1.5v2.6h-.9V7.9zm2.5 3.1a1.09 1.09 0 0 0 .8-.2 1 1 0 0 0 .5-.4 1.42 1.42 0 0 0 .2-.6.91.91 0 0 0-.4-.8 2 2 0 0 0-1.1-.3h-1.5V11z"></path>
+              <path class="Wave1" d="M113.8 8.5a3.84 3.84 0 0 0-.9-1.5 3 3 0 0 0-1.6-.8.47.47 0 0 1-.5-.44V5.6c0-.3.3-.4.5-.4a4.43 4.43 0 0 1 2.2 1 3.76 3.76 0 0 1 1.2 2 .5.5 0 0 1-.3.6c-.2.2-.5 0-.6-.3.1.1.1 0 0 0z"></path>
+              <path class="Wave2" d="M116.5 7.9a5.7 5.7 0 0 0-1.7-2.8 5 5 0 0 0-3-1.4.47.47 0 0 1-.5-.44V3.2c0-.3.3-.4.5-.4a7.05 7.05 0 0 1 3.6 1.7 6.55 6.55 0 0 1 2 3.4.5.5 0 0 1-.3.6c-.3-.2-.6-.3-.6-.6z"></path>
+              <path class="Wave3" d="M119.1 7.2a8.13 8.13 0 0 0-2.6-4.2 9 9 0 0 0-4.4-2.1.47.47 0 0 1-.5-.44V.4c0-.3.3-.4.5-.4a9.55 9.55 0 0 1 7.8 7 .5.5 0 0 1-.3.6c-.2.1-.5-.1-.5-.4z"></path>
+            </g>
+          </svg>
+        </a>
       </div>
-
-    </section>
-  </main>
-
-  <footer role="contentinfo" class="ui5con-container ui5con-container--footer">
-    <div class="ui5con-sap-brand">
-      <svg class="ui5con-sap-logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 743.367 368.439">
-        <defs></defs>
-        <path d="M0 367.887h375.32L743.367 0H0v367.887"></path>
-        <path fill="#fff" fill-rule="evenodd" d="M440.783 69.143l-72.736-.014v174.015L304.039 69.129h-62.554l-55.28 145.531c-5.818-36.66-43.641-49.33-74.19-58.815-18.912-6.371-40.733-15.74-39.278-25.981 0-8.496 10.183-16.293 32.004-15.13 14.547.742 27.64 1.95 53.825 14.431L184.75 84.84c-24.73-11.987-56.735-19.566-82.92-19.595-32.004 0-58.19 10.066-74.191 26.752-10.183 11.609-17.457 26.345-17.457 42.682 0 22.475 8.729 38.42 24.73 51.12 16.003 10.691 33.46 17.66 50.916 22.766 20.366 6.299 36.368 11.754 36.368 23.45 0 4.32-1.454 8.248-4.364 11.405-5.819 5.222-13.092 7.2-24.73 7.448-20.366.378-34.914-2.866-59.644-17.311l-23.276 44.878c24.73 13.908 53.825 22.083 82.92 22.083l4.364-.029c24.73-.465 46.551-7.812 62.553-21.166 1.455-.786 1.455-1.513 2.91-2.24l-7.274 19.536h66.918l10.183-33.866c11.638 3.899 24.73 6.168 39.278 6.168 14.547 0 26.185-2.196 37.823-5.891l11.637 33.59h107.65v-70.25h24.73c56.735 0 90.194-29.109 90.194-77.93 0-54.348-32.004-79.297-103.286-79.297zm-168.748 148.98c-8.729 0-16.003-1.514-23.276-4.161l23.276-73.202 23.275 73.434c-7.273 2.503-14.547 3.928-23.275 3.928zm173.112-42.1h-16.002v-59.02h16.002c21.821 0 39.278 7.144 39.278 29.212 0 22.694-17.457 29.807-39.278 29.807"></path>
-      </svg>
-    </div>
-    <div class="ui5con-sap-links">
-      <a href="https://www.sap.com/about/legal/impressum.html" rel="noopener noreferrer" target="_blank" hreflang="en">Legal Disclosure</a>
-      <a href="https://www.sap.com/about/legal/privacy.html" rel="noopener noreferrer" target="_blank" hreflang="en">Privacy</a>
-      <a href="codeofconduct.html" rel="noopener noreferrer">Code of Conduct</a>
-    </div>
-    <div>&copy; Copyright 2022, SAP SE</div>
-  </footer>
-</body>
-
+    </nav>
+    <main id="team">
+      <section>
+        <header class="ui5con-content-header-container">
+          <h1>About the UI5con Team</h1>
+        </header>
+        <div class="ui5con-content-container">
+          <ul class="ui5con-committee-list ui5con-committee-list--team">
+            <li class="ui5con-committee-list-item" v-for="member in team" :key="member.name">
+              <figure class="ui5con-committee-member">
+                <img :src="member.picture" :alt="`Portrait of ${member.name}`">
+                <figcaption>
+                  <ul class="ui5con-committee-socials">
+                    <li v-if="member.twitter">
+                      <a :href="member.twitter" :aria-label="`Twitter Profile of ${member.name}`" rel="nofollow" target="_blank" class="ui5con-committee-socials-item" v-html="svgs.twitter">  
+                      </a>
+                    </li>
+                    <li v-if="member.github">
+                      <a :href="member.github" :aria-label="`Github Profile of ${member.name}`"  rel="nofollow" target="_blank" class="ui5con-committee-socials-item" v-html="svgs.github">
+                      </a>
+                    </li>
+                    <li v-if="member.linkedin">
+                      <a :href="member.linkedin" :aria-label="`LinkedIn Profile of ${member.name}`" rel="nofollow" target="_blank" class="ui5con-committee-socials-item"  v-html="svgs.linkedin">
+                      </a>
+                    </li>
+                  </ul>
+                  <h3 class="ui5con-committee-name">{{member.name}}</h3>
+                  <p class="ui5con-committee-country">{{member.city}}</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer role="contentinfo" class="ui5con-container ui5con-container--footer">
+      <div class="ui5con-sap-brand">
+        <svg class="ui5con-sap-logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 743.367 368.439">
+          <defs></defs>
+          <path d="M0 367.887h375.32L743.367 0H0v367.887"></path>
+          <path fill="#fff" fill-rule="evenodd" d="M440.783 69.143l-72.736-.014v174.015L304.039 69.129h-62.554l-55.28 145.531c-5.818-36.66-43.641-49.33-74.19-58.815-18.912-6.371-40.733-15.74-39.278-25.981 0-8.496 10.183-16.293 32.004-15.13 14.547.742 27.64 1.95 53.825 14.431L184.75 84.84c-24.73-11.987-56.735-19.566-82.92-19.595-32.004 0-58.19 10.066-74.191 26.752-10.183 11.609-17.457 26.345-17.457 42.682 0 22.475 8.729 38.42 24.73 51.12 16.003 10.691 33.46 17.66 50.916 22.766 20.366 6.299 36.368 11.754 36.368 23.45 0 4.32-1.454 8.248-4.364 11.405-5.819 5.222-13.092 7.2-24.73 7.448-20.366.378-34.914-2.866-59.644-17.311l-23.276 44.878c24.73 13.908 53.825 22.083 82.92 22.083l4.364-.029c24.73-.465 46.551-7.812 62.553-21.166 1.455-.786 1.455-1.513 2.91-2.24l-7.274 19.536h66.918l10.183-33.866c11.638 3.899 24.73 6.168 39.278 6.168 14.547 0 26.185-2.196 37.823-5.891l11.637 33.59h107.65v-70.25h24.73c56.735 0 90.194-29.109 90.194-77.93 0-54.348-32.004-79.297-103.286-79.297zm-168.748 148.98c-8.729 0-16.003-1.514-23.276-4.161l23.276-73.202 23.275 73.434c-7.273 2.503-14.547 3.928-23.275 3.928zm173.112-42.1h-16.002v-59.02h16.002c21.821 0 39.278 7.144 39.278 29.212 0 22.694-17.457 29.807-39.278 29.807"></path>
+        </svg>
+      </div>
+      <div class="ui5con-sap-links">
+        <a href="https://www.sap.com/about/legal/impressum.html" rel="noopener noreferrer" target="_blank" hreflang="en">Legal Disclosure</a>
+        <a href="https://www.sap.com/about/legal/privacy.html" rel="noopener noreferrer" target="_blank" hreflang="en">Privacy</a>
+        <a href="codeofconduct.html" rel="noopener noreferrer">Code of Conduct</a>
+      </div>
+      <div>&copy; Copyright 2022, SAP SE</div>
+    </footer>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

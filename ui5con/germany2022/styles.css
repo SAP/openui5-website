@@ -427,19 +427,31 @@ h1, h2, h3, h4 {
   outline-offset: 1.25rem;
   outline: 0.25rem solid transparent;
   transition: all 0.5s ease-in-out;
+  position: relative;
+  padding: 0.2rem 0;
 }
 
 .ui5con-header_nav a:last-child {
   margin-left: 2rem;
 }
 
-.ui5con-header_nav a:hover {
-  text-decoration: underline;
+.ui5con-header_nav a::after {
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  content: '';
+  width: 100%;
+  height: 0.1em;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center;
+  background-color: var(--brand-color);
+  transition: opacity 300ms, transform 300ms;
 }
 
-.ui5con-header_nav a:focus {
-  outline-offset: 0.25rem;
-  outline-color: var(--brand-color-alt);
+.ui5con-header_nav a:hover::after,
+.ui5con-header_nav a:focus::after{
+  transform: scale(1);
 }
 
 .ui5con-header__container {
@@ -928,8 +940,9 @@ time {
   max-width: 9rem;
   min-width: 9rem;
   max-height: 9rem;
+  min-height: 9rem;
   padding: 0.625rem;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 2.5rem;
   border: .0625rem solid var(--brand-color);
 }
@@ -997,6 +1010,7 @@ time {
     max-width: 12rem;
     min-width: 12rem;
     max-height: 12rem;
+    min-height: 12rem;
   }
 
   .ui5con-committee-list {
@@ -1005,6 +1019,10 @@ time {
 
   .ui5con-committee-list {
     max-width: 80vw;
+  }
+
+  .ui5con-committee-list--team {
+    max-width: 75rem;
   }
 
   .ui5con-committee-name {
