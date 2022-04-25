@@ -820,6 +820,69 @@ time {
   }
 }
 
+.ui5con-date {
+  max-width: 26rem;
+  border: 0.0625rem solid var(--brand-color);
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .ui5con-date {
+    margin: 0;
+    max-width: 36rem;
+  }
+}
+
+.ui5con-date-summary {
+  display: block;
+  background-size: contain;
+  background-position: 50% 0;
+  background-color: var(--dark-brand-color);
+  background-repeat: no-repeat;
+  background-image: url(images/stripes-triangle.svg);
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 1.5rem 4vw;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .ui5con-date {
+    margin: 0;
+    max-width: 36rem;
+  }
+
+  .ui5con-date-summary {
+    font-size: 2.5rem;
+  }
+}
+
+.ui5con-date-summary:hover,
+.ui5con-date-summary:focus {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-date p {
+  border-top: 0.0625rem solid var(--brand-color);
+  margin: 0;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.ui5con-date a {
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+.ui5con-date a:hover,
+.ui5con-date a:focus {
+  text-decoration: underline;
+  color: var(--brand-color-alt)
+}
+
 /*
  * ====================================  Details Section ====================================
  */
