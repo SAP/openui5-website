@@ -207,31 +207,31 @@ var aboutTheTeam = new Vue({
           picture: 'images/team/sebastian-moreno.jpg',
           linkedin: 'https://www.linkedin.com/in/sebastianmorenoagredo/',
         },
-        // {
-        //   name: 'Arthur Trauter',
-        //   city: 'Walldorf',
-        //   picture: 'images/team/arthur-trauter.png',
-        //   twitter: 'https://twitter.com/ArthurTrauter',
-        //   github: 'https://github.com/ArthurTrauter'
-        // },
-        // {
-        //   name: 'Dorota Josenhans',
-        //   city: 'Walldorf',
-        //   picture: 'images/team/dorota-josenhans.png',
-        //   linkedin: 'https://www.linkedin.com/in/dorota-josenhans-b5615124/',
-        // },
-        // {
-        //   name: 'Oliver Müller',
-        //   city: 'Walldorf',
-        //   picture: 'images/team/oliver-mueller.jpg',
-        //   linkedin: 'https://www.linkedin.com/in/oliver-m%C3%BCller-648702a8/',
-        // },
-        // {
-        //   name: 'Alexander Rauh',
-        //   city: 'Walldorf',
-        //   picture: 'images/team/alex-rauh.jpg',
-        //   linkedin: 'https://www.linkedin.com/in/alexander-rauh-899579168/',
-        // },
+        {
+          name: 'Arthur Trauter',
+          city: 'Walldorf',
+          picture: 'images/team/arthur-trauter.png',
+          twitter: 'https://twitter.com/ArthurTrauter',
+          github: 'https://github.com/ArthurTrauter'
+        },
+        {
+          name: 'Dorota Josenhans',
+          city: 'Walldorf',
+          picture: 'images/team/dorota-josenhans.png',
+          linkedin: 'https://www.linkedin.com/in/dorota-josenhans-b5615124/',
+        },
+        {
+          name: 'Oliver Müller',
+          city: 'Walldorf',
+          picture: 'images/team/oliver-mueller.jpg',
+          linkedin: 'https://www.linkedin.com/in/oliver-m%C3%BCller-648702a8/',
+        },
+        {
+          name: 'Alexander Rauh',
+          city: 'Walldorf',
+          picture: 'images/team/alex-rauh.jpg',
+          linkedin: 'https://www.linkedin.com/in/alexander-rauh-899579168/',
+        },
       ],
     };
   },
