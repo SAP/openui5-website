@@ -5,6 +5,7 @@
   --sapBackgroundContrastColor: #f5f6f7;
   --sapTextColor: #f5f6f7;
   --sapLinkColor: #ffa42c;
+  --sapTextSecondaryColor: #c4c4c4;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -520,7 +521,7 @@ h1, h2, h3, h4 {
   color: #fff;
 }
 
-.ui5con-header__date, time {
+.ui5con-header__date, .ui5con-header__container time {
   height: auto;
   display: block;
   letter-spacing: .2rem;
@@ -530,7 +531,7 @@ h1, h2, h3, h4 {
   animation: color-gradient 3s linear infinite forwards alternate;
 }
 
-time {
+.ui5con-header__container time {
   -webkit-text-stroke: 0;
   margin-bottom: 4rem;
   background: linear-gradient(130deg, var(--brand-color-alt), var(--brand-color), var(--sapTextColor), var(--brand-color), var(--brand-color-alt));
@@ -1355,4 +1356,213 @@ time {
 
 .ui5con-content-header-container h1 {
   font-weight: 800;
+}
+
+/*
+ * ====================================  Agenda ====================================
+ */
+
+.ui5con-agenda {
+  width: 100%;
+  font-weight: 800;
+}
+
+.ui5con-agenda h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-toggle {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  position: relative;
+  width: fit-content;
+  border-radius: 2.5rem;
+  background-color: #242424;
+}
+
+.ui5con-agenda-toggle legend {
+  top: -1.75rem;
+  left: 0.5rem;
+  position: absolute;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: var(--sapTextSecondaryColor);
+}
+
+.ui5con-agenda-toggle__element input{
+  display: none;
+}
+
+.ui5con-agenda-toggle__element label{
+  display: flex;
+  cursor: pointer;
+  font-size: 0.875rem;
+  align-items: center;
+  border-radius: 2.5rem;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  border: 0.0625rem solid transparent;
+  transition: border 0.5s ease;
+}
+
+.ui5con-agenda-toggle__element input[type="radio"]:checked + label {
+  border-color: var(--brand-color-alt);
+}
+
+.ui5con-agenda-toggle__element label time {
+  font-size: 0.75rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  color: var(--sapTextSecondaryColor);
+}
+
+.ui5con-agenda-schedule {
+  margin: 4rem 0;
+  list-style-type: none;
+}
+
+.ui5con-agenda-schedule ul {
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.ui5con-agenda-schedule__row {
+  width: 100%;
+  padding: 2rem 4rem;
+  position: relative;
+}
+
+.ui5con-agenda-schedule__time {
+  top: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-weight: normal;
+}
+
+.ui5con-agenda-schedule__card-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.ui5con-agenda-schedule__card-container::before {
+  content: '';
+  left: 50%;
+  height: 106%;
+  top: -3%;
+  position: absolute;
+  border-left: 1px solid var(--brand-color);
+}
+
+
+.ui5con-agenda-schedule__card {
+  max-width: 45%;
+  font-size: 1rem;
+  font-weight: normal;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 2rem 1.5rem;
+  border: 0.0625rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__card::before {
+  top: 0;
+  left: 0;
+  content: '';
+  height: 100%;
+  position: absolute;
+  border-left: 0.55rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__card:nth-child(2) {
+  border: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-agenda-schedule__card:nth-child(2)::before {
+  border-left: 0.55rem solid var(--brand-color);
+}
+
+.ui5con-agenda-schedule__header {
+  gap: 1rem;
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.ui5con-agenda-schedule__images {
+  gap: 0.5rem !important;
+  flex-wrap: nowrap !important;
+}
+
+.ui5con-agenda-schedule__images img {
+  width: 3rem;
+  height: 3rem;
+  background-color: grey;
+  border-radius: 0.6875rem;
+}
+
+.ui5con-agenda-schedule__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.ui5con-agenda-schedule__speaker-name {
+  margin: 0;
+  font-weight: bold;
+}
+
+.ui5con-agenda-schedule__speaker-company {
+  margin: 0;
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__info {
+  margin: 2rem 0;
+}
+
+.ui5con-agenda-schedule__link {
+  border-radius: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 0.0625rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__link a {
+  color: var(--sapTextColor);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1025px) {
+  .ui5con-agenda-schedule__time {
+    left: 2rem;
+  }
+
+  .ui5con-agenda-schedule__card {
+    max-width: 100%;
+  }
+
+  .ui5con-agenda-schedule__card-container {
+    gap: 4rem;
+    flex-direction: column;
+  }
+  
+  .ui5con-agenda-schedule__card-container::before {
+    left: -3rem;
+    margin: 0 1rem;
+    height: 100%;
+    top: 0%;
+  }
 }

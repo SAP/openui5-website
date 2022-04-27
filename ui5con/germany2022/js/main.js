@@ -237,3 +237,180 @@ var aboutTheTeam = new Vue({
   },
 });
 
+var agenda = new Vue({
+  el: '#agenda',
+  data() {
+    return {
+      schedule: [
+        {
+          time: '9:00',
+          events: [
+            {
+              type: 'session',
+              title: 'Descriptive Session Title Goes Here',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
+              speakers: [
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                }
+              ],
+              links: [
+                {
+                  name: 'Slides',
+                  link: '/',
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                }
+              ]
+            },
+            {
+              type: 'workshop',
+              title: 'Descriptive Session Title Goes Here',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
+              speakers: [
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                }
+              ],
+              links: [
+                {
+                  name: 'Slides',
+                  link: '/',
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                }
+              ]
+            }
+          ]
+        },
+        {
+          time: '9:30',
+          events: [
+            {
+              type: 'session',
+              title: 'Descriptive Session Title Goes Here',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
+              speakers: [
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                }
+              ],
+              links: [
+                {
+                  name: 'Slides',
+                  link: '/',
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                }
+              ]
+            }
+          ]
+        },
+        {
+          time: '10:00',
+          events: [
+            {
+              type: 'session',
+              title: 'Descriptive Session Title Goes Here',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
+              speakers: [
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                }
+              ],
+              links: [
+                {
+                  name: 'Slides',
+                  link: '/',
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                }
+              ]
+            },
+            {
+              type: 'workshop',
+              title: 'Descriptive Session Title Goes Here',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
+              speakers: [
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                }
+              ],
+              links: [
+                {
+                  name: 'Slides',
+                  link: '/',
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                }
+              ]
+            }
+          ]
+        },
+      ],
+    };
+  },
+});
+
