@@ -26,6 +26,8 @@
   <link rel="icon" sizes="any" href="images/android-chrome-192x192.png"/>
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <script src="./js/svgs.js"></script>
 </head>
@@ -244,7 +246,72 @@
       </svg>
     </section>
 
-    <section class="ui5con-container ui5con-container--submission-form"></section>
+    <section id="newsletter-subscription" class="ui5con-container ui5con-newsletter">
+      <button class="ui5con-newsletter__button" @click="showSubscribeModal">
+        Subscribe to our news
+      </button>
+
+      <Transition name="modal">
+        <div class="ui5con-newsletter__modal-backdrop" v-if="isModalVisible">
+            <div class="ui5con-newsletter__modal" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description" tabindex="-1">
+              <h2 class="sr-only" id="dialog-title">Subscribe to our Newsletter</h2>
+              <form class="ui5con-newsletter__form" id="sib-form" method="POST"
+                action="https://3c342bb7.sibforms.com/serve/MUIEAPXdSf9wVbnLvDhsoWVUr2P8hx_nKpbRBPtX-cKknRNFORx0mc0joIvvFtT67UN1gGy1XLMH0b3AVIax-a_97N_e6N71ImBoRsBmGGYmTwhCM50ZcEoZqUeypyFpYGXAmJqUrc3K_1KsOgWCE0UTpm6mdRIDg3y4xtCqK4Ti5vi4MT1TyMDGKGV-jgUsnSo0iIRNxtBlj74s">
+
+                <fieldset>
+                  <legend>Newsletter</legend>
+
+                  <button class="ui5con-newsletter__close-btn" @click="showSubscribeModal" aria-label="Close Dialog">&#x2715</button>
+
+                  <p class="ui5con-newsletter__subheader" id="dialog-description">
+                    Subscribe to our newsletter and stay updated with the latest UI5con news.
+                  </p>
+
+                  <label for="EMAIL" class="sr-only">Enter a valid E-Mail address</label>
+                  <input class="ui5con-newsletter__input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Email" data-required="true" required />
+
+                  <div data-required="true">
+                    <label class="ui5con-newsletter__checkbox">
+                      <span>I agree to receive your newsletters and accept the data privacy statement.
+                        <span data-required="*">*</span>
+                      </span>
+                      <input type="checkbox" value="1" id="OPT_IN" name="OPT_IN" required />
+                      <span class="ui5con-newsletter__checkmark"></span>
+                    </label>
+                    </label>
+                  </div>
+
+                  <p class="ui5con-newsletter__unsubscribe">You may unsubscribe at any time using the link in our newsletter.</p>
+
+                  <div class="ui5con-newsletter__sendinblue">
+                    <div>
+                      <svg class="icon__SVG" width="0" height="0" version="1.1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <symbol id="svgIcon-sphere" viewBox="0 0 63 63">
+                            <path class="path1" d="M31.54 0l1.05 3.06 3.385-.01-2.735 1.897 1.05 3.042-2.748-1.886-2.738 1.886 1.044-3.05-2.745-1.897h3.393zm13.97 3.019L46.555 6.4l3.384.01-2.743 2.101 1.048 3.387-2.752-2.1-2.752 2.1 1.054-3.382-2.745-2.105h3.385zm9.998 10.056l1.039 3.382h3.38l-2.751 2.1 1.05 3.382-2.744-2.091-2.743 2.091 1.054-3.381-2.754-2.1h3.385zM58.58 27.1l1.04 3.372h3.379l-2.752 2.096 1.05 3.387-2.744-2.091-2.75 2.092 1.054-3.387-2.747-2.097h3.376zm-3.076 14.02l1.044 3.364h3.385l-2.743 2.09 1.05 3.392-2.744-2.097-2.743 2.097 1.052-3.377-2.752-2.117 3.385-.01zm-9.985 9.91l1.045 3.364h3.393l-2.752 2.09 1.05 3.393-2.745-2.097-2.743 2.097 1.05-3.383-2.751-2.1 3.384-.01zM31.45 55.01l1.044 3.043 3.393-.008-2.752 1.9L34.19 63l-2.744-1.895-2.748 1.891 1.054-3.05-2.743-1.9h3.384zm-13.934-3.98l1.036 3.364h3.402l-2.752 2.09 1.053 3.393-2.747-2.097-2.752 2.097 1.053-3.382-2.743-2.1 3.384-.01zm-9.981-9.91l1.045 3.364h3.398l-2.748 2.09 1.05 3.392-2.753-2.1-2.752 2.096 1.053-3.382-2.743-2.102 3.384-.009zM4.466 27.1l1.038 3.372H8.88l-2.752 2.097 1.053 3.387-2.743-2.09-2.748 2.09 1.053-3.387L0 30.472h3.385zm3.069-14.025l1.045 3.382h3.395L9.23 18.56l1.05 3.381-2.752-2.09-2.752 2.09 1.053-3.381-2.744-2.1h3.384zm9.99-10.056L18.57 6.4l3.393.01-2.743 2.1 1.05 3.373-2.754-2.092-2.751 2.092 1.053-3.382-2.744-2.1h3.384zm24.938 19.394l-10-4.22a2.48 2.48 0 00-1.921 0l-10 4.22A2.529 2.529 0 0019 24.75c0 10.47 5.964 17.705 11.537 20.057a2.48 2.48 0 001.921 0C36.921 42.924 44 36.421 44 24.75a2.532 2.532 0 00-1.537-2.336zm-2.46 6.023l-9.583 9.705a.83.83 0 01-1.177 0l-5.416-5.485a.855.855 0 010-1.192l1.177-1.192a.83.83 0 011.177 0l3.65 3.697 7.819-7.916a.83.83 0 011.177 0l1.177 1.191a.843.843 0 010 1.192z" fill="#0092FF"></path>
+                          </symbol>
+                        </defs>
+                      </svg>
+                      <svg class="svgIcon-sphere" aria-hidden="true" style="width:54px; height:54px;">
+                        <use xlink:href="#svgIcon-sphere"></use>
+                      </svg>
+                    </div>
+                    <p>
+                      We use Sendinblue as our marketing platform. By Clicking below to submit this form, you acknowledge that the information you provided will be transferred to Sendinblue for processing in accordance with their <a target="_blank" rel="external nofollow" href="https://www.sendinblue.com/legal/termsofuse/" hreflang="en">terms of use</a>
+                    </p>
+                  </div>
+
+                  <button class="ui5con-newsletter__subscribe-btn" form="sib-form" type="submit">
+                    Subscribe
+                  </button>
+
+                </fieldset>
+              </form>
+            </div>
+        </div>
+      </Transition>
+    </section>
+
   </main>
 
   <footer role="contentinfo" class="ui5con-container ui5con-container--footer">
@@ -263,7 +330,26 @@
     <div>&copy; Copyright 2022, SAP SE</div>
   </footer>
 
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "The email field cannot be left blank. Please try again. ";
+  
+    window.GENERIC_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
+  
+    window.translation = {
+      common: {
+        selectedList: '{quantity} list selected',
+        selectedLists: '{quantity} lists selected'
+      }
+    };
+  
+    var AUTOHIDE = Boolean(0);
+  </script>
+
   <script src="./js/main.js"></script>
+  <script src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 

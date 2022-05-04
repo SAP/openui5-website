@@ -5,6 +5,7 @@
   --sapBackgroundContrastColor: #f5f6f7;
   --sapTextColor: #f5f6f7;
   --sapLinkColor: #ffa42c;
+  --textColor: #fff;
   --sapTextSecondaryColor: #c4c4c4;
 }
 
@@ -423,7 +424,8 @@ h1, h2, h3, h4 {
 }
 
 .ui5con-date a,
-.ui5con-header_nav a {
+.ui5con-header_nav a,
+.ui5con-newsletter__sendinblue a {
   color: var(--brand-color);
   text-decoration: none;
   outline-offset: 1.25rem;
@@ -438,7 +440,8 @@ h1, h2, h3, h4 {
 }
 
 .ui5con-date a::after,
-.ui5con-header_nav a::after {
+.ui5con-header_nav a::after,
+.ui5con-newsletter__sendinblue a::after {
   left: 0;
   bottom: 0;
   opacity: 1;
@@ -455,7 +458,9 @@ h1, h2, h3, h4 {
 .ui5con-date a:hover::after,
 .ui5con-date a:focus::after,
 .ui5con-header_nav a:hover::after,
-.ui5con-header_nav a:focus::after{
+.ui5con-header_nav a:focus::after,
+.ui5con-newsletter__sendinblue a:hover::after,
+.ui5con-newsletter__sendinblue a:focus::after{
   transform: scale(1);
 }
 
@@ -518,7 +523,7 @@ h1, h2, h3, h4 {
   margin-top: 6rem;
   position: relative;
   margin-bottom: 2rem;
-  color: #fff;
+  color: var(--textColor);
 }
 
 .ui5con-header__date, .ui5con-header__container time {
@@ -881,7 +886,7 @@ h1, h2, h3, h4 {
   border-top: 0.0625rem solid var(--brand-color);
   margin: 0;
   padding: 1rem;
-  color: #fff;
+  color: var(--textColor);
   text-align: center;
 }
 
@@ -933,7 +938,7 @@ h1, h2, h3, h4 {
 }
 
 /*
- * ====================================  Committee Section ====================================
+ * ================================= Committee Section ===============================
  */
 
 .ui5con-container--committee {
@@ -954,7 +959,8 @@ h1, h2, h3, h4 {
 }
 
 .ui5con-committee-reveal-button,
-.ui5con-committee-hide-section-button {
+.ui5con-committee-hide-section-button,
+.ui5con-newsletter__button {
   margin: auto;
   display: block;
   width: 12.5rem;
@@ -1146,7 +1152,7 @@ h1, h2, h3, h4 {
 }
 
 /*
- * ====================================  Carousel Section ====================================
+ * ==================================  Carousel Section ==================================
  */
 .ui5con-container--carousel {
   width: 100vw;
@@ -1343,7 +1349,7 @@ h1, h2, h3, h4 {
 
 
 /*
- * ====================================  CoC (Code of Conduct) ====================================
+ * ================================ CoC (Code of Conduct) =================================
  */
 
 .ui5con-content-container {
@@ -1558,11 +1564,288 @@ h1, h2, h3, h4 {
     gap: 4rem;
     flex-direction: column;
   }
-  
+
   .ui5con-agenda-schedule__card-container::before {
     left: -3rem;
     margin: 0 1rem;
     height: 100%;
     top: 0%;
+  }
+}
+
+/*
+* ====================================  Newsletter ============================
+*/
+
+.ui5con-newsletter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 4rem 0;
+  justify-content: center;
+  background: var(--dark-brand-color);
+}
+
+.ui5con-newsletter__button {
+  height: 4rem;
+  width: 18rem;
+  cursor: pointer;
+  text-transform: initial;
+  transition: all .3s ease;
+}
+
+.ui5con-newsletter__button:hover {
+  font-size: 1.25rem;
+  background: var(--dark-brand-color);
+}
+
+.ui5con-newsletter__modal-backdrop {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  position: fixed;
+  transition: all 0.3s;
+  background-color: rgba(25, 23, 23, 0.8);
+}
+
+.ui5con-newsletter__modal {
+  top: 50%;
+  left: 50%;
+  width: 94vw;
+  padding: 2.5rem;
+  max-width: 40rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: var(--dark-brand-color);
+  border: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-newsletter__form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.ui5con-newsletter__form fieldset {
+  border: none;
+}
+
+.ui5con-newsletter__form legend {
+  margin: 0;
+  width: 100%;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--brand-color);
+  text-transform: uppercase;
+}
+
+.ui5con-newsletter__close-btn {
+  right: 0;
+  border: none;
+  top: 0.3125rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: absolute;
+  color: var(--textColor);
+  background: transparent;
+  transition: color .2s ease;
+}
+
+.ui5con-newsletter__close-btn:hover {
+  color: var(--brand-color);
+}
+
+.ui5con-newsletter__close-btn:focus {
+  border-radius: 0.2rem;
+  outline: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-newsletter__subheader {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.ui5con-newsletter__input {
+  width: 100%;
+  border: none;
+  height: 2.5rem;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  margin-bottom: 1.5rem;
+  transition: all .2s ease;
+  color: var(--brand-color);
+}
+
+.ui5con-newsletter__input:focus {
+  border-radius: 0.2rem;
+  outline-offset: -0.1875rem;
+  outline-color: var(--brand-color);
+  outline: 0.125rem solid var(--brand-color);
+  background: var(--sapBackgroundContrastColor);
+}
+
+.ui5con-newsletter__input:hover {
+  background: var(--sapBackgroundContrastColor);
+}
+
+.ui5con-newsletter__input::placeholder {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--dark-brand-color);
+}
+
+.ui5con-newsletter__checkbox {
+  display: flex;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all .2s ease;
+}
+
+.ui5con-newsletter__checkbox input {
+  left: 4px;
+  top: 7px;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.ui5con-newsletter__checkmark {
+  top: 0;
+  left: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  position: absolute;
+  border-radius: 0.2rem;
+  transition: all .2s ease;
+  background: var(--sapBackgroundContrastColor);
+}
+
+.ui5con-newsletter__checkbox input:checked ~ .ui5con-newsletter__checkmark {
+  background: var(--brand-color);
+}
+
+.ui5con-newsletter__checkbox input:focus ~ .ui5con-newsletter__checkmark {
+  box-shadow: 0 0 0.0625rem 0.125rem var(--brand-color);
+}
+
+.ui5con-newsletter__checkbox input:checked:focus ~ .ui5con-newsletter__checkmark {
+  box-shadow: 0 0 0.0625rem 0.125rem var(--sapBackgroundContrastColor);
+}
+
+.ui5con-newsletter__checkmark:after {
+  content: "";
+  display: none;
+  position: absolute;
+}
+
+.ui5con-newsletter__checkbox input:checked ~ .ui5con-newsletter__checkmark:after {
+  display: block;
+}
+
+.ui5con-newsletter__checkbox .ui5con-newsletter__checkmark:after {
+  left: 0.45rem;
+  top: 0.25rem;
+  width: 0.375rem;
+  height: 0.625rem;
+  border: solid var(--textColor);
+  border-width: 0 0.1875rem 0.1875rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.ui5con-newsletter__checkbox span[data-required] {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-newsletter__unsubscribe {
+  font-size: 0.875rem;
+  color: var(--sapTextSecondaryColor);
+}
+
+.ui5con-newsletter__sendinblue {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.ui5con-newsletter__sendinblue div {
+  display: flex;
+}
+
+.ui5con-newsletter__sendinblue p {
+  font-size: 0.875rem;
+  line-height: 1.2rem;
+  color: var(--sapTextSecondaryColor);
+}
+
+.ui5con-newsletter__subscribe-btn {
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  transition: all .3s ease;
+  text-transform: uppercase;
+  background: var(--brand-color);
+  color: var(--dark-brand-color);
+}
+
+.ui5con-newsletter__subscribe-btn:focus {
+  border-radius: 0.2rem;
+  outline-offset: -4px;
+  outline: 0.125rem solid var(--dark-brand-color);
+}
+
+.ui5con-newsletter__subscribe-btn:hover {
+  background: #ef8800;
+}
+
+@media screen and (max-width: 900px) {
+  .ui5con-newsletter__modal {
+    padding: 1rem;
+  }
+}
+
+.modal-enter-active {
+  animation: modal-in .5s;
+}
+
+.modal-leave-active {
+  animation: modal-out .5s;
+}
+
+@keyframes modal-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

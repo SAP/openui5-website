@@ -122,7 +122,7 @@ var app = new Vue({
     },
     expandCommitteeSection() {
       this.isExpanded = !this.isExpanded;
-    },
+    }
   },
 });
 
@@ -411,6 +411,21 @@ var agenda = new Vue({
         },
       ],
     };
+  },
+});
+
+
+var newsletter = new Vue({
+  el: '#newsletter-subscription',
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showSubscribeModal() {
+      this.isModalVisible = !this.isModalVisible;
+    }
   },
 });
 
