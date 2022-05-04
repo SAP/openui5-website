@@ -1679,7 +1679,7 @@ h1, h2, h3, h4 {
   border-radius: 0.2rem;
   margin-bottom: 1.5rem;
   transition: all .2s ease;
-  color: var(--brand-color);
+  color: var(--dark-brand-color);
 }
 
 .ui5con-newsletter__input:focus {
