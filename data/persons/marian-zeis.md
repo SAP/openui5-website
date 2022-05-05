@@ -1,6 +1,6 @@
 ---
 name: Marian Zeis
-company: Müller Service GmbH
+company: XL2
 photo: ./marian-zeis.jpg
 twitter: mianbsp
 linkedin: mbauersachs
