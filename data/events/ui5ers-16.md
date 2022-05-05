@@ -9,7 +9,7 @@ speakers:
   -  Volker Buzek
   -  Peter Muessig
   -  Tobias Sorn
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/iZ5P2BfkWo0
 ---
 Also in March we’ll gather for UI5ers live again. There are some excellent news for us to spread, so you shouldn’t miss that one!
 As always, we have invited some additional panelists to our round. You can look forward to interesting discussions with Volker Buzek, co-author of [wdi5](https://js-soft.github.io/wdi5/#/), and Tobias Sorn, from the UI5 development team.
