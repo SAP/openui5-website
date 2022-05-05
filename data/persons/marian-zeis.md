@@ -1,6 +1,6 @@
 ---
 name: Marian Zeis
-company: XL2
+company: XL2 GmbH
 photo: ./marian-zeis.jpg
 twitter: mianbsp
 linkedin: mbauersachs
