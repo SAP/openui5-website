@@ -6,13 +6,10 @@ endDate: 2022/05/12 16:00 UTC+2
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Peter Muessig
-  -  Andreas Kunz
-  -  Margot Wollny
-  -  Stefan Beck
+  -  Marian Zeis
+  -  Mathias Uhlmann
+  -  Uwe Reeder
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+This time, we welcome back Marian Zeis to our round of panelists. Over the last weeks, Marian worked on a web page that gahters the latest trends about UI5 community projects, be it applications, libraries, custom controls, tooling extensions, middlewares, tasks, or generators. We will talk with him about the source of this idea, the purpose of the page, and what remains to be done. We will also look at the specific features of the page and how they are implemented.
+As an additional topic, Mathias Uhlmann and Uwe Reeder will demonstrate how data in different controls can be kept in sync using the OData V4 model with a sample application. They will also discuss important aspects of consuming a draft-enabled back-end service. Finally, they will present how to create inactive contexts in list binding to provide multiple empty table rows in edit mode.
