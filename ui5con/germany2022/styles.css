@@ -7,6 +7,7 @@
   --sapLinkColor: #ffa42c;
   --textColor: #fff;
   --sapTextSecondaryColor: #c4c4c4;
+  --successColor: #30914c;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1152,6 +1153,151 @@ h1, h2, h3, h4 {
 }
 
 /*
+ * ==================================  Speakers Section ==================================
+ */
+
+.ui5con-container--speakers {
+  background: var(--dark-brand-color);
+  display: block;
+  padding: 10rem 0;
+}
+
+.ui5con-container--speakers h2 {
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 5rem;
+}
+
+.ui5con-container--speakers h2 span {
+  color: var(--brand-color);
+}
+
+.ui5con-committee-list--speakers {
+  flex-direction: column;
+  max-width: 100%;
+  gap: 3.5rem;
+}
+
+.ui5con-committee-list--speakers .ui5con-committee-list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  text-align: left;
+  flex-wrap: wrap;
+  align-self: center;
+  width: auto;
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ui5con-committee-list--speakers .ui5con-committee-list-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.ui5con-committee-list--speakers .ui5con-committee-member {
+  margin: auto;
+}
+
+.ui5con-committee-list--speakers .ui5con-committee-member img {
+  border-radius: 50%;
+}
+
+.ui5con-committee-list--speakers header {
+  text-align: center;
+}
+
+.ui5con-committee-list--speakers .teaser {
+  border: .0625rem solid var(--brand-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.ui5con-committee-list--speakers .ui5con-committee-socials {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .ui5con-committee-list--speakers .ui5con-committee-list-item {
+    flex-wrap: nowrap;
+    padding: 0 12vw;
+  }
+
+  .ui5con-committee-list--speakers .ui5con-committee-socials {
+    float: right;
+  }
+
+  .ui5con-committee-list--speakers header {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .ui5con-committee-list--speakers .ui5con-committee-list-item {
+    flex-wrap: nowrap;
+    padding: 0 20vw;
+  }
+}
+
+.circle {
+  display: none;
+  border: 2px solid var(--brand-color);
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  left: -35px;
+  transform: translateY(-50%);
+  animation:
+    wave 0.45s ease-out 0.5s,
+    wave 0.45s ease-out 1.4s;
+}
+
+.ui5con-committee-list--speakers .ui5con-committee-list-item:nth-child(even) .circle {
+  left: auto;
+  right: -35px;
+}
+
+.circle:before {
+  content: "";
+  height: 130px;
+  width: 130px;
+  border: 2px solid #FF7B17;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation:
+    wave 0.45s ease-out 0.5s,
+    wave 0.45s ease-out 1.4s;
+}
+
+.circle:after {
+  content: "";
+  height: 190px;
+  width: 190px;
+  border: 2px solid var(--brand-color-alt);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation:
+    wave 0.45s ease-out 0.7s,
+    wave 0.45s ease-out 1.6s;
+}
+
+@media screen and (min-width: 768px) {
+  .circle {
+    display: block;
+  }
+}
+
+
+/*
  * ==================================  Carousel Section ==================================
  */
 .ui5con-container--carousel {
@@ -1581,7 +1727,7 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 4rem 0;
+  padding: 4rem 0 1rem 0;
   justify-content: center;
   background: var(--dark-brand-color);
 }
@@ -1597,6 +1743,18 @@ h1, h2, h3, h4 {
 .ui5con-newsletter__button:hover {
   font-size: 1.25rem;
   background: var(--dark-brand-color);
+}
+
+.ui5con-newsletter__button:focus {
+  font-size: 1.25rem;
+  background: var(--dark-brand-color);
+  border-color: var(--brand-color-alt);
+  outline: 3px solid var(--brand-color-alt);
+  outline-offset: -4px;
+}
+
+#sendinblue-dialog[aria-hidden="true"] {
+  display: none;
 }
 
 .ui5con-newsletter__modal-backdrop {
@@ -1628,8 +1786,30 @@ h1, h2, h3, h4 {
   flex-direction: column;
 }
 
+.sib-form,
+#sib-container {
+  font-family: "72", Arial, Helvetica, sans-serif;
+  background: transparent;
+  padding: 0;
+}
+
+.sib-form * {
+  box-sizing: border-box;
+}
+
+.sib-form-block {
+  padding: 0;
+}
+
+.entry__error:empty {
+  margin: 0;
+}
+
 .ui5con-newsletter__form fieldset {
   border: none;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 
 .ui5con-newsletter__form legend {
@@ -1663,13 +1843,31 @@ h1, h2, h3, h4 {
   outline: 0.0625rem solid var(--brand-color);
 }
 
-.ui5con-newsletter__subheader {
+.sib-form  .ui5con-newsletter__subheader {
   font-weight: bold;
   font-size: 1.1rem;
   margin: 2.5rem 0 1.5rem 0;
 }
 
-.ui5con-newsletter__input {
+.sib-form .sib-input {
+  margin-bottom: 1.5rem;
+}
+
+.sib-form-message-panel {
+  border-radius: 4px;
+}
+
+.sib-form #error-message {
+  border-color: var(--brand-color-alt);
+  background: rgba(255, 71, 0, .2);
+}
+
+.sib-form #success-message {
+  border-color: var(--successColor);
+  background: rgb(48, 145, 76, .2);
+}
+
+.sib-form .ui5con-newsletter__input {
   width: 100%;
   border: none;
   height: 2.5rem;
@@ -1677,12 +1875,13 @@ h1, h2, h3, h4 {
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 0.2rem;
-  margin-bottom: 1.5rem;
   transition: all .2s ease;
+  background: #fff;
   color: var(--dark-brand-color);
+  box-sizing: border-box;
 }
 
-.ui5con-newsletter__input:focus {
+.sib-form .ui5con-newsletter__input:focus {
   border-radius: 0.2rem;
   outline-offset: -0.1875rem;
   outline-color: var(--brand-color);
@@ -1690,17 +1889,18 @@ h1, h2, h3, h4 {
   background: var(--sapBackgroundContrastColor);
 }
 
-.ui5con-newsletter__input:hover {
+.sib-form .ui5con-newsletter__input:hover {
   background: var(--sapBackgroundContrastColor);
 }
 
-.ui5con-newsletter__input::placeholder {
+.sib-form .ui5con-newsletter__input::placeholder {
   font-size: 1rem;
   text-transform: uppercase;
-  color: var(--dark-brand-color);
+  font-style: italic;
+  color: var(--sapTextSecondaryColor);
 }
 
-.ui5con-newsletter__checkbox {
+.sib-form .ui5con-newsletter__checkbox {
   display: flex;
   cursor: pointer;
   font-weight: bold;
@@ -1715,7 +1915,7 @@ h1, h2, h3, h4 {
   transition: all .2s ease;
 }
 
-.ui5con-newsletter__checkbox input {
+.sib-form .ui5con-newsletter__checkbox input {
   left: 4px;
   top: 7px;
   opacity: 0;
@@ -1723,7 +1923,7 @@ h1, h2, h3, h4 {
   position: absolute;
 }
 
-.ui5con-newsletter__checkmark {
+.sib-form .ui5con-newsletter__checkmark {
   top: 0;
   left: 0;
   width: 1.25rem;
@@ -1768,11 +1968,12 @@ h1, h2, h3, h4 {
   transform: rotate(45deg);
 }
 
-.ui5con-newsletter__checkbox span[data-required] {
+.ui5con-newsletter__checkbox [data-required] {
   color: var(--brand-color-alt);
 }
 
-.ui5con-newsletter__unsubscribe {
+p.ui5con-newsletter__unsubscribe {
+  margin: 1rem 0;
   font-size: 0.875rem;
   color: var(--sapTextSecondaryColor);
 }
@@ -1791,6 +1992,11 @@ h1, h2, h3, h4 {
   font-size: 0.875rem;
   line-height: 1.2rem;
   color: var(--sapTextSecondaryColor);
+  margin: 1rem 0;
+}
+
+.ui5con-newsletter_subscribe-btn-block {
+  text-align: center;
 }
 
 .ui5con-newsletter__subscribe-btn {
@@ -1848,4 +2054,24 @@ h1, h2, h3, h4 {
   100% {
     opacity: 0;
   }
+}
+/*
+* ====================================  Successful subscription page ============================
+*/
+
+.subscription-confirmation-page .ui5con-content-header-container,
+.subscription-confirmation-page .ui5con-content-container {
+  text-align: center;
+}
+
+.confirmation-message {
+  min-height: calc(100vh - 150px);
+} 
+
+.confirmation-message .ui5con-date {
+  margin: auto;
+}
+
+.ui5con--sticky-footer {
+  height: 100px;
 }

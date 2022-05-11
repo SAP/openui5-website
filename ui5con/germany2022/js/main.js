@@ -429,3 +429,26 @@ var newsletter = new Vue({
   },
 });
 
+var speakers = new Vue({
+  el: '#speakers',
+  data() {
+    return {
+      speaker: [
+        {
+          name: 'Uliana Caceres',
+          city: 'Munich',
+          picture: 'images/team/uliana-caceres.png',
+          linkedin: 'https://www.linkedin.com/in/ulianaa/',
+          github: 'https://github.com/UlianaMunich',
+        },
+        {
+          name: 'Eniela Vela',
+          city: 'Montreal',
+          picture: 'images/team/eniela.jpg',
+          linkedin: 'https://ca.linkedin.com/in/eniela-vela-67aba3135',
+        }
+      ],
+    };
+  },
+});
+
