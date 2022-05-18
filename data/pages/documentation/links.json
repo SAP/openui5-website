@@ -6,12 +6,12 @@
             {
                 "title": "Learning Map",
                 "description": "All official tutorials by topic and skill level",
-                "url": "https://openui5.hana.ondemand.com/#/topic/8b49fc198bf04b2d9800fc37fecbb218"
+                "url": "https://sdk.openui5.org/#/topic/8b49fc198bf04b2d9800fc37fecbb218"
             },
             {
                 "title": "Walkthrough",
                 "description": "Recommended for beginners to get to know all essential concepts\n",
-                "url": "https://openui5.hana.ondemand.com/#/topic/3da5f4be63264db99f2e5b04c5e853db"
+                "url": "https://sdk.openui5.org/#/topic/3da5f4be63264db99f2e5b04c5e853db"
             },
             {
                 "title": "Community Tutorials",
@@ -27,7 +27,7 @@
             {
                 "title": "Demo Apps",
                 "description": "See how the various features and controls of OpenUI5 can be used",
-                "url": "https://openui5.hana.ondemand.com/#/demoapps"
+                "url": "https://sdk.openui5.org/#/demoapps"
             },
             {
                 "title": "Best-Practice Apps",
