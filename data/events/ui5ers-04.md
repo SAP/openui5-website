@@ -10,7 +10,6 @@ speakers:
   - Kristian Kralijc
   - Peter Muessig
   - Andreas Kunz
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/zQL1g1-kwg8
 ---
 

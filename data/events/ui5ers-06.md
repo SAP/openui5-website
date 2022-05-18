@@ -10,7 +10,6 @@ speakers:
   - Jens Ittel
   - Tobias Sorn
   - Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/tLHuRt29ytI
 ---
 

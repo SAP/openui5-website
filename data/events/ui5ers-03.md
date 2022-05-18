@@ -11,7 +11,6 @@ speakers:
   - Marita Kruempelmann
   - Hansi Richstein
   - Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
 recordingUrl: https://youtu.be/yevYCV5i5z8
 ---
 
