@@ -945,22 +945,30 @@ h1, h2, h3, h4 {
 .ui5con-container--committee {
   background: var(--dark-brand-color);
   display: block;
-  padding: 10rem 0;
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
 }
 
 .ui5con-container--committee h2 {
   text-transform: uppercase;
   font-weight: 800;
   text-align: center;
-  margin: 0 0 5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.ui5con-container--committee .ui5con-committee-list__btn {
+  margin: 2rem auto;
+  width: 10rem;
+  height: 3rem;
 }
 
 .ui5con-container--committee h2 span {
   color: var(--brand-color);
 }
 
-.ui5con-committee-reveal-button,
-.ui5con-committee-hide-section-button,
+.ui5con-committee-list__btn,
 .ui5con-newsletter__button {
   margin: auto;
   display: block;
@@ -977,21 +985,20 @@ h1, h2, h3, h4 {
   box-shadow: inset 0 0 0 .625rem var(--dark-brand-color);
 }
 
-.ui5con-committee-reveal-button span {
-  display: block;
-  font-size: 5rem;
-}
-
-.ui5con-committee-hide-section-button {
-  height: 4rem;
-  margin-top: 2rem;
+.ui5con-committee-list__btn:focus,
+.ui5con-newsletter__button:focus {
+  font-size: 1.25rem;
+  background: var(--dark-brand-color);
+  border-color: var(--brand-color-alt);
+  outline: 3px solid var(--brand-color-alt);
+  outline-offset: -4px;
 }
 
 .ui5con-committee-list {
   gap: 1.5rem;
   padding: 0;
   display: flex;
-  margin: 0 auto;
+  margin: 3rem auto;
   flex-wrap: wrap;
   list-style: none;
   max-width: 100vw;
@@ -1106,24 +1113,6 @@ h1, h2, h3, h4 {
   }
 }
 
-/* @media screen and (min-width: 1100px) {
-  .ui5con-committee-list {
-    max-width: 80vw;
-  }
-}
-
-@media screen and (min-width: 1350px) {
-  .ui5con-committee-list {
-    max-width: 60vw;
-  }
-}
-
-@media screen and (min-width: 1800px) {
-  .ui5con-committee-list {
-    max-width: 80vw;
-  }
-} */
-
 .expand-enter-active {
   transform-origin: top center;
   animation: expand-in .5s;
@@ -1152,6 +1141,16 @@ h1, h2, h3, h4 {
   }
 }
 
+.ui5con-banner-3 {
+  height: 385px;
+  width: 385px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  transform: translate(50%, -50%);
+}
+
 /*
  * ==================================  Speakers Section ==================================
  */
@@ -1159,7 +1158,7 @@ h1, h2, h3, h4 {
 .ui5con-container--speakers {
   background: var(--dark-brand-color);
   display: block;
-  padding: 10rem 0;
+  padding: 3rem 0;
 }
 
 .ui5con-container--speakers h2 {
@@ -1186,7 +1185,7 @@ h1, h2, h3, h4 {
   text-align: left;
   flex-wrap: wrap;
   align-self: center;
-  width: auto;
+  width: 100%;
   padding: 0 2rem;
   position: relative;
   overflow: hidden;
@@ -1208,15 +1207,20 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
-.ui5con-committee-list--speakers .teaser {
+.ui5con-committee-list--speakers .ui5con-committee-list__teaser {
   border: .0625rem solid var(--brand-color);
   border-radius: 1.5rem;
   padding: 2rem;
+  width: 100%;
+  animation-delay: 1s;
 }
 
 .ui5con-committee-list--speakers .ui5con-committee-socials {
   margin-top: 0;
 }
+
+.visible { visibility: visible; }
+.invisible { visibility: hidden; }
 
 @media screen and (min-width: 768px) {
   .ui5con-committee-list--speakers .ui5con-committee-list-item {
@@ -1514,15 +1518,19 @@ h1, h2, h3, h4 {
  * ====================================  Agenda ====================================
  */
 
-.ui5con-agenda {
-  width: 100%;
-  font-weight: 800;
+.ui5con-container--agenda {
+  background: var(--dark-brand-color);
+  display: block;
+  padding: 3rem 0;
 }
 
-.ui5con-agenda h2 {
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--brand-color);
+.ui5con-tab-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0 2rem;
 }
 
 .ui5con-agenda-toggle {
@@ -1546,11 +1554,19 @@ h1, h2, h3, h4 {
   color: var(--sapTextSecondaryColor);
 }
 
-.ui5con-agenda-toggle__element input{
-  display: none;
+.ui5con-agenda-toggle__element input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  position: absolute;
 }
 
-.ui5con-agenda-toggle__element label{
+.ui5con-agenda-toggle__element:focus-within label{
+  outline: none;
+  box-shadow: 0 0 0 0.125rem var(--brand-color-alt);
+}
+
+.ui5con-agenda-toggle__element label {
   display: flex;
   cursor: pointer;
   font-size: 0.875rem;
@@ -1574,8 +1590,135 @@ h1, h2, h3, h4 {
   color: var(--sapTextSecondaryColor);
 }
 
+.ui5con-tabs {
+  flex: 1 0 100%;
+  order: 1;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.ui5con-tabpanel {
+  outline: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .ui5con-tabs {
+    flex-basis: auto;
+    order: 0;
+    margin-top: 0rem;
+  }
+
+  .ui5con-tab-container {
+    max-width: 80vw;
+    padding: 0;
+  }
+}
+
+.ui5con-tabs button {
+  margin: 0 1.5rem;
+  padding: 0.3rem 0px;
+  background: none;
+  border: none;
+  color: var(--sapTextColor);
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: "72", Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  outline-offset: 1.25rem;
+  outline: 0.25rem solid transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.ui5con-tabs button:focus {
+  transform: scale(1.07);
+}
+
+.ui5con-tabs button::after {
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  content: "";
+  width: 100%;
+  height: 0.0625rem;  
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center;
+  background-color: currentColor;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.ui5con-tabs button:focus::after {
+  height: 0.125rem;
+}
+
+.ui5con-tabs button:hover::after,
+.ui5con-tabs button:focus::after,
+.ui5con-tabs button[aria-selected="true"]::after {
+  transform: scale(1);
+}
+
+.ui5con-tabs button[aria-selected="true"]:first-child {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-tabs button[aria-selected="true"]:last-child {
+  color: var(--brand-color);
+}
+
+.is-hidden {
+  display: none;
+}
+
+.ui5con-sessiontype span {
+  position: relative;
+  display: inline-block;
+  color: var(--sapTextSecondaryColor);
+  font-size: 0.875rem;
+  margin-right: 2rem;
+  text-transform: uppercase;
+}
+
+.ui5con-sessiontype {
+  margin-top: 2rem;
+  padding-left: 29rem;
+}
+
+@media screen and (max-width: 1025px) {
+  .ui5con-sessiontype {
+    padding-left: 2rem;
+  }
+}
+
+.ui5con-sessiontype span::after {
+  position: relative;
+  top: 1px;
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  vertical-align: baseline;
+}
+
+.ui5con-session__talk::after {
+  background: var(--brand-color-alt);
+}
+
+.ui5con-session__general::after {
+  background: linear-gradient(to bottom, var(--brand-color), var(--brand-color-alt));
+}
+
+.ui5con-session--workshop::after {
+  background: var(--brand-color);
+}
+
 .ui5con-agenda-schedule {
-  margin: 4rem 0;
+  margin: 2rem 12vw 4rem 20rem;
+  padding: 0;
   list-style-type: none;
 }
 
@@ -1589,61 +1732,117 @@ h1, h2, h3, h4 {
 }
 
 .ui5con-agenda-schedule__row {
-  width: 100%;
-  padding: 2rem 4rem;
   position: relative;
-}
-
-.ui5con-agenda-schedule__time {
-  top: 0;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-weight: normal;
 }
 
 .ui5con-agenda-schedule__card-container {
   display: flex;
-  justify-content: space-between;
-  position: relative;
+  align-items: center;
 }
 
-.ui5con-agenda-schedule__card-container::before {
-  content: '';
-  left: 50%;
-  height: 106%;
-  top: -3%;
+.ui5con-agenda-schedule__slot {
+  font-size: 5rem;
+  margin-right: 3rem;
+  color: var(--brand-color-alt);
+  font-weight: 800;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  min-width: 6rem;
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__slot {
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__hour {
   position: absolute;
-  border-left: 1px solid var(--brand-color);
+  font-size: 24rem;
+  line-height: 1;
+  top: -2rem;
+  left: -17rem;
+  -webkit-text-stroke: 1px var(--brand-color-alt);
+  color: rgba(255,255,255,0);
+  opacity: 0.5;
+  text-align: right;
+  font-weight: 800;
+  letter-spacing: -1rem;
+  font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__hour {
+  -webkit-text-stroke: 1px var(--brand-color);
+}
 
 .ui5con-agenda-schedule__card {
-  max-width: 45%;
   font-size: 1rem;
   font-weight: normal;
   border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
   padding: 1.5rem 2rem 1.5rem;
+  margin-bottom: 2rem;
   border: 0.0625rem solid var(--brand-color-alt);
+  transition: all .3s ease;
+  max-width: 65vw;
 }
 
 .ui5con-agenda-schedule__card::before {
   top: 0;
-  left: 0;
+  left: -1px;
   content: '';
   height: 100%;
+  width: 0.55rem;
   position: absolute;
-  border-left: 0.55rem solid var(--brand-color-alt);
+  background: var(--brand-color-alt);
 }
 
-.ui5con-agenda-schedule__card:nth-child(2) {
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__card {
   border: 0.0625rem solid var(--brand-color);
 }
 
-.ui5con-agenda-schedule__card:nth-child(2)::before {
-  border-left: 0.55rem solid var(--brand-color);
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__card::before {
+  background: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__more {
+  color: var(--brand-color-alt);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1.25rem;
+  transition: all .3s ease;
+  border: 0.0625rem solid transparent;
+}
+
+.ui5con-agenda-schedule__more:hover {
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule__more:focus {
+  outline: none;
+  color: var(--brand-color);
+  border-color: 0.0625rem solid var(--brand-color);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__more {
+  color: var(--brand-color);
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__more:hover {
+  color: var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__card.general {
+  border: 0.0625rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__card.general::before {
+  background: linear-gradient(to bottom, var(--brand-color), var(--brand-color-alt));
+}
+
+.ui5con-agenda-schedule--workshop .ui5con-agenda-schedule__card.general {
+  border: 0.0625rem solid var(--brand-color);
 }
 
 .ui5con-agenda-schedule__header {
@@ -1671,6 +1870,12 @@ h1, h2, h3, h4 {
   font-weight: normal;
 }
 
+.ui5con-agenda-schedule__time {
+  margin-left: auto;
+  min-width: 6rem;
+  text-align: right;
+}
+
 .ui5con-agenda-schedule__speaker-name {
   margin: 0;
   font-weight: bold;
@@ -1683,39 +1888,47 @@ h1, h2, h3, h4 {
 
 .ui5con-agenda-schedule__info {
   margin: 2rem 0;
+  line-height: 1.3;
+  transition: all .3s ease;
 }
 
 .ui5con-agenda-schedule__link {
+  cursor: pointer;
+  text-decoration: none;
   border-radius: 1.25rem;
   padding: 0.25rem 0.5rem;
+  transition: all .3s ease;
+  color: var(--sapTextColor);
   border: 0.0625rem solid var(--brand-color-alt);
 }
 
-.ui5con-agenda-schedule__link a {
-  color: var(--sapTextColor);
-  text-decoration: none;
-  cursor: pointer;
+.ui5con-agenda-schedule__link:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.125rem var(--brand-color-alt);
+}
+
+.ui5con-agenda-schedule__link.active {
+  border-color: #7e340a;
+  background-color: #7e340a;
+}
+
+.ui5con-agenda-schedule__link.active {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 1025px) {
-  .ui5con-agenda-schedule__time {
-    left: 2rem;
+
+  .ui5con-agenda-schedule {
+    margin: 2rem;
+  }
+
+  .ui5con-agenda-schedule__slot,
+  .ui5con-agenda-schedule__hour {
+    display: none;
   }
 
   .ui5con-agenda-schedule__card {
-    max-width: 100%;
-  }
-
-  .ui5con-agenda-schedule__card-container {
-    gap: 4rem;
-    flex-direction: column;
-  }
-
-  .ui5con-agenda-schedule__card-container::before {
-    left: -3rem;
-    margin: 0 1rem;
-    height: 100%;
-    top: 0%;
+    max-width: 90vw;
   }
 }
 
@@ -1732,6 +1945,7 @@ h1, h2, h3, h4 {
   background: var(--dark-brand-color);
 }
 
+.ui5con-committee-list__btn,
 .ui5con-newsletter__button {
   height: 4rem;
   width: 18rem;
@@ -1740,6 +1954,7 @@ h1, h2, h3, h4 {
   transition: all .3s ease;
 }
 
+.ui5con-committee-list__btn:hover,
 .ui5con-newsletter__button:hover {
   font-size: 1.25rem;
   background: var(--dark-brand-color);
@@ -2066,7 +2281,7 @@ p.ui5con-newsletter__unsubscribe {
 
 .confirmation-message {
   min-height: calc(100vh - 150px);
-} 
+}
 
 .confirmation-message .ui5con-date {
   margin: auto;

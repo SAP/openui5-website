@@ -3,8 +3,6 @@ var app = new Vue({
   el: '#app',
   data() {
     return {
-      windowWidth: window.innerWidth,
-      isMobile: false,
       isExpanded: false,
       committee: [
         {
@@ -93,34 +91,8 @@ var app = new Vue({
       ],
     };
   },
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize);
-      if (window.innerWidth <= 600) {
-        this.isMobile = true;
-        this.isExpanded = false;
-      } else {
-        this.isMobile = false;
-      }
-    });
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onResize);
-  },
   methods: {
-    onResize() {
-      this.windowWidth = window.innerWidth;
-      if (window.innerWidth <= 600) {
-        this.isMobile = true;
-        this.isExpanded = false;
-      } else {
-        this.isMobile = false;
-      }
-    },
-    revealCommittee() {
-      this.isExpanded = !this.isExpanded;
-    },
-    expandCommitteeSection() {
+    handleShowHideCommitteeSection() {
       this.isExpanded = !this.isExpanded;
     }
   },
@@ -241,12 +213,18 @@ var agenda = new Vue({
   el: '#agenda',
   data() {
     return {
+      activeTab:  'talks-tab',
+      agendaDay: 'day1',
+      eventTime: 'event',
+      localTime: new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1],
       schedule: [
         {
-          time: '9:00',
+          time: '2022-07-07T09:00:00.000+02:00',
           events: [
             {
-              type: 'session',
+              start: '2022-07-07T09:00:00.000+02:00',
+              end: '2022-07-07T09:25:00.000+02:00',
+              type: 'talk',
               title: 'Descriptive Session Title Goes Here',
               description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
               speakers: [
@@ -265,19 +243,25 @@ var agenda = new Vue({
                 {
                   name: 'Slides',
                   link: '/',
+                  active: true
                 },
                 {
                   name: 'Slides',
                   link: '/',
+                  active: false
                 },
                 {
                   name: 'Slides',
                   link: '/',
+                  active: false
                 }
-              ]
+              ],
+              readMoreActivated: false
             },
             {
-              type: 'workshop',
+              start: '2022-07-07T09:25:00.000+02:00',
+              end: '2022-07-07T09:50:00.000+02:00',
+              type: 'talk',
               title: 'Descriptive Session Title Goes Here',
               description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
               speakers: [
@@ -301,23 +285,70 @@ var agenda = new Vue({
                 {
                   name: 'Slides',
                   link: '/',
+                  active: true
                 },
                 {
                   name: 'Slides',
                   link: '/',
+                  active: false
                 }
-              ]
+              ],
+              readMoreActivated: false
+            },
+            {
+              start: '2022-07-07T09:50:00.000+02:00',
+              end: '2022-07-07T10:00:00.000+02:00',
+              type: 'talk',
+              title: 'Descriptive Session Title Goes Here',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
+              speakers: [
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                }
+              ],
+              links: [
+                {
+                  name: 'Slides',
+                  link: '/',
+                  active: true
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                  active: false
+                }
+              ],
+              readMoreActivated: false
             }
           ]
         },
         {
-          time: '9:30',
+          time: '2022-07-07T10:00:00.000+02:00',
           events: [
             {
-              type: 'session',
+              start: '2022-07-07T10:00:00.000+02:00',
+              end: '2022-07-07T10:30:00.000+02:00',
+              type: 'talk',
               title: 'Descriptive Session Title Goes Here',
               description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
               speakers: [
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
                 {
                   name: 'FirstName LastName',
                   company: 'Company',
@@ -328,90 +359,154 @@ var agenda = new Vue({
                 {
                   name: 'Slides',
                   link: '/',
+                  active: true
                 },
                 {
                   name: 'Slides',
                   link: '/',
+                  active: false
                 },
                 {
                   name: 'Slides',
                   link: '/',
+                  active: false
                 }
-              ]
+              ],
+              readMoreActivated: false
+            },
+            {
+              start: '2022-07-07T10:30:00.000+02:00',
+              end: '2022-07-07T11:00:00.000+02:00',
+              type: 'talk',
+              title: 'Descriptive Session Title Goes Here',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
+              speakers: [
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                },
+                {
+                  name: 'FirstName LastName',
+                  company: 'Company',
+                  image: './images/committee/andreas-kunz.jpg'
+                }
+              ],
+              links: [
+                {
+                  name: 'Slides',
+                  link: '/',
+                  active: true
+                },
+                {
+                  name: 'Slides',
+                  link: '/',
+                  active: false
+                }
+              ],
+              readMoreActivated: false
             }
           ]
         },
         {
-          time: '10:00',
+          time: '2022-07-07T11:00:00.000+02:00',
           events: [
             {
-              type: 'session',
-              title: 'Descriptive Session Title Goes Here',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
+              start: '2022-07-07T11:15:00.000+02:00',
+              end: '2022-07-07T14:00:00.000+02:00',
+              type: 'break',
+              title: 'Break Time +  Meet the Experts',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultrices lobortis purus, ac venenatis est. Vivamus facilisis felis sit amet suscipit suscipit. Pellentesque vel magna a augue eleifend lobortis eget non orci.Fusce ut pellentesque leo. Cras nec laoreet augue, non aliquam velit. Phasellus consectetur non diam a bibendum. Integer non libero sit amet purus semper egestas quis quis tellus. Nulla viverra at dui nec semper. Suspendisse velit elit, ultrices at elit aliquam, fringilla ultrices nunc. Donec pulvinar sem at nisl lobortis, eget hendrerit augue viverra. Proin maximus fringilla sem id pretium. Etiam vel volutpat diam. Nam sed tempor turpis, at molestie turpis.Aliquam ac egestas lacus. Maecenas finibus, nulla at aliquam lobortis, mi enim congue ex, sit amet maximus ante nunc sit amet enim. Donec posuere, nisl id porta mattis, lorem nulla laoreet erat, ac varius mi diam vel augue. Integer non libero sit amet purus semper egestas quis quis tellus. Nulla viverra at dui nec semper. Suspendisse velit elit, ultrices at elit aliquam, fringilla ultrices nunc. Donec pulvinar sem at nisl lobortis, eget hendrerit augue viverra. Proin maximus fringilla sem id pretium. Etiam vel volutpat diam. Nam sed tempor turpis, at molestie turpis.Aliquam ac egestas lacus. Maecenas finibus, nulla at aliquam lobortis, mi enim congue ex, sit amet maximus ante nunc sit amet enim. Donec posuere, nisl id porta mattis, lorem nulla laoreet erat, ac varius mi diam vel augue.',
               speakers: [
                 {
-                  name: 'FirstName LastName',
-                  company: 'Company',
-                  image: './images/committee/andreas-kunz.jpg'
-                },
-                {
-                  name: 'FirstName LastName',
-                  company: 'Company',
+                  name: 'Open UI5 Team',
+                  company: 'SAP',
                   image: './images/committee/andreas-kunz.jpg'
                 }
               ],
               links: [
                 {
-                  name: 'Slides',
+                  name: 'Link',
                   link: '/',
-                },
-                {
-                  name: 'Slides',
-                  link: '/',
-                },
-                {
-                  name: 'Slides',
-                  link: '/',
-                }
-              ]
-            },
-            {
-              type: 'workshop',
-              title: 'Descriptive Session Title Goes Here',
-              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc quis ipsum lobortis convallis. Vivamus magna nisle, tristique eu dictum rhoncus, fringilla sit amet justo. Lis ultricies massa. Nullam ultrices pulvinar turpis nec.',
-              speakers: [
-                {
-                  name: 'FirstName LastName',
-                  company: 'Company',
-                  image: './images/committee/andreas-kunz.jpg'
-                },
-                {
-                  name: 'FirstName LastName',
-                  company: 'Company',
-                  image: './images/committee/andreas-kunz.jpg'
-                },
-                {
-                  name: 'FirstName LastName',
-                  company: 'Company',
-                  image: './images/committee/andreas-kunz.jpg'
+                  active: true
                 }
               ],
-              links: [
-                {
-                  name: 'Slides',
-                  link: '/',
-                },
-                {
-                  name: 'Slides',
-                  link: '/',
-                }
-              ]
+              readMoreActivated: false
             }
           ]
         },
       ],
     };
   },
+  filters: {
+    minutes: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      return time.split(':')[1];
+    },
+    hours: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      return time.split(':')[0].replace(/^0+/, '');
+    },
+    trimTime: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      let timeSplit = time.split(':');
+      return timeSplit[0] + ':' + timeSplit[1];
+    },
+    convertTime: function(value, eventTime) {
+      if(eventTime === 'local') {
+       return luxon.DateTime.fromISO(value).toLocal().toISO({ suppressMilliseconds:true });
+      }
+      return value;
+    }
+  },
+  mounted() {
+    this.focusToggleDay();
+  },
+  methods:  {
+    isActivated(description) {
+      return description.length > 50;
+    },
+    focusToggleDay() {
+      this.$refs.toggleDay.focus();
+    },
+    focusTabs() {
+      document.getElementById('talks').focus();
+    },
+    focusToggleTimezone() {
+      document.getElementById('timezone1').focus();
+    },
+    handleArrowKeys(e) {
+      if(e.keyCode === 37 || e.keyCode === 39) {
+        if(this.activeTab ===  'talks-tab') {
+          this.activeTab = 'workshops-tab';
+          document.getElementById('workshops').focus();
+        } else if(this.activeTab === 'workshops-tab') {
+          this.activeTab =  'talks-tab';
+          document.getElementById('talks').focus();
+        }
+      }
+    },
+    isActive (tab) {
+      return this.activeTab === tab;
+    },
+    setActive (tab) {
+      this.activeTab = tab;
+    },
+    onDayChange($event) {
+      this.agendaDay = $event.target.value;
+    },
+    onTimeChange($event) {
+      this.eventTime = $event.target.value;
+    },
+    getLocalTimeZone() {
+      return luxon.DateTime.now().toFormat('Z');
+    }
+  }
 });
 
 
@@ -433,22 +528,83 @@ var speakers = new Vue({
   el: '#speakers',
   data() {
     return {
-      speaker: [
+      showAnimation: false,
+      speakers: [
         {
-          name: 'Uliana Caceres',
-          city: 'Munich',
-          picture: 'images/team/uliana-caceres.png',
-          linkedin: 'https://www.linkedin.com/in/ulianaa/',
-          github: 'https://github.com/UlianaMunich',
+          "firstName": "Dobromira",
+          "lastName": "Boycheva",
+          "proposals": [
+              164915282668133660
+          ],
+          "company": "SAP Labs Bulgaria",
+          "bio": "I'm developer in Smart Control V2 team base in Sofia, Bulgaria.",
+          "photoUrl": "/api/speaker/photo/45815527324e8492c4765fdcac7fdb1f09cd49eb",
+          "topic": "Developing with SAPUI5 smart controls - Time is money"
         },
         {
-          name: 'Eniela Vela',
-          city: 'Montreal',
-          picture: 'images/team/eniela.jpg',
-          linkedin: 'https://ca.linkedin.com/in/eniela-vela-67aba3135',
-        }
+          "firstName": "Pinaki",
+          "lastName": "Patra",
+          "proposals": [
+              164637386144851000
+          ],
+          "company": "T-Systems",
+          "bio": "Pinaki is s seasoned SAP consultant working in the areas of product development and consulting including technologies like SAP BTP, SAP UI5 and SAP HANA etc. He is fascinated about emerging trends like ML, Sustainabiliy, Industry 4.0 and is helping organizations in their journey towards digitization.",
+          "twitterHandle": "@PinakiPatra16",
+          "linkedInUrl": "https://www.linkedin.com/in/pinakipatra/",
+          "githubUrl":"https://github.com/pinakipatrapro",
+          "photoUrl": "/api/speaker/photo/dd5271ad587497cbcb29593492d99ad82eb44af0",
+          "topic": "Increase Re-Usability with UI5 Custom Controls  - D&D Dashboard"
+        },
+        {
+          "firstName":"Elena",
+          "lastName":"Stoyanova",
+          "proposals":[
+              164914728056667740
+          ],
+          "company":"SAP",
+          "bio":"Developer and accessibility expert for UI5 Controls and UI5 Web Components.",
+          "twitterHandle":"@stoyanova_elly",
+          "photoUrl":"/api/speaker/photo/4ae775144155a43facd49341c1fff8299233f6c6",
+          "topic": "UI5 Web Components - Version 1.0 is Here!"
+        },
+        {
+          "firstName": "Thiago",
+          "lastName": "Sasai",
+          "proposals": [
+              164806029403264580
+          ],
+          "company": "Birlasoft",
+          "bio": "I believe sharing knowledge open space for learn new things and move you forward. \nI work architecting solution using SAP technologies for projects and big companies, but code is my hobby, so never stopped coding and hope will never do.",
+          "twitterHandle": "@tsasai7",
+          "linkedInUrl": "https://www.linkedin.com/in/thiago-sasai-90449770",
+          "githubUrl":"https://github.com/tsasai7",
+          "photoUrl": "/api/speaker/photo/8581bb89c2ea87acf0bf771fe36d50af5d28df7d",
+          "topic": "UI5 Web Components using React and Serverless first"
+        },
+        {
+          "firstName":"Volker",
+          "lastName":"Buzek",
+          "proposals":[
+             164951325882559900,
+             164952264710166600,
+             16464656097605580,
+             164927936694398660
+          ],
+          "company":"J&S-Soft GmbH",
+          "bio":"Development Architect working in the SAP web/mobile cosmos, often at the boundary SAP/non-SAP. Focus on UI5, CAP (Node.js) and BTP + Azure, faible for Open Source, Testing and CI/CD. Good in web tech + JS/TS/Node, interested in Deno and AR, really bad on Windows. SAP Mentor, maintainer wdi5 + cds-pg, organizer reCAP conference, co-host ui5-community, DSAG UI5 best practice guide contributor.",
+          "twitterHandle":"https://twitter.com/vobu",
+          "linkedInUrl":"https://www.linkedin.com/in/volkerbuzek/",
+          "githubUrl":"https://github.com/vobu",
+          "photoUrl":"/api/speaker/photo/d0a5f200bc27f0c411afa54e988380809dc3b676",
+          "topic": "Testing galore: use wdi5 for testing UI5 JS-, TS-, and FE-apps"
+       },
       ],
     };
   },
+  methods: {
+    isViewableNow(isVisible, entry) {
+        this.showAnimation = isVisible;
+    }
+  }
 });
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +29,8 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script src="https://unpkg.com/vue-observe-visibility/dist/vue-observe-visibility.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <script src="./js/svgs.js"></script>
 
 </head>
@@ -69,7 +70,6 @@
           <a target="_blank" rel="noreferrer" href="https://outlook.office365.com/owa/?path=/calendar/action/compose&amp;rru=addevent&amp;subject=UI5con%20ON%20AIR%202022&amp;startdt=2022-07-07&amp;enddt=2022-07-09&amp;allday=true&amp;location=Online&amp;body=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E">Office 365</a>,
           <a target="_blank" rel="noreferrer" href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART;TZID=%22Berlin%22:20220707%0ADTEND;TZID=%22Berlin%22:20220709%0ASUMMARY:UI5con%20ON%20AIR%202022%0ALOCATION:Online%0ADESCRIPTION:Find%20more%20details%20about%20the%20event:%20https://openui5.org/events%5Cn%5Cn%20Join%20the%20event:%20https://openui5.org/ui5con/germany2022/%0AUID:ui5con2022-germany%0AEND:VEVENT%0AEND:VCALENDAR" download="UI5con-ON-AIR-2022.ics">iCal</a> or
           <a target="_blank" rel="noreferrer" href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART;TZID=%22Berlin%22:20220707%0ADTEND;TZID=%22Berlin%22:20220709%0ASUMMARY:UI5con%20ON%20AIR%202022%0ALOCATION:Online%0ADESCRIPTION:Find%20more%20details%20about%20the%20event:%20https://openui5.org/events%5Cn%5Cn%20Join%20the%20event:%20https://openui5.org/ui5con/germany2022/%0AUID:ui5con2022-germany%0AEND:VEVENT%0AEND:VCALENDAR" download="UI5con-ON-AIR-2022.ics">Outlook</a>
-          <!-- <a href="UI5con-ON-AIR-2022.ics" download>Download ICS File for your calendar</a> -->
         </p>
       </details>
 
@@ -172,52 +172,57 @@
       </svg>
     </header>
 
+    <section class="ui5con-container ui5con-container--speakers" id="speakers">
+      <h2>First Confirmed <span>Speakers</span></h2>
 
-    <!-- <section class="ui5con-container ui5con-container--speakers" id="speakers">
-      <h2>Confirmed <span>Speakers</span></h2>
 
-      <ul class="ui5con-committee-list ui5con-committee-list--speakers">
-        <li class="ui5con-committee-list-item" v-for="member in speaker" :key="member.name">
+      <ul class="ui5con-committee-list ui5con-committee-list--speakers" v-observe-visibility="{ callback: isViewableNow, once: true }">
+        <li class="ui5con-committee-list-item" v-for="(member, index) in speakers" :key="member.name" :class="{ 'visible animated slideInRight': showAnimation && index % 2 === 0, 'visible animated slideInLeft': showAnimation && index % 2 !== 0, 'invisible': !showAnimation }">
           <figure class="ui5con-committee-member">
-            <img :src="member.picture" :alt="`Portrait of ${member.name}`">
+            <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${member.photoUrl}`" :alt="`Portrait of ${member.firstName} ${member.lastName}`">
           </figure>
-          <article class="teaser">
+          <article class="ui5con-committee-list__teaser animated zoomIn">
             <header>
               <ul class="ui5con-committee-socials">
-                <li v-if="member.twitter">
-                  <a :href="member.twitter" :aria-label="`Twitter Profile of ${member.name}`" rel="nofollow" target="_blank" class="ui5con-committee-socials-item" v-html="svgs.twitter">
+                <li v-if="member.twitterHandle">
+                  <a :href="`https://twitter.com/${member.twitterHandle}`" :aria-label="`Twitter Profile of ${member.firstName} ${member.lastName}`" rel="nofollow" target="_blank" class="ui5con-committee-socials-item" v-html="svgs.twitter">
                   </a>
                 </li>
-                <li v-if="member.github">
-                  <a :href="member.github" :aria-label="`Github Profile of ${member.name}`"  rel="nofollow" target="_blank" class="ui5con-committee-socials-item" v-html="svgs.github">
+                <li v-if="member.githubUrl">
+                  <a :href="member.githubUrl" :aria-label="`Github Profile of ${member.firstName} ${member.lastName}`"  rel="nofollow" target="_blank" class="ui5con-committee-socials-item" v-html="svgs.github">
                   </a>
                 </li>
-                <li v-if="member.linkedin">
-                  <a :href="member.linkedin" :aria-label="`LinkedIn Profile of ${member.name}`" rel="nofollow" target="_blank" class="ui5con-committee-socials-item"  v-html="svgs.linkedin">
+                <li v-if="member.linkedInUrl">
+                  <a :href="member.linkedInUrl" :aria-label="`LinkedIn Profile of ${member.firstName} ${member.lastName}`" rel="nofollow" target="_blank" class="ui5con-committee-socials-item"  v-html="svgs.linkedin">
                   </a>
                 </li>
               </ul>
-              <h3 class="ui5con-committee-name">{{member.name}}</h3>
-              <p class="ui5con-committee-country">{{member.city}}</p>
+              <h3 class="ui5con-committee-name">{{member.firstName}} {{member.lastName}}</h3>
+              <p class="ui5con-committee-country">{{member.company}}</p>
             </header>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, laudantium modi! Aspernatur, quod. Nam optio tenetur iusto fugiat, architecto laboriosam ducimus laborum dolores voluptatibus nesciunt quasi atque, quisquam consequatur neque!</p>
+            <p><span  class="ui5con-committee-country">Topic: </span>{{member.topic}}</p>
+            <p>{{member.bio}}</p>
           </article>
-          <div class="circle"></div>
         </li>
       </ul>
-    </section> -->
-
-
+    </section>
 
     <section class="ui5con-container ui5con-container--committee" id="app">
       <h2>Meet our <span>Content Committee</span></h2>
-      <button class="ui5con-committee-reveal-button" v-if="isMobile && !isExpanded" @click="revealCommittee">
-        <span>?</span>
-        tap to reveal
-      </button>
-      <button class="ui5con-committee-hide-section-button" v-if="isMobile && isExpanded" @click="expandCommitteeSection">Hide Section</button>
+
+      <button class="ui5con-committee-list__btn" :aria-expanded="isExpanded ? 'true' : 'false'" aria-describedby="infotext" @click="handleShowHideCommitteeSection">{{isExpanded ? 'Hide' : 'Show'}}</button>
+
+      <p id="infotext" class="sr-only">Expand and collapse the committee section.</p>
+
+      <svg class="ui5con-banner-3" aria-hidden="true" ui5con__banner fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384">
+        <rect x="1" y="1" width="94" height="94" rx="47" transform="matrix(0 1 1 0 144 144)" stroke="#FF9216" stroke-width="2"/>
+        <rect x="1" y="1" width="190" height="190" rx="95" transform="matrix(0 1 1 0 96 96)" stroke="#FF7B17" stroke-width="2"/>
+        <rect x="1" y="1" width="286" height="286" rx="143" transform="matrix(0 1 1 0 48 48)" stroke="#FF5D17" stroke-width="2"/>
+        <rect x="1" y="1" width="382" height="382" rx="191" transform="matrix(0 1 1 0 0 0)" stroke="#FF5116" stroke-width="2"/>
+      </svg>
+
       <Transition name="expand">
-        <ul class="ui5con-committee-list" v-if="!isMobile || isExpanded">
+        <ul class="ui5con-committee-list" v-if="isExpanded">
           <li v-for="member in committee" :key="member.name" class="ui5con-committee-list-item">
             <figure class="ui5con-committee-member">
               <img :src="member.picture" :alt="`Portrait of ${member.name}`">
@@ -316,7 +321,7 @@
                     <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
                   </svg>
                   <span class="sib-form-message-panel__inner-text">
-                    UI5con team thanks you for your subscription!
+                    UI5con team thanks you for your subscription! Check your Inbox or Spam/Junk folder and confirm the email.
                   </span>
                 </div>
               </div>
@@ -448,42 +453,16 @@
 
 
   <script src="./js/main.js"></script>
-
-  <script src="https://sibforms.com/forms/end-form/build/main.js"></script>
-
+  <script src="./js/sendinblue.js"></script>
   <script src="./js/a11y-dialog.min.js"></script>
 
   <script>
-    var dialogEl = document.getElementById('sendinblue-dialog')
-    var dialog = new A11yDialog(dialogEl)
+    var dialogEl = document.getElementById('sendinblue-dialog');
+    var dialog = new A11yDialog(dialogEl);
 
-    dialog.on('show', function (dialogEl, triggerEl) {
-      console.log(dialogEl)
-      console.log(triggerEl)
-    })
-
-//close the newsletter on backspace
-    document.addEventListener("keydown", function (event) {
-    if (event.key=="Escape") {
-        console.log("Escape Pressed");
-       dialog.hide();
-
-
-    }
-})
-
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-    window.LOCALE = 'en';
     window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
     window.REQUIRED_ERROR_MESSAGE = "The email field cannot be left blank. Please try again. ";
     window.GENERIC_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
-    window.translation = {
-      common: {
-        selectedList: '{quantity} list selected',
-        selectedLists: '{quantity} lists selected'
-      }
-    };
-    var AUTOHIDE = Boolean(0);
   </script>
 
 </body>
