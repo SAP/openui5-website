@@ -51,7 +51,6 @@ var app = new Vue({
         {
           name: 'Marian Zeis',
           country: 'Germany',
-          company: 'XL2',
           picture: 'images/committee/marian-zeis.jpg',
           twitter: 'https://twitter.com/mianbsp',
           linkedin: 'https://www.linkedin.com/in/marianzeis',
