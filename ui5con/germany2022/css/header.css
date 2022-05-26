@@ -449,7 +449,7 @@
   background-position: 50% 0;
   background-color: var(--dark-brand-color);
   background-repeat: no-repeat;
-  background-image: url(images/stripes-triangle.svg);
+  background-image: url(../images/stripes-triangle.svg);
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 800;
