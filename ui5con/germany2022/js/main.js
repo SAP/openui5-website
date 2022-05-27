@@ -5,7 +5,7 @@ var header = new Vue({
     return {
       calendars: [
         {
-          link: 'https://www.google.com/calendar/render?action=TEMPLATE&amp;text=UI5con%20ON%20AIR%202022&amp;dates=20220707/20220709&amp;location=Online&amp;details=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E&amp;sprop=&amp;sprop=name:',
+          link: 'https://www.google.com/calendar/render?action=TEMPLATE&text=UI5con%20ON%20AIR%202022&dates=20220707/20220709&location=Online&details=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E&sprop=&sprop=name:',
           text: 'Google'
         },
         {
