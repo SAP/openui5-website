@@ -13,6 +13,10 @@ var header = new Vue({
           text: 'Office 365',
         },
         {
+          link: 'https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&subject=UI5con%20ON%20AIR%202022&startdt=2022-07-07&enddt=2022-07-09&allday=true&location=Online&body=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E',
+          text: 'Outlook Live',
+        },
+        {
           link: 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART;TZID=%22Berlin%22:20220707%0ADTEND;TZID=%22Berlin%22:20220709%0ASUMMARY:UI5con%20ON%20AIR%202022%0ALOCATION:Online%0ADESCRIPTION:Find%20more%20details%20about%20the%20event:%20https://openui5.org/events%5Cn%5Cn%20Join%20the%20event:%20https://openui5.org/ui5con/germany2022/%0AUID:ui5con2022-germany%0AEND:VEVENT%0AEND:VCALENDAR',
           text: 'iCal',
           download: 'UI5con-ON-AIR-2022.ics'

@@ -55,7 +55,7 @@
         <summary class="ui5con-date-summary">Save the date</summary>
         <p>Add to your calendar:
           <template v-for="(calendar, index) in calendars" :key="calendar.text">
-            <a target="_blank" rel="noreferrer" :href="calendar.link" :download="calendar.download">{{calendar.text}}</a><template v-if="index < 2">, </template><template v-if="index == 2"> or </template>
+            <a target="_blank" rel="noreferrer" :href="calendar.link" :download="calendar.download">{{calendar.text}}</a><template v-if="index < 3">, </template><template v-if="index == 3"> or </template>
           </template>
         </p>
       </details>
