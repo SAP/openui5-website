@@ -9,7 +9,7 @@ var header = new Vue({
           text: 'Google'
         },
         {
-          link: 'https://https://outlook.office365.com/owa/?path=/calendar/action/compose&rru=addevent&subject=UI5con%20ON%20AIR%202022&startdt=2022-07-07&enddt=2022-07-09&allday=true&location=Online&body=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/https://outlook.office365.com/owa/?path=/calendar/action/compose&rru=addevent&subject=UI5con%20ON%20AIR%202022&startdt=2022-07-07&enddt=2022-07-09&allday=true&location=Online&body=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E.office365.com/owa/?path=/calendar/action/compose&amp;rru=addevent&amp;subject=UI5con%20ON%20AIR%202022&amp;startdt=2022-07-07&amp;enddt=2022-07-09&amp;allday=true&amp;location=Online&amp;body=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E',
+          link: 'https://outlook.office365.com/owa/?path=/calendar/action/compose&rru=addevent&subject=UI5con%20ON%20AIR%202022&startdt=2022-07-07&enddt=2022-07-09&allday=true&location=Online&body=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E',
           text: 'Office 365',
         },
         {
