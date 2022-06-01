@@ -28,7 +28,9 @@
 </head>
 
 <body>
+  
   <section class="ui5con-container ui5con-container--agenda" id="agenda">
+    <!-- <pre>{{agendaTalksDay1 }}</pre> -->
     <header class="ui5con-tab-container">
       <fieldset class="ui5con-agenda-toggle">
         <legend>Event day</legend>
@@ -106,30 +108,102 @@
 
       <div class="ui5con-agenda">
         <ul class="ui5con-agenda-schedule ui5con-agenda-schedule--talk">
-          <li class="ui5con-agenda-schedule__row" v-for="el in schedule" :key="el.time">
+          <li class="ui5con-agenda-schedule__row" v-for="event in displayedSchedule" :key="event.id">
             <div class="ui5con-agenda-schedule__hour">
-              {{el.time | convertTime(eventTime) | hours}}
+              {{event.startTime | convertTime(eventTime) | hours}}
             </div>
-            <div class="ui5con-agenda-schedule__card-container" v-for="event in el.events" :key="event.title">
+            <div class="ui5con-agenda-schedule__card-container">
               <div class="ui5con-agenda-schedule__slot">
-                {{event.start | convertTime(eventTime) | minutes}}
+                {{event.startTime | convertTime(eventTime) | minutes}}
               </div>
-              <div class="ui5con-agenda-schedule__card" :class="{'general' : event.type === 'break'}">
+              <div class="ui5con-agenda-schedule__card" :class="{'general' : event.type != 'presentation_long' && event.type != 'presentation_short'}">
                 <div class="ui5con-agenda-schedule__header">
                   <ul class="ui5con-agenda-schedule__images">
-                    <li v-for="speaker in event.speakers" :key="speaker.name">
-                      <img :src="speaker.image" :alt="`Portrait of ${speaker.name}`">
+                    <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
+                      <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
                     </li>
                   </ul>
                   <h3 class="ui5con-agenda-schedule__title">{{event.title}}</h3>
                   <div class="ui5con-agenda-schedule__time">
-                    {{event.start | convertTime(eventTime) | trimTime}} -
-                    {{event.end | convertTime(eventTime) | trimTime}}
+                    {{event.startTime | convertTime(eventTime) | trimTime}} -
+                    {{event.endTime | convertTime(eventTime) | trimTime}}
                   </div>
                 </div>
                 <ul class="ui5con-agenda-schedule__speakers">
-                  <li class="ui5con-agenda-schedule__speaker" v-for="speaker in event.speakers" :key="speaker.name">
-                    <p class="ui5con-agenda-schedule__speaker-name">{{speaker.name}}</p>
+                  <li class="ui5con-agenda-schedule__speaker" v-for="speaker in event.speakers" :key="speaker.firstName">
+                    <p class="ui5con-agenda-schedule__speaker-name">{{speaker.firstName}} {{speaker.lastName}}</p>
+                    <p class="ui5con-agenda-schedule__speaker-company">{{speaker.company}}</p>
+                  </li>
+                </ul>
+                <p class="ui5con-agenda-schedule__info" v-if="event.description.length<500">
+                  {{event.description}}
+                </p>
+                <p class="ui5con-agenda-schedule__info" v-else>
+                  {{event.readMoreActivated ? event.description : `${event.description.slice(0, 500)}... `}}
+                  <button 
+                    class="ui5con-agenda-schedule__more" 
+                    :aria-expanded="event.readMoreActivated ? 'true' : 'false'" :aria-describedby="`showMoreLess ${event.title}`" 
+                    @click="event.readMoreActivated = !event.readMoreActivated">
+                    {{event.readMoreActivated ? 'Less' : 'More'}}
+                  </button>
+                  <p :id="`showMoreLess ${event.title}`" class="sr-only">show and hide more information about the event</p>
+                </p>
+                <ul class="ui5con-agenda-schedule__links" v-if="event.presentationLinks">
+                  <li v-for="link in event.presentationLinks" :key="link.name">
+                    <a 
+                      class="ui5con-agenda-schedule__link" 
+                      :class="{ 'active': link.active }" 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      :href="link.link">
+                      {{link.name}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div 
+      class="ui5con-tabpanels" 
+      tabindex="0" 
+      role="tabpanel" 
+      id="workshops-tab" 
+      aria-labelledby="Workshops" 
+      v-if="activeTab==='workshops-tab'">
+      <p class="ui5con-sessiontype">
+        <span class="ui5con-session--workshop">Workshop</span>
+        <span class="sr-only">or</span>
+        <span class="ui5con-session__general">General</span>
+      </p>
+      <div class="ui5con-agenda">
+        <ul class="ui5con-agenda-schedule ui5con-agenda-schedule--workshop">
+          <li class="ui5con-agenda-schedule__row" v-for="event in displayedSchedule" :key="event.id">
+            <div class="ui5con-agenda-schedule__hour">
+              {{event.startTime | convertTime(eventTime) | hours}}
+            </div>
+            <div class="ui5con-agenda-schedule__card-container">
+              <div class="ui5con-agenda-schedule__slot">
+                {{event.startTime | convertTime(eventTime) | minutes}}
+              </div>
+              <div class="ui5con-agenda-schedule__card" :class="{'general' : event.type !== 'handson'}">
+                <div class="ui5con-agenda-schedule__header">
+                  <ul class="ui5con-agenda-schedule__images">
+                    <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
+                      <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.laststName}`">
+                    </li>
+                  </ul>
+                  <h3 class="ui5con-agenda-schedule__title">{{event.title}}</h3>
+                  <div class="ui5con-agenda-schedule__time">
+                    {{event.startTime | convertTime(eventTime) | trimTime}} -
+                    {{event.endTime | convertTime(eventTime) | trimTime}}
+                  </div>
+                </div>
+                <ul class="ui5con-agenda-schedule__speakers">
+                  <li class="ui5con-agenda-schedule__speaker" v-for="speaker in event.speakers" :key="speaker.firstName">
+                    <p class="ui5con-agenda-schedule__speaker-name">{{speaker.firstName}} {{speaker.lastName}}</p>
                     <p class="ui5con-agenda-schedule__speaker-company">{{speaker.company}}</p>
                   </li>
                 </ul>
@@ -164,25 +238,10 @@
         </ul>
       </div>
     </div>
-    <div 
-      class="ui5con-tabpanels" 
-      tabindex="0" 
-      role="tabpanel" 
-      id="workshops-tab" 
-      aria-labelledby="Workshops" 
-      v-if="activeTab==='workshops-tab'">
-      <p class="ui5con-sessiontype">
-        <span class="ui5con-session--workshop">Workshop</span>
-        <span class="sr-only">or</span>
-        <span class="ui5con-session__general">General</span>
-      </p>
-      Workshop Agenda
-    </div>
   </section>
 
   <script src="./js/luxon.min.js"></script>
   <script src="./js/agenda.js"></script>
 
 </body>
-
 </html>

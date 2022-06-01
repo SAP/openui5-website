@@ -235,10 +235,12 @@
 
 .ui5con-agenda-schedule__hour {
   position: absolute;
-  font-size: 24rem;
+  font-size: 20rem;
   line-height: 1;
-  top: -2rem;
   left: -17rem;
+  top: calc(50% - 1rem);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-text-stroke: 1px var(--brand-color-alt);
   color: rgba(255,255,255,0);
   opacity: 0.5;
@@ -263,6 +265,7 @@
   border: 0.0625rem solid var(--brand-color-alt);
   transition: all .3s ease;
   max-width: 65vw;
+  width: 100%;
 }
 
 .ui5con-agenda-schedule__card::before {
