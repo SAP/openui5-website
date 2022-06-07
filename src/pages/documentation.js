@@ -46,7 +46,7 @@ const DocumentationPage = ({ data: { documentationJson, allLinksJson } }) => (
             </List>
         </Section>
         <Section color="lightblue">
-            <Text size="3" style={{ marginBottom: "calc(var(--default-margin)/4)" }}><Link href="https://openui5.hana.ondemand.com/#/topic/5982a9734748474aa8d4af9c3d8f31c0">OpenUI5 vs SAPUI5</Link></Text>
+            <Text size="3" style={{ marginBottom: "calc(var(--default-margin)/4)" }}><Link href="https://sdk.openui5.org/#/topic/5982a9734748474aa8d4af9c3d8f31c0">OpenUI5 vs SAPUI5</Link></Text>
             <div style={{ maxWidth: "700px" }}>OpenUI5 is the open source version of SAPUI5, a JavaScript UI library maintained by SAP. Since OpenUI5 shares the same core as SAPUI5, we often refer to both simply as "UI5".</div>
         </Section>
     </>

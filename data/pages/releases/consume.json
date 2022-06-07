@@ -2,7 +2,7 @@
     {
         "title": "Content Delivery Network",
         "description": "Consume OpenUI5 from our CDN with high performance and no setup needed.",
-        "url": "https://openui5.hana.ondemand.com/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae",
+        "url": "https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae",
         "icon": "../../icons/cdn.svg"
     },
     {
