@@ -5,6 +5,6 @@ external: true
 startDate: 2022/07/07 
 endDate: 2022/07/08 
 location: Online
-logo: ./logos/UI5-onair.svg
+logo: ./logos/ui5con.svg
 url: https://openui5.org/ui5con/germany2022/
 ---
