@@ -55,6 +55,7 @@
 .ui5con-agenda-modal button {
   top: 0.5rem;
   left: 100%;
+  display: flex;
   width: 1.75rem;
   margin: 0.5rem;
   cursor: pointer;
@@ -63,9 +64,13 @@
   background: none;
   font-size: 1.2rem;
   min-width: 1.75rem;
+  max-width: 1.75rem;
   font-weight: normal;
+  align-items: center;
   min-height: 1.625rem;
+  max-height: 1.625rem;
   border-radius: 0.25rem;
+  justify-content: center;
   transition: all .3s ease;
   color: var(--brand-color);
   border: 0.0625rem solid transparent;
