@@ -223,18 +223,9 @@
                     </li>
                   </ul>
                   <template v-if="event.description">
-                    <p class="ui5con-agenda-schedule__info" v-if="event.description.length<500">
-                      {{event.description | formatText}}
+                    <p class="ui5con-agenda-schedule__info" v-if="event.description.length<550">{{event.description}}
                     </p>
-                    <p class="ui5con-agenda-schedule__info" v-else>
-                      {{event.readMoreActivated ? event.description : `${event.description.slice(0, 500)}... `}}
-                      <button 
-                        class="ui5con-agenda-schedule__more" 
-                        :aria-expanded="event.readMoreActivated ? 'true' : 'false'" :aria-describedby="`showMoreLess ${event.title}`" 
-                        @click="event.readMoreActivated = !event.readMoreActivated">
-                        {{event.readMoreActivated ? 'Less' : 'More'}}
-                      </button>
-                      <p :id="`showMoreLess ${event.title}`" class="sr-only">show and hide more information about the event</p>
+                    <p class="ui5con-agenda-schedule__info" v-else>{{event.readMoreActivated ? event.description : `${event.description.slice(0, 550)}... `}}
                     </p>
                   </template>
                   <ul class="ui5con-agenda-schedule__links" v-if="event.presentationLinks.length>0">
@@ -249,6 +240,15 @@
                       </a>
                     </li>
                   </ul>
+                  <template v-if="event.description.length>=550">
+                    <button 
+                        class="ui5con-agenda-schedule__more" 
+                        :aria-expanded="event.readMoreActivated ? 'true' : 'false'" :aria-describedby="`showMoreLess ${event.title}`" 
+                        @click="event.readMoreActivated = !event.readMoreActivated">
+                        {{event.readMoreActivated ? 'Less' : 'More'}}
+                      </button>
+                      <p :id="`showMoreLess ${event.title}`" class="sr-only">show and hide more information about the event</p>
+                  </template>
                 </div>
               </div>
             </li>
@@ -302,21 +302,32 @@
                     </li>
                   </ul>
                   <template v-if="event.description">
-                    <p class="ui5con-agenda-schedule__info" v-if="event.description.length<500">
-                      {{event.description}}
+                    <p class="ui5con-agenda-schedule__info" v-if="event.description.length<550">{{event.description}}
                     </p>
-                    <p class="ui5con-agenda-schedule__info" v-else>
-                      {{event.readMoreActivated ? event.description : `${event.description.slice(0, 500)}... `}}
-                      <button 
+                    <p class="ui5con-agenda-schedule__info" v-else>{{event.readMoreActivated ? event.description : `${event.description.slice(0, 550)}... `}}
+                    </p>
+                  </template>
+                  <ul class="ui5con-agenda-schedule__links" v-if="event.presentationLinks.length>0">
+                    <li v-for="link in event.presentationLinks" :key="link.name">
+                      <a 
+                        class="ui5con-agenda-schedule__link" 
+                        :class="{ 'active': link.active }" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        :href="link.link">
+                        {{link.name}}
+                      </a>
+                    </li>
+                  </ul>
+                  <template v-if="event.description.length>=550">
+                    <button 
                         class="ui5con-agenda-schedule__more" 
                         :aria-expanded="event.readMoreActivated ? 'true' : 'false'" :aria-describedby="`showMoreLess ${event.title}`" 
                         @click="event.readMoreActivated = !event.readMoreActivated">
                         {{event.readMoreActivated ? 'Less' : 'More'}}
                       </button>
                       <p :id="`showMoreLess ${event.title}`" class="sr-only">show and hide more information about the event</p>
-                    </p>
                   </template>
-                  
                   <ul class="ui5con-agenda-schedule__links" v-if="event.presentationLinks.length>0">
                     <li v-for="link in event.presentationLinks" :key="link.name">
                       <a 
