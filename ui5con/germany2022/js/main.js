@@ -157,77 +157,64 @@ var main = new Vue({
           linkedin: 'https://linkedin.com/in/stefan-beck-a9319a82',
         },
       ],
-      speakers: [
-        {
-          "firstName": "Dobromira",
-          "lastName": "Boycheva",
-          "proposals": [
-              164915282668133660
-          ],
-          "company": "SAP Labs Bulgaria",
-          "bio": "I'm developer in Smart Control V2 team base in Sofia, Bulgaria.",
-          "photoUrl": "/api/speaker/photo/45815527324e8492c4765fdcac7fdb1f09cd49eb",
-          "topic": "Developing with SAPUI5 smart controls - Time is money"
-        },
-        {
-          "firstName": "Pinaki",
-          "lastName": "Patra",
-          "proposals": [
-              164637386144851000
-          ],
-          "company": "T-Systems",
-          "bio": "Pinaki is s seasoned SAP consultant working in the areas of product development and consulting including technologies like SAP BTP, SAP UI5 and SAP HANA etc. He is fascinated about emerging trends like ML, Sustainabiliy, Industry 4.0 and is helping organizations in their journey towards digitization.",
-          "twitterHandle": "@PinakiPatra16",
-          "linkedInUrl": "https://www.linkedin.com/in/pinakipatra/",
-          "githubUrl":"https://github.com/pinakipatrapro",
-          "photoUrl": "/api/speaker/photo/dd5271ad587497cbcb29593492d99ad82eb44af0",
-          "topic": "Increase Re-Usability with UI5 Custom Controls  - D&D Dashboard"
-        },
-        {
-          "firstName":"Elena",
-          "lastName":"Stoyanova",
-          "proposals":[
-              164914728056667740
-          ],
-          "company":"SAP",
-          "bio":"Developer and accessibility expert for UI5 Controls and UI5 Web Components.",
-          "twitterHandle":"@stoyanova_elly",
-          "photoUrl":"/api/speaker/photo/4ae775144155a43facd49341c1fff8299233f6c6",
-          "topic": "UI5 Web Components - Version 1.0 is Here!"
-        },
-        {
-          "firstName": "Thiago",
-          "lastName": "Sasai",
-          "proposals": [
-              164806029403264580
-          ],
-          "company": "Birlasoft",
-          "bio": "I believe sharing knowledge open space for learn new things and move you forward. \nI work architecting solution using SAP technologies for projects and big companies, but code is my hobby, so never stopped coding and hope will never do.",
-          "twitterHandle": "@tsasai7",
-          "linkedInUrl": "https://www.linkedin.com/in/thiago-sasai-90449770",
-          "githubUrl":"https://github.com/tsasai7",
-          "photoUrl": "/api/speaker/photo/8581bb89c2ea87acf0bf771fe36d50af5d28df7d",
-          "topic": "UI5 Web Components using React and Serverless first"
-        },
-        {
-          "firstName":"Volker",
-          "lastName":"Buzek",
-          "proposals":[
-             164951325882559900,
-             164952264710166600,
-             16464656097605580,
-             164927936694398660
-          ],
-          "company":"J&S-Soft GmbH",
-          "bio":"Development Architect working in the SAP web/mobile cosmos, often at the boundary SAP/non-SAP. Focus on UI5, CAP (Node.js) and BTP + Azure, faible for Open Source, Testing and CI/CD. Good in web tech + JS/TS/Node, interested in Deno and AR, really bad on Windows. SAP Mentor, maintainer wdi5 + cds-pg, organizer reCAP conference, co-host ui5-community, DSAG UI5 best practice guide contributor.",
-          "twitterHandle":"https://twitter.com/vobu",
-          "linkedInUrl":"https://www.linkedin.com/in/volkerbuzek/",
-          "githubUrl":"https://github.com/vobu",
-          "photoUrl":"/api/speaker/photo/d0a5f200bc27f0c411afa54e988380809dc3b676",
-          "topic": "Testing galore: use wdi5 for testing UI5 JS-, TS-, and FE-apps"
-       },
-      ],
+      activeTab:  'talks-tab',
+      agendaDay: 'day1',
+      eventTime: 'event',
+      localTime: new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1],
+      lineup: [],
+      formattedLineup: [],
+      activeSpeakers: null
     };
+  },
+  computed: {
+    displayedSchedule: function() {
+      if (this.agendaDay === 'day1') {
+        if (this.activeTab ===  'talks-tab') {
+          return this.filerSortLineup("THU");
+        } 
+        return this.filerSortLineup("THU2");
+      } else {
+        if (this.activeTab ===  'talks-tab') {
+          return this.filerSortLineup("FRI");
+        } 
+        return this.filerSortLineup("FRI2");
+      }
+    }
+  },
+  filters: {
+    minutes: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      return time.split(':')[1];
+    },
+    hours: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      return time.split(':')[0].replace(/^0+/, '');
+    },
+    trimTime: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      let timeSplit = time.split(':');
+      return timeSplit[0] + ':' + timeSplit[1];
+    },
+    convertTime: function(value, eventTime) {
+      if(eventTime === 'local') {
+       return luxon.DateTime.fromISO(value).toLocal().toISO({ suppressMilliseconds:true });
+      }
+      return value;
+    },
+    formatText: function(value) {
+      return value.replace(/&amp;/g, "&");
+    }
+  },
+  mounted() {
+    axios
+      .get('https://ui5con2022.cfapps.eu10.hana.ondemand.com/api/proposal/lineup')
+      .then(response => {
+        this.lineup = response.data;
+        this.formattedLineup = this.formatLineup();
+      }
+      )
+
+    // this.focusToggleDay();
   },
   methods: {
     handleShowHideCommitteeSection() {
@@ -238,6 +225,137 @@ var main = new Vue({
     },
     isViewableNow(isVisible, entry) {
       this.showAnimation = isVisible;
+    },
+    focusToggleDay() {
+      this.$refs.toggleDay.focus();
+    },
+    focusTabs() {
+      document.getElementById('talks').focus();
+    },
+    focusToggleTimezone() {
+      document.getElementById('timezone1').focus();
+    },
+    handleArrowKeys(e) {
+      if(e.keyCode === 37 || e.keyCode === 39) {
+        if(this.activeTab ===  'talks-tab') {
+          this.activeTab = 'workshops-tab';
+          document.getElementById('workshops').focus();
+        } else if(this.activeTab === 'workshops-tab') {
+          this.activeTab =  'talks-tab';
+          document.getElementById('talks').focus();
+        }
+      }
+    },
+    isActive (tab) {
+      return this.activeTab === tab;
+    },
+    setActive (tab) {
+      this.activeTab = tab;
+    },
+    onDayChange($event) {
+      this.agendaDay = $event.target.value;
+    },
+    onTimeChange($event) {
+      this.eventTime = $event.target.value;
+    },
+    getLocalTimeZone() {
+      return luxon.DateTime.now().toFormat('Z');
+    },
+    formatLineup() {
+      return this.lineup.map(session => {
+        if(session.description) {
+          let formattedDescription = session.description.replace(/&amp;/g, "&");
+          session.description = formattedDescription;
+        }
+
+        if(session.type === 'keynote') {
+          let originalTitle = session.title;
+          session.title = "Keynote: " + originalTitle;
+        }
+
+        session.speakers.map(speaker => {
+          let speakerTweeter = speaker.twitterHandle;
+          let speakerLinkedIn = speaker.linkedInUrl;
+
+          if(speakerTweeter && !speakerTweeter.startsWith('https:')) {
+            speaker.twitterHandle = "https://twitter.com/" + speakerTweeter;
+          }
+
+          if(speakerLinkedIn && !speakerLinkedIn.startsWith('https:')) {
+            speaker.linkedInUrl = "https://www.linkedin.com/in/" + speakerLinkedIn;
+          }
+        })
+
+        let start = session.startTime;
+        let end = session.endTime;
+
+        if (session.location === "THU" || session.location === "THU2") {
+          return {
+            ...session, 
+            startTime: "2022-07-07T" + start + ":00.000+02:00", 
+            endTime: "2022-07-07T" + end + ":00.000+02:00",
+            readMoreActivated: false,
+            liveNow: false
+          }
+        }
+        return {
+          ...session, 
+          startTime: "2022-07-08T" + start + ":00.000+02:00", 
+          endTime: "2022-07-08T" + end + ":00.000+02:00",
+          readMoreActivated: false,
+          liveNow: false
+        }
+      });
+    },
+    filerSortLineup(day) {
+      const filteredSchedule = this.formattedLineup.filter(schedule => schedule.location === day);
+      const sortedSchedule = filteredSchedule.sort((a, b) => (luxon.DateTime.fromISO(a.startTime) > luxon.DateTime.fromISO(b.startTime)) ? 1 : -1)
+
+      return sortedSchedule;
+    },
+    openSpeakerInfoModal(speakers) {
+      this.activeSpeakers=speakers;
+      this.$refs.agenda.classList.add('ui5con-agenda-modal-open');
+      this.$refs.agenda.ariaHidden = true;
+
+      setTimeout(() => {
+        this.$refs.close.focus()
+      }, 0);      
+    },
+    closeSpeakerInfoModal() {
+      this.activeSpeakers=null;
+      this.$refs.agenda.classList.remove('ui5con-agenda-modal-open');
+      this.$refs.agenda.ariaHidden = false;
+      
+      for (const key in this.$refs ) {
+        if (key.startsWith('twitter') || key.startsWith('github') || key.startsWith('linkedin')) {
+          delete this.$refs[key];
+        }
+      }
+    },
+    focusTrapModal($event) {
+      let focussableElements = [];
+      focussableElements.push(this.$refs.close);
+
+      for (const key in this.$refs ) {
+        if (key.startsWith('twitter') || key.startsWith('github') || key.startsWith('linkedin')) {
+          const element = this.$refs[key];
+          if(Array.isArray(element)) {
+            focussableElements.push(element[0]);
+          } else {
+            focussableElements.push(element);
+          }
+        }
+      }
+
+      const filteredFocussableElements = focussableElements.filter(el => el !== undefined);
+      const activeElementIndex = filteredFocussableElements.indexOf($event.target);
+
+      if(activeElementIndex != filteredFocussableElements.length - 1) {
+        filteredFocussableElements[activeElementIndex+1].focus();
+      } else {
+        filteredFocussableElements[0].focus();
+      }
     }
   },
 });

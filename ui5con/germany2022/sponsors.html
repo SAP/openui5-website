@@ -23,11 +23,11 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/committee.css">
+    <link rel="stylesheet" href="./css/sponsors.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script src="./js/svgs.js"></script>
   </head>
-  <body>
+  <body class="ui5con-sponsors">
     <nav class="navbar">
       <div class="container">
         <a class="navbar-brand" href="https://openui5.org/ui5con/germany2022/">
@@ -48,38 +48,34 @@
         </a>
       </div>
     </nav>
-    <main id="team">
+    <main id="sponsors">
       <section>
-        <header class="ui5con-content-header-container">
-          <h1>About the UI5con Team</h1>
+        <header class="ui5con-sponsors-header-container">
+          <h1>Sponsorship Packages</h1>
         </header>
-        <div class="ui5con-content-container">
-          <ul class="ui5con-committee-list ui5con-committee-list--team">
-            <li class="ui5con-committee-list-item" v-for="member in team" :key="member.name">
-              <figure class="ui5con-committee-member">
-                <img :src="member.picture" :alt="`Portrait of ${member.name}`">
-                <figcaption>
-                  <ul class="ui5con-committee-socials" v-if="member.twitter || member.github || member.linkedin">
-                    <li v-if="member.twitter">
-                      <a :href="member.twitter" :aria-label="`Twitter Profile of ${member.name}`" rel="nofollow" target="_blank" class="ui5con-committee-socials-item" v-html="svgs.twitter">
-                      </a>
-                    </li>
-                    <li v-if="member.github">
-                      <a :href="member.github" :aria-label="`Github Profile of ${member.name}`"  rel="nofollow" target="_blank" class="ui5con-committee-socials-item" v-html="svgs.github">
-                      </a>
-                    </li>
-                    <li v-if="member.linkedin">
-                      <a :href="member.linkedin" :aria-label="`LinkedIn Profile of ${member.name}`" rel="nofollow" target="_blank" class="ui5con-committee-socials-item"  v-html="svgs.linkedin">
-                      </a>
-                    </li>
-                  </ul>
-                  <h3 class="ui5con-committee-name">{{member.name}}</h3>
-                  <p class="ui5con-committee-country">{{member.city}}</p>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
+        <div class="ui5con-sponsors-content-container">
+          <table>
+            <tr>
+              <th>Sponsorship packages</th>
+              <th>Online - Basic</th>
+              <th>Online - Pro </th>
+            </tr>
+            <tr v-for="sponsor in sponsors">
+              <td>{{sponsor.package}}</td>
+              <td>{{sponsor.basic}}</td>
+              <td>{{sponsor.pro}}</td>
+            </tr>
+          </table>
         </div>
+      </section>
+      <section class="ui5con-container--bright ui5con-container--bright-alternate">
+        <div class="ui5con-container--links">
+          <social-link link="https://twitter.com/ui5con" :svg="svgs.twitter2" header="Stay updated"></social-link>
+          <social-link link="https://www.youtube.com/c/openui5videos/playlists" :svg="svgs.youtube" header="See past events"></social-link>
+          <social-link link="mailto:openui5@sap.com?subject=[UI5con 2022] Question" :svg="svgs.mail" header="Reach out to us"></social-link>
+        </div>
+  
+        <banner-three></banner-three>
       </section>
     </main>
     <footer role="contentinfo" class="ui5con-container ui5con-container--footer">
@@ -97,6 +93,8 @@
       </div>
       <div>&copy; Copyright 2022, SAP SE</div>
     </footer>
-    <script src="./js/main.js"></script>
+    <script src="./components/banner-three.component.js"></script>
+    <script src="./components/social-link.component.js"></script>
+    <script src="./js/sponsors.js"></script>
   </body>
 </html>

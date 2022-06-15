@@ -31,8 +31,8 @@
   padding: 0.2rem 0;
 }
 
-.ui5con-header_nav a:last-child {
-  margin-left: 2rem;
+.ui5con-header_nav a {
+  margin-left: 1.5rem;
 }
 
 .ui5con-date a::after,
