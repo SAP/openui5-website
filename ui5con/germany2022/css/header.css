@@ -21,7 +21,8 @@
 
 .ui5con-date a,
 .ui5con-header_nav a,
-.ui5con-newsletter__sendinblue a {
+.ui5con-newsletter__sendinblue a,
+.ui5con-regular-link {
   color: var(--brand-color);
   text-decoration: none;
   outline-offset: 1.25rem;
