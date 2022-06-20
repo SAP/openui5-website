@@ -4,8 +4,9 @@
 
 .ui5con-container--agenda {
   display: block;
-  padding: 3rem 0;
-  background: var(--dark-brand-color);
+  padding: 8rem 0;
+  padding-bottom: 4rem;
+  background: #242424;
 }
 
 .ui5con-tab-container {
@@ -25,7 +26,7 @@
   position: relative;
   width: fit-content;
   border-radius: 2.5rem;
-  background-color: #242424;
+  background-color: #171717;
 }
 
 .ui5con-agenda-toggle legend {
@@ -295,6 +296,7 @@
   flex-direction: column;
   border-radius: 1.25rem;
   transition: all .3s ease;
+  background-color: #242424;
   padding: 1.5rem 2rem 1.5rem;
   border: 0.0625rem solid var(--brand-color-alt);
 }
