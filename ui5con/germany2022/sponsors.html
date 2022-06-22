@@ -55,24 +55,28 @@
         </header>
         <div class="ui5con-sponsors-content-container">
           <table>
-            <tr>
-              <th>Sponsorship packages</th>
-              <th>Online - Basic</th>
-              <th>Online - Pro </th>
-            </tr>
-            <tr v-for="sponsor in sponsors">
-              <td>{{sponsor.package}}</td>
-              <td>{{sponsor.basic}}</td>
-              <td>{{sponsor.pro}}</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>Sponsorship packages</th>
+                <th>Online - Basic</th>
+                <th>Online - Pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="sponsor in sponsors">
+                <th scope="row">{{sponsor.package}}</th>
+                <td>{{sponsor.basic}}</td>
+                <td>{{sponsor.pro}}</td>
+              </tr>
+            </tbody>
           </table>
-          <br> <br>
-          <p>If you don't see the package which would be suitable to your requirements you could simply  
+
+          <p>If you don't see the package which would be suitable to your requirements you could simply
             <a href="mailto:openui5@sap.com?subject=[UI5con 2022] Sponsoring" target="_blank" rel="noopener noreferrer" class="ui5con-regular-link">drop us a line</a>
             and discuss the offers.
           </p>
         </div>
-       
+
 
       </section>
       <section class="ui5con-container--bright ui5con-container--bright-alternate">
@@ -81,7 +85,7 @@
           <social-link link="https://www.youtube.com/c/openui5videos/playlists" :svg="svgs.youtube" header="See past events"></social-link>
           <social-link link="mailto:openui5@sap.com?subject=[UI5con 2022] Question" :svg="svgs.mail" header="Reach out to us"></social-link>
         </div>
-  
+
         <banner-three></banner-three>
       </section>
     </main>
