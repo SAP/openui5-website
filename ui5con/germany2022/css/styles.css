@@ -84,6 +84,10 @@
   padding: 3rem 0 4rem;
 }
 
+.ui5con-container--socials {
+  padding: 6rem 0 4rem;
+}
+
 .ui5con-container--bright-alternate {
   background-image: linear-gradient(30deg, var(--brand-color), var(--brand-color-alt));
 }
@@ -158,7 +162,7 @@
   outline-offset: 0.125rem;
 }
 
-.ui5con-button--dark:active, 
+.ui5con-button--dark:active,
 .ui5con-button--light:active {
   transform: translateY(2px);
   box-shadow: none;
@@ -360,7 +364,6 @@
   margin-left: 1.875rem;
 }
 
-
 /*
  * ================================ CoC (Code of Conduct) =================================
  */
@@ -375,4 +378,65 @@
 
 .ui5con-content-header-container h1 {
   font-weight: 800;
+}
+
+/*
+ * ================================ Video section ========================================
+ */
+
+.ui5con-container--video {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  padding: 0 0;
+  text-align: center;
+  position: relative;
+}
+
+.ui5con-container--video iframe {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-container {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  background: var(--dark-brand-color);
+}
+
+.video-container .ui5con__banner-5 {
+  display: none;
+  transform: none;
+  z-index: -1;
+  max-width: 250px;
+  left: -125px;
+  top: -125px;
+}
+
+.video-container .ui5con__banner-6 {
+  display: none;
+  transform: none;
+  z-index: -1;
+  max-width: 250px;
+  right: -125px;
+  bottom: -125px;
+  left: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .ui5con-container--video {
+    padding: 10rem 0 7rem;
+  }
+
+  .video-container {
+    border: 1px solid var(--brand-color-alt);
+  }
+
+  .video-container .ui5con__banner-5,
+  .video-container .ui5con__banner-6 {
+    display: block;
+    position: absolute;
+  }
 }

@@ -104,8 +104,22 @@
       </div>
 
       <a href="https://www.eventbrite.com/e/ui5con-2022-registration-84721994767" hreflang="en" target="_blank" class="ui5con-button--light" rel="external nofollow">join waitlist</a>
+    </section>
 
-      <!-- <banner-four></banner-four> -->
+    <section class="ui5con-container--dark ui5con-container--video">
+      <h2 class="sr-only">Our UI5con Hybrid 2022 Promo Video</h2>
+
+
+
+      <div class="video-container">
+
+        <banner-five></banner-five>
+
+        <banner-six></banner-six>
+
+        <iframe width="720" height="405" src="https://www.youtube-nocookie.com/embed/1oELfH4ay_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      </div>
     </section>
 
     <section class="ui5con-container ui5con-container--agenda" id="agenda" ref="agenda">
@@ -113,56 +127,56 @@
         <fieldset class="ui5con-agenda-toggle">
           <legend>Event day</legend>
           <div class="ui5con-agenda-toggle__element">
-            <input 
-              type="radio" 
-              id="day1" 
-              name="event-day" 
-              value="day1" 
-              checked 
-              ref="toggleDay"  
-              v-on:keydown.tab.prevent="focusTabs" 
+            <input
+              type="radio"
+              id="day1"
+              name="event-day"
+              value="day1"
+              checked
+              ref="toggleDay"
+              v-on:keydown.tab.prevent="focusTabs"
               @change="onDayChange($event)">
             <label for="day1">Day 1<time datetime="2022-07-07T00:00">July 7</time></label>
           </div>
           <div class="ui5con-agenda-toggle__element">
-            <input 
-              type="radio" 
-              id="day2" 
-              name="event-day" 
-              value="day2" 
-              v-on:keydown.tab.prevent="focusTabs" 
+            <input
+              type="radio"
+              id="day2"
+              name="event-day"
+              value="day2"
+              v-on:keydown.tab.prevent="focusTabs"
               @change="onDayChange($event)">
             <label for="day2">Day 2<time datetime="2022-07-08T00:00">July 8</time></label>
           </div>
         </fieldset>
-  
+
         <div class="ui5con-tabs" role="tablist" aria-label="UI5con Schedule">
-          <button 
-            type="button" 
-            role="tab" 
-            :aria-selected="(activeTab === 'talks-tab').toString()" 
-            aria-controls="talks-tab" 
-            :tabindex="activeTab === 'talks-tab' ? 0 : -1" 
-            id="talks" 
-            v-on:keydown.tab.prevent="focusToggleTimezone" 
-            v-on:keyup="handleArrowKeys" 
+          <button
+            type="button"
+            role="tab"
+            :aria-selected="(activeTab === 'talks-tab').toString()"
+            aria-controls="talks-tab"
+            :tabindex="activeTab === 'talks-tab' ? 0 : -1"
+            id="talks"
+            v-on:keydown.tab.prevent="focusToggleTimezone"
+            v-on:keyup="handleArrowKeys"
             @click="setActive('talks-tab')">
             Talks
           </button>
           <button
-           type="button" 
-           role="tab" 
-           :aria-selected="(activeTab === 'workshops-tab').toString()" 
-           aria-controls="workshops-tab" 
-           :tabindex="activeTab === 'workshops-tab' ? 0 : -1" 
-           id="workshops" 
-           v-on:keydown.tab.prevent="focusToggleTimezone" 
-           v-on:keyup="handleArrowKeys" 
+           type="button"
+           role="tab"
+           :aria-selected="(activeTab === 'workshops-tab').toString()"
+           aria-controls="workshops-tab"
+           :tabindex="activeTab === 'workshops-tab' ? 0 : -1"
+           id="workshops"
+           v-on:keydown.tab.prevent="focusToggleTimezone"
+           v-on:keyup="handleArrowKeys"
            @click="setActive('workshops-tab')">
            Workshops
           </button>
         </div>
-  
+
         <fieldset class="ui5con-agenda-toggle ui5con-agenda-toggle--timezone" v-if="'UTC '+getLocalTimeZone() !== 'UTC +2'">
           <legend>Time zone</legend>
           <div class="ui5con-agenda-toggle__element">
@@ -175,17 +189,18 @@
           </div>
         </fieldset>
       </header>
-  
+
       <div class="ui5con-tabpanel" tabindex="0" role="tabpanel" id="talks-tab" aria-labelledby="Talks" v-if="activeTab==='talks-tab'">
-  
+
         <p class="ui5con-sessiontype">
           <span class="ui5con-session__talk">Talk</span>
           <em class="sr-only">or</em>
           <span class="ui5con-session__general">General</span>
         </p>
-  
+
         <div class="ui5con-agenda" v-if="displayedSchedule">
           <ul class="ui5con-agenda-schedule ui5con-agenda-schedule--talk">
+
             <li class="ui5con-agenda-schedule__row" v-for="event in displayedSchedule" :key="event.id" v-cloak>
               <div class="ui5con-agenda-schedule__hour">
                 {{event.startTime | convertTime(eventTime) | hours}}
@@ -194,25 +209,33 @@
                 <div class="ui5con-agenda-schedule__slot">
                   {{event.startTime | convertTime(eventTime) | minutes}}
                 </div>
+
                 <div class="ui5con-agenda-schedule__card" :class="{'general' : event.type != 'presentation_long' && event.type != 'presentation_short'}">
                   <div class="ui5con-agenda-schedule__header">
                     <div>
                       <ul v-if="event.speakers.length > 0" class="ui5con-agenda-schedule__images">
-                        <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName" @click="openSpeakerInfoModal(event.speakers)" v-on:keyup.enter="openSpeakerInfoModal(event.speakers)" tabindex="0">
-                          <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                        <li v-for="(speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
+                          <button 
+                            @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)" 
+                            :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
+                            <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                          </button>
                         </li>
                       </ul>
-  
+
                       <break-icon v-if="event.type.includes('break')"></break-icon>
                       <party-icon v-if="event.type==='after-party'"></party-icon>
-                      <closing-icon v-if="event.type==='other'"></closing-icon>  
+                      <closing-icon v-if="event.type==='other'"></closing-icon>
                     </div>
-                    
+
                     <div class="ui5con-agenda-schedule__header-wrapper">
                       <h3 class="ui5con-agenda-schedule__title" :class="{'ui5con-agenda-schedule__title--live': event.liveNow}">{{event.title | formatText}}</h3>
-                      <div class="ui5con-agenda-schedule__time">
-                        {{event.startTime | convertTime(eventTime) | trimTime}} -
-                        {{event.endTime | convertTime(eventTime) | trimTime}}
+                      <div class="ui5con-agenda-schedule__header-container">
+                        <div v-if="event.liveNow" class="ui5con-agenda-schedule__live-now">LIVE NOW</div>
+                        <div class="ui5con-agenda-schedule__time">
+                          {{event.startTime | convertTime(eventTime) | trimTime}} -
+                          {{event.endTime | convertTime(eventTime) | trimTime}}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -226,44 +249,79 @@
                     <p class="ui5con-agenda-schedule__info" v-if="event.description.length<550">{{event.description}}
                     </p>
                     <template v-else>
-                      <p>
+                      <p ui5con-container--bright-alternate>
                         <span class="ui5con-agenda-schedule__info">{{event.readMoreActivated ? event.description : `${event.description.slice(0, 550)}... `}}</span>
 
-                        <button 
-                          class="ui5con-agenda-schedule__more" 
-                          :aria-expanded="event.readMoreActivated ? 'true' : 'false'" :aria-describedby="`showMoreLess ${event.title}`" 
+                        <button
+                          class="ui5con-agenda-schedule__more"
+                          :aria-expanded="event.readMoreActivated ? 'true' : 'false'" :aria-describedby="`showMoreLess ${event.title}`"
                           @click="event.readMoreActivated = !event.readMoreActivated">
                           {{event.readMoreActivated ? 'Less' : 'More'}}
                         </button>
                       </p>
-                      
+
                       <p :id="`showMoreLess ${event.title}`" class="sr-only">show and hide more information about the event</p>
                     </template>
                   </template>
-                  <ul class="ui5con-agenda-schedule__links" v-if="event.presentationLinks.length>0">
+
+                  <!-- Links and Add To Calendar -->
+                  <!-- <ul class="ui5con-agenda-schedule__links">
+                    <li
+                      v-if="showAddToCalendar(event.type) && !event.liveNow"
+                      class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary" tabindex="0"
+                      @click="showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
+                      v-on:keyup.enter = "showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
+                    >
+                      <span class="ui5con-agenda-schedule__link-icon"></span>Add to calendar
+                    </li>
+
+                    <li v-if="event.liveNow">
+                      <a
+                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://broadcast.co.sap.com/go/ui5con">
+                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
+                      </a>
+                    </li>
+
                     <li v-for="link in event.presentationLinks" :key="link.name">
-                      <a 
-                        class="ui5con-agenda-schedule__link" 
-                        :class="{ 'active': link.active }" 
-                        target="_blank" 
-                        rel="noreferrer" 
+                      <a
+                        class="ui5con-agenda-schedule__link"
+                        :class="{ 'active': link.active }"
+                        target="_blank"
+                        rel="noreferrer"
                         :href="link.link">
                         {{link.name}}
                       </a>
                     </li>
                   </ul>
+                  <div v-if="showAddToCalendar(event.type)">
+                    <transition enter-active-class="animated fadeInDown"
+                    leave-active-class="animated fadeOutUp"
+                    leave-active-class="animate__animated animate__pulse">
+                      <ul class="ui5con-agenda-schedule__cal-container" v-if="event.calendars && showCalBlockers===event.id">
+                        <li v-for="cal in event.calendars">
+                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.ics" :download='`${event.title.replace(" ", "_")}.ics`'><img src="./images/calendar/outlook.png" alt="Outlook icon">Outlook</a> |
+                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.google"><img src="./images/calendar/google.png" alt="Google icon">Google</a> |
+                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.ics" :download='`${event.title.replace(" ", "_")}.ics`'><img src="./images/calendar/ical.png" alt="iCal icon">iCal</a> |
+                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.office365"><img src="./images/calendar/office.png" alt="Office365 icon">Office 365</a>
+                        </li>
+                      </ul>
+                    </transition>
+                  </div> -->
                 </div>
               </div>
             </li>
           </ul>
         </div>
       </div>
-      <div 
-        class="ui5con-tabpanels" 
-        tabindex="0" 
-        role="tabpanel" 
-        id="workshops-tab" 
-        aria-labelledby="Workshops" 
+      <div
+        class="ui5con-tabpanels"
+        tabindex="0"
+        role="tabpanel"
+        id="workshops-tab"
+        aria-labelledby="Workshops"
         v-if="activeTab==='workshops-tab'">
         <p class="ui5con-sessiontype">
           <span class="ui5con-session--workshop">Workshop</span>
@@ -284,17 +342,24 @@
                   <div class="ui5con-agenda-schedule__header">
                     <div>
                       <ul class="ui5con-agenda-schedule__images" v-if="event.speakers.length > 0">
-                        <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName" @click="openSpeakerInfoModal(event.speakers)"  v-on:keyup.enter="openSpeakerInfoModal(event.speakers)" tabindex="0">
-                          <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                        <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
+                          <button 
+                            @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"  
+                            :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
+                            <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                          </button>
                         </li>
                       </ul>
                       <break-icon v-if="event.type.includes('break')"></break-icon>
                     </div>
                     <div class="ui5con-agenda-schedule__header-wrapper">
                       <h3 class="ui5con-agenda-schedule__title" :class="{'ui5con-agenda-schedule__title--live': event.liveNow}">{{event.title | formatText}}</h3>
-                      <div class="ui5con-agenda-schedule__time">
-                        {{event.startTime | convertTime(eventTime) | trimTime}} -
-                        {{event.endTime | convertTime(eventTime) | trimTime}}
+                      <div class="ui5con-agenda-schedule__header-container">
+                        <div v-if="event.liveNow" class="ui5con-agenda-schedule__live-now">LIVE NOW</div>
+                        <div class="ui5con-agenda-schedule__time">
+                          {{event.startTime | convertTime(eventTime) | trimTime}} -
+                          {{event.endTime | convertTime(eventTime) | trimTime}}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -308,41 +373,95 @@
                     <p class="ui5con-agenda-schedule__info">{{event.description}}
                     </p>
                   </template>
-                  <ul class="ui5con-agenda-schedule__links" v-if="event.presentationLinks.length>0">
+
+                  <!-- Links and Add To Calendar -->
+                  <!-- <ul class="ui5con-agenda-schedule__links">
+                    <li
+                      v-if="showAddToCalendar(event.type) && !event.liveNow"
+                      class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary" tabindex="0"
+                      @click="showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
+                      v-on:keyup.enter = "showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
+                    >
+                      <span class="ui5con-agenda-schedule__link-icon"></span>Add to calendar</li>
+
+                    <li v-if="event.liveNow">
+                      <a
+                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://broadcast.co.sap.com/go/ui5con">
+                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
+                      </a>
+                    </li>
+
                     <li v-for="link in event.presentationLinks" :key="link.name">
-                      <a 
-                        class="ui5con-agenda-schedule__link" 
-                        :class="{ 'active': link.active }" 
-                        target="_blank" 
-                        rel="noreferrer" 
+                      <a
+                        class="ui5con-agenda-schedule__link"
+                        :class="{ 'active': link.active }"
+                        target="_blank"
+                        rel="noreferrer"
                         :href="link.link">
                         {{link.name}}
                       </a>
                     </li>
                   </ul>
-                  <ul class="ui5con-agenda-schedule__links" v-if="event.presentationLinks.length>0">
-                    <li v-for="link in event.presentationLinks" :key="link.name">
-                      <a 
-                        class="ui5con-agenda-schedule__link" 
-                        :class="{ 'active': link.active }" 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        :href="link.link">
-                        {{link.name}}
-                      </a>
-                    </li>
-                  </ul>
+
+                  <div v-if="showAddToCalendar(event.type)">
+                    <transition enter-active-class="animated fadeInDown"
+                    leave-active-class="animated fadeOutUp"
+                    leave-active-class="animate__animated animate__pulse">
+                      <ul class="ui5con-agenda-schedule__cal-container" v-if="event.calendars && showCalBlockers===event.id">
+                        <li v-for="cal in event.calendars">
+                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.ics" :download='`${event.title.replace(" ", "_")}.ics`'><img src="./images/calendar/outlook.png" alt="Outlook icon">Outlook</a> |
+                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.google"><img src="./images/calendar/google.png" alt="Google icon">Google</a> |
+                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.ics" :download='`${event.title.replace(" ", "_")}.ics`'><img src="./images/calendar/ical.png" alt="iCal icon">iCal</a> |
+                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.office365"><img src="./images/calendar/office.png" alt="Office365 icon">Office 365</a>
+                        </li>
+                      </ul>
+                    </transition>
+                  </div> -->
+
                 </div>
               </div>
             </li>
           </ul>
         </div>
       </div>
-  
-      <div id="speaker-modal" class="ui5con-agenda-modal-backdrop" v-if="activeSpeakers" @keydown.esc="closeSpeakerInfoModal" v-cloak>
-        <div class="ui5con-agenda-modal" role="dialog" tabindex="-1">
-          <button @click="closeSpeakerInfoModal" ref="close" v-on:keydown.tab.prevent="focusTrapModal($event)">✕</button>
-  
+
+      <div 
+        id="speaker-modal" 
+        ref="speakerModal" 
+        aria-hidden="true" 
+        tabindex="-1"
+        aria-modal="true"
+        class="ui5con-agenda-modal-backdrop" 
+        style="display: none;" 
+        @keydown.esc="closeSpeakerInfoModal" 
+        @click.self="closeSpeakerInfoModal" 
+        v-cloak>
+        
+        <div class="ui5con-agenda-modal" role="document" aria-labelledby="speaker-dialog-title" aria-describedby="speaker-dialog-description" tabindex="-1" ref="speakerModalContent">
+
+          <h2 class="sr-only" id="speaker-dialog-title">Detailed Info about 
+            <template v-for="speaker in activeSpeakers">{{speaker.firstName}} {{speaker.lastName}} </template>
+          </h2>
+
+          <p class="sr-only" id="speaker-dialog-description"> 
+            <template v-for="speaker in activeSpeakers">
+              Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
+              <span v-if="speaker.company">Speaker's company: {{speaker.company}}</span>
+              Speaker's bio: {{speaker.bio | formatText}}
+            </template>
+          </p>
+
+          <button 
+            aria-label="Close Dialog" 
+            @click="closeSpeakerInfoModal" 
+            ref="close" 
+            v-on:keydown.tab.prevent="focusTrapModal($event)">
+            ✕
+          </button>
+
           <div v-for="(speaker, index) in activeSpeakers"  class="ui5con-agenda-modal__container" :key="index">
             <figure>
               <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
@@ -353,7 +472,7 @@
                     <h3 class="ui5con-agenda-modal__speaker-name">{{speaker.firstName}} {{speaker.lastName}}</h3>
                     <p class="ui5con-agenda-modal__speaker-company" v-if="speaker.company">{{speaker.company | formatText}}</p>
                   </div>
-                
+
                   <ul v-if="speaker.twitterHandle || speaker.linkedInUrl || speaker.githubUrl" class="ui5con-agenda-modal__speaker-links">
                     <li v-if="speaker.twitterHandle">
                       <a :href="speaker.twitterHandle" :aria-label="`Twitter Profile of ${speaker.firstName} ${speaker.lastName}`" rel="nofollow" target="_blank" v-html="svgs.twitter" :ref="`twitter ${speaker.firstName} ${speaker.lastName}`" v-on:keydown.tab.prevent="focusTrapModal($event)">
@@ -410,7 +529,7 @@
     <section class="ui5con-container ui5con-container--carousel">
     </section>
 
-    <section class="ui5con-container--bright ui5con-container--bright-alternate">
+    <section class="ui5con-container--bright ui5con-container--bright-alternate ui5con-container--socials">
       <h2>Stay in the loop on latest news from UI5con</h2>
 
       <p class="ui5con-section-text">Subscribe to our email newsletter to receive updates on upcoming events and community engagement opportunities. We only send out updates a few times per year, so no need to worry about us cluttering your inbox.</p>
@@ -447,6 +566,8 @@
   <script src="./components/banner-two.component.js"></script>
   <script src="./components/banner-three.component.js"></script>
   <script src="./components/banner-four.component.js"></script>
+  <script src="./components/banner-five.component.js"></script>
+  <script src="./components/banner-six.component.js"></script>
   <script src="./components/sendin-blue.component.js"></script>
   <script src="./components/detail.component.js"></script>
   <script src="./components/social-link.component.js"></script>

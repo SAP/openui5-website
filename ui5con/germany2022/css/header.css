@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   padding-bottom: 4rem;
+  background: var(--dark-brand-color-header);
   color: var(--sapTextColor);
   z-index: 1;
 }
@@ -448,7 +449,7 @@
   display: block;
   background-size: contain;
   background-position: 50% 0;
-  background-color: var(--dark-brand-color);
+  background-color: var(--dark-brand-color-header);
   background-repeat: no-repeat;
   background-image: url(../images/stripes-triangle.svg);
   font-size: 2rem;

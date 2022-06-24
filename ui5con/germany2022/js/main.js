@@ -72,7 +72,7 @@ var main = new Vue({
     return {
       isExpanded: false,
       isModalVisible: false,
-      showAnimation: false,
+      showCalBlockers: false,
       committee: [
         {
           name: 'Stefania Santimbrean',
@@ -163,7 +163,8 @@ var main = new Vue({
       localTime: new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1],
       lineup: [],
       formattedLineup: [],
-      activeSpeakers: null
+      activeSpeakers: null,
+      lastFocussedElementID: null
     };
   },
   computed: {
@@ -211,10 +212,23 @@ var main = new Vue({
       .then(response => {
         this.lineup = response.data;
         this.formattedLineup = this.formatLineup();
-      }
-      )
 
-    // this.focusToggleDay();
+        let interval;
+        let timeNow = new Date().toISOString();
+        const startCounterTime = new Date("2022-07-07T13:50:00.000+02:00").toISOString();
+        const endCounterTime = new Date("2022-07-08T16:00:00.000+02:00").toISOString();
+
+        if((timeNow > startCounterTime) && (timeNow <= endCounterTime)) {
+          interval = setInterval(() => { 
+            timeNow = new Date().toISOString();
+            if(timeNow > endCounterTime) {
+              clearInterval(interval);
+              return;
+            }
+            this.updateLiveSession();
+          }, 30000)
+        }
+      })
   },
   methods: {
     handleShowHideCommitteeSection() {
@@ -222,9 +236,6 @@ var main = new Vue({
     },
     showSubscribeModal() {
       this.isModalVisible = !this.isModalVisible;
-    },
-    isViewableNow(isVisible, entry) {
-      this.showAnimation = isVisible;
     },
     focusToggleDay() {
       this.$refs.toggleDay.focus();
@@ -261,6 +272,13 @@ var main = new Vue({
     getLocalTimeZone() {
       return luxon.DateTime.now().toFormat('Z');
     },
+    showAddToCalendar(eventType) {
+      if(eventType === 'other' || eventType.includes('party')  || eventType.includes('break')) {
+        return false;
+      } else {
+        return true;
+      }
+    },
     formatLineup() {
       return this.lineup.map(session => {
         if(session.description) {
@@ -289,23 +307,158 @@ var main = new Vue({
         let start = session.startTime;
         let end = session.endTime;
 
+        const forbiddenCharacters = new RegExp('#', 'g')
+        const removeForbiddenCharachters = (text) => {
+            if (typeof text === 'string') {
+                return text.replace(forbiddenCharacters, '')
+            }
+            return ''
+        }
+
         if (session.location === "THU" || session.location === "THU2") {
+          let newStartTime = "2022-07-07T" + start + ":00.000+02:00";
+          let newEndTime = "2022-07-07T" + end + ":00.000+02:00";
+          
+          let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
+          let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
+
+          let officeStartDate = new Date(newStartTime).toISOString();
+          let officeEndDate = new Date(newEndTime).toISOString();
+
+          let timeNow = new Date().toISOString();
+          let sessionTimeStart = new Date(newStartTime).toISOString();
+          let sessionTimeEnd = new Date(newEndTime).toISOString();
+          let sessionLiveStatus = false;
+
+          if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
+            sessionLiveStatus = true;
+          }
+
+          let cal = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'BEGIN:VEVENT',
+            'DTSTART:' + calendarStartDate,
+            'DTEND:' + calendarEndDate,
+            'SUMMARY:' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+            'LOCATION:' + 'https://broadcast.co.sap.com/go/ui5con',
+            'DESCRIPTION:' + removeForbiddenCharachters(session.description) + '\\n\\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con',
+            'UID:' + session.id,
+            'END:VEVENT',
+            'END:VCALENDAR'
+          ].join('\n');
+
           return {
             ...session, 
-            startTime: "2022-07-07T" + start + ":00.000+02:00", 
-            endTime: "2022-07-07T" + end + ":00.000+02:00",
+            startTime: newStartTime, 
+            endTime: newEndTime,
             readMoreActivated: false,
-            liveNow: false
+            liveNow: sessionLiveStatus,
+            calendars: [
+              {
+                google: encodeURI([
+                  'https://www.google.com/calendar/render',
+                  '?action=TEMPLATE',
+                  '&text=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+                  '&dates=' + calendarStartDate ,
+                  '/' + calendarEndDate,
+                  '&location='+'https://broadcast.co.sap.com/go/ui5con',
+                  '&details=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con',
+                  '&sprop=&sprop=name:'
+                ].join('')),
+                office365: encodeURI([
+                  'https://outlook.office365.com/owa/',
+                  '?path=/calendar/action/compose',
+                  '&rru=addevent',
+                  '&subject=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+                  '&startdt=' + officeStartDate,
+                  '&enddt=' + officeEndDate,
+                  '&location=' + 'https://broadcast.co.sap.com/go/ui5con',
+                  '&body=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con'
+                ].join('')),
+                ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
+              }
+            ]
           }
         }
-        return {
-          ...session, 
-          startTime: "2022-07-08T" + start + ":00.000+02:00", 
-          endTime: "2022-07-08T" + end + ":00.000+02:00",
-          readMoreActivated: false,
-          liveNow: false
+        else {
+          let newStartTime = "2022-07-08T" + start + ":00.000+02:00";
+          let newEndTime = "2022-07-08T" + end + ":00.000+02:00";
+          
+          let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
+          let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
+          
+          let officeStartDate = new Date(newStartTime).toISOString();
+          let officeEndDate = new Date(newEndTime).toISOString();
+   
+          let timeNow = new Date().toISOString();
+          let sessionTimeStart = new Date(newStartTime).toISOString();
+          let sessionTimeEnd = new Date(newEndTime).toISOString();
+          let sessionLiveStatus = false;
+
+          if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
+            sessionLiveStatus = true;
+          }
+
+          let cal = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'BEGIN:VEVENT',
+            'DTSTART:' + calendarStartDate,
+            'DTEND:' + calendarEndDate,
+            'SUMMARY:' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+            'LOCATION:' + 'https://broadcast.co.sap.com/go/ui5con',
+            'DESCRIPTION:' + removeForbiddenCharachters(session.description) + '\\n\\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con',
+            'UID:' + session.id,
+            'END:VEVENT',
+            'END:VCALENDAR'
+          ].join('\n');
+          
+          return {
+            ...session, 
+            startTime: newStartTime, 
+            endTime: newEndTime,
+            readMoreActivated: false,
+            liveNow: sessionLiveStatus,
+            calendars: [{
+              google: encodeURI([
+                'https://www.google.com/calendar/render',
+                '?action=TEMPLATE',
+                '&text=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+                '&dates=' + calendarStartDate ,
+                '/' + calendarEndDate,
+                '&location='+'https://broadcast.co.sap.com/go/ui5con',
+                '&details=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con',
+                '&sprop=&sprop=name:'
+              ].join('')),
+              office365: encodeURI([
+                'https://outlook.office365.com/owa/',
+                '?path=/calendar/action/compose',
+                '&rru=addevent',
+                '&subject=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+                '&startdt=' + officeStartDate,
+                '&enddt=' + officeEndDate,
+                '&location=' + 'https://broadcast.co.sap.com/go/ui5con',
+                '&body=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con'
+              ].join('')),
+              ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
+            }]
+          }
         }
       });
+    },
+    updateLiveSession() {
+      return this.formattedLineup.map(session => {
+        let timeNow = new Date().toISOString();
+        let sessionTimeStart = new Date(session.startTime).toISOString();
+        let sessionTimeEnd = new Date(session.endTime).toISOString();
+
+        if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
+          session.liveNow = true;
+        } else {
+          session.liveNow = false;
+        }
+      })
     },
     filerSortLineup(day) {
       const filteredSchedule = this.formattedLineup.filter(schedule => schedule.location === day);
@@ -313,25 +466,31 @@ var main = new Vue({
 
       return sortedSchedule;
     },
-    openSpeakerInfoModal(speakers) {
+    openSpeakerInfoModal(speakers, id) {
       this.activeSpeakers=speakers;
       this.$refs.agenda.classList.add('ui5con-agenda-modal-open');
       this.$refs.agenda.ariaHidden = true;
+      this.$refs.speakerModal.ariaHidden = false;
+      this.$refs.speakerModal.style.display = 'flex';
+      this.lastFocussedElementID = id;
 
       setTimeout(() => {
-        this.$refs.close.focus()
+        this.$refs.speakerModal.focus();
       }, 0);      
     },
     closeSpeakerInfoModal() {
       this.activeSpeakers=null;
       this.$refs.agenda.classList.remove('ui5con-agenda-modal-open');
       this.$refs.agenda.ariaHidden = false;
+      this.$refs.speakerModal.ariaHidden = true;
+      this.$refs.speakerModal.style.display = 'none';
       
       for (const key in this.$refs ) {
         if (key.startsWith('twitter') || key.startsWith('github') || key.startsWith('linkedin')) {
           delete this.$refs[key];
         }
       }
+      document.getElementById(this.lastFocussedElementID).focus();
     },
     focusTrapModal($event) {
       let focussableElements = [];
@@ -352,9 +511,21 @@ var main = new Vue({
       const activeElementIndex = filteredFocussableElements.indexOf($event.target);
 
       if(activeElementIndex != filteredFocussableElements.length - 1) {
-        filteredFocussableElements[activeElementIndex+1].focus();
+        if($event.shiftKey) {
+          if(activeElementIndex === 0) {
+            filteredFocussableElements[filteredFocussableElements.length - 1].focus();
+          } else {
+            filteredFocussableElements[activeElementIndex-1].focus();
+          }
+        } else {
+          filteredFocussableElements[activeElementIndex+1].focus();
+        } 
       } else {
-        filteredFocussableElements[0].focus();
+        if($event.shiftKey) {
+          filteredFocussableElements[activeElementIndex-1].focus();
+        } else {
+          filteredFocussableElements[0].focus();
+        }
       }
     }
   },
@@ -469,5 +640,49 @@ var aboutTheTeam = new Vue({
       ],
     };
   },
+});
+
+var countdown = new Vue({
+  el: '#countdown',
+  data() {
+    return {
+      date: '2022-07-07 14:00:00 +02:00',
+      now: Math.trunc((new Date()).getTime() / 1000)
+    };
+  },
+  mounted() {
+    window.setInterval(() => {
+      this.now = Math.trunc((new Date()).getTime() / 1000);
+    },1000);
+  },
+  computed: {
+    dateInMilliseconds() {
+      let germanyDate = this.date.toLocaleString("en-US", {timeZone: "Germany/Berlin"});
+      return Math.trunc(Date.parse(germanyDate) / 1000)
+    },
+    seconds() {
+      return (this.dateInMilliseconds - this.now) % 60;
+    },
+    minutes() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60;
+    },
+    hours() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24;
+    },
+    days() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24);
+    }
+  },
+  filters: {
+    two_digits: function(value) {
+      if (value < 0) {
+        return '00';
+      }
+      if (value.toString().length <= 1) {
+        return `0${value}`;
+      }
+      return value;
+    }
+  }
 });
 

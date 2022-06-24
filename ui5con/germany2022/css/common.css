@@ -1,7 +1,8 @@
 :root {
   --brand-color: #ffa42c;
   --brand-color-alt: #ff4700;
-  --dark-brand-color: #191717;
+  --dark-brand-color: #242424;
+  --dark-brand-color-header: #191717;
   --button-alternate-textColor: #8E3E2A;
   --sapBackgroundContrastColor: #f5f6f7;
   --sapTextColor: #f5f6f7;

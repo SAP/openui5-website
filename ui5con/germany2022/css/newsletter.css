@@ -51,11 +51,12 @@
   top: 50%;
   left: 50%;
   width: 94vw;
-  padding: 2.5rem;
+  padding: 1.5rem;
   max-width: 40rem;
   position: absolute;
   transform: translate(-50%, -50%);
   background: var(--dark-brand-color);
+  border-radius: 1rem;
   border: 0.0625rem solid var(--brand-color);
 }
 
