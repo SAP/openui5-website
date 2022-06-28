@@ -215,8 +215,8 @@
                     <div>
                       <ul v-if="event.speakers.length > 0" class="ui5con-agenda-schedule__images">
                         <li v-for="(speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
-                          <button 
-                            @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)" 
+                          <button
+                            @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"
                             :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
                             <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
                           </button>
@@ -343,8 +343,8 @@
                     <div>
                       <ul class="ui5con-agenda-schedule__images" v-if="event.speakers.length > 0">
                         <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
-                          <button 
-                            @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"  
+                          <button
+                            @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"
                             :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
                             <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
                           </button>
@@ -428,25 +428,25 @@
         </div>
       </div>
 
-      <div 
-        id="speaker-modal" 
-        ref="speakerModal" 
-        aria-hidden="true" 
+      <div
+        id="speaker-modal"
+        ref="speakerModal"
+        aria-hidden="true"
         tabindex="-1"
         aria-modal="true"
-        class="ui5con-agenda-modal-backdrop" 
-        style="display: none;" 
-        @keydown.esc="closeSpeakerInfoModal" 
-        @click.self="closeSpeakerInfoModal" 
+        class="ui5con-agenda-modal-backdrop"
+        style="display: none;"
+        @keydown.esc="closeSpeakerInfoModal"
+        @click.self="closeSpeakerInfoModal"
         v-cloak>
-        
+
         <div class="ui5con-agenda-modal" role="document" aria-labelledby="speaker-dialog-title" aria-describedby="speaker-dialog-description" tabindex="-1" ref="speakerModalContent">
 
-          <h2 class="sr-only" id="speaker-dialog-title">Detailed Info about 
+          <h2 class="sr-only" id="speaker-dialog-title">Detailed Info about
             <template v-for="speaker in activeSpeakers">{{speaker.firstName}} {{speaker.lastName}} </template>
           </h2>
 
-          <p class="sr-only" id="speaker-dialog-description"> 
+          <p class="sr-only" id="speaker-dialog-description">
             <template v-for="speaker in activeSpeakers">
               Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
               <span v-if="speaker.company">Speaker's company: {{speaker.company}}</span>
@@ -454,10 +454,10 @@
             </template>
           </p>
 
-          <button 
-            aria-label="Close Dialog" 
-            @click="closeSpeakerInfoModal" 
-            ref="close" 
+          <button
+            aria-label="Close Dialog"
+            @click="closeSpeakerInfoModal"
+            ref="close"
             v-on:keydown.tab.prevent="focusTrapModal($event)">
             ✕
           </button>
@@ -488,7 +488,7 @@
                     </li>
                   </ul>
               </header>
-              <p class="ui5con-agenda-modal__speaker-bio" v-if="speaker.bio">{{speaker.bio | formatText}}</p>
+              <p class="ui5con-agenda-modal__speaker-bio" v-if="speaker.bio">{{speaker.bio | formatText }}</p>
             </article>
           </div>
         </div>
@@ -557,6 +557,10 @@
 
       <banner-three></banner-three>
     </section>
+
+    <!-- <section class="ui5con-container--dark ui5con-container--sponsors">
+      <h2>Thanks to our <span>Sponsors</span></h2>
+    </section> -->
 
     <footer-section></footer-section>
   </main>

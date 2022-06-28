@@ -172,12 +172,12 @@ var main = new Vue({
       if (this.agendaDay === 'day1') {
         if (this.activeTab ===  'talks-tab') {
           return this.filerSortLineup("THU");
-        } 
+        }
         return this.filerSortLineup("THU2");
       } else {
         if (this.activeTab ===  'talks-tab') {
           return this.filerSortLineup("FRI");
-        } 
+        }
         return this.filerSortLineup("FRI2");
       }
     }
@@ -203,6 +203,7 @@ var main = new Vue({
       return value;
     },
     formatText: function(value) {
+      if (!value) return '';
       return value.replace(/&amp;/g, "&");
     }
   },
@@ -219,7 +220,7 @@ var main = new Vue({
         const endCounterTime = new Date("2022-07-08T16:00:00.000+02:00").toISOString();
 
         if((timeNow > startCounterTime) && (timeNow <= endCounterTime)) {
-          interval = setInterval(() => { 
+          interval = setInterval(() => {
             timeNow = new Date().toISOString();
             if(timeNow > endCounterTime) {
               clearInterval(interval);
@@ -318,7 +319,7 @@ var main = new Vue({
         if (session.location === "THU" || session.location === "THU2") {
           let newStartTime = "2022-07-07T" + start + ":00.000+02:00";
           let newEndTime = "2022-07-07T" + end + ":00.000+02:00";
-          
+
           let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
           let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
 
@@ -349,8 +350,8 @@ var main = new Vue({
           ].join('\n');
 
           return {
-            ...session, 
-            startTime: newStartTime, 
+            ...session,
+            startTime: newStartTime,
             endTime: newEndTime,
             readMoreActivated: false,
             liveNow: sessionLiveStatus,
@@ -384,13 +385,13 @@ var main = new Vue({
         else {
           let newStartTime = "2022-07-08T" + start + ":00.000+02:00";
           let newEndTime = "2022-07-08T" + end + ":00.000+02:00";
-          
+
           let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
           let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
-          
+
           let officeStartDate = new Date(newStartTime).toISOString();
           let officeEndDate = new Date(newEndTime).toISOString();
-   
+
           let timeNow = new Date().toISOString();
           let sessionTimeStart = new Date(newStartTime).toISOString();
           let sessionTimeEnd = new Date(newEndTime).toISOString();
@@ -413,10 +414,10 @@ var main = new Vue({
             'END:VEVENT',
             'END:VCALENDAR'
           ].join('\n');
-          
+
           return {
-            ...session, 
-            startTime: newStartTime, 
+            ...session,
+            startTime: newStartTime,
             endTime: newEndTime,
             readMoreActivated: false,
             liveNow: sessionLiveStatus,
@@ -476,7 +477,7 @@ var main = new Vue({
 
       setTimeout(() => {
         this.$refs.speakerModal.focus();
-      }, 0);      
+      }, 0);
     },
     closeSpeakerInfoModal() {
       this.activeSpeakers=null;
@@ -484,7 +485,7 @@ var main = new Vue({
       this.$refs.agenda.ariaHidden = false;
       this.$refs.speakerModal.ariaHidden = true;
       this.$refs.speakerModal.style.display = 'none';
-      
+
       for (const key in this.$refs ) {
         if (key.startsWith('twitter') || key.startsWith('github') || key.startsWith('linkedin')) {
           delete this.$refs[key];
@@ -519,7 +520,7 @@ var main = new Vue({
           }
         } else {
           filteredFocussableElements[activeElementIndex+1].focus();
-        } 
+        }
       } else {
         if($event.shiftKey) {
           filteredFocussableElements[activeElementIndex-1].focus();

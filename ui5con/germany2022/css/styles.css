@@ -440,3 +440,23 @@
     position: absolute;
   }
 }
+
+/*
+ * ================================ Sponsors section ========================================
+ */
+
+.ui5con-container--sponsors {
+  padding: 3rem 0;
+}
+
+.ui5con-container--sponsors h2 {
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.ui5con-container--sponsors h2 span {
+  color: var(--brand-color);
+}
