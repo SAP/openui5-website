@@ -266,7 +266,7 @@
                   <!-- Links and Add To Calendar -->
                   <ul class="ui5con-agenda-schedule__links">
                     <li
-                      v-if="showAddToCalendar(event.type) && !event.liveNow"
+                      v-if="showAddToCalendar(event) && !event.liveNow"
                       class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary" tabindex="0"
                       @click="showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
                       v-on:keyup.enter = "showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
@@ -295,7 +295,7 @@
                       </a>
                     </li>
                   </ul>
-                  <div v-if="showAddToCalendar(event.type)">
+                  <div v-if="showAddToCalendar(event)">
                     <transition enter-active-class="animated fadeInDown"
                     leave-active-class="animated fadeOutUp"
                     leave-active-class="animate__animated animate__pulse">
@@ -376,7 +376,7 @@
                   <!-- Links and Add To Calendar -->
                   <ul class="ui5con-agenda-schedule__links">
                     <li
-                      v-if="showAddToCalendar(event.type) && !event.liveNow"
+                      v-if="showAddToCalendar(event) && !event.liveNow"
                       class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary" tabindex="0"
                       @click="showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
                       v-on:keyup.enter = "showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
@@ -405,7 +405,7 @@
                     </li>
                   </ul>
 
-                  <div v-if="showAddToCalendar(event.type)">
+                  <div v-if="showAddToCalendar(event)">
                     <transition enter-active-class="animated fadeInDown"
                     leave-active-class="animated fadeOutUp"
                     leave-active-class="animate__animated animate__pulse">

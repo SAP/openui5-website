@@ -274,8 +274,11 @@ var main = new Vue({
     getLocalTimeZone() {
       return luxon.DateTime.now().toFormat('Z');
     },
-    showAddToCalendar(eventType) {
-      if(eventType === 'other' || eventType.includes('party')  || eventType.includes('break')) {
+    showAddToCalendar(event) {
+      if(event.type === 'other' || event.type.includes('party')  || event.type.includes('break')) {
+        if (event.title && event.title.includes('Opening')) {
+          return true;
+        }
         return false;
       } else {
         return true;
