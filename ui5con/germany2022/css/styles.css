@@ -446,7 +446,7 @@
  */
 
 .ui5con-container--sponsors {
-  padding: 3rem 0;
+  padding: 3rem 0 5rem;
 }
 
 .ui5con-container--sponsors h2 {
@@ -459,4 +459,30 @@
 
 .ui5con-container--sponsors h2 span {
   color: var(--brand-color);
+}
+
+.sponsors-list {
+  list-style-type: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  max-width: 80vh;
+  display: flex;
+  justify-content: center;
+}
+
+.sponsors-list li {
+  flex: 0 0 50%;
+  margin: 0 3rem;
+}
+
+.sponsors-list a {
+  display: block;
+}
+
+@media screen and (min-width: 800px) {
+
+  .sponsors-list li {
+    flex: 0 0 33%;
+  }
 }

@@ -203,8 +203,9 @@ var main = new Vue({
       return value;
     },
     formatText: function(value) {
-      if (!value) return '';
-      return value.replace(/&amp;/g, "&");
+      if (value) {
+        return value.replace(/&amp;/g, "&");
+      }
     }
   },
   mounted() {
@@ -311,9 +312,37 @@ var main = new Vue({
         const forbiddenCharacters = new RegExp('#', 'g')
         const removeForbiddenCharachters = (text) => {
             if (typeof text === 'string') {
-                return text.replace(forbiddenCharacters, '')
+              let formattedText = text.replace(/(&amp;|&)/g, " and ");
+              return formattedText.replace(forbiddenCharacters, '');
             }
             return ''
+        }
+
+        const removeForbiddenCharachtersOutlook = (text) => {
+          if (typeof text === 'string') {
+            let formattedText = text.replace(/(?:\r\n|\r|\n)/g, "\\n");
+            return formattedText.replace(forbiddenCharacters, '');
+          }
+          return ''
+      }
+
+        const getLocation = (session) => {
+          if (session.type === 'handson') {
+            if (String(session.id) === '16464656097605580') {
+              return 'https://sap-se.zoom.us/j/98427776061'
+            }
+            if (String(session.id) === '164942842628543580') {
+              return 'https://sap-se.zoom.us/j/99289329437'
+            }
+            if (String(session.id) === '164951663099330660') {
+              return 'https://sap-se.zoom.us/j/95525974955'
+            }
+            if (String(session.id) === '164637386144851000') {
+              return 'https://sap-se.zoom.us/j/98096129312'
+            }
+          } else {
+            return 'https://broadcast.co.sap.com/go/ui5con'
+          }
         }
 
         if (session.location === "THU" || session.location === "THU2") {
@@ -342,8 +371,8 @@ var main = new Vue({
             'DTSTART:' + calendarStartDate,
             'DTEND:' + calendarEndDate,
             'SUMMARY:' + 'UI5con: ' + removeForbiddenCharachters(session.title),
-            'LOCATION:' + 'https://broadcast.co.sap.com/go/ui5con',
-            'DESCRIPTION:' + removeForbiddenCharachters(session.description) + '\\n\\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con',
+            'LOCATION:' + getLocation(session),
+            'DESCRIPTION:' + removeForbiddenCharachtersOutlook(session.description) + '\\n\\n ' + 'Link: ' + getLocation(session),
             'UID:' + session.id,
             'END:VEVENT',
             'END:VCALENDAR'
@@ -363,8 +392,8 @@ var main = new Vue({
                   '&text=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
                   '&dates=' + calendarStartDate ,
                   '/' + calendarEndDate,
-                  '&location='+'https://broadcast.co.sap.com/go/ui5con',
-                  '&details=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con',
+                  '&location='+getLocation(session),
+                  '&details=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Link: ' + getLocation(session),
                   '&sprop=&sprop=name:'
                 ].join('')),
                 office365: encodeURI([
@@ -374,8 +403,8 @@ var main = new Vue({
                   '&subject=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
                   '&startdt=' + officeStartDate,
                   '&enddt=' + officeEndDate,
-                  '&location=' + 'https://broadcast.co.sap.com/go/ui5con',
-                  '&body=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con'
+                  '&location=' + getLocation(session),
+                  '&body=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Link: ' + getLocation(session)
                 ].join('')),
                 ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
               }
@@ -408,8 +437,8 @@ var main = new Vue({
             'DTSTART:' + calendarStartDate,
             'DTEND:' + calendarEndDate,
             'SUMMARY:' + 'UI5con: ' + removeForbiddenCharachters(session.title),
-            'LOCATION:' + 'https://broadcast.co.sap.com/go/ui5con',
-            'DESCRIPTION:' + removeForbiddenCharachters(session.description) + '\\n\\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con',
+            'LOCATION:' + getLocation(session),
+            'DESCRIPTION:' + removeForbiddenCharachtersOutlook(session.description) + '\\n\\n ' + 'Link: ' + getLocation(session),
             'UID:' + session.id,
             'END:VEVENT',
             'END:VCALENDAR'
@@ -428,8 +457,8 @@ var main = new Vue({
                 '&text=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
                 '&dates=' + calendarStartDate ,
                 '/' + calendarEndDate,
-                '&location='+'https://broadcast.co.sap.com/go/ui5con',
-                '&details=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con',
+                '&location='+getLocation(session),
+                '&details=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Link: ' + getLocation(session),
                 '&sprop=&sprop=name:'
               ].join('')),
               office365: encodeURI([
@@ -439,8 +468,8 @@ var main = new Vue({
                 '&subject=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
                 '&startdt=' + officeStartDate,
                 '&enddt=' + officeEndDate,
-                '&location=' + 'https://broadcast.co.sap.com/go/ui5con',
-                '&body=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Broadcast: https://broadcast.co.sap.com/go/ui5con'
+                '&location=' + getLocation(session),
+                '&body=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Link: ' + getLocation(session)
               ].join('')),
               ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
             }]
