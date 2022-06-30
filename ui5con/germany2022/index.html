@@ -48,17 +48,17 @@
     </nav>
     <div class="ui5con-header__container">
       <!-- Comment Out when the Counter is displayed -->
-      <!-- <h1 aria-label="UI5Con ON AIR - Join us on July 7 and 8 2022">
+      <h1 aria-label="UI5Con ON AIR - Join us on July 7 and 8 2022">
         <span v-html="svgs.logo"></span>
         <span class="sr-only" aria-hidden="true">UI5Con ON AIR (Hybrid Event)</span>
         <span class="ui5con-header__year" aria-hidden="true">2022</span>
         <span class="ui5con-header__date" aria-hidden="true">Join Us</span>
         <time datetime="2022-07-07T00:00">July 7-8</time>
-      </h1> -->
+      </h1>
 
       <!-- Comment In to show the Counter -->
-      <span v-html="svgs.logo"></span>
-      <section class="ui5con-container__countdown" v-cloak>
+      <!-- <span v-html="svgs.logo"></span> -->
+      <!-- <section class="ui5con-container__countdown" v-cloak>
         <h1 class="ui5con-container__countdown-header"><span class="sr-only">UI5con 2022</span><span>Day 1</span> starting in</h1>
         <div 
           v-if="(days<=0) && (hours<=0) && (minutes<=0)"
@@ -83,7 +83,7 @@
             <p class="ui5con-container__countdown-text">minutes</p>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <details class="ui5con-date" open>
         <summary class="ui5con-date-summary">Save the date</summary>
