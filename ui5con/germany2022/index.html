@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="./css/newsletter.css">
   <link rel="stylesheet" href="./css/agenda.css">
   <link rel="stylesheet" href="./css/agendaModal.css">
+  <link rel="stylesheet" href="./css/countdown.css">
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -46,13 +47,43 @@
       <a href="https://openui5.org/ui5con/" hreflang="en">Previous Events</a>
     </nav>
     <div class="ui5con-header__container">
-      <h1 aria-label="UI5Con ON AIR - Join us on July 7 and 8 2022">
+      <!-- Comment Out when the Counter is displayed -->
+      <!-- <h1 aria-label="UI5Con ON AIR - Join us on July 7 and 8 2022">
         <span v-html="svgs.logo"></span>
         <span class="sr-only" aria-hidden="true">UI5Con ON AIR (Hybrid Event)</span>
         <span class="ui5con-header__year" aria-hidden="true">2022</span>
         <span class="ui5con-header__date" aria-hidden="true">Join Us</span>
         <time datetime="2022-07-07T00:00">July 7-8</time>
-      </h1>
+      </h1> -->
+
+      <!-- Comment In to show the Counter -->
+      <span v-html="svgs.logo"></span>
+      <section class="ui5con-container__countdown" v-cloak>
+        <h1 class="ui5con-container__countdown-header"><span class="sr-only">UI5con 2022</span><span>Day 1</span> starting in</h1>
+        <div 
+          v-if="(days<=0) && (hours<=0) && (minutes<=0)"
+          id="alert" 
+          role="alert" 
+          aria-live="assertive" 
+          style="position:absolute; width:0; height:0; clip: rect(0,0,0,0);">
+          UI5con 2022 is now live.
+        </div>
+
+        <div class="ui5con-container__countdown-container" role="timer">
+          <div class="ui5con-container__countdown-block">
+            <p class="ui5con-container__countdown-digit" :class="{bold: days>0}">{{ days | two_digits }}</p>
+            <p class="ui5con-container__countdown-text">days</p>
+          </div>
+          <div class="ui5con-container__countdown-block">
+            <p class="ui5con-container__countdown-digit" :class="{bold: (days<=0) && (hours>0)}">{{ hours | two_digits }}</p>
+            <p class="ui5con-container__countdown-text">hours</p>
+          </div>
+          <div class="ui5con-container__countdown-block">
+            <p class="ui5con-container__countdown-digit" :class="{bold: (days<=0) && (hours<=0) && (minutes>0)}">{{ minutes | two_digits }}</p>
+            <p class="ui5con-container__countdown-text">minutes</p>
+          </div>
+        </div>
+      </section>
 
       <details class="ui5con-date" open>
         <summary class="ui5con-date-summary">Save the date</summary>
@@ -557,7 +588,7 @@
       <banner-three></banner-three>
     </section>
 
-    <!-- <section class="ui5con-container--dark ui5con-container--sponsors">
+    <section class="ui5con-container ui5con-container--sponsors">
       <h2>Thanks to our <span>Sponsors</span></h2>
 
       <ul class="sponsors-list">
@@ -572,7 +603,7 @@
           </a>
         </li>
       </ul>
-    </section> -->
+    </section>
 
     <footer-section></footer-section>
   </main>

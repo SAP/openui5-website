@@ -34,7 +34,7 @@
 }
 
 .ui5con-header_nav a {
-  margin-left: 1.5rem;
+  margin-left: 0.5rem;
 }
 
 .ui5con-date a::after,
@@ -63,7 +63,8 @@
 }
 
 .ui5con-header__container {
-  padding: 0 2rem 8rem;
+  padding: 8rem 2rem;
+  text-align: center;
 }
 
 .ui5con-header__container h1 {
@@ -226,6 +227,10 @@
 
 @media screen and (min-width: 768px) {
 
+  .ui5con-header_nav a {
+    margin-left: 1.5rem;
+  }
+
   .ui5con-header_nav {
     position: relative;
     z-index: 1;
@@ -236,6 +241,7 @@
 
   .ui5con-header__container {
     padding: 0 10vh;
+    text-align: left;
   }
 
   .ui5con-header__container h1 {

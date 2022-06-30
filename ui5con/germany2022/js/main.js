@@ -61,9 +61,45 @@ var header = new Vue({
           </svg>`,
           text: "Share via mail"
         }
-      ]
+      ],
+      date: '2022-07-07 14:00:00 +02:00',
+      now: Math.trunc((new Date()).getTime() / 1000)
     };
   },
+  mounted() {
+    window.setInterval(() => {
+      this.now = Math.trunc((new Date()).getTime() / 1000);
+    },1000);
+  },
+  computed: {
+    dateInMilliseconds() {
+      let germanyDate = this.date.toLocaleString("en-US", {timeZone: "Germany/Berlin"});
+      return Math.trunc(Date.parse(germanyDate) / 1000)
+    },
+    seconds() {
+      return (this.dateInMilliseconds - this.now) % 60;
+    },
+    minutes() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60;
+    },
+    hours() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24;
+    },
+    days() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24);
+    }
+  },
+  filters: {
+    two_digits: function(value) {
+      if (value < 0) {
+        return '00';
+      }
+      if (value.toString().length <= 1) {
+        return `0${value}`;
+      }
+      return value;
+    }
+  }
 });
 
 var main = new Vue({
@@ -332,16 +368,16 @@ var main = new Vue({
         const getLocation = (session) => {
           if (session.type === 'handson') {
             if (String(session.id) === '16464656097605580') {
-              return 'https://sap-se.zoom.us/j/98427776061'
+              return 'https://sap-se.zoom.us/j/98427776061?pwd=cmhibE52UDJEeFVZazFPSzV0dEJ5dz09'
             }
             if (String(session.id) === '164942842628543580') {
-              return 'https://sap-se.zoom.us/j/99289329437'
+              return 'https://sap-se.zoom.us/j/99289329437?pwd=bXdJMHlEL284ZUxtb3RHMTJlMm9tQT09'
             }
             if (String(session.id) === '164951663099330660') {
-              return 'https://sap-se.zoom.us/j/95525974955'
+              return 'https://sap-se.zoom.us/j/95525974955?pwd=WXhsKzdGcllqMUtoZVk4WVREUXI3Zz09'
             }
             if (String(session.id) === '164637386144851000') {
-              return 'https://sap-se.zoom.us/j/98096129312'
+              return 'https://sap-se.zoom.us/j/98096129312?pwd=ejN6dlN5SEpsWHlpTVVpOVRIYkRuQT09'
             }
           } else {
             return 'https://broadcast.co.sap.com/go/ui5con'
@@ -673,49 +709,5 @@ var aboutTheTeam = new Vue({
       ],
     };
   },
-});
-
-var countdown = new Vue({
-  el: '#countdown',
-  data() {
-    return {
-      date: '2022-07-07 14:00:00 +02:00',
-      now: Math.trunc((new Date()).getTime() / 1000)
-    };
-  },
-  mounted() {
-    window.setInterval(() => {
-      this.now = Math.trunc((new Date()).getTime() / 1000);
-    },1000);
-  },
-  computed: {
-    dateInMilliseconds() {
-      let germanyDate = this.date.toLocaleString("en-US", {timeZone: "Germany/Berlin"});
-      return Math.trunc(Date.parse(germanyDate) / 1000)
-    },
-    seconds() {
-      return (this.dateInMilliseconds - this.now) % 60;
-    },
-    minutes() {
-      return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60;
-    },
-    hours() {
-      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24;
-    },
-    days() {
-      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24);
-    }
-  },
-  filters: {
-    two_digits: function(value) {
-      if (value < 0) {
-        return '00';
-      }
-      if (value.toString().length <= 1) {
-        return `0${value}`;
-      }
-      return value;
-    }
-  }
 });
 

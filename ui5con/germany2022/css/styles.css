@@ -364,6 +364,20 @@
   margin-left: 1.875rem;
 }
 
+.ui5con-container--sponsors ~ .ui5con-container--footer {
+  background: var(--sapBackgroundContrastColor);
+  color: var(--dark-brand-color);
+}
+
+.ui5con-container--sponsors ~ .ui5con-container--footer .ui5con-sap-links a {
+  color: var(--dark-brand-color);
+}
+
+.ui5con-container--sponsors ~ .ui5con-container--footer .ui5con-sap-links a:hover,
+.ui5con-container--sponsors ~ .ui5con-container--footer .ui5con-sap-links a:focus {
+  color: var(--brand-color-alt);
+}
+
 /*
  * ================================ CoC (Code of Conduct) =================================
  */
@@ -446,7 +460,8 @@
  */
 
 .ui5con-container--sponsors {
-  padding: 3rem 0 5rem;
+  padding: 3rem 0 6rem;
+  display: block;
 }
 
 .ui5con-container--sponsors h2 {
@@ -455,6 +470,7 @@
   text-align: center;
   position: relative;
   z-index: 10;
+  color: var(--dark-brand-color);
 }
 
 .ui5con-container--sponsors h2 span {
@@ -465,24 +481,24 @@
   list-style-type: none;
   text-align: center;
   margin: 0 auto;
-  padding: 1rem 0;
-  max-width: 80vh;
+  padding: 0;
+  max-width: 80vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .sponsors-list li {
   flex: 0 0 50%;
-  margin: 0 3rem;
+  padding: 1rem 2rem;
+  align-self: center;
+}
+
+.sponsors-list img {
+  max-height: 100px;
+  min-height: 70px;
 }
 
 .sponsors-list a {
   display: block;
-}
-
-@media screen and (min-width: 800px) {
-
-  .sponsors-list li {
-    flex: 0 0 33%;
-  }
 }

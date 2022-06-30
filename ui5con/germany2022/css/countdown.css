@@ -1,17 +1,22 @@
 .ui5con-container__countdown {
+  margin: 5rem 0;
+}
+
+.ui5con-container__countdown-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.ui5con-container__countdown-header {
+h1.ui5con-container__countdown-header {
   margin: 0;
   width: 100%;
   font-weight: 800;
-  font-size: clamp(1rem, 3vw, 3rem); 
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 3vw, 3rem);
   margin-bottom: clamp(1rem, 0.75vw, 2rem);
 }
 
-.ui5con-container__countdown-header span {
+h1.ui5con-container__countdown-header span {
   color: var(--brand-color);
 }
 
@@ -29,9 +34,9 @@
   margin: 0;
   line-height: 1;
   font-weight: 800;
-  color: var(--brand-color-alt);
-  color: rgba(255,255,255,0);
-  font-size: clamp(2rem, 11vw, 15rem); 
+  /* color: var(--brand-color-alt); */
+  color: var(--dark-brand-color-header);
+  font-size: clamp(4rem, 11vw, 15rem);
   font-feature-settings: 'pnum' on, 'lnum' on;
   -webkit-text-stroke: 0.0625rem var(--brand-color-alt);
 }
@@ -42,10 +47,14 @@
   -webkit-text-stroke: none;
 }
 
-
 .ui5con-container__countdown-text {
   margin: 0;
   color: var(--brand-color);
-  font-size: clamp(1rem, 3vw, 3rem); 
+  font-size: clamp(1rem, 3vw, 3rem);
 }
 
+@media screen and (max-width: 800px) {
+  .ui5con-container__countdown-container {
+    justify-content: center;
+  }
+}
