@@ -62,7 +62,7 @@ var header = new Vue({
           text: "Share via mail"
         }
       ],
-      date: '2022-07-07 14:00:00 +02:00',
+      date: '2022/07/07 14:00:00 +02:00',
       now: Math.trunc((new Date()).getTime() / 1000)
     };
   },
