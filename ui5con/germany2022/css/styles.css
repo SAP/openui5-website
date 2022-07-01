@@ -481,22 +481,31 @@
   list-style-type: none;
   text-align: center;
   margin: 0 auto;
-  padding: 0;
+  padding: 2rem 0;
   max-width: 80vw;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   justify-content: center;
 }
 
+@media screen and (min-width: 800px) {
+  .sponsors-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .sponsors-list li {
-  flex: 0 0 50%;
-  padding: 1rem 2rem;
   align-self: center;
 }
 
 .sponsors-list img {
-  max-height: 100px;
+  max-height: 90px;
   min-height: 70px;
+}
+
+img.advades {
+  max-height: 80px;
 }
 
 .sponsors-list a {
