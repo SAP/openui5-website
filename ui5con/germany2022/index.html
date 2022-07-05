@@ -58,7 +58,14 @@
 
       <!-- Comment In to show the Counter -->
       <span v-html="svgs.logo"></span>
-      <section class="ui5con-container__countdown" v-cloak>
+      <h1 
+        class="ui5con-header__live-now" 
+        aria-label="UI5Con Hybrid Day 1 is now live" 
+        v-if="(days<=0) && (hours<=0) && (minutes<=0)" v-cloak>
+        <span class="ui5con-header__date" aria-hidden="true">Day 1</span>
+        <span class="ui5con-header__live" aria-hidden="true">Live now</span>
+      </h1>
+      <section class="ui5con-container__countdown" v-cloak v-else>
         <h1 class="ui5con-container__countdown-header"><span class="sr-only">UI5con 2022</span><span>Day 1</span> starting in</h1>
         <div
           v-if="(days<=0) && (hours<=0) && (minutes<=0)"

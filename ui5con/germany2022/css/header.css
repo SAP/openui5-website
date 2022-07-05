@@ -137,7 +137,17 @@
   animation: color-gradient 3s linear infinite forwards alternate;
 }
 
-.ui5con-header__container time {
+.ui5con-header__container .ui5con-header__live {
+  text-transform: uppercase;
+  display: block;
+}
+
+.ui5con-header__container .ui5con-header__live-now {
+  margin: 6rem 0;
+}
+
+.ui5con-header__container time,
+.ui5con-header__container .ui5con-header__live {
   -webkit-text-stroke: 0;
   margin-bottom: 4rem;
   background: linear-gradient(130deg, var(--brand-color-alt), var(--brand-color), var(--sapTextColor), var(--brand-color), var(--brand-color-alt));
