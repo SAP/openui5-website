@@ -268,7 +268,7 @@
                     <div class="ui5con-agenda-schedule__header-wrapper">
                       <h3 class="ui5con-agenda-schedule__title" :class="{'ui5con-agenda-schedule__title--live': event.liveNow}">{{event.title | formatText}}</h3>
                       <div class="ui5con-agenda-schedule__header-container">
-                        <div v-if="event.liveNow" class="ui5con-agenda-schedule__live-now">LIVE NOW</div>
+                        <div v-if="event.liveNow && showAddToCalendar(event)" class="ui5con-agenda-schedule__live-now">LIVE NOW</div>
                         <div class="ui5con-agenda-schedule__time">
                           {{event.startTime | convertTime(eventTime) | trimTime}} -
                           {{event.endTime | convertTime(eventTime) | trimTime}}
@@ -392,7 +392,7 @@
                     <div class="ui5con-agenda-schedule__header-wrapper">
                       <h3 class="ui5con-agenda-schedule__title" :class="{'ui5con-agenda-schedule__title--live': event.liveNow}">{{event.title | formatText}}</h3>
                       <div class="ui5con-agenda-schedule__header-container">
-                        <div v-if="event.liveNow" class="ui5con-agenda-schedule__live-now">LIVE NOW</div>
+                        <div v-if="event.liveNow && showAddToCalendar(event)" class="ui5con-agenda-schedule__live-now">LIVE NOW</div>
                         <div class="ui5con-agenda-schedule__time">
                           {{event.startTime | convertTime(eventTime) | trimTime}} -
                           {{event.endTime | convertTime(eventTime) | trimTime}}
