@@ -72,7 +72,7 @@
         <div class="ui5con-container__countdown-container" role="timer">
           <div class="ui5con-container__countdown-block">
             <p class="ui5con-container__countdown-digit" :class="{bold: days>0}">{{ days | two_digits }}</p>
-            <p class="ui5con-container__countdown-text">days</p>
+            <p class="ui5con-container__countdown-text">day</p>
           </div>
           <div class="ui5con-container__countdown-block">
             <p class="ui5con-container__countdown-digit" :class="{bold: (days<=0) && (hours>0)}">{{ hours | two_digits }}</p>
@@ -416,12 +416,43 @@
 
                     <li v-if="event.liveNow">
                       <a
+                        v-if="event.id===16464656097605580"
                         class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
                         target="_blank"
                         rel="noreferrer"
-                        href="https://broadcast.co.sap.com/go/ui5con">
+                        href="https://sap-se.zoom.us/j/98427776061?pwd=cmhibE52UDJEeFVZazFPSzV0dEJ5dz09">
                         <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
                       </a>
+
+                      <a
+                      v-if="event.id===164942842628543580"
+                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://sap-se.zoom.us/j/99289329437?pwd=bXdJMHlEL284ZUxtb3RHMTJlMm9tQT09">
+                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
+                      </a>
+
+                      <a
+                        v-if="event.id===164951663099330660"
+                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://sap-se.zoom.us/j/95525974955?pwd=WXhsKzdGcllqMUtoZVk4WVREUXI3Zz09">
+                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
+                      </a>
+
+                      <a
+                        v-if="event.id===164637386144851000"
+                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://sap-se.zoom.us/j/98096129312?pwd=ejN6dlN5SEpsWHlpTVVpOVRIYkRuQT09">
+                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
+                      </a>
+
+
+
                     </li>
 
                     <li v-for="link in event.presentationLinks" :key="link._id">
