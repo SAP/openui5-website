@@ -315,14 +315,14 @@
                       </a>
                     </li>
 
-                    <li v-for="link in event.presentationLinks" :key="link.name">
+                    <li v-for="link in event.presentationLinks" :key="link._id">
                       <a
+                        v-if="link.linkType && link.url"
                         class="ui5con-agenda-schedule__link"
-                        :class="{ 'active': link.active }"
                         target="_blank"
                         rel="noreferrer"
-                        :href="link.link">
-                        {{link.name}}
+                        :href="link.url">
+                        {{link.linkType}}
                       </a>
                     </li>
                   </ul>
@@ -424,14 +424,14 @@
                       </a>
                     </li>
 
-                    <li v-for="link in event.presentationLinks" :key="link.name">
+                    <li v-for="link in event.presentationLinks" :key="link._id">
                       <a
+                        v-if="link.linkType && link.url"
                         class="ui5con-agenda-schedule__link"
-                        :class="{ 'active': link.active }"
                         target="_blank"
                         rel="noreferrer"
-                        :href="link.link">
-                        {{link.name}}
+                        :href="link.url">
+                        {{link.linkType}}
                       </a>
                     </li>
                   </ul>
