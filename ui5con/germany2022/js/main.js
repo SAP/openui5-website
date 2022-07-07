@@ -62,7 +62,7 @@ var header = new Vue({
           text: "Share via mail"
         }
       ],
-      date: '2022/07/07 14:00:00 +02:00',
+      date: '2022/07/08 10:00:00 +02:00',
       now: Math.trunc((new Date()).getTime() / 1000)
     };
   },
@@ -194,7 +194,7 @@ var main = new Vue({
         },
       ],
       activeTab:  'talks-tab',
-      agendaDay: 'day1',
+      agendaDay: 'day2',
       eventTime: 'event',
       localTime: new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1],
       lineup: [],
