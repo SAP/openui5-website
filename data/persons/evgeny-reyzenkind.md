@@ -1,7 +1,7 @@
 ---
 name: Evgeny Reyzenkind
 company: SAP
-photo: ./evgeny-eyzenkind.jpeg
+photo: ./evgeny-reyzenkind.jpeg
 twitter: 
 linkedin: https://de.linkedin.com/in/eugenreyzenkind
 github:
