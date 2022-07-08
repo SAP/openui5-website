@@ -20,7 +20,7 @@
   z-index: 1;
 }
 
-.ui5con-date a,
+
 .ui5con-header_nav a,
 .ui5con-newsletter__sendinblue a,
 .ui5con-regular-link {
@@ -37,7 +37,6 @@
   margin-left: 0.5rem;
 }
 
-.ui5con-date a::after,
 .ui5con-header_nav a::after,
 .ui5con-newsletter__sendinblue a::after {
   left: 0;
@@ -53,8 +52,6 @@
   transition: opacity 300ms, transform 300ms;
 }
 
-.ui5con-date a:hover::after,
-.ui5con-date a:focus::after,
 .ui5con-header_nav a:hover::after,
 .ui5con-header_nav a:focus::after,
 .ui5con-newsletter__sendinblue a:hover::after,
@@ -140,6 +137,7 @@
 
 .ui5con-header__thank-you {
   display: flex;
+  margin-top: 3rem;
 }
 
 .ui5con-header__thank-you svg {
@@ -154,6 +152,11 @@
   font-size: clamp(1.2rem, 1vw, 1.4rem);
   line-height: clamp(2rem, 2vw, 1.4rem);
   margin-left: clamp(-1.5rem, -2vw, -2rem);
+}
+
+.ui5con-header__container .ui5con-agenda-schedule__link {
+  margin: 3rem 0;
+  width: fit-content;
 }
 
 .ui5con-header__container .ui5con-header__live {
@@ -465,11 +468,6 @@
     font-size: 1rem;
     text-align: center;
   }
-
-  .ui5con-header__thank-you {
-    justify-content: center;
-  }
-  
 }
 
 .ui5con-date {
@@ -492,7 +490,7 @@
   background-color: var(--dark-brand-color-header);
   background-repeat: no-repeat;
   background-image: url(../images/stripes-triangle.svg);
-  font-size: 2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 800;
   padding: 1.5rem 4vw;
@@ -500,6 +498,7 @@
   cursor: pointer;
   color: white;
   transition: all .5s;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -509,7 +508,7 @@
   }
 
   .ui5con-date-summary {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
