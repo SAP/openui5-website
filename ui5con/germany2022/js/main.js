@@ -3,30 +3,6 @@ var header = new Vue({
   el: '#header',
   data() {
     return {
-      calendars: [
-        {
-          link: 'https://www.google.com/calendar/render?action=TEMPLATE&text=UI5con%20ON%20AIR%202022&dates=20220707/20220709&location=Online&details=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E&sprop=&sprop=name:',
-          text: 'Google'
-        },
-        {
-          link: 'https://outlook.office365.com/owa/?path=/calendar/action/compose&rru=addevent&subject=UI5con%20ON%20AIR%202022&startdt=2022-07-07&enddt=2022-07-09&allday=true&location=Online&body=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E',
-          text: 'Office 365',
-        },
-        {
-          link: 'https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&subject=UI5con%20ON%20AIR%202022&startdt=2022-07-07&enddt=2022-07-09&allday=true&location=Online&body=%3Cbr/%3EJoin%20the%20event:%20%3Ca%20href=%22https://openui5.org/ui5con/germany2022/%22%3Ehttps://openui5.org/ui5con/germany2022/%3C/a%3E',
-          text: 'Outlook Live',
-        },
-        {
-          link: 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART;TZID=%22Berlin%22:20220707%0ADTEND;TZID=%22Berlin%22:20220709%0ASUMMARY:UI5con%20ON%20AIR%202022%0ALOCATION:Online%0ADESCRIPTION:Find%20more%20details%20about%20the%20event:%20https://openui5.org/events%5Cn%5Cn%20Join%20the%20event:%20https://openui5.org/ui5con/germany2022/%0AUID:ui5con2022-germany%0AEND:VEVENT%0AEND:VCALENDAR',
-          text: 'iCal',
-          download: 'UI5con-ON-AIR-2022.ics'
-        },
-        {
-          link: 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART;TZID=%22Berlin%22:20220707%0ADTEND;TZID=%22Berlin%22:20220709%0ASUMMARY:UI5con%20ON%20AIR%202022%0ALOCATION:Online%0ADESCRIPTION:Find%20more%20details%20about%20the%20event:%20https://openui5.org/events%5Cn%5Cn%20Join%20the%20event:%20https://openui5.org/ui5con/germany2022/%0AUID:ui5con2022-germany%0AEND:VEVENT%0AEND:VCALENDAR',
-          text: 'Outlook',
-          download: 'UI5con-ON-AIR-2022.ics'
-        }
-      ],
       socialLinks: [
         {
           link: "https://twitter.com/intent/tweet?text=UI5Con%20Hybrid%202022%20&url=https%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2022",
@@ -61,44 +37,8 @@ var header = new Vue({
           </svg>`,
           text: "Share via mail"
         }
-      ],
-      date: '2022/07/08 10:00:00 +02:00',
-      now: Math.trunc((new Date()).getTime() / 1000)
+      ]
     };
-  },
-  mounted() {
-    window.setInterval(() => {
-      this.now = Math.trunc((new Date()).getTime() / 1000);
-    },1000);
-  },
-  computed: {
-    dateInMilliseconds() {
-      let germanyDate = this.date.toLocaleString("en-US", {timeZone: "Germany/Berlin"});
-      return Math.trunc(Date.parse(germanyDate) / 1000)
-    },
-    seconds() {
-      return (this.dateInMilliseconds - this.now) % 60;
-    },
-    minutes() {
-      return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60;
-    },
-    hours() {
-      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24;
-    },
-    days() {
-      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24);
-    }
-  },
-  filters: {
-    two_digits: function(value) {
-      if (value < 0) {
-        return '00';
-      }
-      if (value.toString().length <= 1) {
-        return `0${value}`;
-      }
-      return value;
-    }
   }
 });
 
@@ -194,7 +134,7 @@ var main = new Vue({
         },
       ],
       activeTab:  'talks-tab',
-      agendaDay: 'day2',
+      agendaDay: 'day1',
       eventTime: 'event',
       localTime: new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1],
       lineup: [],
@@ -250,22 +190,6 @@ var main = new Vue({
       .then(response => {
         this.lineup = response.data;
         this.formattedLineup = this.formatLineup();
-
-        let interval;
-        let timeNow = new Date().toISOString();
-        const startCounterTime = new Date("2022-07-07T13:50:00.000+02:00").toISOString();
-        const endCounterTime = new Date("2022-07-08T16:00:00.000+02:00").toISOString();
-
-        if((timeNow > startCounterTime) && (timeNow <= endCounterTime)) {
-          interval = setInterval(() => {
-            timeNow = new Date().toISOString();
-            if(timeNow > endCounterTime) {
-              clearInterval(interval);
-              return;
-            }
-            this.updateLiveSession();
-          }, 30000)
-        }
       })
   },
   methods: {
@@ -310,16 +234,6 @@ var main = new Vue({
     getLocalTimeZone() {
       return luxon.DateTime.now().toFormat('Z');
     },
-    showAddToCalendar(event) {
-      if(event.type === 'other' || event.type.includes('party')  || event.type.includes('break')) {
-        if (event.title && event.title.includes('Opening')) {
-          return true;
-        }
-        return false;
-      } else {
-        return true;
-      }
-    },
     formatLineup() {
       return this.lineup.map(session => {
         if(session.description) {
@@ -348,186 +262,29 @@ var main = new Vue({
         let start = session.startTime;
         let end = session.endTime;
 
-        const forbiddenCharacters = new RegExp('#', 'g')
-        const removeForbiddenCharachters = (text) => {
-            if (typeof text === 'string') {
-              let formattedText = text.replace(/(&amp;|&)/g, " and ");
-              return formattedText.replace(forbiddenCharacters, '');
-            }
-            return ''
-        }
-
-        const removeForbiddenCharachtersOutlook = (text) => {
-          if (typeof text === 'string') {
-            let formattedText = text.replace(/(?:\r\n|\r|\n)/g, "\\n");
-            return formattedText.replace(forbiddenCharacters, '');
-          }
-          return ''
-      }
-
-        const getLocation = (session) => {
-          if (session.type === 'handson') {
-            if (String(session.id) === '16464656097605580') {
-              return 'https://sap-se.zoom.us/j/98427776061?pwd=cmhibE52UDJEeFVZazFPSzV0dEJ5dz09'
-            }
-            if (String(session.id) === '164942842628543580') {
-              return 'https://sap-se.zoom.us/j/99289329437?pwd=bXdJMHlEL284ZUxtb3RHMTJlMm9tQT09'
-            }
-            if (String(session.id) === '164951663099330660') {
-              return 'https://sap-se.zoom.us/j/95525974955?pwd=WXhsKzdGcllqMUtoZVk4WVREUXI3Zz09'
-            }
-            if (String(session.id) === '164637386144851000') {
-              return 'https://sap-se.zoom.us/j/98096129312?pwd=ejN6dlN5SEpsWHlpTVVpOVRIYkRuQT09'
-            }
-          } else {
-            return 'https://broadcast.sap.com/go/ui5con'
-          }
-        }
-
         if (session.location === "THU" || session.location === "THU2") {
           let newStartTime = "2022-07-07T" + start + ":00.000+02:00";
           let newEndTime = "2022-07-07T" + end + ":00.000+02:00";
-
-          let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
-          let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
-
-          let officeStartDate = new Date(newStartTime).toISOString();
-          let officeEndDate = new Date(newEndTime).toISOString();
-
-          let timeNow = new Date().toISOString();
-          let sessionTimeStart = new Date(newStartTime).toISOString();
-          let sessionTimeEnd = new Date(newEndTime).toISOString();
-          let sessionLiveStatus = false;
-
-          if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
-            sessionLiveStatus = true;
-          }
-
-          let cal = [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'BEGIN:VEVENT',
-            'DTSTART:' + calendarStartDate,
-            'DTEND:' + calendarEndDate,
-            'SUMMARY:' + 'UI5con: ' + removeForbiddenCharachters(session.title),
-            'LOCATION:' + getLocation(session),
-            'DESCRIPTION:' + removeForbiddenCharachtersOutlook(session.description) + '\\n\\n ' + 'Link: ' + getLocation(session),
-            'UID:' + session.id,
-            'END:VEVENT',
-            'END:VCALENDAR'
-          ].join('\n');
 
           return {
             ...session,
             startTime: newStartTime,
             endTime: newEndTime,
-            readMoreActivated: false,
-            liveNow: sessionLiveStatus,
-            calendars: [
-              {
-                google: encodeURI([
-                  'https://www.google.com/calendar/render',
-                  '?action=TEMPLATE',
-                  '&text=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
-                  '&dates=' + calendarStartDate ,
-                  '/' + calendarEndDate,
-                  '&location='+getLocation(session),
-                  '&details=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Link: ' + getLocation(session),
-                  '&sprop=&sprop=name:'
-                ].join('')),
-                office365: encodeURI([
-                  'https://outlook.office365.com/owa/',
-                  '?path=/calendar/action/compose',
-                  '&rru=addevent',
-                  '&subject=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
-                  '&startdt=' + officeStartDate,
-                  '&enddt=' + officeEndDate,
-                  '&location=' + getLocation(session),
-                  '&body=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Link: ' + getLocation(session)
-                ].join('')),
-                ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
-              }
-            ]
+            readMoreActivated: false
           }
         }
         else {
           let newStartTime = "2022-07-08T" + start + ":00.000+02:00";
           let newEndTime = "2022-07-08T" + end + ":00.000+02:00";
 
-          let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
-          let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
-
-          let officeStartDate = new Date(newStartTime).toISOString();
-          let officeEndDate = new Date(newEndTime).toISOString();
-
-          let timeNow = new Date().toISOString();
-          let sessionTimeStart = new Date(newStartTime).toISOString();
-          let sessionTimeEnd = new Date(newEndTime).toISOString();
-          let sessionLiveStatus = false;
-
-          if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
-            sessionLiveStatus = true;
-          }
-
-          let cal = [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'BEGIN:VEVENT',
-            'DTSTART:' + calendarStartDate,
-            'DTEND:' + calendarEndDate,
-            'SUMMARY:' + 'UI5con: ' + removeForbiddenCharachters(session.title),
-            'LOCATION:' + getLocation(session),
-            'DESCRIPTION:' + removeForbiddenCharachtersOutlook(session.description) + '\\n\\n ' + 'Link: ' + getLocation(session),
-            'UID:' + session.id,
-            'END:VEVENT',
-            'END:VCALENDAR'
-          ].join('\n');
-
           return {
             ...session,
             startTime: newStartTime,
             endTime: newEndTime,
-            readMoreActivated: false,
-            liveNow: sessionLiveStatus,
-            calendars: [{
-              google: encodeURI([
-                'https://www.google.com/calendar/render',
-                '?action=TEMPLATE',
-                '&text=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
-                '&dates=' + calendarStartDate ,
-                '/' + calendarEndDate,
-                '&location='+getLocation(session),
-                '&details=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Link: ' + getLocation(session),
-                '&sprop=&sprop=name:'
-              ].join('')),
-              office365: encodeURI([
-                'https://outlook.office365.com/owa/',
-                '?path=/calendar/action/compose',
-                '&rru=addevent',
-                '&subject=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
-                '&startdt=' + officeStartDate,
-                '&enddt=' + officeEndDate,
-                '&location=' + getLocation(session),
-                '&body=' + removeForbiddenCharachters(session.description) + '\n\n ' + 'Link: ' + getLocation(session)
-              ].join('')),
-              ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
-            }]
+            readMoreActivated: false
           }
         }
       });
-    },
-    updateLiveSession() {
-      return this.formattedLineup.map(session => {
-        let timeNow = new Date().toISOString();
-        let sessionTimeStart = new Date(session.startTime).toISOString();
-        let sessionTimeEnd = new Date(session.endTime).toISOString();
-
-        if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
-          session.liveNow = true;
-        } else {
-          session.liveNow = false;
-        }
-      })
     },
     filerSortLineup(day) {
       const filteredSchedule = this.formattedLineup.filter(schedule => schedule.location === day);

@@ -130,11 +130,30 @@
 .ui5con-header__date, .ui5con-header__container time {
   height: auto;
   display: block;
+  margin-bottom: 6rem;
   letter-spacing: .2rem;
   text-transform: uppercase;
   -webkit-text-stroke: 0.125rem var(--brand-color);
   color: rgba(255,255,255,0);
   animation: color-gradient 3s linear infinite forwards alternate;
+}
+
+.ui5con-header__thank-you {
+  display: flex;
+}
+
+.ui5con-header__thank-you svg {
+  width: clamp(3rem, 4vw, 4rem);
+  height: clamp(3rem, 4vw, 4rem);
+}
+
+.ui5con-header__thank-you p {
+  margin: 0;
+  text-align: left;
+  margin-top: clamp(0.25rem, 0.6vw, 1rem);
+  font-size: clamp(1.2rem, 1vw, 1.4rem);
+  line-height: clamp(2rem, 2vw, 1.4rem);
+  margin-left: clamp(-1.5rem, -2vw, -2rem);
 }
 
 .ui5con-header__container .ui5con-header__live {
@@ -143,13 +162,13 @@
 }
 
 .ui5con-header__container .ui5con-header__live-now {
-  margin: 6rem 0;
+  margin-top: 6rem;
 }
 
 .ui5con-header__container time,
 .ui5con-header__container .ui5con-header__live {
   -webkit-text-stroke: 0;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   background: linear-gradient(130deg, var(--brand-color-alt), var(--brand-color), var(--sapTextColor), var(--brand-color), var(--brand-color-alt));
   background-size: auto auto;
   background-clip: border-box;
@@ -446,6 +465,11 @@
     font-size: 1rem;
     text-align: center;
   }
+
+  .ui5con-header__thank-you {
+    justify-content: center;
+  }
+  
 }
 
 .ui5con-date {

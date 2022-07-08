@@ -47,60 +47,20 @@
       <a href="https://openui5.org/ui5con/" hreflang="en">Previous Events</a>
     </nav>
     <div class="ui5con-header__container">
-      <!-- Comment Out when the Counter is displayed -->
-      <!-- <h1 aria-label="UI5Con ON AIR - Join us on July 7 and 8 2022">
-        <span v-html="svgs.logo"></span>
-        <span class="sr-only" aria-hidden="true">UI5Con ON AIR (Hybrid Event)</span>
-        <span class="ui5con-header__year" aria-hidden="true">2022</span>
-        <span class="ui5con-header__date" aria-hidden="true">Join Us</span>
-        <time datetime="2022-07-07T00:00">July 7-8</time>
-      </h1> -->
-
-      <!-- Comment In to show the Counter -->
       <span v-html="svgs.logo"></span>
       <h1 
         class="ui5con-header__live-now" 
-        aria-label="UI5Con Hybrid Day 1 is now live" 
-        v-if="(days<=0) && (hours<=0) && (minutes<=0)" v-cloak>
-        <span class="ui5con-header__date" aria-hidden="true">Day 2</span>
-        <span class="ui5con-header__live" aria-hidden="true">Live now</span>
+        aria-label="Thank you for joining UI5Con Hybrid" v-cloak>
+        <span class="ui5con-header__live" aria-hidden="true">Thank you</span>
+        <span class="ui5con-header__date" aria-hidden="true">for joining</span>
       </h1>
-      <section class="ui5con-container__countdown" v-cloak v-else>
-        <h1 class="ui5con-container__countdown-header"><span class="sr-only">UI5con 2022</span><span>Day 2</span> starting in</h1>
-        <div
-          v-if="(days<=0) && (hours<=0) && (minutes<=0)"
-          id="alert"
-          role="alert"
-          aria-live="assertive"
-          style="position:absolute; width:0; height:0; clip: rect(0,0,0,0);">
-          UI5con 2022 is now live.
-        </div>
-
-        <div class="ui5con-container__countdown-container" role="timer">
-          <div class="ui5con-container__countdown-block">
-            <p class="ui5con-container__countdown-digit" :class="{bold: days>0}">{{ days | two_digits }}</p>
-            <p class="ui5con-container__countdown-text">days</p>
-          </div>
-          <div class="ui5con-container__countdown-block">
-            <p class="ui5con-container__countdown-digit" :class="{bold: (days<=0) && (hours>0)}">{{ hours | two_digits }}</p>
-            <p class="ui5con-container__countdown-text">hours</p>
-          </div>
-          <div class="ui5con-container__countdown-block">
-            <p class="ui5con-container__countdown-digit" :class="{bold: (days<=0) && (hours<=0) && (minutes>0)}">{{ minutes | two_digits }}</p>
-            <p class="ui5con-container__countdown-text">minutes</p>
-          </div>
-        </div>
-      </section>
-
-      <details class="ui5con-date" open>
-        <summary class="ui5con-date-summary">Save the date</summary>
-        <p>Add to your calendar:
-          <template v-for="(calendar, index) in calendars" :key="calendar.text">
-            <a target="_blank" rel="noreferrer" :href="calendar.link" :download="calendar.download">{{calendar.text}}</a><template v-if="index < 3">, </template><template v-if="index == 3"> or </template>
-          </template>
-        </p>
-      </details>
-
+      <div class="ui5con-header__thank-you" >
+        <svg viewBox="0 0 88 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M5.06066 4.93566C4.15195 5.84437 3.5 7.3041 3.5 9.5V57C3.5 60.1672 5.82407 62.4846 9 62.4846H16.0625L13.3331 76.8123C12.9325 78.9157 15.4089 80.3454 17.0301 78.9467L36.1115 62.4846H79C80.9044 62.4846 82.2389 61.8628 83.1016 60.9575C83.9755 60.0404 84.5 58.69 84.5 57V49.5C84.5 48.6716 85.1716 48 86 48C86.8284 48 87.5 48.6716 87.5 49.5V57C87.5 59.31 86.7745 61.4519 85.2734 63.0271C83.7611 64.6142 81.5956 65.4846 79 65.4846H37.2267L18.9898 81.2182C15.2168 84.4733 9.45364 81.146 10.3861 76.2509L12.4371 65.4846H9C4.17593 65.4846 0.5 61.8328 0.5 57V9.5C0.5 6.6959 1.34805 4.40563 2.93934 2.81434C4.52612 1.22756 6.68817 0.5 9 0.5H78.5C81.3041 0.5 83.5944 1.34805 85.1857 2.93934C86.7724 4.52612 87.5 6.68817 87.5 9V16.5C87.5 17.3284 86.8284 18 86 18C85.1716 18 84.5 17.3284 84.5 16.5V9C84.5 7.31183 83.9776 5.97388 83.0643 5.06066C82.1556 4.15195 80.6959 3.5 78.5 3.5H9C7.31183 3.5 5.97388 4.02244 5.06066 4.93566Z" fill="#FFA42C"/>
+          </svg>
+          
+        <p>Check back soon for session recordings and event recap</p>
+      </div>
       <banner-one></banner-one>
       <banner-two></banner-two>
     </div>
@@ -169,6 +129,7 @@
               id="day1"
               name="event-day"
               value="day1"
+              checked
               ref="toggleDay"
               v-on:keydown.tab.prevent="focusTabs"
               @change="onDayChange($event)">
@@ -178,7 +139,6 @@
             <input
               type="radio"
               id="day2"
-              checked
               name="event-day"
               value="day2"
               v-on:keydown.tab.prevent="focusTabs"
@@ -268,7 +228,6 @@
                     <div class="ui5con-agenda-schedule__header-wrapper">
                       <h3 class="ui5con-agenda-schedule__title" :class="{'ui5con-agenda-schedule__title--live': event.liveNow}">{{event.title | formatText}}</h3>
                       <div class="ui5con-agenda-schedule__header-container">
-                        <div v-if="event.liveNow && showAddToCalendar(event)" class="ui5con-agenda-schedule__live-now">LIVE NOW</div>
                         <div class="ui5con-agenda-schedule__time">
                           {{event.startTime | convertTime(eventTime) | trimTime}} -
                           {{event.endTime | convertTime(eventTime) | trimTime}}
@@ -303,25 +262,6 @@
 
                   <!-- Links and Add To Calendar -->
                   <ul class="ui5con-agenda-schedule__links">
-                    <li
-                      v-if="showAddToCalendar(event) && !event.liveNow && agendaDay !== 'day1'"
-                      class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary" tabindex="0"
-                      @click="showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
-                      v-on:keyup.enter = "showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
-                    >
-                      <span class="ui5con-agenda-schedule__link-icon"></span>Add to calendar
-                    </li>
-
-                    <li v-if="event.liveNow">
-                      <a
-                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://broadcast.sap.com/go/ui5con">
-                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
-                      </a>
-                    </li>
-
                     <li v-for="link in event.presentationLinks" :key="link._id">
                       <a
                         v-if="link.linkType && link.url"
@@ -333,20 +273,6 @@
                       </a>
                     </li>
                   </ul>
-                  <div v-if="showAddToCalendar(event)">
-                    <transition enter-active-class="animated fadeInDown"
-                    leave-active-class="animated fadeOutUp"
-                    leave-active-class="animate__animated animate__pulse">
-                      <ul class="ui5con-agenda-schedule__cal-container" v-if="event.calendars && showCalBlockers===event.id">
-                        <li v-for="cal in event.calendars">
-                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.ics" :download='`${event.title.replace(" ", "_")}.ics`'><img src="./images/calendar/outlook.png" alt="Outlook icon">Outlook</a> |
-                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.google"><img src="./images/calendar/google.png" alt="Google icon">Google</a> |
-                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.ics" :download='`${event.title.replace(" ", "_")}.ics`'><img src="./images/calendar/ical.png" alt="iCal icon">iCal</a> |
-                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.office365"><img src="./images/calendar/office.png" alt="Office365 icon">Office 365</a>
-                        </li>
-                      </ul>
-                    </transition>
-                  </div>
                 </div>
               </div>
             </li>
@@ -392,7 +318,6 @@
                     <div class="ui5con-agenda-schedule__header-wrapper">
                       <h3 class="ui5con-agenda-schedule__title" :class="{'ui5con-agenda-schedule__title--live': event.liveNow}">{{event.title | formatText}}</h3>
                       <div class="ui5con-agenda-schedule__header-container">
-                        <div v-if="event.liveNow && showAddToCalendar(event)" class="ui5con-agenda-schedule__live-now">LIVE NOW</div>
                         <div class="ui5con-agenda-schedule__time">
                           {{event.startTime | convertTime(eventTime) | trimTime}} -
                           {{event.endTime | convertTime(eventTime) | trimTime}}
@@ -411,57 +336,7 @@
                     </p>
                   </template>
 
-                  <!-- Links and Add To Calendar -->
                   <ul class="ui5con-agenda-schedule__links">
-                    <li
-                      v-if="showAddToCalendar(event) && !event.liveNow"
-                      class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary" tabindex="0"
-                      @click="showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
-                      v-on:keyup.enter = "showCalBlockers && (showCalBlockers === event.id) ? (showCalBlockers=false) : showCalBlockers = event.id"
-                    >
-                      <span class="ui5con-agenda-schedule__link-icon"></span>Add to calendar</li>
-
-                    <li v-if="event.liveNow">
-                      <a
-                        v-if="event.id===16464656097605580"
-                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://sap-se.zoom.us/j/98427776061?pwd=cmhibE52UDJEeFVZazFPSzV0dEJ5dz09">
-                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
-                      </a>
-
-                      <a
-                      v-if="event.id===164942842628543580"
-                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://sap-se.zoom.us/j/99289329437?pwd=bXdJMHlEL284ZUxtb3RHMTJlMm9tQT09">
-                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
-                      </a>
-
-                      <a
-                        v-if="event.id===164951663099330660"
-                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://sap-se.zoom.us/j/95525974955?pwd=WXhsKzdGcllqMUtoZVk4WVREUXI3Zz09">
-                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
-                      </a>
-
-                      <a
-                        v-if="event.id===164637386144851000"
-                        class="ui5con-agenda-schedule__link ui5con-agenda-schedule__link--primary"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://sap-se.zoom.us/j/98096129312?pwd=ejN6dlN5SEpsWHlpTVVpOVRIYkRuQT09">
-                        <span class="ui5con-agenda-schedule__link-icon"></span>LIVE Session
-                      </a>
-
-
-
-                    </li>
-
                     <li v-for="link in event.presentationLinks" :key="link._id">
                       <a
                         v-if="link.linkType && link.url"
@@ -473,22 +348,6 @@
                       </a>
                     </li>
                   </ul>
-
-                  <div v-if="showAddToCalendar(event)">
-                    <transition enter-active-class="animated fadeInDown"
-                    leave-active-class="animated fadeOutUp"
-                    leave-active-class="animate__animated animate__pulse">
-                      <ul class="ui5con-agenda-schedule__cal-container" v-if="event.calendars && showCalBlockers===event.id">
-                        <li v-for="cal in event.calendars">
-                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.ics" :download='`${event.title.replace(" ", "_")}.ics`'><img src="./images/calendar/outlook.png" alt="Outlook icon">Outlook</a> |
-                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.google"><img src="./images/calendar/google.png" alt="Google icon">Google</a> |
-                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.ics" :download='`${event.title.replace(" ", "_")}.ics`'><img src="./images/calendar/ical.png" alt="iCal icon">iCal</a> |
-                          <a class="ui5con-agenda-schedule__cal-link" target="_blank" :href="cal.office365"><img src="./images/calendar/office.png" alt="Office365 icon">Office 365</a>
-                        </li>
-                      </ul>
-                    </transition>
-                  </div>
-
                 </div>
               </div>
             </li>
