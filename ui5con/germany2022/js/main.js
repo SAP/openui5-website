@@ -380,7 +380,7 @@ var main = new Vue({
               return 'https://sap-se.zoom.us/j/98096129312?pwd=ejN6dlN5SEpsWHlpTVVpOVRIYkRuQT09'
             }
           } else {
-            return 'https://broadcast.co.sap.com/go/ui5con'
+            return 'https://broadcast.sap.com/go/ui5con'
           }
         }
 
