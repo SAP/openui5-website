@@ -6,14 +6,12 @@ endDate: 2022/07/14 16:00 UTC+2
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Stefan Beck
-  -  Andreas Kunz
-  -  Peter Muessig
-  -  Margot Wollny
+  -  Marcel Schork
+  -  Ruben Tuider
+  -  Kateryna Sergieieva
+  -  Evgeny Reyzenkind 
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. 
-So stay tuned!
+In this first UI5ers live after UI5con 2022, we offer two very interesting sessions: First, Marcel Schork and Ruben Tuider from the community will talk about their Web Component library CoreUI and, more specifically, the version-independent bridge into UI5 that wraps the components into custom controls at runtime.
+Afterwards, Kateryna Sergieieva and Evgeny Reyzenkind from the SAP Fiori app development will talk about their Notification Management System for UI5 freestyle apps that helps to achieve a modern user experience delivering constant feedback to the users - from any source and to any target!
 
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
