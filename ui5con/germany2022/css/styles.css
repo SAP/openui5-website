@@ -171,7 +171,7 @@
 /*
  * ==================================  Carousel Section ==================================
  */
-.ui5con-container--carousel {
+/* .ui5con-container--carousel {
   width: 100vw;
   height: 400px;
   position: relative;
@@ -179,7 +179,7 @@
   background-repeat: repeat-x;
   animation: slide 150s linear infinite;
   background-image: url("../images/past_events.jpg");
-}
+} */
 
 @keyframes slide {
   0% {

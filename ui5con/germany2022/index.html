@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="./css/agenda.css">
   <link rel="stylesheet" href="./css/agendaModal.css">
   <link rel="stylesheet" href="./css/countdown.css">
+  <link rel="stylesheet" href="./css/gallery.css">
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -48,8 +49,8 @@
     </nav>
     <div class="ui5con-header__container">
       <span v-html="svgs.logo"></span>
-      <h1 
-        class="ui5con-header__live-now" 
+      <h1
+        class="ui5con-header__live-now"
         aria-label="Thank you for joining UI5Con Hybrid" v-cloak>
         <span class="ui5con-header__live" aria-hidden="true">Thank you</span>
         <span class="ui5con-header__date" aria-hidden="true">for joining</span>
@@ -455,7 +456,81 @@
       <banner-four></banner-four>
     </section>
 
-    <section class="ui5con-container ui5con-container--carousel">
+    <!-- <section class="ui5con-container ui5con-container--carousel">
+    </section> -->
+
+
+    <section class="ui5con-container ui5con-container--gallery">
+      <h2 class="sr-only">On-site image gallery of <span>UI5con 2022</span></h2>
+
+      <div class="ui5con-gallery">
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7801.webp" alt="UI5con attendees sitting on a bench outside">
+          <figcaption class="sr-only">UI5con attendees sitting on a bench outside</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7831.webp" alt="UI5con audience asking question with a catch box microphone">
+          <figcaption class="sr-only">UI5con audience asking question with a catch box microphone</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7835.webp" alt="UI5con attendees sitting in the Audimax">
+          <figcaption class="sr-only">UI5con attendees sitting in the Audimax</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC03115.webp" alt="Peter Muessig, Marian Zeis, Marco Beier, Volker Buzek on stage">
+          <figcaption class="sr-only">Peter Muessig, Marian Zeis, Marco Beier, Volker Buzek on stage</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7837.webp" alt="UI5con stage at the Discussion Panel with the big screen in the background">
+          <figcaption class="sr-only">UI5con stage at the Discussion Panel with the big screen in the background</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7398.webp" alt="UI5con on-site orga team and Margot Wollny discussing">
+          <figcaption class="sr-only">UI5con on-site orga team and Margot Wollny discussing</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02798.webp" alt="Malte Wedel, Frederic and Johannes Gluch">
+          <figcaption class="sr-only">Malte Wedel, Frederic and Johannes Gluch</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02820.webp" alt="Stefan Beck and Peter Muessig on Stage">
+          <figcaption class="sr-only">Stefan Beck and Peter Muessig on Stage</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02834.webp" alt="Wouter Lemaire, Jonas Vanderkelen, Jérémy Coppey, Tobias Hofmann and Martin Fischer">
+          <figcaption class="sr-only">Wouter Lemaire, Jonas Vanderkelen, Jérémy Coppey, Tobias Hofmann and Martin Fischer</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7560.webp" alt="Workshop time with Volker Buzek">
+          <figcaption class="sr-only">Workshop time with Volker Buzek</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02890.webp" alt="Daniel Rose, Georg Bischoff and Mehmet Bakan">
+          <figcaption class="sr-only">Daniel Rose, Georg Bischoff and Mehmet Bakan</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7600.webp" alt="Attendee asking a question with the famous catch box microphone">
+          <figcaption class="sr-only">Attendee asking a question with the famous catch box microphone</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02916.webp" alt="Catch box microphone being thrown mid air in a Q&A session">
+          <figcaption class="sr-only">Catch box microphone being thrown mid air in a Q&A session</figcaption>
+        </figure>
+
+      </div>
     </section>
 
     <section class="ui5con-container--bright ui5con-container--bright-alternate ui5con-container--socials">
