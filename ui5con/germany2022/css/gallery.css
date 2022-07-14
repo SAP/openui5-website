@@ -1,5 +1,6 @@
 .ui5con-container--gallery {
   display: block;
+  overflow: hidden;
 }
 
 .ui5con-gallery {
