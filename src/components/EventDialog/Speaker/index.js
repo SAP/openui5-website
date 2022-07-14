@@ -42,7 +42,7 @@ const Speaker = (props) => {
           : null
         }
         {
-          twitter
+          linkedin
           ? (
             <a
               href={`https://linkedin.com/in/${linkedin}`}
