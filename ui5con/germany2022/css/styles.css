@@ -462,6 +462,8 @@
 .ui5con-container--sponsors {
   padding: 3rem 0 6rem;
   display: block;
+  position: relative;
+  z-index: 0;
 }
 
 .ui5con-container--sponsors h2 {
