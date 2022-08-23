@@ -38,6 +38,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <script src="./js/svgs.js"></script>
+  <script src="./js/agenda.js"></script>
 </head>
 <body>
   <header class="ui5con-header" id="header">
@@ -62,7 +63,7 @@
         <svg viewBox="0 0 88 83" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M5.06066 4.93566C4.15195 5.84437 3.5 7.3041 3.5 9.5V57C3.5 60.1672 5.82407 62.4846 9 62.4846H16.0625L13.3331 76.8123C12.9325 78.9157 15.4089 80.3454 17.0301 78.9467L36.1115 62.4846H79C80.9044 62.4846 82.2389 61.8628 83.1016 60.9575C83.9755 60.0404 84.5 58.69 84.5 57V49.5C84.5 48.6716 85.1716 48 86 48C86.8284 48 87.5 48.6716 87.5 49.5V57C87.5 59.31 86.7745 61.4519 85.2734 63.0271C83.7611 64.6142 81.5956 65.4846 79 65.4846H37.2267L18.9898 81.2182C15.2168 84.4733 9.45364 81.146 10.3861 76.2509L12.4371 65.4846H9C4.17593 65.4846 0.5 61.8328 0.5 57V9.5C0.5 6.6959 1.34805 4.40563 2.93934 2.81434C4.52612 1.22756 6.68817 0.5 9 0.5H78.5C81.3041 0.5 83.5944 1.34805 85.1857 2.93934C86.7724 4.52612 87.5 6.68817 87.5 9V16.5C87.5 17.3284 86.8284 18 86 18C85.1716 18 84.5 17.3284 84.5 16.5V9C84.5 7.31183 83.9776 5.97388 83.0643 5.06066C82.1556 4.15195 80.6959 3.5 78.5 3.5H9C7.31183 3.5 5.97388 4.02244 5.06066 4.93566Z" fill="#FFA42C"/>
           </svg>
-        <p>Check back soon for session recordings</p>
+        <p>All session recordings are now available</p>
       </div>
       <banner-one></banner-one>
       <banner-two></banner-two>
@@ -214,11 +215,11 @@
                   <div class="ui5con-agenda-schedule__header">
                     <div>
                       <ul v-if="event.speakers.length > 0" class="ui5con-agenda-schedule__images">
-                        <li v-for="(speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
+                        <li v-for="speaker in event.speakers" :key="speaker.firstName + speaker.lastName">
                           <button
                             @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"
                             :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
-                            <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                            <img :src="`${speaker.photoUrl}.jpeg`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
                           </button>
                         </li>
                       </ul>
@@ -312,7 +313,7 @@
                           <button
                             @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"
                             :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
-                            <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                            <img :src="`${speaker.photoUrl}.jpeg`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
                           </button>
                         </li>
                       </ul>
@@ -394,7 +395,7 @@
 
           <div v-for="(speaker, index) in activeSpeakers"  class="ui5con-agenda-modal__container" :key="index">
             <figure>
-              <img :src="`https://ui5con2022.cfapps.eu10.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+              <img :src="`${speaker.photoUrl}.jpeg`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
             </figure>
             <article>
               <header>

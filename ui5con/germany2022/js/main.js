@@ -140,7 +140,8 @@ var main = new Vue({
       lineup: [],
       formattedLineup: [],
       activeSpeakers: null,
-      lastFocussedElementID: null
+      lastFocussedElementID: null,
+      agendaJson: agendaJson,
     };
   },
   computed: {
@@ -185,12 +186,8 @@ var main = new Vue({
     }
   },
   mounted() {
-    axios
-      .get('https://ui5con2022.cfapps.eu10.hana.ondemand.com/api/proposal/lineup')
-      .then(response => {
-        this.lineup = response.data;
-        this.formattedLineup = this.formatLineup();
-      })
+    this.lineup = agendaJson;
+    this.formattedLineup = this.formatLineup();
   },
   methods: {
     handleShowHideCommitteeSection() {
