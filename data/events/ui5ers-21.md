@@ -1,8 +1,8 @@
 ---
 title: "UI5ers live (October '22)"
 subTitle: 45 minute interactive webcast
-startDate: 2022/10/14 15:15 UTC+2
-endDate: 2022/10/14 16:00 UTC+2
+startDate: 2022/10/13 15:15 UTC+2
+endDate: 2022/10/13 16:00 UTC+2
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
