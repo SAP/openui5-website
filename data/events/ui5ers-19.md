@@ -10,7 +10,7 @@ speakers:
   -  Ruben Tuider
   -  Kateryna Sergieieva
   -  Evgeny Reyzenkind 
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/P9ycQQ9hKBI
 ---
 In this first UI5ers live after UI5con 2022, we offer two very interesting sessions: First, Marcel Schork and Ruben Tuider from the community will talk about their Web Component library CoreUI and, more specifically, the version-independent bridge into UI5 that wraps the components into custom controls at runtime.
 Afterwards, Kateryna Sergieieva and Evgeny Reyzenkind from the SAP Fiori app development will talk about their Notification Management System for UI5 freestyle apps that helps to achieve a modern user experience delivering constant feedback to the users - from any source and to any target!
