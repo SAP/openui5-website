@@ -16,7 +16,7 @@
             {
                 "title": "Community Tutorials",
                 "description": "Tutorials catalog on the SAP developer pages",
-                "url": "https://developers.sap.com/tutorial-navigator.html?tag=topic:sapui5"
+                "url": "https://developers.sap.com/tutorial-navigator.html?tag=programming-tool%3Asapui5"
             }
         ]
     },
