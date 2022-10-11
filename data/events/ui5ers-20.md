@@ -7,6 +7,6 @@ location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
   -  Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/H1Tkn6gNiAg
 ---
 Our summer break is just around the corner, but before there are some news to share. Firstly, there is a new version of Easy-UI5. Peter Muessig will demonstrate the new features of Easy-UI5 3.5 and also give an outlook on what is planned next. Then, we will have a look at the UI5 Tooling Modules. There was also an update, Peter had been involved. This is related to the feature that enables the option to put used NPM packages into the same namespace than the app. Peter will showcase how this new feature works and how to use it as well as discuss the benefits this provides.
