@@ -1,10 +1,10 @@
 ---
-title: Clean SAPUI5: More readable, maintainable and testable code
-subTitle: The authors of the book Clean SAPUI5 are going to talk about how to make SAPUI5 / Javascript code more readable, maintainable and testable.
+title: UI5con Belgium / Valentine's edition
+subTitle: Community conference around the UI5 framework
 external: true
-startDate: 2022/10/18 09:00 UTC+2
-endDate: 2022/10/18 10:00 UTC+2
-location: Virtual
-logo: ./logos/sap.svg
-url: https://groups.community.sap.com/t5/devtoberfest/clean-sapui5-more-readable-maintainable-and-testable-code/ec-p/9236#M49
+startDate: 2020/02/14 09:00 UTC+1
+endDate: 2020/02/14 16:30 UTC+1
+location: Belgium
+logo: ./logos/ui5con.svg
+url: https://openui5.org/ui5con/belgium2020/
 ---
