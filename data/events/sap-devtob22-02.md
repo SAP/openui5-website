@@ -1,6 +1,6 @@
 ---
 title: Testing UI5 Apps with wdi5 - Zero to Hero to Continuous Integration
-subTitle: Showcasing the bootstrap of a UI5 application and equip it with wdi5 end-2-end test capabilities.
+subTitle: Devtoberfest 2022
 external: true
 startDate: 2022/10/18 17:00 UTC+2
 endDate: 2022/10/18 17:30 UTC+2
