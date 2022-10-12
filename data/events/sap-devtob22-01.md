@@ -1,6 +1,6 @@
 ---
 title: Clean SAPUI5 - More readable, maintainable and testable code
-subTitle: The authors of the book Clean SAPUI5 are going to talk about how to make SAPUI5 / Javascript code more readable, maintainable and testable.
+subTitle: Devtoberfest 2022
 external: true
 startDate: 2022/10/18 09:00 UTC+2
 endDate: 2022/10/18 10:00 UTC+2
