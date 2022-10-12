@@ -1,7 +1,6 @@
 ---
 title: "UI5ers live (October '22) - CANCELLED!"
 subTitle: 45 minute interactive webcast
-external: true
 startDate: 2022/10/13 15:15 UTC+2
 endDate: 2022/10/13 16:00 UTC+2
 location: CANCELLED!!!!
