@@ -13,4 +13,4 @@ recordingUrl: https://github.com/SAP-samples/ui5-exercises-codejam/tree/performa
 ---
 In this session we will demonstrate how to improve the performance of a UI5 application step by step to reach good performance numbers in a lighthouse report.
 
-Source code for this session: 
+Source code for this session: https://github.com/SAP-samples/ui5-exercises-codejam/tree/performance-devtoberfest
