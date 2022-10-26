@@ -9,7 +9,7 @@ logo: ./logos/sap.svg
 speakers:
   -  Peter Muessig
   -  Nico Schoenteich
-recordingUrl: https://www.youtube.com/watch?v=jp2-9O4K094
+recordingUrl: https://youtu.be/jp2-9O4K094
 ---
 In this session we will demonstrate how to improve the performance of a UI5 application step by step to reach good performance numbers in a lighthouse report.
 
