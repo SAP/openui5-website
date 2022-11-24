@@ -1,8 +1,6 @@
 ---
 name: Adrian Marten
-company: 
-photo: 
-twitter: 
-linkedin: 
-github: 
+photo: ./adrian-marten.jpg
+linkedin: adrian-marten-a750a3189
+github: tabris87
 ---
