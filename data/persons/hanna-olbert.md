@@ -1,7 +1,7 @@
 ---
 name: Hanna Olbert
-company: SAP
+company: 
 photo: ./hanna-olbert.jpg
 linkedin: hanna-olbert
-github: hannaol
+github: hannaolb
 ---
