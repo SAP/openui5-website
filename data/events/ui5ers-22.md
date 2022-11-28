@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
   -  Peter Muessig
   -  Adrian Marten
-  -  Hann Olbert
+  -  Hanna Olbert
 url: https://sap-se.zoom.com/j/94833714827
 ---
 Since the UI5 Journey Recorder has been already prominently featured during SAP TechEd 2022, it’s about time to get to know the author of this great testing tool! Adrian Marten will take us on a tour with his point-and-click adventure Chrome extension for UI5. He will explain to us the benefits of the UI5 Journey Recorder, how fast you can create tests for your UI5 apps with little to no upfront knowledge, and what else can do with the UI5 Journey Recorder.
