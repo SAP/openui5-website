@@ -9,7 +9,7 @@ speakers:
   -  Peter Muessig
   -  Jorge Martins
   -  Stefan Beck
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/CvYuiOGUnT0
 ---
 in this episode we have Jorge Martins with us. He reworked and harmonized the transpiling tooling extensions of the UI5 ecosystem showcase. The task and the middleware are now provided as part of the ui5-tooling-transpile package and can be used for e.g. your TypeScript projects to integrate the transpiling directly into the UI5 tooling lifecycle. This allows you to get rid of separate watch scripts and the source folder.
 In addition we will discuss the innovations and improvements of UI5 1.108.
