@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
   -  Christian Pfisterer
   -  Merlin Beutlberger
-  -  Matthias Osswald
+  -  Matthias Oßwald
   -  Uwe Reeder
 url: https://sap-se.zoom.com/j/94833714827
 ---
