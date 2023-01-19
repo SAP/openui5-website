@@ -6,10 +6,11 @@ endDate: 2023/02/09 16:00 UTC+1
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Peter Muessig
-  -  Andreas Kunz
-  -  Margot Wollny
-  -  Stefan Beck
+  -  Kateryna Sergieieva
+  -  Evgeny Reyzenkind
+  -  Holger Schaefer
+  -  Lars Kissel
+  -  Sven Bernhard
 url: https://sap-se.zoom.com/j/94833714827
 ---
 The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. So stay tuned!
