@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
   -  Kateryna Sergieieva
   -  Evgeny Reyzenkind
-  -  Holger Schaefer
+  -  Holger Schäfer
   -  Lars Kissel
   -  Sven Bernhard
 url: https://sap-se.zoom.com/j/94833714827
