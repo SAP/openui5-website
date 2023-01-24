@@ -1,7 +1,7 @@
 ---
 title: "UI5ers live (Mar '23)"
 subTitle: 45 minute interactive webcast
-startDate: 2023/02/09 15:15 UTC+1
+startDate: 2023/03/09 15:15 UTC+1
 endDate: 2023/03/09 16:00 UTC+1
 location: via ZOOM
 logo: ./logos/ui5ers.svg
