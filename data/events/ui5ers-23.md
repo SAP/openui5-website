@@ -10,7 +10,7 @@ speakers:
   -  Merlin Beutlberger
   -  Matthias Oßwald
   -  Uwe Reeder
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/CsXJSnE35fs
 ---
 We start this episode with Merlin Beutlberger and Matthias Osswald, who will introduce you to the upcoming UI5 Tooling version 3 and explain some of their ideas for the next major enhancements. Adding to this topic, Christian Pfisterer will show a productive OpenUI5 application used at Home Shopping Europe to demonstrate the magic of the UI5 Tooling when it’s used to develop an UI5 application with TypeScript as well as third-party npm packages and the OpenUI5 CDN.
 Lastly, there is something new from the OData V4 model: Uwe Reeder will showcase how to defer the deletion of an entity via an API group using the OData V4 model. This new feature enables a non-draft application to postpone the deletion until the user presses the Save button, just like it’s done with property changes. The deletion can also be canceled again.
