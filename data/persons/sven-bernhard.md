@@ -1,7 +1,7 @@
 ---
 name: Sven Bernhard
 company: SAP
-photo: 
+photo: sven-bernhard.png
 twitter: 
 linkedin: 
 github: SvBe
