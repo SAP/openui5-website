@@ -22,10 +22,10 @@ var sponsors = new Vue({
         },
         {
           package: 'Price (exclusive of VAT)',
-          diamond: '10000',
-          platinum: '5000',
-          gold: '2500',
-          silver: '1500'
+          diamond: '10,000',
+          platinum: '5,000',
+          gold: '2,500',
+          silver: '1,500'
         },
         {
           package: 'Conference Attendee Tickets',

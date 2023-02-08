@@ -55,6 +55,12 @@
   color: #fffbff;
 }
 
+.ui5con-sponsors-section p.ui5con-sponsors-share {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
 .ui5con-sponsors-section a {
   padding: 0.3rem 0;
   position: relative;
@@ -152,6 +158,12 @@
   .ui5con-sponsors-section li {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .ui5con-sponsors-section p.ui5con-sponsors-share {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
   }
 
   .ui5con-sponsors-table th, .ui5con-sponsors-table td {
