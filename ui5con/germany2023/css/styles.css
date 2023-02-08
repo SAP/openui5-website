@@ -1,0 +1,105 @@
+@import url("./header.css");
+@import url("./calendars.css");
+@import url("./gallery.css");
+@import url("./details-section.css");
+@import url("./subscription-section.css");
+@import url("./share-links.css");
+@import url("./social-links-section.css");
+@import url("./footer.css");
+
+
+:root {
+
+  --ui5BrandColor: #FF961E;
+  --ui5BrandAltColor:#FF5D17;
+
+  --ui5LogoColor:#008fd3;
+
+  --ui5TextColor: #FFFBFF;
+  --ui5TextAccentTextColor: #FFDBCF;
+
+  --ui5SocialLinksColor: #F5DED8;
+  --ui5SocialLinksColorHover: #F95D11;
+
+  --ui5LinksColor: #FFDBCF;
+  --ui5LinksColorHover: #F95D11;
+
+  --ui5BackgroundColor: #180E0A;
+  --ui5HeaderBackground: linear-gradient(180deg, #251915 0%, #180E0A 100%);
+
+  --ui5ButtonBackground: linear-gradient(260.9deg, var(--ui5BrandColor) -123.7%, var(--ui5BrandAltColor) 100%);
+  --ui5ButtonBackgroundHover: linear-gradient(263.1deg, #FF9216 -22.57%, #FFB778 100%);
+  --ui5ButtonBackgroundGradient1: radial-gradient(circle at 100% 150%, rgba(168, 57, 0, .6) 0%, rgba(0,0,0,0) 60% );
+  --ui5ButtonBackgroundGradient2: radial-gradient(circle at 70% 120%, rgba(168, 57, 0, .6) 0%, rgba(0,0,0,0) 60% );
+  --ui5ButtonBackgroundGradient3: radial-gradient(circle at 70% -50%, rgba(168, 57, 0, .7) 0%, rgba(0,0,0,0) 60% );
+  --ui5ButtonBackgroundGradient4: radial-gradient(circle at 10% 60%, rgba(168, 57, 0, .3) 0%, rgba(0,0,0,0) 20% );
+
+  --ui5TextFontSize: 0.875rem;
+  --ui5TextLineHeight: 1.5rem;
+  --ui5TextFontSizeL: 1.125rem;
+  --ui5TextLineHeightL: 1.75rem;
+
+  --ui5HeadingFontSize: 1.5rem;
+  --ui5HeadingLineHeight: 1.75rem;
+  --ui5HeadingFontSizeL: 2rem;
+  --ui5HeadingLineHeightL: 2.25rem;
+
+  --ui5SubHeadingFontSize: 1rem;
+  --ui5SubHeadingLineHeight: 1.125rem;
+  --ui5SubHeadingFontSizeL: 1.5rem;
+  --ui5SubHeadingLineHeightL: 1.75rem;
+
+
+  --ui5LinksFontSize: 0.875rem;
+  --ui5LinksLineHeight: 1rem;
+  --ui5LinksFontSizeL: 1.3125rem;
+  --ui5LinksLineHeightL: 1.5rem;
+  
+  --ui5AnnonceTextFontSize: 1rem;
+  --ui5AnnonceTextLineHeight: 1.125rem;
+  --ui5AnnonceTextFontSizeL: 1.5rem;
+  --ui5AnnonceTextLineHeightL: 1.75rem;
+
+  --ui5AnnonceFontSize: 3.5rem;
+  --ui5AnnonceLineHeight: 4rem;
+  --ui5AnnonceFontSizeL: 7rem;
+  --ui5AnnonceLineHeightL: 7.5rem;
+
+  --ui5ButtonFontSize: 1rem;
+  --ui5ButtonLineHeight: 1.125rem;
+  --ui5ButtonFontSizeL: 1.5rem;
+  --ui5ButtonLineHeightL: 1.75rem;
+
+  --ui5ElementBorderRadius: 2rem;
+
+
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  color: var(--ui5TextColor);
+  font-family: "72", Arial, Helvetica, sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main {
+  background: #180e0a;
+  font-family: "72", Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.ui5con-main {
+  margin-top: 4rem;
+}

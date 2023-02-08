@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI5con Germany in July 2023</title>
+  <meta name="description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP">
+  <meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
+  <meta name="robots" content="index, follow">
+
+  <meta name="author" content="SAP SE">
+
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:url" content="https://openui5.org/ui5con/germany2023">
+  <meta property="twitter:title" content="UI5con Germany in July 2023"/>
+  <meta property="twitter:description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6."/>
+  <meta property="twitter:image" content="https://openui5.org/ui5con/germany2023/images/share.png?2"/>
+
+  <meta property="og:title" content="UI5con Germany in July 2023"/>
+  <meta property="og:description" content="If you want to learn more about UI5, you can't miss UI5con 2023. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 6."/>
+  <meta property="og:image" content="https://openui5.org/ui5con/germany2023/images/share.png?2"/>
+
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg"/>
+  <link rel="icon" sizes="any" href="images/android-chrome-192x192.png"/>
+
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/committee.css">
+  <link rel="stylesheet" href="./css/newsletter.css">
+  <link rel="stylesheet" href="./css/agenda.css">
+  <link rel="stylesheet" href="./css/agendaModal.css">
+  <link rel="stylesheet" href="./css/countdown.css">
+  <link rel="stylesheet" href="./css/gallery.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <script src="./js/svgs.js"></script>
+  <script src="./js/agenda.js"></script>
+</head>
+<body>
+  <header class="ui5con-header" id="header">
+    <nav class="ui5con-header_nav">
+      <a href="https://openui5.org/ui5con/" hreflang="en">Previous Events</a>
+    </nav>
+    <div class="ui5con-header__container">
+      <span v-html="svgs.logo"></span>
+      <h1
+        class="ui5con-header__live-now"
+        aria-label="Join us! July 6th 2023 - UI5con Germany" v-cloak>
+        <span class="ui5con-header__year" aria-hidden="true">2023</span>
+        <span class="ui5con-header__live" aria-hidden="true">Join us</span>
+        <span class="ui5con-header__date" aria-hidden="true">July 6th</span>
+      </h1>
+      <div class="ui5con-date">
+        <p class="ui5con-date-summary">Safe the date</p>
+      </div>
+
+      <banner-one></banner-one>
+      <banner-two></banner-two>
+    </div>
+
+    <div class="ui5con-header_socials">
+      <p>Share</p>
+      <ul class="ui5con-header_social-list">
+        <li v-for="social in socialLinks" key="social.text">
+          <a :href="social.link" target="_blank" rel="noopener noreferrer">
+            <span v-html="social.svg"></span>
+            <span class="sr-only">{{social.text}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="ui5con-container--bright">
+      <div class="ui5con-container--details">
+        <detail :svg="svgs.learn" header="learn.">
+          <p>At UI5con rookies, experienced, and expert developers are gathering to learn more about the framework and its features from each other.</p>
+        </detail>
+        <detail :svg="svgs.explore" header="explore.">
+          <p>UI5con is a free of charge event for UI5 enthusiasts to meet in person and find out what’s happening in the UI5 world.</p>
+        </detail>
+        <detail :svg="svgs.connect" header="connect.">
+          <p>UI5con is meant to connect all the geeks out there — have a common platform to get to know each other, discuss innovations and find solutions.</p>
+        </detail>
+      </div>
+      <banner-four></banner-four>
+    </section>
+
+    <section class="ui5con-container ui5con-container--gallery">
+      <h2 class="sr-only">On-site image gallery of <span>UI5con 2022</span></h2>
+
+      <div class="ui5con-gallery">
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7801.webp" alt="UI5con attendees sitting on a bench outside">
+          <figcaption class="sr-only">UI5con attendees sitting on a bench outside</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7831.webp" alt="UI5con audience asking question with a catch box microphone">
+          <figcaption class="sr-only">UI5con audience asking question with a catch box microphone</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7835.webp" alt="UI5con attendees sitting in the Audimax">
+          <figcaption class="sr-only">UI5con attendees sitting in the Audimax</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC03115.webp" alt="Peter Muessig, Marian Zeis, Marco Beier, Volker Buzek on stage">
+          <figcaption class="sr-only">Peter Muessig, Marian Zeis, Marco Beier, Volker Buzek on stage</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7837.webp" alt="UI5con stage at the Discussion Panel with the big screen in the background">
+          <figcaption class="sr-only">UI5con stage at the Discussion Panel with the big screen in the background</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7398.webp" alt="UI5con on-site orga team and Margot Wollny discussing">
+          <figcaption class="sr-only">UI5con on-site orga team and Margot Wollny discussing</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02798.webp" alt="Malte Wedel, Frederic and Johannes Gluch">
+          <figcaption class="sr-only">Malte Wedel, Frederic and Johannes Gluch</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02820.webp" alt="Stefan Beck and Peter Muessig on Stage">
+          <figcaption class="sr-only">Stefan Beck and Peter Muessig on Stage</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02834.webp" alt="Wouter Lemaire, Jonas Vanderkelen, Jérémy Coppey, Tobias Hofmann and Martin Fischer">
+          <figcaption class="sr-only">Wouter Lemaire, Jonas Vanderkelen, Jérémy Coppey, Tobias Hofmann and Martin Fischer</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7560.webp" alt="Workshop time with Volker Buzek">
+          <figcaption class="sr-only">Workshop time with Volker Buzek</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02890.webp" alt="Daniel Rose, Georg Bischoff and Mehmet Bakan">
+          <figcaption class="sr-only">Daniel Rose, Georg Bischoff and Mehmet Bakan</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/_DSC7600.webp" alt="Attendee asking a question with the famous catch box microphone">
+          <figcaption class="sr-only">Attendee asking a question with the famous catch box microphone</figcaption>
+        </figure>
+
+        <figure class="ui5con-gallery-item">
+          <img src="images/gallery/DSC02916.webp" alt="Catch box microphone being thrown mid air in a Q&A session">
+          <figcaption class="sr-only">Catch box microphone being thrown mid air in a Q&A session</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="ui5con-container--bright ui5con-container--bright-alternate ui5con-container--socials">
+      <h2>Stay in the loop on latest news from UI5con</h2>
+
+      <p class="ui5con-section-text">Subscribe to our email newsletter to receive updates on upcoming events and community engagement opportunities. We only send out updates a few times per year, so no need to worry about us cluttering your inbox.</p>
+
+      <div id="newsletter-subscription" @keypress.enter="javascript:CloseWin()">
+        <button class="ui5con-button--light" @click="showSubscribeModal" data-a11y-dialog-show="sendinblue-dialog">
+          Subscribe
+        </button>
+
+        <div id="sendinblue-dialog" class="ui5con-newsletter__modal-backdrop" aria-hidden="true">
+          <div class="ui5con-newsletter__modal sib-form-container" id="sib-form-container" role="document" aria-labelledby="dialog-title" aria-describedby="dialog-description" tabindex="-1">
+            <h2 class="sr-only" id="dialog-title">Subscribe to our Newsletter</h2>
+
+            <!-- SendinBlue Mail Template -->
+            <sendin-blue></sendin-blue>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui5con-container--links">
+        <social-link link="https://twitter.com/ui5con" :svg="svgs.twitter2" header="Stay updated"></social-link>
+        <social-link link="https://www.youtube.com/c/openui5videos/playlists" :svg="svgs.youtube" header="See past events"></social-link>
+        <social-link link="mailto:openui5@sap.com?subject=[UI5con 2023] Question" :svg="svgs.mail" header="Reach out to us"></social-link>
+      </div>
+
+      <banner-three></banner-three>
+    </section>
+
+    <footer-section></footer-section>
+  </main>
+
+
+  <script src="./components/banner-one.component.js"></script>
+  <script src="./components/banner-two.component.js"></script>
+  <script src="./components/banner-three.component.js"></script>
+  <script src="./components/banner-four.component.js"></script>
+  <script src="./components/banner-five.component.js"></script>
+  <script src="./components/banner-six.component.js"></script>
+  <script src="./components/sendin-blue.component.js"></script>
+  <script src="./components/detail.component.js"></script>
+  <script src="./components/social-link.component.js"></script>
+  <script src="./components/committee-member.component.js"></script>
+  <script src="./components/footer.component.js"></script>
+  <script src="./components/break-icon.component.js"></script>
+  <script src="./components/party-icon.component.js"></script>
+  <script src="./components/closing-icon.component.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./js/luxon.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/sendinblue.js"></script>
+  <script src="./js/a11y-dialog.min.js"></script>
+
+
+  <script>
+    var dialogEl = document.getElementById('sendinblue-dialog');
+    var dialog = new A11yDialog(dialogEl);
+
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "The email field cannot be left blank. Please try again. ";
+    window.GENERIC_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
+  </script>
+
+</body>
+
+</html>

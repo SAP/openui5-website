@@ -1,0 +1,110 @@
+.ui5con-footer {
+  gap: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2.75rem 1.625rem 2rem 1.625rem;
+}
+
+.ui5con-footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui5con-footer .ui5con-sap-logo {
+  width: 4rem;
+  max-width: 6.25rem;
+  fill: var(--ui5LogoColor);
+}
+
+.ui5con-footer .ui5con-sap-links {
+  gap: .5rem;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.ui5con-footer .ui5con-sap-links a {
+  padding: 0.3rem 0;
+  position: relative;
+  text-decoration: none;
+  color: var(--ui5LinksColor);
+  transition: all 0.5s ease-in-out;
+  font-size: var(--ui5TextFontSize);
+  line-height: var(--ui5TextLineHeight);
+}
+
+.ui5con-footer a::after {
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  content: '';
+  width: 100%;
+  height: 0.1em;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 300ms, transform 300ms;
+  background-color: var(--ui5LinksColorHover);
+}
+
+
+.ui5con-footer a:hover {
+  color: var(--ui5LinksColorHover);
+}
+
+.ui5con-footer a:focus {
+  outline: none;
+  color: var(--ui5LinksColorHover);
+}
+
+.ui5con-footer a:focus::after {
+  transform: scale(1);
+}
+
+.ui5con-footer-copyright {
+  text-align: center;
+  color: var(--ui5LinksColor);
+  font-size: var(--ui5TextFontSize);
+  line-height: var(--ui5TextLineHeight);
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-footer .ui5con-sap-links a {
+    font-size: var(--ui5TextFontSizeL);
+    line-height: var(--ui5TextLineHeightL);
+  }
+
+  .ui5con-footer-copyright {
+    font-size: var(--ui5TextFontSizeL);
+    line-height: var(--ui5TextLineHeightL);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-footer {
+    gap: 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 2.5rem 6rem;
+    justify-content: space-between;
+  }
+
+  .ui5con-footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ui5con-footer .ui5con-sap-links {
+    gap: 6vw;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .ui5con-footer-copyright {
+    text-align: center;
+    min-width: fit-content;
+  }
+}
