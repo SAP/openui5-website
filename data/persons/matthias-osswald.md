@@ -1,7 +1,7 @@
 ---
 name: Matthias Oßwald
 company: SAP
-photo: ./matthias-oßwald.png
+photo: ./matthias-osswald.png
 twitter: matthiaso
 linkedin: matthiaso
 github: matz3
