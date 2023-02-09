@@ -6,14 +6,7 @@ endDate: 2022/08/11 16:00 UTC+2
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-  -  Stefan Beck
-  -  Andreas Kunz
   -  Peter Muessig
-  -  Margot Wollny
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/H1Tkn6gNiAg
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. 
-So stay tuned!
-
-If you have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+Our summer break is just around the corner, but before there are some news to share. Firstly, there is a new version of Easy-UI5. Peter Muessig will demonstrate the new features of Easy-UI5 3.5 and also give an outlook on what is planned next. Then, we will have a look at the UI5 Tooling Modules. There was also an update, Peter had been involved. This is related to the feature that enables the option to put used NPM packages into the same namespace than the app. Peter will showcase how this new feature works and how to use it as well as discuss the benefits this provides.
