@@ -143,8 +143,8 @@ a:hover,
 .b-topic.mod_popup .b-topic__title a:hover,
 .b-list.mod_mainmenu a:hover,
 .b-topic__title a:hover {
-	color: #ff5743;
-	text-decoration: underline;
+	/* color: #ff5743;
+	text-decoration: underline; */
 }
 .b-topic__title a {
 	color: #ffffff;
@@ -459,13 +459,25 @@ a:hover,
 .b-page {
     min-height: 100%;
     position: relative;
-    }
+	background-color: #180E0A;
+}
 /* kept, in case some side effects observed
 @media (min-width: 391px) and (max-width: 1025px) {
     .b-page {
         width: 660px;
     }
 }*/
+
+.b-page::before {
+	top: 0;
+  	left: 0;
+  	content: "";
+  	width: 100%;
+  	height: 100%;
+  	position: absolute;
+  	background: radial-gradient(circle at 100% 150%, rgba(168, 57, 0, .6) 0%, rgba(0,0,0,0) 60% ), radial-gradient(circle at 10% 60%, rgba(168, 57, 0, .3) 0%, rgba(0,0,0,0) 20% );
+}
+
 @media (max-width: 390px) {
     .b-page {
         overflow: scroll;
@@ -641,7 +653,6 @@ a:hover,
 /* mod_agenda */
 .b-section.mod_agenda {
 	padding: 20px 0;
-	background-color: #19181e;
 }
 .b-section-download {
 	position: absolute;
@@ -704,11 +715,8 @@ a:hover,
 /* imports */
 /* header */
 .b-header {
-	height: 705px;
 	position: relative;
 	overflow: hidden;
-	background: url(data/pictures/background.jpg) no-repeat 50% 50%;
-	background-size: cover;
 }
 .b-header:before {
 	position: absolute;
@@ -716,7 +724,6 @@ a:hover,
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(18, 18, 24, .95);
 	height: 100%;
 	width: 100%;
 	content: '';

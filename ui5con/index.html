@@ -3,12 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="../build/launchpad/data/pictures/favicon.ico"/>
 	<title>UI5con Events</title>
+	<meta name="description" content="Learn about past and upcoming events around OpenUI5 and SAPUI5">
+	<meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="SAP SE">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="launchpad/styles.css">
 	<style>
 	.ov-header {
-		height: 350px;
+		height: auto;
 	}
 
 	.ov-section-header.mod_info {
@@ -19,6 +24,9 @@
 		width: 100%;
 		text-align: center;
 		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.ov-tile {
@@ -27,6 +35,25 @@
 		padding: 24px;
 		box-sizing: border-box;
 		display: inline-block;
+		transition: all .5s ease-in; 
+	}
+
+	.ov-tile a:hover {
+		transform: scale(1.03);
+	}
+
+	.ov-tile a:focus {
+		outline: none;
+		transform: scale(1.05);
+	}
+
+	.b-heading {
+		font-size: 40px;
+		line-height: 60px;
+		color: #ffa242;
+		letter-spacing: 0.01em;
+		font-weight: 600;
+		margin-bottom: 150px;
 	}
 
 	.ov-tile > a,
@@ -34,31 +61,41 @@
 		width: 100%;
 		box-sizing: border-box;
 		xheight: 350px;
-		padding: 18px;
-		border: 1px solid grey;
-		color: white;
+		padding: 24px;
+		color: #FFDBCF;
 		position: relative;
 		text-align: center;
 		display: inline-block;
+		border-radius: 32px;
+		background: linear-gradient(180deg, rgba(168, 57, 0, 0.4) 0%, rgba(168, 57, 0, 0.2) 100%);
+		transition: all .5s ease-in; 
 	}
 
 	.ov-tile h2 {
-		font-weight: normal;
-		font-size: 36px;
+		font-weight: 400;
+		font-size: 32px;
 	}
 
 	.ov-tile div.ov-img {
 		background-size: contain;
 		background-repeat:no-repeat;
 		background-position: center center;
-		width: 100%;
-		margin: 24px 0;
-		height: 150px;
+		width: 70%;
+		margin: 40px auto;
+		height: 120px;
 	}
 
 	.ov-tile footer {
-		font-size: 26px;
+		font-size: 20px;
 		margin-top: 26px;
+	}
+
+	.b-ui.margin_10 {
+		color: #F5DED8;
+	}
+
+	.b-font.color_yellow {
+		color: #FF5D17;
 	}
 
 	@media (max-width: 1380px) {
@@ -71,6 +108,24 @@
 		.ov-tile {
 			width: 100%;
 		}
+
+		.ov-tile h2 {
+			font-size: 24px;
+		}
+
+		.ov-tile footer {
+			font-weight: normal;
+			font-size: 18px;
+		}
+
+		.b-heading {
+			font-size: 24px;
+			line-height: 36px;
+		}
+
+		.ov-tile div.ov-img {
+			margin: 20px auto;
+		}
 	}
 	</style>
 
@@ -81,7 +136,7 @@
 		<div class="b-bar"></div>
 		<div class="b-header__logo" style="margin-top: 35px;margin-bottom: 38px;"></div>
 		<div class="b-ui align_center">
-			<div class="b-font size_36 color_yellow weight_light">Community Conferences around OpenUI5 / SAPUI5</div>
+			<div class="b-heading">Community Conferences around OpenUI5 / SAPUI5</div>
 		</div>
 	</div>
 
