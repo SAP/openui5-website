@@ -1,9 +1,8 @@
 'use strict';
 Vue.component("social-link", {
-  props: ["link", "svg", "header"],
+  props: ["link", "header"],
   template:`
   <a :href="link" class="ui5con-social-link" target="_blank" rel="noopener noreferrer" hreflang="en">
-    <span v-html="svg"></span> 
     {{header}}
   </a>
 `

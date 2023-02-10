@@ -69,12 +69,11 @@
           <gallery-img :mobile="false" src="images/gallery-2023/stage.jpg" alt="People on stage"></gallery-img>
           <gallery-img :mobile="false" src="images/gallery-2023/margot.jpg" alt="Margot Wollny on stage"></gallery-img>
           <gallery-img :mobile="false" src="images/gallery-2023/frederic.jpg" alt="Frederic Berg on stage"></gallery-img>
-          <gallery-img :mobile="false" src="images/gallery-2023/people_1.jpg" alt="UI5con attendees in the Audimax"></gallery-img>
+          <gallery-img :mobile="false" src="images/gallery-2023/people_2.jpg" alt="UI5con attendees in the Audimax"></gallery-img>
           <gallery-img :mobile="false" src="images/gallery-2023/stefan.jpg" alt="Stefan Beck on stage"></gallery-img>
           
           <gallery-img :mobile="true" src="images/gallery-2023/margot_dorota.jpg" alt="Margot Wollny and Dorota Josenhans"></gallery-img>
           <gallery-img :mobile="true" src="images/gallery-2023/audience.jpg" alt="People in the audience"></gallery-img>
-          <gallery-img :mobile="true" src="images/gallery-2023/people_2.jpg" alt="UI5con attendees"></gallery-img>
           <gallery-img :mobile="true" src="images/gallery-2023/woman.jpg" alt="Speaker on the stage"></gallery-img>
           <gallery-img :mobile="true" src="images/gallery-2023/people_3.jpg" alt="UI5con attendees"></gallery-img>
           <gallery-img :mobile="true" src="images/gallery-2023/marlan.jpg" alt="Speaker on the stage"></gallery-img>
@@ -99,9 +98,13 @@
       </div>
     </section>
     <section class="ui5con-subscription-section">
+      <figure>
+        <img src="images/gallery-2023/people_1.jpg" alt="UI5con attendees in the Audimax">
+        <figcaption class="sr-only">UI5con attendees in the Audimax</figcaption>
+      </figure>
       <div class="ui5con-subscription">
-        <h2 class="ui5con-subscription-heading">Stay in the loop on <br><span>latest news</span> from UI5con</h2>
-        <p class="ui5con-subscription-text">Subscribe to our email newsletter to receive updates on upcoming events and community engagement opportunities. We only send out updates a few times per year, so no need to worry about us cluttering your inbox.</p>
+        <h2 class="ui5con-subscription-heading">Stay in the <span>loop</span></h2>
+        <p class="ui5con-subscription-text">Subscribe to our email <b>newsletter</b> to receive updates on upcoming events and community engagement opportunities. We only send out updates a few times per year, so no need to worry about us cluttering your inbox.</p>
 
         <div id="newsletter-subscription" class="ui5con-newsletter" @keypress.enter="javascript:CloseWin()">
           <button class="ui5con-newsletter-button" @click="showSubscribeModal" data-a11y-dialog-show="sendinblue-dialog">subscribe</button>
@@ -114,20 +117,10 @@
           </div>
         </div>
       </div>
-
-      <div class="ui5con-share">
-        <h3>share</h3>
-        <ul>
-          <li v-for="social in socialLinks" key="social.text">
-            <a :href="social.link" target="_blank" rel="noopener noreferrer">
-              <span v-html="social.svg"></span>
-              <span class="sr-only">{{social.text}}</span>
-            </a>
-          </li>
-        </ul>
-      </div>
     </section>
-    <social-links-section></social-links-section>
+    <section class="ui5con-recap-section">
+      <p>PSST.. Looking for more fun? Our friends from <a href="https://sapmentors.github.io/reCAP/" target="_blank" rel="noopener noreferrer" hreflang="en">reCAP</a> are hosting their event on <span>July 7th</span>! Back to back conferences? <br>What more could you ask for!</p>
+    </section>
     <footer-section></footer-section>
   </main>
 
@@ -136,8 +129,7 @@
   <script src="./components/social-link.component.js"></script>
   <script src="./components/calendar-link.component.js"></script>
   <script src="./components/gallery-img.component.js"></script>
-  <script src="./components/social-links-section.component.js"></script>
-  <script src="./components/footer.component.js"></script>
+  <script src="./components/footer-section.component.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/sendinblue.js"></script>
   <script src="./js/a11y-dialog.min.js"></script>

@@ -1,8 +1,10 @@
 
 .ui5con-share {
+  gap: 2.25rem;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  margin: 3.125rem 0;
+  justify-content: center;
 }
 
 .ui5con-share h3 {
@@ -14,12 +16,13 @@
 }
 
 .ui5con-share a {
-  padding-bottom: 1rem;
   position: relative;
-  font-size: 0.875rem;
+  padding-bottom: 1rem;
   text-decoration: none;
-  color: var(--ui5SocialLinksColor);
   transition: all 0.5s ease-in-out;
+  font-size: var(--ui5TextFontSize);
+  color: var(--ui5SocialLinksColor);
+  line-height: var(--ui5TextLineHeight);
 }
 
 .ui5con-share a:hover svg {

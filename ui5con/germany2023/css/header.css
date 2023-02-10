@@ -132,6 +132,8 @@
   overflow: hidden;
   position: relative;
   transition: all 0.3s;
+  text-decoration: none;
+  margin-bottom: 6.25rem;
   padding: 1.125rem 3.125rem;
   color: var(--ui5TextColor);
   font-size: var(--ui5ButtonFontSize);
@@ -195,6 +197,7 @@
   }
 
   .ui5con-annonce-button {
+    margin-bottom: 10rem;
     font-size: var(--ui5ButtonFontSizeL);
     line-height: var(--ui5ButtonLineHeightL);
   }

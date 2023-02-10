@@ -1,13 +1,7 @@
 .ui5con-footer {
-  gap: 3.75rem;
   display: flex;
   flex-direction: column;
-  padding: 2.75rem 1.625rem 2rem 1.625rem;
-}
-
-.ui5con-footer-container {
-  display: flex;
-  justify-content: space-between;
+  padding: 2.5rem 1.625rem;
 }
 
 .ui5con-footer .ui5con-sap-logo {
@@ -17,14 +11,12 @@
 }
 
 .ui5con-footer .ui5con-sap-links {
-  gap: .5rem;
+  gap: 0.5rem;
   display: flex;
-  align-items: flex-end;
   flex-direction: column;
 }
 
 .ui5con-footer .ui5con-sap-links a {
-  padding: 0.3rem 0;
   position: relative;
   text-decoration: none;
   color: var(--ui5LinksColor);
@@ -37,7 +29,7 @@
   left: 0;
   bottom: 0;
   opacity: 1;
-  content: '';
+  content: "";
   width: 100%;
   height: 0.1em;
   position: absolute;
@@ -46,7 +38,6 @@
   transition: opacity 300ms, transform 300ms;
   background-color: var(--ui5LinksColorHover);
 }
-
 
 .ui5con-footer a:hover {
   color: var(--ui5LinksColorHover);
@@ -68,7 +59,23 @@
   line-height: var(--ui5TextLineHeight);
 }
 
+.ui5con-footer-container-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui5con-footer-container {
+  display: flex;
+  margin: 1.125rem 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media only screen and (min-width: 768px) {
+  .ui5con-footer {
+    padding: 4rem;
+  }
+
   .ui5con-footer .ui5con-sap-links a {
     font-size: var(--ui5TextFontSizeL);
     line-height: var(--ui5TextLineHeightL);
@@ -78,25 +85,37 @@
     font-size: var(--ui5TextFontSizeL);
     line-height: var(--ui5TextLineHeightL);
   }
+
+  .ui5con-footer-container-wrapper {
+    gap: 15vw;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .ui5con-footer-container.logo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ui5con-footer-copyright {
+    text-align: left;
+  }
+
+  .ui5con-footer-container.links {
+    gap: 2rem;
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
   .ui5con-footer {
-    gap: 0;
-    flex-direction: row;
-    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
     padding: 2.5rem 6rem;
     justify-content: space-between;
   }
 
-  .ui5con-footer-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-
   .ui5con-footer .ui5con-sap-links {
-    gap: 6vw;
     width: 100%;
     align-items: center;
     flex-direction: row;
@@ -106,5 +125,25 @@
   .ui5con-footer-copyright {
     text-align: center;
     min-width: fit-content;
+  }
+
+  .ui5con-share {
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .ui5con-footer-container-wrapper {
+    gap: 0;
+  }
+
+  .ui5con-footer-container.links {
+    margin: 0;
+    gap: 6rem;
+    width: auto;
+  }
+
+  .ui5con-footer-container.logo {
+    margin: 0;
+    flex-direction: row;
   }
 }

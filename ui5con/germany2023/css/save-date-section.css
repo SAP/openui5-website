@@ -1,22 +1,21 @@
-.ui5con-subscription-section {
-  gap: 7.5rem;
+.ui5con-save-date-section {
   display: flex;
   position: relative;
   flex-direction: column;
-  padding: 8rem 1.25rem 3.75rem 1.25rem;
+  padding: 5rem 1.25rem 0 1.25rem;
 }
 
-.ui5con-subscription-section figure {
+.ui5con-save-date-image {
   display: none;
 }
 
-.ui5con-subscription {
+.ui5con-save-date {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.ui5con-subscription-heading {
+.ui5con-save-date-heading {
   margin: 0;
   font-size: 2.5rem;
   line-height: 2.875rem;
@@ -25,7 +24,7 @@
   color: var(--ui5TextColor);
 }
 
-.ui5con-subscription-heading span {
+.ui5con-save-date-heading span {
   display: inline-block;
   -webkit-text-stroke: 0;
   background: linear-gradient(
@@ -43,7 +42,7 @@
   animation: textclip 10s linear infinite alternate;
 }
 
-.ui5con-subscription-text {
+.ui5con-save-date-text {
   max-width: 80%;
   text-align: center;
   margin: 1.5rem 0 7rem 0;
@@ -52,11 +51,11 @@
   line-height: var(--ui5TextLineHeight);
 }
 
-.ui5con-subscription-text b {
+.ui5con-save-date-text b {
   color: var(--ui5BrandAltColor);
 }
 
-.ui5con-newsletter-button {
+.ui5con-save-date-button {
   z-index: 1;
   cursor: pointer;
   overflow: hidden;
@@ -72,7 +71,7 @@
   border: 0.125rem solid var(--ui5TextAccentTextColor);
 }
 
-.ui5con-newsletter-button:before {
+.ui5con-save-date-button:before {
   top: 0;
   content: "";
   left: -100%;
@@ -86,79 +85,140 @@
   z-index: -1;
 }
 
-.ui5con-newsletter-button:hover:before {
+.ui5con-save-date-button:hover:before {
   transform: skew(-45deg) translateX(75%);
 }
 
-.ui5con-newsletter-button:focus {
+.ui5con-save-date-button:focus {
   outline: none;
 }
 
-.ui5con-newsletter-button:focus:before {
+.ui5con-save-date-button:focus:before {
   transform: skew(-45deg) translateX(75%);
 }
 
+.ui5con-save-date-images {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.ui5con-save-date-images figure {
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.ui5con-save-date-images figure:first-child {
+  z-index: 4;
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-column-end: 6;
+  grid-row-end: 7;
+}
+
+.ui5con-save-date-images figure:nth-child(2) {
+  z-index: 3;
+  grid-column-start: 5;
+  grid-row-start: 1;
+  grid-column-end: 10;
+  grid-row-end: 5;
+}
+
+.ui5con-save-date-images img {
+  width: 100%;
+}
+
 @media only screen and (min-width: 768px) {
-  .ui5con-subscription-section {
+  .ui5con-save-date-section {
     padding: 7.5rem 4rem 3.75rem 4rem;
   }
 
-  .ui5con-subscription-section figure {
+  .ui5con-save-date-image {
     display: none;
   }
-
-  .ui5con-subscription-heading {
+  
+  .ui5con-save-date-heading {
     font-size: 3rem;
     line-height: 3.5rem;
   }
 
-  .ui5con-subscription-text {
+  .ui5con-save-date-text {
     max-width: 70%;
     margin: 4.5rem 0 8rem 0;
     font-size: var(--ui5TextFontSizeL);
     line-height: var(--ui5TextLineHeightL);
   }
 
-  .ui5con-newsletter-button {
+  .ui5con-save-date-button {
     font-size: var(--ui5ButtonFontSizeL);
     line-height: var(--ui5ButtonLineHeightL);
+  }
+
+  .ui5con-save-date-images {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  
+  .ui5con-save-date-images figure:first-child {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-column-end: 6;
+    grid-row-end: 7;
+  }
+  
+  .ui5con-save-date-images figure:nth-child(2) {
+    grid-column-start: 8;
+    grid-row-start: 1;
+    grid-column-end: 13;
+    grid-row-end: 5;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .ui5con-subscription-section {
-    gap: 6rem;
+  .ui5con-save-date-section {
     flex-direction: row;
-    align-items: flex-end;
     padding: 10.75rem 6rem 7rem;
+    justify-content: space-between;
   }
 
-  .ui5con-subscription-section figure {
+  .ui5con-save-date-image {
     display: flex;
     margin: 0;
     border-radius: 1rem;
     overflow: hidden;
   }
 
-  .ui5con-subscription-section figure img {
+  .ui5con-save-date-image img {
     width: 100%;
     max-width: 60rem;
   }
-
-  .ui5con-subscription {
+  
+  .ui5con-save-date {
     align-items: flex-start;
   }
 
-  .ui5con-subscription-heading {
+  .ui5con-save-date-heading {
     font-size: 5rem;
     line-height: 5.75rem;
     text-align: left;
   }
 
-  .ui5con-subscription-text {
+  .ui5con-save-date-text {
     text-align: left;
     max-width: 80%;
     max-width: 60rem;
     margin: 2.25rem 0 5rem 0;
+  }
+
+  .ui5con-save-date-images {
+    display: none;
+  }
+
+  .ui5con-calendars-container {
+    text-align: left;
+    min-height: 10rem;
   }
 }

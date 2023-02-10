@@ -35,11 +35,6 @@
   width: 16rem;
   height: 12rem;
   animation-fill-mode: both;
-  transition: scale .5s cubic-bezier(1.0, 0.5, 0.8, 1.0); 
-}
-
-.ui5con-gallery-item:hover img {
-  transform: scale(1.05);
 }
 
 .ui5con-gallery-item img {
@@ -48,7 +43,6 @@
   height: 12rem;
   position: absolute;
   left: 0;
-  /* transition: all .6s ease-in-out; */
 }
 
 .ui5con-gallery-item.mobile {
@@ -163,4 +157,9 @@
   .ui5con-gallery-item.mobile {
     display: none;
   }
+  
+  .ui5con-gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  
 }

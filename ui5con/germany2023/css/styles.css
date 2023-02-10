@@ -2,9 +2,11 @@
 @import url("./calendars.css");
 @import url("./gallery.css");
 @import url("./details-section.css");
+@import url("./save-date-section.css");
 @import url("./subscription-section.css");
 @import url("./share-links.css");
 @import url("./social-links-section.css");
+@import url("./recap-section.css");
 @import url("./footer.css");
 
 
@@ -95,7 +97,7 @@ ul {
 }
 
 main {
-  background: #180e0a;
+  background: var(--ui5ButtonBackgroundGradient4);
   font-family: "72", Arial, Helvetica, sans-serif;
   position: relative;
 }

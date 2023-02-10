@@ -1,6 +1,8 @@
 .ui5con-calendars-container {
+  width: 100%;
+  text-align: center;
   position: relative;
-  min-height: 18rem;
+  min-height: 14rem;
 }
 
 .ui5con-calendars {

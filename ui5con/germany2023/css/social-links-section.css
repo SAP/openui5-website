@@ -1,27 +1,13 @@
-.ui5con-social-links-section {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 2.875rem 1.625rem;
-  background: var(--ui5BackgroundColor);
-}
-
-.ui5con-social-links-section h3 {
-  color: var(--ui5SocialLinksColor);
-  font-size: var(--ui5SubHeadingFontSize);
-  line-height: var(--ui5SubHeadingLineHeight);
-}
-
 .ui5con-social-links-container {
-  width: 100%;
+  gap: .5rem;
   display: flex;
-  margin: 2.25rem 0;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .ui5con-social-link {
-  gap: .875rem;
   display: flex;
+  font-weight: 700;
   line-height: 1rem;
   position: relative;
   align-items: center;
@@ -72,8 +58,8 @@
 
 @media only screen and (min-width: 1200px) {
   .ui5con-social-links-container {
-    gap: 10vw;
-    margin: 2.375rem 0;
+    gap: 1rem;
+    margin: 0;
     justify-content: center;
   }
 
