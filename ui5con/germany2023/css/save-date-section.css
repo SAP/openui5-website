@@ -179,8 +179,10 @@
 
 @media only screen and (min-width: 1200px) {
   .ui5con-save-date-section {
+    gap: 6rem;
     flex-direction: row;
     padding: 10.75rem 6rem 7rem;
+    align-items: flex-start;
     justify-content: space-between;
   }
 
