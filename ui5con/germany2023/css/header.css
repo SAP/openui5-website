@@ -61,6 +61,40 @@
   transform: scale(1);
 }
 
+a.sponsoring {
+  border: 1px solid #fff;
+  border-radius: 1.75rem;
+  padding: .5rem .7rem;
+  margin-left: auto;
+  white-space: nowrap;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    130deg,
+    var(--ui5BrandAltColor),
+    var(--ui5BrandColor),
+    var(--ui5BrandAltColor)
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
+a.sponsoring:after,
+a.sponsoring:hover:after,
+a.sponsoring:focus:after {
+  display: none;
+}
+
+a.sponsoring:hover,
+a.sponsoring:focus {
+  border-color: var(--ui5LinksColorHover);
+  color: var(--ui5LinksColorHover);
+}
+
 .ui5con-header__logo {
   width: 6rem;
   display: inline-block;
