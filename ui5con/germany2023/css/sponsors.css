@@ -115,6 +115,50 @@
   line-height: 1.75rem;
 }
 
+.sold {
+  position: relative;
+  color:rgba(255, 219, 207, .7);
+}
+
+.sold-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  line-height: 2;
+  text-transform: uppercase;
+  background: rgba(255, 219, 207, .8);
+  backdrop-filter: blur(2px);
+  white-space: nowrap;
+  color: #5B1B00;
+  font-weight: 600;
+  transform: translate(-50%, -50%) rotate(-22.75deg);
+  padding: 0 20%;
+  --mask:
+    conic-gradient(from 45deg at left,#0000,#000 1deg 89deg,#0000 90deg) left/51% 10.00px repeat-y,
+    conic-gradient(from -135deg at right,#0000,#000 1deg 89deg,#0000 90deg) right/51% 10.00px repeat-y;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+.sold-badge:before,
+.sold-badge:after {
+  top: 0;
+  left: -10px;
+  content: "";
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255, 219, 207, .7);
+
+}
+
+.sold-badge:after {
+  left: auto;
+  right: -10px;
+  top: 0;
+  transform: scaleX(-1);
+}
+
 .ui5con-sponsors-table thead th:first-child {
   text-align: left;
 }
@@ -177,7 +221,7 @@
     font-size: 1.5rem;
     line-height: 1.75rem;
   }
-  
+
 }
 
 @media only screen and (min-width: 1200px) {

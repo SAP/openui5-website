@@ -47,17 +47,17 @@
         <table class="ui5con-sponsors-table">
           <thead>
             <tr>
-              <th>Sponsorship Levels and Benefits</th>
-              <th>Diamond</th>
-              <th>Platinum</th>
-              <th>Gold</th>
-              <th>Silver</th>
+              <th scope="col">Sponsorship Levels and Benefits</th>
+              <th scope="col" class="sold">Diamond <span class="sold-badge">Sold Out</span></th>
+              <th scope="col">Platinum</th>
+              <th scope="col">Gold</th>
+              <th scope="col">Silver</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="sponsor in sponsors">
               <th scope="row">{{sponsor.package}}</th>
-              <td>{{sponsor.diamond}}</td>
+              <td class="sold">{{sponsor.diamond}}</td>
               <td>{{sponsor.platinum}}</td>
               <td>{{sponsor.gold}}</td>
               <td>{{sponsor.silver}}</td>
