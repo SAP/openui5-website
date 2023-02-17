@@ -4,7 +4,7 @@ Vue.component("footer-section", {
 <ul class="ui5con-share">
   <li>
     <a href="https://twitter.com/intent/tweet?text=UI5Con%20Germany%202023%20&url=https%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2023" target="_blank" rel="noopener noreferrer">
-      <span class="sr-only>Share on twitter</span>
+      <span class="sr-only">Share on twitter</span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 33" aria-hidden="true">
         <path d="M23.833 1.5c-2.57 0-4.59 1.022-5.866 2.725-.933 1.243-1.313 2.639-1.427 3.8-3.537-.335-5.832-1.208-7.232-1.972-.895-.488-1.455-.948-1.76-1.237a3.567 3.567 0 0 1-.297-.312A3.167 3.167 0 0 0 1.5 6.334c0 2.332 1.113 4.17 2.365 5.516a3.153 3.153 0 0 0-.698 1.983c0 2.024 1.309 3.277 2.288 3.949a3.153 3.153 0 0 0-.622 1.885c0 1.65.829 2.72 1.711 3.394-.583.068-1.208.106-1.877.106-1.281 0-2.436.771-2.926 1.954-.238.576-.26 1.266-.124 1.88a3.275 3.275 0 0 0 1.196 1.908c.16.124.355.26.589.4l.772-1.286-.772 1.286a9.711 9.711 0 0 0 1.93.862c1.645.548 4.08.996 7.668.996 6.91 0 11.64-3.045 14.51-7.348 2.752-4.128 3.657-9.186 3.657-13.319 0-.133-.004-.277-.01-.422l2.378-2.302a3.167 3.167 0 0 0-3.378-5.216l-1.878.751a8.026 8.026 0 0 0-.19-.16l-.285.35.286-.35c-.932-.76-2.457-1.651-4.257-1.651Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -12,7 +12,7 @@ Vue.component("footer-section", {
   </li>
   <li>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2023" target="_blank" rel="noopener noreferrer">
-      <span class="sr-only>Share on facebook</span>
+      <span class="sr-only">Share on facebook</span>
       <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6a1 1 0 0 0-1 1v10a1 1 0 1 1-2 0V7a3 3 0 0 1 3-3h1a1 1 0 1 1 0 2h-1Z" fill="currentColor"/>
@@ -22,7 +22,7 @@ Vue.component("footer-section", {
   </li>
   <li>
     <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2023&title=UI5Con Germany 2023&summary=UI5con Germany in on July 6th 2023 — a community event focused on #UI5 development" target="_blank" rel="noopener noreferrer">
-      <span class="sr-only>Share on LinkedIn</span>
+      <span class="sr-only">Share on LinkedIn</span>
       <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-hidden="true">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3Zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3Z" fill="currentColor"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1ZM5 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM8 7a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1Z" fill="currentColor"/>
@@ -32,7 +32,7 @@ Vue.component("footer-section", {
   </li>
   <li>
     <a href="mailto:?subject=UI5con in July 2023&body=Mark your calendars: UI5con Germany in on July 6th 2023 — a community event focused on #UI5 development. https://openui5.org/ui5con/germany2023/" target="_blank" rel="noopener noreferrer">
-    <span class="sr-only>Share via e-mail</span>
+    <span class="sr-only">Share via e-mail</span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 36" aria-hidden="true">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 6.75A6.75 6.75 0 0 1 7.25 0h31.5a6.75 6.75 0 0 1 6.75 6.75v22.5A6.75 6.75 0 0 1 38.75 36H7.25A6.75 6.75 0 0 1 .5 29.25V6.75ZM7.25 4.5A2.25 2.25 0 0 0 5 6.75v22.5a2.25 2.25 0 0 0 2.25 2.25h31.5A2.25 2.25 0 0 0 41 29.25V6.75a2.25 2.25 0 0 0-2.25-2.25H7.25Z" fill="currentColor"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M3.092 5.558a2.25 2.25 0 0 1 3.1-.716l15.616 9.76a2.25 2.25 0 0 0 2.384 0l15.615-9.76a2.25 2.25 0 0 1 2.386 3.816l-15.615 9.76a6.75 6.75 0 0 1-7.155 0L3.807 8.657a2.25 2.25 0 0 1-.716-3.1Z" fill="currentColor"/>
