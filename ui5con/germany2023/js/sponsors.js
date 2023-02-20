@@ -3,7 +3,7 @@ var sponsorsHeader = new Vue({
   el: '#sponsorsHeader',
   data() {
     return {
-      
+
     };
   },
 });
@@ -16,7 +16,7 @@ var sponsors = new Vue({
         {
           package: 'Slots available',
           diamond: '1',
-          platinum: '2',
+          platinum: ' ̶2̶  1',
           gold: '8',
           silver: 'unlimited'
         },
