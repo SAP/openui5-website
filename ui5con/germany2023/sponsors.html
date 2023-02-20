@@ -38,7 +38,15 @@
 <body class="ui5con-sponsors">
   <header id="sponsorsHeader" class="ui5con-sponsors-header">
     <div class="ui5con-header-nav">
-      <a href="index.html" class="ui5con-header-link"><span v-html="svgs.logo"></span></a>
+      <a href="index.html" class="ui5con-header-link" aria-label="Home">
+        <span v-html="svgs.logo"></span>
+      </a>
+      <nav>
+        <h2 class="sr-only">Main navigation</h2>
+        <a aria-current="page" class="sponsoring" href="sponsors.html">Become a Sponsor</a>
+        <!-- <a href="about-the-team.html">Meet the Team</a> -->
+        <a href="https://openui5.org/ui5con/" hreflang="en" rel="external">Previous Events</a>
+      </nav>
     </div>
   </header>
   <main id="sponsors" class="ui5con-sponsors-main">
