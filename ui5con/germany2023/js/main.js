@@ -213,12 +213,6 @@ var aboutTheTeam = new Vue({
           linkedin: 'https://www.linkedin.com/in/michael-zadikowitsch-68b2271b0/',
         },
         {
-          name: 'Sebastian Moreno',
-          city: 'Walldorf',
-          picture: 'images/team/sebastian-moreno.jpg',
-          linkedin: 'https://www.linkedin.com/in/sebastianmorenoagredo/',
-        },
-        {
           name: 'Rainer Liebisch',
           city: 'Walldorf',
           picture: 'images/team/rainer-liebisch.jpg',
