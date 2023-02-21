@@ -140,7 +140,7 @@ var aboutTheTeam = new Vue({
         },
         {
           name: 'Paige Hetherington',
-          city: 'Heidelberg',
+          city: 'Vancouver',
           picture: 'images/team/paige-hetherington.png',
           linkedin: 'https://www.linkedin.com/in/paige-hetherington/',
         },
