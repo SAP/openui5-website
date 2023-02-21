@@ -47,18 +47,23 @@
   overflow: hidden;
 }
 
+.ui5con-people-member img {
+  width: 100%;
+  height: 14.125rem;
+  mix-blend-mode: overlay;
+  display: block;
+  object-fit: cover;
+}
+
 @media only screen and (min-width: 768px) {
   .ui5con-people-member .frame {
     width: 18.125rem;
     height: 18.125rem;
   }
-}
 
-.ui5con-people-member img {
-  width: 100%;
-  mix-blend-mode: overlay;
-  display: block;
-  object-fit: contain;
+  .ui5con-people-member img {
+    height: 18.125rem;
+  }
 }
 
 .ui5con-people-name {

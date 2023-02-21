@@ -127,29 +127,22 @@ var aboutTheTeam = new Vue({
     return {
       team: [
         {
-          name: 'Uliana Caceres',
-          city: 'Munich',
-          picture: 'images/team/uliana-caceres.png',
-          linkedin: 'https://www.linkedin.com/in/ulianaa/',
-          github: 'https://github.com/UlianaMunich',
-        },
-        {
           name: 'Eniela Vela',
           city: 'Montreal',
           picture: 'images/team/eniela.jpg',
           linkedin: 'https://ca.linkedin.com/in/eniela-vela-67aba3135',
         },
         {
-          name: 'Victoria Maslova',
-          city: 'Vancouver',
-          picture: 'images/team/victoria-maslova.jpeg',
-          linkedin: 'https://www.linkedin.com/in/victoria-maslova/',
-        },
-        {
           name: 'Margot Wollny',
           city: 'Heidelberg',
           picture: 'images/team/margot-wollny.png',
           linkedin: 'https://www.linkedin.com/in/margot-wollny-864ba96',
+        },
+        {
+          name: 'Paige Hetherington',
+          city: 'Heidelberg',
+          picture: 'images/team/paige-hetherington.png',
+          linkedin: 'https://www.linkedin.com/in/paige-hetherington/',
         },
         {
           name: 'Inna Atanasova',
@@ -197,17 +190,38 @@ var aboutTheTeam = new Vue({
           twitter: 'https://twitter.com/StefanBeck3',
         },
         {
+          name: 'Angelika Kirilin',
+          city: 'Walldorf',
+          picture: 'images/team/angelika-kirilin.jpg',
+          linkedin: 'https://www.linkedin.com/in/angelika-kirilin-96b5b4231/',
+        },
+        {
+          name: 'Dirk Becker',
+          city: 'Walldorf',
+          picture: 'images/team/dirk-becker.jpg',
+        },
+        {
+          name: 'Nikolay Kolarov',
+          city: 'Walldorf',
+          picture: 'images/team/nikolay-kolarov.jpg',
+          linkedin: 'https://www.linkedin.com/in/nikolay-kolarov-58555671/',
+        },
+        {
+          name: 'Michael Zadikowitsch',
+          city: 'Walldorf',
+          picture: 'images/team/michael-zadikowitsch.jpg',
+          linkedin: 'https://www.linkedin.com/in/michael-zadikowitsch-68b2271b0/',
+        },
+        {
           name: 'Sebastian Moreno',
           city: 'Walldorf',
           picture: 'images/team/sebastian-moreno.jpg',
           linkedin: 'https://www.linkedin.com/in/sebastianmorenoagredo/',
         },
         {
-          name: 'Arthur Trauter',
+          name: 'Rainer Liebisch',
           city: 'Walldorf',
-          picture: 'images/team/arthur-trauter.png',
-          twitter: 'https://twitter.com/ArthurTrauter',
-          github: 'https://github.com/ArthurTrauter'
+          picture: 'images/team/rainer-liebisch.jpg',
         },
         {
           name: 'Dorota Josenhans',
@@ -216,10 +230,10 @@ var aboutTheTeam = new Vue({
           linkedin: 'https://www.linkedin.com/in/dorota-josenhans-b5615124/',
         },
         {
-          name: 'Oliver Müller',
+          name: 'Dina Glatzel',
           city: 'Walldorf',
-          picture: 'images/team/oliver-mueller.jpg',
-          linkedin: 'https://www.linkedin.com/in/oliver-m%C3%BCller-648702a8/',
+          picture: 'images/team/dina-glatzel.jpg',
+          linkedin: 'https://www.linkedin.com/in/dinaglatzel/',
         },
         {
           name: 'Alexander Rauh',
