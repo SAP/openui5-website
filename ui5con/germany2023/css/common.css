@@ -124,6 +124,9 @@ abbr[title] {
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
 }
+ins {
+  text-decoration: none;
+}
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */

@@ -1,5 +1,3 @@
-
-
 .ui5con-gallery-carousel {
   max-width: 100%;
   margin: 0 auto;
@@ -157,9 +155,9 @@
   .ui5con-gallery-item.mobile {
     display: none;
   }
-  
+
   .ui5con-gallery-item:hover img {
     transform: scale(1.05);
   }
-  
+
 }
