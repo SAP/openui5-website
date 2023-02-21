@@ -17,6 +17,19 @@
   position: relative;
 }
 
+.ui5con-people-list-item:hover .ui5con-people-member img,
+.ui5con-people-list-item:focus-within .ui5con-people-member img  {
+  mix-blend-mode: normal;
+}
+
+.ui5con-people-list-item:hover:after {
+  border-color: var(--ui5BrandColor);
+}
+
+.ui5con-people-list-item:hover .ui5con-people-name {
+  color: var(--ui5BrandColor);
+}
+
 .ui5con-people-list-item:after {
   content: "";
   position: absolute;
@@ -87,6 +100,10 @@
   color: var(--ui5TextAccentTextColor);
   display: block;
   margin-right: .5rem;
+}
+
+.ui5con-people-socials-item:focus {
+  outline: none;
 }
 
 .ui5con-people-socials-item svg {

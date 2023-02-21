@@ -54,8 +54,8 @@
         <h1>About the UI5con Team</h1>
       </header>
       <div class="ui5con-content-container">
-        <ul class="ui5con-people-list ui5con-people-list--team">
-          <li class="ui5con-people-list-item" v-for="member in team" :key="member.name">
+        <ul class="ui5con-people-list ui5con-people-list--team" role="list">
+          <li class="ui5con-people-list-item" v-for="member in team" :key="member.name" role="listitem">
             <figure class="ui5con-people-member">
               <div class="frame">
                 <img :src="member.picture" :alt="`Portrait of ${member.name}`">
