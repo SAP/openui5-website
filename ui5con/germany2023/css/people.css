@@ -1,3 +1,7 @@
+.ui5con-people-section {
+  padding: 1rem 1.625rem;
+}
+
 .ui5con-people-list {
   gap: 2rem;
   padding: 0;
@@ -69,6 +73,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .ui5con-people-section {
+    padding: 4rem;
+  }
+
   .ui5con-people-member .frame {
     width: 18.125rem;
     height: 18.125rem;
@@ -117,4 +125,10 @@
 .ui5con-people-socials-item:focus svg {
   transform: scale(1.3);
   color: var(--ui5SocialLinksColorHover);
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-people-section {
+    padding: 6rem;
+  }
 }

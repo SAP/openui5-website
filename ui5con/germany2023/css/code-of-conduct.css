@@ -18,18 +18,6 @@
   background: transparent;
 }
 
-.ui5con-CoC-header {
-  padding: 1rem 1.625rem;
-}
-
-.ui5con-header-link {
-  margin: 0 !important;
-}
-
-.ui5con-header-link:focus::after {
-  transform: scale(0) !important;
-}
-
 .ui5con-CoC-article-section {
   padding: 4rem 1.625rem;
 }
@@ -102,7 +90,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .ui5con-CoC-header {
+  .ui5con-header-section {
     padding: 2rem 4rem;
   }
 
@@ -129,7 +117,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .ui5con-CoC-header {
+  .ui5con-header-section {
     padding: 2rem 6rem;
   }
 

@@ -240,3 +240,7 @@ var aboutTheTeam = new Vue({
   },
 });
 
+var teamHeader = new Vue({
+  el: '#teamHeader',
+  data() {}
+});

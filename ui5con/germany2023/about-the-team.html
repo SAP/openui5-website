@@ -28,28 +28,17 @@
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/sponsors.css">
   <link rel="stylesheet" href="./css/people.css">
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <script src="./js/svgs.js"></script>
 </head>
 <body>
-  <header id="sponsorsHeader" class="ui5con-sponsors-header">
-    <div class="ui5con-header-nav">
-      <a href="index.html" class="ui5con-header-link" aria-label="Home">
-        <span v-html="svgs.logo"></span>
-      </a>
-      <nav>
-        <h2 class="sr-only">Main navigation</h2>
-        <a class="sponsoring" href="sponsors.html">Become a Sponsor</a>
-        <a aria-current="page" href="about-the-team.html">Meet the Team</a>
-        <a href="https://openui5.org/ui5con/" hreflang="en" rel="external">Previous Events</a>
-      </nav>
-    </div>
+  <header id="teamHeader" class="ui5con-header-section">
+    <header-section></header-section>
   </header>
   <main id="team">
-    <section>
+    <section class="ui5con-people-section">
       <header class="ui5con-content-header-container">
         <h1>About the UI5con Team</h1>
       </header>
@@ -87,10 +76,11 @@
     <footer-section></footer-section>
   </main>
 
-  <script src="./js/main.js"></script>
+  
+  <script src="./components/header-section.component.js"></script>
   <script src="./components/social-link.component.js"></script>
   <script src="./components/social-links-section.component.js"></script>
   <script src="./components/footer-section.component.js"></script>
-  <script src="./js/sponsors.js"></script>
+  <script src="./js/team.js"></script>
 </body>
 </html>

@@ -62,6 +62,19 @@
   transform: scale(1);
 }
 
+.ui5con-header-section {
+  padding: 1rem 1.625rem;
+}
+
+.ui5con-header-link {
+  margin: 0 !important;
+}
+
+.ui5con-header-link:focus::after {
+  transform: scale(0) !important;
+}
+
+
 a.sponsoring {
   border: 1px solid #fff;
   border-radius: 1.75rem;
@@ -240,6 +253,10 @@ a.sponsoring:focus {
   .ui5con-header__logo {
     width: 12rem;
   }
+
+  .ui5con-header-section {
+    padding: 2rem 4rem;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -256,6 +273,10 @@ a.sponsoring:focus {
 
   .ui5con-annonce-container {
     text-align: left;
+  }
+
+  .ui5con-header-section {
+    padding: 2rem 6rem;
   }
 }
 
