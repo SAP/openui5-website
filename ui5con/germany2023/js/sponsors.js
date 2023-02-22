@@ -42,7 +42,7 @@ var sponsors = new Vue({
           silver: '✓'
         },
         {
-          package: 'Company logo, link and description on Sponsor Page (description provided by sponsor, approved my UI5con team)',
+          package: 'Company logo, link and description on Sponsor Page (description provided by sponsor, approved by UI5con team)',
           diamond: '✓',
           platinum: '✓',
           gold: '✓',
