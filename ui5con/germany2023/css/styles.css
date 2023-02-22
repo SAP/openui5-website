@@ -64,7 +64,7 @@
   --ui5AnnonceFontSize: 3.5rem;
   --ui5AnnonceLineHeight: 4rem;
   --ui5AnnonceFontSizeL: 7rem;
-  --ui5AnnonceLineHeightL: 7.5rem;
+  --ui5AnnonceLineHeightL: 7.9rem;
 
   --ui5ButtonFontSize: 1rem;
   --ui5ButtonLineHeight: 1.125rem;
@@ -101,4 +101,11 @@ main {
 
 .ui5con-main {
   margin-top: 4rem;
+}
+
+.ui5con-subpage {
+  background-color: var(--ui5BackgroundColor);
+  background-image: var(--ui5ButtonBackgroundGradient3);
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }

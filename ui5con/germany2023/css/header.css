@@ -337,6 +337,40 @@ a.sponsoring:focus {
       --pos2x: 10%;
       --pos2y: 60%;
     }
+  }
+}
 
+.ui5con-content-header-container {
+  margin-bottom: 6rem;
+}
+
+.ui5con-content-header-container h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: var(--ui5AnnonceFontSize);
+  line-height: var(--ui5AnnonceLineHeight);
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    130deg,
+    var(--ui5BrandAltColor),
+    var(--ui5BrandColor),
+    var(--ui5TextColor),
+    var(--ui5BrandAltColor)
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .ui5con-content-header-container h1 {
+    text-align: left;
+    font-size: var(--ui5AnnonceFontSizeL);
+    line-height: var(--ui5AnnonceLineHeightL);
   }
 }

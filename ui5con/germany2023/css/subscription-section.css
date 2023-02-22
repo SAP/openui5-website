@@ -162,3 +162,45 @@
     margin: 2.25rem 0 5rem 0;
   }
 }
+
+.confirmation-message {
+  padding: 1rem 1.625rem;
+}
+
+.confirmation-message h2 {
+  margin-bottom: 1rem;
+  font-size: var(--ui5HeadingFontSize);
+  line-height: var(--ui5HeadingLineHeight);
+}
+
+.confirmation-message p {
+  font-size: var(--ui5AnnonceTextFontSize);
+  line-height: var(--ui5AnnonceTextLineHeight);
+}
+
+.confirmation-message b {
+  color: var(--ui5BrandColor);
+}
+
+@media only screen and (min-width: 768px) {
+  .confirmation-message {
+    padding: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .confirmation-message {
+    padding: 6rem;
+  }
+
+  .confirmation-message h2 {
+    margin-bottom: 1rem;
+    font-size: var(--ui5HeadingFontSizeL);
+    line-height: var(--ui5HeadingLineHeightL);
+  }
+
+  .confirmation-message p {
+    font-size: var(--ui5AnnonceTextFontSizeL);
+    line-height: var(--ui5AnnonceTextLineHeightL);
+  }
+}
