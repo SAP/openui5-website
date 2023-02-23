@@ -35,6 +35,8 @@
   --ui5ButtonBackgroundGradient3: radial-gradient(circle at 70% -50%, rgba(168, 57, 0, .7) 0%, rgba(0,0,0,0) 60% );
   --ui5ButtonBackgroundGradient4: radial-gradient(circle at 10% 60%, rgba(168, 57, 0, .3) 0%, rgba(0,0,0,0) 20% );
 
+  --reCapBackgroundGradient: linear-gradient(88.51deg, #0090DA 25%, #00C8E8 100%);
+
   --ui5TextFontSize: 0.875rem;
   --ui5TextLineHeight: 1.5rem;
   --ui5TextFontSizeL: 1.125rem;
@@ -108,4 +110,56 @@ main {
   background-image: var(--ui5ButtonBackgroundGradient3);
   background-repeat: no-repeat;
   min-height: 100vh;
+}
+
+.ui5con-shape-button {
+  text-decoration: none;
+  display: inline-block;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.3s;
+  background: transparent;
+  padding: 1.125rem 3.125rem;
+  font-size: var(--ui5ButtonFontSize);
+  color: var(--ui5TextAccentTextColor);
+  line-height: var(--ui5ButtonLineHeight);
+  border-radius: var(--ui5ElementBorderRadius);
+  border: 0.125rem solid var(--ui5TextAccentTextColor);
+}
+
+.ui5con-shape-button:before {
+  top: 0;
+  content: "";
+  left: -100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background: var(--reCapBackgroundGradient);
+  transform: skew(20deg) translateX(-25%);
+  transition: transform 0.5s ease;
+  width: 120%;
+  z-index: -1;
+}
+
+.ui5con-shape-button:hover:before {
+  transform: skew(-45deg) translateX(75%);
+}
+
+.ui5con-shape-button:focus {
+  outline: none;
+}
+
+.ui5con-shape-button:focus:before {
+  transform: skew(-45deg) translateX(75%);
+}
+
+@media only screen and (min-width: 768px) {
+
+  .ui5con-shape-button {
+    font-size: var(--ui5ButtonFontSizeL);
+    line-height: var(--ui5ButtonLineHeightL);
+  }
 }

@@ -173,9 +173,9 @@ a.sponsoring:focus {
 }
 
 .ui5con-annonce-button {
+  display: inline-block;
   z-index: 1;
   border: none;
-  cursor: pointer;
   font-weight: 700;
   overflow: hidden;
   position: relative;
