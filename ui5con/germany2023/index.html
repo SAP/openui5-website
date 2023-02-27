@@ -30,14 +30,8 @@
 </head>
 <body>
   <header class="ui5con-header" id="header">
-   <div class="ui5con-header-nav">
-      <span v-html="svgs.logo"></span>
-      <nav>
-        <h2 class="sr-only">Main navigation</h2>
-        <a class="sponsoring" href="sponsors.html">Become a Sponsor</a>
-        <!-- <a href="about-the-team.html">Meet the Team</a> -->
-        <a href="https://openui5.org/ui5con/" hreflang="en" rel="external">Previous Events</a>
-      </nav>
+   <div class="ui5con-header-section">
+    <header-section></header-section>
    </div>
     <div class="ui5con-header-container">
       <div class="ui5con-annonce-container">
@@ -48,7 +42,7 @@
         </h1>
         <p>Applications close March 27th</p>
 
-        <a href="https://ui5con2023.cfapps.eu12.hana.ondemand.com/" target="_blank" class="ui5con-annonce-button">propose your topic</a>
+        <a href="https://ui5con2023.cfapps.eu12.hana.ondemand.com/" target="_blank" class="ui5con-primary-button">propose your topic</a>
 
       </div>
       <div class="ui5con-gallery-carousel">
@@ -167,6 +161,7 @@
   <script src="./components/gallery-img.component.js"></script>
   <script src="./components/social-links-section.component.js"></script>
   <script src="./components/footer-section.component.js"></script>
+  <script src="./components/header-section.component.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/sendinblue.js"></script>
   <script src="./js/a11y-dialog.min.js"></script>

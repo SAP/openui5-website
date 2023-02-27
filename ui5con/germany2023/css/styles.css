@@ -18,6 +18,7 @@
 
   --ui5TextColor: #FFFBFF;
   --ui5TextAccentTextColor: #FFDBCF;
+  --ui5TextColorSupplementary: #FFEDE8;
 
   --ui5SocialLinksColor: #F5DED8;
   --ui5SocialLinksColorHover: #F95D11;
@@ -156,9 +157,67 @@ main {
   transform: skew(-45deg) translateX(75%);
 }
 
-@media only screen and (min-width: 768px) {
 
+.ui5con-primary-button {
+  display: inline-block;
+  z-index: 1;
+  border: none;
+  font-weight: 700;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s;
+  text-decoration: none;
+  /* margin-bottom: 6.25rem; */
+  padding: 1.125rem 3.125rem;
+  color: var(--ui5TextColor);
+  font-size: var(--ui5ButtonFontSize);
+  background: var(--ui5ButtonBackground);
+  line-height: var(--ui5ButtonLineHeight);
+  border-radius: var(--ui5ElementBorderRadius);
+}
+
+.ui5con-primary-button:after {
+  left: 0;
+  bottom: 0;
+  content: "";
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10rem;
+  background: var(--ui5ButtonBackground);
+}
+
+.ui5con-primary-button:hover:before {
+  width: 100%;
+}
+
+.ui5con-primary-button:before {
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  z-index: -1;
+  content: "";
+  height: 100%;
+  position: absolute;
+  transition: all 0.5s;
+  border-radius: 10rem;
+  background: var(--ui5ButtonBackgroundHover);
+}
+
+.ui5con-primary-button:focus {
+  transition: all 0.3s;
+  color: var(--ui5TextColor);
+}
+
+@media only screen and (min-width: 768px) {
   .ui5con-shape-button {
+    font-size: var(--ui5ButtonFontSizeL);
+    line-height: var(--ui5ButtonLineHeightL);
+  }
+
+  .ui5con-primary-button {
+    /* margin-bottom: 10rem; */
     font-size: var(--ui5ButtonFontSizeL);
     line-height: var(--ui5ButtonLineHeightL);
   }

@@ -56,52 +56,6 @@
   text-align: center;
 }
 
-.ui5con-sponsors-section p.ui5con-sponsors-share {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-.ui5con-sponsors-section a {
-  padding: 0.3rem 0;
-  position: relative;
-  text-decoration: none;
-  color: var(--ui5LinksColorHover);
-  transition: all 0.5s ease-in-out;
-  line-height: var(--ui5FooterTextLineHeight);
-}
-
-.ui5con-sponsors-section a::after {
-  left: 0;
-  bottom: 0;
-  opacity: 1;
-  content: "";
-  width: 100%;
-  height: 0.1em;
-  position: absolute;
-  transform: scale(0);
-  transform-origin: center;
-  background-color: var(--ui5LinksColorHover);
-  transition: opacity 300ms, transform 300ms;
-}
-
-.ui5con-sponsors-section a:hover {
-  color: var(--ui5LinksColorHover);
-}
-
-.ui5con-sponsors-section a:hover::after {
-  transform: scale(1);
-}
-
-.ui5con-sponsors-section a:focus {
-  outline: none;
-  color: var(--ui5LinksColorHover);
-}
-
-.ui5con-sponsors-section a:focus::after {
-  transform: scale(1);
-}
-
 .ui5con-sponsors-table {
   margin: 4rem auto;
 }
@@ -179,6 +133,32 @@
   text-align: center;
 }
 
+.ui5con-sponsors-cta {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ui5con-sponsors-cta .ui5con-primary-button {
+  margin: 3rem 0 4.25rem 0;
+}
+
+.ui5con-sponsors-cta p:first-child {
+  display: flex;
+  font-size: 1.75rem;
+  align-items: center;
+  line-height: 2.25rem;
+  flex-direction: column;
+  color: var(--ui5TextColorSupplementary);
+}
+
+.ui5con-sponsors-cta p {
+  width: 80%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--ui5TextColorSupplementary);
+}
+
 @media only screen and (min-width: 768px) {
   .ui5con-sponsors-header {
     padding: 2rem 4rem;
@@ -205,10 +185,8 @@
     line-height: 1.75rem;
   }
 
-  .ui5con-sponsors-section p.ui5con-sponsors-share {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
+  .ui5con-sponsors-table {
+    margin-bottom: 11.25rem;
   }
 
   .ui5con-sponsors-table th, .ui5con-sponsors-table td {
@@ -222,6 +200,21 @@
     line-height: 1.75rem;
   }
 
+  .ui5con-sponsors-cta p:first-child {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+  }
+  
+  .ui5con-sponsors-cta p {
+    width: 60%;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--ui5TextColorSupplementary);
+  }
+
+  .ui5con-sponsors-cta .ui5con-primary-button {
+    margin: 5rem 0 6.25rem 0;
+  }  
 }
 
 @media only screen and (min-width: 1200px) {

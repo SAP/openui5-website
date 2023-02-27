@@ -10,18 +10,22 @@
   background: var(--ui5ButtonBackgroundGradient3), var(--ui5ButtonBackgroundGradient4);
 }
 
+.ui5con-header .ui5con-header-section {
+  padding: 0;
+}
+
 .ui5con-header-nav {
   display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 1rem;
+  gap: 2rem;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 
 .ui5con-header-nav nav {
   gap: 1rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -123,7 +127,7 @@ a.sponsoring:focus {
 /* ANNONCE */
 .ui5con-annonce-container {
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 5rem;
 }
 
 .ui5con-annonce-container p {
@@ -132,6 +136,10 @@ a.sponsoring:focus {
   color: var(--ui5TextAccentTextColor);
   font-size: var(--ui5AnnonceTextFontSize);
   line-height: var(--ui5AnnonceTextLineHeight);
+}
+
+.ui5con-annonce-container .ui5con-primary-button {
+  margin-bottom: 6.5rem;
 }
 
 .ui5con-annonce {
@@ -172,57 +180,6 @@ a.sponsoring:focus {
   }
 }
 
-.ui5con-annonce-button {
-  display: inline-block;
-  z-index: 1;
-  border: none;
-  font-weight: 700;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s;
-  text-decoration: none;
-  margin-bottom: 6.25rem;
-  padding: 1.125rem 3.125rem;
-  color: var(--ui5TextColor);
-  font-size: var(--ui5ButtonFontSize);
-  background: var(--ui5ButtonBackground);
-  line-height: var(--ui5ButtonLineHeight);
-  border-radius: var(--ui5ElementBorderRadius);
-}
-
-.ui5con-annonce-button:after {
-  left: 0;
-  bottom: 0;
-  content: "";
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 10rem;
-  background: var(--ui5ButtonBackground);
-}
-
-.ui5con-annonce-button:hover:before {
-  width: 100%;
-}
-
-.ui5con-annonce-button:before {
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  z-index: -1;
-  content: "";
-  height: 100%;
-  position: absolute;
-  transition: all 0.5s;
-  border-radius: 10rem;
-  background: var(--ui5ButtonBackgroundHover);
-}
-
-.ui5con-annonce-button:focus {
-  transition: all 0.3s;
-  color: var(--ui5TextColor);
-}
 
 @media only screen and (min-width: 768px) {
   .ui5con-header {
@@ -234,20 +191,27 @@ a.sponsoring:focus {
     line-height: var(--ui5AnnonceLineHeightL);
   }
 
+  .ui5con-header-nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .ui5con-header-nav nav {
+    flex-direction: row;
+  }
+
   .ui5con-header-nav a {
-    font-size: var(--ui5LinksFontSizeL);
+    font-size: 1rem;
     line-height: var(--ui5LinksLineHeightL);
+  }
+
+  .ui5con-annonce-container {
+    margin-top: 8rem;
   }
 
   .ui5con-annonce-container p {
     font-size: var(--ui5AnnonceTextFontSizeL);
     line-height: var(--ui5AnnonceTextLineHeightL);
-  }
-
-  .ui5con-annonce-button {
-    margin-bottom: 10rem;
-    font-size: var(--ui5ButtonFontSizeL);
-    line-height: var(--ui5ButtonLineHeightL);
   }
 
   .ui5con-header__logo {

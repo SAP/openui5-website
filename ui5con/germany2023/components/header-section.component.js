@@ -7,7 +7,7 @@ Vue.component("header-section", {
   <nav>
     <h2 class="sr-only">Main navigation</h2>
     <a class="sponsoring" href="sponsors.html">Become a Sponsor</a>
-    <a aria-current="page" href="about-the-team.html">Meet the Team</a>
+    <a href="about-the-team.html">Meet the Team</a>
     <a href="https://openui5.org/ui5con/" hreflang="en" rel="external">Previous Events</a>
   </nav>
 </div>`

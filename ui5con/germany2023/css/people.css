@@ -13,10 +13,6 @@
   justify-content: center;
 }
 
-.ui5con-people-list--team {
-
-}
-
 .ui5con-people-list-item {
   position: relative;
 }
@@ -70,6 +66,7 @@
   mix-blend-mode: overlay;
   display: block;
   object-fit: cover;
+  transition: all .5s linear;
 }
 
 @media only screen and (min-width: 768px) {
