@@ -11,7 +11,7 @@ speakers:
   -  Holger Schäfer
   -  Lars Kissel
   -  Sven Bernhard
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/bTzFt96yYzk
 ---
 In this episode we will focus mainly on some new features in the UI5 OData Model, so we added Lars Kissel and Sven Bernhard from the UI5 development team to the round of panelists. Lars will present the long-awaited Deep Create feature in the OData V2 model which lets you create an entity with its sub-entities via navigation properties with only one single OData request. And as a special goodie, Holger Schaefer from the community will showcase how he already benefits from this new feature in his UI5 projects.
 Furthermore, we will discuss the complexities of timezones with Sven and share specific recommendations on how you can circumvent them when providing a configurable timezone independent from the local browser timezone for UI5.
