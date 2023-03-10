@@ -1,6 +1,6 @@
 'use strict';
 Vue.component("footer-section", {
-  template:`  <footer role="contentinfo" class="ui5con-footer">
+  template:`  <footer class="ui5con-footer">
   <div class="ui5con-footer-container">
     <div class="ui5con-sap-brand">
       <svg class="ui5con-sap-logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 743.367 368.439">

@@ -1,6 +1,6 @@
 'use strict';
 Vue.component("footer-section", {
-  template:`<footer role="contentinfo" class="ui5con-footer">
+  template:`<footer class="ui5con-footer">
 <ul class="ui5con-share">
   <li>
     <a href="https://twitter.com/intent/tweet?text=UI5Con%20Germany%202023%20&url=https%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2023" target="_blank" rel="noopener noreferrer">

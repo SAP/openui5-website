@@ -2,15 +2,10 @@
   width: 100%;
   text-align: center;
   position: relative;
-  min-height: 14rem;
 }
 
 .ui5con-calendars {
-  position: absolute;
-  top: 7rem;
-  left: 50%;
   width: 100%;
-  transform: translateX(-50%);
 }
 
 .ui5con-calendars-list {

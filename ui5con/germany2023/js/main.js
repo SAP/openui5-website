@@ -27,6 +27,67 @@ var main = new Vue({
       isExpanded: false,
       isModalVisible: false,
       isCalendarsVisible: false,
+      isToggled: false,
+      committee: [
+        {
+          name: 'Stefania Santimbrean',
+          country: 'Romania',
+          company: 'DevPlant',
+          picture: 'images/committee/stefania-santimbrean.png',
+          linkedin: 'https://www.linkedin.com/in/stefania-santimbrean/',
+          github: 'https://github.com/stefania-santimbrean',
+        },
+        {
+          name: 'Andreas Kunz',
+          country: 'Germany',
+          company: 'SAP',
+          picture: 'images/committee/andreas-kunz.jpg',
+          twitter: 'https://twitter.com/aku_dev',
+          linkedin: 'https://www.linkedin.com/in/andreas-kunz-dev',
+          github: 'https://github.com/akudev',
+        },
+        {
+          name: 'Stanislava Baltova',
+          country: 'Bulgaria',
+          company: 'SAP',
+          picture: 'images/committee/stanislava-baltova.jpeg',
+          twitter: 'https://twitter.com/KostSisi',
+          linkedin: 'https://www.linkedin.com/in/stanislava-baltova',
+        },
+        {
+          name: 'Ilja Postnovs',
+          country: 'Latvia',
+          company: 'Rimi Baltic',
+          picture: 'images/committee/ilja-postnovs.jpg',
+          linkedin: 'https://www.linkedin.com/in/ilja-postnovs-648b2a134/',
+          github: 'https://github.com/iljapostnovs/',
+        },
+        {
+          name: 'Marian Zeis',
+          country: 'Germany',
+          company: 'Independent Consultant',
+          picture: 'images/committee/marian-zeis.jpg',
+          twitter: 'https://twitter.com/mianbsp',
+          linkedin: 'https://www.linkedin.com/in/marianzeis',
+          github: 'https://github.com/marianfoo',
+        },
+        {
+          name: 'Wouter Lemaire',
+          country: 'Belgium',
+          company: 'LEMTECH BV',
+          picture: 'images/committee/wouter-lemaire.jpg',
+          twitter: 'https://twitter.com/wouter_lemaire',
+          github: 'http://github.com/lemaiwo',
+        },
+        {
+          name: 'Stefan Beck',
+          country: 'Germany',
+          company: 'SAP',
+          picture: 'images/committee/stefan-beck.jpg',
+          twitter: 'https://twitter.com/StefanBeck3',
+          linkedin: 'https://linkedin.com/in/stefan-beck-a9319a82',
+        },
+      ],
     };
   },
   mounted() {
@@ -35,6 +96,7 @@ var main = new Vue({
   methods: {
     showCalendars() {
       this.isCalendarsVisible = !this.isCalendarsVisible;
+      this.isToggled = !this.isToggled;
     },
     hideCalendars() {
       this.isCalendarsVisible = false;

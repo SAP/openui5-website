@@ -46,12 +46,13 @@ Vue.component("sendin-blue", {
                   <div class="form__entry entry_block">
                     <div class="form__label-row ">
 
-                      <label for="EMAIL" class="sr-only">Please enter a valid email address</label>
+                      <label for="EMAIL" style="margin-bottom: 0.5rem;">Email: <span style="color: red;" data-required="*">*</span></label>
                       <input class="input ui5con-newsletter__input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
 
                     </div>
 
-                    <label class="entry__error entry__error--primary"></label>
+                    <label class="entry__error entry__error--primary">
+                    </label>
 
                   </div>
                 </div>

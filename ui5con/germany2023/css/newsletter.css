@@ -30,7 +30,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 10;
   position: fixed;
   transition: all 0.3s;
   background-color: rgba(25, 23, 23, 0.8);
@@ -327,6 +327,13 @@ p.ui5con-newsletter__unsubscribe {
     /* top: 10vh; */
     /* transform: translate(-50%, 10vh); */
   }
+}
+
+@media screen and (max-width: 500px) {
+  .ui5con-newsletter__form legend {
+    font-size: 7vw;
+  }
+  
 }
 
 .modal-enter-active {

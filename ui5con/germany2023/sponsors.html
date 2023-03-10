@@ -41,33 +41,69 @@
   </header>
   <main id="sponsors" class="ui5con-sponsors-main">
       <section class="ui5con-sponsors-section">
-        <h1>Sponsorship Packages</h1>
-        <table class="ui5con-sponsors-table">
-          <thead>
-            <tr>
-              <th scope="col">Sponsorship Levels and Benefits</th>
-              <th scope="col" class="sold">Diamond <span class="sold-badge">Sold Out</span></th>
-              <th scope="col">Platinum</th>
-              <th scope="col">Gold</th>
-              <th scope="col">Silver</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="sponsor in sponsors">
-              <th scope="row">{{sponsor.package}}</th>
-              <td class="sold">{{sponsor.diamond}}</td>
-              <td v-html="sponsor.platinum"></td>
-              <td>{{sponsor.gold}}</td>
-              <td>{{sponsor.silver}}</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="ui5con-sponsors-cta">
-          <p>Interested in Sponsoring?</p>
-          <a class="ui5con-primary-button" href="mailto:openui5@sap.com?subject=[UI5con 2023] Sponsoring" target="_blank" rel="noopener noreferrer" class="ui5con-regular-link">Contact us</a>
-          <p>PSST.. Interested in creating a <span>custom sponsor package</span>? We get it! We are here to help you meet your organizations individual needs. Just hit “contact us” and we will be happy to discuss the opportunities.</p>
+        <h2>Sponsorship Packages</h2>
+        <div class="ui5con-sponsors-table-container">
+          <table class="ui5con-sponsors-table">
+            <caption class="sr-only">Sponsorship packages details</caption>
+            <thead>
+              <tr>
+                <th scope="col">Sponsorship Levels and Benefits</th>
+                <th scope="col" class="ui5con-sponsors-sold">Diamond <span class="ui5con-sponsors-sold-badge">Sold Out</span></th>
+                <th scope="col">Platinum</th>
+                <th scope="col">Gold</th>
+                <th scope="col">Silver</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="pack in packages">
+                <th scope="row">{{pack.package}}</th>
+                <td class="sold">{{pack.diamond}}</td>
+                <td v-html="pack.platinum"></td>
+                <td v-html="pack.gold"></td>
+                <td>{{pack.silver}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </section>
+      <section class="ui5con-sponsors-section">
+        <div class="ui5con-sponsors-cta">
+          <figure class="ui5con-sponsors-cta-img">
+            <img src="images/gallery-2023/sponsors.png" alt="Stefan Beck and Peter Muessig on stage and audience">
+          </figure>
+          <div class="ui5con-sponsors-cta-info">
+            <h3>Interested in Sponsoring?</h3>
+            
+            <p>We are here to help you meet your organizations individual needs. Whether you’re looking for one our existing packages or a <span>custom sponsor package</span>, we want to hear from you!.</p>
+            <a class="ui5con-button" href="mailto:openui5@sap.com?subject=[UI5con 2023] Sponsoring" target="_blank" rel="noopener noreferrer" class="ui5con-regular-link">Contact us</a>
+          </div>
+        </div>
+      </section>
+      <section class="ui5con-sponsors-section">
+        <h2>Meet our sponsors</h2>
+        <ul class="ui5con-sponsors-list">
+          <li v-for="sponsor in sponsors" class="ui5con-sponsors-item" :class="[sponsor.package]">
+            <div class="ui5con-sponsors-socials-container">
+              <span class="ui5con-sponsors-badge" :class="[sponsor.package]">{{sponsor.package}}</span>
+              <span v-html="sponsor.logo"></span>
+              <ul class="ui5con-sponsors-socials">
+                <li v-if="sponsor.website">
+                  <a :href="sponsor.website" :aria-label="`Website of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.website">
+                  </a>
+                </li>
+                <li v-if="sponsor.twitter">
+                  <a :href="sponsor.twitter" :aria-label="`Twitter profile of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.twitter">
+                  </a>
+                </li>
+                <li v-if="sponsor.linkedin">
+                  <a :href="sponsor.linkedin" :aria-label="`Linkedin profile of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.linkedin">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="ui5con-sponsors-info">{{sponsor.info}}</p>
+          </li>
+        </ul>
       </section>
       <footer-section></footer-section>
   </main>

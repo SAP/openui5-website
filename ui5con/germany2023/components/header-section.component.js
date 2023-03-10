@@ -1,14 +1,16 @@
 'use strict';
 Vue.component("header-section", {
-  template:`<div class="ui5con-header-nav">
-  <a href="index.html" class="ui5con-header-link" aria-label="Home">
-    <span v-html="svgs.logo"></span>
-  </a>
-  <nav>
-    <h2 class="sr-only">Main navigation</h2>
-    <a class="sponsoring" href="sponsors.html">Become a Sponsor</a>
-    <a href="about-the-team.html">Meet the Team</a>
-    <a href="https://openui5.org/ui5con/" hreflang="en" rel="external">Previous Events</a>
-  </nav>
-</div>`
+  template:`<nav class="ui5con-header-nav" aria-label="Main navigation">
+  <ul>
+    <li class="ui5con-header-nav-item">
+      <a href="index.html" class="ui5con-header-link" aria-label="Home">
+        <span class="sr-only">Link to Home Page</span>
+        <span v-html="svgs.logo"></span>
+      </a>
+    </li>
+    <li><a class="sponsoring" href="sponsors.html">become a sponsor</a></li>
+    <li><a href="about-the-team.html">meet the team</a></li>
+    <li><a href="https://openui5.org/ui5con/" hreflang="en" rel="external">previous events</a></li>
+  </ul>
+</nav>`
 });

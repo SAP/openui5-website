@@ -2,6 +2,33 @@
   padding: 1rem 1.625rem;
 }
 
+.ui5con-people-heading h2 {
+  margin: 0 0 2.25rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 2.875rem;
+  color: var(--ui5TextColor);
+}
+
+.ui5con-people-heading h2 span {
+  display: inline-block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    258.68deg,
+    var(--ui5TextColor) -1.05%,
+    var(--ui5BrandColor) 55.25%,
+    var(--ui5BrandAltColor) 107.04%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
 .ui5con-people-list {
   gap: 2rem;
   padding: 0;
@@ -40,6 +67,7 @@
   border: 1px solid var(--ui5LinksColor);
   border-radius: .3rem;
   z-index: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .ui5con-people-member {
@@ -69,6 +97,12 @@
   transition: all .5s linear;
 }
 
+@media (forced-colors: active) {
+  .ui5con-people-member img {
+    mix-blend-mode: normal;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .ui5con-people-section {
     padding: 4rem;
@@ -82,11 +116,17 @@
   .ui5con-people-member img {
     height: 18.125rem;
   }
+
+  .ui5con-people-heading h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
 }
 
 .ui5con-people-name {
   color: var(--ui5TextColor);
   line-height: 1.5;
+  transition: all 0.3s ease-in-out;
 }
 
 .ui5con-people-country {
@@ -127,5 +167,10 @@
 @media only screen and (min-width: 1200px) {
   .ui5con-people-section {
     padding: 6rem;
+  }
+
+  .ui5con-people-heading h2 {
+    font-size: 5rem;
+    line-height: 5.75rem;
   }
 }
