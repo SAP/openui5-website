@@ -67,19 +67,7 @@
   transform: scale(1);
 }
 
-.ui5con-header-section {
-  padding: 1rem 1.625rem;
-}
-
-.ui5con-header-link {
-  margin: 0 !important;
-}
-
-.ui5con-header-link:focus::after {
-  transform: scale(0) !important;
-}
-
-a.sponsoring {
+.ui5con-header-nav a.active {
   border: 1px solid #fff;
   border-radius: 1.75rem;
   padding: .5rem .7rem;
@@ -101,21 +89,61 @@ a.sponsoring {
   animation: textclip 10s linear infinite alternate;
 }
 
-a.sponsoring:after,
-a.sponsoring:hover:after,
-a.sponsoring:focus:after {
+.ui5con-header-nav a.active:after,
+.ui5con-header-nav a.active:hover:after,
+.ui5con-header-nav a.active:focus:after {
   display: none;
 }
 
-a.sponsoring:hover,
-a.sponsoring:focus {
+.ui5con-header-nav a.active:hover,
+.ui5con-header-nav a.active:focus {
   border-color: var(--ui5LinksColorHover);
   color: var(--ui5LinksColorHover);
+}
+
+.ui5con-header-section {
+  padding: 1rem 1.625rem;
+}
+
+.ui5con-header-link {
+  margin: 0 !important;
+}
+
+.ui5con-header-link:focus::after {
+  transform: scale(0) !important;
 }
 
 .ui5con-header__logo {
   width: 8rem;
   display: inline-block;
+}
+
+.ui5con-header-icon svg {
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+      color: #FFFFFF;
+  }
+
+  25% {
+    color: #FF961E;
+  }
+
+  50% {
+    color: #FF5D17;
+  }
+
+  75% {
+    color: #FF961E;
+  }
+
+  100% {
+      transform: rotate(360deg);
+      color: #FFFFFF;
+  }
 }
 
 .ui5con-header-container {
@@ -224,7 +252,7 @@ a.sponsoring:focus {
   }
 
   .ui5con-header-section {
-    padding: 2rem 4rem;
+    padding: 3.5rem 4rem 2rem 4rem;
   }
 }
 

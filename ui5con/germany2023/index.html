@@ -134,7 +134,7 @@
         <div id="newsletter-subscription" class="ui5con-newsletter" @keypress.enter="javascript:CloseWin()">
           <button class="ui5con-newsletter-button" @click="showSubscribeModal" data-a11y-dialog-show="sendinblue-dialog">subscribe</button>
           <div id="sendinblue-dialog" class="ui5con-newsletter__modal-backdrop" aria-hidden="true">
-            <div class="ui5con-newsletter__modal sib-form-container" id="sib-form-container" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description" tabindex="-1">
+            <div class="ui5con-newsletter__modal sib-form-container" id="sib-form-container" role="document" aria-labelledby="dialog-title" aria-describedby="dialog-description" tabindex="-1">
               <h2 class="sr-only" id="dialog-title">Subscribe to our Newsletter</h2>
               <!-- SendinBlue Mail Template -->
               <sendin-blue></sendin-blue>
