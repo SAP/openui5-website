@@ -77,7 +77,7 @@
   font-size: 1rem;
   line-height: 1.5rem;
   color: #fffbff;
-  margin: 2.25rem 0 5rem 0;
+  margin: 0rem 0 5rem 0;
 }
 
 .ui5con-sponsors-table-container {
@@ -220,6 +220,7 @@
 
 .ui5con-sponsors-item {
   display: flex;
+  gap: 1rem;
   flex-direction: column;
   width: 100%;
   padding: 1rem;
@@ -355,6 +356,10 @@
     line-height: 1.75rem;
   }
 
+  .ui5con-sponsors-section p {
+    margin-top: 1rem;
+  }
+
   .ui5con-sponsors-table-container {
     margin-bottom: 4rem;
   }
@@ -383,12 +388,13 @@
   }
 
   .ui5con-sponsors-section .ui5con-sponsors-info {
-    padding-left: 10vw;
+    /* padding-left: 10vw; */
   }
 
   .ui5con-sponsors-socials-container {
     gap: 2rem;
     margin-bottom: 0;
+    flex: 1 0 20vw;
   }
 }
 
@@ -413,7 +419,7 @@
   .ui5con-sponsors-cta-img img {
     width: 100%;
   }
-  
+
   .ui5con-sponsors-cta-info {
     width: 100%;
     text-align: left;
