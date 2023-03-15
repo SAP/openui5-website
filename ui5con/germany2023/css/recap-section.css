@@ -82,5 +82,6 @@
 @media only screen and (min-width: 1200px) {
   .ui5con-recap-section p {
     width: 60%;
+    margin: 0 auto 8rem auto;
   }
 }

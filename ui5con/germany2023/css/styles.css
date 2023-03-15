@@ -209,7 +209,7 @@ main {
   font-weight: 700;
   overflow: hidden;
   position: relative;
-  transition: all 0.3s;
+  transition: all 0.2s;
   text-decoration: none;
   /* margin-bottom: 6.25rem; */
   padding: 1.125rem 3.125rem;
@@ -252,6 +252,7 @@ main {
 .ui5con-primary-button:focus {
   transition: all 0.3s;
   color: var(--ui5TextColor);
+  outline: 0.125rem solid var(--ui5BrandAltColor);
 }
 
 @media only screen and (min-width: 768px) {

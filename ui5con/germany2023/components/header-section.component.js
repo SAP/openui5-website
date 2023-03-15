@@ -21,10 +21,9 @@ Vue.component("header-section", {
         <span v-html="svgs.logo"></span>
       </a>
     </li>
-    <li><a :class="{ active: isActive('sponsors') }" href="sponsors.html" :aria-current="isActive('sponsors')">
-      <span v-html="svgs.star" class="ui5con-header-icon" v-if="!isActive('sponsors')"></span>become a sponsor</a>
+    <li><a :class="{ active: isActive('sponsors') }" href="sponsors.html" :aria-current="isActive('sponsors')">sponsors</a>
     </li>
-    <li><a href="about-the-team.html" :class="{ active: isActive('team') }" :aria-current="isActive('team')">meet the team</a></li>
+    <li><a href="about-the-team.html" :class="{ active: isActive('team') }" :aria-current="isActive('team')">our team</a></li>
     <li><a href="https://openui5.org/ui5con/" hreflang="en" rel="external">previous events</a></li>
   </ul>
 </nav>`
