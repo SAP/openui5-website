@@ -132,6 +132,7 @@ var sponsors = new Vue({
           website: "https://www.neptune-software.com",
           twitter: "https://twitter.com/neptsoft",
           linkedin: "https://www.linkedin.com/company/neptune-software/",
+          instagram: "https://www.instagram.com/neptunesoftware/",
           package: "diamond"
         }
         // ,
@@ -171,6 +172,8 @@ var sponsors = new Vue({
           website: "https://www.js-soft.com/",
           linkedin: "https://de.linkedin.com/company/js-soft",
           twitter: "https://twitter.com/JS_Soft_GmbH",
+          facebook: "https://www.facebook.com/jssoftgmbh",
+          instagram: "https://www.instagram.com/js_soft_gmbh/",
           package: "gold"
         }
         ,
@@ -182,6 +185,7 @@ var sponsors = new Vue({
           info: "Amista is an IT consulting company with an edge. We provide market-leading business solutions by using SAP technology. We are known for our expertise in innovation, customer experience and digital learning. Amista was founded in 2014 in Antwerp. Today, our team consists of over a 100 SAP rebels spread over Belgium, India and Hungary. As a challenger in the Belgian market, our purpose is to help companies innovate and grow. We turn business challenges into opportunities, technology into value and customers into advocates. We aim to maximize the business value of SAP investments. Everything we do is 100% SAP focused. Challenge accepted!",
           website: "https://www.amista.be/",
           linkedin: "https://www.linkedin.com/company/amista/",
+          instagram: "https://www.instagram.com/amista_nv/",
           package: "gold"
         }
 

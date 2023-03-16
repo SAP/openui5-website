@@ -38,23 +38,6 @@ var main = new Vue({
           github: 'https://github.com/stefania-santimbrean',
         },
         {
-          name: 'Andreas Kunz',
-          country: 'Germany',
-          company: 'SAP',
-          picture: 'images/committee/andreas-kunz.jpg',
-          twitter: 'https://twitter.com/aku_dev',
-          linkedin: 'https://www.linkedin.com/in/andreas-kunz-dev',
-          github: 'https://github.com/akudev',
-        },
-        {
-          name: 'Stanislava Baltova',
-          country: 'Bulgaria',
-          company: 'SAP',
-          picture: 'images/committee/stanislava-baltova.jpeg',
-          twitter: 'https://twitter.com/KostSisi',
-          linkedin: 'https://www.linkedin.com/in/stanislava-baltova',
-        },
-        {
           name: 'Ilja Postnovs',
           country: 'Latvia',
           company: 'Rimi Baltic',
@@ -63,13 +46,11 @@ var main = new Vue({
           github: 'https://github.com/iljapostnovs/',
         },
         {
-          name: 'Marian Zeis',
-          country: 'Germany',
-          company: 'Independent Consultant',
-          picture: 'images/committee/marian-zeis.jpg',
-          twitter: 'https://twitter.com/mianbsp',
-          linkedin: 'https://www.linkedin.com/in/marianzeis',
-          github: 'https://github.com/marianfoo',
+          name: 'Diana Pazheva',
+          country: 'Bulgaria',
+          company: 'SAP',
+          picture: 'images/committee/diana-pazheva.png',
+          linkedin: 'https://www.linkedin.com/in/diana-alexandrova-18a20732/'
         },
         {
           name: 'Wouter Lemaire',
@@ -87,6 +68,39 @@ var main = new Vue({
           twitter: 'https://twitter.com/StefanBeck3',
           linkedin: 'https://linkedin.com/in/stefan-beck-a9319a82',
         },
+        {
+          name: 'Kristian Kraljic',
+          country: 'Germany',
+          company: 'SAP',
+          picture: 'images/committee/kristian-kraljic.png',
+          twitter: 'https://twitter.com/Kristian.Kralijc',
+          github: 'https://github.com/kristian'
+        },
+        {
+          name: 'Kateryna Sergieieva',
+          country: 'Germany',
+          company: 'SAP',
+          picture: 'images/committee/kateryna-sergieieva.jpg',
+          linkedin: 'https://www.linkedin.com/in/kateryna-sergieieva-6957a087/'
+        },
+        {
+          name: 'Dimo Uzunov',
+          country: 'Spain',
+          company: 'Westernacher Consulting',
+          picture: 'images/committee/dimo-uzunov.png',
+          linkedin: 'https://www.linkedin.com/in/dimouzunov/'
+        },
+        {
+          name: 'Marian Zeis',
+          country: 'Germany',
+          company: 'Independent Consultant',
+          picture: 'images/committee/marian-zeis.jpg',
+          twitter: 'https://twitter.com/mianbsp',
+          linkedin: 'https://www.linkedin.com/in/marianzeis',
+          github: 'https://github.com/marianfoo',
+        },
+
+
       ],
     };
   },

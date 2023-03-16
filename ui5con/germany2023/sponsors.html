@@ -73,7 +73,7 @@
           </figure>
           <div class="ui5con-sponsors-cta-info">
             <h3>Interested in Sponsoring?</h3>
-            
+
             <p>We are here to help you meet your organizations individual needs. Whether you’re looking for one our existing packages or a <span>custom sponsor package</span>, we want to hear from you!.</p>
             <a class="ui5con-button" href="mailto:openui5@sap.com?subject=[UI5con 2023] Sponsoring" target="_blank" rel="noopener noreferrer" class="ui5con-regular-link">Contact us</a>
           </div>
@@ -97,6 +97,14 @@
                 </li>
                 <li v-if="sponsor.linkedin">
                   <a :href="sponsor.linkedin" :aria-label="`Linkedin profile of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.linkedin">
+                  </a>
+                </li>
+                <li v-if="sponsor.facebook">
+                  <a :href="sponsor.facebook" :aria-label="`Facebook page of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.facebook">
+                  </a>
+                </li>
+                <li v-if="sponsor.instagram">
+                  <a :href="sponsor.instagram" :aria-label="`Instagram profile of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.instagram">
                   </a>
                 </li>
               </ul>
