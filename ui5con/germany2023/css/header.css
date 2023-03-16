@@ -12,7 +12,7 @@
 
 .ui5con-header .ui5con-header-section {
   padding: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .ui5con-header-nav ul {
@@ -234,7 +234,7 @@
   }
 
   .ui5con-header-nav a {
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: var(--ui5LinksLineHeightL);
   }
 
@@ -262,6 +262,11 @@
     min-height: 50rem;
     flex-direction: column;
     padding: 2rem 6rem 0 6rem;
+  }
+
+  .ui5con-header-nav a {
+    font-size: 1.3125rem;
+    line-height: 1.5rem;
   }
 
   .ui5con-header-container {
