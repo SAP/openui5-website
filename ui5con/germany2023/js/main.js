@@ -32,7 +32,7 @@ var main = new Vue({
         {
           name: 'Stefania Santimbrean',
           country: 'Romania',
-          company: 'DevPlant',
+          company: 'Nexontis',
           picture: 'images/committee/stefania-santimbrean.png',
           linkedin: 'https://www.linkedin.com/in/stefania-santimbrean/',
           github: 'https://github.com/stefania-santimbrean',
@@ -55,7 +55,7 @@ var main = new Vue({
         {
           name: 'Wouter Lemaire',
           country: 'Belgium',
-          company: 'LEMTECH BV',
+          company: 'Independent Consultant',
           picture: 'images/committee/wouter-lemaire.jpg',
           twitter: 'https://twitter.com/wouter_lemaire',
           github: 'http://github.com/lemaiwo',
