@@ -23,8 +23,8 @@ Vue.component("header-section", {
     </li>
     <li><a :class="{ active: isActive('sponsors') }" href="sponsors.html" :aria-current="isActive('sponsors')">sponsors</a>
     </li>
-    <li><a href="about-the-team.html" :class="{ active: isActive('team') }" :aria-current="isActive('team')">our team</a></li>
-    <li><a href="https://openui5.org/ui5con/" hreflang="en" rel="external">previous events</a></li>
+    <li><a href="people.html" :class="{ active: isActive('people') }" :aria-current="isActive('people')">people</a></li>
+    <li><a href="https://openui5.org/ui5con/" hreflang="en" rel="external" title="Click to open ui5con events webpage. Opens in a new window.">previous events</a></li>
   </ul>
 </nav>`
 });

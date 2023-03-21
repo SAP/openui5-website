@@ -39,8 +39,8 @@
   </header>
   <main id="team">
     <section class="ui5con-people-section">
-      <header class="ui5con-content-header-container">
-        <h1>Meet the faces<br>behind UI5con</h1>
+      <header class="ui5con-people-heading">
+        <h2>Our <span>team</span></h2>
       </header>
       <div class="ui5con-content-container">
         <ul class="ui5con-people-list ui5con-people-list--team" role="list">
@@ -73,6 +73,16 @@
         </ul>
       </div>
     </section>
+    <!-- <section class="ui5con-people-section">
+      <header class="ui5con-people-heading">
+        <h2>Our <span>committee</span></h2>
+      </header>
+      <div class="ui5con-content-container">
+        <ul class="ui5con-people-list ui5con-people-list--committee" role="list">
+          <committee-member v-for="member in committee" :member="member"></committee-member>
+        </ul>
+      </div>
+    </section> -->
     <footer-section></footer-section>
   </main>
 
@@ -80,6 +90,7 @@
   <script src="./components/header-section.component.js"></script>
   <script src="./components/social-link.component.js"></script>
   <script src="./components/social-links-section.component.js"></script>
+  <script src="./components/committee-member.component.js"></script>
   <script src="./components/footer-section.component.js"></script>
   <script src="./js/team.js"></script>
 </body>
