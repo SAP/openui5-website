@@ -113,6 +113,12 @@ var aboutTheTeam = new Vue({
           picture: 'images/team/alex-rauh.jpg',
           linkedin: 'https://www.linkedin.com/in/alexander-rauh-899579168/',
         },
+        {
+          name: 'Katja Zoch',
+          city: 'Walldorf',
+          picture: 'images/team/katja-zoch.jpg',
+          linkedin: 'http://linkedin.com/in/katjazoch',
+        },
       ],
     };
   },
