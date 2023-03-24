@@ -1,8 +1,8 @@
 ---
 name: Hubert Drecker
 company: Cpro conlog GmbH
-photo: ./hubert-drecker.JPG
+photo: ./hubert-drecker.jpg
 twitter: 
 linkedin: 
-github:texttechne
+github: texttechne
 ---
