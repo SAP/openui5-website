@@ -8,8 +8,6 @@ logo: ./logos/ui5ers.svg
 speakers:
   -  Ilhan Myumyun
   -  Hubert Drecker
-  -  Andreas Kunz
-  -  Peter Muessig
 url: https://sap-se.zoom.com/j/94833714827
 ---
 Let's talk TypeScript! Hubert Drecker will introduce us to odata2ts, a tool that generates TypeScript type definitions from OData metadata but also functions as an OData client with a typed query API. He will also tell us about a joint hackathon experiment using odata2ts with a mobx-based state management in UI5. Furthermore, Ilhan Myumyun will talk about the conversion of the UI5 Web Components code base to TypeScript and the newly introduced TypeScript decorators for defining component metadata. He will also go into the tooling support for developing custom UI5 web components in TypeScript.
