@@ -160,10 +160,16 @@
 
 .ui5con-annonce-container p {
   font-weight: bold;
-  margin: 1.5rem 0 6.5rem 0;
+  margin: 1.5rem 0;
   color: var(--ui5TextAccentTextColor);
   font-size: var(--ui5AnnonceTextFontSize);
   line-height: var(--ui5AnnonceTextLineHeight);
+}
+
+.ui5con-annonce-container .ui5con-annonce-location {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin-bottom: 6.5rem;
 }
 
 .ui5con-annonce-container .ui5con-primary-button {
@@ -245,6 +251,11 @@
   .ui5con-annonce-container p {
     font-size: var(--ui5AnnonceTextFontSizeL);
     line-height: var(--ui5AnnonceTextLineHeightL);
+  }
+
+  .ui5con-annonce-container .ui5con-annonce-location {
+    font-size: 1rem;
+    line-height: 1.2rem;
   }
 
   .ui5con-header__logo {

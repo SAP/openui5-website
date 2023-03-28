@@ -2,6 +2,30 @@
   padding: 1rem 1.625rem;
 }
 
+.ui5con-people-main-heading {
+  padding: 1rem 1.625rem;
+  max-width: 100%;
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-align: center;
+  line-height: 3.875rem;
+  display: inline-block;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    258.68deg,
+    var(--ui5TextColor) -1.05%,
+    var(--ui5BrandColor) 55.25%,
+    var(--ui5BrandAltColor) 107.04%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
+}
+
 .ui5con-people-heading h2 {
   margin: 0 0 2.25rem;
   font-weight: 700;
@@ -85,7 +109,7 @@
 
 @media only screen and (min-width: 768px) {
   .ui5con-people-section {
-    padding: 4rem;
+    padding: 2rem 4rem;
   }
 
   .ui5con-people-member .frame {
@@ -99,7 +123,16 @@
 
   .ui5con-people-heading h2 {
     font-size: 3rem;
+    text-align: left;
     line-height: 3.5rem;
+  }
+
+  .ui5con-people-main-heading {
+    max-width: 100%;
+    font-size: 5rem;
+    text-align: left;
+    line-height: 5.5rem;
+    padding: 2rem 4rem;
   }
 }
 
@@ -146,12 +179,19 @@
 
 @media only screen and (min-width: 1200px) {
   .ui5con-people-section {
-    padding: 6rem;
+    padding: 2rem 6rem;
   }
 
   .ui5con-people-heading h2 {
     font-size: 5rem;
-    line-height: 5.75rem;
     margin-bottom: 4rem;
+    line-height: 5.75rem;
+  }
+
+  .ui5con-people-main-heading {
+    max-width: 80%;
+    font-size: 7rem;
+    line-height: 7.5rem;
+    padding: 6rem;
   }
 }
