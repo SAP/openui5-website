@@ -84,27 +84,6 @@ var main = new Vue({
                 where: 'Germany',
                 when: 'June 30 / 2017'
             },
-            {
-                name: 'UI5con Frankfurt 2017',
-                link: 'https://wiki.scn.sap.com/wiki/display/events/UI5con+Frankfurt+-+2017',
-                logo: 'launchpad/data/pictures/Frankfurt2017.png',
-                where: 'Germany',
-                when: 'March 24 / 2017'
-            },
-            {
-                name: 'UI5con Netherlands 2016',
-                link: 'https://ui5con-a5a504e08.dispatcher.hana.ondemand.com',
-                logo: 'launchpad/data/pictures/Netherlands2016.png',
-                where: 'Netherlands',
-                when: 'November 25 / 2016'
-            },
-            {
-                name: 'UI5con Frankfurt 2016',
-                link: 'https://wiki.scn.sap.com/wiki/display/events/UI5con+2016+-+Frankfurt',
-                logo: 'launchpad/data/pictures/Frankfurt.png',
-                where: 'Germany',
-                when: 'March 11 / 2016'
-            },
         ],
     };
   },

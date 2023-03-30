@@ -41,20 +41,21 @@
 						<span class="ui5con-event-label">where</span>
 						<span class="ui5con-event-text">{{event.where}}</span>
 					</div>
-					<div class="ui5con-event-detail">
-						<span class="ui5con-event-label">when</span>
-						<span class="ui5con-event-text">{{event.when}}</span>
+					<div class="ui5con-event-detail-wrapper">
+						<div class="ui5con-event-detail">
+							<span class="ui5con-event-label">when</span>
+							<span class="ui5con-event-text">{{event.when}}</span>
+						</div>
+						<a class="ui5con-event-link" :href="event.link" rel="nofollow" target="_blank" :title="'Click to open ' + event.name + ' page. Opens in a new window'">
+							<div>
+								<span>Take me there</span>
+								<svg width="80" height="80" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M111.792 100.722C112.681 100.722 113.451 100.366 114.014 99.8031C114.577 99.2401 114.933 98.4697 114.933 97.5808L114.933 61.6093C114.933 59.8907 113.51 58.4685 111.792 58.4685L75.8204 58.4685C74.1018 58.4685 72.6796 59.8908 72.6796 61.6094C72.6796 63.3279 74.1018 64.7502 75.8204 64.7502L104.207 64.7502L59.2008 109.756C57.986 110.971 57.986 112.986 59.2008 114.201C60.4157 115.416 62.4305 115.416 63.6454 114.201L108.651 69.1952L108.651 97.5808C108.651 99.2994 110.073 100.722 111.792 100.722Z" fill="currentColor"/>
+								</svg>
+							</div>
+						</a>
 					</div>
 				</div>
-				
-				<a class="ui5con-event-link" :href="event.link" rel="nofollow" target="_blank" :title="'Click to open ' + event.name + ' page. Opens in a new window'">
-					<div>
-						<span>Take me there</span>
-						<svg width="80" height="80" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M111.792 100.722C112.681 100.722 113.451 100.366 114.014 99.8031C114.577 99.2401 114.933 98.4697 114.933 97.5808L114.933 61.6093C114.933 59.8907 113.51 58.4685 111.792 58.4685L75.8204 58.4685C74.1018 58.4685 72.6796 59.8908 72.6796 61.6094C72.6796 63.3279 74.1018 64.7502 75.8204 64.7502L104.207 64.7502L59.2008 109.756C57.986 110.971 57.986 112.986 59.2008 114.201C60.4157 115.416 62.4305 115.416 63.6454 114.201L108.651 69.1952L108.651 97.5808C108.651 99.2994 110.073 100.722 111.792 100.722Z" fill="currentColor"/>
-						</svg>
-					</div>
-				</a>
 			</li>
 			<!-- PAST EVENTs -->
 			<li class="ui5con-events-past" aria-hidden="true">Past</li>
@@ -65,19 +66,20 @@
 						<span class="ui5con-event-label">where</span>
 						<span class="ui5con-event-text">{{event.where}}</span>
 					</div>
-					<div class="ui5con-event-detail">
-						<span class="ui5con-event-label">when</span>
-						<span class="ui5con-event-text">{{event.when}}</span>
+					<div class="ui5con-event-detail-wrapper">
+						<div class="ui5con-event-detail">
+							<span class="ui5con-event-label">when</span>
+							<span class="ui5con-event-text">{{event.when}}</span>
+						</div>
+						<a class="ui5con-event-link" :href="event.link" rel="nofollow" target="_blank" :title="'Click to open ' + event.name + ' page. Opens in a new window'">
+							<div>
+								<svg width="80" height="80" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M111.792 100.722C112.681 100.722 113.451 100.366 114.014 99.8031C114.577 99.2401 114.933 98.4697 114.933 97.5808L114.933 61.6093C114.933 59.8907 113.51 58.4685 111.792 58.4685L75.8204 58.4685C74.1018 58.4685 72.6796 59.8908 72.6796 61.6094C72.6796 63.3279 74.1018 64.7502 75.8204 64.7502L104.207 64.7502L59.2008 109.756C57.986 110.971 57.986 112.986 59.2008 114.201C60.4157 115.416 62.4305 115.416 63.6454 114.201L108.651 69.1952L108.651 97.5808C108.651 99.2994 110.073 100.722 111.792 100.722Z" fill="currentColor"/>
+								</svg>
+							</div>
+						</a>
 					</div>
 				</div>
-				
-				<a class="ui5con-event-link" :href="event.link" rel="nofollow" target="_blank" :title="'Click to open ' + event.name + ' page. Opens in a new window'">
-					<div>
-						<svg width="80" height="80" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M111.792 100.722C112.681 100.722 113.451 100.366 114.014 99.8031C114.577 99.2401 114.933 98.4697 114.933 97.5808L114.933 61.6093C114.933 59.8907 113.51 58.4685 111.792 58.4685L75.8204 58.4685C74.1018 58.4685 72.6796 59.8908 72.6796 61.6094C72.6796 63.3279 74.1018 64.7502 75.8204 64.7502L104.207 64.7502L59.2008 109.756C57.986 110.971 57.986 112.986 59.2008 114.201C60.4157 115.416 62.4305 115.416 63.6454 114.201L108.651 69.1952L108.651 97.5808C108.651 99.2994 110.073 100.722 111.792 100.722Z" fill="currentColor"/>
-						</svg>
-					</div>
-				</a>
 			</li>
 		</ul>
 	</main>
