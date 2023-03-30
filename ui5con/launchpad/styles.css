@@ -143,6 +143,7 @@ main {
     rgba(168, 57, 0, 0.6) 0%,
     rgba(0, 0, 0, 0) 60%
   );
+  padding-bottom: 2rem;
 }
 
 .ui5con-event.upcoming .ui5con-event-detail-wrapper {
@@ -331,6 +332,7 @@ main {
     grid-column-start: 1;
     grid-row-end: 4;
     grid-column-end: 3;
+	padding-bottom: 8rem;
   }
 
   .ui5con-events-upcoming {
