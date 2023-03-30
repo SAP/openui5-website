@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,286 +10,86 @@
 	<meta name="robots" content="index, follow">
 	<meta name="author" content="SAP SE">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="launchpad/common.css">
 	<link rel="stylesheet" href="launchpad/styles.css">
-	<style>
-	.ov-header {
-		height: auto;
-	}
-
-	.ov-section-header.mod_info {
-		margin: 20px 0;
-	}
-
-	.ov-group {
-		width: 100%;
-		text-align: center;
-		margin: 0;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	.ov-tile {
-		width: 33%;
-		max-width: 640px;
-		padding: 24px;
-		box-sizing: border-box;
-		display: inline-block;
-		transition: all .5s ease-in; 
-	}
-
-	.ov-tile a:hover {
-		transform: scale(1.03);
-	}
-
-	.ov-tile a:focus {
-		outline: none;
-		transform: scale(1.05);
-	}
-
-	.b-heading {
-		font-size: 40px;
-		line-height: 60px;
-		color: #ffa242;
-		letter-spacing: 0.01em;
-		font-weight: 600;
-		margin-bottom: 150px;
-	}
-
-	.ov-tile > a,
-	.ov-tile > span {
-		width: 100%;
-		box-sizing: border-box;
-		xheight: 350px;
-		padding: 24px;
-		color: #FFDBCF;
-		position: relative;
-		text-align: center;
-		display: inline-block;
-		border-radius: 32px;
-		background: linear-gradient(180deg, rgba(168, 57, 0, 0.4) 0%, rgba(168, 57, 0, 0.2) 100%);
-		transition: all .5s ease-in; 
-	}
-
-	.ov-tile h2 {
-		font-weight: 400;
-		font-size: 32px;
-	}
-
-	.ov-tile div.ov-img {
-		background-size: contain;
-		background-repeat:no-repeat;
-		background-position: center center;
-		width: 70%;
-		margin: 40px auto;
-		height: 120px;
-	}
-
-	.ov-tile footer {
-		font-size: 20px;
-		margin-top: 26px;
-	}
-
-	.b-ui.margin_10 {
-		color: #F5DED8;
-	}
-
-	.b-font.color_yellow {
-		color: #FF5D17;
-	}
-
-	@media (max-width: 1380px) {
-		.ov-tile {
-			width: 45%;
-		}
-	}
-
-	@media (max-width: 1024px) {
-		.ov-tile {
-			width: 100%;
-		}
-
-		.ov-tile h2 {
-			font-size: 24px;
-		}
-
-		.ov-tile footer {
-			font-weight: normal;
-			font-size: 18px;
-		}
-
-		.b-heading {
-			font-size: 24px;
-			line-height: 36px;
-		}
-
-		.ov-tile div.ov-img {
-			margin: 20px auto;
-		}
-	}
-	</style>
-
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 </head>
 <body>
-<div class="b-page">
-	<div class="b-header ov-header">
-		<div class="b-bar"></div>
-		<div class="b-header__logo" style="margin-top: 35px;margin-bottom: 38px;"></div>
-		<div class="b-ui align_center">
-			<div class="b-heading">Community Conferences around OpenUI5 / SAPUI5</div>
-		</div>
-	</div>
-
-	<div class="b-section mod_agenda">
-		<div class="b-section mod_info ov-section-header">
-			<h1 class="b-font size_36 b-ui align_center color_yellow margin_20_0_30 grid-col&#45;&#45;12">
-				Upcoming
-			</h1>
-		</div>
-		<ul class="ov-group">
-			<li class="ov-tile">
-				<a href="germany2023/">
-					<h2>UI5con Germany 2023</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/UI5con.png')"></div>
-					<footer>July 6th, 2023</footer>
-				</a>
-			</li>
-		</ul>
-	</div>
-
-	<div class="b-section mod_agenda flex-container flex-wrap">
-
-		<div class="b-section mod_info ov-section-header">
-			<h1 class="b-font size_36 b-ui align_center color_yellow margin_20_0_30 grid-col&#45;&#45;12">
-				Past Events
-			</h1>
-		</div>
-
-		<ul class="ov-group">
-			<li class="ov-tile">
-				<a href="germany2022/">
-					<h2>UI5con Hybrid 2022</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/UI5conHybrid.svg')"></div>
-					<footer>July 7-8th, 2022</footer>
-				</a>
-			</li>
-			<li class="ov-tile">
-				<a href="onair2021/">
-					<h2>UI5con ON AIR 2021</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/UI5conONAIR.png')"></div>
-					<footer>June 16-17th, 2021</footer>
-				</a>
-			</li>
-			<li class="ov-tile">
-				<a href="onair2020/">
-					<h2>UI5con ON AIR 2020</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/UI5conONAIR.png')"></div>
-					<footer>July 9-10th, 2020</footer>
-				</a>
-			</li>
-			<li class="ov-tile">
-				<a href="germany2020/">
-					<h2>UI5con@SAP 2020</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/UI5con.png')"></div>
-					<footer>June 19th, 2020<div style="color: red;">[CANCELLED]</div></footer>
-				</a>
-			</li>
-			<li class="ov-tile">
-				<a href="belgium2020/">
-					<h2>UI5con Belgium</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/Belgium2020.png')"></div>
-					<footer>February 14th, 2020</footer>
-				</a>
-			</li>
-
-			<li class="ov-tile">
-				<a href="india2019">
-					<h2>UI5con India 2019</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/BLR.png')"></div>
-					<footer>July 4th, 2019</footer>
-				</a>
-			</li>
-
-			<li class="ov-tile">
-				<a href="germany2019">
-					<h2>UI5con@SAP 2019</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/UI5con.png')"></div>
-					<footer>June 28th, 2019</footer>
-				</a>
-			</li>
-
-			<li class="ov-tile">
-				<a href="india2019/material2018.html">
-					<h2>UI5con India 2018</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/BLR.png')"></div>
-					<footer>July 20th, 2018</footer>
-				</a>
-			</li>
-
-			<li class="ov-tile">
-				<a href="germany2019/material2018.html">
-					<h2>UI5con@SAP 2018</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/UI5con.png')"></div>
-					<footer>June 22nd, 2018</footer>
-				</a>
-			</li>
-
-			<li class="ov-tile">
-				<a href="germany2019/material2017.html">
-					<h2>UI5con@SAP 2017</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/UI5con2017.png')"></div>
-					<footer>June 30th, 2017</footer>
-				</a>
-			</li>
-
-			<!-- initial community events -->
-
-			<li class="ov-tile">
-				<a href="https://wiki.scn.sap.com/wiki/display/events/UI5con+Frankfurt+-+2017">
-					<h2>UI5con Frankfurt 2017</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/Frankfurt2017.png')"></div>
-					<footer>March 24th, 2017</footer>
-				</a>
-			</li>
-
-			<li class="ov-tile">
-				<a href="https://ui5con-a5a504e08.dispatcher.hana.ondemand.com">
-					<h2>UI5con Netherlands 2016</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/Netherlands2016.png')"></div>
-					<footer>November 25th, 2016</footer>
-				</a>
-			</li>
-
-			<li class="ov-tile">
-				<a href="https://wiki.scn.sap.com/wiki/display/events/UI5con+2016+-+Frankfurt">
-					<h2>UI5con Frankfurt 2016</h2>
-					<div class="ov-img" style="background-image: url('launchpad/data/pictures/Frankfurt.png')"></div>
-					<footer>March 11th, 2016</footer>
-				</a>
-			</li>
-
-		</ul>
-
-
-	</div>
-
-
-	<div class="b-section mod_info">
-
-	</div>
-
-
-
-	<div class="b-section mod_footer">
-		<div class="b-section-h">
-			<div class="b-ui align_center">
-				<div class="b-ui margin_10">&copy; SAP SE, made available under Apache License 2.0</div>
-				<a class="b-footerlink" href="https://www.sap.com/about/legal/impressum.html">Legal Disclosure/Impressum</a>
-				<a class="b-footerlink" href="http://global.sap.com/corporate-en/legal/privacy.epx">Privacy</a>
-				<a class="b-footerlink" href="http://www.sap.com/germany/about/legal/privacy.html">Datenschutz</a>
+	<header>
+		<div class="ui5con-header-container">
+			<div class="ui5con-logo-container">
+				<img class="ui5con-logo" src="launchpad/data/pictures/UI5con.png" alt="ui5con logo">
 			</div>
 		</div>
-	</div>
-</div>
+		
+		<div class="ui5con-header-container">
+			<div class="ui5con-heading-container">
+				<h1 class="ui5con-heading">Community Conferences <br> around OpenUI5 / SAPUI5</h1>
+			</div>
+		</div>
+	</header>
+	<main id="main">
+		<ul class="ui5con-event-list" aria-label="Upcoming and past UI5con events">
+			<!-- UPCOMING EVENT -->
+			<li class="ui5con-events-upcoming" aria-hidden="true">
+				Upcoming
+			</li>
+			<li v-for="event in upcomingEvents" class="ui5con-event upcoming" :aria-label="'Upcoming event ' + event.name">
+				<div class="ui5con-event-content">
+					<img class="ui5con-event-logo" :src="event.logo" :alt="'Logo of ' + event.name">
+					<div class="ui5con-event-detail">
+						<span class="ui5con-event-label">where</span>
+						<span class="ui5con-event-text">{{event.where}}</span>
+					</div>
+					<div class="ui5con-event-detail">
+						<span class="ui5con-event-label">when</span>
+						<span class="ui5con-event-text">{{event.when}}</span>
+					</div>
+				</div>
+				
+				<a class="ui5con-event-link" :href="event.link" rel="nofollow" target="_blank" :title="'Click to open ' + event.name + ' page. Opens in a new window'">
+					<div>
+						<span>Take me there</span>
+						<svg width="80" height="80" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M111.792 100.722C112.681 100.722 113.451 100.366 114.014 99.8031C114.577 99.2401 114.933 98.4697 114.933 97.5808L114.933 61.6093C114.933 59.8907 113.51 58.4685 111.792 58.4685L75.8204 58.4685C74.1018 58.4685 72.6796 59.8908 72.6796 61.6094C72.6796 63.3279 74.1018 64.7502 75.8204 64.7502L104.207 64.7502L59.2008 109.756C57.986 110.971 57.986 112.986 59.2008 114.201C60.4157 115.416 62.4305 115.416 63.6454 114.201L108.651 69.1952L108.651 97.5808C108.651 99.2994 110.073 100.722 111.792 100.722Z" fill="currentColor"/>
+						</svg>
+					</div>
+				</a>
+			</li>
+			<!-- PAST EVENTs -->
+			<li class="ui5con-events-past" aria-hidden="true">Past</li>
+			<li v-for="event in pastEvents" class="ui5con-event" :aria-label="'Past event ' + event.name">
+				<div class="ui5con-event-content">
+					<img class="ui5con-event-logo" :src="event.logo" :alt="'Logo of ' + event.name">
+					<div class="ui5con-event-detail">
+						<span class="ui5con-event-label">where</span>
+						<span class="ui5con-event-text">{{event.where}}</span>
+					</div>
+					<div class="ui5con-event-detail">
+						<span class="ui5con-event-label">when</span>
+						<span class="ui5con-event-text">{{event.when}}</span>
+					</div>
+				</div>
+				
+				<a class="ui5con-event-link" :href="event.link" rel="nofollow" target="_blank" :title="'Click to open ' + event.name + ' page. Opens in a new window'">
+					<div>
+						<svg width="80" height="80" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M111.792 100.722C112.681 100.722 113.451 100.366 114.014 99.8031C114.577 99.2401 114.933 98.4697 114.933 97.5808L114.933 61.6093C114.933 59.8907 113.51 58.4685 111.792 58.4685L75.8204 58.4685C74.1018 58.4685 72.6796 59.8908 72.6796 61.6094C72.6796 63.3279 74.1018 64.7502 75.8204 64.7502L104.207 64.7502L59.2008 109.756C57.986 110.971 57.986 112.986 59.2008 114.201C60.4157 115.416 62.4305 115.416 63.6454 114.201L108.651 69.1952L108.651 97.5808C108.651 99.2994 110.073 100.722 111.792 100.722Z" fill="currentColor"/>
+						</svg>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</main>
+	<footer class="ui5con-footer">
+		<div class="ui5con-footer-container">
+			<div class="ui5con-footer-text">&copy; SAP SE, made available under Apache License 2.0</div>
+			<a class="ui5con-footer-link" href="https://www.sap.com/about/legal/impressum.html" target="_blank" rel="noopener noreferrer" hreflang="en" title="Click to open the Legal Disclosure page. Opens in a new window.">Legal Disclosure/Impressum</a>
+			<a class="ui5con-footer-link" href="http://global.sap.com/corporate-en/legal/privacy.epx" target="_blank" rel="noopener noreferrer" hreflang="en" title="Click to open the Privacy page. Opens in a new window.">Privacy</a>
+			<a class="ui5con-footer-link" href="http://www.sap.com/germany/about/legal/privacy.html" target="_blank" rel="noopener noreferrer" hreflang="de" title="Click to open the Datenschutz page. Opens in a new window.">Datenschutz</a>
+		</div>
+	</footer>
+
+	<script src="./main.js"></script>
 </body>
 </html>
