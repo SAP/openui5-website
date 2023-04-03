@@ -44,7 +44,7 @@ Vue.component("footer-section", {
 <div class="ui5con-footer-container-wrapper">
   <div class="ui5con-footer-container links">
     <div class="ui5con-social-links-container">
-      <social-link link="https://twitter.com/ui5con" header="stay updated" title="ui5con twitter profile"></social-link>
+      <social-link link="https://twitter.com/openui5" header="stay updated" title="ui5con twitter profile"></social-link>
       <social-link link="https://www.youtube.com/c/openui5videos/playlists" header="see past events" title="ui5con past events youtube playlist"></social-link>
       <social-link link="mailto:openui5@sap.com?subject=[UI5con 2023] Question" header="reach out to us" title="openui5@sap.com email"></social-link>
     </div>
