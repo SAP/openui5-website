@@ -84,6 +84,24 @@ var main = new Vue({
                 where: 'Germany',
                 when: 'June 30 / 2017'
             },
+            {
+                name: 'UI5con Frankfurt 2017',
+                logo: 'launchpad/data/pictures/Frankfurt2017.png',
+                where: 'Germany',
+                when: 'March 24 / 2017'
+            },
+            {
+                name: 'UI5con Netherlands 2016',
+                logo: 'launchpad/data/pictures/Netherlands2016.png',
+                where: 'Netherlands',
+                when: 'November 25 / 2016'
+            },
+            {
+                name: 'UI5con Frankfurt 2016',
+                logo: 'launchpad/data/pictures/Frankfurt.png',
+                where: 'Germany',
+                when: 'March 11 / 2016'
+            },
         ],
     };
   },

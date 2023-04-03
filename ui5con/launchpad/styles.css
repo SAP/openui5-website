@@ -34,7 +34,6 @@ main {
   font-weight: 700;
   line-height: 150%;
   font-style: normal;
-  font-family: "Verdana";
   letter-spacing: 0.0625rem;
   text-transform: capitalize;
 }
@@ -71,7 +70,44 @@ main {
   flex-direction: column;
   justify-content: flex-end;
   border: var(--thinBorder);
-  padding: 1.5rem 0 1.5rem 1.5rem;
+  transition: all 0.5s ease;
+  padding: 1.5rem 0 1.5rem 1.5rem;  
+}
+
+.ui5con-event.upcoming:hover,
+.ui5con-event:hover {
+	--border-size: 0.0625rem;
+	--angle: 0turn;
+  
+	background-image: conic-gradient(
+		from var(--angle),
+		#1E1613,
+		#1E1613 50%,
+		#1E1613
+	  ),
+	  conic-gradient(from var(--angle), transparent 20%, #FF961E, #F95D11);
+	background-size: calc(100% - (var(--border-size) * 2))
+		calc(100% - (var(--border-size) * 2)),
+	  cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	animation: event-hover-animation 4s linear infinite;
+}
+
+@keyframes event-hover-animation {
+  to {
+    --angle: 1turn;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.ui5con-event:focus-within {
+  border-color: var(--brandColor);
 }
 
 .ui5con-event-content {
@@ -87,9 +123,9 @@ main {
 }
 
 .ui5con-event-detail-wrapper {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ui5con-event-detail {
@@ -147,8 +183,8 @@ main {
 }
 
 .ui5con-event.upcoming .ui5con-event-detail-wrapper {
-	width: fit-content;
-	flex-direction: column;
+  width: fit-content;
+  flex-direction: column;
 }
 
 .ui5con-event.upcoming .ui5con-event-logo {
@@ -332,7 +368,7 @@ main {
     grid-column-start: 1;
     grid-row-end: 4;
     grid-column-end: 3;
-	padding-bottom: 8rem;
+    padding-bottom: 8rem;
   }
 
   .ui5con-events-upcoming {
@@ -352,7 +388,7 @@ main {
   }
 
   .ui5con-heading {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .ui5con-events-upcoming {
@@ -386,11 +422,11 @@ main {
   }
 
   .ui5con-event.upcoming .ui5con-event-detail-wrapper {
-	width: 100%;
-	flex-direction: row;
-	align-items: flex-end;
-	justify-content: space-between;
-}
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 
   .ui5con-event.upcoming .ui5con-event-logo {
     width: 16.25rem;
@@ -412,7 +448,7 @@ main {
 
   .ui5con-event.upcoming .ui5con-event-link {
     margin: 0 4rem;
-	height: fit-content;
+    height: fit-content;
   }
 
   .ui5con-event.upcoming .ui5con-event-link div {
@@ -465,25 +501,5 @@ main {
     grid-row-start: 1;
     grid-column-start: 3;
     grid-column-end: 4;
-  }
-}
-
-@media (min-width: 2000px) {
-  .ui5con-event-list {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .ui5con-events-past {
-    grid-column-end: 5;
-  }
-}
-
-@media (min-width: 2800px) {
-  .ui5con-event-list {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  .ui5con-events-past {
-    grid-column-end: 6;
   }
 }
