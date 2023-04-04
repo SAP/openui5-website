@@ -119,6 +119,13 @@ var aboutTheTeam = new Vue({
           picture: 'images/team/katja-zoch.jpg',
           linkedin: 'http://linkedin.com/in/katjazoch',
         },
+        {
+          name: 'Sebastian Moreno',
+          city: 'Walldorf',
+          picture: 'images/team/sebastian-moreno.jpg',
+          linkedin: 'https://www.linkedin.com/in/sebastianmorenoagredo/',
+        },
+
       ],
       committee: [
         {
@@ -191,7 +198,6 @@ var aboutTheTeam = new Vue({
           linkedin: 'https://www.linkedin.com/in/marianzeis',
           github: 'https://github.com/marianfoo',
         },
-
 
       ],
     };
