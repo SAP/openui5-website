@@ -125,6 +125,13 @@ var aboutTheTeam = new Vue({
           picture: 'images/team/sebastian-moreno.jpg',
           linkedin: 'https://www.linkedin.com/in/sebastianmorenoagredo/',
         },
+        {
+          name: 'Diana Petcheva',
+          city: 'Sofia',
+          picture: 'images/team/diana-petcheva.webp',
+          github: 'https://github.com/didip1000',
+          linkedin: 'https://www.linkedin.com/in/diana-petcheva-5525a6207/',
+        },
 
       ],
       committee: [
