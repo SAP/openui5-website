@@ -34,7 +34,7 @@ main {
   font-weight: 700;
   line-height: 150%;
   font-style: normal;
-  letter-spacing: 0.0625rem;
+  letter-spacing: -0.0225rem;
   text-transform: capitalize;
 }
 
@@ -46,6 +46,7 @@ main {
 
 .ui5con-events-upcoming,
 .ui5con-events-past {
+  position: relative;
   display: flex;
   font-weight: 300;
   line-height: 130%;
@@ -66,44 +67,33 @@ main {
 }
 
 .ui5con-event {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border: var(--thinBorder);
   transition: all 0.5s ease;
-  padding: 1.5rem 0 1.5rem 1.5rem;  
+  padding: 1.5rem 0 1.5rem 1.5rem;
 }
 
-.ui5con-event.upcoming:hover,
-.ui5con-event:hover {
-	--border-size: 0.0625rem;
-	--angle: 0turn;
-  
-	background-image: conic-gradient(
-		from var(--angle),
-		#1E1613,
-		#1E1613 50%,
-		#1E1613
-	  ),
-	  conic-gradient(from var(--angle), transparent 20%, #FF961E, #F95D11);
-	background-size: calc(100% - (var(--border-size) * 2))
-		calc(100% - (var(--border-size) * 2)),
-	  cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	animation: event-hover-animation 4s linear infinite;
+.ui5con-event.upcoming:after,
+.ui5con-event:after {
+  opacity: 0;
+  transition: all .5s ease-in-out;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
-@keyframes event-hover-animation {
-  to {
-    --angle: 1turn;
-  }
-}
-
-@property --angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0turn;
+.ui5con-event.upcoming:hover:after,
+.ui5con-event:hover:after {
+  opacity: 1;
+  background: linear-gradient(-45deg, rgba(255,255,255,.02) 0%, rgba(255,255,255,.08) 100%);
+  transition: opacity .5s ease-in-out;
 }
 
 .ui5con-event:focus-within {
@@ -169,6 +159,7 @@ main {
 
 .ui5con-event-link:hover div {
   transform: scale(1.5);
+  color: var(--brandColor);
 }
 
 .ui5con-event.upcoming {
