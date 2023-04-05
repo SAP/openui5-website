@@ -9,7 +9,6 @@
 	<meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
 	<meta name="robots" content="index, follow">
 	<meta name="author" content="SAP SE">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="launchpad/common.css">
 	<link rel="stylesheet" href="launchpad/styles.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
@@ -21,7 +20,7 @@
 				<img class="ui5con-logo" src="launchpad/data/pictures/UI5con.png" alt="ui5con logo">
 			</div>
 		</div>
-		
+
 		<div class="ui5con-header-container">
 			<div class="ui5con-heading-container">
 				<h1 class="ui5con-heading">Community Conferences <br> around OpenUI5 / SAPUI5</h1>
@@ -36,7 +35,7 @@
 			</li>
 			<li v-for="event in upcomingEvents" class="ui5con-event upcoming" :aria-label="'Upcoming event ' + event.name">
 				<div class="ui5con-event-content">
-					<img class="ui5con-event-logo" :src="event.logo" :alt="'Logo of ' + event.name">
+					<img class="ui5con-event-logo" :src="event.logo" :alt="'Logo of ' + event.name" loading="lazy">
 					<div class="ui5con-event-detail">
 						<span class="ui5con-event-label">where</span>
 						<span class="ui5con-event-text">{{event.where}}</span>
@@ -61,7 +60,7 @@
 			<li class="ui5con-events-past" aria-hidden="true">Past</li>
 			<li v-for="event in pastEvents" class="ui5con-event" :aria-label="'Past event ' + event.name">
 				<div class="ui5con-event-content">
-					<img class="ui5con-event-logo" :src="event.logo" :alt="'Logo of ' + event.name">
+					<img class="ui5con-event-logo" :src="event.logo" :alt="'Logo of ' + event.name" loading="lazy">
 					<div class="ui5con-event-detail">
 						<span class="ui5con-event-label">where</span>
 						<span class="ui5con-event-text">{{event.where}}</span>
