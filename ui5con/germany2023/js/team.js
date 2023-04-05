@@ -132,6 +132,19 @@ var aboutTheTeam = new Vue({
           github: 'https://github.com/didip1000',
           linkedin: 'https://www.linkedin.com/in/diana-petcheva-5525a6207/',
         },
+        {
+          name: 'Arthur Trauter',
+          city: 'Walldorf',
+          picture: 'images/team/arthur-trauter.webp',
+          github: 'https://github.com/ArthurTrauter',
+          twitter: 'https://twitter.com/ArthurTrauter',
+        },
+        {
+          name: 'Jan Mummenthaler',
+          city: 'Heidelberg',
+          picture: 'images/team/jan-mummenthaler.webp',
+          github: 'https://github.com/loginger'
+        },
 
       ],
       committee: [
