@@ -10,7 +10,7 @@ speakers:
   -  Martin Häuser
   -  Oliver Stoyanovski
   -  Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/ariruRs1Pvg
 ---
 In this episode we have Dominik Feininger as a guest. He recently reworked the string replacer tooling extensions and will explain his changes as well as the new features he introduced. Dominik will also talk about how he centralized the tooling extension into a common NPM package (ui5-tooling-stringreplace) and why this makes sense.
 We will also focus on some usability enhancements we recently published for the UI5 table personalization. For example, we have added a filter-bar-like functionality in the filter panel of the personalization dialog and a new column header personalization menu. Martin Häuser and Oliver Stoyanovski will introduce these enhancements to you.
