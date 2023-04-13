@@ -27,7 +27,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <script src="./js/svgs.js"></script>
-  <!-- <script src="https://js.tito.io/v2/with/inline" async></script> -->
+  <script src="https://js.tito.io/v2/with/inline" async></script>
 </head>
 <body>
   <header class="ui5con-header" id="header">
@@ -37,10 +37,10 @@
     <div class="ui5con-header-container">
       <div class="ui5con-annonce-container">
         <h1 class="ui5con-annonce" v-cloak>
-          <span>We're back for 2023!</span>
+          <span>Registration<br> opens April 27th</span>
         </h1>
         <p>Join us in-person July 6th</p>
-        <p class="ui5con-annonce-location">SAP-Allee 27, 68789 St. Leon-Rot (Germany)</p>
+        <!-- <p class="ui5con-annonce-location">SAP-Allee 27, 68789 St. Leon-Rot (Germany)</p> -->
       </div>
 
       <div class="ui5con-gallery-carousel">
@@ -68,26 +68,25 @@
   <main id="main" class="ui5con-main">
     <section class="ui5con-details-section">
       <div class="ui5con-details">
-        <detail :svg="svgs.learn" header="learn.">
-          At UI5con rookies, experienced, and expert developers are gathering to learn more about the framework and its features from each other.
+        <detail :svg="svgs.connect" header="what.">
+          UI5con is meant to connect all the geeks out there and provide a common platform to get to know each other, discuss innovations, and find solutions.
         </detail>
-        <detail :svg="svgs.explore" header="explore.">
-          UI5con is a free of charge event for UI5 enthusiasts to meet in person and find out what’s happening in the UI5 world.
+        <detail :svg="svgs.explore" header="where.">
+          In-person July 6th at SAP-Allee 27, 68789 St. Leon-Rot (Germany)
         </detail>
-        <detail :svg="svgs.connect" header="connect.">
-          UI5con is meant to connect all the geeks out there — have a common platform to get to know each other, discuss innovations and find solutions.
+        <detail :svg="svgs.currency" header="how.">
+          UI5con is a free of charge event for UI5 enthusiasts to meet and find out what’s happening in the UI5 world.
         </detail>
       </div>
     </section>
 
-    <!-- <section class="ui5con-ticket-section">
+    <section class="ui5con-ticket-section" id="tickets">
 
       <h2 class="ui5con-ticket-heading">Get your <span>tickets</span></h2>
 
       <tito-widget event="ui5con-and-recap/ui5con-and-recap-2023" releases="ui5con-2023,ui5con-recap-2023"></tito-widget>
 
-    </section> -->
-
+    </section>
 
     <section class="ui5con-save-date-section">
       <div class="ui5con-save-date">

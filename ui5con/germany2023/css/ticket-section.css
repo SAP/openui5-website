@@ -33,28 +33,33 @@
   animation: textclip 10s linear infinite alternate;
 }
 
+#tickets {
+  scroll-behavior: smooth;
+}
 
 .ui5con-ticket-section .tito-widget {
   margin: 0;
   font-family: "72", Arial, Helvetica, sans-serif;
   color: var(--sapTextColor);
+  justify-content: flex-start;
 }
 
 .ui5con-ticket-section .tito-widget-form {
   border-color: var(--ui5BrandAltColor);
-  border-width: 0px;
-  padding: 1rem 2rem 1rem 2rem;
-  border-radius: var(--ui5ElementBorderRadius);
-  background: linear-gradient( 180deg, rgba(168, 57, 0, 0.4) 0%, rgba(168, 57, 0, 0.2) 100% );
+  border-width: 0;
+  padding: 1rem 0 1rem 0;
+  background: transparent;
 }
 
 .ui5con-ticket-section .tito-widget .tito-widget-form .tito-release {
-  border-color: var(--ui5BrandAltColor);
+  border-color: #fff;
+  padding-top: 1.563rem;
+  padding-bottom: 1.563rem;
 }
 
 .ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-release--title {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--ui5TextAccentTextColor);
 }
 
@@ -65,6 +70,19 @@
 
 .ui5con-ticket-section .tito-price {
   color: var(--sapTextColor);
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-release--status {
+  background: transparent;
+  border-color: #fff;
+  color: var(--sapTextColor);
+  font-size: 1.5rem;
+  text-transform: none;
+  line-height: 2;
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-release--status span {
+  font-size: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -87,6 +105,6 @@
   .ui5con-ticket-heading {
     font-size: 5rem;
     line-height: 5.75rem;
-    text-align: center;
+    text-align: left;
   }
 }

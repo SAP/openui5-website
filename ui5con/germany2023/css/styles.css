@@ -36,7 +36,7 @@
   --ui5ButtonBackgroundGradient1: radial-gradient(circle at 100% 150%, rgba(168, 57, 0, .6) 0%, rgba(0,0,0,0) 60% );
   --ui5ButtonBackgroundGradient2: radial-gradient(circle at 70% 120%, rgba(168, 57, 0, .6) 0%, rgba(0,0,0,0) 60% );
   --ui5ButtonBackgroundGradient3: radial-gradient(circle at 70% -50%, rgba(168, 57, 0, .7) 0%, rgba(0,0,0,0) 60% );
-  --ui5ButtonBackgroundGradient4: radial-gradient(circle at 10% 60%, rgba(168, 57, 0, .3) 0%, rgba(0,0,0,0) 20% );
+  --ui5ButtonBackgroundGradient4: radial-gradient(circle at 10% 60%, rgba(168, 57, 0, .3) 0%, rgba(0,0,0,0) 20% ), radial-gradient(circle at 10% 20%, rgba(168, 57, 0, .3) 0%, rgba(0,0,0,0) 15% );
 
   --reCapBackgroundGradient: linear-gradient(88.51deg, #0090DA 25%, #00C8E8 100%);
 
@@ -68,8 +68,8 @@
 
   --ui5AnnonceFontSize: 3.5rem;
   --ui5AnnonceLineHeight: 4rem;
-  --ui5AnnonceFontSizeL: 7rem;
-  --ui5AnnonceLineHeightL: 7.9rem;
+  --ui5AnnonceFontSizeL: 5.5rem;
+  --ui5AnnonceLineHeightL: 6.25rem;
 
   --ui5ButtonFontSize: 1rem;
   --ui5ButtonLineHeight: 1.125rem;
