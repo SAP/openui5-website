@@ -7,15 +7,25 @@
 
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/countdown.css">
+  <!-- <link rel="stylesheet" href="./css/countdown.css"> -->
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <script src="https://js.tito.io/v2/with/inline" async></script>
+</head>
 </head>
 <body>
 
   <main>
-    <section id="countdown">
+
+    <section class="ui5con-ticket-section" id="tickets">
+
+      <h2 class="ui5con-ticket-heading">Get your <span>tickets</span></h2>
+
+      <tito-widget event="ui5con-and-recap/ui5con-and-recap-2023" releases="ui5con-2023,ui5con-recap-2023,test-ticket"></tito-widget>
+
+    </section>
+    <!-- <section id="countdown">
       <h3 class="ui5con-container__countdown-header"><span>DAY 1</span> STARTING IN</h3>
       <div class="ui5con-container__countdown">
         <div class="ui5con-container__countdown-block">
@@ -31,7 +41,7 @@
           <p class="ui5con-container__countdown-text">minutes</p>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
