@@ -1,0 +1,25 @@
+.ui5con-speakers-section {
+  gap: 7.5rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 8rem 1.25rem 3.75rem 1.25rem;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .ui5con-speakers-section {
+    padding: 7.5rem 4rem 3.75rem 4rem;
+  }
+
+ 
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui5con-speakers-section {
+    gap: 6rem;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 10.75rem 6rem 7rem;
+  }
+}

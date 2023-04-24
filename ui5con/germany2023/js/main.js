@@ -14,10 +14,11 @@ var header = new Vue({
     hideCalendars() {
       this.isCalendarsVisible = false;
     },
+    test() {
+      return this.inna;
+    }
   },
-  mounted() {
-
-  }
+  mounted() {}
 });
 
 var main = new Vue({
@@ -28,10 +29,16 @@ var main = new Vue({
       isModalVisible: false,
       isCalendarsVisible: false,
       isToggled: false,
+      speakers: [],
     };
   },
   mounted() {
     // console.log(this.createCalendars());
+    axios
+    .get('https://ui5con2023.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
+    .then(response => {
+      this.speakers = response.data;
+    })
   },
   methods: {
     showCalendars() {

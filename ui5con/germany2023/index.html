@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <script src="./js/svgs.js"></script>
   <script src="https://js.tito.io/v2/with/inline" async></script>
+
+
 </head>
 <body>
   <header class="ui5con-header" id="header">
@@ -139,6 +141,21 @@
         </div>
       </div>
     </section>
+    <!-- <section class="ui5con-speakers-section">
+      <ul class="ui5con-people-list ui5con-people-list--team" role="list" v-if="speakers">
+        <li class="ui5con-people-list-item" v-for="speaker in speakers" :key="speaker.firstName" role="listitem">
+          <figure class="ui5con-people-member">
+            <div class="frame">
+              <img :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName}`">
+            </div>
+            <figcaption>
+              <h3 class="ui5con-people-name">{{speaker.firstName}} {{speaker.lastName}}</h3>
+              <p class="ui5con-people-country">{{speaker.company}}</p>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section> -->
     <section class="ui5con-sponsors-section">
       <h2 class="ui5con-sponsors-heading">Meet our <span>sponsors</span></h2>
       <ul class="ui5con-sponsors-logos ui5con-sponsors-logos diamond">
@@ -231,6 +248,7 @@
   <script src="./components/footer-section.component.js"></script>
   <script src="./components/header-section.component.js"></script>
 
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/sendinblue.js"></script>
   <script src="./js/a11y-dialog.min.js"></script>
