@@ -142,8 +142,8 @@
       </div>
     </section>
     <!-- <section class="ui5con-speakers-section">
-      <ul class="ui5con-people-list ui5con-people-list--team" role="list" v-if="speakers">
-        <li class="ui5con-people-list-item" v-for="speaker in speakers" :key="speaker.firstName" role="listitem">
+      <ul class="ui5con-people-list ui5con-people-list--team" role="list" v-if="shuffledSpeakers">
+        <li class="ui5con-people-list-item" v-for="speaker in shuffledSpeakers" :key="speaker.firstName" role="listitem">
           <figure class="ui5con-people-member">
             <div class="frame">
               <img :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName}`">

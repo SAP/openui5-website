@@ -30,6 +30,7 @@ var main = new Vue({
       isCalendarsVisible: false,
       isToggled: false,
       speakers: [],
+      shuffledSpeakers: [],
     };
   },
   mounted() {
@@ -38,6 +39,7 @@ var main = new Vue({
     .get('https://ui5con2023.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
     .then(response => {
       this.speakers = response.data;
+      this.shuffledSpeakers = this.shuffleSpeakersArray(this.speakers).slice(0, 5);
     })
   },
   methods: {
@@ -126,6 +128,18 @@ var main = new Vue({
         ]
       }
 
+    },
+    shuffleSpeakersArray(array) {
+      const newArray = [...array]
+      const length = newArray.length
+
+      for (let start = 0; start < length; start++) {
+        const randomPosition = Math.floor((newArray.length - start) * Math.random());
+        const randomItem = newArray.splice(randomPosition, 1);
+        newArray.push(...randomItem);
+      }
+
+      return newArray;
     }
   },
 });
