@@ -39,7 +39,7 @@ var main = new Vue({
     .get('https://ui5con2023.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
     .then(response => {
       this.speakers = response.data;
-      this.shuffledSpeakers = this.shuffleSpeakersArray(this.speakers).slice(0, 6);
+      this.shuffledSpeakers = this.shuffleSpeakersArray(this.speakers).slice(0, 5);
     })
   },
   methods: {
@@ -156,7 +156,7 @@ var main = new Vue({
             window.removeEventListener('scroll', f)
           }
         }
-        
+
         window.addEventListener('scroll', f)
         f()
       }
