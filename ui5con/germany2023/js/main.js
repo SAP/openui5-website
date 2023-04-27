@@ -39,7 +39,7 @@ var main = new Vue({
     .get('https://ui5con2023.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
     .then(response => {
       this.speakers = response.data;
-      this.shuffledSpeakers = this.shuffleSpeakersArray(this.speakers).slice(0, 5);
+      this.shuffledSpeakers = this.shuffleSpeakersArray(this.speakers).slice(0, 6);
     })
   },
   methods: {
@@ -131,17 +131,37 @@ var main = new Vue({
     },
     shuffleSpeakersArray(array) {
       const newArray = [...array]
-      const length = newArray.length
+      const filteredArray = newArray.filter((el) => el.bio && el.bio != '');
+      const length = filteredArray.length
 
       for (let start = 0; start < length; start++) {
-        const randomPosition = Math.floor((newArray.length - start) * Math.random());
-        const randomItem = newArray.splice(randomPosition, 1);
-        newArray.push(...randomItem);
+        const randomPosition = Math.floor((filteredArray.length - start) * Math.random());
+        const randomItem = filteredArray.splice(randomPosition, 1);
+        filteredArray.push(...randomItem);
       }
 
-      return newArray;
+      return filteredArray;
     }
   },
+  directives: {
+    infocus: {
+      isLiteral: true,
+      inserted: (el, binding, vnode) => {
+        let f = () => {
+          let rect = el.getBoundingClientRect();
+          let inView = rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+
+          if (inView) {
+            el.classList.add(binding.value)
+            window.removeEventListener('scroll', f)
+          }
+        }
+        
+        window.addEventListener('scroll', f)
+        f()
+      }
+    }
+  }
 });
 
 var aboutTheTeam = new Vue({

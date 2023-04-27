@@ -157,6 +157,7 @@
   text-align: center;
   margin-top: 5rem;
   flex-grow: 1;
+  margin-bottom: 3rem;
 }
 
 .ui5con-annonce-container p {
@@ -286,6 +287,7 @@
 
   .ui5con-annonce-container {
     margin-top: 12rem;
+    margin-bottom: 0;
   }
 
   .ui5con-annonce-container,

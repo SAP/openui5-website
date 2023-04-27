@@ -64,8 +64,13 @@
   justify-content: center;
 }
 
+.ui5con-people-list--speakers {
+  margin-bottom: 0;
+}
+
 .ui5con-people-list-item {
   position: relative;
+  flex: 0 0 0;
 }
 
 .ui5con-people-list-item:after {
@@ -81,6 +86,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+.ui5con-people-list--speakers .ui5con-people-list-item:after {
+  display: none;
+}
+
 .ui5con-people-member {
   margin: 0;
 }
@@ -91,12 +100,21 @@
   padding: 1rem 1.7rem 2.7rem;
 }
 
+.ui5con-people-list--speakers .ui5con-people-member figcaption {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .ui5con-people-member .frame {
-  background: rgba(255, 140, 95, .5);
   border-radius: .5rem;
   width: 14.125rem;
   height: 14.125rem;
   overflow: hidden;
+}
+
+.ui5con-people-list--speakers .ui5con-people-member .frame {
+  width: 12rem;
+  height: 15rem;
 }
 
 .ui5con-people-member img {
@@ -105,6 +123,10 @@
   display: block;
   object-fit: cover;
   transition: all .5s linear;
+}
+
+.ui5con-people-list--speakers .ui5con-people-member img {
+  height: 15rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -119,6 +141,16 @@
 
   .ui5con-people-member img {
     height: 18.125rem;
+  }
+
+  .ui5con-people-list--speakers .ui5con-people-member .frame {
+    width: 16rem;
+    height: 20rem;
+  }
+
+  .ui5con-people-list--speakers .ui5con-people-member img {
+    height: 20rem;
+    
   }
 
   .ui5con-people-heading h2 {
@@ -144,6 +176,12 @@
 
 .ui5con-people-country {
   color: var(--ui5BrandColor);
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.ui5con-people-list--speakers .ui5con-people-country {
+  font-size: var(--ui5TextFontSizeL);
 }
 
 .ui5con-people-socials {
@@ -193,5 +231,12 @@
     font-size: 7rem;
     line-height: 7.5rem;
     padding: 6rem;
+  }
+
+  .ui5con-people-list--speakers {
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
   }
 }
