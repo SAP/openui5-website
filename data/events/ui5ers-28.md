@@ -5,9 +5,9 @@ startDate: 2023/06/15 15:15 UTC+2
 endDate: 2023/06/15 16:00 UTC+2
 location: via ZOOM
 logo: ./logos/ui5ers.svg
-speakers
-Arnaud Buchholz
-Alexandar Mitsev
+speakers:
+- Arnaud Buchholz
+- Alexandar Mitsev
 url: https://sap-se.zoom.com/j/94833714827
 ---
 The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. 
