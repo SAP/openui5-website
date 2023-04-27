@@ -43,6 +43,20 @@
   scroll-margin-top: 4em;
 }
 
+.ui5con-ticket-alternate {
+  font-size: 1.125rem;
+  margin-top: -3rem;
+}
+
+.ui5con-ticket-alternate a {
+  color: var(--ui5BrandColor);
+}
+
+.ui5con-ticket-alternate a:hover,
+.ui5con-ticket-alternate a:focus {
+  text-decoration: none;
+}
+
 .ui5con-ticket-section .tito-widget {
   margin: 0;
   font-family: "72", Arial, Helvetica, sans-serif;
