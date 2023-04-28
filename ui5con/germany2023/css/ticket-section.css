@@ -155,6 +155,25 @@
   border-color: var(--ui5BrandAltColor);
 }
 
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button {
+  background: var(--ui5BrandAltColor);
+  border-color: var(--ui5BrandAltColor);
+  font-size: 1.125rem;
+  color: #fff;
+  height: auto;
+  letter-spacing: normal;
+  line-height: auto;
+  text-transform: normal;
+  padding: .5rem 1rem;
+}
+
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button:hover,
+.ui5con-ticket-section .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button:focus {
+  background: var(--ui5BrandColor);
+  border-color: var(--ui5BrandColor);
+}
+
+
 .ui5con-facts {
   list-style: none;
   text-align: center;
