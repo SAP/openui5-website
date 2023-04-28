@@ -173,7 +173,6 @@
   border-color: var(--ui5BrandColor);
 }
 
-
 .ui5con-facts {
   list-style: none;
   text-align: center;
@@ -250,6 +249,15 @@
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
+  opacity: 0;
+  animation: fadein 1s ease-in forwards;
+  animation-play-state: paused;
+  will-change: opacity;
+}
+
+.ui5con-facts:has(li.ui5con-facts-item-5) + .ui5con-facts-text {
+  animation-delay: 3.5s;
+  animation-play-state: running;
 }
 
 @media only screen and (min-width: 768px) {

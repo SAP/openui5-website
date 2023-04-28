@@ -162,7 +162,7 @@
 
 .ui5con-annonce-container p {
   font-weight: bold;
-  margin: 1.5rem 0;
+  margin: 2.5rem 0;
   color: var(--ui5TextAccentTextColor);
   font-size: var(--ui5AnnonceTextFontSize);
   line-height: var(--ui5AnnonceTextLineHeight);
@@ -183,6 +183,7 @@
   text-align: center;
   font-size: var(--ui5AnnonceFontSize);
   line-height: var(--ui5AnnonceLineHeight);
+  margin-bottom: .4rem;
 }
 
 .ui5con-annonce span {
@@ -297,6 +298,13 @@
 
   .ui5con-header-section {
     padding: 2rem 6rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .ui5con-annonce {
+    font-size: 7.5rem;
+    line-height: 1.1;
   }
 }
 
