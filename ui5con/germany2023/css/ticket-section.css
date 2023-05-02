@@ -11,6 +11,12 @@
   gap: 0;
 }
 
+.ui5con-ticket-waiting-list {
+  max-width: 800px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
 .ui5con-ticket-heading {
   margin: 0;
   font-size: 2.5rem;
