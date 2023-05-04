@@ -6,10 +6,13 @@ endDate: 2023/05/11 16:00 UTC+2
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
+  -  Mike Zaschka
+  -  Peter Muessig
+  -  Andreas Kunz
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. 
-What we can say already now is that Mike Zaschka accepted our invitation to discuss his UI5 project experiences with us.
+Let's continue our discussion about TypeScript, this time with the focus on UI5. Andreas and Peter have been quite busy in the last months and made considerable progress towards implementing TypeScript support in UI5. They want to share the latest state of affairs with you.
+In addition, we invited Mike Zaschka to talk about his [ChatGPT-like chat UI5](https://github.com/p36-io/cap-ui5-gpt-chat) built with UI5 and to discuss the findings he gained from complex UI5 projects with regard to project structure, utility functions, event handlers, and more.
 
 If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
 [#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
