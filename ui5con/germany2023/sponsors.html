@@ -107,6 +107,10 @@
                   <a :href="sponsor.instagram" :aria-label="`Instagram profile of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.instagram">
                   </a>
                 </li>
+                <li v-if="sponsor.youtube">
+                  <a :href="sponsor.youtube" :aria-label="`Youtube page of ${sponsor.name}`" rel="nofollow" target="_blank" v-html="svgs.youtube">
+                  </a>
+                </li>
               </ul>
             </div>
             <p class="ui5con-sponsors-info" v-html="sponsor.info"></p>

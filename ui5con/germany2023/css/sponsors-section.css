@@ -42,6 +42,10 @@
   justify-content: center;
 }
 
+.ui5con-sponsors-logos li {
+  align-self: center;
+}
+
 .ui5con-sponsors-logos a {
   outline: none;
   display: block;
