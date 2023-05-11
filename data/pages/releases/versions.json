@@ -10,23 +10,23 @@
     "eom": ""
   },
   {
-    "version": "1.111.3",
-    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.111.3/openui5-runtime-1.111.3.zip",
-    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.111.3/openui5-sdk-1.111.3.zip",
-    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.111.3/openui5-runtime-mobile-1.111.3.zip",
-    "url_demokit": "https://sdk.openui5.org/1.111.3/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.111.3/#releasenotes.html",
-    "release_date": "21.04.2023",
+    "version": "1.111.4",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.111.4/openui5-runtime-1.111.4.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.111.4/openui5-sdk-1.111.4.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.111.4/openui5-runtime-mobile-1.111.4.zip",
+    "url_demokit": "https://sdk.openui5.org/1.111.4/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.111.4/#releasenotes.html",
+    "release_date": "08.05.2023",
     "eom": ""
   },
   {
-    "version": "1.108.10",
-    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.108.10/openui5-runtime-1.108.10.zip",
-    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.108.10/openui5-sdk-1.108.10.zip",
-    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.108.10/openui5-runtime-mobile-1.108.10.zip",
-    "url_demokit": "https://sdk.openui5.org/1.108.10/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.108.10/#releasenotes.html",
-    "release_date": "02.05.2023",
+    "version": "1.108.11",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.108.11/openui5-runtime-1.108.11.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.108.11/openui5-sdk-1.108.11.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.108.11/openui5-runtime-mobile-1.108.11.zip",
+    "url_demokit": "https://sdk.openui5.org/1.108.11/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.108.11/#releasenotes.html",
+    "release_date": "11.05.2023",
     "eom": "Q4/2027"
   },
   {
