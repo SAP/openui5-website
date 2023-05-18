@@ -131,7 +131,7 @@ var main = new Vue({
     },
     shuffleSpeakersArray(array) {
       const newArray = [...array]
-      const filteredArray = newArray.filter((el) => el.bio && el.bio != '');
+      const filteredArray = newArray.filter((el) => el.hasPhoto);
       const length = filteredArray.length
 
       for (let start = 0; start < length; start++) {
