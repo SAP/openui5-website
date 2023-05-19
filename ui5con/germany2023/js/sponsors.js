@@ -14,13 +14,6 @@ var sponsors = new Vue({
     return {
       packages: [
         {
-          package: 'Slots available',
-          diamond: '1',
-          platinum: '<del>2</del> <ins>1</ins>',
-          gold: '<del>8</del> <ins>5</ins>',
-          silver: 'unlimited'
-        },
-        {
           package: 'Price (exclusive of VAT)',
           diamond: '10,000 €',
           platinum: '5,000 €',
