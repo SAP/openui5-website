@@ -30,17 +30,28 @@ var main = new Vue({
       isCalendarsVisible: false,
       isToggled: false,
       speakers: [],
+      lineup: [],
       shuffledSpeakers: [],
+      eventTime: 'event',
+      filter: 'all',
+      formattedLineup: [],
+      activeSpeakers: null,
     };
   },
   mounted() {
-    // console.log(this.createCalendars());
     axios
     .get('https://ui5con2023.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
     .then(response => {
       this.speakers = response.data;
       this.shuffledSpeakers = this.shuffleSpeakersArray(this.speakers).slice(0, 5);
-    })
+    });
+
+    axios
+    .get('https://ui5con2023.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
+    .then(response => {
+      this.lineup = response.data;
+      this.formattedLineup = this.formatLineup();
+    });
   },
   methods: {
     showCalendars() {
@@ -141,6 +152,243 @@ var main = new Vue({
       }
 
       return filteredArray;
+    },
+    getLocalTimeZone() {
+      return luxon.DateTime.now().toFormat('Z');
+    },
+    onTimeChange($event) {
+      this.eventTime = $event.target.value;
+    },
+    getLocalTimeZone() {
+      return luxon.DateTime.now().toFormat('Z');
+    },
+    onFilterChange($event) {
+      this.filter = $event.target.value;
+      this.formattedLineup = this.formatLineup();
+    },
+    convertTime: function(value, eventTime) {
+      if(eventTime === 'local') {
+       return luxon.DateTime.fromISO(value).toLocal().toISO({ suppressMilliseconds:true });
+      }
+      return value;
+    },
+    openSpeakerInfoModal(speakers, id) {
+      this.activeSpeakers=speakers;
+      this.$refs.agenda.ariaHidden = true;
+      this.$refs.speakerModal.ariaHidden = false;
+      this.$refs.speakerModal.style.display = 'flex';
+      this.lastFocussedElementID = id;
+
+      setTimeout(() => {
+        this.$refs.speakerModal.focus();
+      }, 0);
+    },
+    closeSpeakerInfoModal() {
+      this.activeSpeakers=null;
+      this.$refs.agenda.ariaHidden = false;
+      this.$refs.speakerModal.ariaHidden = true;
+      this.$refs.speakerModal.style.display = 'none';
+
+      for (const key in this.$refs ) {
+        if (key.startsWith('twitter') || key.startsWith('github') || key.startsWith('linkedin')) {
+          delete this.$refs[key];
+        }
+      }
+      document.getElementById(this.lastFocussedElementID).focus();
+    },
+    focusTrapModal($event) {
+      let focussableElements = [];
+      focussableElements.push(this.$refs.close);
+
+      for (const key in this.$refs ) {
+        if (key.startsWith('twitter') || key.startsWith('github') || key.startsWith('linkedin')) {
+          const element = this.$refs[key];
+          if(Array.isArray(element)) {
+            focussableElements.push(element[0]);
+          } else {
+            focussableElements.push(element);
+          }
+        }
+      }
+
+      const filteredFocussableElements = focussableElements.filter(el => el !== undefined);
+      const activeElementIndex = filteredFocussableElements.indexOf($event.target);
+
+      if(activeElementIndex != filteredFocussableElements.length - 1) {
+        if($event.shiftKey) {
+          if(activeElementIndex === 0) {
+            filteredFocussableElements[filteredFocussableElements.length - 1].focus();
+          } else {
+            filteredFocussableElements[activeElementIndex-1].focus();
+          }
+        } else {
+          filteredFocussableElements[activeElementIndex+1].focus();
+        }
+      } else {
+        if($event.shiftKey) {
+          filteredFocussableElements[activeElementIndex-1].focus();
+        } else {
+          filteredFocussableElements[0].focus();
+        }
+      }
+    },
+    formatText: function(value) {
+      if (value) {
+        return value.replace(/&amp;/g, "&");
+      }
+    },
+    formatLineup() {
+      const tempLineUp = this.lineup.map(session => {
+        session.speakers.map(speaker => {
+          let speakerTweeter = speaker.twitterHandle;
+          let speakerLinkedIn = speaker.linkedInUrl;
+
+          if(speakerTweeter && !speakerTweeter.startsWith('https:')) {
+            speaker.twitterHandle = "https://twitter.com/" + speakerTweeter;
+          }
+
+          if(speakerLinkedIn && !speakerLinkedIn.startsWith('https:')) {
+            speaker.linkedInUrl = "https://www.linkedin.com/in/" + speakerLinkedIn;
+          }
+        })
+
+        let start = session.startTime;
+        let end = session.endTime;
+
+        let tempStart = start.substring(0, start.indexOf(":"));
+        let tempEnd = end.substring(0, end.indexOf(":"));
+
+        if((tempStart.length == 1) && (!tempStart.startsWith("0"))) {
+          start = "0" + start;
+        }
+
+        if((tempEnd.length == 1) && (!tempEnd.startsWith("0"))) {
+          end = "0" + end;
+        }
+
+        let newStartTime = "2023-07-06T" + start + ":00.000+02:00";
+        let newEndTime = "2023-07-06T" + end + ":00.000+02:00";
+
+        let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
+        let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
+
+        let officeStartDate = new Date(newStartTime).toISOString();
+        let officeEndDate = new Date(newEndTime).toISOString();
+
+        const forbiddenCharacters = new RegExp('#', 'g');
+        const removeForbiddenCharachters = (text) => {
+            if (typeof text === 'string') {
+              let formattedText = text.replace(/(&amp;|&)/g, " and ");
+              return formattedText.replace(forbiddenCharacters, '');
+            }
+            return ''
+        };
+
+        const removeForbiddenCharachtersOutlook = (text) => {
+          if (typeof text === 'string') {
+            let formattedText = text.replace(/(?:\r\n|\r|\n)/g, "\\n");
+            let formattedText2 = formattedText.replace("<br>", "\\n");
+            return formattedText2.replace(forbiddenCharacters, '');
+          }
+          return ''
+        };
+
+        const sessionLocation = (text) => {
+          let firstLetter = text.charAt(0).toUpperCase();
+          let remainingLetters = text.slice(1);
+          
+          return firstLetter + remainingLetters;
+        }
+
+        let cal = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'BEGIN:VEVENT',
+          'DTSTART:' + calendarStartDate,
+          'DTEND:' + calendarEndDate,
+          'SUMMARY:' + 'UI5con: ' + removeForbiddenCharachtersOutlook(session.title),
+          'LOCATION:' + sessionLocation(session.location),
+          'DESCRIPTION:' + removeForbiddenCharachtersOutlook(session.description),
+          'UID:' + session.id,
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\n');
+
+        if(session.description) {
+          let formattedDescription = session.description.replace(/&amp;/g, "&");
+
+          session.description = formattedDescription.replace(/(?:\r\n|\r|\n)/g, "<br>");
+        }
+
+        return {
+          ...session,
+          startTime: newStartTime,
+          endTime: newEndTime,
+          liveNow: false,
+          calendars: [
+            {
+              google: encodeURI([
+                'https://www.google.com/calendar/render',
+                '?action=TEMPLATE',
+                '&text=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+                '&dates=' + calendarStartDate ,
+                '/' + calendarEndDate,
+                '&location=' + sessionLocation(session.location),
+                '&details=' + removeForbiddenCharachters(session.description),
+                '&sprop=&sprop=name:'
+              ].join('')),
+              office365: encodeURI([
+                'https://outlook.office365.com/owa/',
+                '?path=/calendar/action/compose',
+                '&rru=addevent',
+                '&subject=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+                '&startdt=' + officeStartDate,
+                '&enddt=' + officeEndDate,
+                '&location=' + sessionLocation(session.location),
+                '&body=' + removeForbiddenCharachters(session.description)
+              ].join('')),
+              ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
+            }
+          ]
+        }
+      });
+
+      const sortedSchedule = tempLineUp.sort((a, b) => (luxon.DateTime.fromISO(a.startTime) > luxon.DateTime.fromISO(b.startTime)) ? 1 : -1);
+
+      if(this.filter === 'all') {
+        return sortedSchedule;
+      } else if (this.filter === 'talks') {
+        return sortedSchedule.filter(schedule => schedule.type.includes('presentation'));
+      } else if (this.filter === 'workshops') {
+        return sortedSchedule.filter(schedule => schedule.type.includes('hands'));
+      } else if (this.filter === 'expert') {
+        return sortedSchedule.filter(schedule => schedule.type.includes('expert'));
+      } else if (this.filter === 'audimax') {
+        return sortedSchedule.filter(schedule => schedule.location.includes('audimax'));
+      } else if (this.filter === 'w1') {
+        return sortedSchedule.filter(schedule => schedule.location.includes('w1'));
+      } else if (this.filter === 'w2') {
+        return sortedSchedule.filter(schedule => schedule.location.includes('w2'));
+      } else if (this.filter === 'w3') {
+        return sortedSchedule.filter(schedule => schedule.location.includes('w3'));
+      } else {
+        return sortedSchedule;
+      }
+    },
+    getTalkType(value) {
+      if(value.includes("hands")) {
+        return "workshop";
+      }
+
+      if(value.includes("presentation")) {
+        return "talk";
+      }
+
+      if(value.includes("expert")) {
+        return "expert corner";
+      }
+
+      return '';
     }
   },
   directives: {
@@ -161,7 +409,26 @@ var main = new Vue({
         f()
       }
     }
-  }
+  },
+  filters: {
+    trimTime: function(value) {
+      let time = value.substring(value.indexOf('T') + 1);
+      let timeSplit = time.split(':');
+      let hour = timeSplit[0].startsWith("0") ? timeSplit[0].replace(/^0+/, '') : timeSplit[0];
+      return hour + ':' + timeSplit[1];
+    },
+    convertTime: function(value, eventTime) {
+      if(eventTime === 'local') {
+       return luxon.DateTime.fromISO(value).toLocal().toISO({ suppressMilliseconds:true });
+      }
+      return value;
+    },
+    formatText: function(value) {
+      if (value) {
+        return value.replace(/&amp;/g, "&");
+      }
+    }
+  },
 });
 
 var aboutTheTeam = new Vue({

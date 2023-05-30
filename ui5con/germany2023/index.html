@@ -20,6 +20,8 @@
   <link rel="icon" type="image/svg+xml" href="images/icon.svg"/>
   <link rel="icon" sizes="any" href="images/android-chrome-192x192.png"/>
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <link rel="stylesheet" href="./css/agenda.css">
+  <link rel="stylesheet" href="./css/agendaModal.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/newsletter.css">
   <link rel="stylesheet" href="./css/styles.css">
@@ -107,16 +109,173 @@
       <p class="ui5con-facts-text">&hellip; and an opportunity to meet and connect to fellow UI5 developers</p>
     </section>
 
-    <section class="ui5con-ticket-section" id="tickets">
+    <section class="ui5con-agenda-section" ref="agenda" id="agenda">
+      <h2 class="ui5con-agenda-heading">The <span>agenda</span></h2>
+      <div class="ui5con-agenda-toggle-container">
+        <fieldset class="ui5con-agenda-toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC +2'">
+          <legend>Time zone</legend>
+          <div class="ui5con-agenda-toggle__element">
+            <input type="radio" id="timezone1" name="event-time" value="event" @change="onTimeChange($event)" checked>
+            <label for="timezone1">Event time<time datetime="2023-07-06T00:00">(UTC +2)</time></label>
+          </div>
+          <div class="ui5con-agenda-toggle__element">
+            <input type="radio" id="timezone2" name="event-time" value="local" @change="onTimeChange($event)">
+            <label for="timezone2">Your time<time datetime="2023-07-06T00:00">(UTC {{getLocalTimeZone()}})</time></label>
+          </div>
+        </fieldset>
+      </div>
 
-      <h2 class="ui5con-ticket-heading">Get your <span>tickets</span></h2>
-
-      <p class="ui5con-ticket-waiting-list">All tickets are currently sold out. However, by joining our waiting list, you will be notified if any tickets become available. Don't miss out on the opportunity to attend our event, sign up for the waiting list today!</p>
-
-      <tito-widget event="ui5con-and-recap/ui5con-and-recap-2023" releases="ui5con-2023,ui5con-recap-2023"></tito-widget>
-
-      <p class="ui5con-ticket-alternate">Or use our <a href="https://ti.to/ui5con-and-recap/ui5con-and-recap-2023" rel="external nofollow" target="_blank">tito event page</a> to secure your spot.</p>
-
+      <div class="ui5con-agenda-filter-container">
+        <fieldset class="ui5con-agenda-filter">
+          <legend class="ui5con-agenda-filter__legend">Filter by session type</legend>
+          <div class="ui5con-agenda-filter__element">
+            <input type="radio" id="all" name="filter" value="all" @change="onFilterChange($event)" checked>
+            <label class="ui5con-agenda-filter__label" for="all">All</label>
+          </div>
+          <div class="ui5con-agenda-filter__element">
+            <input type="radio" id="talks" name="filter" value="talks" @change="onFilterChange($event)">
+            <label class="ui5con-agenda-filter__label" for="talks">Talks</label>
+          </div>
+          <div class="ui5con-agenda-filter__element">
+            <input type="radio" id="workshops" name="filter" value="workshops" @change="onFilterChange($event)">
+            <label class="ui5con-agenda-filter__label" for="workshops">Workshops</label>
+          </div>
+          <div class="ui5con-agenda-filter__element">
+            <input type="radio" id="expert" name="filter" value="expert" @change="onFilterChange($event)">
+            <label class="ui5con-agenda-filter__label" for="expert">Expert Corner</label>
+          </div>
+        </fieldset>
+        <fieldset class="ui5con-agenda-filter">
+          <legend class="ui5con-agenda-filter__legend">Filter by room</legend>
+          <div class="ui5con-agenda-filter__element">
+            <input type="radio" id="audimax" name="filter" value="audimax" @change="onFilterChange($event)">
+            <label class="ui5con-agenda-filter__label" for="audimax">Audimax</label>
+          </div>
+          <div class="ui5con-agenda-filter__element">
+            <input type="radio" id="w1" name="filter" value="w1" @change="onFilterChange($event)">
+            <label class="ui5con-agenda-filter__label" for="w1">Room W1</label>
+          </div>
+          <div class="ui5con-agenda-filter__element">
+            <input type="radio" id="w2" name="filter" value="w2" @change="onFilterChange($event)">
+            <label class="ui5con-agenda-filter__label" for="w2">Room W2</label>
+          </div>
+          <div class="ui5con-agenda-filter__element">
+            <input type="radio" id="w3" name="filter" value="w3" @change="onFilterChange($event)">
+            <label class="ui5con-agenda-filter__label" for="w3">Room W3</label>
+          </div>
+        </fieldset>
+      </div>
+  
+      <div class="ui5con-tabpanel" tabindex="0" role="tabpanel" id="talks-tab" aria-labelledby="Talks">
+        <div class="ui5con-agenda" v-if="this.formattedLineup">
+          <ul class="ui5con-agenda-schedule">
+            <li class="ui5con-agenda-schedule__row" v-for="event in this.formattedLineup" :key="event.id" v-cloak>
+              <div class="ui5con-agenda-schedule__card-container">
+                <div class="ui5con-agenda-schedule__time">
+                  <span>{{event.startTime | convertTime(eventTime) | trimTime}}</span>
+                  <span>{{event.endTime | convertTime(eventTime) | trimTime}}</span>
+                </div>
+  
+                <div class="ui5con-agenda-schedule__card">
+                  <div class="ui5con-agenda-schedule__title-container">
+                    <div class="ui5con-agenda-schedule__badge" v-if="getTalkType(event.type)"> {{ getTalkType(event.type) }}</div>
+                    <h3 class="ui5con-agenda-schedule__title">{{event.title | formatText}}</h3>
+                  </div>
+                  
+                  <ul class="ui5con-agenda-schedule__speakers" v-if="event.speakers.length > 0">
+                    <li class="ui5con-agenda-schedule__speaker" v-for="speaker in event.speakers" :key="speaker.firstName">
+                      <button
+                        class="ui5con-agenda-schedule__speaker-img"
+                        @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"
+                        :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
+                        <img 
+                          :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`" 
+                          :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+                      </button>
+                      <div>
+                        <p class="ui5con-agenda-schedule__speaker-name">{{speaker.firstName}} {{speaker.lastName}}</p>
+                        <p class="ui5con-agenda-schedule__speaker-company" v-html="speaker.company"></p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="ui5con-agenda-schedule__info" v-html="event.description"></p>
+  
+                  <ul class="ui5con-calendar-list is-calendar">
+                    <calendar-link src="images/calendar/google.png" :link="event.calendars[0].google" :cal="true">Google</calendar-link>
+                    <calendar-link src="images/calendar/office.png" :link="event.calendars[0].office365" :cal="true">Office 365</calendar-link>
+                    <calendar-link src="images/calendar/outlook.png" :link="event.calendars[0].ics" download='ui5con2023.ics' :cal="true">Outlook</calendar-link>
+                    <calendar-link src="images/calendar/ical.png" :link="event.calendars[0].ics" download='ui5con2023.ics' :cal="true">iCal</calendar-link>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        id="speaker-modal"
+        ref="speakerModal"
+        aria-hidden="true"
+        tabindex="-1"
+        aria-modal="true"
+        class="ui5con-agenda-modal-backdrop"
+        style="display: none;"
+        @keydown.esc="closeSpeakerInfoModal"
+        @click.self="closeSpeakerInfoModal"
+        v-cloak>
+  
+        <div class="ui5con-agenda-modal" role="document" aria-labelledby="speaker-dialog-title" aria-describedby="speaker-dialog-description" tabindex="-1" ref="speakerModalContent">
+  
+          <h2 class="sr-only" id="speaker-dialog-title">Detailed Info about
+            <template v-for="speaker in activeSpeakers">{{speaker.firstName}} {{speaker.lastName}} </template>
+          </h2>
+  
+          <p class="sr-only" id="speaker-dialog-description">
+            <template v-for="speaker in activeSpeakers">
+              Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
+              <span v-if="speaker.company">Speaker's company: {{speaker.company}}</span>
+              Speaker's bio: {{speaker.bio | formatText}}
+            </template>
+          </p>
+  
+          <button
+            aria-label="Close Dialog"
+            @click="closeSpeakerInfoModal"
+            ref="close"
+            v-on:keydown.tab.prevent="focusTrapModal($event)">
+            ✕
+          </button>
+  
+          <div v-for="(speaker, index) in activeSpeakers"  class="ui5con-agenda-modal__container" :key="index">
+            <figure>
+              <img :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
+            </figure>
+            <article>
+              <header>
+                  <div>
+                    <h3 class="ui5con-agenda-modal__speaker-name">{{speaker.firstName}} {{speaker.lastName}}</h3>
+                    <p class="ui5con-agenda-modal__speaker-company" v-if="speaker.company">{{speaker.company | formatText}}</p>
+                  </div>
+              </header>
+              <p class="ui5con-agenda-modal__speaker-bio" v-if="speaker.bio">{{speaker.bio | formatText }}</p>
+              <ul v-if="speaker.twitterHandle || speaker.linkedInUrl || speaker.githubUrl" class="ui5con-agenda-modal__speaker-links">
+                <li v-if="speaker.twitterHandle">
+                  <a :href="speaker.twitterHandle" :aria-label="`Twitter Profile of ${speaker.firstName} ${speaker.lastName}`" rel="nofollow" target="_blank" v-html="svgs.twitter" :ref="`twitter ${speaker.firstName} ${speaker.lastName}`" v-on:keydown.tab.prevent="focusTrapModal($event)">
+                  </a>
+                </li>
+                <li v-if="speaker.githubUrl">
+                  <a :href="speaker.githubUrl" :aria-label="`Github Profile of ${speaker.firstName} ${speaker.lastName}`" rel="nofollow" target="_blank" v-html="svgs.github" :ref="`github ${speaker.firstName} ${speaker.lastName}`" v-on:keydown.tab.prevent="focusTrapModal($event)">
+                  </a>
+                </li>
+                <li v-if="speaker.linkedInUrl">
+                  <a :href="speaker.linkedInUrl" :aria-label="`LinkedIn Profile of ${speaker.firstName} ${speaker.lastName}`" rel="nofollow" target="_blank"  v-html="svgs.linkedin" :ref="`linkedin ${speaker.firstName} ${speaker.lastName}`" v-on:keydown.tab.prevent="focusTrapModal($event)">
+                  </a>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="ui5con-speakers-section">
@@ -136,35 +295,16 @@
       </ul>
     </section>
 
-    <section class="ui5con-save-date-section">
-      <div class="ui5con-save-date">
-        <h2 class="ui5con-save-date-heading">Save the <span>date</span></h2>
-        <p class="ui5con-save-date-text">We’re back in person this year on <b>July 6th</b>. This is a day you do not want to miss! What are you waiting for? Save it below.</p>
-        <div class="ui5con-calendars-container">
-          <div class="ui5con-calendars">
-            <ul class="ui5con-calendars-list">
-              <calendar-link src="images/calendar/google.png" link="https://www.google.com/calendar/render?action=TEMPLATE&text=UI5con%202023&dates=20230706T040000Z/20230707T040000Z&location=SAP%20SE%20(ROT03),%20SAP-Allee%2027,%2068789%20St.%20Leon-Rot%20(Germany)&details=Dear%20friend,%20%3Cbr%3E%3Cbr%3EWe%20are%20excited%20to%20announce%20that%20UI5con%202023%20is%20taking%20place%20on%20July%2006,%202023.%3Cbr%3E%3Cbr%3EThis%20year%E2%80%99s%20conference%20will%20be%20an%20in-person%20event,%20taking%20place%20in%20St.%20Leon-Rot/Germany.%3Cbr%3E%3Cbr%3EThis%20is%20the%20most%20important%20event%20of%20the%20year%20for%20developers%20working%20with%20UI5.%20Interesting%20keynotes%20and%20sessions%20held%20by%20the%20UI5%20product%20team%20as%20well%20as%20ambassadors%20from%20the%20UI5%20community%20will%20shed%20light%20on%20a%20variety%20of%20UI5%20topics.%20On%20top%20of%20this,%20you%20will%20meet%20friends%20you%20didn't%20see%20for%20a%20while,%20get%20to%20know%20new%20people%20from%20the%20community%20and%20enjoy%20a%20great%20party%20in%20the%20evening%20event.%3Cbr%3E%3Cbr%3EPlease%20save%20the%20following%20details:%3Cbr%3EDate:%2006/07/2023%3Cbr%3ELocation:%20SAP%20SE%20(ROT03),%20SAP-Allee%2027,%2068789%20St.%20Leon-Rot%20(Germany)%3Cbr%3E%3Cbr%3ENote%20that%20seats%20are%20limited,%20and%20registration%20is%20needed%20to%20be%20able%20to%20take%20part%20in%20this%20event!%20The%20registration%20process%20will%20open%20End%20of%20April.%20For%20more%20details%20as%20the%20conference%20approaches,%20please%20visit%20our%20%3Ca%20href=%22https://openui5.org/ui5con/germany2023/%22%20target=%22_blank%22%3EConference%20Page%3C/a%3E%20%20%3Cbr%3E%3Cbr%3EWe%20are%20looking%20forward%20seeing%20you%20there!%3Cbr%3EYour%20UI5con%20Orga%20Team&sprop=&sprop=name:">Google</calendar-link>
-              <calendar-link src="images/calendar/office.png" link="https://outlook.office365.com/owa/?path=/calendar/action/compose&rru=addevent&subject=UI5con%202023&startdt=2023-07-06T04:00:00.000Z&enddt=2023-07-07T04:00:00.000Z&location=SAP%20SE%20(ROT03),%20SAP-Allee%2027,%2068789%20St.%20Leon-Rot%20(Germany)&body=Dear%20friend,%20%3Cbr%3E%3Cbr%3EWe%20are%20excited%20to%20announce%20that%20UI5con%202023%20is%20taking%20place%20on%20July%2006,%202023.%3Cbr%3E%3Cbr%3EThis%20year%E2%80%99s%20conference%20will%20be%20an%20in-person%20event,%20taking%20place%20in%20St.%20Leon-Rot/Germany.%3Cbr%3E%3Cbr%3EThis%20is%20the%20most%20important%20event%20of%20the%20year%20for%20developers%20working%20with%20UI5.%20Interesting%20keynotes%20and%20sessions%20held%20by%20the%20UI5%20product%20team%20as%20well%20as%20ambassadors%20from%20the%20UI5%20community%20will%20shed%20light%20on%20a%20variety%20of%20UI5%20topics.%20On%20top%20of%20this,%20you%20will%20meet%20friends%20you%20didn't%20see%20for%20a%20while,%20get%20to%20know%20new%20people%20from%20the%20community%20and%20enjoy%20a%20great%20party%20in%20the%20evening%20event.%3Cbr%3E%3Cbr%3EPlease%20save%20the%20following%20details:%3Cbr%3EDate:%2006/07/2023%3Cbr%3ELocation:%20SAP%20SE%20(ROT03),%20SAP-Allee%2027,%2068789%20St.%20Leon-Rot%20(Germany)%3Cbr%3E%3Cbr%3ENote%20that%20seats%20are%20limited,%20and%20registration%20is%20needed%20to%20be%20able%20to%20take%20part%20in%20this%20event!%20The%20registration%20process%20will%20open%20End%20of%20April.%20For%20more%20details%20as%20the%20conference%20approaches,%20please%20visit%20our%20%3Ca%20href=%22https://openui5.org/ui5con/germany2023/%22%20target=%22_blank%22%3EConference%20Page%3C/a%3E%20%20%3Cbr%3E%3Cbr%3EWe%20are%20looking%20forward%20seeing%20you%20there!%3Cbr%3EYour%20UI5con%20Orga%20Team">Office 365</calendar-link>
-              <calendar-link src="images/calendar/outlook.png" link="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20230706T040000Z%0ADTEND:20230707T040000Z%0ASUMMARY:UI5con%202023%0ALOCATION:SAP%20SE%20(ROT03),%20SAP-Allee%2027,%2068789%20St.%20Leon-Rot%20(Germany)%0ADESCRIPTION:Dear%20friend,%20%5Cn%5CnWe%20are%20excited%20to%20announce%20that%20UI5con%202023%20is%20taking%20place%20on%20July%2006,%202023.%5Cn%5CnThis%20year%E2%80%99s%20conference%20will%20be%20an%20in-person%20event,%20taking%20place%20in%20St.%20Leon-Rot/Germany.%5CnThis%20is%20the%20most%20important%20event%20of%20the%20year%20for%20developers%20working%20with%20UI5.%20Interesting%20keynotes%20and%20sessions%20held%20by%20the%20UI5%20product%20team%20as%20well%20as%20ambassadors%20from%20the%20UI5%20community%20will%20shed%20light%20on%20a%20variety%20of%20UI5%20topics.%20On%20top%20of%20this,%20you%20will%20meet%20friends%20you%20didn't%20see%20for%20a%20while,%20get%20to%20know%20new%20people%20from%20the%20community%20and%20enjoy%20a%20great%20party%20in%20the%20evening%20event.%5Cn%5CnPlease%20save%20the%20following%20details:%5CnDate:%2006/07/2023%5CnLocation:%20SAP%20SE%20(ROT03),%20SAP-Allee%2027,%2068789%20St.%20Leon-Rot%20(Germany)%5Cn%5CnNote%20that%20seats%20are%20limited,%20and%20registration%20is%20needed%20to%20be%20able%20to%20take%20part%20in%20this%20event!%20The%20registration%20process%20will%20open%20End%20of%20April.%20For%20more%20details%20as%20the%20conference%20approaches,%20please%20visit%20our%20Conference%20Page%20https://openui5.org/ui5con/germany2023/%20%5Cn%5CnWe%20are%20looking%20forward%20seeing%20you%20there!%5CnYour%20UI5con%20Orga%20Team%0AUID:1%0AEND:VEVENT%0AEND:VCALENDAR" download='ui5con2023.ics'>Outlook</calendar-link>
-              <calendar-link src="images/calendar/ical.png" link="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20230706T040000Z%0ADTEND:20230707T040000Z%0ASUMMARY:UI5con%202023%0ALOCATION:SAP%20SE%20(ROT03),%20SAP-Allee%2027,%2068789%20St.%20Leon-Rot%20(Germany)%0ADESCRIPTION:Dear%20friend,%20%5Cn%5CnWe%20are%20excited%20to%20announce%20that%20UI5con%202023%20is%20taking%20place%20on%20July%2006,%202023.%5Cn%5CnThis%20year%E2%80%99s%20conference%20will%20be%20an%20in-person%20event,%20taking%20place%20in%20St.%20Leon-Rot/Germany.%5CnThis%20is%20the%20most%20important%20event%20of%20the%20year%20for%20developers%20working%20with%20UI5.%20Interesting%20keynotes%20and%20sessions%20held%20by%20the%20UI5%20product%20team%20as%20well%20as%20ambassadors%20from%20the%20UI5%20community%20will%20shed%20light%20on%20a%20variety%20of%20UI5%20topics.%20On%20top%20of%20this,%20you%20will%20meet%20friends%20you%20didn't%20see%20for%20a%20while,%20get%20to%20know%20new%20people%20from%20the%20community%20and%20enjoy%20a%20great%20party%20in%20the%20evening%20event.%5Cn%5CnPlease%20save%20the%20following%20details:%5CnDate:%2006/07/2023%5CnLocation:%20SAP%20SE%20(ROT03),%20SAP-Allee%2027,%2068789%20St.%20Leon-Rot%20(Germany)%5Cn%5CnNote%20that%20seats%20are%20limited,%20and%20registration%20is%20needed%20to%20be%20able%20to%20take%20part%20in%20this%20event!%20The%20registration%20process%20will%20open%20End%20of%20April.%20For%20more%20details%20as%20the%20conference%20approaches,%20please%20visit%20our%20Conference%20Page%20https://openui5.org/ui5con/germany2023/%20%5Cn%5CnWe%20are%20looking%20forward%20seeing%20you%20there!%5CnYour%20UI5con%20Orga%20Team%0AUID:1%0AEND:VEVENT%0AEND:VCALENDAR" download='ui5con2023.ics'>iCal</calendar-link>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <figure class="ui5con-save-date-image">
-        <img src="images/gallery-2023/audimax.png" alt="people in the audience">
-        <figcaption class="sr-only">people in the audience</figcaption>
-      </figure>
-      <div class="ui5con-save-date-images">
-        <figure>
-          <img src="images/gallery-2023/people_1.jpg" alt="UI5con attendees in the Audimax">
-          <figcaption class="sr-only">UI5con attendees in the Audimax</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gallery-2023/audimax.png" alt="people in the audience">
-          <figcaption class="sr-only">people in the audience</figcaption>
-        </figure>
-      </div>
+    <section class="ui5con-ticket-section" id="tickets">
+
+      <h2 class="ui5con-ticket-heading">Get your <span>tickets</span></h2>
+
+      <p class="ui5con-ticket-waiting-list">All tickets are currently sold out. However, by joining our waiting list, you will be notified if any tickets become available. Don't miss out on the opportunity to attend our event, sign up for the waiting list today!</p>
+
+      <tito-widget event="ui5con-and-recap/ui5con-and-recap-2023" releases="ui5con-2023,ui5con-recap-2023"></tito-widget>
+
+      <p class="ui5con-ticket-alternate">Or use our <a href="https://ti.to/ui5con-and-recap/ui5con-and-recap-2023" rel="external nofollow" target="_blank">tito event page</a> to secure your spot.</p>
+
     </section>
 
     <section class="ui5con-subscription-section">
@@ -263,6 +403,7 @@
       </ul>
       <a href="sponsors.html" class="ui5con-button">get all the info</a>
     </section>
+
     <section class="ui5con-recap-section">
       <h2 class="ui5con-subscription-heading">Looking for <span>more</span> fun?</h2>
       <p>Our friends from <a href="https://sapmentors.github.io/reCAP/" target="_blank" rel="noopener noreferrer" hreflang="en" title="Click to open reCAP event webpage. Opens in a new window.">re>=CAP</a> are hosting their event on <span>July 7th</span>! Back to back conferences? <br>What more could you ask for!</p>
@@ -290,8 +431,8 @@
   <script src="./components/social-links-section.component.js"></script>
   <script src="./components/footer-section.component.js"></script>
   <script src="./components/header-section.component.js"></script>
-
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./js/luxon.min.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/sendinblue.js"></script>
   <script src="./js/a11y-dialog.min.js"></script>

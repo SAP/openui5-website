@@ -291,7 +291,6 @@ var main = new Vue({
     },
     openSpeakerInfoModal(speakers, id) {
       this.activeSpeakers=speakers;
-      this.$refs.agenda.classList.add('ui5con-agenda-modal-open');
       this.$refs.agenda.ariaHidden = true;
       this.$refs.speakerModal.ariaHidden = false;
       this.$refs.speakerModal.style.display = 'flex';
@@ -303,7 +302,6 @@ var main = new Vue({
     },
     closeSpeakerInfoModal() {
       this.activeSpeakers=null;
-      this.$refs.agenda.classList.remove('ui5con-agenda-modal-open');
       this.$refs.agenda.ariaHidden = false;
       this.$refs.speakerModal.ariaHidden = true;
       this.$refs.speakerModal.style.display = 'none';

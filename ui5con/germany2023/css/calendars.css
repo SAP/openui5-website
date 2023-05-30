@@ -8,12 +8,22 @@
   width: 100%;
 }
 
+.ui5con-calendar-list {
+  gap: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .ui5con-calendars-list {
   z-index: 5;
   gap: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.ui5con-calendar-list.is-calendar {
+  gap: 0 1.2rem;
 }
 
 .ui5con-calendars-link {
@@ -26,6 +36,15 @@
   text-decoration: none;
   border-radius: 0.8rem;
   transition: all 0.7s ease;
+}
+
+.ui5con-calendars-link.is-calendar {
+  gap: 0.35rem;
+  padding: 0.5rem 0;
+}
+
+.ui5con-calendars-link.is-calendar span {
+  font-size: 0.875rem;
 }
 
 .ui5con-calendars-link span {
@@ -50,8 +69,17 @@
   background-color: var(--ui5SocialLinksColorHover);
 }
 
+.ui5con-calendars-link.is-calendar span::after {
+  background-color: #FFB778;
+}
+
 .ui5con-calendars-link:hover span {
   color: var(--ui5SocialLinksColorHover);
+}
+
+.ui5con-calendars-link.is-calendar:hover span,
+.ui5con-calendars-link.is-calendar:focus span {
+  color: #FFB778;
 }
 
 .ui5con-calendars-link:focus {
