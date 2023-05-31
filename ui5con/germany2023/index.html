@@ -178,9 +178,10 @@
   
                 <div class="ui5con-agenda-schedule__card">
                   <div class="ui5con-agenda-schedule__title-container">
-                    <div class="ui5con-agenda-schedule__badge" v-if="getTalkType(event.type)"> {{ getTalkType(event.type) }}</div>
-                    <h3 class="ui5con-agenda-schedule__title">{{event.title | formatText}}</h3>
+                    <span class="ui5con-agenda-schedule__badge" v-if="getTalkType(event.type)"> {{ getTalkType(event.type) }}</span>
+                    <span class="ui5con-agenda-schedule__badge" v-if="getFormattedRoom(event.location)"> {{ getFormattedRoom(event.location) }}</span>
                   </div>
+                  <h3 class="ui5con-agenda-schedule__title">{{event.title | formatText}}</h3>
                   
                   <ul class="ui5con-agenda-schedule__speakers" v-if="event.speakers.length > 0">
                     <li class="ui5con-agenda-schedule__speaker" v-for="speaker in event.speakers" :key="speaker.firstName">

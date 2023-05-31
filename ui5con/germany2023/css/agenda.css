@@ -299,9 +299,8 @@
 }
 
 .ui5con-agenda-schedule__title-container {
-  gap: 1rem;
+  gap: 0.5rem;
   display: flex;
-  flex-direction: column;
 }
 
 .ui5con-agenda-schedule__badge {

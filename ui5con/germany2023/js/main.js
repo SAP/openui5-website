@@ -389,6 +389,9 @@ var main = new Vue({
       }
 
       return '';
+    },
+    getFormattedRoom(value) {
+      return value.replace(/_/g, ' ');
     }
   },
   directives: {
