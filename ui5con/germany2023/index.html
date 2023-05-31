@@ -278,23 +278,6 @@
       </div>
     </section>
 
-    <section class="ui5con-speakers-section">
-      <h2 class="ui5con-speakers-heading">Speaker <span>spotlight</span></h2>
-      <ul class="ui5con-people-list ui5con-people-list--speakers" role="list" v-if="shuffledSpeakers">
-        <li class="ui5con-people-list-item" v-for="speaker in shuffledSpeakers" :key="speaker.photoUrl" role="listitem">
-          <figure class="ui5con-people-member">
-            <div class="frame">
-              <img :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
-            </div>
-            <figcaption>
-              <h3 class="ui5con-people-name">{{speaker.firstName}} {{speaker.lastName}}</h3>
-              <p class="ui5con-people-country" v-html="speaker.proposals[0].title"></p>
-            </figcaption>
-          </figure>
-        </li>
-      </ul>
-    </section>
-
     <section class="ui5con-ticket-section" id="tickets">
 
       <h2 class="ui5con-ticket-heading">Get your <span>tickets</span></h2>
