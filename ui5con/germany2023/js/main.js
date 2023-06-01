@@ -391,6 +391,9 @@ var main = new Vue({
       return '';
     },
     getFormattedRoom(value) {
+      if(value.includes('expert')) {
+        return 'showfloor'
+      }
       return value.replace(/_/g, ' ');
     }
   },
