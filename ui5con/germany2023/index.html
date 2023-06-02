@@ -127,11 +127,15 @@
 
       <div class="ui5con-agenda-filter-container">
         <fieldset class="ui5con-agenda-filter">
-          <legend class="ui5con-agenda-filter__legend">Filter by session type</legend>
+          <legend class="sr-only">Show all elements of the agenda</legend>
           <div class="ui5con-agenda-filter__element">
             <input type="radio" id="all" name="filter" value="all" @change="onFilterChange($event)" checked>
             <label class="ui5con-agenda-filter__label" for="all">All</label>
           </div>
+        </fieldset>
+
+        <fieldset class="ui5con-agenda-filter">
+          <legend class="ui5con-agenda-filter__legend">Filter by session type</legend>
           <div class="ui5con-agenda-filter__element">
             <input type="radio" id="talks" name="filter" value="talks" @change="onFilterChange($event)">
             <label class="ui5con-agenda-filter__label" for="talks">Talks</label>

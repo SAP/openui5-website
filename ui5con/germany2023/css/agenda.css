@@ -228,6 +228,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-end;
 }
 
 .ui5con-agenda-filter__legend {
