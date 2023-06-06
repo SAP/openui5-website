@@ -169,7 +169,7 @@
           </div>
         </fieldset>
       </div>
-  
+
       <div class="ui5con-tabpanel" tabindex="0" role="tabpanel" id="talks-tab" aria-labelledby="Talks">
         <div class="ui5con-agenda" v-if="this.formattedLineup">
           <ul class="ui5con-agenda-schedule">
@@ -179,22 +179,22 @@
                   <span>{{event.startTime | convertTime(eventTime) | trimTime}}</span>
                   <span>{{event.endTime | convertTime(eventTime) | trimTime}}</span>
                 </div>
-  
+
                 <div class="ui5con-agenda-schedule__card">
                   <div class="ui5con-agenda-schedule__title-container">
                     <span class="ui5con-agenda-schedule__badge" v-if="getTalkType(event.type)"> {{ getTalkType(event.type) }}</span>
                     <span class="ui5con-agenda-schedule__badge" v-if="getFormattedRoom(event.location)"> {{ getFormattedRoom(event.location) }}</span>
                   </div>
                   <h3 class="ui5con-agenda-schedule__title">{{event.title | formatText}}</h3>
-                  
+
                   <ul class="ui5con-agenda-schedule__speakers" v-if="event.speakers.length > 0">
                     <li class="ui5con-agenda-schedule__speaker" v-for="speaker in event.speakers" :key="speaker.firstName">
                       <button
                         class="ui5con-agenda-schedule__speaker-img"
                         @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)"
                         :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`">
-                        <img 
-                          :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`" 
+                        <img
+                          :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
                           :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
                       </button>
                       <div>
@@ -204,7 +204,7 @@
                     </li>
                   </ul>
                   <p class="ui5con-agenda-schedule__info" v-html="event.description"></p>
-  
+
                   <ul class="ui5con-calendar-list is-calendar">
                     <calendar-link src="images/calendar/google.png" :link="event.calendars[0].google" :cal="true">Google</calendar-link>
                     <calendar-link src="images/calendar/office.png" :link="event.calendars[0].office365" :cal="true">Office 365</calendar-link>
@@ -228,13 +228,13 @@
         @keydown.esc="closeSpeakerInfoModal"
         @click.self="closeSpeakerInfoModal"
         v-cloak>
-  
+
         <div class="ui5con-agenda-modal" role="document" aria-labelledby="speaker-dialog-title" aria-describedby="speaker-dialog-description" tabindex="-1" ref="speakerModalContent">
-  
+
           <h2 class="sr-only" id="speaker-dialog-title">Detailed Info about
             <template v-for="speaker in activeSpeakers">{{speaker.firstName}} {{speaker.lastName}} </template>
           </h2>
-  
+
           <p class="sr-only" id="speaker-dialog-description">
             <template v-for="speaker in activeSpeakers">
               Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
@@ -242,7 +242,7 @@
               Speaker's bio: {{speaker.bio | formatText}}
             </template>
           </p>
-  
+
           <button
             aria-label="Close Dialog"
             @click="closeSpeakerInfoModal"
@@ -250,7 +250,7 @@
             v-on:keydown.tab.prevent="focusTrapModal($event)">
             ✕
           </button>
-  
+
           <div v-for="(speaker, index) in activeSpeakers"  class="ui5con-agenda-modal__container" :key="index">
             <figure>
               <img :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`">
@@ -380,11 +380,13 @@
         </li>
         <li>
           <a href="https://www.conet.de/" rel="external nofollow" aria-label="Conet" hreflang="de" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244.1 141.73" style="width: 10rem;">
-              <path fill="#009899" d="M102.36 0h141.73v141.73H102.36z"/>
-              <path d="M38.62 81.05c-1.23-.69-2.74-1.36-4.55-2.01-1.9-.52-3.82-.81-5.77-.86-5.21.05-9.42 1.76-12.63 5.14-3.29 3.38-4.95 8.03-5 13.97.05 6.13 1.83 10.88 5.35 14.26 3.4 3.45 7.59 5.17 12.57 5.17 3.93-.05 7.28-.91 10.03-2.59l2.78 6.36c-1.53.93-3.5 1.74-5.9 2.42a28.6 28.6 0 0 1-7.33 1.11c-8.73-.12-15.56-2.71-20.49-7.78-5.08-5-7.63-11.36-7.68-19.1.05-7.29 2.58-13.45 7.61-18.49 4.98-5.09 11.88-7.68 20.7-7.78 2.66 0 5.13.39 7.4 1.18 2.34.76 4.35 1.69 6.04 2.78l-3.13 6.22Zm32.06 42.97c-7.69-.12-13.71-2.77-18.06-7.96-4.47-5.09-6.73-11.54-6.77-19.35.05-7.38 2.42-13.5 7.12-18.35 4.56-4.9 10.46-7.39 17.7-7.49 7.29.1 13.21 2.59 17.77 7.49 4.58 4.85 6.93 10.97 7.04 18.35-.05 7.81-2.25 14.26-6.62 19.35-4.39 5.18-10.45 7.84-18.17 7.96Zm0-7.31c5.21-.1 8.87-2.2 11-6.32 2.08-3.97 3.12-8.54 3.12-13.68s-1.09-9.25-3.26-12.89c-2.31-3.66-5.93-5.54-10.86-5.64-4.93.1-8.5 1.98-10.72 5.64-2.34 3.64-3.48 7.94-3.44 12.89-.05 5.15 1.02 9.71 3.19 13.68 2.2 4.12 5.85 6.23 10.97 6.32Z" fill="#1d1d1b"/>
-              <path d="M146.17 123.12h-7.22c-9.54-11.54-19.03-23.82-28.48-36.83h-.14v36.83h-8.02V71.76h7.33c9.54 11.45 19 23.66 28.37 36.62h.14V71.76h8.02v51.36Zm40.46-44.48H169.9v14.13h16.38v6.87H169.9v16.6h19.79v6.88h-30.1V71.76h27.05v6.88Zm22.91 44.48V78.64h-15.36v-6.88h41.05v6.88h-15.37v44.48h-10.32Z" fill="#fff"/>
-            </svg>
+            <svg class="ui5con-sponsor-logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="50 270 289.4 160" width="12rem">
+              <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="839.06" x2=".707" y2="838.352">
+                <stop offset="0" stop-color="#1da238"/>
+                <stop offset=".983" stop-color="#24391d"/>
+              </linearGradient>
+            <path class="st0" fill="#fff" d="M105.2 359.4c-1.2-.7-2.8-1.4-4.6-2a29 29 0 0 0-5.9-.9c-5.3 0-9.6 1.8-12.8 5.2-3.3 3.4-5 8.2-5.1 14.2 0 6.2 1.9 11.1 5.4 14.5 3.5 3.5 7.7 5.3 12.8 5.3 4 0 7.4-.9 10.2-2.6l2.8 6.5c-1.6.9-3.6 1.8-6 2.5s-4.9 1.1-7.4 1.1c-8.9-.1-15.8-2.8-20.8-7.9-5.2-5.1-7.8-11.5-7.8-19.4 0-7.4 2.6-13.7 7.7-18.8 5.1-5.2 12.1-7.8 21-7.9 2.7 0 5.2.4 7.5 1.2 2.4.8 4.4 1.7 6.1 2.8l-3.1 6.2zm32.6 43.7c-7.8-.1-13.9-2.8-18.3-8.1-4.5-5.2-6.8-11.7-6.9-19.7 0-7.5 2.5-13.7 7.2-18.6 4.6-5 10.6-7.5 18-7.6 7.4.1 13.4 2.6 18.1 7.6 4.7 4.9 7 11.1 7.2 18.6 0 7.9-2.3 14.5-6.7 19.7-4.6 5.2-10.7 7.9-18.6 8.1zm0-7.5c5.3-.1 9-2.2 11.2-6.4 2.1-4 3.2-8.7 3.2-13.9 0-5-1.1-9.4-3.3-13.1-2.4-3.7-6-5.6-11-5.7-5 .1-8.6 2-10.9 5.7-2.4 3.7-3.5 8.1-3.5 13.1 0 5.2 1 9.9 3.2 13.9 2.2 4.2 5.9 6.3 11.1 6.4zM170 277.1V350h7.4c9.7 11.6 19.3 24 28.8 37.2h.1V350h8.1v52.2h-7.3c-9.7-11.7-19.3-24.2-28.9-37.4h-.1v37.4H170v18.9h144v-144H170zm88.7 125h-30.6V350h27.5v7h-17v14.4h16.6v7h-16.6v16.9h20.1v6.8zM305 357h-15.6v45.2h-10.5V357h-15.6v-7H305v7z"/>
+          </svg>
           </a>
         </li>
 
