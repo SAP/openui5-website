@@ -10,6 +10,16 @@
     "eom": ""
   },
   {
+    "version": "1.114.0",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.114.0/openui5-runtime-1.114.0.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.114.0/openui5-sdk-1.114.0.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.114.0/openui5-runtime-mobile-1.114.0.zip",
+    "url_demokit": "https://sdk.openui5.org/1.114.0/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.114.0/#releasenotes.html",
+    "release_date": "16.05.2023",
+    "eom": ""
+  },
+  {
     "version": "1.111.5",
     "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.111.5/openui5-runtime-1.111.5.zip",
     "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.111.5/openui5-sdk-1.111.5.zip",
@@ -60,13 +70,13 @@
     "eom": "Q4/2027"
   },
   {
-    "version": "1.38.58",
-    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.38.58/openui5-runtime-1.38.58.zip",
-    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.38.58/openui5-sdk-1.38.58.zip",
-    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.38.58/openui5-runtime-mobile-1.38.58.zip",
-    "url_demokit": "https://sdk.openui5.org/1.38.58/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.38.58/#releasenotes.html",
-    "release_date": "12.12.2022",
+    "version": "1.38.61",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.38.61/openui5-runtime-1.38.61.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.38.61/openui5-sdk-1.38.61.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.38.61/openui5-runtime-mobile-1.38.61.zip",
+    "url_demokit": "https://sdk.openui5.org/1.38.61/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.38.61/#releasenotes.html",
+    "release_date": "02.05.2023",
     "eom": "Q4/2027"
   }
 ]
