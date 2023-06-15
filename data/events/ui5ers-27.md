@@ -9,7 +9,7 @@ speakers:
   -  Mike Zaschka
   -  Peter Muessig
   -  Andreas Kunz
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/GzDNzlo9K1A
 ---
 Let's continue our discussion about TypeScript, this time with the focus on UI5. Andreas and Peter have been quite busy in the last months and made considerable progress towards implementing TypeScript support in UI5. They want to share the latest state of affairs with you.
 In addition, we invited Mike Zaschka to talk about his [ChatGPT-like chat UI5](https://github.com/p36-io/cap-ui5-gpt-chat) built with UI5 and to discuss the findings he gained from complex UI5 projects with regard to project structure, utility functions, event handlers, and more.
