@@ -1,6 +1,11 @@
 .ui5con-sponsors-section {
   text-align: center;
   padding: 8rem 1.25rem 0 1.25rem;
+  background: linear-gradient(188deg, rgba(255,255,255,0) 20%, rgba(249,93,17,.6) 40%, rgba(255,255,255,0) 60%);
+}
+
+#sponsors .ui5con-sponsors-section{
+  background: transparent;
 }
 
 .ui5con-sponsors-section .ui5con-button {

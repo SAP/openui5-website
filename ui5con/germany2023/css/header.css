@@ -68,8 +68,6 @@
 }
 
 .ui5con-header-nav a.active {
-  border: 1px solid #fff;
-  border-radius: 1.75rem;
   padding: .5rem .7rem;
   margin-left: auto;
   white-space: nowrap;
@@ -97,7 +95,6 @@
 
 .ui5con-header-nav a.active:hover,
 .ui5con-header-nav a.active:focus {
-  border-color: var(--ui5LinksColorHover);
   color: var(--ui5LinksColorHover);
 }
 

@@ -58,13 +58,32 @@
   background-color: #872805;
 }
 
-.ui5con-sponsors-section h2 {
-  font-size: 2.5rem;
-  line-height: 2.875rem;
+.ui5con-sponsors-heading h2 {
+  margin: 0 0 2.25rem;
   font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 2.875rem;
+  color: var(--ui5TextColor);
+  text-align: left;
+}
+
+.ui5con-sponsors-heading h2 span {
   display: inline-block;
-  color: #FFB778;
-  margin-bottom: 4rem;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(
+    258.68deg,
+    var(--ui5TextColor) -1.05%,
+    var(--ui5BrandColor) 55.25%,
+    var(--ui5BrandAltColor) 107.04%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite alternate;
 }
 
 .ui5con-sponsors-section h3 {
@@ -345,6 +364,12 @@
     line-height: 3.5rem;
   }
 
+  .ui5con-sponsors-heading h2 {
+    font-size: 3rem;
+    text-align: left;
+    line-height: 3.5rem;
+  }
+
   .ui5con-sponsors-section h3 {
     margin: 1.6rem 0;
     font-size: 3rem;
@@ -406,6 +431,12 @@
 
   .ui5con-sponsors-section {
     padding: 6rem;
+  }
+
+  .ui5con-sponsors-heading h2 {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+    line-height: 5.75rem;
   }
 
   .ui5con-sponsors-cta {
