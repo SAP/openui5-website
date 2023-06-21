@@ -23,6 +23,8 @@ Vue.component("header-section", {
     </li>
     <li><a :class="{ active: isActive('agenda') }" href="index.html#agenda" :aria-current="isActive('agenda')">agenda</a>
     </li>
+    <li><a :class="{ active: isActive('directions') }" href="directions.html" :aria-current="isActive('directions')">getting here</a>
+    </li>
     <li><a :class="{ active: isActive('sponsors') }" href="sponsors.html" :aria-current="isActive('sponsors')">sponsors</a>
     </li>
     <li><a href="people.html" :class="{ active: isActive('people') }" :aria-current="isActive('people')">people</a></li>
