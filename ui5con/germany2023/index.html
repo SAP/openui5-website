@@ -42,7 +42,23 @@
           <span>Registration<br> is now Open</span>
         </h1>
         <p>Join us in-person July 6th</p>
-        <p><a href="#tickets" class="ui5con-button">Join the waitlist</a></p>
+        
+          <!-- <h1 class="ui5con-annonce">Get ready, UI5con starts in</h1>
+          <div class="ui5con-countdown">
+            <div class="ui5con-countdown__block days" :class="{solid: days==0}">
+              <span class="ui5con-countdown__digit">{{ days | two_digits }}</span>
+              <span class="ui5con-countdown__text">days</span>
+            </div>
+            <div class="ui5con-countdown__block hours" :class="{solid: (days<=0) && (hours>0)}">
+              <span class="ui5con-countdown__digit">{{ hours | two_digits }}</span>
+              <span class="ui5con-countdown__text">hours</span>
+            </div>
+            <div class="ui5con-countdown__block minutes" :class="{solid: (days<=0) && (hours<=0) && (minutes>0)}">
+              <span class="ui5con-countdown__digit">{{ minutes | two_digits }}</span>
+              <span class="ui5con-countdown__text">minutes</span>
+            </div>
+          </div> -->
+          <p><a href="#tickets" class="ui5con-button">Join the waitlist</a></p>
       </div>
 
       <div class="ui5con-gallery-carousel">
@@ -174,7 +190,7 @@
         <div class="ui5con-agenda" v-if="this.formattedLineup">
           <ul class="ui5con-agenda-schedule">
             <li class="ui5con-agenda-schedule__row" v-for="event in this.formattedLineup" :key="event.id" v-cloak>
-              <div class="ui5con-agenda-schedule__card-container">
+              <div class="ui5con-agenda-schedule__card-container" :class="{live: event.liveNow && isBroadcast(event)}">
                 <div class="ui5con-agenda-schedule__time">
                   <span>{{event.startTime | convertTime(eventTime) | trimTime}}</span>
                   <span>{{event.endTime | convertTime(eventTime) | trimTime}}</span>
@@ -211,6 +227,8 @@
                     <calendar-link src="images/calendar/outlook.png" :link="event.calendars[0].ics" download='ui5con2023.ics' :cal="true">Outlook</calendar-link>
                     <calendar-link src="images/calendar/ical.png" :link="event.calendars[0].ics" download='ui5con2023.ics' :cal="true">iCal</calendar-link>
                   </ul>
+
+                  <a v-if="isBroadcast(event)" :href="getBroadcastLink(event)" class="ui5con-agenda-livestream-link" target="_blank" rel="noopener noreferrer" hreflang="en" :title="'Click to open YouTube livestream. Opens in a new window.'"><span role="presentation" aria-hidden="true"></span>livestream</a>
                 </div>
               </div>
             </li>

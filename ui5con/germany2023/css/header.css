@@ -178,12 +178,11 @@
 .ui5con-annonce {
   font-weight: 900;
   text-align: center;
+  /* font-size: 1.8rem;
+  line-height: 1.2; */
   font-size: var(--ui5AnnonceFontSize);
   line-height: var(--ui5AnnonceLineHeight);
   margin-bottom: .4rem;
-}
-
-.ui5con-annonce span {
   display: block;
   -webkit-text-stroke: 0;
   background: linear-gradient(
@@ -222,8 +221,11 @@
   }
 
   .ui5con-annonce {
+    /* font-size: 2.25rem;
+    line-height: 1.2; */
+
     font-size: var(--ui5AnnonceFontSizeL);
-    line-height: var(--ui5AnnonceLineHeightL);
+    line-height: 1.2;
   }
 
   .ui5con-header-nav ul {
@@ -300,8 +302,11 @@
 
 @media only screen and (min-width: 1500px) {
   .ui5con-annonce {
+    /* font-size: 2.25rem;
+    line-height: 1.2; */
+
     font-size: 7.5rem;
-    line-height: 1.1;
+    line-height: 1.2;
   }
 }
 

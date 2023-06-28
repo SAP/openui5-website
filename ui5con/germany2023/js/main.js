@@ -5,6 +5,8 @@ var header = new Vue({
   data() {
     return {
       isCalendarsVisible: false,
+      date: '2023/07/06 09:00:00 +02:00',
+      now: Math.trunc((new Date()).getTime() / 1000),
     };
   },
   methods: {
@@ -18,7 +20,40 @@ var header = new Vue({
       return this.inna;
     }
   },
-  mounted() {}
+  mounted() {
+    // window.setInterval(() => {
+    //   this.now = Math.trunc((new Date()).getTime() / 1000);
+    // },1000);
+  },
+  computed: {
+    // dateInMilliseconds() {
+    //   let germanyDate = this.date.toLocaleString("en-US", {timeZone: "Germany/Berlin"});
+    //   return Math.trunc(Date.parse(germanyDate) / 1000)
+    // },
+    // seconds() {
+    //   return (this.dateInMilliseconds - this.now) % 60;
+    // },
+    // minutes() {
+    //   return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60;
+    // },
+    // hours() {
+    //   return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24;
+    // },
+    // days() {
+    //   return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24);
+    // }
+  },
+  filters: {
+    two_digits: function(value) {
+      if (value < 0) {
+        return '00';
+      }
+      if (value.toString().length <= 1) {
+        return `0${value}`;
+      }
+      return value;
+    }
+  },
 });
 
 var main = new Vue({
@@ -52,6 +87,23 @@ var main = new Vue({
       this.lineup = response.data;
       this.formattedLineup = this.formatLineup();
     });
+
+    let interval;
+    let timeNow = new Date().toISOString();
+    const startCounterTime = new Date("2023-07-06T08:50:00.000+02:00").toISOString();
+    const endCounterTime = new Date("2023-07-06T20:00:00.000+02:00").toISOString();
+
+    if((timeNow > startCounterTime) && (timeNow <= endCounterTime)) {
+      interval = setInterval(() => { 
+        timeNow = new Date().toISOString();
+        if(timeNow > endCounterTime) {
+          clearInterval(interval);
+          return;
+        }
+        this.updateLiveSession();
+      }, 30000)
+    }
+
   },
   methods: {
     showCalendars() {
@@ -300,6 +352,15 @@ var main = new Vue({
           return firstLetter + remainingLetters;
         }
 
+        let timeNow = new Date().toISOString();
+        let sessionTimeStart = new Date(newStartTime).toISOString();
+        let sessionTimeEnd = new Date(newEndTime).toISOString();
+        let sessionLiveStatus = false;
+
+        if(timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
+          sessionLiveStatus = true;
+        }
+
         let cal = [
           'BEGIN:VCALENDAR',
           'VERSION:2.0',
@@ -324,7 +385,7 @@ var main = new Vue({
           ...session,
           startTime: newStartTime,
           endTime: newEndTime,
-          liveNow: false,
+          liveNow: sessionLiveStatus,
           calendars: [
             {
               google: encodeURI([
@@ -395,6 +456,33 @@ var main = new Vue({
         return 'showfloor'
       }
       return value.replace(/_/g, ' ');
+    },
+    updateLiveSession() {
+      return this.formattedLineup.map(session => {
+        let timeNow = new Date().toISOString();
+        let sessionTimeStart = new Date(session.startTime).toISOString();
+        let sessionTimeEnd = new Date(session.endTime).toISOString();
+
+        if(timeNow >= sessionTimeStart && timeNow < sessionTimeEnd) {
+          session.liveNow = true;
+        } else {
+          session.liveNow = false;
+        }
+      })
+    },
+    isBroadcast(event) {
+      if(event.presentationLinks.length > 0) {
+        return event.presentationLinks[0].linkType === 'live';
+      } else {
+        return false;
+      }
+    },
+    getBroadcastLink(event) {
+      if(event.presentationLinks.length > 0) {
+        return event.presentationLinks[0].url;
+      } else {
+        return '';
+      }
     }
   },
   directives: {
@@ -433,7 +521,7 @@ var main = new Vue({
       if (value) {
         return value.replace(/&amp;/g, "&");
       }
-    }
+    },
   },
 });
 

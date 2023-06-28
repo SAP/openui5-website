@@ -324,10 +324,25 @@
 
 .ui5con-agenda-schedule__time {
   display: flex;
+  position: relative;
   width: fit-content;
   height: fit-content;
   flex-direction: column;
   border: 0.0625rem solid #53433F;
+}
+
+.ui5con-agenda-schedule__card-container.live .ui5con-agenda-schedule__time::before {
+  content: "LIVE NOW";
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  font-size: 1.2rem;
+  color: #FFDCC1;
+  font-weight: 700;
+  margin: 1rem 0;
+  min-width: 10rem;
+  transform: rotate(90deg);
+  transform-origin: top left;
 }
 
 .ui5con-agenda-schedule__time span {
@@ -349,6 +364,8 @@
   width: 100%;
   display: flex;
   padding: 1.5rem;
+  overflow: hidden;
+  word-wrap: break-word;
   flex-direction: column;
   border-top: 0.0625rem solid #53433F;
 }
@@ -441,6 +458,67 @@
   max-width: 100%;
 }
 
+.ui5con-agenda-livestream-link {
+  gap: 0.625rem;
+  display: flex;
+  cursor: pointer;
+  font-weight: 700;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  line-height: 1.2;
+  color: #FFEDE8;
+  width: fit-content;
+  align-items: center;
+  font-size: 0.875rem;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 0.0625rem solid #FFFBFF;
+  transition: all 0.3s ease;
+}
+
+.ui5con-agenda-livestream-link:before {
+  top: 0;
+  content: "";
+  left: -100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background: var(--ui5ButtonBackground);
+  transform: skew(20deg) translateX(-25%);
+  transition: transform 0.5s ease;
+  width: 120%;
+  z-index: -1;
+}
+
+.ui5con-agenda-livestream-link:hover:before {
+  transform: skew(-45deg) translateX(75%);
+}
+
+.ui5con-agenda-livestream-link:hover {
+  color: #FFEDE8;
+}
+
+.ui5con-agenda-livestream-link:hover span {
+  background: #FFFBFF;
+}
+
+.ui5con-agenda-livestream-link span {
+  display: flex;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50rem;
+  background: #FF5449;
+}
+
+.ui5con-agenda-livestream-link:focus {
+  outline: none;
+  color: #FFB778;
+  border-color: #FFB778;
+  box-shadow: 0 0 0 0.0625rem #FFB778; 
+}
+
 
 @media only screen and (min-width: 768px) {
   .ui5con-agenda-heading {
@@ -525,6 +603,10 @@
 
   .ui5con-agenda-schedule__badge {
     font-size: 0.875rem;
+  }
+
+  .ui5con-agenda-schedule__card-container.live .ui5con-agenda-schedule__time::before {
+    font-size: 2rem;
   }
   
 }
