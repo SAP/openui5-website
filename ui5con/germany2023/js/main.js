@@ -21,27 +21,27 @@ var header = new Vue({
     }
   },
   mounted() {
-    // window.setInterval(() => {
-    //   this.now = Math.trunc((new Date()).getTime() / 1000);
-    // },1000);
+    window.setInterval(() => {
+      this.now = Math.trunc((new Date()).getTime() / 1000);
+    },1000);
   },
   computed: {
-    // dateInMilliseconds() {
-    //   let germanyDate = this.date.toLocaleString("en-US", {timeZone: "Germany/Berlin"});
-    //   return Math.trunc(Date.parse(germanyDate) / 1000)
-    // },
-    // seconds() {
-    //   return (this.dateInMilliseconds - this.now) % 60;
-    // },
-    // minutes() {
-    //   return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60;
-    // },
-    // hours() {
-    //   return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24;
-    // },
-    // days() {
-    //   return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24);
-    // }
+    dateInMilliseconds() {
+      let germanyDate = this.date.toLocaleString("en-US", {timeZone: "Germany/Berlin"});
+      return Math.trunc(Date.parse(germanyDate) / 1000)
+    },
+    seconds() {
+      return (this.dateInMilliseconds - this.now) % 60;
+    },
+    minutes() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60;
+    },
+    hours() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24;
+    },
+    days() {
+      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24);
+    }
   },
   filters: {
     two_digits: function(value) {
@@ -94,7 +94,7 @@ var main = new Vue({
     const endCounterTime = new Date("2023-07-06T20:00:00.000+02:00").toISOString();
 
     if((timeNow > startCounterTime) && (timeNow <= endCounterTime)) {
-      interval = setInterval(() => { 
+      interval = setInterval(() => {
         timeNow = new Date().toISOString();
         if(timeNow > endCounterTime) {
           clearInterval(interval);
@@ -348,7 +348,7 @@ var main = new Vue({
         const sessionLocation = (text) => {
           let firstLetter = text.charAt(0).toUpperCase();
           let remainingLetters = text.slice(1);
-          
+
           return firstLetter + remainingLetters;
         }
 

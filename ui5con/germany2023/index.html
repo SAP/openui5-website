@@ -29,7 +29,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <script src="./js/svgs.js"></script>
-  <script src="https://js.tito.io/v2/with/inline" async></script>
+  <!-- <script src="https://js.tito.io/v2/with/inline" async></script> -->
 </head>
 <body>
   <header class="ui5con-header" id="header">
@@ -38,13 +38,13 @@
    </div>
     <div class="ui5con-header-container">
       <div class="ui5con-annonce-container">
-        <h1 class="ui5con-annonce" v-cloak>
+        <!-- <h1 class="ui5con-annonce" v-cloak>
           <span>Only a few<br aria-hidden="true"> more days!</span>
         </h1>
-        <p>In-person and livestreamed July 6th</p>
+        <p>In-person and livestreamed July 6th</p> -->
 
-          <!-- <h1 class="ui5con-annonce">Get ready, UI5con starts in</h1>
-          <div class="ui5con-countdown">
+          <h1 class="ui5con-annonce ui5con-announce--alt">Get ready, UI5con starts in</h1>
+          <div class="ui5con-countdown" v-cloak>
             <div class="ui5con-countdown__block days" :class="{solid: days==0}">
               <span class="ui5con-countdown__digit">{{ days | two_digits }}</span>
               <span class="ui5con-countdown__text">days</span>
@@ -57,7 +57,7 @@
               <span class="ui5con-countdown__digit">{{ minutes | two_digits }}</span>
               <span class="ui5con-countdown__text">minutes</span>
             </div>
-          </div> -->
+          </div>
           <p><a href="#agenda" class="ui5con-button">Check the Agenda</a></p>
       </div>
 
