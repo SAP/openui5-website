@@ -43,21 +43,24 @@
         </h1>
         <p>In-person and livestreamed July 6th</p> -->
 
-          <h1 class="ui5con-annonce ui5con-announce--alt">Get ready, UI5con starts in</h1>
-          <div class="ui5con-countdown" v-cloak>
-            <div class="ui5con-countdown__block days" :class="{solid: days==0}">
-              <span class="ui5con-countdown__digit">{{ days | two_digits }}</span>
-              <span class="ui5con-countdown__text">days</span>
-            </div>
-            <div class="ui5con-countdown__block hours" :class="{solid: (days<=0) && (hours>0)}">
-              <span class="ui5con-countdown__digit">{{ hours | two_digits }}</span>
-              <span class="ui5con-countdown__text">hours</span>
-            </div>
-            <div class="ui5con-countdown__block minutes" :class="{solid: (days<=0) && (hours<=0) && (minutes>0)}">
-              <span class="ui5con-countdown__digit">{{ minutes | two_digits }}</span>
-              <span class="ui5con-countdown__text">minutes</span>
-            </div>
+
+        <h1 v-if="(days<=0) && (hours<=0) && (minutes<=0)" class="ui5con-annonce ui5con-announce--alt">We are live!</h1>
+        <h1 v-else class="ui5con-annonce ui5con-announce--alt">Get ready, UI5con starts in</h1>
+
+        <div class="ui5con-countdown" v-cloak>
+          <div class="ui5con-countdown__block days" :class="{solid: days==0}">
+            <span class="ui5con-countdown__digit">{{ days | two_digits }}</span>
+            <span class="ui5con-countdown__text">days</span>
           </div>
+          <div class="ui5con-countdown__block hours" :class="{solid: (days<=0) && (hours==0)}">
+            <span class="ui5con-countdown__digit">{{ hours | two_digits }}</span>
+            <span class="ui5con-countdown__text">hours</span>
+          </div>
+          <div class="ui5con-countdown__block minutes" :class="{solid: (days<=0) && (hours<=0) && (minutes<=0)}">
+            <span class="ui5con-countdown__digit">{{ minutes | two_digits }}</span>
+            <span class="ui5con-countdown__text">minutes</span>
+          </div>
+        </div>
           <p><a href="#agenda" class="ui5con-button">Check the Agenda</a></p>
       </div>
 
