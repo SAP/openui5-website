@@ -227,14 +227,14 @@
                   </ul>
                   <p class="ui5con-agenda-schedule__info" v-html="event.description"></p>
 
-                  <ul class="ui5con-calendar-list is-calendar">
+                  <!-- <ul class="ui5con-calendar-list is-calendar">
                     <calendar-link src="images/calendar/google.png" :link="event.calendars[0].google" :cal="true">Google</calendar-link>
                     <calendar-link src="images/calendar/office.png" :link="event.calendars[0].office365" :cal="true">Office 365</calendar-link>
                     <calendar-link src="images/calendar/outlook.png" :link="event.calendars[0].ics" download='ui5con2023.ics' :cal="true">Outlook</calendar-link>
                     <calendar-link src="images/calendar/ical.png" :link="event.calendars[0].ics" download='ui5con2023.ics' :cal="true">iCal</calendar-link>
-                  </ul>
+                  </ul> -->
 
-                  <a v-if="isBroadcast(event)" :href="getBroadcastLink(event)" class="ui5con-agenda-livestream-link" target="_blank" rel="noopener noreferrer" hreflang="en" :title="'Click to open YouTube livestream. Opens in a new window.'"><span role="presentation" aria-hidden="true"></span>livestream</a>
+                  <a v-if="isBroadcast(event)" :href="getBroadcastLink(event)" class="ui5con-agenda-livestream-link" target="_blank" rel="noopener noreferrer" hreflang="en" :title="'Click to open YouTube livestream. Opens in a new window.'"><span role="presentation" aria-hidden="true"></span>recording</a>
                 </div>
               </div>
             </li>
