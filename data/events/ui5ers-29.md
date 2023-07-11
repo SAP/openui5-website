@@ -11,8 +11,9 @@ speakers:
 - Peter Muessig
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already up our sleeves and will publish them here once confirmed but latest the week before. 
-What we can say already now is that we will take up some topics from this year's UI5con keynote and explore them in depth. 
+At the UI5con keynote it has been announced that the TypeScript support for UI5 is available for productive usage. Because there was only a limited time to show the topic, in this UI5ers live episode, Andreas and Peter will explain the new capabilities in more detail. 
+
+Another interesting topic from the UI5con keynote is the Bootstrap Evolution as part of the Modular Core. Therefore, Jan will join this UI5ers live episode to provide some more insights into the changes of the UI5 core and the opportunities you have utilizing the lightweight bootstrap which is experimentally available in the latest snapshot of OpenUI5.
 
 If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
 [#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
