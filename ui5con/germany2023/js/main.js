@@ -470,19 +470,38 @@ var main = new Vue({
         }
       })
     },
-    isBroadcast(event) {
-      if(event.presentationLinks.length > 0) {
-        return event.presentationLinks[0].linkType === 'live';
-      } else {
-        return false;
+    getLinkName(link) {
+      let tempLink = link.linkType.toLowerCase();
+
+      if (tempLink.includes("live")) {
+        return "recording";
       }
-    },
-    getBroadcastLink(event) {
-      if(event.presentationLinks.length > 0) {
-        return event.presentationLinks[0].url;
-      } else {
-        return '';
+
+      if (tempLink.includes("slides")) {
+        return "slides";
       }
+
+      if (tempLink.includes("github") || tempLink.includes("git")) {
+        return "GitHub";
+      }
+
+      if (tempLink.includes("code")) {
+        return "code";
+      }
+
+      if (tempLink.includes("demo")) {
+        return "demo";
+      }
+
+      if (tempLink.includes("documentation")) {
+        return "documentation";
+      }
+
+      if (tempLink.includes("blog")) {
+        return "blog";
+      }
+
+      return "link";
     }
   },
   directives: {

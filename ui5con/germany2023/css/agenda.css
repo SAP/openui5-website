@@ -317,6 +317,12 @@
   width: fit-content;
 }
 
+.ui5con-agenda-links-container {
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* Schedule */
 .ui5con-agenda-schedule__card-container {
   display: flex;
@@ -614,6 +620,7 @@
 @media only screen and (min-width: 1200px) {
   .ui5con-agenda-section {
     padding: 2rem 8rem;
+    margin-top: 5rem;
   }
 
   .ui5con-agenda-heading {
