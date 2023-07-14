@@ -470,10 +470,9 @@
   cursor: pointer;
   font-weight: 700;
   overflow: hidden;
-  position: relative;
   background: transparent;
   line-height: 1.2;
-  color: #FFEDE8;
+  color: #FFFBFF;
   width: fit-content;
   align-items: center;
   font-size: 0.875rem;
@@ -484,30 +483,22 @@
   transition: all 0.3s ease;
 }
 
-.ui5con-agenda-livestream-link:before {
-  top: 0;
-  content: "";
-  left: -100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  background: var(--ui5ButtonBackground);
-  transform: skew(20deg) translateX(-25%);
-  transition: transform 0.5s ease;
-  width: 120%;
-  z-index: -1;
-}
-
-.ui5con-agenda-livestream-link:hover:before {
-  transform: skew(-45deg) translateX(75%);
-}
-
 .ui5con-agenda-livestream-link:hover {
-  color: #FFEDE8;
+  color: #D8C2BC;
+  border-color: #D8C2BC;
 }
 
-.ui5con-agenda-livestream-link:hover span {
-  background: #FFFBFF;
+.ui5con-agenda-livestream-link:active {
+  color: #53433F;
+  border-color: #A08C87;
+  background: #F5DED8;
+}
+
+.ui5con-agenda-livestream-link:focus {
+  outline: none;
+  color: #53433F;
+  border-color: #A08C87;
+  background: #F5DED8;
 }
 
 .ui5con-agenda-livestream-link span {
@@ -518,13 +509,21 @@
   background: #FF5449;
 }
 
-.ui5con-agenda-livestream-link:focus {
-  outline: none;
-  color: #FFB778;
-  border-color: #FFB778;
-  box-shadow: 0 0 0 0.0625rem #FFB778; 
+.ui5con-agenda-livestream-link:hover span {
+  background: #FFFBFF;
 }
 
+.ui5con-agenda-livestream-link:hover span {
+  background: #FFB4AB;
+}
+
+.ui5con-agenda-livestream-link:active span {
+  background: #93000A;
+}
+
+.ui5con-agenda-livestream-link:focus span {
+  background: #93000A;
+}
 
 @media only screen and (min-width: 768px) {
   .ui5con-agenda-heading {
