@@ -145,6 +145,24 @@ var aboutTheTeam = new Vue({
           picture: 'images/team/jan-mummenthaler.webp',
           github: 'https://github.com/loginger'
         },
+        {
+          name: 'Johannes Gluch',
+          city: 'Walldorf',
+          picture: 'images/team/johannes-gluch.png',
+          github: 'https://github.com/H4ze'
+        },
+        {
+          name: 'Daniel Nowak',
+          city: 'Walldorf',
+          picture: 'images/team/daniel-nowak.jpg',
+          github: 'https://github.com/nowakdaniel'
+        },
+        {
+          name: 'Felix Schubert',
+          city: 'Walldorf',
+          picture: 'images/team/felix-schubert.jpg',
+          github: 'https://linkedin.com/in/felix-schubert'
+        },
 
       ],
       committee: [
