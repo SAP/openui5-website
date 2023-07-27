@@ -161,7 +161,7 @@ var aboutTheTeam = new Vue({
           name: 'Felix Schubert',
           city: 'Walldorf',
           picture: 'images/team/felix-schubert.jpg',
-          github: 'https://linkedin.com/in/felix-schubert'
+          linkedin: 'https://linkedin.com/in/felix-schubert'
         },
 
       ],
