@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Arnaud Buchholz
 - Alexandar Mitsev
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/IESw1-kIzu8
 ---
 We’re looking forward to a reunion with Arnaud Buchholz, an expert in UI5 and particularly in UI5 testing. He is a frequent speaker at conferences, including [UI5con 2021](https://youtu.be/EBp0bdIqu4s) where he introduced a new test runner for UI5 applications that enables the parallel execution of tests. Since then, Arnaud has released two new versions of his [ui5-test-runner](https://github.com/ArnaudBuchholz/ui5-test-runner), which have successfully addressed many initial challenges, such as integrating it with the UI5 Tooling. In this episode, Arnaud will demonstrate the new capabilities of the test runner and discuss his plans for future releases. In addition, Alexandar Mitsev will provide updates on the development of integration cards. He will showcase how to create and embed a UI5 integration card into SAP Work Zone as a fully integrated end-to-end sample. 
 
