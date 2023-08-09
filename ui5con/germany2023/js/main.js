@@ -472,8 +472,9 @@ var main = new Vue({
     },
     getLinkName(link) {
       let tempLink = link.linkType.toLowerCase();
+      let tempUrl = link.url;
 
-      if (tempLink.includes("live")) {
+      if (tempUrl.includes("youtu")) {
         return "recording";
       }
 

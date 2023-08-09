@@ -209,7 +209,7 @@
                   <div class="ui5con-agenda-links-container">
                     <template v-for="link in event.presentationLinks">
                       <a v-if="link.url" :href="link.url" class="ui5con-agenda-livestream-link" target="_blank" rel="noopener noreferrer" hreflang="en" :title="`Click to open the session ${getLinkName(link)}. Opens in a new window.`">
-                        <span role="presentation" aria-hidden="true" v-if="link.linkType==='live'"></span>
+                        <span role="presentation" aria-hidden="true" v-if="link.url.includes('youtu')"></span>
                         {{getLinkName(link)}}
                       </a>
                     </template>
