@@ -13,7 +13,7 @@ url: https://sap-se.zoom.com/j/94833714827
 Join us at UI5ers live in September for an exciting lineup of topics!
 We are thrilled to welcome Benedikt Schoelch from the UI5 development team. Benedikt will introduce the recently published mdc library, explaining its relevance within OpenUI5, and it offers with UI5 2.0. Expect to gain comprehensive insights into the mdc library and its benefits.
 
-But that's not all! Peter Muessig will also be on hand to demonstrate and explain the usage of the CDS plugin for UI5 and the UI5 middleware for CAP. Lean how these extensions can greatly improve your daily work and unlock new possiblities for your project structure and separation of the CDS server and UI5 apps. With these advancements, developing cloud applications has never been easier or more flexible.
+But that's not all! Peter Muessig will also be on hand to demonstrate and explain the usage of the CDS plugin for UI5 and the UI5 middleware for CAP. Learn how these extensions can greatly improve your daily work and unlock new possiblities for your project structure and separation of the CDS server and UI5 apps. With these advancements, developing cloud applications has never been easier or more flexible.
 
 Join in and get ready to take your UI5 development to the next level!
 
