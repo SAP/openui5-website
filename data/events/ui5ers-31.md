@@ -9,7 +9,7 @@ speakers:
 - Holger Schäfer
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already. Thus, Holger Schäfer from the UI5 community will once again grace us with his presence, this time presenting the VitePress framework he built using UI5 Web Components. 
+The agenda is not finalized yet, but we have some good ideas already. Holger Schäfer from the UI5 community will once again grace us with his presence, this time presenting the VitePress quickstart template he built using UI5 Web Components. 
 In addition, we are excited to host members of our UI5 Flexibility team, who will share their latest achievements in UI adaptation.
 
 So stay tuned and don't miss out to join in!
