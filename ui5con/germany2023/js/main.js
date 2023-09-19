@@ -73,29 +73,19 @@ var main = new Vue({
       filter: "all",
       formattedLineup: [],
       activeSpeakers: null,
+      speakerLineupJson: speakerLineupJson,
+      proposalLineupJson: proposalLineupJson
     };
   },
   mounted() {
-    axios
-      .get(
-        "https://ui5con2023.cfapps.eu12.hana.ondemand.com/api/speaker/lineup"
-      )
-      .then((response) => {
-        this.speakers = response.data;
-        this.shuffledSpeakers = this.shuffleSpeakersArray(this.speakers).slice(
-          0,
-          5
-        );
-      });
+    // Speakers Lineup API
+    this.speakers = speakerLineupJson;
+    this.shuffledSpeakers = this.shuffleSpeakersArray(this.speakers).slice(
+    0, 5);
 
-    axios
-      .get(
-        "https://ui5con2023.cfapps.eu12.hana.ondemand.com/api/proposal/lineup"
-      )
-      .then((response) => {
-        this.lineup = response.data;
-        this.formattedLineup = this.formatLineup();
-      });
+    // Proposal Lineup API
+    this.lineup = proposalLineupJson;
+    this.formattedLineup = this.formatLineup();
 
     let interval;
     let timeNow = new Date().toISOString();

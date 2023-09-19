@@ -394,7 +394,7 @@
                           :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`"
                         >
                           <img
-                            :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                            :src="`images/speakers/${speaker.photoUrl}.jpeg`"
                             :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
                           />
                         </button>
@@ -500,7 +500,7 @@
             >
               <figure>
                 <img
-                  :src="`https://ui5con2023.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                  :src="`images/speakers/${speaker.photoUrl}.jpeg`"
                   :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
                 />
               </figure>
@@ -837,6 +837,8 @@
     <script src="./components/footer-section.component.js"></script>
     <script src="./components/header-section.component.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/proposalAPI.js"></script>
+    <script src="./js/speakerAPI.js"></script>
     <script src="./js/luxon.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/sendinblue.js"></script>
