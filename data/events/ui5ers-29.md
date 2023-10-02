@@ -9,7 +9,7 @@ speakers:
 - Jan Mummenthaler
 - Andreas Kunz
 - Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/SwlzuEoLcNk
 ---
 At the UI5con keynote it has been announced that the TypeScript support for UI5 is available for productive usage. Because there was only a limited time to show the topic, in this UI5ers live episode, Andreas and Peter will explain the new capabilities in more detail. 
 
