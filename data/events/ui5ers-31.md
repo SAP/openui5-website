@@ -7,12 +7,12 @@ location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
 - Holger Schäfer
+- Dominik Stork
+- Christian Voshage
 url: https://sap-se.zoom.com/j/94833714827
 ---
-The agenda is not finalized yet, but we have some good ideas already. Holger Schäfer from the UI5 community will once again grace us with his presence, this time presenting the VitePress quickstart template he built using UI5 Web Components. 
-In addition, we are excited to host members of our UI5 Flexibility team, who will share their latest achievements in UI adaptation.
-
-So stay tuned and don't miss out to join in!
+Join us for the next UI5ers live session on October 12, featuring Holger Schäfer from the UI5 community. Holger will showcase an innovative VitePress quickstart template he crafted using UI5 Web Components. 
+Furthermore, we are thrilled to have Dominik Stork and Christian Voshage from the SAPUI5 Flexibility team on board. They'll be walking us through the latest advancements in SAPUI5 Flexibility, specifically focusing on versioning and content-based adaptation. Discover how these developments can empower you to create flexible and adaptable UI5 applications that can evolve with your business needs.
 
 If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
 [#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
