@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Peter Muessig
 - Benedikt Schoelch
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/tzDBWwAFqIc
 ---
 Join us at UI5ers live in September for an exciting lineup of topics!
 We are thrilled to welcome Benedikt Schoelch from the UI5 development team. Benedikt will introduce the recently published mdc library, explaining its relevance within OpenUI5, and it offers with UI5 2.0. Expect to gain comprehensive insights into the mdc library and its benefits.
