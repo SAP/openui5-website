@@ -1,8 +1,8 @@
 ---
 name: Pieter Janssens
-company: 
+company: Deloitte Consulting & Advisory
 photo: ./pieter-janssens.jpg
-twitter: 
-linkedin: 
-github: 
+twitter: piejanssens
+linkedin: pieter-janssens-52270a38
+github: piejanssens
 ---
