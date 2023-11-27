@@ -32,6 +32,12 @@
     font-family: "72";
     font-style: normal;
     font-weight: 700;
-    src: url("./72-Regular.woff2") format("woff2"),
-         url("./72-Regular.woff") format("woff");
+    src: url("./72-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "72";
+    font-style: normal;
+    font-weight: 900;
+    src: url("./72-Black.woff2") format("woff2");
 }

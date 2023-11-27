@@ -8,9 +8,10 @@
         "name": "Releases"
     },
     {
-        "to": "/projects/",
-        "name": "Projects"
+        "to": "/anniversary/",
+        "name": "Anniversary"
     },
+
     {
         "to": "/events/",
         "name": "Events"
