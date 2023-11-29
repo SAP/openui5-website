@@ -9,7 +9,7 @@ import Tile from "../components/Tile";
 import Icon from "../components/Icon";
 
 
-const CommunityPage = ({ data: { communityJson: { title, channels, connect }, allEventsJson } }) => (
+const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }) => (
     <>
         <SEO title={title} />
         <Section>
@@ -23,7 +23,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                     <time>2013</time>
 
                     <ol role="list">
-                        <li class="milestone-item milestone-item--old milestone-item--photo" role="listitem">
+                        <li class="milestone-item milestone-item--old milestone-item--photo milestone-item--bc" role="listitem">
                             <div>
                                 <h2>Announcement</h2>
 
@@ -44,7 +44,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                     <time>2014</time>
 
                     <ol role="list">
-                        <li class="milestone-item milestone-item--old milestone-item--photo" role="listitem">
+                        <li class="milestone-item milestone-item--old milestone-item--bc milestone-item--photo" role="listitem">
                             <div>
                                 <h2>Resources on GitHub</h2>
                                 <p>first commit on github in october: <a href="https://github.com/SAP/openui5/commit/707bfef98f188c03bab45626ebf8af48cddac997" rel="nofollow external">Github Commit</a></p>
@@ -56,7 +56,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                             </div>
                         </li>
 
-                        <li class="milestone-item milestone-item--old" role="listitem">
+                        <li class="milestone-item milestone-item--bc milestone-item--old" role="listitem">
                             <div>
                                 <h2>New team in bulgaria</h2>
 
@@ -73,7 +73,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                     <time>2015</time>
 
                     <ol role="list">
-                        <li class="milestone-item milestone-item--old milestone-item--photo" role="listitem">
+                        <li class="milestone-item milestone-item--old milestone-item--bc milestone-item--photo" role="listitem">
                             <div>
                                 <h2>OpenUI5 Slack</h2>
 
@@ -92,7 +92,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                     <time>2016</time>
 
                     <ol role="list">
-                        <li class="milestone-item milestone-item--old milestone-item--photo" role="listitem">
+                        <li class="milestone-item milestone-item--blz milestone-item--old milestone-item--photo" role="listitem">
                             <div>
                                 <h2>UI5con Frankfurt</h2>
 
@@ -110,7 +110,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                     <time>2017</time>
 
                     <ol role="list">
-                        <li class="milestone-item milestone-item--photo" role="listitem">
+                        <li class="milestone-item milestone-item--blz milestone-item--photo" role="listitem">
                             <div>
                                 <h2>UI5con@SAP</h2>
 
@@ -120,14 +120,14 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--blz " role="listitem">
                             <div>
                                 <h2>New Logo</h2>
 
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--blz " role="listitem">
                             <div>
                                 <h2>UI5 Top 5 “Challenge”</h2>
 
@@ -142,19 +142,19 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                     <time>2018</time>
 
                     <ol role="list">
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--blz " role="listitem">
                             <div>
                                 <h2>UI5 Tooling beta</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--blz " role="listitem">
                             <div>
                                 <h2>UI5 Newscast</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item milestone-item--photo" role="listitem">
+                        <li class="milestone-item milestone-item--blz  milestone-item--photo" role="listitem">
                             <div>
                                 <h2>YippiAPIPA</h2>
 
@@ -165,7 +165,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--blz " role="listitem">
                             <div>
                                 <h2>UI5con Bangalore</h2>
                             </div>
@@ -180,13 +180,13 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                     <time>2019</time>
 
                     <ol role="list">
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>UI5 Community Project</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>Flush!</h2>
 
@@ -194,7 +194,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>Fiori 3 Design</h2>
 
@@ -202,7 +202,7 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>CERN</h2>
 
@@ -294,13 +294,13 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
                     <time>2023</time>
 
                     <ol role="list">
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--hrzn" role="listitem">
                             <div>
                                 <h2>OpenUI5 V2 announcement</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--hrzn" role="listitem">
                             <div>
                                 <h2>TypeScript Support</h2>
 
@@ -316,33 +316,12 @@ const CommunityPage = ({ data: { communityJson: { title, channels, connect }, al
     </>
 );
 
-export default CommunityPage;
+export default AnniversaryPage;
 
 export const query = graphql`
     query {
-        communityJson {
+        anniversaryJson {
             title
-            channels {
-                title
-                items {
-                    title
-                    url
-                    icon {
-                        publicURL
-                    }
-                }
-            }
-            connect {
-                title
-                items {
-                    title
-                    description
-                    url
-                    icon {
-                        publicURL
-                    }
-                }
-            }
         }
     }
 `

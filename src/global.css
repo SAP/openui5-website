@@ -150,6 +150,34 @@ html {
     letter-spacing: -1px;
 }
 
+.milestone-item--bc h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom,#2da9b1 0,#178299 50%,#1a4c7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.milestone-item--hrzn h2 {
+    font-weight: 900;
+    color: #1d2d3e;
+}
+
+.milestone-item--blz h2 {
+    font-weight: 400;
+    color: #333;
+}
+
+.milestone-item--qrtz h2 {
+    font-weight: 400;
+    color: #346187;
+}
+
+.milestone-item--bc p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
 .milestone-item p {
     margin-top: 0;
 }
