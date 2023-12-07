@@ -7,7 +7,7 @@ location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
 - DJ Adams
-- Christian Braukmueller
+- Christian Braukmüller
 - Volker Buzek
 - Wouter Lemaire
 url: https://sap-se.zoom.com/j/94833714827
