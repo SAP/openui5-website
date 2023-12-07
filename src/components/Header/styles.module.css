@@ -28,24 +28,23 @@
     }
 }
 
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .Header.view_full {
     height: 600px;
-    background: linear-gradient(225deg, #1366a2, #2b86b9, #1f76ae, #267fb4);
+    background: linear-gradient(225deg, #1366a2, #0f9be6);
     background-size: 400% 400%;
     animation: AnimationName 15s ease infinite;
-
-
-    @keyframes AnimationName {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
 
     @media (max-width: env(--screen-breakpoint-1440)) {
         height: 480px;
@@ -71,7 +70,8 @@
         background-size: 2200px auto;
         background-position: -650px 50%;
         z-index: 1;
-        opacity: 0.10;
+        opacity: .12;
+        mix-blend-mode: soft-light;
 
         @media (max-width: env(--screen-breakpoint-1440)) {
             background-size: 1800px auto;
