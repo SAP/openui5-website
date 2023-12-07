@@ -36,7 +36,7 @@ const Header = ({ view }) => {
                         <Toolbar version={versionsJson.version} />
                         { view === "full"
                             ? (
-                                <div className={styles.HeaderTitle}>
+                                <div className={styles.HeaderTitle} role="heading" aria-level="1" aria-label="OpenUI5">
                                     <Text size="2" font="light" dangerouslySetInnerHTML={{__html: indexJson.header.description}} />
                                 </div>
                             )
