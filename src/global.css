@@ -29,6 +29,16 @@ html {
 
 .anniversary {
     line-height: 1.2;
+    font-size: 33px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .anniversary {
+        font-size: 44px;
+    }
 }
 
 .introtext {
