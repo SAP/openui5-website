@@ -187,7 +187,9 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                     <ol role="list">
                         <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
-                                <h2>UI5 Community Project</h2>
+                                <h2>UI5 Ecosystem Showcase</h2>
+
+                                <p><a href="https://github.com/ui5-community/ui5-ecosystem-showcase" rel="nofollow external">UI5 Ecosystem</a></p>
                             </div>
                         </li>
 
@@ -224,6 +226,8 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                         <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>UI5con ON AIR</h2>
+
+                                <p><a href="https://blogs.sap.com/2020/08/14/ui5con-on-air-2020-brought-the-event-format-to-a-new-level/">UI5con ON AIR 2020 Brought the Event Format to A New Level</a> by <a href="https://people.sap.com/margot.wollny">Margot Wollny</a></p>
                             </div>
                         </li>
 
@@ -241,10 +245,18 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                     <time>2021</time>
 
                     <ol role="list">
-                        <li class="milestone-item milestone-item--qrtz" role="listitem">
+                        <li class="milestone-item" role="listitem">
+
                             <div>
-                                <h2>Easy-UI5 3.0</h2>
+
+                                <h2>UI5 Community</h2>
+
+                                <p><a href="https://github.com/ui5-community" rel="nofollow external">UI5 Ecosystem</a></p>
+
+                                <p><a href="https://blogs.sap.com/2021/02/26/ui5-ecosystem-showcase-moved-to-ui5-community/">UI5 Ecosystem Showcase Moved to UI5 Community</a> by <a href="https://people.sap.com/peter.muessig">Peter Muessig</a></p>
+
                             </div>
+
                         </li>
 
                     </ol>
@@ -264,12 +276,20 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                         <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>BestOfUI5</h2>
+
+                                <p><a href="https://bestofui5.org/" rel="nofollow external">Best of UI5</a></p>
+
+                                <p><a href="https://blogs.sap.com/2022/05/23/best-of-ui5-the-best-place-to-find-packages-for-the-ui5-ecosystem/" rel="nofollow external">Best of UI5 – The best place to find packages for the UI5 ecosystem (blog post)</a> by <a href="https://people.sap.com/mariannnn">Marian Zeis</a></p>
                             </div>
                         </li>
 
                         <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>wdi5</h2>
+
+                                <p><a href="https://ui5-community.github.io/wdi5/#/" rel="nofollow external">WDI5</a></p>
+
+                                <p><a href="https://blogs.sap.com/2022/05/12/wdi5-release-state-of-things-outlook/" rel="nofollow external">wdi5 – release, state of things, outlook (blog post)</a> by <a href="https://people.sap.com/vobu">Volker Buzek</a></p>
                             </div>
                         </li>
 
@@ -292,6 +312,8 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                                 <h2>TypeScript Support</h2>
 
                                 <p>started in 2020...</p>
+
+                                <p><a href="https://blogs.sap.com/2023/07/27/typescript-for-ui5-yay-its-official-and-a-round-up-of-recent-changes/" rel="nofollow external">TypeScript for UI5: “Yay, it’s official!” (blog post)</a> by <a href="https://people.sap.com/andreas.kunz">Andreas Kunz</a></p>
                             </div>
                         </li>
                     </ol>
