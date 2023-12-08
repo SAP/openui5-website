@@ -148,12 +148,6 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                             </div>
                         </li>
 
-                        <li class="milestone-item milestone-item--blz " role="listitem">
-                            <div>
-                                <h2>UI5 Newscast</h2>
-                            </div>
-                        </li>
-
                         <li class="milestone-item milestone-item--blz  milestone-item--photo" role="listitem">
                             <div>
                                 <h2>YippiAPIPA</h2>
@@ -202,12 +196,6 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                             </div>
                         </li>
 
-                        <li class="milestone-item milestone-item--qrtz" role="listitem">
-                            <div>
-                                <h2>CERN</h2>
-
-                            </div>
-                        </li>
                     </ol>
 
                 </li>
@@ -216,19 +204,19 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                     <time>2020</time>
 
                     <ol role="list">
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>Homeoffice due to Covid</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>UI5con ON AIR</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>UI5ers live</h2>
                             </div>
@@ -242,19 +230,19 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                     <time>2021</time>
 
                     <ol role="list">
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>UI5con ON AIR</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>Easy-UI5 3.0</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>UI5 Web Components 1.0</h2>
                             </div>
@@ -268,19 +256,19 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                     <time>2022</time>
 
                     <ol role="list">
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>OpenUI5 1.100</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>BestOfUI5</h2>
                             </div>
                         </li>
 
-                        <li class="milestone-item" role="listitem">
+                        <li class="milestone-item milestone-item--qrtz" role="listitem">
                             <div>
                                 <h2>wdi5</h2>
                             </div>
