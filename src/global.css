@@ -27,6 +27,10 @@ html {
 
 }
 
+.anniversary {
+    line-height: 1.2;
+}
+
 .introtext {
 
 }
@@ -120,7 +124,8 @@ html {
     display: block;
 }
 
-.milestone-item--photo figure {
+.milestone-item--photo figure,
+.milestone-item video {
     max-width: 80%;
     margin: 0 0 1rem 0;
     padding: 6px;
@@ -176,10 +181,10 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
 .milestone-item p {
     margin-top: 0;
+    hyphens: auto;
+    width: 90%;
 }
 
 @media only screen and (min-width: 768px) {
