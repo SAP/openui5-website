@@ -22,11 +22,6 @@ html {
     }
 }
 
-
-.anniversary {
-
-}
-
 .anniversary {
     line-height: 1.2;
     font-size: 33px;
@@ -42,7 +37,6 @@ html {
 }
 
 .introtext {
-
 }
 
 .milestones,
@@ -193,7 +187,6 @@ html {
 
 .milestone-item p {
     margin-top: 0;
-    hyphens: auto;
     width: 90%;
 }
 
