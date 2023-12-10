@@ -28,8 +28,23 @@
     }
 }
 
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .Header.view_full {
     height: 600px;
+    background: linear-gradient(225deg, #1366a2, #0f9be6);
+    background-size: 400% 400%;
+    animation: AnimationName 15s ease infinite;
 
     @media (max-width: env(--screen-breakpoint-1440)) {
         height: 480px;
@@ -50,26 +65,27 @@
         left: 0;
         right: 0;
         content: '';
-        background-image: url("./images/bg.svg");
+        background-image: url("./images/phoenix-outlines.svg");
         background-repeat: no-repeat;
-        background-size: 1920px 1398px;
-        background-position: -500px 50%;
+        background-size: 2200px auto;
+        background-position: -650px 50%;
         z-index: 1;
-        opacity: 0.5;
+        opacity: .12;
+        mix-blend-mode: soft-light;
 
         @media (max-width: env(--screen-breakpoint-1440)) {
-            background-size: 1800px 1311px;
-            background-position: -700px 50%;
+            background-size: 1800px auto;
+            background-position: -550px 50%;
         }
 
         @media (max-width: env(--screen-breakpoint-980)) {
-            background-size: 1700px 1238px;
-            background-position: -900px 50%;
+            background-size: 1700px auto;
+            background-position: -600px 50%;
         }
 
         @media (max-width: env(--screen-breakpoint-767)) {
-            background-size: 1200px 874px;
-            background-position: -600px 50%;
+            background-size: 1200px auto;
+            background-position: -350px 50%;
         }
     }
 
@@ -83,21 +99,28 @@
 
     & .HeaderTitle {
         text-align: center;
-        margin-top: 166px;
-        background: url("./images/openui5.svg") 50% 0 no-repeat;
-        background-size: 359px 87px;
-        padding-top: 103px;
+        margin-top: 0;
+        background: url("./images/anniversary-logo.svg") 50% 0 no-repeat;
+        background-size: 325px auto;
+        padding-top: 450px;
 
         @media (max-width: env(--screen-breakpoint-1440)) {
-            background-size: 271px 66px;
-            padding-top: 82px;
-            margin-top: 125px;
+            background-size: 250px auto;
+            padding-top: 350px;
         }
 
         @media (max-width: env(--screen-breakpoint-767)) {
-            margin-top: 65px;
-            background-size: 200px 48px;
-            padding-top: 64px;
+            background-size: 160px auto;
+            padding-top: 220px;
+        }
+
+        > div {
+            position: absolute;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
         }
     }
 }

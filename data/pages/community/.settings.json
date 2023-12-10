@@ -16,7 +16,7 @@
                 },
                 {
                     "title": "SAP Community",
-                    "url": "https://www.sap.com/community/tag.html?id=500983881501772639608291559920477",
+                    "url": "https://community.sap.com/topics/ui5",
                     "icon": "../../icons/sap.svg"
                 }
             ]
@@ -25,9 +25,9 @@
             "title": "Stay Up to Date",
             "items": [
                 {
-                    "title": "UI5ers Buzz",
-                    "url": "https://blogs.sap.com/tag/ui5ers-buzz/",
-                    "icon": "../../icons/ui5er-buzz.svg"
+                    "title": "UI5ers live",
+                    "url": "https://www.youtube.com/playlist?list=PLHUs_FUbq4dX8lUBM21QKGC_9CwCe6mBC",
+                    "icon": "../../icons/ui5ers.svg"
                 },
                 {
                     "title": "UI5 Official",
@@ -35,9 +35,14 @@
                     "icon": "../../icons/ui5.svg"
                 },
                 {
-                    "title": "Twitter",
+                    "title": "X",
                     "url": "https://twitter.com/openui5",
-                    "icon": "../../icons/twitter.svg"
+                    "icon": "../../icons/x-logo.svg"
+                },
+                {
+                    "title": "LinkedIn",
+                    "url": "https://www.linkedin.com/company/openui5",
+                    "icon": "../../icons/linkedin.svg"
                 },
                 {
                     "title": "YouTube",
