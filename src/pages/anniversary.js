@@ -37,7 +37,7 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                                 </figure>
 
                                 <p>At TechEd 2013 in Bangalore, the tech world witnessed a significant milestone when Michael Reh and Vishal Sikka announced OpenUI5. This transformative decision was largely driven by the SAP developer community, who had passionately advocated for the open sourcing of the SAPUI5 codebase.</p>
-                                <p><a href="https://news.sap.com/2013/12/sap-increases-focus-on-developer-experience-and-makes-key-open-source-contributions/" rel="nofollow external">SAP News: SAP Increases Focus on Developer Experience and Makes Key Open Source Contributions.</a></p>
+                                <p><a href="https://web.archive.org/web/20230326022325/https://news.sap.com/2013/12/sap-increases-focus-on-developer-experience-and-makes-key-open-source-contributions/" rel="nofollow external">SAP News: SAP Increases Focus on Developer Experience and Makes Key Open Source Contributions.</a></p>
                                 <p><a href="https://blogs.sap.com/2013/11/20/reasons-why-sap-should-open-source-sapui5/" rel="nofollow external">13 reasons why SAP should open-source SAPUI5</a> by <a href="https://people.sap.com/jan.penninkhof2" rel="nofollow external">Jan Penninkhof</a></p>
                             </div>
                         </li>
