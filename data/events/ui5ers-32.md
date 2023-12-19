@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Pieter Janssens
 - Daniel Nanovski
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/Je6cAPVv4vs
 ---
 Join us for an enlightening session where our experts Pieter Janssens and Daniel Nanovski share their experiences and solutions with you. First, Pieter will discuss the challenges he faced while using UAA in combination with ui5-middleware-cfdestination, and how he collaborated with Peter to overcome these obstacles. He will also delve into the issues he encountered with TypeScript transpiling UI5. Pieter will share his journey of reaching out to the UI5 team and the solution they developed together. To make the session even more engaging, Pieter will demonstrate the solution to you, providing a hands-on experience.
 
