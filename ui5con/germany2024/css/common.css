@@ -705,7 +705,7 @@ article {
 
 /* ------------------------ Newsletter section -------------------------  */
 .ui5con-social-links {
-  gap: 10%;
+  gap: 8vw;
   display: flex;
   padding-inline: 0;
   margin-block: 3rem 4rem;
@@ -754,7 +754,7 @@ article {
 /* ------------------------- Social Sharing ----------------------------  */
 .social-share {
   list-style: none;
-  gap: 5%;
+  gap: 8vw;
   display: flex;
   padding-inline: 0;
   margin-block: 5rem 2rem;
@@ -765,6 +765,12 @@ article {
 .social-share svg {
   width: 2rem;
   height: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .social-share {
+    gap: 4vw;
+  }
 }
 
 
@@ -791,12 +797,11 @@ footer {
 }
 
 .ui5con-links-container {
-  gap: 5%;
+  gap: 8vw;
   order: 3;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-inline: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
