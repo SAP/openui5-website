@@ -6,14 +6,21 @@ var main = new Vue({
     return {
         upcomingEvents: [
             {
+                name: 'UI5con Germany 2024',
+                link: 'germany2024/',
+                logo: 'launchpad/data/pictures/UI5con.png',
+                where: 'Germany',
+                when: 'June 5 / 2024'
+            },
+        ],
+        pastEvents: [
+            {
                 name: 'UI5con Germany 2023',
                 link: 'germany2023/',
                 logo: 'launchpad/data/pictures/UI5con.png',
                 where: 'Germany',
                 when: 'July 6 / 2023'
             },
-        ],
-        pastEvents: [
             {
                 name: 'UI5con Hybrid 2022',
                 link: 'germany2022/',
