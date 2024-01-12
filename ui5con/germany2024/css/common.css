@@ -453,12 +453,22 @@ a {
 a:is(:hover) {
   color: var(--brand-color);
   text-decoration: underline;
+  text-decoration-color: var(--brand-color-alt);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
-a:is(:focus, .active) {
+a:is(:focus, .active, .active:hover) {
   outline: none;
   color: var(--brand-color);
   text-decoration: underline;
+  text-decoration-color: var(--brand-color-alt);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:is(.active) {
+  text-decoration-color: var(--brand-color);
 }
 
 .ui5con-btn {
