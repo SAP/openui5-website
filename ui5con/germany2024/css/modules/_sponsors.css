@@ -1,6 +1,7 @@
 .ui5con-sponsors-table {
   font-size: var(--type-0);
   margin: auto;
+  margin-block-end: 4rem;
 }
 
 @media only screen and (max-width: 750px) {
