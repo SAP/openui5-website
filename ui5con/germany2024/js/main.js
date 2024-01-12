@@ -99,9 +99,9 @@ var main = new Vue({
           return ''
       }
 
-      let description = "Dear friend, \n\nWe are excited to announce that UI5con 2024 is taking place on June 05, 2024.\n\nThis year’s conference will be an in-person event, taking place in St. Leon-Rot/Germany.\nThis is the most important event of the year for developers working with UI5. Interesting keynotes and sessions held by the UI5 product team as well as ambassadors from the UI5 community will shed light on a variety of UI5 topics. On top of this, you will meet friends you didn't see for a while, get to know new people from the community and enjoy a great party in the evening event.\n\nPlease save the following details:\nDate: 05/06/2024\nLocation: SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany)\n\nNote that seats are limited, and registration is needed to be able to take part in this event! The registration process will open End of April. For more details as the conference approaches, please visit our Conference Page https://openui5.org/ui5con/germany2024/ \n\nWe are looking forward seeing you there!\nYour UI5con Organization Team"
+      let description = "Dear friend, \n\nWe are thrilled to announce that UI5con 2024 will be held on June 5, 2024. This event is the highlight of the year for developers working with UI5, and we have an exciting lineup of keynotes and sessions planned for you.\n\nFor those eager to join us in person at St. Leon-Rot, Germany, it's important to note that seats for UI5con 2024 are limited. To secure your spot, registration will be required. Stay updated by regularly visiting our conference homepage or following us on our social media channels, so you don't miss the registration start date.\n\nCan't make it to St. Leon-Rot? Don't worry, we've got you covered! UI5con 2024 will also feature a livestream on the OpenUI5 YouTube channel, showcasing selected sessions. This way, you won't miss out on the valuable insights and knowledge shared by our esteemed speakers. Block this date in your calendar, as you won't want to miss the opportunity to learn from the best in the industry.\n\nStay tuned for more updates and exciting announcements as we get closer to UI5con 2024. We look forward to seeing you there, either in person or virtually!\n\nPlease save the following details:\nDate: 05/06/2024 \nLocation: SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany) \n\nConference website: https://openui5.org/ui5con/germany2024"
 
-      let descriptionGoogle = `Dear friend, <br><br>We are excited to announce that UI5con 2024 is taking place on June 05, 2024.<br><br>This year’s conference will be an in-person event, taking place in St. Leon-Rot/Germany.<br><br>This is the most important event of the year for developers working with UI5. Interesting keynotes and sessions held by the UI5 product team as well as ambassadors from the UI5 community will shed light on a variety of UI5 topics. On top of this, you will meet friends you didn't see for a while, get to know new people from the community and enjoy a great party in the evening event.<br><br>Please save the following details:<br>Date: 05/06/2024<br>Location: SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany)<br><br>Note that seats are limited, and registration is needed to be able to take part in this event! The registration process will open End of April. For more details as the conference approaches, please visit our <a href="https://openui5.org/ui5con/germany2024/" target="_blank">Conference Page</a>  <br><br>We are looking forward seeing you there!<br>Your UI5con Organization Team`
+      let descriptionGoogle = `Dear friend, <br><br>We are thrilled to announce that UI5con 2024 will be held on June 5, 2024. This event is the highlight of the year for developers working with UI5, and we have an exciting lineup of keynotes and sessions planned for you.<br><br>For those eager to join us in person at St. Leon-Rot, Germany, it's important to note that seats for UI5con 2024 are limited. To secure your spot, registration will be required. Stay updated by regularly visiting our conference homepage or following us on our social media channels, so you don't miss the registration start date.<br><br>Can't make it to St. Leon-Rot? Don't worry, we've got you covered! UI5con 2024 will also feature a livestream on the OpenUI5 YouTube channel, showcasing selected sessions. This way, you won't miss out on the valuable insights and knowledge shared by our esteemed speakers. Block this date in your calendar, as you won't want to miss the opportunity to learn from the best in the industry.<br><br>Stay tuned for more updates and exciting announcements as we get closer to UI5con 2024. We look forward to seeing you there, either in person or virtually!<br><br>Please save the following details:<br>Date: 05/06/2024<br>Location: SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany) <br><br>Conference website: <a href="https://openui5.org/ui5con/germany2024/" target="_blank">https://openui5.org/ui5con/germany2024/</a>`
 
 
       let cal = [
@@ -110,7 +110,7 @@ var main = new Vue({
         'BEGIN:VEVENT',
         'DTSTART:' + calendarStartDate,
         'DTEND:' + calendarEndDate,
-        'SUMMARY:' + 'UI5con 2024',
+        'SUMMARY:' + 'Save the Date: UI5con 2024',
         'LOCATION:' + 'SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany)',
         'DESCRIPTION:' + removeForbiddenCharachtersOutlook(description),
         'UID:' + '1',
@@ -124,7 +124,7 @@ var main = new Vue({
             google: encodeURI([
               'https://www.google.com/calendar/render',
               '?action=TEMPLATE',
-              '&text=' + 'UI5con 2024',
+              '&text=' + 'Save the Date: UI5con 2024',
               '&dates=' + calendarStartDate ,
               '/' + calendarEndDate,
               '&location='+'SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany)',
@@ -135,7 +135,7 @@ var main = new Vue({
               'https://outlook.office365.com/owa/',
               '?path=/calendar/action/compose',
               '&rru=addevent',
-              '&subject=' + 'UI5con 2024',
+              '&subject=' + 'Save the Date: UI5con 2024',
               '&startdt=' + officeStartDate,
               '&enddt=' + officeEndDate,
               '&location=' + 'SAP SE (ROT03), SAP-Allee 27, 68789 St. Leon-Rot (Germany)',
