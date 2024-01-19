@@ -56,6 +56,9 @@
             <a href="sponsors.html">sponsoring</a>
           </li>
           <li>
+            <a href="speakerinfo.html">speaker infos</a>
+          </li>
+          <li>
             <a href="https://openui5.org/ui5con/" hreflang="en" rel="external"
               title="Click to open ui5con events webpage. Opens in a new window.">previous events</a>
           </li>
@@ -63,49 +66,24 @@
       </nav>
 
       <h1>
-        <span>We're back for 2024!</span>
+        <span>Call for Speakers!</span>
       </h1>
 
-      <h2>Join us June 5th.</h2>
+      <h2>Applications close February 26</h2>
 
-      <!-- TO DO -->
-      <!-- Calendar blocker -->
       <p>
-        <button class="ui5con-btn" @click="showCalendars()">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="images/icons/sprite.svg#calendar"></use>
-          </svg>
-          add to calendar
-        </button>
+        <a href="speakerinfo.html">Get all the infos.</a>
       </p>
 
-      <div class="ui5con-calendars" v-if="isCalendarsVisible">
-        <ul class="ui5con-calendars-list">
-          <li>
-            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240605%2F20240606&details=We%20are%20thrilled%20to%20announce%20that%20UI5con%202024%20will%20be%20held%20on%20June%205%2C%202024.%20This%20event%20is%20the%20highlight%20of%20the%20year%20for%20developers%20working%20with%20UI5%2C%20and%20we%20have%20an%20exciting%20lineup%20of%20keynotes%20and%20sessions%20planned%20for%20you.%0A%0AFor%20those%20eager%20to%20join%20us%20in%20person%20at%20St.%20Leon-Rot%2C%20Germany%2C%20it%27s%20important%20to%20note%20that%20seats%20for%20UI5con%202024%20are%20limited.%20To%20secure%20your%20spot%2C%20registration%20will%20be%20required.%20Stay%20updated%20by%20regularly%20visiting%20our%20conference%20homepage%20or%20following%20us%20on%20our%20social%20media%20channels%2C%20so%20you%20don%27t%20miss%20the%20registration%20start%20date.%0A%0ACan%27t%20make%20it%20to%20St.%20Leon-Rot%3F%20Don%27t%20worry%2C%20we%27ve%20got%20you%20covered%21%20UI5con%202024%20will%20also%20feature%20a%20livestream%20on%20the%20OpenUI5%20YouTube%20channel%2C%20showcasing%20selected%20sessions.%20This%20way%2C%20you%20won%27t%20miss%20out%20on%20the%20valuable%20insights%20and%20knowledge%20shared%20by%20our%20esteemed%20speakers.%20Block%20this%20date%20in%20your%20calendar%2C%20as%20you%20won%27t%20want%20to%20miss%20the%20opportunity%20to%20learn%20from%20the%20best%20in%20the%20industry.%0A%0AStay%20tuned%20for%20more%20updates%20and%20exciting%20announcements%20as%20we%20get%20closer%20to%20UI5con%202024.%20We%20look%20forward%20to%20seeing%20you%20there%2C%20either%20in%20person%20or%20virtually%21%0A%0AConference%20Homepage%3A%0Ahttps%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2024%2F&location=SAP%20SE%20%28ROT03%29%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20%28Germany%29&text=Save%20the%20Date%3A%20UI5con%202024">
-              <img src="images/calendar/google.png" alt="Google calendar icon" aria-hidden="true" />
-              Google
-            </a>
-          </li>
-          <li>
-            <a href="https://outlook.office.com/calendar/0/action/compose?allday=true&body=We%20are%20thrilled%20to%20announce%20that%20UI5con%202024%20will%20be%20held%20on%20June%205%2C%202024.%20This%20event%20is%20the%20highlight%20of%20the%20year%20for%20developers%20working%20with%20UI5%2C%20and%20we%20have%20an%20exciting%20lineup%20of%20keynotes%20and%20sessions%20planned%20for%20you.%0A%0AFor%20those%20eager%20to%20join%20us%20in%20person%20at%20St.%20Leon-Rot%2C%20Germany%2C%20it%27s%20important%20to%20note%20that%20seats%20for%20UI5con%202024%20are%20limited.%20To%20secure%20your%20spot%2C%20registration%20will%20be%20required.%20Stay%20updated%20by%20regularly%20visiting%20our%20conference%20homepage%20or%20following%20us%20on%20our%20social%20media%20channels%2C%20so%20you%20don%27t%20miss%20the%20registration%20start%20date.%0A%0ACan%27t%20make%20it%20to%20St.%20Leon-Rot%3F%20Don%27t%20worry%2C%20we%27ve%20got%20you%20covered%21%20UI5con%202024%20will%20also%20feature%20a%20livestream%20on%20the%20OpenUI5%20YouTube%20channel%2C%20showcasing%20selected%20sessions.%20This%20way%2C%20you%20won%27t%20miss%20out%20on%20the%20valuable%20insights%20and%20knowledge%20shared%20by%20our%20esteemed%20speakers.%20Block%20this%20date%20in%20your%20calendar%2C%20as%20you%20won%27t%20want%20to%20miss%20the%20opportunity%20to%20learn%20from%20the%20best%20in%20the%20industry.%0A%0AStay%20tuned%20for%20more%20updates%20and%20exciting%20announcements%20as%20we%20get%20closer%20to%20UI5con%202024.%20We%20look%20forward%20to%20seeing%20you%20there%2C%20either%20in%20person%20or%20virtually%21%0A%0AConference%20Homepage%3A%0Ahttps%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2024%2F&enddt=2024-06-06T16%3A00%3A00&location=SAP%20SE%20%28ROT03%29%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20%28Germany%29&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2024-06-05T16%3A00%3A00&subject=Save%20the%20Date%3A%20UI5con%202024">
-              <img src="images/calendar/office.png" alt="Office 365 calendar icon" aria-hidden="true" />
-              Office 365
-            </a>
-          </li>
-          <li>
-            <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Save%20the%20Date%3A%20UI5con%202024%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20240605%0D%0ADTEND:20240606%0D%0ADTSTAMP:20240112T145759Z%0D%0ASUMMARY:Save%20the%20Date%3A%20UI5con%202024%0D%0ADESCRIPTION:We%20are%20thrilled%20to%20announce%20that%20UI5con%202024%20will%20be%20held%20on%20June%205%2C%202024.%20This%20event%20is%20the%20highlight%20of%20the%20year%20for%20developers%20working%20with%20UI5%2C%20and%20we%20have%20an%20exciting%20lineup%20of%20keynotes%20and%20sessions%20planned%20for%20you.%5Cn%5CnFor%20those%20eager%20to%20join%20us%20in%20person%20at%20St.%20Leon-Rot%2C%20Germany%2C%20it’s%20important%20to%20note%20that%20seats%20for%20UI5con%202024%20are%20limited.%20To%20secure%20your%20spot%2C%20registration%20will%20be%20required.%20Stay%20updated%20by%20regularly%20visiting%20our%20conference%20homepage%20or%20following%20us%20on%20our%20social%20media%20channels%2C%20so%20you%20don’t%20miss%20the%20registration%20start%20date.%5Cn%5CnCan’t%20make%20it%20to%20St.%20Leon-Rot%3F%20Don’t%20worry%2C%20we’ve%20got%20you%20covered!%20UI5con%202024%20will%20also%20feature%20a%20livestream%20on%20the%20OpenUI5%20YouTube%20channel%2C%20showcasing%20selected%20sessions.%20This%20way%2C%20you%20won’t%20miss%20out%20on%20the%20valuable%20insights%20and%20knowledge%20shared%20by%20our%20esteemed%20speakers.%20Block%20this%20date%20in%20your%20calendar%2C%20as%20you%20won’t%20want%20to%20miss%20the%20opportunity%20to%20learn%20from%20the%20best%20in%20the%20industry.%5Cn%5CnStay%20tuned%20for%20more%20updates%20and%20exciting%20announcements%20as%20we%20get%20closer%20to%20UI5con%202024.%20We%20look%20forward%20to%20seeing%20you%20there%2C%20either%20in%20person%20or%20virtually!%5Cn%5CnConference%20Homepage%3A%5Cnhttps%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2024%2F%0D%0ALOCATION:SAP%20SE%20(ROT03)%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20(Germany)%0D%0AUID:76213%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A" download='ui5con2024.ics'>
-              <img src="images/calendar/outlook.png" alt="Outlook calendar icon" aria-hidden="true"/>
-              Outlook
-            </a>
-          </li>
-          <li>
-            <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Save%20the%20Date%3A%20UI5con%202024%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20240605%0D%0ADTEND:20240606%0D%0ADTSTAMP:20240112T145759Z%0D%0ASUMMARY:Save%20the%20Date%3A%20UI5con%202024%0D%0ADESCRIPTION:We%20are%20thrilled%20to%20announce%20that%20UI5con%202024%20will%20be%20held%20on%20June%205%2C%202024.%20This%20event%20is%20the%20highlight%20of%20the%20year%20for%20developers%20working%20with%20UI5%2C%20and%20we%20have%20an%20exciting%20lineup%20of%20keynotes%20and%20sessions%20planned%20for%20you.%5Cn%5CnFor%20those%20eager%20to%20join%20us%20in%20person%20at%20St.%20Leon-Rot%2C%20Germany%2C%20it’s%20important%20to%20note%20that%20seats%20for%20UI5con%202024%20are%20limited.%20To%20secure%20your%20spot%2C%20registration%20will%20be%20required.%20Stay%20updated%20by%20regularly%20visiting%20our%20conference%20homepage%20or%20following%20us%20on%20our%20social%20media%20channels%2C%20so%20you%20don’t%20miss%20the%20registration%20start%20date.%5Cn%5CnCan’t%20make%20it%20to%20St.%20Leon-Rot%3F%20Don’t%20worry%2C%20we’ve%20got%20you%20covered!%20UI5con%202024%20will%20also%20feature%20a%20livestream%20on%20the%20OpenUI5%20YouTube%20channel%2C%20showcasing%20selected%20sessions.%20This%20way%2C%20you%20won’t%20miss%20out%20on%20the%20valuable%20insights%20and%20knowledge%20shared%20by%20our%20esteemed%20speakers.%20Block%20this%20date%20in%20your%20calendar%2C%20as%20you%20won’t%20want%20to%20miss%20the%20opportunity%20to%20learn%20from%20the%20best%20in%20the%20industry.%5Cn%5CnStay%20tuned%20for%20more%20updates%20and%20exciting%20announcements%20as%20we%20get%20closer%20to%20UI5con%202024.%20We%20look%20forward%20to%20seeing%20you%20there%2C%20either%20in%20person%20or%20virtually!%5Cn%5CnConference%20Homepage%3A%5Cnhttps%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2024%2F%0D%0ALOCATION:SAP%20SE%20(ROT03)%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20(Germany)%0D%0AUID:76213%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A" download='ui5con2024.ics'>
-              <img src="images/calendar/ical.png" alt="iCal calendar icon" aria-hidden="true"/>
-              iCal
-            </a>
-          </li>
-        </ul>
+      <p>
+        <a href="https://ui5con2024.cfapps.eu12.hana.ondemand.com/" target="_blank" hreflang="en" rel="external nofollow" class="ui5con-btn">
+          propose your topic
+        </a>
+      </p>
+
+      <div class="ui5con-site-head-img">
+        <img src="images/audimax.webp" alt="Picture of the crowd sitting in the audimax looking at the main stage">
+
       </div>
 
     </div>
@@ -146,31 +124,91 @@
         </div>
       </div>
     </section>
+    <section id="date">
+      <div class="ui5con-wrap">
+        <div class="ui5con-box ui5con-box-flex">
 
+          <img aria-hidden="true" class="ui5con-illustration" src="images/cal.svg" alt="Illustration of a calendar" />
+
+          <div class="contents">
+
+            <h2>
+              <span>Safe the</span> date
+            </h2>
+
+            <p>
+              We’re back in person this year on June 5th. This is a day you do not want to miss! What are you waiting for? Save it below.
+            </p>
+
+            <button class="ui5con-btn" @click="toggleCalendars()">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="images/icons/sprite.svg#calendar"></use>
+              </svg>
+              add to calendar
+            </button>
+
+            <div class="ui5con-calendars" v-if="isCalendarsVisible">
+              <ul class="ui5con-calendars-list">
+                <li>
+                  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240605%2F20240606&details=We%20are%20thrilled%20to%20announce%20that%20UI5con%202024%20will%20be%20held%20on%20June%205%2C%202024.%20This%20event%20is%20the%20highlight%20of%20the%20year%20for%20developers%20working%20with%20UI5%2C%20and%20we%20have%20an%20exciting%20lineup%20of%20keynotes%20and%20sessions%20planned%20for%20you.%0A%0AFor%20those%20eager%20to%20join%20us%20in%20person%20at%20St.%20Leon-Rot%2C%20Germany%2C%20it%27s%20important%20to%20note%20that%20seats%20for%20UI5con%202024%20are%20limited.%20To%20secure%20your%20spot%2C%20registration%20will%20be%20required.%20Stay%20updated%20by%20regularly%20visiting%20our%20conference%20homepage%20or%20following%20us%20on%20our%20social%20media%20channels%2C%20so%20you%20don%27t%20miss%20the%20registration%20start%20date.%0A%0ACan%27t%20make%20it%20to%20St.%20Leon-Rot%3F%20Don%27t%20worry%2C%20we%27ve%20got%20you%20covered%21%20UI5con%202024%20will%20also%20feature%20a%20livestream%20on%20the%20OpenUI5%20YouTube%20channel%2C%20showcasing%20selected%20sessions.%20This%20way%2C%20you%20won%27t%20miss%20out%20on%20the%20valuable%20insights%20and%20knowledge%20shared%20by%20our%20esteemed%20speakers.%20Block%20this%20date%20in%20your%20calendar%2C%20as%20you%20won%27t%20want%20to%20miss%20the%20opportunity%20to%20learn%20from%20the%20best%20in%20the%20industry.%0A%0AStay%20tuned%20for%20more%20updates%20and%20exciting%20announcements%20as%20we%20get%20closer%20to%20UI5con%202024.%20We%20look%20forward%20to%20seeing%20you%20there%2C%20either%20in%20person%20or%20virtually%21%0A%0AConference%20Homepage%3A%0Ahttps%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2024%2F&location=SAP%20SE%20%28ROT03%29%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20%28Germany%29&text=Save%20the%20Date%3A%20UI5con%202024">
+                    <img src="images/calendar/google.png" alt="Google calendar icon" aria-hidden="true" />
+                    Google
+                  </a>
+                </li>
+                <li>
+                  <a href="https://outlook.office.com/calendar/0/action/compose?allday=true&body=We%20are%20thrilled%20to%20announce%20that%20UI5con%202024%20will%20be%20held%20on%20June%205%2C%202024.%20This%20event%20is%20the%20highlight%20of%20the%20year%20for%20developers%20working%20with%20UI5%2C%20and%20we%20have%20an%20exciting%20lineup%20of%20keynotes%20and%20sessions%20planned%20for%20you.%0A%0AFor%20those%20eager%20to%20join%20us%20in%20person%20at%20St.%20Leon-Rot%2C%20Germany%2C%20it%27s%20important%20to%20note%20that%20seats%20for%20UI5con%202024%20are%20limited.%20To%20secure%20your%20spot%2C%20registration%20will%20be%20required.%20Stay%20updated%20by%20regularly%20visiting%20our%20conference%20homepage%20or%20following%20us%20on%20our%20social%20media%20channels%2C%20so%20you%20don%27t%20miss%20the%20registration%20start%20date.%0A%0ACan%27t%20make%20it%20to%20St.%20Leon-Rot%3F%20Don%27t%20worry%2C%20we%27ve%20got%20you%20covered%21%20UI5con%202024%20will%20also%20feature%20a%20livestream%20on%20the%20OpenUI5%20YouTube%20channel%2C%20showcasing%20selected%20sessions.%20This%20way%2C%20you%20won%27t%20miss%20out%20on%20the%20valuable%20insights%20and%20knowledge%20shared%20by%20our%20esteemed%20speakers.%20Block%20this%20date%20in%20your%20calendar%2C%20as%20you%20won%27t%20want%20to%20miss%20the%20opportunity%20to%20learn%20from%20the%20best%20in%20the%20industry.%0A%0AStay%20tuned%20for%20more%20updates%20and%20exciting%20announcements%20as%20we%20get%20closer%20to%20UI5con%202024.%20We%20look%20forward%20to%20seeing%20you%20there%2C%20either%20in%20person%20or%20virtually%21%0A%0AConference%20Homepage%3A%0Ahttps%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2024%2F&enddt=2024-06-06T16%3A00%3A00&location=SAP%20SE%20%28ROT03%29%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20%28Germany%29&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2024-06-05T16%3A00%3A00&subject=Save%20the%20Date%3A%20UI5con%202024">
+                    <img src="images/calendar/office.png" alt="Office 365 calendar icon" aria-hidden="true" />
+                    Office 365
+                  </a>
+                </li>
+                <li>
+                  <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Save%20the%20Date%3A%20UI5con%202024%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20240605%0D%0ADTEND:20240606%0D%0ADTSTAMP:20240112T145759Z%0D%0ASUMMARY:Save%20the%20Date%3A%20UI5con%202024%0D%0ADESCRIPTION:We%20are%20thrilled%20to%20announce%20that%20UI5con%202024%20will%20be%20held%20on%20June%205%2C%202024.%20This%20event%20is%20the%20highlight%20of%20the%20year%20for%20developers%20working%20with%20UI5%2C%20and%20we%20have%20an%20exciting%20lineup%20of%20keynotes%20and%20sessions%20planned%20for%20you.%5Cn%5CnFor%20those%20eager%20to%20join%20us%20in%20person%20at%20St.%20Leon-Rot%2C%20Germany%2C%20it’s%20important%20to%20note%20that%20seats%20for%20UI5con%202024%20are%20limited.%20To%20secure%20your%20spot%2C%20registration%20will%20be%20required.%20Stay%20updated%20by%20regularly%20visiting%20our%20conference%20homepage%20or%20following%20us%20on%20our%20social%20media%20channels%2C%20so%20you%20don’t%20miss%20the%20registration%20start%20date.%5Cn%5CnCan’t%20make%20it%20to%20St.%20Leon-Rot%3F%20Don’t%20worry%2C%20we’ve%20got%20you%20covered!%20UI5con%202024%20will%20also%20feature%20a%20livestream%20on%20the%20OpenUI5%20YouTube%20channel%2C%20showcasing%20selected%20sessions.%20This%20way%2C%20you%20won’t%20miss%20out%20on%20the%20valuable%20insights%20and%20knowledge%20shared%20by%20our%20esteemed%20speakers.%20Block%20this%20date%20in%20your%20calendar%2C%20as%20you%20won’t%20want%20to%20miss%20the%20opportunity%20to%20learn%20from%20the%20best%20in%20the%20industry.%5Cn%5CnStay%20tuned%20for%20more%20updates%20and%20exciting%20announcements%20as%20we%20get%20closer%20to%20UI5con%202024.%20We%20look%20forward%20to%20seeing%20you%20there%2C%20either%20in%20person%20or%20virtually!%5Cn%5CnConference%20Homepage%3A%5Cnhttps%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2024%2F%0D%0ALOCATION:SAP%20SE%20(ROT03)%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20(Germany)%0D%0AUID:76213%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A" download='ui5con2024.ics'>
+                    <img src="images/calendar/outlook.png" alt="Outlook calendar icon" aria-hidden="true"/>
+                    Outlook
+                  </a>
+                </li>
+                <li>
+                  <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Save%20the%20Date%3A%20UI5con%202024%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20240605%0D%0ADTEND:20240606%0D%0ADTSTAMP:20240112T145759Z%0D%0ASUMMARY:Save%20the%20Date%3A%20UI5con%202024%0D%0ADESCRIPTION:We%20are%20thrilled%20to%20announce%20that%20UI5con%202024%20will%20be%20held%20on%20June%205%2C%202024.%20This%20event%20is%20the%20highlight%20of%20the%20year%20for%20developers%20working%20with%20UI5%2C%20and%20we%20have%20an%20exciting%20lineup%20of%20keynotes%20and%20sessions%20planned%20for%20you.%5Cn%5CnFor%20those%20eager%20to%20join%20us%20in%20person%20at%20St.%20Leon-Rot%2C%20Germany%2C%20it’s%20important%20to%20note%20that%20seats%20for%20UI5con%202024%20are%20limited.%20To%20secure%20your%20spot%2C%20registration%20will%20be%20required.%20Stay%20updated%20by%20regularly%20visiting%20our%20conference%20homepage%20or%20following%20us%20on%20our%20social%20media%20channels%2C%20so%20you%20don’t%20miss%20the%20registration%20start%20date.%5Cn%5CnCan’t%20make%20it%20to%20St.%20Leon-Rot%3F%20Don’t%20worry%2C%20we’ve%20got%20you%20covered!%20UI5con%202024%20will%20also%20feature%20a%20livestream%20on%20the%20OpenUI5%20YouTube%20channel%2C%20showcasing%20selected%20sessions.%20This%20way%2C%20you%20won’t%20miss%20out%20on%20the%20valuable%20insights%20and%20knowledge%20shared%20by%20our%20esteemed%20speakers.%20Block%20this%20date%20in%20your%20calendar%2C%20as%20you%20won’t%20want%20to%20miss%20the%20opportunity%20to%20learn%20from%20the%20best%20in%20the%20industry.%5Cn%5CnStay%20tuned%20for%20more%20updates%20and%20exciting%20announcements%20as%20we%20get%20closer%20to%20UI5con%202024.%20We%20look%20forward%20to%20seeing%20you%20there%2C%20either%20in%20person%20or%20virtually!%5Cn%5CnConference%20Homepage%3A%5Cnhttps%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2024%2F%0D%0ALOCATION:SAP%20SE%20(ROT03)%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20(Germany)%0D%0AUID:76213%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A" download='ui5con2024.ics'>
+                    <img src="images/calendar/ical.png" alt="iCal calendar icon" aria-hidden="true"/>
+                    iCal
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section>
       <div class="ui5con-wrap">
         <div class="ui5con-box">
-          <h2>
-            <span>Stay in the loop on</span> latest news<br aria-hidden="true" />from
-            <span>UI5con</span>
-          </h2>
 
-          <img class="ui5con-illustration" src="images/plugs.svg" alt="Illustration of a power plug with a cable and a spark">
+          <div class="ui5con-box-flex ui5con-box-flex-inverted">
+            <img aria-hidden="true" class="ui5con-illustration" src="images/plugs.svg" alt="Illustration of a power plug with a cable and a spark">
 
-          <p>
-            Subscribe to our email newsletter to receive updates on upcoming
-            events and community engagement opportunities. We only send out
-            updates a few times per year, so no need to worry about us
-            cluttering your inbox.
-          </p>
+            <div class="contents">
+              <h2>
+                <span>Stay in the loop on</span> latest news<br aria-hidden="true" />from
+                <span>UI5con</span>
+              </h2>
+
+              <p>
+                Subscribe to our email newsletter to receive updates on upcoming
+                events and community engagement opportunities. We only send out
+                updates a few times per year, so no need to worry about us
+                cluttering your inbox.
+              </p>
 
 
-          <button data-a11y-dialog-show="sendinblue-dialog" class="ui5con-btn">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#pen"></use>
-            </svg>
-            Subscribe
-          </button>
+              <button data-a11y-dialog-show="sendinblue-dialog" class="ui5con-btn">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="images/icons/sprite.svg#pen"></use>
+                </svg>
+                Subscribe
+              </button>
+
+            </div>
+          </div>
 
           <ul class="social-share">
             <li>

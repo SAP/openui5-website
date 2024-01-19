@@ -1,29 +1,10 @@
 'use strict';
 
-var header = new Vue({
-  el: '#header',
-  data() {
-    return {
-      isCalendarsVisible: false,
-    };
-  },
-  methods: {
-    showCalendars() {
-      this.isCalendarsVisible = !this.isCalendarsVisible;
-    },
-    hideCalendars() {
-      this.isCalendarsVisible = false;
-    }
-  },
-  mounted() {
-
-  }
-});
-
 var main = new Vue({
   el: '#main',
   data() {
     return {
+      isCalendarsVisible: false,
       isExpanded: false,
       isModalVisible: false,
       showCalBlockers: false,
@@ -68,6 +49,9 @@ var main = new Vue({
     // console.log(this.createCalendars());
   },
   methods: {
+    toggleCalendars() {
+      this.isCalendarsVisible = !this.isCalendarsVisible;
+    },
     showSubscribeModal() {
       this.isModalVisible = !this.isModalVisible;
     },

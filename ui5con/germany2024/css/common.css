@@ -458,7 +458,7 @@ a:is(:hover) {
   text-underline-offset: 3px;
 }
 
-a:is(:focus, .active, .active:hover) {
+a:not(.ui5con-btn):is(:focus, .active, .active:hover) {
   outline: none;
   color: var(--brand-color);
   text-decoration: underline;
@@ -496,9 +496,10 @@ a:is(.active) {
   text-decoration: none;
 }
 
-.ui5con-btn:focus {
+.ui5con-btn:is(:focus) {
   outline: 2px solid var(--brand-color-alt);
   outline-offset: 3px;
+  text-decoration: none;
 }
 
 .ui5con-btn .icon {
@@ -587,6 +588,22 @@ article {
   box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
 }
 
+.ui5con-box-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ui5con-box-flex .ui5con-illustration {
+  display: none;
+}
+
+.ui5con-box-flex-inverted {
+  flex-direction: column-reverse;
+}
+
 .ui5con-box--text {
   text-align: left;
 }
@@ -599,14 +616,42 @@ article {
   color: var(--brand-color-alt);
 }
 
+.ui5con-illustration {
+  max-width: 20%;
+}
+
 .ui5con-box p {
-  width: 80%;
-  margin-block: 4rem;
+  margin-block: 3rem;
 }
 
 .ui5con-box--text p {
   width: auto;
   margin: 0;
+  margin-block-end: 2rem;
+}
+
+.contents {
+  flex-basis: 80%;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .ui5con-box-flex .ui5con-illustration {
+    display: block;
+  }
+
+  .ui5con-box-flex {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .ui5con-box-flex-inverted {
+    flex-direction: row-reverse;
+  }
+
+  .contents {
+    flex-basis: 60%;
+  }
 }
 
 /* --------------------------- Main Contents ---------------------------  */
@@ -634,7 +679,52 @@ article {
 }
 
 .ui5con-site-head p {
+  z-index: 2;
+  position: relative;
   margin-block-start: 0;
+}
+
+.ui5con-site-head-img {
+  border-radius: 2rem;
+  position: relative;
+  max-width: 70vw;
+  margin-inline: auto;
+  margin-block-start: -3rem;
+  z-index: 0;
+}
+
+.ui5con-site-head-img img {
+  border-radius: 2rem;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.ui5con-site-head-img::before {
+  position: absolute;
+  content: "";
+  top: -1px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 2rem;
+  background: linear-gradient(to bottom, rgba(255,255,255,.8) 30%, rgba(255,255,255,.0));
+}
+
+.ui5con-site-head-img:after {
+  content: "";
+  position: absolute;
+  left: 90.2%;
+  bottom: 20%;
+  background: transparent url(../images/mic.svg) 0 0 no-repeat;
+  width: 255px;
+  height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-site-head-img {
+    max-width: 60%;
+  }
 }
 
 /* ---------------------------- Calendars -----------------------------  */
@@ -643,16 +733,11 @@ article {
   gap: 0.75rem;
   display: flex;
   flex-wrap: wrap;
-  padding-inline: 1rem;
-  padding-block: .7rem;
-  margin-inline: auto;
-  margin-block-start: 3rem;
+  padding-inline: 0;
+  margin-block-start: 2rem;
   margin-block-end: 0;
   justify-content: center;
-  background: var(--white);
   width: max-content;
-  border-radius: 2rem;
-  box-shadow: 0 2px 3px rgba(0,0,0,.3);
 }
 
 .ui5con-calendars-list a {
@@ -667,7 +752,7 @@ article {
 }
 
 @media only screen and (min-width: 500px) {
-  .ui5con-calendars-list  img {
+  .ui5con-calendars-list img {
     display: inline-block;
   }
 }
@@ -675,8 +760,6 @@ article {
 @media only screen and (min-width: 768px) {
   .ui5con-calendars-list {
     gap: 2rem;
-    padding-inline: 2rem;
-    padding-block: 1rem;
   }
 }
 
@@ -727,27 +810,9 @@ article {
   height: 2rem;
 }
 
-.ui5con-illustration {
-  max-width: 15rem;
-  float: right;
-  margin-block-start: -2rem;
-}
-
 @media only screen and (min-width: 768px) {
   .ui5con-newsletter p {
     width: 50%;
-  }
-
-  .ui5con-illustration {
-    max-width: 20rem;
-    margin-block-start: -5rem;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .ui5con-illustration {
-    max-width: 25rem;
-    margin-block-start: -9rem;
   }
 }
 
@@ -772,7 +837,6 @@ article {
     gap: 4vw;
   }
 }
-
 
 /* ---------------------------- Site Footer ----------------------------  */
 footer {
