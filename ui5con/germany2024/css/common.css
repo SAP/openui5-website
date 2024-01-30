@@ -6,6 +6,7 @@
   --text-color: #686868;
   --white: #fff;
   --sucess-color: #30914c;
+  --code-connect-color: #3B4673;
 
   --type-0: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
   --type-1: clamp(1.2rem, 1.0964rem + 0.5179vw, 1.5625rem);
@@ -892,6 +893,7 @@ footer {
     --background-color: var(--dark-brand-color);
     --white: #1a1a1a;
     --text-color: #fff;
+    --code-connect-color: #e76500;
   }
 
   body::before {
