@@ -893,7 +893,7 @@ footer {
     --background-color: var(--dark-brand-color);
     --white: #1a1a1a;
     --text-color: #fff;
-    --code-connect-color: #e76500;
+    --code-connect-color: #688fb7;
   }
 
   body::before {
