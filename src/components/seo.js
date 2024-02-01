@@ -25,6 +25,8 @@ function SEO({description, lang, meta, keywords, title}) {
                             {
                                 name: `description`,
                                 content: metaDescription,
+                                name: `robots`,
+                                content: `follow, index`,
                             }
                         ]
                             .concat(
