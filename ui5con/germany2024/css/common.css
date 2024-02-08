@@ -8,6 +8,7 @@
   --sucess-color: #30914c;
   --code-connect-color: #3B4673;
   --logo-color: #646363;
+  --badge-color: #FFEE9E;
 
   --type-0: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
   --type-1: clamp(1.2rem, 1.0964rem + 0.5179vw, 1.5625rem);
@@ -867,10 +868,6 @@ article {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-.ui5con-sponsors a {
-  color: red;
 }
 
 .ui5con-sponsors svg {

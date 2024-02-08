@@ -76,11 +76,9 @@
 
 .ui5con-sponsors-table td {
   text-align: center;
-
 }
 
 @media only screen and (min-width: 600px) {
-
   .ui5con-sponsors-table th, .ui5con-sponsors-table td {
     padding-block: .2rem;
     padding-inline: .5rem;
@@ -92,9 +90,90 @@
 }
 
 @media only screen and (min-width: 800px) {
-
   .ui5con-sponsors-table th, .ui5con-sponsors-table td {
     padding-block: .5rem;
     padding-inline: 1rem;
+  }
+}
+
+/* MEET OUR SPONSORS SECTION */
+.ui5con-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui5con-sponsors-list h3 {
+  font-size: var(--type-2);
+}
+
+.ui5con-sponsors-list > li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 1rem;
+  gap: clamp(1rem, 5vw, 2rem);
+  border-bottom: 0.125rem dashed var(--brand-color-alt);
+}
+
+.ui5con-sponsors-list li:last-child {
+  border-bottom: none;
+}
+
+.ui5con-sponsors-list li div:first-child {
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ui5con-sponsors-list p {
+  margin-block: 2rem;
+}
+
+.ui5con-sponsors-socials {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui5con-sponsors-socials svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.ui5con-sponsors-badge {
+  color: #242424;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10rem;
+  padding-inline: 1rem;
+  margin-block: 0.25rem;
+  padding-block: 0.25rem;
+  text-transform: uppercase;
+  background: var(--badge-color);
+}
+
+.ui5con-sponsors .ui5con-illustration {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .ui5con-sponsors-list > li {
+    flex-direction: row;
+  }
+
+  .ui5con-sponsors-list li div:first-child {
+    align-items: center;
+    margin-block-end: 2rem;
+  }
+
+  .ui5con-sponsors-socials {
+    flex: 1;
+  }
+
+  .ui5con-sponsors .ui5con-illustration {
+    display: block;
   }
 }
