@@ -29,7 +29,7 @@ const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
                     })}
                 </List>
             </Section>
-            <Section color="lightblue" align="center">
+            {/* <Section color="lightblue" align="center">
                 <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{startCoding.title}</Text>
                 <Text
                     size="2"
@@ -64,7 +64,7 @@ const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
                     )
                     : null
                 }
-            </Section>
+            </Section> */}
         </>
     );
 };
