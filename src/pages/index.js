@@ -29,7 +29,7 @@ const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
                     })}
                 </List>
             </Section>
-            {/* <Section color="lightblue" align="center">
+            <Section color="lightblue" align="center">
                 <Text size="1" style={{ marginBottom: "var(--default-margin-half)" }}>{startCoding.title}</Text>
                 <Text
                     size="2"
@@ -43,13 +43,14 @@ const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
 
                 <iframe
                     title={startCoding.title}
-                    src="https://codesandbox.io/embed/ui5-example-pglil?fontsize=14&hidenavigation=1&module=%2Fwebapp%2Findex.html&theme=light"
+                    src="https://openui5orgsample.cfapps.eu12.hana.ondemand.com/"
                     style={{
                         width: '100%',
                         height: '500px',
-                        marginBottom: 'var(--default-margin)'
+                        marginBottom: 'var(--default-margin)',
+                        border: '0'
                     }}
-                    frameBorder="0"
+
                     allowfullscren="allowfullscren"
                 ></iframe>
                 {
@@ -64,7 +65,7 @@ const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
                     )
                     : null
                 }
-            </Section> */}
+            </Section>
         </>
     );
 };
