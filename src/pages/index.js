@@ -46,7 +46,7 @@ const IndexPage = ({ data: { allFeaturesJson, indexJson } }) => {
                     src="https://openui5orgsample.cfapps.eu12.hana.ondemand.com/"
                     style={{
                         width: '100%',
-                        height: '500px',
+                        height: '534px',
                         marginBottom: 'var(--default-margin)',
                         border: '0'
                     }}
