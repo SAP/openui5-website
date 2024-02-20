@@ -586,6 +586,11 @@ article {
   gap: 2rem;
 }
 
+.ui5con-grid-wrap--split {
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  gap: 4rem;
+}
+
 .ui5con-box {
   background: var(--white);
   padding-block: clamp(2rem, 5vw, 4rem);
@@ -599,7 +604,7 @@ article {
   flex-wrap: nowrap;
   flex-direction: column-reverse;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .ui5con-box-flex .ui5con-illustration {
@@ -608,6 +613,11 @@ article {
 
 .ui5con-box-flex-inverted {
   flex-direction: column-reverse;
+}
+
+.ui5con-box-flex-column {
+  flex-direction: column;
+  padding-inline: 4rem;
 }
 
 .ui5con-box-flex-column-center {
@@ -630,6 +640,12 @@ article {
 
 .ui5con-illustration {
   max-width: 20%;
+}
+
+.ui5con-illustration-float {
+  float: right;
+  margin-inline-start: 3rem;
+  margin-block-end: 3rem;
 }
 
 .ui5con-box p {
@@ -655,6 +671,7 @@ article {
   .ui5con-box-flex {
     flex-wrap: nowrap;
     flex-direction: row;
+    justify-content: space-around;
   }
 
   .ui5con-box-flex-inverted {
@@ -663,6 +680,15 @@ article {
 
   .ui5con-box-flex-column-center {
     flex-direction: column;
+  }
+
+  .ui5con-box-flex-column {
+    flex-direction: column;
+    padding-inline: 2rem;
+  }
+
+  .ui5con-box-flex-column .ui5con-illustration {
+    align-self: flex-end;
   }
 
   .contents {
