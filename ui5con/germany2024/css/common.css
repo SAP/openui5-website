@@ -861,7 +861,7 @@ article {
 /* ------------------------- Sponsors Section -------------------------  */
 
 .ui5con-sponsors {
-  
+
 }
 
 .ui5con-sponsors ul {
@@ -871,7 +871,7 @@ article {
 }
 
 .ui5con-sponsors svg {
-  width: clamp(14rem, 15vw, 20rem);
+  width: clamp(14rem, 15vw, 18rem);
   fill: var(--logo-color);
 }
 
