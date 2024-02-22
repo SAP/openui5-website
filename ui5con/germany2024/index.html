@@ -186,11 +186,22 @@
                     <time class="sr-only" itemprop="startDate" content="2024-06-05" datetime="">Beginn: 05.06.2024 8:00AM</time>
                     <time class="sr-only" itemprop="endDate" content="2024-06-05" datetime="">Ende: 05.06.2024 6:00PM</time>
 
-                    <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+                    <!-- <span itemprop="location" itemscope itemtype="http://schema.org/PostalAdress">
                       Location:
                       <span itemprop="streetAddress">SAP-Allee 27 (ROT03),</span>
                       <span itemprop="postalCode">68789</span> <span itemprop="addressLocality">St. Leon-Rot</span>,
                       <span itemprop="addressCountry">Germany</span>
+                    </span> -->
+
+
+                    <span class="event-venue" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                      Location: <span hidden aria-hidden="true" itemprop="name">SAP-Allee 27 (ROT03),</span>
+                      <span class="address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                          <span itemprop="streetAddress">SAP-Allee 27 (ROT03),</span>
+                          <span itemprop="postalCode">68789</span>
+                          <span itemprop="addressLocality">St. Leon-Rot</span>,
+                          <span itemprop="addressCountry">Germany</span>
+                      </span>
                     </span>
                   </p>
                 </address>
