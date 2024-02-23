@@ -1,5 +1,15 @@
 [
   {
+    "version": "1.121.0",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.121.0/openui5-runtime-1.121.0.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.121.0/openui5-sdk-1.121.0.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.121.0/openui5-runtime-mobile-1.121.0.zip",
+    "url_demokit": "https://sdk.openui5.org/1.121.0/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.121.0/#releasenotes.html",
+    "release_date": "19.02.2024",
+    "eom": ""
+  },
+  {
     "version": "1.120.8",
     "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.120.8/openui5-runtime-1.120.8.zip",
     "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.120.8/openui5-sdk-1.120.8.zip",
@@ -40,13 +50,13 @@
     "eom": "Q4/2027"
   },
   {
-    "version": "1.96.26",
-    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.96.26/openui5-runtime-1.96.26.zip",
-    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.96.26/openui5-sdk-1.96.26.zip",
-    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.96.26/openui5-runtime-mobile-1.96.26.zip",
-    "url_demokit": "https://sdk.openui5.org/1.96.26/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.96.26/#releasenotes.html",
-    "release_date": "22.01.2024",
+    "version": "1.96.27",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.96.27/openui5-runtime-1.96.27.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.96.27/openui5-sdk-1.96.27.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.96.27/openui5-runtime-mobile-1.96.27.zip",
+    "url_demokit": "https://sdk.openui5.org/1.96.27/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.96.27/#releasenotes.html",
+    "release_date": "20.02.2024",
     "eom": "Q4/2026"
   },
   {
