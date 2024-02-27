@@ -926,7 +926,12 @@ article {
 .ui5con-sponsors picture {
   width: clamp(14rem, 15vw, 18rem);
   fill: var(--logo-color);
+  color: var(--logo-color);
   display: block;
+}
+
+svg.agilita {
+  fill: #272525;
 }
 
 /* ---------------------------- Site Footer ----------------------------  */
@@ -985,6 +990,10 @@ footer {
 
   body::before {
     opacity: .2;
+  }
+
+  svg.agilita {
+    fill: var(--logo-color);
   }
 
   .ui5con-site-head {
