@@ -416,6 +416,7 @@ h1 {
   font-weight: 900;
   color: var(--brand-color-alt);
   text-align: center;
+  margin-block-end: 1rem;
 }
 
 h2 {
@@ -721,7 +722,15 @@ article {
 
 .ui5con-site-head h2 {
   color: var(--brand-color-alt);
-  padding-bottom: 1.5rem;
+  font-size: var(--type-2);
+  margin-block-end: 2rem;;
+}
+
+.ui5con-site-head h2 .icon {
+  width: 2rem;
+  height: 2rem;
+  stroke: var(--brand-color-alt);
+  stroke-width: 2px;
 }
 
 .ui5con-site-head p {
@@ -735,7 +744,6 @@ article {
   position: relative;
   max-width: 70vw;
   margin-inline: auto;
-  margin-block-start: -3rem;
   z-index: 0;
 }
 
@@ -757,7 +765,7 @@ article {
   background: linear-gradient(to bottom, rgba(255,255,255,.8) 30%, rgba(255,255,255,.0));
 }
 
-.ui5con-site-head-img:after {
+/* .ui5con-site-head-img:after {
   content: "";
   position: absolute;
   left: 90.2%;
@@ -765,11 +773,11 @@ article {
   background: transparent url(../images/mic.svg) 0 0 no-repeat;
   width: 255px;
   height: 100%;
-}
+} */
 
 @media only screen and (min-width: 768px) {
   .ui5con-site-head-img {
-    max-width: 60%;
+    max-width: 70%;
   }
 }
 
