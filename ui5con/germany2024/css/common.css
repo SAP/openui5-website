@@ -588,7 +588,7 @@ article {
 }
 
 .ui5con-grid-wrap--split {
-  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   gap: 4rem;
 }
 
@@ -673,6 +673,11 @@ article {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-around;
+  }
+
+  .ui5con-grid-wrap--split {
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+    gap: 4rem;
   }
 
   .ui5con-box-flex-inverted {
