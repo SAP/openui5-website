@@ -928,10 +928,16 @@ article {
   fill: var(--logo-color);
   color: var(--logo-color);
   display: block;
+  height: 4rem;
 }
 
 svg.agilita {
   fill: #272525;
+}
+
+svg.cbs {
+  max-width: 16rem;
+  fill: #000;
 }
 
 /* ---------------------------- Site Footer ----------------------------  */
@@ -992,7 +998,8 @@ footer {
     opacity: .2;
   }
 
-  svg.agilita {
+  svg.agilita,
+  svg.cbs {
     fill: var(--logo-color);
   }
 
