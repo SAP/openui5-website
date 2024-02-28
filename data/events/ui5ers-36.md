@@ -6,7 +6,7 @@ endDate: 2024/03/14 16:00 UTC+1
 location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
-- Jens Pflueger
+- Jens Pflüger
 - Merlin Beutlberger
 url: https://sap-se.zoom.com/j/94833714827
 ---
