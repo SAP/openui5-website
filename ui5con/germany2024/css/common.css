@@ -951,6 +951,11 @@ svg.cbs {
   fill: #000;
 }
 
+#jssoft {
+  --js-color-1: #878887;
+  --js-color-2: #333366;
+}
+
 /* ---------------------------- Site Footer ----------------------------  */
 footer {
   background: var(--white);
@@ -1012,6 +1017,11 @@ footer {
   svg.agilita,
   svg.cbs {
     fill: var(--logo-color);
+  }
+
+  #jssoft {
+    --js-color-1: var(--logo-color);
+    --js-color-2: var(--logo-color);
   }
 
   .ui5con-site-head {
