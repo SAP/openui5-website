@@ -426,6 +426,13 @@ h2 {
   margin-block-end: 1rem;
 }
 
+.emphasized {
+  font-size: var(--type-4);
+  font-weight: 900;
+  text-align: center;
+  color: var(--brand-color-alt);
+}
+
 h3 {
   font-size: var(--type-3);
   font-weight: 700;
@@ -606,6 +613,10 @@ article {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: space-between;
+}
+
+.ui5con-box-flex + .ui5con-box-flex {
+  margin-block-start: 5rem;
 }
 
 .ui5con-box-flex .ui5con-illustration {
@@ -905,7 +916,7 @@ article {
 
 .ui5con-sponsors-logos {
   display: flex;
-  gap: 2rem 4rem;
+  gap: 4rem;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
