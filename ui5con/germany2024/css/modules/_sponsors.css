@@ -140,6 +140,10 @@
   flex-wrap: wrap;
 }
 
+.ui5con-sponsors-socials a:is(:hover,:focus) svg {
+  color: var(--brand-color-alt);
+}
+
 .ui5con-sponsors-socials svg {
   width: 1.5rem;
   height: 1.5rem;
