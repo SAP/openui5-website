@@ -522,6 +522,7 @@ a:is(.active) {
   display: inline-block;
   margin-inline-end: .5rem;
   transform: translateY(-1px);
+  color: inherit;
 }
 
 /* ------------------------ Main Navigation ---------------------------  */
@@ -615,10 +616,6 @@ article {
   justify-content: space-between;
 }
 
-.ui5con-box-flex + .ui5con-box-flex {
-  margin-block-start: 5rem;
-}
-
 .ui5con-box-flex .ui5con-illustration {
   display: none;
 }
@@ -633,7 +630,7 @@ article {
 }
 
 .ui5con-box-flex-column-center {
-  gap: 1rem;
+  gap: 3rem;
   flex-direction: column;
   justify-content: center;
 }
@@ -914,6 +911,11 @@ article {
 
 }
 
+.ui5con-sponsors-cta {
+  text-align: center;
+  padding-block-start: 4rem;
+}
+
 .ui5con-sponsors-logos {
   display: flex;
   gap: 4rem;
@@ -921,6 +923,7 @@ article {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-block-end: 2rem;
 }
 
 .ui5con-sponsors ul {
