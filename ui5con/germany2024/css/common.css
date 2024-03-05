@@ -944,6 +944,8 @@ article {
 
 .ui5con-sponsors picture img {
   max-height: 4rem;
+  display: block;
+  margin: auto;
 }
 
 svg.agilita {
