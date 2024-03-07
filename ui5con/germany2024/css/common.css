@@ -654,7 +654,7 @@ article {
 .ui5con-illustration-float {
   float: right;
   margin-inline-start: 3rem;
-  margin-block-end: 3rem;
+  margin-block-end: 2rem;
 }
 
 .ui5con-box p {
@@ -712,7 +712,7 @@ article {
 
 /* --------------------------- Main Contents ---------------------------  */
 .ui5con-site-head {
-  min-height: 55vh;
+  min-height: 40rem;
   position: relative;
   background: linear-gradient(to bottom, var(--white) 20%, rgba(255,255,255,.0));
   text-align: center;
@@ -726,6 +726,8 @@ article {
 
 .ui5con-site-head .ui5con-wrap {
   overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 .ui5con-site-head--collapsed {
@@ -733,10 +735,44 @@ article {
   background: linear-gradient(to bottom, var(--white) 40%, rgba(255,255,255,.0));
 }
 
+.ui5con-site-head h1 {
+  margin-block-start: 2rem;
+}
+
 .ui5con-site-head h2 {
   color: var(--brand-color-alt);
-  font-size: var(--type-2);
-  margin-block-end: 2rem;;
+  margin-block-start: -10rem;
+  padding-block-start: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.ui5con-site-head h2 span {
+  display: block;
+  margin: auto;
+}
+
+.ui5con-site-head h2 span:last-of-type {
+  margin-block-start: 5rem;
+}
+
+.ui5con-site-head h2 em {
+  font-style: normal;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.ui5con-site-head h2 em::after {
+  content:"";
+  position: absolute;
+  top: 68%;
+  height: .6rem;
+  background: var(--brand-color);
+  opacity: .8;
+  left: -2px;
+  right: -2px;
+  z-index: -1;
 }
 
 .ui5con-site-head h2 .icon {
@@ -778,19 +814,55 @@ article {
   background: linear-gradient(to bottom, rgba(255,255,255,.8) 30%, rgba(255,255,255,.0));
 }
 
-/* .ui5con-site-head-img:after {
-  content: "";
-  position: absolute;
-  left: 90.2%;
-  bottom: 20%;
-  background: transparent url(../images/mic.svg) 0 0 no-repeat;
-  width: 255px;
-  height: 100%;
-} */
-
 @media only screen and (min-width: 768px) {
   .ui5con-site-head-img {
     max-width: 70%;
+  }
+}
+
+.ui5con-site-head-illustrative {
+  border-bottom: 10rem solid #CC7400;
+  margin-block-end: -6rem;
+  position: relative;
+}
+
+.ui5con-site-head-illustrative .ui5con-wrap {
+  height: auto;
+  padding-block-end: 0;
+}
+
+.ui5con-header-registration {
+  min-height: 24rem;
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  bottom: -10rem;
+  left: 0;
+  right: 0;
+  top: auto;
+  background: transparent url(../images/door-closed.svg) 50% 100% no-repeat;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-site-head-illustrative .ui5con-wrap {
+    height: 16rem;
+  }
+
+  .ui5con-header-registration {
+    background-size: auto;
+    position: absolute;
+    top: 16rem;
+    display: flex;
+  }
+
+  .ui5con-site-head h2 {
+    margin-block-start: -8rem;
+    padding-block-start: 0;
+  }
+
+  .ui5con-site-head h2 span:last-of-type {
+    margin-block-start: 10rem;
   }
 }
 

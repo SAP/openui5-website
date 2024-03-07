@@ -33,11 +33,12 @@
   <link rel="stylesheet" href="./css/modules.css" />
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script src="https://js.tito.io/v2/with/inline" async></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
 <body>
-  <header class="ui5con-site-head" id="header">
+  <header class="ui5con-site-head ui5con-site-head-illustrative" id="header">
     <div class="ui5con-wrap">
       <nav class="ui5con-nav" aria-label="Main navigation">
         <ul>
@@ -71,20 +72,15 @@
       <h1>
         <span>UI5con 2024</span>
       </h1>
-
-      <h2>
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="images/icons/sprite.svg#pin"></use>
-        </svg>
-      June 5th | St. Leon-Rot, Germany
-      </h2>
-
-      <div class="ui5con-site-head-img">
-        <img src="images/audimax.webp" alt="Picture of the crowd sitting in the audimax looking at the main stage">
-
-      </div>
-
     </div>
+
+    <div class="ui5con-header-registration">
+      <h2>
+        <span>Registration <br aria-hidden="true">will <em>open</em></span>
+        <span>on <em>March 21st</em><br aria-hidden="true"> at 4pm CET</span>
+      </h2>
+    </div>
+
   </header>
 
   <main id="main">
@@ -152,14 +148,6 @@
                     <time class="sr-only" itemprop="startDate" content="2024-06-05" datetime="">Beginn: 05.06.2024 8:00AM</time>
                     <time class="sr-only" itemprop="endDate" content="2024-06-05" datetime="">Ende: 05.06.2024 6:00PM</time>
 
-                    <!-- <span itemprop="location" itemscope itemtype="http://schema.org/PostalAdress">
-                      Location:
-                      <span itemprop="streetAddress">SAP-Allee 27 (ROT03),</span>
-                      <span itemprop="postalCode">68789</span> <span itemprop="addressLocality">St. Leon-Rot</span>,
-                      <span itemprop="addressCountry">Germany</span>
-                    </span> -->
-
-
                     <span class="event-venue" itemprop="location" itemscope itemtype="https://schema.org/Place">
                       Location: <span hidden aria-hidden="true" itemprop="name">SAP-Allee 27 (ROT03),</span>
                       <span class="address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
@@ -212,29 +200,15 @@
             </div>
           </div>
 
+          <div class="ui5con-box ui5con-tickets" id="tickets">
 
-          <div class="ui5con-box">
+            <img aria-hidden="true" class="ui5con-illustration ui5con-illustration-float" src="images/tickets.svg" alt="Illustration of two tickets" />
 
-            <img aria-hidden="true" class="ui5con-illustration ui5con-illustration-float" src="images/bird.svg" alt="Illustration of a bird" />
+            <h2><span>Get your</span> tickets</h2>
 
-            <div class="contents">
+            <tito-widget event="code-connect/2024" releases="a48tcrupl0u"></tito-widget>
 
-              <h2>
-                <span>Early bird</span> tickets
-              </h2>
-
-              <p>
-                Early to bed and early to rise, makes the trip to <b>UI5con 2024</b> easy, wealthy and nice. If you're traveling from abroad and need to plan your trip in advance, please email us with your situation, mailing address for verification, and the conferences (re>≡CAP, UI5con, ABAPConf) you wish to attend.
-              </p>
-
-              <a href="mailto:openui5@sap.com?subject=[UI5con 2024] Early Bird Tickets" class="ui5con-btn">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="images/icons/sprite.svg#mail"></use>
-                </svg>
-                Send E-Mail
-              </a>
-
-            </div>
+            <p class="ui5con-ticket-link">Our use the Code Connect event page on <a href="https://ti.to/code-connect/2024" rel="external nofollow" target="_blank">Tito</a> to secure your spot.</p>
           </div>
         </div>
       </div>
