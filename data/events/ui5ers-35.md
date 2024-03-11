@@ -18,8 +18,3 @@ During the session, we will demonstrate the functionality of this VSCode extensi
 Furthermore, we will delve into the successful release of adaptation projects for S/4HANA Cloud in BAS. 
 This launch enables developers to enhance SAPUI5 applications in Cloud ERP with comprehensive features that were previously exclusive to on-premise customers.
 We will highlight the unique aspects of this offering and discuss key points to consider.
-
-Join us to explore these exciting advancements and contribute to shaping the future of adaptation projects.
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
