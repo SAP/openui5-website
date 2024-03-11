@@ -18,8 +18,4 @@ Next up is Peter Muessig, spotlighting a new feature of Easy UI5 – nesting gen
 
 But there is more! Peter will also unveil a fresh addition to the UI5 core – the Web Components base class. This class lays the foundation for seamlessly embedding Web Components into the data binding and rendering lifecycle of UI5. Now, you can smoothly incorporate any Web Component of your choice into UI5, elevating them first-class citizens within the framework.
 
-So, get ready for an enlightening deep-dive into the dynamic world of UI5. We'll see you there!
-
-
-If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
-[#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
+So, get ready for an enlightening deep-dive into the dynamic world of UI5.
