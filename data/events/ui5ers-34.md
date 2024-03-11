@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Volker Buzek
 - Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/ZYgpOa2RuWc
 ---
 Join us us for the upcoming UI5ers live event and explore the latest advancements in the UI5 ecosystem. 
 
