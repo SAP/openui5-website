@@ -4,7 +4,7 @@ module.exports = {
         description: ``,
         robots: `index, follow`,
         faviconUrl: `/favicon/favicon.png`,
-        copyright: `&copy; ${new Date().getFullYear()} SAP SE. Made available under <nobr>Apache License 2.0</nobr>`,
+        copyright: `&copy; ${new Date().getFullYear()} SAP SE</nobr>`,
     },
     plugins: [
         `gatsby-plugin-layout`,
