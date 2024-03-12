@@ -1,18 +1,18 @@
 [
     {
-        "to": "https://www.sap.com/corporate/en/legal/impressum.html",
+        "to": "https://www.sap.com/impressum",
         "name": "Legal Disclosure"
     },
     {
-        "to": "https://www.sap.com/corporate/en/legal/terms-of-use.html",
+        "to": "https://www.sap.com/terms-of-use",
         "name": "Terms of Use"
     },
     {
-        "to": "https://www.sap.com/about/legal/privacy.html",
+        "to": "https://www.sap.com/privacy",
         "name": "Privacy"
     },
     {
-        "to": "https://www.sap.com/corporate/en/legal/trademark.html",
-        "name": "Trademarks"
+        "to": "https://www.sap.com/trademark",
+        "name": "Trademark"
     }
 ]
