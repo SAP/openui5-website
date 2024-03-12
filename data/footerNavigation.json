@@ -14,5 +14,9 @@
     {
         "to": "https://www.sap.com/trademark",
         "name": "Trademark"
+    },
+    {
+        "to": "https://www.sap.com/copyright",
+        "name": "Copyright"
     }
 ]

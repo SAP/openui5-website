@@ -9,7 +9,7 @@
         padding: var(--default-margin-half);
         display: flex;
 
-        @media (max-width: env(--screen-breakpoint-767)) {
+        @media (max-width: env(--screen-breakpoint-980)) {
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -20,7 +20,7 @@
             &:not(:last-child) {
                 margin-right: 46px;
 
-                @media (max-width: env(--screen-breakpoint-767)) {
+                @media (max-width: env(--screen-breakpoint-980)) {
                     margin-right: 10px;
                 }
             }
@@ -30,7 +30,7 @@
             &:nth-child(1) {
                 flex-grow: 1;
 
-                @media (max-width: env(--screen-breakpoint-767)) {
+                @media (max-width: env(--screen-breakpoint-980)) {
                     flex-basis: 100%;
                     text-align: center;
                     margin-right: 0;
