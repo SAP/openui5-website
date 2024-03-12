@@ -1,6 +1,6 @@
 [
     {
-        "to": "https://www.sap.com/about/legal/impressum.html",
+        "to": "https://www.sap.com/corporate/en/legal/impressum.html",
         "name": "Legal Disclosure"
     },
     {
@@ -10,5 +10,9 @@
     {
         "to": "https://www.sap.com/about/legal/privacy.html",
         "name": "Privacy"
+    },
+    {
+        "to": "https://www.sap.com/corporate/en/legal/trademark.html",
+        "name": "Trademarks"
     }
 ]
