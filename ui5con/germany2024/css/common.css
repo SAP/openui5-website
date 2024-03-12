@@ -1071,31 +1071,29 @@ footer {
 .ui5con-footer-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .ui5con-footer-container p {
   text-wrap: nowrap;
-  order: 2;
+  order: 3;
+  flex-basis: 100%;
+  text-align: center;
 }
 
 .ui5con-links-container {
-  gap: 8vw;
+  gap: 1rem 2rem;
   order: 3;
   width: 100%;
   display: flex;
   justify-content: center;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  flex: 1 0 0;
 }
 
 @media only screen and (min-width: 768px) {
-  .ui5con-footer-container {
-    flex-wrap: nowrap;
-  }
-
-  .ui5con-footer-container p {
-    order: 3;
-  }
 
   .ui5con-links-container {
     order: 2;
