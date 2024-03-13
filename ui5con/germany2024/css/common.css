@@ -1047,6 +1047,10 @@ svg.cbs {
   fill: #000;
 }
 
+svg.asbrucon {
+  fill: #000;
+}
+
 #jssoft {
   --js-color-1: #878887;
   --js-color-2: #333366;
@@ -1115,7 +1119,8 @@ footer {
   }
 
   svg.agilita,
-  svg.cbs {
+  svg.cbs,
+  svg.asbrucon {
     fill: var(--logo-color);
   }
 
