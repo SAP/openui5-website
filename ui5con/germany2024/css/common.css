@@ -546,7 +546,7 @@ a:is(.active) {
   justify-content: center;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 768px) {
   .ui5con-nav li:first-child {
     flex: 0 0 auto;
     margin-inline-end: auto;

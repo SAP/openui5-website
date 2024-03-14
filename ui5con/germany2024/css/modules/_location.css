@@ -25,6 +25,10 @@
   background: var(--brand-color);
 }
 
+.ui5con-location .ui5con-box li::marker {
+  color: var(--brand-color-alt);
+}
+
 .ui5con-location .ui5con-location-address {
   max-width: 100%;
   margin-block: 2rem;
@@ -84,10 +88,15 @@
     text-align: left;
     margin-block: 4rem;
   }
-  
+
   .ui5con-location .ui5con-location-parking {
     padding-block-end: 0;
   }
+
+.ui5con-location .ui5con-location-parking p,
+.ui5con-location .ui5con-location-transportation p {
+  margin-block-start: 0;
+}
 
   .ui5con-location .ui5con-location-car img,
   .ui5con-location .ui5con-location-parking img,
