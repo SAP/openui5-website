@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Speaker Infos - UI5con Germany in June 2024</title>
+  <title>UI5con Germany in June 2024</title>
   <meta name="description"
     content="If you want to learn more about UI5, you can't miss UI5con 2024. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP" />
   <meta name="keywords"
@@ -16,26 +16,31 @@
   <meta property="twitter:title" content="UI5con Germany in June 5th 2024" />
   <meta property="twitter:description"
     content="If you want to learn more about UI5, you can't miss UI5con 2024. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. June 5th" />
-  <meta property="twitter:image" content="https://openui5.org/ui5con/germany2024/images/share.png?2" />
+  <meta property="twitter:image" content="https://openui5.org/ui5con/germany2024/images/share.png" />
   <meta property="og:title" content="UI5con Germany in June 5th 2024" />
   <meta property="og:description"
     content="If you want to learn more about UI5, you can't miss UI5con 2024. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. June 5th" />
-  <meta property="og:image" content="https://openui5.org/ui5con/germany2024/images/share.png?2" />
+  <meta property="og:image" content="https://openui5.org/ui5con/germany2024/images/share.png" />
+
+  <meta name="google-site-verification" content="Lyp2FQv0ahG2U02k62FkakzcsYmSvgRlccIK5pQe0Z4" />
+
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
   <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
   <link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
 
   <link rel="stylesheet" href="./css/common.css" />
   <link rel="stylesheet" href="./css/modules.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 </head>
 
-<body>
-  <header class="ui5con-site-head ui5con-site-head--collapsed">
+<body class="ui5con-location">
+  <header class="ui5con-location-header">
     <div class="ui5con-wrap">
       <nav class="ui5con-nav" aria-label="Main navigation">
         <ul>
           <li>
-            <a href="index.html" class="" aria-label="Home">
+            <a href="index.html" class=""  aria-current="true" aria-label="Home">
               <span class="sr-only">Link to Home Page</span>
               <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="ui5con-logo" viewBox="0 0 199 48"
                 aria-hidden="true">
@@ -46,17 +51,17 @@
                   d="M103.972 31.051a18.681 18.681 0 0 1 1.229-7.333 14.39 14.39 0 0 1 3.337-5.063 18.787 18.787 0 0 1 4.566-2.968 13.926 13.926 0 0 1 5.269-.873 13.14 13.14 0 0 1 4.566.698c1.257.47 2.44 1.117 3.512 1.921.96.8 1.79 1.741 2.459 2.794a20.038 20.038 0 0 1 1.756 3.317l-4.391 1.746a10.082 10.082 0 0 0-3.161-4.54 7.562 7.562 0 0 0-4.917-1.571 7.063 7.063 0 0 0-3.337.698 11.504 11.504 0 0 0-2.986 2.096 12.57 12.57 0 0 0-2.107 3.666 19.434 19.434 0 0 0-.878 5.587 14.444 14.444 0 0 0 2.459 8.904 8.63 8.63 0 0 0 2.902 2.28 8.686 8.686 0 0 0 3.596.863 8.2 8.2 0 0 0 4.917-1.397 12.65 12.65 0 0 0 3.512-4.888l4.215 1.571a19.475 19.475 0 0 1-2.107 3.666 10.666 10.666 0 0 1-2.81 2.794 14.066 14.066 0 0 1-3.512 1.92 13.126 13.126 0 0 1-4.567.699c-1.808.003-3.6-.353-5.268-1.048a11.268 11.268 0 0 1-4.391-3.142 13.73 13.73 0 0 1-3.161-5.064 51.227 51.227 0 0 1-.702-7.333Zm31.436 0a19.89 19.89 0 0 1 1.229-7.158 13.743 13.743 0 0 1 3.161-5.063 14.055 14.055 0 0 1 4.742-3.143 15.132 15.132 0 0 1 11.064 0 14.055 14.055 0 0 1 4.742 3.143 13.717 13.717 0 0 1 3.161 5.063 19.891 19.891 0 0 1 1.23 7.158 19.891 19.891 0 0 1-1.23 7.159 13.717 13.717 0 0 1-3.161 5.063 14.055 14.055 0 0 1-4.742 3.143 15.132 15.132 0 0 1-11.064 0 14.055 14.055 0 0 1-4.742-3.143 13.743 13.743 0 0 1-3.161-5.063 21.61 21.61 0 0 1-1.229-7.159Zm5.268 0c0 1.586.177 3.167.527 4.715a11.06 11.06 0 0 0 1.757 3.84 8.757 8.757 0 0 0 2.985 2.62 7.06 7.06 0 0 0 4.215.872 10.428 10.428 0 0 0 4.039-.873 6.785 6.785 0 0 0 2.986-2.444 15.79 15.79 0 0 0 1.932-3.841c.418-1.598.653-3.238.702-4.889a19.606 19.606 0 0 0-.527-4.54 15.25 15.25 0 0 0-1.756-3.84 8.767 8.767 0 0 0-2.985-2.62 6.831 6.831 0 0 0-4.215-.872 10.435 10.435 0 0 0-4.04.873 6.788 6.788 0 0 0-2.985 2.444 14.927 14.927 0 0 0-1.932 3.667 15.405 15.405 0 0 0-.703 4.888Zm31.437 15.714V15.512h5.093v4.715a11.955 11.955 0 0 1 2.283-1.921 15.039 15.039 0 0 1 2.81-1.746 22.332 22.332 0 0 1 3.161-1.222 13.17 13.17 0 0 1 3.688-.524 10.12 10.12 0 0 1 7.025 2.444 9.638 9.638 0 0 1 2.459 6.984v22.523h-5.093V25.29a7.2 7.2 0 0 0-1.405-4.714 5.546 5.546 0 0 0-4.391-1.397 10.712 10.712 0 0 0-5.269 1.397 26.456 26.456 0 0 0-4.917 3.666v22.523h-5.444Z"
                   fill="#F79B36" />
               </svg>
+
             </a>
           </li>
-
           <li>
             <a href="sponsors.html">sponsoring</a>
           </li>
           <li>
-            <a href="#" aria-current="true" class="active">speaker infos</a>
+            <a href="speakerinfo.html">speaker infos</a>
           </li>
           <li>
-            <a href="location.html">getting here</a>
+            <a href="location.html" class="active" aria-current="true">getting here</a>
           </li>
           <li>
             <a href="https://openui5.org/ui5con/" hreflang="en" rel="external"
@@ -65,98 +70,108 @@
         </ul>
       </nav>
 
+      <h2>
+        Getting <span>here</span>
+      </h2>
+
+      <div class="ui5con-location-address">
+        <address>
+          <p itemscope itemtype="http://schema.org/BusinessEvent">
+            <a class="sr-only" itemprop="url" href="https://openui5.org/ui5con/germany2024">
+              <span itemprop="name">UI5con</span>
+            </a>
+  
+            <time class="sr-only" itemprop="startDate" content="2024-06-05" datetime="">Beginn: 05.06.2024 8:00AM</time>
+            <time class="sr-only" itemprop="endDate" content="2024-06-05" datetime="">Ende: 05.06.2024 6:00PM</time>
+  
+            <span class="event-venue" itemprop="location" itemscope itemtype="https://schema.org/Place">
+              Location: <span hidden aria-hidden="true" itemprop="name">SAP-Allee 27 (ROT03),</span>
+              <span class="address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                  <span itemprop="streetAddress">SAP-Allee 27 (ROT03),</span>
+                  <span itemprop="postalCode">68789</span>
+                  <span itemprop="addressLocality">St. Leon-Rot</span>,
+                  <span itemprop="addressCountry">Germany</span>
+              </span>
+            </span>
+          </p>
+        </address>
+  
+        <a href="https://goo.gl/maps/JPyS52nEYLTF2mYj9" hreflang="en" target="_blank" class="maps">
+          <img src="images/OSM-directions.webp" alt="Open Street Map Image of the location with a PIN set on the building">
+        </a>
+      </div>
     </div>
   </header>
 
   <main>
-    <article>
+    <section>
       <div class="ui5con-wrap">
-        <div class="ui5con-box ui5con-box--text">
-          <h2>
-            <span>Call for</span> Speakers
-          </h2>
-
-          <p>Call closes 11:59pm February 26, 2024 UTC</p>
-
-          <h3>Take the Stage at UI5con</h3>
-
-          <p>Speaking at UI5con is your chance for personal growth, allowing you to refine your communication skills,
-            expand your professional network, and establish yourself as a thought leader within the UI5 community.</p>
-
-          <p>At UI5con, it's not about big names - we prioritize unique ideas and fresh insights. We are eager to hear your voice,
-            your distinct viewpoint, and your expertise. Proposing a talk for UI5con is not merely a stage to display your skills,
-            but a chance to contribute to the growth and progression of the UI5 community.</p>
-
-          <p>Don’t let this opportunity pass you by. Submit your most innovative ideas by February 26, and you might find
-            yourself sharing the stage with some of the brightest minds in the UI5 community.</p>
-
-          <p>We're seeking a wide array of topics, including but not limited to:</p>
-
-          <ul>
-            <li>Innovative applications of UI5</li>
-            <li>Efficient development tips and tricks</li>
-            <li>Case studies and success stories</li>
-            <li>Best practices for UI5 application architecture</li>
-            <li>Insights on the future of UI5 and its evolving ecosystem</li>
-            <li>Integrating UI5 with other technologies and platforms</li>
-          </ul>
-
-          <p>We welcome presentations of 20 minutes or longer sessions of 40 minutes, as well as hands-on workshops ranging
-            from 60 to 120 minutes. All sessions must be conducted in English.</p>
-
-          <h4>Required information:</h4>
-
-          <p>When submitting your proposal, you’ll be asked to include the following information:</p>
-
-          <ul>
-            <li>Title (max 75 characters)</li>
-            <li>Session type: Options include a quickfire presentation (20 minutes),
-              an in-depth presentation (40 minutes), or a hands-on workshop
-              (60 minutes, 90 minutes, or 120 minutes)</li>
-            <li>Presentation/workshop description (200-300 words)</li>
-            <li>Remarks (optional): Add any further comments or information pertinent to your proposal
-              that could aid us in decision making. You can also include suggestions for a new
-              session format, or details about a proposed panel discussion and potential
-              panelists can be included here.</li>
-            <li>Speaker Name(s) and Contact Information: Depending on the session format selected,
-              you can nominate up to four speakers. For the proposal, only the primary
-              speaker's details are mandatory.</li>
-          </ul>
-
-          <h4>Tips for submitting a successful proposal:</h4>
-
-          <p>To increase your chances of having your proposal accepted for UI5con, please consider the following tips:</p>
-
-          <ul>
-            <li>Avoid marketing and sales language in your proposal.</li>
-            <li>Offer original ideas and real-world scenarios, supported by relevant examples and knowledge transfer.
-              This will help provide valuable insights to attendees.</li>
-            <li>Include as much details as possible about your presentation. Explain why people should attend and
-              what they will take away from it. Mention the specific products or topics you will cover,
-              and if applicable, identify your target audience. </li>
-            <li>Limit the scope of your presentation to fit within the allocated time (40 or 20 minutes).
-              Instead of trying to cover everything about a framework, focus on a useful aspect, a particular technique,
-              or walk through a simple program.</li>
-            <li>Don’t assume that your company’s name buys you credibility. If you’re talking about something important
-              that you have specific knowledge of because of what your company does, spell that out in the description.</li>
-            <li>We value diversity and consider it seriously when reviewing proposals to ensure a broad range of speakers.</li>
-          </ul>
-
-          <p>It is important to note that UI5con caters to professionals, so keeping this audience in mind is essential.
-            Additionally, all speakers are required to adhere to our Code of Conduct, which emphasizes the importance of
-            creating an inclusive and respectful environment for all participants. Therefore, it is vital that your presentation,
-            along with any supporting materials and informal commentary, is not only informative but also welcoming and
-            respectful to everyone involved.</p>
-
-
+        <div class="ui5con-box">
+          <div class="contents">
+            <h2><span>By Car</span></h2>
+            <div class="ui5con-location-car">
+              <div>
+                <h3>From the Autobahn 6, taking the Wiesloch/Rauenberg exit toward Walldorf:</h3>
+                <ul>
+                  <li>Follow the L723 (B39) highway toward Walldorf/Speyer.</li>
+                  <li>At the L723/B3 crossing, follow the signs toward Bruchsal and turn right onto the B3 highway.</li>
+                  <li>Continue for approximately three miles to the B3/L546 (Uhlandshöhe) crossing, and turn right toward St. Leon-Rot.</li>
+                  <li>Continue to the exit for the St. Leon-Rot industrial park and turn left onto Opelstraße.</li>
+                  <li>After approximately 500 yards, you will come to a traffic circle. Turn left onto SAP-Allee.</li>
+                  <li>At the third intersection, turn right and follow SAP-Allee.</li>
+                </ul>
+  
+                <h3>From the Autobahn 5, taking the Walldorf/Wiesloch exit toward Walldorf:</h3>
+                <ul>
+                  <li>Follow the L723 (B39) toward Walldorf/Wiesloch (passing by Walldorf's industrial park).</li>
+                  <li>At the L723/B3 crossing, follow the signs toward Bruchsal and turn left onto the B3 highway.</li>
+                  <li>Continue for approximately three miles to the B3/L546 (Uhlandshöhe) crossing and turn right toward St. Leon-Rot.</li>
+                  <li>Continue to the exit for the St. Leon-Rot industrial park and turn left onto Opelstrasse.</li>
+                  <li>After approximately 500 yards, you will come to a traffic circle. Turn left onto SAP-Allee.</li>
+                  <li>At the third intersection, turn right and follow SAP-Allee.</li>
+                </ul>
+              </div>
+  
+              <img aria-hidden="true" class="ui5con-illustration" src="images/car.svg" alt="Illustration of a car" />
+            </div>
+          </div>
         </div>
       </div>
-    </article>
+    </section>
+
+    <section>
+      <div class="ui5con-wrap">
+        <div class="ui5con-grid-wrap ui5con-grid-wrap--split">
+          <div class="ui5con-box ui5con-location-parking">
+            <div class="contents">
+              <h2><span>Parking</span></h2>
+              <p style="max-width: 70%;">
+                The closest parking facilities to the venue are the car parks P1/P2/P3/ as well as the parking area P5. Parking is free.
+              </p>
+           </div>
+            <img aria-hidden="true" class="ui5con-illustration" src="images/parking.svg" alt="Illustration of a parking sign" />
+          </div>
+
+          <div class="ui5con-box ui5con-location-transportation">
+            <div class="contents">
+              <h2><span>By Public Transport</span></h2>
+              <p>From Mannheim, Heidelberg, or Karlsruhe: </p>
+              <ul>
+                <li>Take the railway line S3 or S4 (DB Regio AG: Germersheim - Speyer - Ludwigshafen - Mannheim) to the Rot-Malsch train station.</li>
+                <li>From the Rot-Malsch train station, take bus 719 toward “Industriegebiet St. Leon-Rot, SAP.” It is a five-minute ride to reach the SAP buildings.</li>
+              </ul>
+              <p>The station “Rot-Malsch” is within walking distance (nice path along the forest). Trains will also run at night - so no worries about getting back after the evening event.
+              Further information on bus and train schedules can be found on the Web site of the Rhein-Neckar public transport association: <a href="https://www.vrn.de/" title="Click to open VRN website. Opens in a new window." target="_blank" hreflang="en" rel="noopener noreferrer">www.vrn.de</a></p>
+            </div>
+            <img aria-hidden="true" class="ui5con-illustration" src="images/transport.svg" alt="Illustration of a train" />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="ui5con-wrap">
-
       <ul class="ui5con-social-links">
         <li>
           <a href="https://twitter.com/openui5" target="_blank" hreflang="en" rel="noopener noreferrer">
@@ -219,10 +234,11 @@
             hreflang="en">Trademark</a>
           <a href="codeofconduct.html" rel="noopener noreferrer" target="_blank" hreflang="en">Code of Conduct</a>
         </div>
-        <p class="copyright">© 2024 SAP SE or an SAP affiliate company. All rights reserved.</p>
+        <p class="copyright"> © 2024 SAP SE or an SAP affiliate company. All rights reserved.</p>
       </div>
     </div>
   </footer>
-</body>
 
+  <script src="./js/main.js"></script>
+</body>
 </html>

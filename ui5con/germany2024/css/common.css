@@ -399,7 +399,7 @@ body::before {
   }
 }
 
-.sr-only:not(:focus):not(:active) {
+.sr-only:not(:active) {
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
@@ -1080,7 +1080,7 @@ footer {
 }
 
 .ui5con-footer-container p {
-  text-wrap: nowrap;
+  text-wrap: wrap;
   order: 3;
   flex-basis: 100%;
   text-align: center;
