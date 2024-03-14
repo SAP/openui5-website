@@ -228,31 +228,31 @@
         <h2 class="emphasized">Our Jury</h2>
 
         <ul class="ui5con-grid-wrap ui5con-people-list" role="list">
-          <li role="listitem">
+          <li role="listitem" v-for="member in jury" :key="member.name">
             <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/geert-jan-klaps.jpg" alt="Portrait of Geert-Jan Klaps">
+              <img class="ui5con-people-portrait" :src="member.image" :alt="`Portrait of ${member.name}`">
             </div>
             <div class="ui5con-people-content">
-              <h3>Geert-Jan Klaps</h3>
-              <p>Belgium | TheValueChain</p>
+              <h3>{{member.name}}</h3>
+              <p>{{member.info}}</p>
 
               <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://github.com/geert-janklaps" aria-label="Github profile of Geert-Jan Klaps">
+                <li v-if="member.github">
+                  <a :href="member.github" :aria-label="`Github profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
                     <svg class="icon" aria-hidden="true">
                       <use xlink:href="images/icons/sprite.svg#github"></use>
                     </svg>
                   </a>
                 </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/geertjanklaps/" aria-label="Linkedin profile of Geert-Jan Klaps">
+                <li v-if="member.linkedin">
+                  <a :href="member.linkedin" :aria-label="`Linkedin profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
                     <svg class="icon" aria-hidden="true">
                       <use xlink:href="images/icons/sprite.svg#linkedin"></use>
                     </svg>
                   </a>
                 </li>
-                <li>
-                  <a href="https://twitter.com/geertjanklaps" aria-label="Twitter profile of Geert-Jan Klaps">
+                <li v-if="member.x">
+                  <a :href="member.x" :aria-label="`Twitter profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
                     <svg class="icon" aria-hidden="true">
                       <use xlink:href="images/icons/sprite.svg#twitter"></use>
                     </svg>
@@ -261,216 +261,6 @@
               </ul>
             </div>
           </li>
-
-          <li role="listitem">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/danielle-lyle.jpeg" alt="Portrait of Danielle Lyle">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>Danielle Lyle</h3>
-              <p>Belgium | Comentec</p>
-
-              <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://www.linkedin.com/in/danielle-lyle/" aria-label="Linkedin profile of Danielle Lyle">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li role="listitem">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/stefan-beck.jpg" alt="Portrait of Stefan Beck">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>Stefan Beck</h3>
-              <p>Germany | SAP</p>
-
-              <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://www.linkedin.com/in/stefan-beck-a9319a82" aria-label="Linkedin profile of Stefan Beck">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/StefanBeck3" aria-label="Twitter profile of Stefan Beck">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li role="listitem">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/thomas-buechler.jpg" alt="Portrait of Thomas Büchler">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>Thomas Büchler</h3>
-              <p>Germany | SAP</p>
-
-              <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://www.linkedin.com/in/thomas-b%C3%BCchler-3420073b/" aria-label="Linkedin profile of Thomas Büchler">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li role="listitem">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/catrin-kupfer.jpg" alt="Portrait of Catrin Kupfer">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>Catrin Kupfer</h3>
-              <p>Germany | DZ BANK AG</p>
-
-              <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://www.linkedin.com/in/catrin-kupfer-1b1ab71a9/" aria-label="Linkedin profile of Catrin Kupfer">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li role="listitem">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/dominik-heim.jpg" alt="Portrait of Dominik Heim">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>Dominik Heim</h3>
-              <p>Germany | SAP</p>
-
-              <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://github.com/heimwege" aria-label="Github profile of Dominik Heim">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/dominik-heim-494aa9145/" aria-label="Linkedin profile of Dominik Heim">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li role="listitem">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/mike-zaschka.jpg" alt="Portrait of Mike Zaschka">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>Mike Zaschka</h3>
-              <p>Germany | p36 GmbH</p>
-
-              <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://github.com/mikezaschka" aria-label="Github profile of Mike Zaschka">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/mike-zaschka-7395949/" aria-label="Linkedin profile of Mike Zaschka">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/mike_zaschka" aria-label="Twitter profile of Mike Zaschka">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li role="listitem">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/matt-harding.jpg" alt="Portrait of Matt Harding">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>Matt Harding</h3>
-              <p>Australia | Independent</p>
-
-              <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://www.linkedin.com/in/mattharding/" aria-label="Linkedin profile of Matt Harding">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/mattharding" aria-label="Twitter profile of Matt Harding">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li role="listitem">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" src="images/jury/dimitar-fenerski.jpg" alt="Portrait of Dimitar Fenerski">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>Dimitar Fenerski</h3>
-              <p>Bulgaria | Berncon GmbH</p>
-
-              <ul class="ui5con-people-socials">
-                <li>
-                  <a href="https://github.com/dfenerski" aria-label="Github profile of Dimitar Fenerski">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/dimitar-fenerski-b91610181/" aria-label="Linkedin profile of Dimitar Fenerski">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/dfenersky" aria-label="Twitter profile of Dimitar Fenerski">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
         </div>
       </div>
     </section>

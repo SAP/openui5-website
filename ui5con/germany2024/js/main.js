@@ -42,6 +42,71 @@ var main = new Vue({
           </svg>`,
           text: "Share via mail"
         }
+      ],
+      jury: [
+        {
+          name: 'Geert-Jan Klaps',
+          info: 'Belgium | TheValueChain',
+          image: 'images/jury/geert-jan-klaps.jpg',
+          github: 'https://github.com/geert-janklaps',
+          linkedin: 'https://www.linkedin.com/in/geertjanklaps/',
+          x: 'https://twitter.com/geertjanklaps'
+        },
+        {
+          name: 'Danielle Lyle',
+          info: 'Belgium | Comentec',
+          image: 'images/jury/danielle-lyle.jpeg',
+          linkedin: 'https://www.linkedin.com/in/danielle-lyle/',
+        },
+        {
+          name: 'Stefan Beck',
+          info: 'Germany | SAP',
+          image: 'images/jury/stefan-beck.jpg',
+          linkedin: 'https://www.linkedin.com/in/stefan-beck-a9319a82',
+          x: 'https://twitter.com/StefanBeck3'
+        },
+        {
+          name: 'Thomas Büchler',
+          info: 'Germany | SAP',
+          image: 'images/jury/thomas-buechler.jpg',
+          linkedin: 'https://www.linkedin.com/in/thomas-b%C3%BCchler-3420073b/',
+        },
+        {
+          name: 'Catrin Kupfer',
+          info: 'Germany | DZ BANK AG',
+          image: 'images/jury/catrin-kupfer.jpg',
+          linkedin: 'https://www.linkedin.com/in/catrin-kupfer-1b1ab71a9/',
+        },
+        {
+          name: 'Dominik Heim',
+          info: 'Germany | SAP',
+          image: 'images/jury/dominik-heim.jpg',
+          github: 'https://github.com/heimwege',
+          linkedin: 'https://www.linkedin.com/in/dominik-heim-494aa9145/',
+        },
+        {
+          name: 'Mike Zaschka',
+          info: 'Germany | p36 GmbH',
+          image: 'images/jury/mike-zaschka.jpg',
+          github: 'https://github.com/mikezaschka',
+          linkedin: 'https://www.linkedin.com/in/mike-zaschka-7395949/',
+          x: 'https://twitter.com/mike_zaschka'
+        },
+        {
+          name: 'Matt Harding',
+          info: 'Australia | Independent',
+          image: 'images/jury/matt-harding.jpg',
+          linkedin: 'https://www.linkedin.com/in/mattharding/',
+          x: 'https://twitter.com/mattharding'
+        },
+        {
+          name: 'Dimitar Fenerski',
+          info: 'Bulgaria | Berncon GmbH',
+          image: 'images/jury/dimitar-fenerski.jpg',
+          github: 'https://github.com/dfenerski',
+          linkedin: 'https://www.linkedin.com/in/dimitar-fenerski-b91610181/',
+          x: 'https://twitter.com/dfenersky'
+        }
       ]
     };
   },
