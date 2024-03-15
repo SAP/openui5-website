@@ -4,7 +4,7 @@ module.exports = {
         description: ``,
         robots: `index, follow`,
         faviconUrl: `/favicon/favicon.png`,
-        copyright: `&copy; ${new Date().getFullYear()} SAP SE or an SAP affiliate company and OpenUI5 contributors`,
+        copyright: `&copy; ${new Date().getFullYear()} SAP SE or an SAP affiliate company and OpenUI5 contributors <br> This site is hosted by GitHub Pages.`,
     },
     plugins: [
         `gatsby-plugin-layout`,
