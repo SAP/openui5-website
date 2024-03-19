@@ -1038,6 +1038,10 @@ article {
   margin: auto;
 }
 
+svg.neptune {
+  width: clamp(20rem, 15vw, 28rem);
+}
+
 svg.agilita {
   fill: #272525;
 }
