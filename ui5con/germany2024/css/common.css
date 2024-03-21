@@ -771,6 +771,10 @@ article {
   margin-block-start: 5rem;
 }
 
+.ui5con-header-registration.open h2 span:last-of-type {
+  margin-block-start: 3rem;
+}
+
 .ui5con-site-head h2 em {
   font-style: normal;
   position: relative;
@@ -859,9 +863,23 @@ article {
   background: transparent url(../images/door-closed.svg) 50% 100% no-repeat;
 }
 
+.ui5con-header-registration.open {
+  background-image: url(../images/door-open.svg);
+  background-size: 130% 100%;
+}
+
+.ui5con-header-registration.open .ui5con-btn {
+  width: max-content;
+  margin: 2rem auto;
+}
+
 @media only screen and (min-width: 768px) {
   .ui5con-site-head-illustrative .ui5con-wrap {
     height: 19rem;
+  }
+
+  .ui5con-header-registration.open {
+    background-size: 100% 95%;
   }
 
   .ui5con-header-registration {
@@ -878,6 +896,12 @@ article {
 
   .ui5con-site-head h2 span:last-of-type {
     margin-block-start: 10rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .ui5con-header-registration.open {
+    background-size: auto;
   }
 }
 
