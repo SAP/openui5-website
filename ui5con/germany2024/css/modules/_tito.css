@@ -126,6 +126,11 @@
   border-color: transparent;
 }
 
+.ui5con-tickets .tito-widget .tito-locked-ticket-message {
+  margin-block-start: 0;
+  margin-block-end: 1rem;
+}
+
 .ui5con-tickets .tito-widget .tito-locked-ticket-message p {
   margin-block-start: 0;
 }
