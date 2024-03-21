@@ -125,3 +125,7 @@
   background-image: linear-gradient(15deg, var(--brand-color-alt), var(--brand-color));
   border-color: transparent;
 }
+
+.ui5con-tickets .tito-widget .tito-locked-ticket-message p {
+  margin-block-start: 0;
+}
