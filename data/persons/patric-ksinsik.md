@@ -1,7 +1,7 @@
 ---
 name: Patric Ksinsik
 company: SAP
-photo: ./patric-ksinsik.jpg
+photo: ./patric-ksinsik.JPG
 twitter:
 linkedin:
 github:

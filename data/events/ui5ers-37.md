@@ -10,7 +10,7 @@ speakers:
 - Patric Ksinsik
 url: https://sap-se.zoom.com/j/94833714827
 ---
-In this episode, Patric will talk about an experimental prototype he recently worked on. This prototype utilizes OpenAI GTP-4for natural language processing to enable users to interact with a UI5 app via both chat and voice commands. Patric will showcase the prototype and provide an overview of the technical aspects of the implementation.
+In this episode, Patric will talk about an experimental prototype he recently worked on. This prototype utilizes OpenAI GTP-4 for natural language processing to enable users to interact with a UI5 app via both chat and voice commands. Patric will showcase the prototype and provide an overview of the technical aspects of the implementation.
 
 In addition, Andreas will be sharing some insights about control development. He will address commonly asked questions such as integrating third-party content and incorporating elements like \<canvas\>.
 
