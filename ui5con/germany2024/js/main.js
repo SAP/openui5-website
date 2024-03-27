@@ -116,7 +116,7 @@ var main = new Vue({
     axios
     .get('https://ui5con2024.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
     .then(response => {
-      this.speakers = this.formatAndShuffleSpeakersArray(response.data).slice(0, 3);
+      this.speakers = this.formatAndShuffleSpeakersArray(response.data).slice(0, 6);
 
       // this.speakers = this.formatAndShuffleSpeakersArray(response.data);
       // console.log("Number of speakers with photos", this.speakers.length);
@@ -264,9 +264,9 @@ var main = new Vue({
         }
 
         return {
-          ...speaker, 
+          ...speaker,
           fullName: fullName,
-          showMore: false 
+          showMore: false
         }
       });
 

@@ -232,49 +232,6 @@
       </div>
     </section>
 
-    <!-- JURY SECTION -->
-    <section id="jury">
-      <div class="ui5con-wrap">
-        <h2 class="emphasized">Our Jury</h2>
-
-        <ul class="ui5con-grid-wrap ui5con-people-list" role="list">
-          <li role="listitem" v-for="member in jury" :key="member.name">
-            <div class="ui5con-people-portrait-wrap">
-              <img class="ui5con-people-portrait" :src="member.image" :alt="`Portrait of ${member.name}`">
-            </div>
-            <div class="ui5con-people-content">
-              <h3>{{member.name}}</h3>
-              <p>{{member.info}}</p>
-
-              <ul class="ui5con-people-socials">
-                <li v-if="member.github">
-                  <a :href="member.github" :aria-label="`Github profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li v-if="member.linkedin">
-                  <a :href="member.linkedin" :aria-label="`Linkedin profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li v-if="member.x">
-                  <a :href="member.x" :aria-label="`Twitter profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
-                    <svg class="icon" aria-hidden="true">
-                      <use xlink:href="images/icons/sprite.svg#twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </div>
-      </div>
-    </section>
-
     <!-- SPEAKERS SECTION -->
     <section id="speakers">
       <div class="ui5con-wrap center">
@@ -344,6 +301,49 @@
                 </ul>
               </div>
             </li>
+        </div>
+      </div>
+    </section>
+
+    <!-- JURY SECTION -->
+    <section id="jury">
+      <div class="ui5con-wrap">
+        <h2 class="emphasized">Our Jury</h2>
+
+        <ul class="ui5con-grid-wrap ui5con-people-list" role="list">
+          <li role="listitem" v-for="member in jury" :key="member.name">
+            <div class="ui5con-people-portrait-wrap">
+              <img class="ui5con-people-portrait" :src="member.image" :alt="`Portrait of ${member.name}`">
+            </div>
+            <div class="ui5con-people-content">
+              <h3>{{member.name}}</h3>
+              <p>{{member.info}}</p>
+
+              <ul class="ui5con-people-socials">
+                <li v-if="member.github">
+                  <a :href="member.github" :aria-label="`Github profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="images/icons/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li v-if="member.linkedin">
+                  <a :href="member.linkedin" :aria-label="`Linkedin profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="images/icons/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li v-if="member.x">
+                  <a :href="member.x" :aria-label="`Twitter profile of ${member.name}`" target="_blank" hreflang="en" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="images/icons/sprite.svg#twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
         </div>
       </div>
     </section>
