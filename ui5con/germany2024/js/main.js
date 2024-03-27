@@ -43,6 +43,7 @@ var main = new Vue({
           text: "Share via mail"
         }
       ],
+      speakers: [],
       jury: [
         {
           name: 'Geert-Jan Klaps',
@@ -107,11 +108,19 @@ var main = new Vue({
           linkedin: 'https://www.linkedin.com/in/dimitar-fenerski-b91610181/',
           x: 'https://twitter.com/dfenersky'
         }
-      ]
+      ],
     };
   },
   mounted() {
     // console.log(this.createCalendars());
+    axios
+    .get('https://ui5con2024.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
+    .then(response => {
+      this.speakers = this.formatAndShuffleSpeakersArray(response.data).slice(0, 3);
+
+      // this.speakers = this.formatAndShuffleSpeakersArray(response.data);
+      // console.log("Number of speakers with photos", this.speakers.length);
+    });
   },
   methods: {
     toggleCalendars() {
@@ -195,6 +204,77 @@ var main = new Vue({
         ]
       }
 
-    }
+    },
+    formatTwitterLink(handle) {
+      if (!handle.startsWith('https:')) {
+        return "https://twitter.com/" + handle;
+      }
+    },
+    formatLinkedInLink(handle) {
+      if (!handle.startsWith('https:')) {
+        return "https://www.linkedin.com/in/" + handle;
+      }
+    },
+    formatMastodonLink(handle) {
+      if(!handle.startsWith('https:')) {
+        if (handle.includes('@saptodon.org')) {
+          return 'https://saptodon.org/' + handle.replace('@saptodon.org', '');
+        }
+
+        return 'https://saptodon.org/' + handle;
+      }
+    },
+    formatBlueskyLink(handle) {
+      if(!handle.startsWith('https:')) {
+        return 'https://bsky.app/profile/' + handle.replace('@', '');
+      }
+    },
+    shuffleSpeakersArray(array) {
+      const newArray = [...array]
+      const filteredArray = newArray.filter((el) => el.hasPhoto);
+      const length = filteredArray.length
+
+      for (let start = 0; start < length; start++) {
+        const randomPosition = Math.floor((filteredArray.length - start) * Math.random());
+        const randomItem = filteredArray.splice(randomPosition, 1);
+        filteredArray.push(...randomItem);
+      }
+
+      return filteredArray;
+    },
+    formatSpeakersArray(array) {
+      const newArray = [...array]
+      const formattedArray = newArray.map(speaker => {
+        const fullName = speaker.firstName + ' ' + speaker.lastName;
+
+        if(speaker.twitterHandle) {
+          speaker.twitterHandle = this.formatTwitterLink(speaker.twitterHandle);
+        }
+
+        if(speaker.linkedInUrl) {
+          speaker.linkedInUrl = this.formatLinkedInLink(speaker.linkedInUrl);
+        }
+
+        if(speaker.mastodonHandle) {
+          speaker.mastodonHandle = this.formatMastodonLink(speaker.mastodonHandle);
+        }
+
+        if(speaker.blueskyHandle) {
+          speaker.blueskyHandle = this.formatBlueskyLink(speaker.blueskyHandle);
+        }
+
+        return {
+          ...speaker, 
+          fullName: fullName,
+          showMore: false 
+        }
+      });
+
+      return formattedArray;
+    },
+    formatAndShuffleSpeakersArray(array) {
+      const formattedArray = this.formatSpeakersArray(array);
+      return this.shuffleSpeakersArray(formattedArray);
+    },
   },
 });

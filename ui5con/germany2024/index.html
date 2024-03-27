@@ -275,6 +275,79 @@
       </div>
     </section>
 
+    <!-- SPEAKERS SECTION -->
+    <section id="speakers">
+      <div class="ui5con-wrap center">
+        <h2 class="emphasized">Our Speakers</h2>
+        <ul class="ui5con-grid-wrap ui5con-speakers-list" role="list">
+            <li role="listitem" v-for="speaker in speakers" :key="`${speaker.fullName}`"  class="ui5con-speakers-list-item" :class="{more: speaker.showMore}">
+
+              <template v-if="!speaker.showMore">
+                <img class="ui5con-speakers-portrait" :src="`https://ui5con2024.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`" :alt="`Portrait of ${speaker.fullName}`">
+
+                <div class="ui5con-speakers-content">
+                  <div>
+                    <h3>{{speaker.fullName}}</h3>
+                    <p v-html="speaker.company"></p>
+                  </div>
+                </div>
+              </template>
+
+              <template v-else>
+                <div class="ui5con-speakers-content">
+                  <div>
+                    <h3>{{speaker.fullName}}</h3>
+                    <p v-html="speaker.company"></p>
+                  </div>
+                  <p>{{speaker.bio}}</p>
+                </div>
+              </template>
+
+              <div class="ui5con-speakers-footer">
+                <button @click="() => speaker.showMore = !speaker.showMore">{{speaker.showMore ? 'close' : 'about me'}}</button>
+                <ul class="ui5con-speakers-socials" >
+                  <li v-if="speaker.githubUrl">
+                    <a :href="speaker.githubUrl" rel="nofollow" target="_blank" :aria-label="`Github profile of ${speaker.fullName}`">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="images/icons/sprite.svg#github"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li v-if="speaker.linkedInUrl">
+                    <a :href="speaker.linkedInUrl" rel="nofollow" target="_blank" :aria-label="`Linkedin profile of ${speaker.fullName}`">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="images/icons/sprite.svg#linkedin"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li v-if="speaker.twitterHandle">
+                    <a :href="speaker.twitterHandle" rel="nofollow" target="_blank" :aria-label="`Twitter profile of ${speaker.fullName}`">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="images/icons/sprite.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li v-if="speaker.mastodonHandle">
+                    <a :href="speaker.mastodonHandle" rel="nofollow" target="_blank" :aria-label="`Mastodon profile of ${speaker.fullName}`">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="images/icons/sprite.svg#mastodon"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li v-if="speaker.blueskyHandle">
+                    <a :href="speaker.blueskyHandle" rel="nofollow" target="_blank" :aria-label="`Bluesky profile of ${speaker.fullName}`">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="images/icons/sprite.svg#bluesky"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+        </div>
+      </div>
+    </section>
+
     <!-- NEWSLETTER SECTION -->
     <section>
       <div class="ui5con-wrap">
@@ -578,10 +651,6 @@
           </div>
 
         </div>
-
-
-
-
       </div>
     </section>
 
@@ -709,6 +778,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/sendinblue.js"></script>
   <script src="./js/a11y-dialog.min.js"></script>
