@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Mikhail Benderskiy
 - Hristo Tsolev
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/ptowv-TIbDw
 ---
 In this episode, we will explore the new opportunity to create adaptation projects not only in SAP Business Application Studio (BAS), 
 but also in the popular Visual Studio Code (VSCode) editor, using the SAP Fiori tools extension. 
