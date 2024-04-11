@@ -1181,4 +1181,8 @@ footer {
   .ui5con-btn:is(:hover,:focus) {
     color: var(--text-color);
   }
+
+  p.ui5con-agenda-slot-speakers {
+    color: var(--text-color);
+  }
 }
