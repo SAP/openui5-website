@@ -233,7 +233,7 @@
     </section>
 
     <!-- AGENDA SECTION -->
-    <!-- <section id="agenda">
+    <!-- <section id="agenda" ref="agenda" v-if="this.formattedLineup">
       <div class="ui5con-wrap center">
         <h2 class="emphasized">Our Agenda</h2>
 
@@ -242,7 +242,7 @@
             <fieldset class="ui5con-agenda-filter">
               <legend class="sr-only">Show all elements of the agenda</legend>
               <div class="ui5con-agenda-filter__element">
-                <input type="radio" id="all" name="filter" value="all" checked="checked">
+                <input type="radio" id="all" name="filter" value="all" @change="onFilterChange($event)" checked>
                 <label for="all" class="ui5con-agenda-filter__label">All</label>
               </div>
             </fieldset>
@@ -251,90 +251,91 @@
                 Filter by session type
               </legend>
               <div class="ui5con-agenda-filter__element">
-                <input type="radio" id="talks" name="filter" value="talks">
+                <input type="radio" id="talks" name="filter" value="talks" @change="onFilterChange($event)">
                 <label for="talks" class="ui5con-agenda-filter__label">Talks</label>
               </div>
               <div class="ui5con-agenda-filter__element">
-                <input type="radio" id="workshops" name="filter" value="workshops">
+                <input type="radio" id="workshops" name="filter" value="workshops" @change="onFilterChange($event)">
                 <label for="workshops" class="ui5con-agenda-filter__label">Workshops</label>
               </div>
             </fieldset>
             <fieldset class="ui5con-agenda-filter">
               <legend class="ui5con-agenda-filter__legend">Filter by room</legend>
               <div class="ui5con-agenda-filter__element">
-                <input type="radio" id="audimax" name="filter" value="audimax">
+                <input type="radio" id="audimax" name="filter" value="audimax" @change="onFilterChange($event)">
                 <label for="audimax" class="ui5con-agenda-filter__label">Audimax</label>
               </div>
               <div class="ui5con-agenda-filter__element">
-                <input type="radio" id="w1" name="filter" value="w1">
+                <input type="radio" id="w1" name="filter" value="w1" @change="onFilterChange($event)">
                 <label for="w1" class="ui5con-agenda-filter__label">Room W1</label>
               </div>
               <div class="ui5con-agenda-filter__element">
-                <input type="radio" id="w2" name="filter" value="w2">
+                <input type="radio" id="w2" name="filter" value="w2" @change="onFilterChange($event)">
                 <label for="w2" class="ui5con-agenda-filter__label">Room W2</label>
               </div>
             </fieldset>
           </div>
 
-          <fieldset class="ui5con-agenda-toggle">
+          <fieldset class="ui5con-agenda-toggle" v-if="'UTC '+getLocalTimeZone() !== 'UTC +2'">
             <legend class="sr-only">Timezone</legend>
             <div class="ui5con-agenda-toggle__element">
-              <input type="radio" id="time1" name="timezone" value="eventtime" checked="checked">
-              <label for="time1">
+              <input
+                type="radio"
+                id="timezone1"
+                name="event-time"
+                value="event"
+                @change="onTimeChange($event)"
+                checked
+              />
+              <label for="timezone1">
                 event time
                 <time datetime="2022-07-07T00:00">(UTC+2)</time>
               </label>
             </div>
             <div class="ui5con-agenda-toggle__element">
-              <input type="radio" id="time2" name="timezone" value="yourtime">
-              <label for="time2">
+              <input
+                type="radio"
+                id="timezone2"
+                name="event-time"
+                value="local"
+                @change="onTimeChange($event)"
+              />
+              <label for="timezone2">
                 your time
-                <time datetime="2022-07-08T00:00">(UTC -8)</time>
+                <time datetime="2024-06-05T00:00">(UTC {{getLocalTimeZone()}})</time>
               </label>
             </div>
           </fieldset>
         </div>
 
-        <ol class="ui5con-agenda">
+        <ol class="ui5con-agenda" v-for="event in this.formattedLineup" :key="event.id" v-cloak>
           <li class="ui5con-agenda-slot">
-            <span class="live-token">live now</span>
-            <p class="ui5con-agenda-slot-details"><span class="ui5con-agenda-time">9:00 - 10:00</span> | <span class="ui5con-agenda-room">Audimax</span></p>
-            <h2 class="ui5con-agenda-slot-title">Opening & Welcome</h2>
+            <span class="live-token" v-if="event.isLive">live now</span>
+            <div class="ui5con-agenda-slot-header">
+              <div>
+                <p class="ui5con-agenda-slot-details"><span class="ui5con-agenda-time">9:00 - 10:00</span> | <span class="ui5con-agenda-room">Audimax</span></p>
+                <h2 class="ui5con-agenda-slot-title" v-html="event.title"></h2>
+              </div>
+              <div v-if="event.speakers.length > 0" class="ui5con-agenda-slot-speakers-images">
+                <button 
+                  v-for="speaker in event.speakers" :key="speaker.lastName"
+                  :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`"
+                  @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)">
+                  <img :src="`https://ui5con2024.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                       :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"/>
+                </button>
+              </div>
+            </div>
 
-            <p class="ui5con-agenda-slot-speakers">
-              <span>Frederic Berg</span>,
-              <span>Next Speaker</span>
+            <p class="ui5con-agenda-slot-speakers" v-if="event.speakers.length > 0">
+              <template  v-for="(speaker, index) in event.speakers" :key="speaker.lastName">
+                <span> {{speaker.firstName}} {{speaker.lastName}} (<span v-html="speaker.company"></span>)</span><span v-if="index != event.speakers.length - 1">, </span>
+              </template>
             </p>
-            <p class="ui5con-agenda-slot-description">Frederic Berg, Vice President of SAP UI Technologies, kicks off UI5con 2023</p>
 
-            <ul class="ui5con-agenda-slot-links">
-              <li>
-                <a href="#" class="ui5con-agenda-slot-linkitem">Github</a>
-              </li>
-              <li>
-                <a href="#" class="ui5con-agenda-slot-linkitem">Slides</a>
-              </li>
-              <li>
-                <a href="#" class="ui5con-agenda-slot-linkitem">Recordings</a>
-              </li>
-              <li class="livestream">
-                <a href="#" class="ui5con-agenda-slot-linkitem">Livestream</a>
-              </li>
-            </ul>
-          </li>
+            <p class="ui5con-agenda-slot-description" v-html="event.description"></p>
 
-          <li class="ui5con-agenda-slot">
-            <span class="live-token">live now</span>
-            <p class="ui5con-agenda-slot-details"><span class="ui5con-agenda-time">9:00 - 10:00</span> | <span class="ui5con-agenda-room">Audimax</span></p>
-            <h2 class="ui5con-agenda-slot-title">Opening & Welcome</h2>
-
-            <p class="ui5con-agenda-slot-speakers">
-              <span>Frederic Berg</span>,
-              <span>Next Speaker</span>
-            </p>
-            <p class="ui5con-agenda-slot-description">Frederic Berg, Vice President of SAP UI Technologies, kicks off UI5con 2023</p>
-
-            <ul class="ui5con-agenda-slot-links">
+            <ul class="ui5con-agenda-slot-links" v-if="event.presentationLinks.length > 0">
               <li>
                 <a href="#" class="ui5con-agenda-slot-linkitem">Github</a>
               </li>
@@ -351,6 +352,142 @@
           </li>
         </ol>
 
+        <div
+            id="speaker-modal"
+            ref="speakerModal"
+            aria-hidden="true"
+            tabindex="-1"
+            aria-modal="true"
+            class="ui5con-agenda-modal-backdrop"
+            style="display: none"
+            @keydown.esc="closeSpeakerInfoModal"
+            @click.self="closeSpeakerInfoModal"
+            v-cloak
+          >
+            <div
+              class="ui5con-agenda-modal"
+              role="document"
+              aria-labelledby="speaker-dialog-title"
+              aria-describedby="speaker-dialog-description"
+              tabindex="-1"
+              ref="speakerModalContent"
+            >
+              
+              <h2 class="sr-only" id="speaker-dialog-title">
+                Detailed Info about
+                <template v-for="speaker in activeSpeakers"
+                  >{{speaker.firstName}} {{speaker.lastName}}
+                </template>
+              </h2>
+
+              <p class="sr-only" id="speaker-dialog-description">
+                <template v-for="speaker in activeSpeakers">
+                  Speaker's name: {{speaker.firstName}} {{speaker.lastName}}
+                  <span v-if="speaker.company">Speaker's company: {{speaker.company}}</span>
+                  Speaker's bio: {{speaker.bio}}
+                </template>
+              </p>
+
+              <button
+                aria-label="Close Dialog"
+                @click="closeSpeakerInfoModal"
+                ref="close"
+                v-on:keydown.tab.prevent="focusTrapModal($event)"
+              >
+                ✕
+              </button>
+
+              <div
+                v-for="(speaker, index) in activeSpeakers"
+                class="ui5con-agenda-modal-content-container"
+                :key="index"
+              >
+                <figure>
+                  <img
+                    :src="`https://ui5con2024.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+                    :alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`"
+                  />
+                </figure>
+                <article>
+                  <header>
+                    <div>
+                      <h3 class="">
+                        {{speaker.firstName}} {{speaker.lastName}}
+                      </h3>
+                      <p v-if="speaker.company" v-html="speaker.company"></p>
+                    </div>
+                  </header>
+                  <p class="" v-if="speaker.bio">
+                    {{speaker.bio | formatText }}
+                  </p>
+                  <ul class="ui5con-speakers-socials" v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle">
+                    <li v-if="speaker.githubUrl">
+                      <a 
+                        :href="speaker.githubUrl" 
+                        rel="nofollow" 
+                        target="_blank" 
+                        :ref="`github ${speaker.firstName} ${speaker.lastName}`"
+                        :aria-label="`Github profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        v-on:keydown.tab.prevent="focusTrapModal($event)">
+                        <svg class="icon" aria-hidden="true">
+                          <use xlink:href="images/icons/sprite.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li v-if="speaker.linkedInUrl">
+                      <a 
+                        :href="speaker.linkedInUrl" 
+                        rel="nofollow" 
+                        target="_blank" 
+                        :ref="`linkedin ${speaker.firstName} ${speaker.lastName}`"
+                        :aria-label="`Linkedin profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        v-on:keydown.tab.prevent="focusTrapModal($event)">
+                        <svg class="icon" aria-hidden="true">
+                          <use xlink:href="images/icons/sprite.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li v-if="speaker.twitterHandle">
+                      <a 
+                        :href="speaker.twitterHandle" 
+                        rel="nofollow" target="_blank" 
+                        :ref="`twitter ${speaker.firstName} ${speaker.lastName}`"
+                        :aria-label="`Twitter profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        v-on:keydown.tab.prevent="focusTrapModal($event)">
+                        <svg class="icon" aria-hidden="true">
+                          <use xlink:href="images/icons/sprite.svg#twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li v-if="speaker.mastodonHandle">
+                      <a 
+                        :href="speaker.mastodonHandle" 
+                        rel="nofollow" target="_blank" 
+                        :ref="`mastodon ${speaker.firstName} ${speaker.lastName}`"
+                        :aria-label="`Mastodon profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        v-on:keydown.tab.prevent="focusTrapModal($event)">
+                        <svg class="icon" aria-hidden="true">
+                          <use xlink:href="images/icons/sprite.svg#mastodon"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li v-if="speaker.blueskyHandle">
+                      <a 
+                        :href="speaker.blueskyHandle" 
+                        rel="nofollow" target="_blank" 
+                        :ref="`bluesky ${speaker.firstName} ${speaker.lastName}`"
+                        :aria-label="`Bluesky profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        v-on:keydown.tab.prevent="focusTrapModal($event)">
+                        <svg class="icon" aria-hidden="true">
+                          <use xlink:href="images/icons/sprite.svg#bluesky"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
       </div>
     </section> -->
 
@@ -423,7 +560,7 @@
                 </ul>
               </div>
             </li>
-        </div>
+        </ul>
       </div>
     </section>
 
@@ -901,6 +1038,7 @@
   </footer>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./js/luxon.min.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/sendinblue.js"></script>
   <script src="./js/a11y-dialog.min.js"></script>

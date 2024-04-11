@@ -8,6 +8,7 @@ var main = new Vue({
       isExpanded: false,
       isModalVisible: false,
       showCalBlockers: false,
+      eventTime: "event",
       socialLinks: [
         {
           link: "https://twitter.com/intent/tweet?text=UI5Con%20Germany%202023%20&url=https%3A%2F%2Fopenui5.org%2Fui5con%2Fgermany2023",
@@ -109,17 +110,30 @@ var main = new Vue({
           x: 'https://twitter.com/dfenersky'
         }
       ],
+      filter: "all",
+      activeSpeakers: null,
+      lineup: [],
+      proposalLineup: [],
+      formattedLineup: [],
+      lastFocussedElementID: '',
     };
   },
   mounted() {
     // console.log(this.createCalendars());
+
+    // Get speakers info
     axios
     .get('https://ui5con2024.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
     .then(response => {
       this.speakers = this.formatAndShuffleSpeakersArray(response.data).slice(0, 6);
+    });
 
-      // this.speakers = this.formatAndShuffleSpeakersArray(response.data);
-      // console.log("Number of speakers with photos", this.speakers.length);
+    // Get the lineup
+    axios
+    .get('https://ui5con2024.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
+    .then(response => {
+      this.lineup = response;
+      this.formattedLineup = this.formatLineup();
     });
   },
   methods: {
@@ -128,6 +142,154 @@ var main = new Vue({
     },
     showSubscribeModal() {
       this.isModalVisible = !this.isModalVisible;
+    },
+    onFilterChange($event) {
+      this.filter = $event.target.value;
+      this.formattedLineup = this.formatLineup();
+    },
+    onTimeChange($event) {
+      this.eventTime = $event.target.value;
+    },
+    getLocalTimeZone() {
+      return luxon.DateTime.now().toFormat("Z");
+    },
+    formatLineup() {
+      const tempLineUp = this.lineup.data.map((session) => {
+        session.speakers.map((speaker) => {
+          if(speaker.twitterHandle) {
+            speaker.twitterHandle = this.formatTwitterLink(speaker.twitterHandle);
+          }
+  
+          if(speaker.linkedInUrl) {
+            speaker.linkedInUrl = this.formatLinkedInLink(speaker.linkedInUrl);
+          }
+  
+          if(speaker.mastodonHandle) {
+            speaker.mastodonHandle = this.formatMastodonLink(speaker.mastodonHandle);
+          }
+  
+          if(speaker.blueskyHandle) {
+            speaker.blueskyHandle = this.formatBlueskyLink(speaker.blueskyHandle);
+          }
+        });
+
+        return {
+          ...session,
+          isLive: false
+        };
+      });
+
+      const sortedSchedule = tempLineUp.filter(
+        (schedule) => !schedule.type.includes("expert")
+      );
+
+      if (this.filter === "all") {
+        return sortedSchedule;
+      } else if (this.filter === "talks") {
+        return sortedSchedule.filter((schedule) =>
+          schedule.type.includes("presentation")
+        );
+      } else if (this.filter === "workshops") {
+        return sortedSchedule.filter((schedule) =>
+          schedule.type.includes("hands")
+        );
+      } else if (this.filter === "audimax") {
+        return sortedSchedule.filter((schedule) =>
+          schedule.location.includes("audimax")
+        );
+      } else if (this.filter === "w1") {
+        return sortedSchedule.filter((schedule) =>
+          schedule.location.includes("w1")
+        );
+      } else if (this.filter === "w2") {
+        return sortedSchedule.filter((schedule) =>
+          schedule.location.includes("w2")
+        );
+      } else if (this.filter === "w3") {
+        return sortedSchedule.filter((schedule) =>
+          schedule.location.includes("w3")
+        );
+      } else {
+        return sortedSchedule;
+      }
+    },
+    openSpeakerInfoModal(speakers, id) {
+      this.activeSpeakers = speakers;
+      this.$refs.agenda.ariaHidden = true;
+      this.$refs.speakerModal.ariaHidden = false;
+      this.$refs.speakerModal.style.display = "flex";
+      this.lastFocussedElementID = id;
+
+      setTimeout(() => {
+        this.$refs.speakerModal.focus();
+      }, 0);
+    },
+    closeSpeakerInfoModal() {
+      this.activeSpeakers = null;
+      this.$refs.agenda.ariaHidden = false;
+      this.$refs.speakerModal.ariaHidden = true;
+      this.$refs.speakerModal.style.display = "none";
+
+      for (const key in this.$refs) {
+        if (
+          key.startsWith("twitter") ||
+          key.startsWith("github") ||
+          key.startsWith("linkedin") ||
+          key.startsWith("mastodon") ||
+          key.startsWith("bluesky")
+        ) {
+          delete this.$refs[key];
+        }
+      }
+      document.getElementById(this.lastFocussedElementID).focus();
+    },
+    focusTrapModal($event) {
+      let focussableElements = [];
+      focussableElements.push(this.$refs.close);
+
+      for (const key in this.$refs) {
+        if (
+          key.startsWith("twitter") ||
+          key.startsWith("github") ||
+          key.startsWith("linkedin") ||
+          key.startsWith("mastodon") ||
+          key.startsWith("bluesky")
+        ) {
+          const element = this.$refs[key];
+          if (Array.isArray(element)) {
+            focussableElements.push(element[0]);
+          } else {
+            focussableElements.push(element);
+          }
+        }
+      }
+
+      const filteredFocussableElements = focussableElements.filter(
+        (el) => el !== undefined
+      );
+      const activeElementIndex = filteredFocussableElements.indexOf(
+        $event.target
+      );
+
+      if (activeElementIndex != filteredFocussableElements.length - 1) {
+        if ($event.shiftKey) {
+          if (activeElementIndex === 0) {
+            filteredFocussableElements[
+              filteredFocussableElements.length - 1
+            ].focus();
+          } else {
+            filteredFocussableElements[activeElementIndex - 1].focus();
+          }
+        } else {
+          filteredFocussableElements[activeElementIndex + 1].focus();
+        }
+      } else {
+        if ($event.shiftKey) {
+          filteredFocussableElements[activeElementIndex - 1].focus();
+        } else {
+          filteredFocussableElements[0].focus();
+        }
+      }
     },
     createCalendars() {
 

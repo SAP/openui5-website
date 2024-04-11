@@ -284,6 +284,62 @@
   margin-block: 0 2rem;
 }
 
+.ui5con-agenda-slot-header {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 1.4rem;
+}
+
+.ui5con-agenda-slot-speakers-images {
+  gap: 0.75rem;
+  display: flex;
+  padding-inline: 0;
+  
+}
+
+.ui5con-agenda-slot-speakers-images button {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent;
+}
+
+.ui5con-agenda-slot-speakers-images button:is(:hover) img {
+  transform: scale(1.07);
+}
+
+.ui5con-agenda-slot-speakers-images button:is(:focus) {
+  outline: 0.125rem solid var(--brand-color-alt);
+}
+
+.ui5con-agenda-slot-speakers-images button img {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  transition: all .2s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui5con-agenda-slot-header {
+    gap: 1.4rem;
+    flex-direction: row;
+    margin-block-end: 1.4rem;
+    justify-content: space-between;
+  }
+
+  
+  .ui5con-agenda-slot-speakers-images button,
+  .ui5con-agenda-slot-speakers-images button img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.25rem;
+  }
+}
+
 .ui5con-agenda-slot-details {
   color: var(--brand-color);
   font-size: var(--type-1);
@@ -307,6 +363,7 @@
 
 .ui5con-agenda-slot-description {
   margin-block: 0 2rem;
+  white-space: pre-line;
 }
 
 .ui5con-agenda-slot-links {
