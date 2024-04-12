@@ -308,8 +308,8 @@
           </fieldset>
         </div>
 
-        <ol class="ui5con-agenda" v-for="event in this.formattedLineup" :key="event.id" v-cloak>
-          <li class="ui5con-agenda-slot">
+        <ol class="ui5con-agenda">
+          <li class="ui5con-agenda-slot" v-for="event in this.formattedLineup" :key="event.id" v-cloak>
             <span class="live-token" v-if="event.isLive">live now</span>
             <div class="ui5con-agenda-slot-header">
               <div>
