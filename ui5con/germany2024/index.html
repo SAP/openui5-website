@@ -317,7 +317,7 @@
                 <h2 class="ui5con-agenda-slot-title" v-html="event.title"></h2>
               </div>
               <div v-if="event.speakers.length > 0" class="ui5con-agenda-slot-speakers-images">
-                <button 
+                <button
                   v-for="speaker in event.speakers" :key="speaker.lastName"
                   :id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`"
                   @click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)">
@@ -372,7 +372,7 @@
               tabindex="-1"
               ref="speakerModalContent"
             >
-              
+
               <h2 class="sr-only" id="speaker-dialog-title">
                 Detailed Info about
                 <template v-for="speaker in activeSpeakers"
@@ -422,12 +422,12 @@
                   </p>
                   <ul class="ui5con-speakers-socials" v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle">
                     <li v-if="speaker.githubUrl">
-                      <a 
-                        :href="speaker.githubUrl" 
-                        rel="nofollow" 
-                        target="_blank" 
+                      <a
+                        :href="speaker.githubUrl"
+                        rel="nofollow"
+                        target="_blank"
                         :ref="`github ${speaker.firstName} ${speaker.lastName}`"
-                        :aria-label="`Github profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        :aria-label="`Github profile of ${speaker.firstName} ${speaker.lastName}`"
                         v-on:keydown.tab.prevent="focusTrapModal($event)">
                         <svg class="icon" aria-hidden="true">
                           <use xlink:href="images/icons/sprite.svg#github"></use>
@@ -435,12 +435,12 @@
                       </a>
                     </li>
                     <li v-if="speaker.linkedInUrl">
-                      <a 
-                        :href="speaker.linkedInUrl" 
-                        rel="nofollow" 
-                        target="_blank" 
+                      <a
+                        :href="speaker.linkedInUrl"
+                        rel="nofollow"
+                        target="_blank"
                         :ref="`linkedin ${speaker.firstName} ${speaker.lastName}`"
-                        :aria-label="`Linkedin profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        :aria-label="`Linkedin profile of ${speaker.firstName} ${speaker.lastName}`"
                         v-on:keydown.tab.prevent="focusTrapModal($event)">
                         <svg class="icon" aria-hidden="true">
                           <use xlink:href="images/icons/sprite.svg#linkedin"></use>
@@ -448,11 +448,11 @@
                       </a>
                     </li>
                     <li v-if="speaker.twitterHandle">
-                      <a 
-                        :href="speaker.twitterHandle" 
-                        rel="nofollow" target="_blank" 
+                      <a
+                        :href="speaker.twitterHandle"
+                        rel="nofollow" target="_blank"
                         :ref="`twitter ${speaker.firstName} ${speaker.lastName}`"
-                        :aria-label="`Twitter profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        :aria-label="`Twitter profile of ${speaker.firstName} ${speaker.lastName}`"
                         v-on:keydown.tab.prevent="focusTrapModal($event)">
                         <svg class="icon" aria-hidden="true">
                           <use xlink:href="images/icons/sprite.svg#twitter"></use>
@@ -460,11 +460,11 @@
                       </a>
                     </li>
                     <li v-if="speaker.mastodonHandle">
-                      <a 
-                        :href="speaker.mastodonHandle" 
-                        rel="nofollow" target="_blank" 
+                      <a
+                        :href="speaker.mastodonHandle"
+                        rel="nofollow" target="_blank"
                         :ref="`mastodon ${speaker.firstName} ${speaker.lastName}`"
-                        :aria-label="`Mastodon profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        :aria-label="`Mastodon profile of ${speaker.firstName} ${speaker.lastName}`"
                         v-on:keydown.tab.prevent="focusTrapModal($event)">
                         <svg class="icon" aria-hidden="true">
                           <use xlink:href="images/icons/sprite.svg#mastodon"></use>
@@ -472,11 +472,11 @@
                       </a>
                     </li>
                     <li v-if="speaker.blueskyHandle">
-                      <a 
-                        :href="speaker.blueskyHandle" 
-                        rel="nofollow" target="_blank" 
+                      <a
+                        :href="speaker.blueskyHandle"
+                        rel="nofollow" target="_blank"
                         :ref="`bluesky ${speaker.firstName} ${speaker.lastName}`"
-                        :aria-label="`Bluesky profile of ${speaker.firstName} ${speaker.lastName}`" 
+                        :aria-label="`Bluesky profile of ${speaker.firstName} ${speaker.lastName}`"
                         v-on:keydown.tab.prevent="focusTrapModal($event)">
                         <svg class="icon" aria-hidden="true">
                           <use xlink:href="images/icons/sprite.svg#bluesky"></use>
@@ -1037,7 +1037,7 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
   <script src="./js/luxon.min.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/sendinblue.js"></script>

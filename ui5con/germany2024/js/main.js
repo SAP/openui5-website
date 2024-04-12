@@ -159,15 +159,15 @@ var main = new Vue({
           if(speaker.twitterHandle) {
             speaker.twitterHandle = this.formatTwitterLink(speaker.twitterHandle);
           }
-  
+
           if(speaker.linkedInUrl) {
             speaker.linkedInUrl = this.formatLinkedInLink(speaker.linkedInUrl);
           }
-  
+
           if(speaker.mastodonHandle) {
             speaker.mastodonHandle = this.formatMastodonLink(speaker.mastodonHandle);
           }
-  
+
           if(speaker.blueskyHandle) {
             speaker.blueskyHandle = this.formatBlueskyLink(speaker.blueskyHandle);
           }
