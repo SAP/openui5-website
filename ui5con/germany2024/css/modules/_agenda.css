@@ -327,6 +327,11 @@
   transition: all .2s ease-in-out;
 }
 
+.ui5con-agenda-slot-illustration img {
+  width: 8rem;
+  height: 8rem;
+}
+
 @media only screen and (min-width: 768px) {
   .ui5con-agenda-slot-header {
     gap: 1.4rem;

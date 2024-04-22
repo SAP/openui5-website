@@ -119,16 +119,12 @@ var main = new Vue({
     };
   },
   mounted() {
-    // console.log(this.createCalendars());
-
-    // Get speakers info
     axios
     .get('https://ui5con2024.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
     .then(response => {
       this.speakers = this.formatAndShuffleSpeakersArray(response.data).slice(0, 6);
     });
 
-    // Get the lineup
     axios
     .get('https://ui5con2024.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
     .then(response => {
@@ -173,13 +169,48 @@ var main = new Vue({
           }
         });
 
+        let start = session.startTime;
+        let end = session.endTime;
+
+        let tempStart = start.substring(0, start.indexOf(":"));
+        let tempEnd = end.substring(0, end.indexOf(":"));
+
+        if (tempStart.length == 1 && !tempStart.startsWith("0")) {
+          start = "0" + start;
+        }
+
+        if (tempEnd.length == 1 && !tempEnd.startsWith("0")) {
+          end = "0" + end;
+        }
+
+        let newStartTime = "2024-06-05T" + start + ":00.000+02:00";
+        let newEndTime = "2024-06-05T" + end + ":00.000+02:00";
+
+        let timeNow = new Date().toISOString();
+        let sessionTimeStart = new Date(newStartTime).toISOString();
+        let sessionTimeEnd = new Date(newEndTime).toISOString();
+        let sessionLiveStatus = false;
+
+        if (timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
+          sessionLiveStatus = true;
+        }
+
         return {
           ...session,
+          startTime: newStartTime,
+          endTime: newEndTime,
           isLive: false
         };
       });
 
-      const sortedSchedule = tempLineUp.filter(
+      const sortedScheduleTemp = tempLineUp.sort((a, b) =>
+      luxon.DateTime.fromISO(a.startTime) >
+      luxon.DateTime.fromISO(b.startTime)
+        ? 1
+        : -1
+      );
+
+      const sortedSchedule = sortedScheduleTemp.filter(
         (schedule) => !schedule.type.includes("expert")
       );
 
@@ -200,10 +231,6 @@ var main = new Vue({
       } else if (this.filter === "w1") {
         return sortedSchedule.filter((schedule) =>
           schedule.location.includes("w1")
-        );
-      } else if (this.filter === "w2") {
-        return sortedSchedule.filter((schedule) =>
-          schedule.location.includes("w2")
         );
       } else if (this.filter === "w3") {
         return sortedSchedule.filter((schedule) =>
@@ -437,6 +464,56 @@ var main = new Vue({
     formatAndShuffleSpeakersArray(array) {
       const formattedArray = this.formatSpeakersArray(array);
       return this.shuffleSpeakersArray(formattedArray);
+    },
+  },
+  filters: {
+    trimTime: function (value) {
+      let time = value.substring(value.indexOf("T") + 1);
+      let timeSplit = time.split(":");
+      let hour = timeSplit[0].startsWith("0")
+        ? timeSplit[0].replace(/^0+/, "")
+        : timeSplit[0];
+      return hour + ":" + timeSplit[1];
+    },
+    convertTime: function (value, eventTime) {
+      if (eventTime === "local") {
+        return luxon.DateTime.fromISO(value)
+          .toLocal()
+          .toISO({ suppressMilliseconds: true });
+      }
+      return value;
+    },
+    formatLocation: function (value) {
+      if (value) {
+        if (value.includes("audimax")) {
+          return "audimax";
+        } else if (value.includes("w1") || value.includes("w2")) {
+          return "room W1/W2";
+        } else if (value.includes("w3")) {
+          return "room W3"
+        } else if (value.includes("expert")) {
+          return "expert corner"
+        } else if (value.includes("canteen")) {
+          return "canteen"
+        } else {
+          return value;
+        }
+      }
+    },
+    formatType: function (value) {
+      if (value) {
+        if (value.includes("presentation")) {
+          return "talk";
+        } else if (value.includes("hands")) {
+          return "workshop";
+        } else if (value.includes("expert")) {
+          return "expert corner";
+        } else if (value.includes("keynote")) {
+          return "keynote";
+        }  else {
+          return "";
+        }
+      }
     },
   },
 });
