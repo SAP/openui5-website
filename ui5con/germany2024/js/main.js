@@ -115,6 +115,7 @@ var main = new Vue({
       lineup: [],
       proposalLineup: [],
       formattedLineup: [],
+      expertCornerLineupUnsorted: [],
       expertCornerLineup: {},
       lastFocussedElementID: '',
     };
@@ -131,6 +132,7 @@ var main = new Vue({
     .then(response => {
       this.lineup = response;
       this.formattedLineup = this.formatLineup();
+      this.groupExpertCornerTopics();
     });
   },
   methods: {
@@ -211,18 +213,10 @@ var main = new Vue({
         : -1
       );
 
-      const expertCornerLineupTemp = sortedScheduleTemp.filter(
+      this.expertCornerLineupUnsorted = sortedScheduleTemp.filter(
         (schedule) => schedule.type.includes("expert")
       );
 
-      expertCornerLineupTemp.forEach((corner) => {
-        const timeSlot = corner.startTime;
-        if (!this.expertCornerLineup[timeSlot]) {
-          this.expertCornerLineup[timeSlot] = [];
-        }
-        this.expertCornerLineup[timeSlot].push(corner);
-      });
-    
       const sortedSchedule = sortedScheduleTemp.filter(
         (schedule) => !schedule.type.includes("expert")
       );
@@ -252,6 +246,15 @@ var main = new Vue({
       } else {
         return sortedSchedule;
       }
+    },
+    groupExpertCornerTopics() {
+      this.expertCornerLineupUnsorted.forEach((corner) => {
+        const timeSlot = corner.startTime;
+        if (!this.expertCornerLineup[timeSlot]) {
+          this.expertCornerLineup[timeSlot] = [];
+        }
+        this.expertCornerLineup[timeSlot].push(corner);
+      });
     },
     openSpeakerInfoModal(speakers, id) {
       this.activeSpeakers = speakers;
