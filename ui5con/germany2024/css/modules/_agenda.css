@@ -450,3 +450,7 @@
   text-decoration-thickness: 0 !important;
   display: inline-block;
 }
+
+.ui5con-agenda-slot-experts {
+  padding-inline-start: 1.4rem;
+}
