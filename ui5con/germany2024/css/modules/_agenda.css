@@ -298,7 +298,7 @@
   gap: 0.75rem;
   display: flex;
   padding-inline: 0;
-
+  margin-block-end: 1rem;
 }
 
 .ui5con-agenda-slot-speakers-images button {
@@ -353,6 +353,20 @@
   font-size: var(--type-1);
   font-weight: 600;
   margin-block: 0 .3rem;
+}
+
+.ui5con-agenda-slot-details svg {
+  height: 22px;
+  width: 22px;
+  display: inline-block;
+  margin-block-start: -4px;
+  vertical-align: middle;
+  color: var(--brand-color-alt);
+}
+
+.ui5con-agenda-slot-details span {
+  display: inline-block;
+  margin-inline-end: .7rem;
 }
 
 .ui5con-agenda-slot-title {

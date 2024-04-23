@@ -486,15 +486,15 @@ var main = new Vue({
     formatLocation: function (value) {
       if (value) {
         if (value.includes("audimax")) {
-          return "audimax";
+          return "Audimax";
         } else if (value.includes("w1") || value.includes("w2")) {
-          return "room W1/W2";
+          return "Room W1/W2";
         } else if (value.includes("w3")) {
-          return "room W3"
+          return "Room W3"
         } else if (value.includes("expert")) {
-          return "expert corner"
+          return "Expert Corner"
         } else if (value.includes("canteen")) {
-          return "canteen"
+          return "Canteen"
         } else {
           return value;
         }
@@ -503,13 +503,13 @@ var main = new Vue({
     formatType: function (value) {
       if (value) {
         if (value.includes("presentation")) {
-          return "talk";
+          return "Talk";
         } else if (value.includes("hands")) {
-          return "workshop";
+          return "Workshop";
         } else if (value.includes("expert")) {
-          return "expert corner";
+          return "Expert Corner";
         } else if (value.includes("keynote")) {
-          return "keynote";
+          return "Keynote";
         }  else {
           return "";
         }
