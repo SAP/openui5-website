@@ -115,6 +115,7 @@ var main = new Vue({
       lineup: [],
       proposalLineup: [],
       formattedLineup: [],
+      expertCornerLineup: {},
       lastFocussedElementID: '',
     };
   },
@@ -210,6 +211,18 @@ var main = new Vue({
         : -1
       );
 
+      const expertCornerLineupTemp = sortedScheduleTemp.filter(
+        (schedule) => schedule.type.includes("expert")
+      );
+
+      expertCornerLineupTemp.forEach((corner) => {
+        const timeSlot = corner.startTime;
+        if (!this.expertCornerLineup[timeSlot]) {
+          this.expertCornerLineup[timeSlot] = [];
+        }
+        this.expertCornerLineup[timeSlot].push(corner);
+      });
+    
       const sortedSchedule = sortedScheduleTemp.filter(
         (schedule) => !schedule.type.includes("expert")
       );
