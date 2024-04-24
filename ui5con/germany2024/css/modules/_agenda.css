@@ -453,4 +453,9 @@
 
 .ui5con-agenda-slot-experts {
   padding-inline-start: 1.4rem;
+  list-style: square;
+}
+
+.ui5con-agenda-slot-experts li::marker {
+  color: var(--brand-color-alt);
 }
