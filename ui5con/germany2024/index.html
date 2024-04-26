@@ -309,6 +309,35 @@
         </div>
 
         <ol class="ui5con-agenda">
+
+          <!-- <li class="ui5con-agenda-slot">
+            <div class="ui5con-agenda-slot-header">
+              <div>
+                <p class="ui5con-agenda-slot-details">
+                  <span class="ui5con-agenda-time">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16">
+                      <path fill="currentColor" d="M10.2 11c-.18 0-.35-.06-.5-.18L7.4 8.96a.792.792 0 0 1-.3-.62V4.8c0-.44.36-.8.8-.8.44 0 .8.36.8.8v3.16l2.01 1.62c.34.28.4.78.12 1.12-.16.2-.39.3-.62.3Zm4.8 1.2V3.8C15 2.26 13.74 1 12.2 1H3.8C2.26 1 1 2.26 1 3.8v8.4C1 13.74 2.26 15 3.8 15h8.4c1.54 0 2.8-1.26 2.8-2.8Zm-2.8-9.6c.66 0 1.2.54 1.2 1.2v8.4c0 .66-.54 1.2-1.2 1.2H3.8c-.66 0-1.2-.54-1.2-1.2V3.8c0-.66.54-1.2 1.2-1.2h8.4Z"></path>
+                    </svg>
+                    7:30 - 8:30
+                  </span>
+                  <span class="ui5con-agenda-room">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16">
+                      <path fill="currentColor" d="M7.5 16c-.16 0-.32-.05-.46-.14C6.79 15.69 1 11.6 1 6.56 1 2.88 3.85 0 7.5 0S14 2.88 14 6.56c0 5.04-5.8 9.13-6.04 9.3-.14.1-.3.14-.46.14Zm0-14.4c-2.75 0-4.9 2.18-4.9 4.96 0 3.46 3.6 6.62 4.9 7.64 1.3-1.02 4.9-4.17 4.9-7.64 0-2.78-2.15-4.96-4.9-4.96Zm0 8c-1.68 0-3-1.32-3-3s1.32-3 3-3 3 1.32 3 3-1.32 3-3 3Zm0-4.4c-.81 0-1.4.59-1.4 1.4S6.69 8 7.5 8s1.4-.59 1.4-1.4-.59-1.4-1.4-1.4Z"></path>
+                    </svg>
+                    ROT03 front door
+                  </span>
+                </p>
+                <h2 class="ui5con-agenda-slot-title">Community Run</h2>
+              </div>
+              <div class="ui5con-agenda-slot-illustration"><img src="images/running.svg" alt="Illustration of a Person running"></div>
+            </div>
+
+            <p class="ui5con-agenda-slot-description">As conferences usually involve a lot of sitting and standing inside it is a good idea to move a bit outside with sun and fresh air before a long day inside.
+              <br>Get all the details here: <a href="https://community.sap.com/t5/coffee-corner-discussions/recap-ui5con-abapconf-2024-community-run/td-p/13683495" rel="external nofollow" target="_blank">SAP Community</a>
+            </p>
+          </li> -->
+
+
           <li class="ui5con-agenda-slot" v-for="event in this.formattedLineup" :key="event.id" v-cloak>
             <span class="live-token" v-if="event.isLive">live now</span>
             <div class="ui5con-agenda-slot-header">
