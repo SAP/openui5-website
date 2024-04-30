@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Jens Pflüger
 - Merlin Beutlberger
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/dQNKmXldGUE
 ---
 In this episode, Merlin will introduce the new UI5 linter, a helpful tool for getting your app ready for UI5 2.x. He'll show us how it works and give us a behind-the-scenes look at how it was built. Merlin will also share the roadmap for the tool, including what features are still planned before the first official release.
 
