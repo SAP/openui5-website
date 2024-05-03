@@ -1,10 +1,10 @@
 .agenda-sort {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  flex-direction: column-reverse;
+  gap: 2rem;
   width: 100%;
   justify-content: space-between;
-  margin-block-end: 2rem;
+  margin-block: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -93,7 +93,7 @@
 
 /* FILTERS */
 .ui5con-agenda-filter-container {
-  gap: 1rem;
+  gap: 1.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -367,6 +367,7 @@
 .ui5con-agenda-slot-details span {
   display: inline-block;
   margin-inline-end: .7rem;
+  margin-block-start: 0.5rem;
 }
 
 .ui5con-agenda-slot-title {
