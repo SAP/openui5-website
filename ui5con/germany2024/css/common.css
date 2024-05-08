@@ -1085,9 +1085,8 @@ svg.asbrucon {
 }
 
 #neptune {
-  --neptune-color-0: #fff;
-  --neptune-color-1: #003E52;
-  --neptune-color-2: #f4b223;
+  --neptune-color-0: #38102a;
+  --neptune-color-1: #ff9e33;
 }
 
 #integrtr {
@@ -1164,8 +1163,7 @@ footer {
 
   #neptune {
     --neptune-color-0: #fff;
-    --neptune-color-1: #fff;
-    --neptune-color-2: #f4b223;
+    --neptune-color-1: #ff9e33;
   }
 
   #integrtr {
