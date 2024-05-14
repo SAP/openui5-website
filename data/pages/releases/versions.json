@@ -1,11 +1,11 @@
 [
   {
-    "version": "1.123.1",
-    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.123.1/openui5-runtime-1.123.1.zip",
-    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.123.1/openui5-sdk-1.123.1.zip",
-    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.123.1/openui5-runtime-mobile-1.123.1.zip",
-    "url_demokit": "https://sdk.openui5.org/1.123.1/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.123.1/#releasenotes.html",
+    "version": "1.124.0",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.124.0/openui5-runtime-1.124.0.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.124.0/openui5-sdk-1.124.0.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.124.0/openui5-runtime-mobile-1.124.0.zip",
+    "url_demokit": "https://sdk.openui5.org/1.124.0/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.124.0/#releasenotes.html",
     "release_date": "13.05.2024",
     "eom": ""
   },
@@ -60,13 +60,13 @@
     "eom": "Q4/2025"
   },
   {
-    "version": "1.71.64",
-    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.71.64/openui5-runtime-1.71.64.zip",
-    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.71.64/openui5-sdk-1.71.64.zip",
-    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.71.64/openui5-runtime-mobile-1.71.64.zip",
-    "url_demokit": "https://sdk.openui5.org/1.71.64/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.71.64/#releasenotes.html",
-    "release_date": "16.04.2024",
+    "version": "1.71.65",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.71.65/openui5-runtime-1.71.65.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.71.65/openui5-sdk-1.71.65.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.71.65/openui5-runtime-mobile-1.71.65.zip",
+    "url_demokit": "https://sdk.openui5.org/1.71.65/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.71.65/#releasenotes.html",
+    "release_date": "13.05.2024",
     "eom": "Q4/2027"
   },
   {
