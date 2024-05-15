@@ -1,5 +1,25 @@
 'use strict';
 
+var header = new Vue({
+  el: '#header',
+  data() {
+    return {
+      remainingDays: null,
+    };
+  },
+  mounted() {
+    this.getRemainingDates();
+  },
+  methods: {
+    getRemainingDates() {
+      const targetDate = new Date("2024-06-05").getTime();
+      const currentDate = new Date().getTime();
+      const timeRemaining = targetDate - currentDate;
+      this.remainingDays = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    }
+  },
+});
+
 var main = new Vue({
   el: '#main',
   data() {
