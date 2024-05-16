@@ -206,8 +206,14 @@ var main = new Vue({
           end = "0" + end;
         }
 
+        
+
         let newStartTime = "2024-06-05T" + start + ":00.000+02:00";
         let newEndTime = "2024-06-05T" + end + ":00.000+02:00";
+
+        if (session.title === "Lunch") {
+          newStartTime = "2024-06-05T" + start + ":30.000+02:00";
+        }
 
         let timeNow = new Date().toISOString();
         let sessionTimeStart = new Date(newStartTime).toISOString();
@@ -227,10 +233,8 @@ var main = new Vue({
       });
 
       const sortedScheduleTemp = tempLineUp.sort((a, b) =>
-      luxon.DateTime.fromISO(a.startTime) >
-      luxon.DateTime.fromISO(b.startTime)
-        ? 1
-        : -1
+      luxon.DateTime.fromISO(a.startTime) -
+      luxon.DateTime.fromISO(b.startTime) || a.location.localeCompare(b.location)
       );
 
       this.expertCornerLineupUnsorted = sortedScheduleTemp.filter(
