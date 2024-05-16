@@ -1168,6 +1168,17 @@ footer {
   }
 }
 
+/* ---------------------------- misc ----------------------------  */
+
+.credits {
+  text-align: center;
+  padding-block: clamp(3rem, 9vw, 10rem);
+}
+
+.credits h4 {
+  color: var(--brand-color-alt);
+}
+
 /* ---------------------------- Dark Mode ----------------------------  */
 @media (prefers-color-scheme: dark) {
   :root {
