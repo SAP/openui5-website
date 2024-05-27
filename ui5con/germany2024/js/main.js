@@ -155,11 +155,16 @@ var main = new Vue({
       this.groupExpertCornerTopics();
     });
 
+    this.updateLiveSession();
+
     let interval;
+
     let timeNow = new Date().toISOString();
+
     const startCounterTime = new Date(
-      "2024-06-05T08:50:00.000+02:00"
+      "2024-06-05T00:50:00.000+02:00"
     ).toISOString();
+
     const endCounterTime = new Date(
       "2024-06-05T18:10:00.000+02:00"
     ).toISOString();
