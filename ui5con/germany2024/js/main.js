@@ -155,7 +155,6 @@ var main = new Vue({
       this.groupExpertCornerTopics();
     });
 
-
     let interval;
     let timeNow = new Date().toISOString();
     const startCounterTime = new Date(
@@ -531,9 +530,9 @@ var main = new Vue({
         let sessionTimeEnd = new Date(session.endTime).toISOString();
 
         if (timeNow >= sessionTimeStart && timeNow < sessionTimeEnd) {
-          session.liveNow = true;
+          session.isLive = true;
         } else {
-          session.liveNow = false;
+          session.isLive = false;
         }
       });
     },
