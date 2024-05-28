@@ -155,8 +155,11 @@ var main = new Vue({
       this.groupExpertCornerTopics();
     });
 
+<<<<<<< HEAD
+=======
     this.updateLiveSession();
 
+>>>>>>> 7edf14e95733ca82ca62d0d3f18686714b94ea21
     let interval;
 
     let timeNow = new Date().toISOString();
