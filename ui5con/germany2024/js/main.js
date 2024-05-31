@@ -5,6 +5,7 @@ var header = new Vue({
   data() {
     return {
       remainingDays: null,
+      remainingHours: null,
     };
   },
   mounted() {
@@ -12,10 +13,11 @@ var header = new Vue({
   },
   methods: {
     getRemainingDates() {
-      const targetDate = new Date("2024-06-05").getTime();
+      const targetDate = new Date("2024-06-05T09:00:00.000+02:00").getTime();
       const currentDate = new Date().getTime();
       const timeRemaining = targetDate - currentDate;
       this.remainingDays = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      this.remainingHours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     }
   },
 });
