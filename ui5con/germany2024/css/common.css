@@ -870,6 +870,15 @@ article {
   margin-block: .5rem;
   min-width: min-content;
 }
+
+.ui5con-livestream-player {
+  margin-block: 3rem 4rem;
+  width: 70%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .2)
+}
+
  /*
 .ui5con-site-head-illustrative {
   border-bottom: 10rem solid #CC7400;
