@@ -419,11 +419,6 @@ h1 {
   margin-block-end: 1rem;
 }
 
-h1 span {
-  font-size: 150%;
-  font-weight: 600;
-}
-
 h1 small {
   color: var(--brand-color);
   font-weight: 400;
