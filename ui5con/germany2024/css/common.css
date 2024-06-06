@@ -849,7 +849,7 @@ article {
   position: relative;
   max-width: 70vw;
   margin-inline: auto;
-  margin-block: 0 3rem;
+  margin-block: 2rem 3rem;
   z-index: 0;
   display: block;
 }
