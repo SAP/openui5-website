@@ -66,7 +66,6 @@ var main = new Vue({
           text: "Share via mail"
         }
       ],
-      speakers: [],
       jury: [
         {
           name: 'Geert-Jan Klaps',
@@ -140,22 +139,13 @@ var main = new Vue({
       expertCornerLineupUnsorted: [],
       expertCornerLineup: {},
       lastFocussedElementID: '',
+      proposalLineupJson: proposalLineupJson
     };
   },
   mounted() {
-    axios
-    .get('https://ui5con2024.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
-    .then(response => {
-      this.speakers = this.formatAndShuffleSpeakersArray(response.data).slice(0, 6);
-    });
-
-    axios
-    .get('https://ui5con2024.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
-    .then(response => {
-      this.lineup = response;
-      this.formattedLineup = this.formatLineup();
-      this.groupExpertCornerTopics();
-    });
+    this.lineup = proposalLineupJson;
+    this.formattedLineup = this.formatLineup();
+    this.groupExpertCornerTopics();
 
     this.updateLiveSession();
 
@@ -200,7 +190,7 @@ var main = new Vue({
       return luxon.DateTime.now().toFormat("Z");
     },
     formatLineup() {
-      const tempLineUp = this.lineup.data.map((session) => {
+      const tempLineUp = this.lineup.map((session) => {
         session.speakers.map((speaker) => {
           if(speaker.twitterHandle) {
             speaker.twitterHandle = this.formatTwitterLink(speaker.twitterHandle);
