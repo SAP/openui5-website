@@ -965,6 +965,10 @@ var proposalLineupJson = [
         linkType: "Slides",
         url: "https://www.slideshare.net/slideshow/ui5con-2024-keynote-latest-news-about-ui5-and-it-s-ecosystem/269619678",
       },
+      {
+        linkType: "Recording",
+        url: "https://www.youtube.com/watch?v=WwFSGuKw0k4",
+      },
     ],
   },
   {
