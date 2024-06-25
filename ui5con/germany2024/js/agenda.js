@@ -514,7 +514,7 @@ var proposalLineupJson = [
     presentationLinks: [
       {
         linkType: "Recording",
-        url: "ttps://www.youtube.com/watch?v=LTyrsSLLnm4",
+        url: "https://www.youtube.com/watch?v=LTyrsSLLnm4",
       },
     ],
   },
@@ -555,7 +555,12 @@ var proposalLineupJson = [
         photoUrl: "ca1b9645f51706d6941cb00b41bed22382f54324",
       },
     ],
-    presentationLinks: [],
+    presentationLinks: [
+      {
+        linkType: "Recording",
+        url: "https://www.youtube.com/watch?v=Y0nkvSuKXH0",
+      },
+    ],
   },
   {
     id: "id-1708699296287-161",
