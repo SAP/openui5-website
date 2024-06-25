@@ -752,6 +752,10 @@ var proposalLineupJson = [
         linkType: "GitHub",
         url: "https://github.com/petermuessig/ui5con2024-bydxp",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/UDFAadHyAbE",
+      },
     ],
   },
   {
