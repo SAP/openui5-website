@@ -148,6 +148,11 @@ var proposalLineupJson = [
         linkType: "Raw Survey Data",
         url: "https://github.com/marianfoo/marianfoo/raw/main/ui5con-2024.xlsx",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/aiahbh9noKk",
+      },
+
     ],
   },
   {
