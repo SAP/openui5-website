@@ -874,6 +874,10 @@ var proposalLineupJson = [
         linkType: "Slides",
         url: "https://github.com/uhlmannm/Presentations/blob/master/2024.06.05_UI5con_Rot/2024_UI5con_On_the_road_to_general_adoption_of_OData_V4.pdf",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/djcvJGpjEWc",
+      },
     ],
   },
   {
