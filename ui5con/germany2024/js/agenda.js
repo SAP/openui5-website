@@ -681,6 +681,10 @@ var proposalLineupJson = [
         linkType: "Slides",
         url: "https://d.dam.sap.com/a/izHPFNY/UI5con_June_5_AI_Fiori_Elements.pdf?inline=true&amp;rc=10&amp;doi=SAP1085398",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/sTzLT1QKyhY",
+      },
     ],
   },
   {
