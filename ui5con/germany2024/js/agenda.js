@@ -340,6 +340,10 @@ var proposalLineupJson = [
         linkType: "🎥 Livestream",
         url: "https://www.youtube.com/live/MSdGLG2zLy8?t=30058s",
       },
+      {
+        linkType: "Recording",
+        url: "https://www.youtube.com/watch?v=RAu7LsEjRxg",
+      },
     ],
   },
   {
