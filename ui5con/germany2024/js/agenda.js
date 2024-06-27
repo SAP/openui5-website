@@ -443,6 +443,10 @@ var proposalLineupJson = [
         linkType: "Control Generator Demo App",
         url: "https://github.com/lemaiwo/ui5-simple-control",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/V7ur_kPx8nE",
+      },
     ],
   },
   {
@@ -807,6 +811,11 @@ var proposalLineupJson = [
         linkType: "Slides",
         url: "https://github.com/SAP-samples/adaptation-project-exercises/blob/main/presentations/2024UI5con-Evolving%20Developer%20Extensibility%20with%20SAPUI5%20Flexibility%20.pdf",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/YNzrSAx1X7w",
+      },
+
     ],
   },
   {
