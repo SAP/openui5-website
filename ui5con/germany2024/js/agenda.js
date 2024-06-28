@@ -35,6 +35,10 @@ var proposalLineupJson = [
         linkType: "Custom DI library",
         url: "https://github.com/dfenerski/ui5-di",
       },
+      {
+        linkType: "Recording",
+        url: "https://www.youtube.com/watch?v=Yw5BbUfKLHs",
+      },
     ],
   },
   {
