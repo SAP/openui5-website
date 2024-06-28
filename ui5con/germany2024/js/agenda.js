@@ -72,6 +72,10 @@ var proposalLineupJson = [
         linkType: "Slides",
         url: "https://github.com/Siolto/UI5Con2024/blob/main/Let's%20test%20UI5.pdf",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/wlYa6xaZc0w",
+      },
     ],
   },
   {
@@ -736,6 +740,10 @@ var proposalLineupJson = [
       {
         linkType: "Slides",
         url: "https://github.com/marianfoo#seamless-integration-crafting-the-perfect-ui5-development-environment",
+      },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/dYRtAlyE0tc",
       },
     ],
   },
