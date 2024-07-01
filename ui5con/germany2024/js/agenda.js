@@ -104,6 +104,10 @@ var proposalLineupJson = [
         linkType: "Slides",
         url: "https://tech-blog.exxcellent.de/assets/ui5con-unveiled-06_06_2024.pdf",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/Qz42xrU9NMM?",
+      },
     ],
   },
   {
