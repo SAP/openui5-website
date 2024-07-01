@@ -195,6 +195,11 @@ var proposalLineupJson = [
         linkType: "Pull Request on GitHub",
         url: "https://github.com/ui5-community/generator-ui5-project/pull/75",
       },
+      {
+        linkType: "Recording",
+        url: "https://www.youtube.com/watch?v=kjXSOA2sNHw",
+      },
+
     ],
   },
   {
@@ -319,6 +324,11 @@ var proposalLineupJson = [
         linkType: "🎥 Livestream",
         url: "https://www.youtube.com/live/MSdGLG2zLy8?t=12927s",
       },
+      {
+        linkType: "Recording",
+        url: "https://youtu.be/YiQGW3HADsc",
+      },
+
     ],
   },
   {
@@ -392,6 +402,11 @@ var proposalLineupJson = [
         linkType: "GitHub",
         url: "https://github.com/petermuessig/ui5con2024-byods",
       },
+      {
+        linkType: "Recording",
+        url: "https://www.youtube.com/watch?v=dziHWwdLYUk",
+      },
+
     ],
   },
   {
