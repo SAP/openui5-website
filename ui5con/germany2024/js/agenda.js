@@ -149,10 +149,6 @@ var proposalLineupJson = [
     ],
     presentationLinks: [
       {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=11125s",
-      },
-      {
         linkType: "Slides",
         url: "https://github.com/marianfoo/marianfoo/raw/main/ui5con-2024-survey.pdf",
       },
@@ -191,10 +187,6 @@ var proposalLineupJson = [
       },
     ],
     presentationLinks: [
-      {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=21914s",
-      },
       {
         linkType: "Pull Request on GitHub",
         url: "https://github.com/ui5-community/generator-ui5-project/pull/75",
@@ -291,10 +283,6 @@ var proposalLineupJson = [
     ],
     presentationLinks: [
       {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=3320s",
-      },
-      {
         linkType: "Recording",
         url: "https://youtu.be/af5notlphms",
       },
@@ -325,8 +313,8 @@ var proposalLineupJson = [
     ],
     presentationLinks: [
       {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=12927s",
+        linkType: "Slides",
+        url: "https://github.com/torehangoren/torehangoren/blob/main/2024_UI5con_TypeScript_Migration.pdf",
       },
       {
         linkType: "Recording",
@@ -359,10 +347,6 @@ var proposalLineupJson = [
     ],
     presentationLinks: [
       {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=30058s",
-      },
-      {
         linkType: "Recording",
         url: "https://www.youtube.com/watch?v=RAu7LsEjRxg",
       },
@@ -394,10 +378,6 @@ var proposalLineupJson = [
       },
     ],
     presentationLinks: [
-      {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=18432s",
-      },
       {
         linkType: "Slides",
         url: "https://www.slideshare.net/slideshow/ui5con-2024-bring-your-own-design-system/269619724",
@@ -709,10 +689,6 @@ var proposalLineupJson = [
     ],
     presentationLinks: [
       {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=26430s",
-      },
-      {
         linkType: "Slides",
         url: "https://d.dam.sap.com/a/izHPFNY/UI5con_June_5_AI_Fiori_Elements.pdf?inline=true&amp;rc=10&amp;doi=SAP1085398",
       },
@@ -748,10 +724,6 @@ var proposalLineupJson = [
       },
     ],
     presentationLinks: [
-      {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=7525s",
-      },
       {
         linkType: "GitHub",
         url: "https://github.com/marianfoo/ui5con24-dev-env",
@@ -882,10 +854,6 @@ var proposalLineupJson = [
       },
     ],
     presentationLinks: [
-      {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=23730s",
-      },
       {
         linkType: "Recording",
         url: "https://youtu.be/7HsH2JLL9HU",
@@ -1036,10 +1004,6 @@ var proposalLineupJson = [
       },
     ],
     presentationLinks: [
-      {
-        linkType: "🎥 Livestream",
-        url: "https://www.youtube.com/live/MSdGLG2zLy8?t=1017s",
-      },
       {
         linkType: "Slides",
         url: "https://www.slideshare.net/slideshow/ui5con-2024-keynote-latest-news-about-ui5-and-it-s-ecosystem/269619678",
