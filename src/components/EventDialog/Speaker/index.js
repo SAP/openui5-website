@@ -13,6 +13,8 @@ const Speaker = (props) => {
     twitter,
     linkedin,
     github,
+    mastodon,
+    bluesky,
   } = props;
 
   return (
@@ -69,6 +71,34 @@ const Speaker = (props) => {
           )
           : null
         }
+        {
+          mastodon
+          ? (
+            <a
+              href={`https://${mastodon}`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_mastodon,
+              )}
+            ></a>
+          )
+          : null
+        }  
+        {
+          bluesky
+          ? (
+            <a
+              href={`https://bsky.app/profile/${bluesky}.bsky.social`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_bluesky,
+              )}
+            ></a>
+          )
+          : null
+        }             
       </div>
     </div>
   );
