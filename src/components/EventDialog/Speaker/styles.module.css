@@ -44,5 +44,13 @@
 }
 
 .Icon.view_twitter {
-  background: url("./images/twitter.png")
+  background: url("./images/x.png")
+}
+
+.Icon.view_mastodon {
+  background: url("./images/mastodon.png")
+}
+
+.Icon.view_bluesky {
+  background: url("./images/bluesky.png")
 }
