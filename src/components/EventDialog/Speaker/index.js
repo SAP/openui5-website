@@ -75,7 +75,7 @@ const Speaker = (props) => {
           mastodon
           ? (
             <a
-              href={`https://mastodon.online/${mastodon}`}
+              href={`https://mastodon.online/@${mastodon}`}
               target="_blank"
               className={classnames(
                 styles.Icon,
