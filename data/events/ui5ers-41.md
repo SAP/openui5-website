@@ -23,7 +23,6 @@ Then we head towards dynamic theming with CSS Custom Properties, fully supported
 of developing and theming custom UI5 controls using CSS Custom Properties. He will demonstrate how to seamlessly integrate your custom controls with existing 
 OpenUI5 themes, enabling effortless switching between them. Furthermore, Peter will introduce the updated Theming Parameter Toolbox, which now includes all 
 available CSS Custom Properties, providing developers with a invaluable resource for efficient and effective custom control theming.
-![image](https://github.com/user-attachments/assets/3e3a7f5b-820f-42cd-b65a-382ddc21c835)
 
 If you want to showcase your UI5-related work or have an idea for a topic, let us know either via [e-mail](mailto:openui5@sap.com?subject=UI5ers live) or in the 
 [#UI5ers_live](https://openui5.slack.com/archives/C01CP60AAN7) channel of the [OpenUI5 Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/)!
