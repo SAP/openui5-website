@@ -153,6 +153,8 @@ export const query = graphql`
                                     twitter
                                     github
                                     linkedin
+                                    mastodon
+                                    bluesky
                                     photo {
                                         publicURL
                                     }

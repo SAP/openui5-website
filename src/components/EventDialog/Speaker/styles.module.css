@@ -33,6 +33,7 @@
   display: block;
   width: 16px;
   height: 16px;
+  background-repeat: no-repeat !important;
 }
 
 .Icon.view_github {
@@ -52,5 +53,6 @@
 }
 
 .Icon.view_bluesky {
-  background: url("./images/bluesky.png")
+  background: url("./images/bluesky.png");
+  width: 20px;
 }
