@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Andreas Kunz
 - Christian Voshage
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/CFNw32Km9KI
 ---
 In this episode, we will be joined by Christian Voshage to delve into SAPUI5 Flexibility and the "One Service" project. The main goal of this project is to enhance the cloud experience of the SAPUI5 flexibility key user service, making it more streamlined and efficient. 
 Christian will emphasize the concept of "build once, run everywhere," addressing the challenges associated with different data storage locations. 
