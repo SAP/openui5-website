@@ -19,7 +19,7 @@ core bootstrap extension, custom configurations, and seamless splash screen inte
 a directly comparison the bootstrap performance between OpenUI5 1.x and 2.x, highlighting the significant improvements achieved. They will conclude their 
 segment by offering a glimpse into the future, discussing how library chunking will further optimize UI5 application loading.
 
-Then we head towards dynamic theming with CSS Custom Properties, fully supported in OpenUI5 since version 1.127. Peter Mussig will take us through the process 
+Then we head towards dynamic theming with CSS Custom Properties, fully supported in OpenUI5 since version 1.127. Peter Muessig will take us through the process 
 of developing and theming custom UI5 controls using CSS Custom Properties. He will demonstrate how to seamlessly integrate your custom controls with existing 
 OpenUI5 themes, enabling effortless switching between them. Furthermore, Peter will introduce the updated Theming Parameter Toolbox, which now includes all 
 available CSS Custom Properties, providing developers with a invaluable resource for efficient and effective custom control theming.
