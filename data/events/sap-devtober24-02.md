@@ -1,6 +1,6 @@
 ---
-title: "Get ready for OpenUI5 2.x"
-subTitle: Devtoberfest 2024
+title: Devtoberfest 2024
+subTitle: "Get ready for OpenUI5 2.x"
 startDate: 2024/10/18 11:00 UTC+2
 endDate: 2024/10/18 12:00 UTC+2
 location: YouTube
