@@ -7,7 +7,7 @@ location: via ZOOM
 logo: ./logos/ui5ers.svg
 speakers:
 - Peter Muessig
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/oeaui4N653c
 ---
 The UI5 tooling is the development and build tooling of UI5. It is built in a modular and extensible way so that it can be easily extended by your needs. 
 In this episode Peter Muessig will showcase various tooling extensions which can boost your development experience by far so that you can really work offline, 
