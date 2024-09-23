@@ -1,6 +1,6 @@
 ---
-title: "UI5 Freestyle: TypeScript E2E Development - From Zero To Hero in 1hr!"
-subTitle: Devtoberfest 2024
+title: Devtoberfest 2024
+subTitle: "UI5 Freestyle: TypeScript E2E Development - From Zero To Hero in 1hr!"
 startDate: 2024/09/27 11:00 UTC+2
 endDate: 2024/09/27 12:00 UTC+2
 location: YouTube
