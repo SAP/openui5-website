@@ -1,6 +1,6 @@
 ---
 name: Volker Buzek
-company: j&s-soft GmbH
+company: Camunda
 photo: ./volker-buzek.jpg
 twitter: vobu
 linkedin: volkerbuzek
