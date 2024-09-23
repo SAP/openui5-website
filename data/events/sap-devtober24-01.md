@@ -4,7 +4,7 @@ subTitle: Devtoberfest 2024
 startDate: 2024/09/27 11:00 UTC+2
 endDate: 2024/09/27 12:00 UTC+2
 location: YouTube
-logo: ./logos/ui5ers.svg
+logo: ./logos/sap.svg
 speakers:
 - Peter Muessig
 url: https://youtu.be/7aAehB4ejHQ
