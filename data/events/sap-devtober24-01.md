@@ -7,7 +7,7 @@ location: YouTube
 logo: ./logos/sap.svg
 speakers:
 - Peter Muessig
-url: https://youtu.be/7aAehB4ejHQ
+recordingUrl: https://youtu.be/7aAehB4ejHQ
 ---
 With the official support for TypeScript in UI5 since UI5con 2023, the game has changed for UI5 developers! 
 In this session, Peter Muessig will quickly walk you through the basics of TypeScript for UI5 before diving into an exciting live demo. 
