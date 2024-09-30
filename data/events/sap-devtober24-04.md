@@ -10,7 +10,7 @@ speakers:
 - Simon Coen
 - Volker Buzek
 url: https://youtu.be/ijgPJTOIc08
-recordingUrl: url: https://youtu.be/ijgPJTOIc08
+recordingUrl: https://youtu.be/ijgPJTOIc08
 ---
 Even though wdi5’s documentation and repo is full of content, examples and recipes, it’s easy to get lost in taking it all in. That’s why Simon Coen and Volker Buzek want to highlight a couple of not so obvious options to test OpenUI5/SAPUI5 apps with wdi5, hands-on:
 - handle UI5 long polling of endpoints ("waitAsync is already running")
