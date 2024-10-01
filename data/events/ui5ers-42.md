@@ -11,7 +11,7 @@ speakers:
 url: https://sap-se.zoom.com/j/94833714827
 ---
 In this episode we will provide you with the knowledge and skills to develop custom UI5 Web Components and seamlessly integrate them into 
-your OpenUI5 applications. Our experts, Ilhan Myumyun and Thorsten Hochreuter, will will guide you through the process with insightful discussions and hands-on demonstrations.
+your OpenUI5 applications. Our experts, Ilhan Myumyun and Thorsten Hochreuter, will guide you through the process with insightful discussions and hands-on demonstrations.
 
 Ilhan will kick things off by walking you step by step through the process of creating your own UI5 Web Component from scratch. 
 He will cover all the essential aspects you need to know to start crafting bespoke UI elements tailored to your specific requirements.
