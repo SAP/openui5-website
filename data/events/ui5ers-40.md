@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Andreas Kunz
 - Duc Vo Ngoc
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/_3_iS-OoJ_4
 ---
 In this episode we will explore the new ui5-table component, an experimental replacement for the previous Table web component found in version 1.x. 
 The new Table offers a range of advanced features for efficiently displaying and managing large datasets in a responsive manner. 
