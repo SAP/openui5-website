@@ -10,13 +10,13 @@
     "eom": ""
   },
   {
-    "version": "1.127.3",
-    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.127.3/openui5-runtime-1.127.3.zip",
-    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.127.3/openui5-sdk-1.127.3.zip",
-    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.127.3/openui5-runtime-mobile-1.127.3.zip",
-    "url_demokit": "https://sdk.openui5.org/1.127.3/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
-    "url_releasenotes": "https://sdk.openui5.org/1.127.3/#releasenotes.html",
-    "release_date": "04.11.2024",
+    "version": "1.127.4",
+    "url_download_runtime": "https://github.com/SAP/openui5/releases/download/1.127.4/openui5-runtime-1.127.4.zip",
+    "url_download_sdk": "https://github.com/SAP/openui5/releases/download/1.127.4/openui5-sdk-1.127.4.zip",
+    "url_download_mobile": "https://github.com/SAP/openui5/releases/download/1.127.4/openui5-runtime-mobile-1.127.4.zip",
+    "url_demokit": "https://sdk.openui5.org/1.127.4/#/topic/99ac68a5b1c3416ab5c84c99fefa250d",
+    "url_releasenotes": "https://sdk.openui5.org/1.127.4/#releasenotes.html",
+    "release_date": "12.11.2024",
     "eom": ""
   },
   {
