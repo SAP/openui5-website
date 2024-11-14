@@ -1,16 +1,16 @@
 ---
 name: guideline
 ---
-# UI5 Logo Guidelines
+# OpenUI5 Logo Guidelines
 
-<text size="2" font="light">Feel free to spread the word about OpenUI5 and use our icon.</text>
+<text size="2" font="light">Feel free to spread the word about OpenUI5 and use our logo.</text>
 <text size="2" font="light">Please follow these few guidelines when doing so.</text>
 
 
 ## Name
 
 The official name is **OpenUI5** - capital O, capital UI, no spaces between Open and UI5.\
-If you use the correct name you help people recognize it and e.g. avoid the impression that we are building "Openui" in version 5. The short name UI5 is also fine, in particular when you explain something that is not specific to the Open Source version, but also applies to SAPUI5.
+If you use the correct name you help people recognize it and e.g. avoid the impression that we are building "Openui" in version 5.
 
 ## Flavors: Fire and Water
 

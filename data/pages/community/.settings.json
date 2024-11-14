@@ -61,7 +61,7 @@
         "title": "Connect",
         "items": [
             {
-                "title": "UI5 Logo Guidelines",
+                "title": "OpenUI5 Logo Guidelines",
                 "description": "Learn more about how you can use the UI5 Logo.",
                 "url": "/guidelines/",
                 "icon": "../../icons/ui5.svg"
