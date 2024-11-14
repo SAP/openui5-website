@@ -38,7 +38,7 @@
         }
     ],
     "connect": {
-        "title": "Misc",
+        "title": "Connect",
         "items": [
             {
                 "title": "OpenUI5 Logo Guidelines",
