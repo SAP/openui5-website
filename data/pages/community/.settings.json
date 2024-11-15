@@ -13,11 +13,6 @@
                     "title": "Stack Overflow",
                     "url": "https://stackoverflow.com/questions/tagged/openui5",
                     "icon": "../../icons/stackoverflow.svg"
-                },
-                {
-                    "title": "SAP Community",
-                    "url": "https://community.sap.com/topics/ui5",
-                    "icon": "../../icons/sap.svg"
                 }
             ]
         },
@@ -35,11 +30,6 @@
                     "icon": "../../icons/ui5.svg"
                 },
                 {
-                    "title": "X",
-                    "url": "https://twitter.com/openui5",
-                    "icon": "../../icons/x-logo.svg"
-                },
-                {
                     "title": "LinkedIn",
                     "url": "https://www.linkedin.com/company/openui5",
                     "icon": "../../icons/linkedin.svg"
@@ -48,11 +38,6 @@
                     "title": "YouTube",
                     "url": "https://www.youtube.com/user/openui5videos",
                     "icon": "../../icons/youtube.svg"
-                },
-                {
-                    "title": "UI5 NewsCast",
-                    "url": "https://open.sap.com/static/ui5-newscast/index.php",
-                    "icon": "../../icons/ui5-newscast.svg"
                 }
             ]
         }
@@ -62,7 +47,7 @@
         "items": [
             {
                 "title": "OpenUI5 Logo Guidelines",
-                "description": "Learn more about how you can use the UI5 Logo.",
+                "description": "Learn more about how you can use the OpenUI5 Logo.",
                 "url": "/guidelines/",
                 "icon": "../../icons/ui5.svg"
             },
