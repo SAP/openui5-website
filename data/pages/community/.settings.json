@@ -25,11 +25,6 @@
                     "icon": "../../icons/ui5ers.svg"
                 },
                 {
-                    "title": "UI5 Official",
-                    "url": "https://blogs.sap.com/tag/ui5official/",
-                    "icon": "../../icons/ui5.svg"
-                },
-                {
                     "title": "LinkedIn",
                     "url": "https://www.linkedin.com/company/openui5",
                     "icon": "../../icons/linkedin.svg"
