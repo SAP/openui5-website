@@ -20,11 +20,6 @@
             "title": "Stay Up to Date",
             "items": [
                 {
-                    "title": "UI5ers live",
-                    "url": "https://www.youtube.com/playlist?list=PLHUs_FUbq4dX8lUBM21QKGC_9CwCe6mBC",
-                    "icon": "../../icons/ui5ers.svg"
-                },
-                {
                     "title": "LinkedIn",
                     "url": "https://www.linkedin.com/company/openui5",
                     "icon": "../../icons/linkedin.svg"
