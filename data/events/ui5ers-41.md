@@ -9,7 +9,7 @@ speakers:
 - Johannes Gluch
 - Peter Muessig
 - Jan Mummenthaler
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/DC_P0GRc7s0
 ---
 Jan Mummenthaler and Johannes Gluch will kick off the episode by providing an update on the progress made in modularizing the OpenUI5 core and its 
 impact on the newly developed bootstrap. Building upon the initial proof of concept presented in episode 29, they will detail how this initiative is 
