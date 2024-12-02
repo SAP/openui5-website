@@ -11,12 +11,9 @@ speakers:
 url: https://sap-se.zoom.com/j/94833714827
 ---
 Following the phasing out of Karma last year, the debate around OpenUI5 testing and the karma-ui5 plugin's future heated up. 
-While we initially believed that this wouldn't affect OpenUI5 development in the short term, changing circumstances have led to 
-the 'karma-ui5' plugin's depreciation.
+While we initially believed that this wouldn't affect OpenUI5 development in the short term, changing circumstances have led to the 'karma-ui5' plugin's deprecation.
 
-In this episode, we discuss why we've made this decision, look at alternative solutions, and guide you to the option that best suits your 
-needs. We particularly focus on two UI5 Community test runners: the 'ui5-test-runner,' a dedicated runner for UI5 apps, and 
-the 'wdio-qunit-service' for using WebDriverIO with QUnit, expanding your testing capabilities.
+In this episode, we discuss why we've made this decision, look at alternative solutions, and guide you to the option that best suits your needs. We particularly focus on two UI5 Community test runners: the 'ui5-test-runner,' a dedicated runner for UI5 apps, and the 'wdio-qunit-service' for using WebDriverIO with QUnit, expanding your testing capabilities.
 
 Join us as we weigh the pros and cons of each, aiding you in deciding which option will best fit your OpenUI5 test suite transition.
 
