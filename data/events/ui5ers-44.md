@@ -8,6 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Arnaud Buchholz
 - Peter Muessig
+- Mauricio Lauffer
 url: https://sap-se.zoom.com/j/94833714827
 ---
 Following the phasing out of Karma last year, the debate around OpenUI5 testing and the karma-ui5 plugin's future heated up. 
