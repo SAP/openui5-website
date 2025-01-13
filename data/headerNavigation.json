@@ -8,11 +8,6 @@
         "name": "Releases"
     },
     {
-        "to": "/anniversary/",
-        "name": "Anniversary"
-    },
-
-    {
         "to": "/events/",
         "name": "Events"
     },
