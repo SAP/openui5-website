@@ -1,98 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="launchpad/data/pictures/favicon.ico"/>
-	<title>UI5con Events</title>
-	<meta name="description" content="Learn about past and upcoming events around OpenUI5 and SAPUI5">
-	<meta name="keywords" content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source">
-	<meta name="robots" content="index, follow">
-	<meta name="author" content="SAP SE">
-	<link rel="stylesheet" href="launchpad/common.css">
-	<link rel="stylesheet" href="launchpad/styles.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>UI5con Germany in July 2025</title>
+	<meta name="description"
+		content="If you want to learn more about UI5, you can't miss UI5con 2025. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP" />
+	<meta name="keywords"
+		content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="SAP SE" />
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:url" content="https://openui5.org/ui5con/" />
+	<meta property="twitter:title" content="UI5con Germany in July 8th 2025" />
+	<meta property="twitter:description"
+		content="If you want to learn more about UI5, you can't miss UI5con 2025. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 8th 2025" />
+	<meta property="twitter:image" content="https://openui5.org/ui5con/images/share.png" />
+	<meta property="og:title" content="UI5con Germany in July 8th 2025" />
+	<meta property="og:description"
+		content="If you want to learn more about UI5, you can't miss UI5con 2025. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 8th 2025" />
+	<meta property="og:image" content="https://openui5.org/ui5con/images/share.png" />
+	<meta name="google-site-verification" content="Lyp2FQv0ahG2U02k62FkakzcsYmSvgRlccIK5pQe0Z4" />
+	<meta name="theme-color" content="#e76500">
+
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+	<link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
+
+	<link rel="preconnect" href="https://rsms.me/">
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+	<link rel="stylesheet" href="./css/common.css" />
+	<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+	<link rel="stylesheet" href="./css/modules.css" />
+
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+	<!-- <script src="https://js.tito.io/v2/with/inline" async></script> -->
 </head>
+
 <body>
-	<header>
-		<div class="ui5con-header-container">
-			<div class="ui5con-logo-container">
-				<img class="ui5con-logo" src="launchpad/data/pictures/UI5con.png" alt="ui5con logo">
+	<nav class="ui5con-nav" aria-label="Main navigation" id="nav">
+		<nav-section v-if="!showMobileNav"></nav-section>
+		<nav-section-mobile v-else></nav-section-mobile>
+	</nav>
+
+	<header class="ui5con-head lines" id="header">
+
+			<div class="ui5con-wrap">
+
+				<div class="ui5con-head-banner">
+
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" class="ui5con" aria-hidden="true" viewBox="0 0 920 145">
+						<g clip-path="url(#a)">
+							<path fill="#F16A36" d="M318.006 88.268V2.965h31.343V87.75a38.195 38.195 0 0 0 6.377 23.405 23.87 23.87 0 0 0 9.136 6.28 24.303 24.303 0 0 0 11.054 1.522c3.677.362 7.388-.16 10.815-1.519a22.725 22.725 0 0 0 8.839-6.28 36.397 36.397 0 0 0 6.377-23.407V2.962h30.814v85.306a83.288 83.288 0 0 1-3.188 22.886 46.61 46.61 0 0 1-10.625 17.687 40.202 40.202 0 0 1-18.063 10.922 77.03 77.03 0 0 1-25.501 3.64 77.035 77.035 0 0 1-25.502-3.64 44.439 44.439 0 0 1-17.622-10.964 43.188 43.188 0 0 1-10.536-17.642 67.146 67.146 0 0 1-3.721-22.89h.003Zm142.381 53.056V2.965h30.817v138.359h-30.817Zm50.471-15.605 15.942-19.764a64.329 64.329 0 0 0 15.937 10.4 49.309 49.309 0 0 0 19.124 4.162c9.563 0 16.469-2.079 20.723-6.762 4.353-4.869 6.636-11.202 6.373-17.685a24.567 24.567 0 0 0-1.332-9.732 24.873 24.873 0 0 0-5.044-8.47 22.628 22.628 0 0 0-8.253-5.372 23.018 23.018 0 0 0-9.81-1.391 31.735 31.735 0 0 0-13.813 3.12 37.035 37.035 0 0 0-12.222 9.884l-20.186-6.244 5.844-74.381h86.065l-1.591 22.367h-60.566l-2.656 31.21a46.09 46.09 0 0 1 10.624-6.241 57.484 57.484 0 0 1 18.063-2.601 50.714 50.714 0 0 1 19.66 3.64 39.209 39.209 0 0 1 14.557 9.593 38.143 38.143 0 0 1 8.818 14.855 45.883 45.883 0 0 1 2.656 18.724 55.395 55.395 0 0 1-3.72 20.288 47.352 47.352 0 0 1-11.157 15.602 60.074 60.074 0 0 1-17.531 10.403 71.255 71.255 0 0 1-23.375 3.64 77.108 77.108 0 0 1-30.281-5.201 111.193 111.193 0 0 1-22.849-14.044Z"/>
+							<path fill="#F79B36" d="M632.528 94.506a54.909 54.909 0 0 1 3.718-21.846 42.82 42.82 0 0 1 10.095-15.083 56.939 56.939 0 0 1 13.813-8.843 42.712 42.712 0 0 1 15.939-2.6 40.314 40.314 0 0 1 13.813 2.079 42.752 42.752 0 0 1 10.624 5.723 36.08 36.08 0 0 1 7.439 8.324 59.384 59.384 0 0 1 5.312 9.882l-13.283 5.201a30.04 30.04 0 0 0-9.563-13.525 23.112 23.112 0 0 0-14.874-4.68 21.645 21.645 0 0 0-10.095 2.079 34.802 34.802 0 0 0-9.033 6.244 37.3 37.3 0 0 0-6.374 10.922 57.066 57.066 0 0 0-2.656 16.645c-.536 9.405 2.078 18.724 7.439 26.526a26.05 26.05 0 0 0 8.779 6.793 26.602 26.602 0 0 0 10.878 2.571 25.089 25.089 0 0 0 14.874-4.162 37.709 37.709 0 0 0 10.625-14.562l12.751 4.68a57.818 57.818 0 0 1-6.374 10.921 32.013 32.013 0 0 1-8.501 8.324 42.733 42.733 0 0 1-10.624 5.72 40.294 40.294 0 0 1-13.816 2.083 41.812 41.812 0 0 1-15.936-3.123 34.07 34.07 0 0 1-13.284-9.36 40.813 40.813 0 0 1-9.562-15.087 150.452 150.452 0 0 1-2.124-21.846Zm95.098 0a58.447 58.447 0 0 1 3.718-21.325 40.846 40.846 0 0 1 9.563-15.083 42.566 42.566 0 0 1 14.345-9.364 46.434 46.434 0 0 1 33.47 0 42.586 42.586 0 0 1 14.345 9.364 40.771 40.771 0 0 1 9.562 15.083 58.448 58.448 0 0 1 3.721 21.325 58.442 58.442 0 0 1-3.721 21.328 40.776 40.776 0 0 1-9.562 15.084 42.585 42.585 0 0 1-14.345 9.363 46.431 46.431 0 0 1-33.47 0 42.565 42.565 0 0 1-14.345-9.363 40.854 40.854 0 0 1-9.563-15.084 63.523 63.523 0 0 1-3.718-21.328Zm15.937 0c0 4.725.535 9.435 1.594 14.047a32.723 32.723 0 0 0 5.315 11.44 26.361 26.361 0 0 0 9.03 7.805 21.634 21.634 0 0 0 12.751 2.598 31.946 31.946 0 0 0 12.218-2.601 20.462 20.462 0 0 0 9.033-7.281 46.752 46.752 0 0 0 5.845-11.443 64.333 64.333 0 0 0 2.124-14.565 57.61 57.61 0 0 0-1.595-13.525 45.084 45.084 0 0 0-5.312-11.44 26.397 26.397 0 0 0-9.03-7.806 20.929 20.929 0 0 0-12.751-2.597c-4.209.055-8.364.94-12.221 2.6a20.466 20.466 0 0 0-9.03 7.281 44.235 44.235 0 0 0-5.845 10.925 45.256 45.256 0 0 0-2.126 14.562Zm95.1 46.815V48.213h15.407V62.26a36.052 36.052 0 0 1 6.907-5.723 45.598 45.598 0 0 1 8.5-5.202 68.208 68.208 0 0 1 9.563-3.64 40.41 40.41 0 0 1 11.156-1.562c7.766-.317 15.363 2.286 21.252 7.282a28.638 28.638 0 0 1 5.829 9.671 28.306 28.306 0 0 1 1.61 11.135v67.1H903.48V77.343a21.223 21.223 0 0 0-4.251-14.044 16.833 16.833 0 0 0-6.182-3.503 17.019 17.019 0 0 0-7.101-.658 32.791 32.791 0 0 0-15.939 4.162 79.95 79.95 0 0 0-14.875 10.921v67.1h-16.469Z"/>
+						</g>
+						<path fill="#5FC4E8" d="M33.432 66.864c18.464 0 33.432-14.968 33.432-33.432C66.864 14.968 51.896 0 33.432 0 14.968 0 0 14.968 0 33.432c0 18.464 14.968 33.432 33.432 33.432Z"/>
+						<path fill="#000" d="M33.056 52.527c-2.813 0-5.221-.44-7.225-1.318-2.004-.897-3.524-2.145-4.561-3.744-1.02-1.617-1.53-3.49-1.53-5.616 0-1.723.325-3.243.976-4.562.65-1.336 1.503-2.4 2.557-3.19 1.073-.809 2.233-1.319 3.48-1.53v-.105c-1.265-.299-2.363-.853-3.295-1.661a8.395 8.395 0 0 1-2.136-2.953 9.42 9.42 0 0 1-.738-3.718c0-1.969.501-3.691 1.503-5.168 1.02-1.494 2.46-2.646 4.324-3.454 1.881-.809 4.06-1.213 6.54-1.213 2.654 0 4.912.413 6.776 1.24 1.863.825 3.278 1.985 4.245 3.48.966 1.476 1.45 3.199 1.45 5.168 0 1.3-.255 2.53-.765 3.691a7.98 7.98 0 0 1-2.135 2.953c-.932.791-2.03 1.318-3.296 1.582v.106c1.37.228 2.592.738 3.665 1.529 1.072.791 1.916 1.846 2.53 3.164.616 1.3.924 2.813.924 4.535 0 2.162-.51 4.052-1.53 5.67-1.02 1.616-2.53 2.873-4.535 3.77-1.986.896-4.394 1.344-7.224 1.344Zm-.053-22.886c1.863 0 3.129-.457 3.797-1.371.685-.915 1.028-2.11 1.028-3.586 0-1.39-.422-2.505-1.266-3.349-.843-.861-2.047-1.292-3.612-1.292-1.512 0-2.69.43-3.533 1.292-.844.861-1.266 1.977-1.266 3.349a6 6 0 0 0 .501 2.452 4.44 4.44 0 0 0 1.609 1.82c.738.456 1.652.685 2.742.685Zm.105 17.112c1.864 0 3.252-.519 4.166-1.556.932-1.054 1.398-2.478 1.398-4.271 0-1.002-.202-1.925-.607-2.769-.404-.843-1.028-1.52-1.872-2.03-.843-.51-1.907-.765-3.19-.765-1.951 0-3.384.536-4.298 1.609-.914 1.072-1.371 2.426-1.371 4.06 0 1.758.492 3.156 1.477 4.193.984 1.02 2.416 1.529 4.297 1.529Z"/>
+						<path fill="#A5E85F" d="M108.296 66.864c18.464 0 33.432-14.968 33.432-33.432C141.728 14.968 126.76 0 108.296 0 89.832 0 74.864 14.968 74.864 33.432c0 18.464 14.968 33.432 33.432 33.432Z"/>
+						<path fill="#000" d="M120.523 14.849v5.88L107.445 52H99.72l14-31.06H95.184v-6.091h25.339Z"/>
+						<path fill="#D75FE8" d="M183.16 66.864c18.464 0 33.432-14.968 33.432-33.432C216.592 14.968 201.624 0 183.16 0c-18.464 0-33.432 14.968-33.432 33.432 0 18.464 14.968 33.432 33.432 33.432Z"/>
+						<path fill="#000" d="M195.598 45.91V52h-25.972v-5.142l12.525-13.315c1.371-1.494 2.399-2.672 3.085-3.533.703-.88 1.248-1.74 1.634-2.584.387-.861.58-1.758.58-2.69 0-1.213-.421-2.18-1.265-2.9-.844-.738-2.03-1.107-3.56-1.107a7.187 7.187 0 0 0-4.008 1.186c-1.212.774-2.522 2.004-3.928 3.691l-4.799-4.667c1.6-2.074 3.472-3.7 5.616-4.878 2.145-1.177 4.588-1.766 7.33-1.766 3.885 0 6.873.914 8.965 2.742 2.092 1.81 3.138 4.377 3.138 7.7 0 1.511-.299 2.935-.897 4.27a16.193 16.193 0 0 1-2.294 3.666c-.914 1.107-2.206 2.531-3.876 4.271l-.975 1.029-7.62 7.936h16.321Z"/>
+						<path fill="#D75FE8" d="M258.024 66.864c18.464 0 33.432-14.968 33.432-33.432C291.456 14.968 276.488 0 258.024 0c-18.464 0-33.432 14.968-33.432 33.432 0 18.464 14.968 33.432 33.432 33.432Z"/>
+						<path fill="#000" d="M259.493 27.373c2.373 0 4.43.519 6.17 1.556 1.758 1.02 3.103 2.452 4.034 4.298.932 1.845 1.398 3.981 1.398 6.407 0 2.514-.536 4.746-1.609 6.697-1.054 1.934-2.619 3.454-4.693 4.562-2.057 1.09-4.544 1.634-7.462 1.634-3.234 0-5.897-.641-7.989-1.925-2.092-1.283-3.656-3.05-4.694-5.3l6.197-3.19c.509.88 1.028 1.617 1.555 2.215.545.598 1.222 1.081 2.031 1.45.826.37 1.828.554 3.006.554 1.863 0 3.339-.571 4.429-1.714 1.09-1.142 1.635-2.75 1.635-4.825 0-1.898-.527-3.393-1.582-4.482-1.037-1.108-2.479-1.662-4.324-1.662-1.178 0-2.18.229-3.006.686-.809.44-1.6 1.125-2.373 2.057l-6.697-3.085 1.133-18.457h22.281v6.038h-15.636l-.554 8.806c.791-.685 1.767-1.239 2.927-1.66 1.16-.44 2.434-.66 3.823-.66Z"/>
+						<path fill="#35F2D4" d="M33.432 141.796c18.464 0 33.432-14.968 33.432-33.432 0-18.464-14.968-33.432-33.432-33.432C14.968 74.932 0 89.9 0 108.364c0 18.464 14.968 33.432 33.432 33.432Z"/>
+						<path fill="#000" d="M31.954 127.527c-6.592 0-11.645-2.118-15.161-6.354l5.01-4.984a22.426 22.426 0 0 0 2.742 2.532c.914.685 2.004 1.257 3.27 1.714 1.265.457 2.715.685 4.35.685 2.461 0 4.342-.378 5.643-1.134 1.318-.773 1.977-1.872 1.977-3.296 0-1.072-.351-1.942-1.054-2.61-.686-.668-1.556-1.178-2.61-1.529-1.056-.352-2.515-.747-4.378-1.187a32.65 32.65 0 0 1-1.503-.343c-2.46-.597-4.544-1.283-6.249-2.056a10.938 10.938 0 0 1-4.245-3.375c-1.107-1.477-1.661-3.393-1.661-5.748 0-2.268.598-4.193 1.793-5.775 1.213-1.582 2.892-2.768 5.036-3.56 2.145-.808 4.614-1.212 7.41-1.212 2.917 0 5.492.43 7.725 1.292 2.232.844 4.236 2.144 6.011 3.902l-4.535 4.905c-1.335-1.249-2.768-2.215-4.297-2.9-1.53-.686-3.252-1.03-5.168-1.03-2.286 0-3.93.361-4.931 1.082-1.002.72-1.503 1.652-1.503 2.795 0 1.037.299 1.863.896 2.478.616.598 1.416 1.073 2.4 1.424.984.334 2.417.721 4.298 1.16l.58.132c2.97.686 5.352 1.389 7.145 2.11 1.793.703 3.305 1.819 4.535 3.348 1.248 1.512 1.873 3.595 1.873 6.249 0 2.268-.554 4.245-1.662 5.933-1.09 1.687-2.786 3.006-5.089 3.955-2.285.932-5.167 1.397-8.648 1.397Z"/>
+						<path fill="#35F2D4" d="M108.296 141.796c18.464 0 33.432-14.968 33.432-33.432 0-18.464-14.968-33.432-33.432-33.432-18.464 0-33.432 14.968-33.432 33.432 0 18.464 14.968 33.432 33.432 33.432Z"/>
+						<path fill="#000" d="M95.612 89.849h7.779v30.612h17.771V127h-25.55V89.849Z"/>
+						<path fill="#35F2D4" d="M183.16 141.796c18.464 0 33.432-14.968 33.432-33.432 0-18.464-14.968-33.432-33.432-33.432-18.464 0-33.432 14.968-33.432 33.432 0 18.464 14.968 33.432 33.432 33.432Z"/>
+						<path fill="#000" d="M167.612 89.849h16.638c3.041 0 5.59.457 7.646 1.37 2.057.915 3.595 2.216 4.615 3.903 1.037 1.688 1.555 3.71 1.555 6.065 0 1.863-.351 3.533-1.054 5.009a10.112 10.112 0 0 1-2.874 3.692 11.264 11.264 0 0 1-4.219 2.056L199.965 127h-8.754l-8.622-13.553h-7.198V127h-7.779V89.849Zm15.979 17.006c2.25 0 3.92-.474 5.01-1.423 1.089-.967 1.634-2.277 1.634-3.929 0-1.705-.58-2.97-1.74-3.797-1.16-.844-2.848-1.266-5.062-1.266h-8.042v10.415h8.2ZM258.092 141.657c18.387 0 33.293-14.906 33.293-33.293 0-18.388-14.906-33.294-33.293-33.294-18.388 0-33.294 14.906-33.294 33.294 0 18.387 14.906 33.293 33.294 33.293Z"/>
+						<path fill="#fff" stroke="#000" d="M278.469 108.365v-.5h-.05a2.508 2.508 0 0 0-.057-.235l-.003-.01-.003-.01-.006-.02a2.876 2.876 0 0 0-.235-.557 3.19 3.19 0 0 0-.503-.668l-.01-.009-12.582-11.928-.002-.002c-1.104-1.035-2.87-1.01-3.916.107-1.035 1.104-1.01 2.869.105 3.915l.001.002 7.525 7.144H240.48a2.78 2.78 0 0 0-2.771 2.771 2.777 2.777 0 0 0 2.771 2.771h28.253l-7.525 7.145-.001.001c-1.115 1.047-1.14 2.812-.105 3.916 1.046 1.116 2.812 1.142 3.916.106l.002-.002 12.579-11.924.002-.002a2.75 2.75 0 0 0 .868-2.011Z"/>
+						<defs>
+							<clipPath id="a">
+								<path fill="#fff" d="M318 2h602v143H318z"/>
+							</clipPath>
+						</defs>
+					</svg>
+
+					<!-- <time datetime="2025-07-08" class="ui5con-head-detail">8. July 2025 <br><small>St. Leon-Rot, GER</small></time> -->
+				</div>
+
+			<div class="ui5con-head-container">
+
+				<div>
+					<h1>Join us on 8th July 2025!</h1>
+
+					<p>
+						Where UI5 enthusiasts from across the world unite to share and enhance their knowledge. Initiated in 2016, this premier event offers interactive lectures, workshops, and expert corners. With 400 onsite seats and a livestream of the main stage track, UI5con presents a unique platform for learning, networking, and collaborative growth in the UI5 framework.
+					</p>
+					<p>
+						The two-day event comprises up to one CodeJam (details will follow soon) on the first day, followed by 3 technical tracks on the second day.
+					</p>
+
+					<div class="ui5con-head-cta">
+
+						<button class="ui5con-btn"  v-if="!isCalendarsVisible" @click="toggleCalendars()">
+							Save the Date
+						</button>
+
+						<div class="ui5con-calendars" v-if="isCalendarsVisible">
+							<ul class="ui5con-calendars-list">
+								<li>
+									<a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250708%2F20250709&details=Join%20us%20for%20UI5con%202025%2C%20the%20premiere%20community%20event%20hosted%20by%20the%20developers%20of%20the%20OpenUI5%20framework.%20Connect%20with%20the%20UI5%20community%20to%20network%2C%20learn%2C%20and%20have%20a%20great%20time.%20We%27re%20excited%20to%20meet%20you%20in%20person%20or%20virtually%21%0A%20%0A**Event%20Details**%20%0A-%20Location%3A%20SAP-Allee%2027%2C%20St.%20Leon-Rot%2C%20Germany%0A-%20Date%3A%20July%208%2C%202025%0A-%20Registration%3A%2008%3A00%20CEST%0A-%20Program%3A%2009%3A00%20%E2%80%93%2018%3A00%20CEST%0A-%20Evening%20Event%3A%20Until%2022%3A00%20CEST%0A-%20Virtual%20Participation%3A%20Parts%20of%20the%20event%20will%20be%20live-streamed%20on%20the%20UI5%20YouTube%20channel%20%28https%3A%2F%2Fwww.youtube.com%2FUI5%29.%0A%20%0AKey%20Dates%3A%0A-%20Call%20for%20Content%3A%20January%2023%20%E2%80%93%20March%2010%2C%202025%0A-%20Registration%20for%20Onsite%20Attendees%3A%20Opens%20April%2010%2C%202025%0A%0AVisit%20our%20official%20event%20page%20at%20https%3A%2F%2Fwww.ui5con.org%20for%20updates%20and%20further%20details.%20Have%20questions%3F%20Feel%20free%20to%20reach%20out%20to%20us%20at%20openui5%40sap.com.%0A%20%0AWe%20look%20forward%20to%20seeing%20you%20at%20UI5con%202025%21%0AYour%20UI5con%20Team&location=SAP%20University%20%28ROT03%29%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20%28Germany%29&text=UI5con%202025" target="_blank">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" aria-hidden="true"><path fill="#FFF" d="M195.368 60.632H60.632v134.736h134.736z"/><path fill="#EA4335" d="M195.368 256L256 195.368l-30.316-5.172l-30.316 5.172l-5.533 27.73z"/><path fill="#188038" d="M0 195.368v40.421C0 246.956 9.044 256 20.21 256h40.422l6.225-30.316l-6.225-30.316l-33.033-5.172z"/><path fill="#1967D2" d="M256 60.632V20.21C256 9.044 246.956 0 235.79 0h-40.422q-5.532 22.554-5.533 33.196q0 10.641 5.533 27.436q20.115 5.76 30.316 5.76T256 60.631"/><path fill="#FBBC04" d="M256 60.632h-60.632v134.736H256z"/><path fill="#34A853" d="M195.368 195.368H60.632V256h134.736z"/><path fill="#4285F4" d="M195.368 0H20.211C9.044 0 0 9.044 0 20.21v175.158h60.632V60.632h134.736z"/><path fill="#4285F4" d="M88.27 165.154c-5.036-3.402-8.523-8.37-10.426-14.94l11.689-4.816q1.59 6.063 5.558 9.398c2.627 2.223 5.827 3.318 9.566 3.318q5.734 0 9.852-3.487c2.746-2.324 4.127-5.288 4.127-8.875q0-5.508-4.345-8.994c-2.897-2.324-6.535-3.486-10.88-3.486h-6.754v-11.57h6.063q5.608 0 9.448-3.033c2.56-2.02 3.84-4.783 3.84-8.303c0-3.132-1.145-5.625-3.435-7.494c-2.29-1.87-5.188-2.813-8.708-2.813c-3.436 0-6.164.91-8.185 2.745a16.1 16.1 0 0 0-4.413 6.754l-11.57-4.817c1.532-4.345 4.345-8.185 8.471-11.503s9.398-4.985 15.798-4.985c4.733 0 8.994.91 12.767 2.745c3.772 1.836 6.736 4.379 8.875 7.613c2.14 3.25 3.2 6.888 3.2 10.93c0 4.126-.993 7.613-2.98 10.476s-4.43 5.052-7.327 6.585v.69a22.25 22.25 0 0 1 9.398 7.327c2.442 3.284 3.672 7.208 3.672 11.79c0 4.58-1.163 8.673-3.487 12.26c-2.324 3.588-5.54 6.417-9.617 8.472c-4.092 2.055-8.69 3.1-13.793 3.1c-5.912.016-11.369-1.685-16.405-5.087m71.797-58.005l-12.833 9.28l-6.417-9.734l23.023-16.607h8.825v78.333h-12.598z"/></svg>
+										Google
+									</a>
+								</li>
+								<li>
+									<a href="https://outlook.office.com/calendar/0/action/compose?allday=true&body=Join%20us%20for%20UI5con%202025%2C%20the%20premiere%20community%20event%20hosted%20by%20the%20developers%20of%20the%20OpenUI5%20framework.%20Connect%20with%20the%20UI5%20community%20to%20network%2C%20learn%2C%20and%20have%20a%20great%20time.%20We%27re%20excited%20to%20meet%20you%20in%20person%20or%20virtually%21%0A%20%0A**Event%20Details**%20%0A-%20Location%3A%20SAP-Allee%2027%2C%20St.%20Leon-Rot%2C%20Germany%0A-%20Date%3A%20July%208%2C%202025%0A-%20Registration%3A%2008%3A00%20CEST%0A-%20Program%3A%2009%3A00%20%E2%80%93%2018%3A00%20CEST%0A-%20Evening%20Event%3A%20Until%2022%3A00%20CEST%0A-%20Virtual%20Participation%3A%20Parts%20of%20the%20event%20will%20be%20live-streamed%20on%20the%20UI5%20YouTube%20channel%20%28https%3A%2F%2Fwww.youtube.com%2FUI5%29.%0A%20%0AKey%20Dates%3A%0A-%20Call%20for%20Content%3A%20January%2023%20%E2%80%93%20March%2010%2C%202025%0A-%20Registration%20for%20Onsite%20Attendees%3A%20Opens%20April%2010%2C%202025%0A%0AVisit%20our%20official%20event%20page%20at%20https%3A%2F%2Fwww.ui5con.org%20for%20updates%20and%20further%20details.%20Have%20questions%3F%20Feel%20free%20to%20reach%20out%20to%20us%20at%20openui5%40sap.com.%0A%20%0AWe%20look%20forward%20to%20seeing%20you%20at%20UI5con%202025%21%0AYour%20UI5con%20Team&enddt=2025-07-09T14%3A30%3A00&location=SAP%20University%20%28ROT03%29%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20%28Germany%29&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2025-07-08T14%3A30%3A00&subject=UI5con%202025" target="_blank">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="#eb3c00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 18V6l10.5-4L20 4v16l-5.5 2zm0 0l10 .5V6L8.5 7.5v8z" color="#eb3c00"/></svg>
+										Office 365
+									</a>
+								</li>
+								<li>
+									<a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:UI5con%202025%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20250708%0D%0ADTEND:20250709%0D%0ADTSTAMP:20250115T130858Z%0D%0AX-MICROSOFT-CDO-ALLDAYEVENT:TRUE%0D%0AX-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE%0D%0ASUMMARY:UI5con%202025%0D%0ADESCRIPTION:Join%20us%20for%20UI5con%202025%2C%20the%20premiere%20community%20event%20hosted%20by%20the%20developers%20of%20the%20OpenUI5%20framework.%20Connect%20with%20the%20UI5%20community%20to%20network%2C%20learn%2C%20and%20have%20a%20great%20time.%20We're%20excited%20to%20meet%20you%20in%20person%20or%20virtually!%5Cn%5Cn**Event%20Details**%20%5Cn-%20Location%3A%20SAP-Allee%2027%2C%20St.%20Leon-Rot%2C%20Germany%5Cn-%20Date%3A%20July%208%2C%202025%5Cn-%20Registration%3A%2008%3A00%20CEST%5Cn-%20Program%3A%2009%3A00%20%E2%80%93%2018%3A00%20CEST%5Cn-%20Evening%20Event%3A%20Until%2022%3A00%20CEST%5Cn-%20Virtual%20Participation%3A%20Parts%20of%20the%20event%20will%20be%20live-streamed%20on%20the%20UI5%20YouTube%20channel%20(https%3A%2F%2Fwww.youtube.com%2FUI5).%5Cn%5CnKey%20Dates%3A%5Cn-%20Call%20for%20Content%3A%20January%2023%20%E2%80%93%20March%2010%2C%202025%5Cn-%20Registration%20for%20Onsite%20Attendees%3A%20Opens%20April%2010%2C%202025%5Cn%5CnVisit%20our%20official%20event%20page%20at%20https%3A%2F%2Fwww.ui5con.org%20for%20updates%20and%20further%20details.%20Have%20questions%3F%20Feel%20free%20to%20reach%20out%20to%20us%20at%20openui5%40sap.com.%5Cn%5CnWe%20look%20forward%20to%20seeing%20you%20at%20UI5con%202025!%5CnYour%20UI5con%20Team%0D%0ALOCATION:SAP%20University%20(ROT03)%2C%20SAP-Allee%2027%2C%2068789%20St.%20Leon-Rot%20(Germany)%0D%0AUID:88656%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A" download="ui5con2025.ics">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><path fill="#0072c6" d="M19.484 7.937v5.477l1.916 1.205a.5.5 0 0 0 .21 0l8.238-5.554a1.174 1.174 0 0 0-.959-1.128Z"/><path fill="#0072c6" d="m19.484 15.457l1.747 1.2a.52.52 0 0 0 .543 0c-.3.181 8.073-5.378 8.073-5.378v10.066a1.408 1.408 0 0 1-1.49 1.555h-8.874zm-9.044-2.525a1.61 1.61 0 0 0-1.42.838a4.13 4.13 0 0 0-.526 2.218A4.05 4.05 0 0 0 9.02 18.2a1.6 1.6 0 0 0 2.771.022a4 4 0 0 0 .515-2.2a4.37 4.37 0 0 0-.5-2.281a1.54 1.54 0 0 0-1.366-.809"/><path fill="#0072c6" d="M2.153 5.155v21.427L18.453 30V2Zm10.908 14.336a3.23 3.23 0 0 1-2.7 1.361a3.19 3.19 0 0 1-2.64-1.318A5.46 5.46 0 0 1 6.706 16.1a5.87 5.87 0 0 1 1.036-3.616a3.27 3.27 0 0 1 2.744-1.384a3.12 3.12 0 0 1 2.61 1.321a5.64 5.64 0 0 1 1 3.484a5.76 5.76 0 0 1-1.035 3.586"/></svg>
+											Outlook
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div class="ui5con-header-container">
-			<div class="ui5con-heading-container">
-				<h1 class="ui5con-heading">Community Conferences <br> around OpenUI5 / SAPUI5</h1>
-			</div>
-		</div>
 	</header>
+
 	<main id="main">
-		<ul class="ui5con-event-list" aria-label="Upcoming and past UI5con events">
-			<!-- UPCOMING EVENT -->
-			<!-- <li class="ui5con-events-upcoming" aria-hidden="true">
-				Upcoming
-			</li>
-			<li v-for="event in upcomingEvents" class="ui5con-event upcoming" :aria-label="'Upcoming event ' + event.name">
-				<div class="ui5con-event-content">
-					<img class="ui5con-event-logo" :src="event.logo" :alt="'Logo of ' + event.name" loading="lazy">
-					<div class="ui5con-event-detail">
-						<span class="ui5con-event-label">where</span>
-						<span class="ui5con-event-text">{{event.where}}</span>
+		<!-- TEASERS SECTION -->
+		<!-- <section>
+			<div class="ui5con-wrap">
+				<div class="ui5con-grid-wrap">
+					<div class="ui5con-teaser">
+
+						<h2>what?</h2>
+						<p>
+							UI5con is meant to connect all the geeks out there and provide a common platform to get to know each other, discuss innovations, and find solutions.
+						</p>
 					</div>
-					<div class="ui5con-event-detail-wrapper">
-						<div class="ui5con-event-detail">
-							<span class="ui5con-event-label">when</span>
-							<span class="ui5con-event-text">{{event.when}}</span>
-						</div>
-						<a class="ui5con-event-link" :href="event.link" rel="nofollow" target="_blank" :title="'Click to open ' + event.name + ' page. Opens in a new window'">
-							<div>
-								<span>Take me there</span>
-								<svg width="80" height="80" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd" d="M111.792 100.722C112.681 100.722 113.451 100.366 114.014 99.8031C114.577 99.2401 114.933 98.4697 114.933 97.5808L114.933 61.6093C114.933 59.8907 113.51 58.4685 111.792 58.4685L75.8204 58.4685C74.1018 58.4685 72.6796 59.8908 72.6796 61.6094C72.6796 63.3279 74.1018 64.7502 75.8204 64.7502L104.207 64.7502L59.2008 109.756C57.986 110.971 57.986 112.986 59.2008 114.201C60.4157 115.416 62.4305 115.416 63.6454 114.201L108.651 69.1952L108.651 97.5808C108.651 99.2994 110.073 100.722 111.792 100.722Z" fill="currentColor"/>
-								</svg>
-							</div>
-						</a>
+
+					<div class="ui5con-teaser">
+
+						<h2>where?</h2>
+						<p>
+							Join the event on July 8, in-person in St. Leon-Rot, Germany, or virtually through the OpenUI5 YouTube channel.
+						</p>
 					</div>
-				</div>
-			</li> -->
-			<!-- PAST EVENTs -->
-			<!-- <li class="ui5con-events-past" aria-hidden="true">Past</li> -->
-			<li v-for="event in pastEvents" class="ui5con-event" :aria-label="'Past event ' + event.name">
-				<div class="ui5con-event-content">
-					<img class="ui5con-event-logo" :src="event.logo" :alt="'Logo of ' + event.name" loading="lazy">
-					<div class="ui5con-event-detail">
-						<span class="ui5con-event-label">where</span>
-						<span class="ui5con-event-text">{{event.where}}</span>
-					</div>
-					<div class="ui5con-event-detail-wrapper">
-						<div class="ui5con-event-detail">
-							<span class="ui5con-event-label">when</span>
-							<span class="ui5con-event-text">{{event.when}}</span>
-						</div>
-						<a v-if="event.link" class="ui5con-event-link" :href="event.link" rel="nofollow" target="_blank" :title="'Click to open ' + event.name + ' page. Opens in a new window'">
-							<div>
-								<svg width="80" height="80" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd" d="M111.792 100.722C112.681 100.722 113.451 100.366 114.014 99.8031C114.577 99.2401 114.933 98.4697 114.933 97.5808L114.933 61.6093C114.933 59.8907 113.51 58.4685 111.792 58.4685L75.8204 58.4685C74.1018 58.4685 72.6796 59.8908 72.6796 61.6094C72.6796 63.3279 74.1018 64.7502 75.8204 64.7502L104.207 64.7502L59.2008 109.756C57.986 110.971 57.986 112.986 59.2008 114.201C60.4157 115.416 62.4305 115.416 63.6454 114.201L108.651 69.1952L108.651 97.5808C108.651 99.2994 110.073 100.722 111.792 100.722Z" fill="currentColor"/>
-								</svg>
-							</div>
-						</a>
+
+					<div class="ui5con-teaser">
+
+						<h2>how?</h2>
+						<p>
+							UI5con is a free of charge event for UI5 enthusiasts to meet and find out what's happening in the UI5 world.
+						</p>
 					</div>
 				</div>
-			</li>
-		</ul>
+			</div>
+		</section> -->
+
+		<!-- LATEST NEWS SECTION -->
+		<section class="alternate">
+			<div class="ui5con-wrap">
+
+				<h2 class="ui5con-section-heading">
+					<span aria-hidden="true">&#8594;</span>
+					<span>Latest News</span>
+				</h2>
+
+				<h3>Call for Content</h3>
+
+				<p>The Call for Proposals for this year's UI5con opens on <time datetime="2025-01-23">January 23rd, 2025</time>, and closes on <time datetime="2025-03-10T23:59:00"> March 10th, 2025, at 23:59 CEST</time>. <br>Make sure to submit your proposal within this period to be considered for the event.</p>
+
+				<h3>Volunteers wanted!</h3>
+
+				<p>Are you a doer and love to get things done? Then why not volunteer with us and secure your ticket!<br>
+					Check out the <a href="location.html#volunteer">Volunteering Options</a> or
+					<a href="mailto:openui5@sap.com?subject=[Volunteer UI5con 2025]">Contact Us</a> directly.
+				</p>
+
+			</div>
+		</section>
+
+		<section>
+			<div class="ui5con-wrap">
+
+				<h2 class="ui5con-section-heading">
+					<span aria-hidden="true">&#8601;</span>
+					<span>Become a Sponsor</span>
+				</h2>
+
+				<p>Are you ready to shape the future of UI5 and make a lasting impact on the developer community?
+					UI5con 2025 is seeking visionary sponsors to collaborate with us in creating an extraordinary event
+					that will drive innovation, foster skill development, and ignite professional connections.
+				</p>
+
+				<p>Learn more about our sponsorship opportunities by visiting our <a href="sponsors.html">sponsorship page</a> and downloading
+					the detailed prospectus today.
+				</p>
+
+			</div>
+		</section>
+
+		<!-- <section>
+			<div class="ui5con-wrap">
+
+				<h2 class="ui5con-section-heading">
+					<span aria-hidden="true">&#8601;</span>
+					<span>Tickets</span>
+				</h2>
+
+				<div class="ui5con-tickets">
+					<tito-widget event="code-connect/2024" releases="a48tcrupl0u"></tito-widget>
+				</div>
+
+			</div>
+		</section> -->
+
+		<!-- NEWSLETTER SECTION -->
+		<section class="alternate">
+			<div class="ui5con-wrap">
+				<h2 id="newsletter" class="ui5con-section-heading">
+					<span aria-hidden="true">&#8593;</span>
+					<span>Stay in the loop</span>
+				</h2>
+
+				<p>
+					Subscribe to our email newsletter to receive updates on upcoming events and community engagement opportunities. We only send out updates a few times per year, so no need to worry about us cluttering your inbox.
+				</p>
+
+				<button data-a11y-dialog-show="sendinblue-dialog" class="ui5con-btn">
+					Subscribe
+				</button>
+
+				<ul class="ui5con-social-links">
+
+					<li>
+						<a href="https://bsky.app/profile/ui5.bsky.social" target="_blank" hreflang="en" rel="noopener noreferrer">
+							<svg class="icon bluesky" aria-hidden="true">
+								<use xlink:href="images/icons/sprite.svg#bluesky"></use>
+							</svg>
+							<span class="sr-only">Follow us on bluesky</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.linkedin.com/company/openui5/" target="_blank" hreflang="en" rel="noopener noreferrer">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="images/icons/sprite.svg#linkedin"></use>
+							</svg>
+							<span class="sr-only">Follow us on LinkedIn</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="https://www.youtube.com/c/openui5videos/playlists" target="_blank" hreflang="en" rel="noopener noreferrer">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="images/icons/sprite.svg#youtube"></use>
+							</svg>
+							<span class="sr-only">Watch our videos on youtube</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="mailto:openui5@sap.com?subject=[UI5con 2025] Question" target="_blank" rel="noopener noreferrer">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="images/icons/sprite.svg#mail"></use>
+							</svg>
+							<span class="sr-only">Drop us a mail</span>
+						</a>
+					</li>
+				</ul>
+
+				<!-- DIALOG -->
+				<div id="sendinblue-dialog" aria-hidden="true" class="ui5con-newsletter__modal-backdrop" aria-modal="true" tabindex="-1" role="dialog">
+					<div id="sib-form-container" role="document" aria-labelledby="dialog-title" aria-describedby="dialog-description" tabindex="-1" class="ui5con-newsletter__modal sib-form-container">
+						<h2 id="dialog-title" class="sr-only">
+							Subscribe to our Newsletter
+						</h2>
+						<div class="sib-form">
+							<div id="sib-form-container" class="sib-form-container">
+								<div id="error-message" class="sib-form-message-panel">
+									<div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+										<svg viewBox="0 0 512 512" aria-hidden="true" class="sib-icon sib-notification__icon">
+											<path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"></path>
+										</svg>
+										<span class="sib-form-message-panel__inner-text">
+										Woopsie! We couldn't save your subscription. Please try again.
+										</span>
+									</div>
+								</div>
+								<div id="success-message" class="sib-form-message-panel">
+									<div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+										<svg viewBox="0 0 512 512" aria-hidden="true" class="sib-icon sib-notification__icon">
+											<path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"></path>
+										</svg>
+										<span class="sib-form-message-panel__inner-text">
+										UI5con team thanks you for your subscription! Check your Inbox or Spam/Junk folder and confirm the email.
+										</span>
+									</div>
+								</div>
+								<div id="sib-container" class="sib-container--large sib-container--vertical">
+									<form id="sib-form" method="POST" action="https://3c342bb7.sibforms.com/serve/MUIEAAFgVERSCDxLA0LLvET-OnirfKs2iaNBbLyMo5cLwDxD6_qf0XyPzRWm7lllYisC6erq_C9_gjFHKwCh_5A_GeSaQxmRHLq-LYCJe1aOWeKWfuT6eZrNtCjYpaH7C_D4GEJmA1N9CNkvNThE9Gp3XLDJKe8DgQW_5-U1BeUq35-lazRAvOYVmrIaks5H23sQTGdcWbJ5IZFD" data-type="subscription" class="ui5con-newsletter__form" novalidate="true">
+										<fieldset>
+											<legend>Newsletter</legend>
+											<button aria-label="Close Dialog" data-a11y-dialog-hide="" class="ui5con-newsletter__close-btn">✕</button>
+											<div>
+												<div class="sib-form-block">
+													<div class="sib-text-form-block">
+														<p id="dialog-description" class="ui5con-newsletter__subheader">Subscribe to our newsletter and stay updated with the latest UI5con news.</p>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="sib-input sib-form-block">
+													<div class="form__entry entry_block">
+														<div class="form__label-row "><label for="EMAIL" style="margin-bottom: 0.5rem;">Email: <span data-required="*" style="color: red;">*</span></label> <input type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required="required" class="input ui5con-newsletter__input"></div>
+														<label class="entry__error entry__error--primary"></label>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div data-required="true" class="sib-optin sib-form-block">
+													<div class="form__entry entry_mcq">
+														<div class="form__label-row"><label class="ui5con-newsletter__checkbox"><span>I agree to receive your newsletters and accept the data privacy statement.<em data-required="*">*</em></span> <input type="checkbox" value="1" id="OPT_IN" name="OPT_IN" required="required" class="input_replaced"> <span class="ui5con-newsletter__checkmark"></span></label></div>
+														<label class="entry__error entry__error--primary"></label>
+														<p class="ui5con-newsletter__unsubscribe">
+															You may unsubscribe at any time using the link in our newsletter.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="ui5con-newsletter__sendinblue">
+													<div>
+														<svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon__SVG">
+															<defs>
+																<symbol id="svgIcon-sphere" viewBox="0 0 63 63">
+																	<path d="M31.54 0l1.05 3.06 3.385-.01-2.735 1.897 1.05 3.042-2.748-1.886-2.738 1.886 1.044-3.05-2.745-1.897h3.393zm13.97 3.019L46.555 6.4l3.384.01-2.743 2.101 1.048 3.387-2.752-2.1-2.752 2.1 1.054-3.382-2.745-2.105h3.385zm9.998 10.056l1.039 3.382h3.38l-2.751 2.1 1.05 3.382-2.744-2.091-2.743 2.091 1.054-3.381-2.754-2.1h3.385zM58.58 27.1l1.04 3.372h3.379l-2.752 2.096 1.05 3.387-2.744-2.091-2.75 2.092 1.054-3.387-2.747-2.097h3.376zm-3.076 14.02l1.044 3.364h3.385l-2.743 2.09 1.05 3.392-2.744-2.097-2.743 2.097 1.052-3.377-2.752-2.117 3.385-.01zm-9.985 9.91l1.045 3.364h3.393l-2.752 2.09 1.05 3.393-2.745-2.097-2.743 2.097 1.05-3.383-2.751-2.1 3.384-.01zM31.45 55.01l1.044 3.043 3.393-.008-2.752 1.9L34.19 63l-2.744-1.895-2.748 1.891 1.054-3.05-2.743-1.9h3.384zm-13.934-3.98l1.036 3.364h3.402l-2.752 2.09 1.053 3.393-2.747-2.097-2.752 2.097 1.053-3.382-2.743-2.1 3.384-.01zm-9.981-9.91l1.045 3.364h3.398l-2.748 2.09 1.05 3.392-2.753-2.1-2.752 2.096 1.053-3.382-2.743-2.102 3.384-.009zM4.466 27.1l1.038 3.372H8.88l-2.752 2.097 1.053 3.387-2.743-2.09-2.748 2.09 1.053-3.387L0 30.472h3.385zm3.069-14.025l1.045 3.382h3.395L9.23 18.56l1.05 3.381-2.752-2.09-2.752 2.09 1.053-3.381-2.744-2.1h3.384zm9.99-10.056L18.57 6.4l3.393.01-2.743 2.1 1.05 3.373-2.754-2.092-2.751 2.092 1.053-3.382-2.744-2.1h3.384zm24.938 19.394l-10-4.22a2.48 2.48 0 00-1.921 0l-10 4.22A2.529 2.529 0 0019 24.75c0 10.47 5.964 17.705 11.537 20.057a2.48 2.48 0 001.921 0C36.921 42.924 44 36.421 44 24.75a2.532 2.532 0 00-1.537-2.336zm-2.46 6.023l-9.583 9.705a.83.83 0 01-1.177 0l-5.416-5.485a.855.855 0 010-1.192l1.177-1.192a.83.83 0 011.177 0l3.65 3.697 7.819-7.916a.83.83 0 011.177 0l1.177 1.191a.843.843 0 010 1.192z" fill="#0092FF" class="path1"></path>
+																</symbol>
+															</defs>
+														</svg>
+														<svg aria-hidden="true" class="svgIcon-sphere" style="width: 54px; height: 54px;">
+															<use xlink:href="#svgIcon-sphere"></use>
+														</svg>
+													</div>
+													<p>
+														We use Sendinblue as our marketing platform.
+														By Clicking below to submit this form, you acknowledge that the information
+														you provided will be transferred to Sendinblue for processing in accordance
+														with their
+														<a target="_blank" rel="external nofollow" href="https://www.sendinblue.com/legal/termsofuse/" hreflang="en">terms of use</a>.
+													</p>
+												</div>
+											</div>
+											<div>
+												<div class="sib-form-block ui5con-newsletter_subscribe-btn-block">
+													<button form="sib-form" type="submit" class="ui5con-newsletter__subscribe-btn sib-form-block__button sib-form-block__button-with-loader">
+														<svg aria-hidden="true" viewBox="0 0 512 512" class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon">
+															<path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"></path>
+														</svg>
+														Subscribe
+													</button>
+												</div>
+											</div>
+											<input type="text" name="email_address_check" value="" class="input--hidden"> <input type="hidden" name="locale" value="en">
+										</fieldset>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- END DIALOG -->
+
+			</div>
+		</section>
+
+		<!-- CODE CONNECT SECTION-->
+		 <section class="">
+			<div class="ui5con-wrap">
+
+				<h2 class="ui5con-section-heading">
+					<span aria-hidden="true">&#8600;</span>
+					<span>We are part of</span>
+				</h2>
+
+				<ul class="ui5con-cc-links">
+					<li>
+						<a href="https://code-connect.dev/"  aria-label="Jump to Code Connect website">
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="ui5con-cc-logo" viewBox="0 0 209 49">
+								<path d="M59.238 20.13c-1.681-.919-2.945-2.195-3.794-3.826-.849-1.631-1.272-3.51-1.272-5.637 0-2.128.458-4.037 1.375-5.644.916-1.608 2.22-2.846 3.912-3.716C61.15.437 63.124 0 65.382 0c2.376 0 4.34.463 5.894 1.387 1.553.925 2.778 2.297 3.676 4.117l-5 2.373a5.36 5.36 0 0 0-1.768-1.965c-.754-.51-1.67-.765-2.743-.765-1.006 0-1.89.227-2.655.683-.765.456-1.356 1.1-1.775 1.936-.42.837-.628 1.803-.628 2.9 0 1.74.42 3.117 1.264 4.131.843 1.014 2.098 1.52 3.763 1.52 1.243 0 2.268-.31 3.077-.933A6.034 6.034 0 0 0 70.32 13.1l4.94 2.552c-.72 1.72-1.881 3.128-3.484 4.22-1.603 1.094-3.725 1.64-6.367 1.64-2.435 0-4.493-.46-6.174-1.379l.002-.002Zm22.677 0c-1.681-.919-2.957-2.197-3.83-3.834-.873-1.637-1.31-3.513-1.31-5.63 0-2.116.45-4.05 1.346-5.658.897-1.607 2.189-2.843 3.875-3.71C83.683.434 85.68.002 87.986.002c2.307 0 4.284.439 5.96 1.314 1.676.875 2.963 2.116 3.861 3.724.897 1.607 1.346 3.483 1.346 5.629 0 2.146-.464 4.055-1.391 5.696-.927 1.642-2.236 2.91-3.928 3.805-1.69.896-3.651 1.343-5.879 1.343-2.347 0-4.36-.46-6.041-1.379l.001-.002Zm8.682-4.502c.725-.48 1.272-1.148 1.641-2.003.37-.855.555-1.843.555-2.96s-.2-2.047-.6-2.878c-.4-.83-.962-1.474-1.686-1.928-.725-.454-1.566-.683-2.522-.683-.957 0-1.832.227-2.566.683-.734.454-1.3 1.096-1.694 1.922-.394.825-.591 1.787-.591 2.884s.197 2.106.591 2.967c.395.86.957 1.528 1.687 2.002.73.475 1.578.713 2.545.713 1.035 0 1.915-.24 2.64-.72ZM102.188.311h8.652c3.668 0 6.468.846 8.401 2.536 1.932 1.692 2.899 4.277 2.899 7.758 0 2.245-.456 4.164-1.368 5.756a8.887 8.887 0 0 1-3.861 3.62c-1.661.82-3.592 1.23-5.79 1.23h-8.933V.312Zm8.652 15.858c1.665 0 2.931-.47 3.794-1.41.864-.939 1.294-2.305 1.294-4.094 0-1.789-.426-3.023-1.279-3.939-.853-.914-2.152-1.372-3.897-1.372h-2.514v10.814h2.604l-.002.001ZM125.485.311h15.782v4.896h-9.732v3.1h8.815v4.94h-8.815v3.04h10.338v4.926h-16.388V.311ZM59.06 47.62c-1.68-.92-2.945-2.196-3.794-3.827-.848-1.632-1.272-3.51-1.272-5.637s.458-4.037 1.375-5.644c.916-1.608 2.22-2.846 3.913-3.716 1.69-.87 3.665-1.306 5.923-1.306 2.375 0 4.34.463 5.893 1.387 1.554.925 2.778 2.297 3.676 4.117l-5 2.373a5.36 5.36 0 0 0-1.768-1.965c-.754-.51-1.669-.765-2.743-.765-1.006 0-1.89.227-2.655.683-.764.454-1.356 1.1-1.774 1.936-.42.837-.63 1.803-.63 2.9 0 1.74.422 3.117 1.265 4.131.843 1.014 2.098 1.52 3.764 1.52 1.243 0 2.267-.31 3.076-.933a6.034 6.034 0 0 0 1.834-2.285l4.94 2.552c-.72 1.72-1.881 3.128-3.484 4.22-1.602 1.094-3.725 1.64-6.366 1.64-2.436 0-4.494-.46-6.175-1.379l.002-.002Zm22.676 0c-1.68-.92-2.957-2.198-3.83-3.835-.872-1.637-1.31-3.513-1.31-5.63 0-2.116.45-4.05 1.346-5.658.897-1.607 2.189-2.843 3.876-3.71 1.686-.865 3.682-1.297 5.99-1.297 2.307 0 4.284.439 5.96 1.314 1.675.875 2.962 2.116 3.86 3.724.897 1.607 1.346 3.483 1.346 5.629 0 2.146-.464 4.055-1.391 5.696-.927 1.642-2.235 2.91-3.927 3.805-1.69.896-3.652 1.343-5.88 1.343-2.347 0-4.36-.46-6.041-1.379l.001-.002Zm8.682-4.502c.725-.48 1.273-1.148 1.642-2.003.37-.855.554-1.842.554-2.96 0-1.116-.2-2.046-.6-2.877-.4-.831-.962-1.474-1.686-1.928-.725-.455-1.566-.683-2.522-.683-.957 0-1.832.227-2.566.682-.734.455-1.3 1.096-1.693 1.922-.394.826-.592 1.788-.592 2.885 0 1.097.198 2.105.592 2.966.394.86.956 1.529 1.686 2.003.73.474 1.578.712 2.545.712 1.035 0 1.916-.24 2.64-.719Zm11.592-15.316h7.114l7.262 14.003c-.119-.88-.178-2.62-.178-5.222v-8.781h5.576v20.901h-7.203l-7.129-13.424c.078 1.939.118 3.91.118 5.92v7.506h-5.56V27.802Zm23.875 0h7.114l7.262 14.003c-.119-.88-.178-2.62-.178-5.222v-8.781h5.576v20.901h-7.203l-7.129-13.424c.078 1.939.118 3.91.118 5.92v7.506h-5.56V27.802Zm23.874 0h15.781v4.895h-9.732v3.1h8.816v4.94h-8.816v3.041h10.338v4.925h-16.387V27.802Zm23.779 19.818c-1.681-.92-2.945-2.196-3.794-3.827-.849-1.632-1.272-3.51-1.272-5.637s.458-4.037 1.375-5.644c.916-1.608 2.22-2.846 3.912-3.716 1.691-.87 3.665-1.306 5.923-1.306 2.376 0 4.341.463 5.894 1.387 1.553.925 2.778 2.297 3.676 4.117l-5 2.373a5.367 5.367 0 0 0-1.768-1.965c-.754-.51-1.669-.765-2.743-.765-1.006 0-1.891.227-2.655.683-.765.454-1.356 1.1-1.775 1.936-.419.837-.629 1.803-.629 2.9 0 1.74.421 3.117 1.265 4.131.843 1.014 2.098 1.52 3.763 1.52 1.243 0 2.268-.31 3.076-.933a6.039 6.039 0 0 0 1.835-2.285l4.94 2.552c-.72 1.72-1.881 3.128-3.484 4.22-1.603 1.094-3.725 1.64-6.367 1.64-2.435 0-4.493-.46-6.175-1.379l.003-.002Zm23.349-14.774h-6.049v-5.044H209v5.044h-6.05v15.857h-6.064V32.846h.001ZM37.217 27.13c-4.166 0-7.976 2.463-9.708 6.278a3.922 3.922 0 0 1-7.143 0 10.716 10.716 0 0 0-2.713-3.645l-.03-.025c-.184-.16-.375-.316-.57-.464l-.027-.019a10.939 10.939 0 0 0-.564-.394l-.07-.047c-.192-.122-.39-.24-.59-.35-.04-.024-.08-.045-.12-.066a10.475 10.475 0 0 0-.627-.314 3.935 3.935 0 0 1-2.298-3.583c0-1.543.898-2.943 2.298-3.582.213-.098.42-.203.625-.314l.124-.067a10.751 10.751 0 0 0 1.215-.788l.035-.026c.193-.145.38-.299.565-.458l.038-.033c1.142-1 2.07-2.236 2.707-3.641a3.922 3.922 0 0 1 7.143 0c1.732 3.815 5.543 6.278 9.708 6.278 5.877 0 10.658-4.795 10.658-10.689S43.094.491 37.217.491c-4.166 0-7.976 2.465-9.708 6.28a3.922 3.922 0 0 1-7.143 0c-.011-.025-.024-.047-.035-.071a11.4 11.4 0 0 0-.312-.626l-.008-.014c-.11-.2-.226-.396-.348-.588l-.08-.125a10.869 10.869 0 0 0-.912-1.204 10.864 10.864 0 0 0-1.038-1.035s-.002-.003-.004-.003A10.59 10.59 0 0 0 11.517.53l-.155-.012a10.255 10.255 0 0 0-.704-.025C4.78.492 0 5.287 0 11.182a10.73 10.73 0 0 0 6.26 9.736A3.935 3.935 0 0 1 8.558 24.5a3.935 3.935 0 0 1-2.298 3.582A10.73 10.73 0 0 0 0 37.82c0 5.894 4.781 10.69 10.658 10.69.237 0 .471-.011.704-.026l.155-.012a10.6 10.6 0 0 0 6.114-2.578 10.9 10.9 0 0 0 1.04-1.038 10.59 10.59 0 0 0 .989-1.327c.122-.193.24-.391.351-.593l.006-.008c.111-.206.214-.415.313-.628.01-.024.024-.045.034-.07a3.922 3.922 0 0 1 7.143 0c1.732 3.815 5.543 6.28 9.708 6.28 5.877 0 10.658-4.796 10.658-10.69 0-5.894-4.781-10.69-10.658-10.69h.002Z"/>
+								<animate attributeName="fill" dur="20s" repeatCount="indefinite" values="#FF5D17; #0090DA; #BA066C; #8838EC; #FF5D17"/>
+							</svg>
+							<span class="sr-only">Code Connect 2025 Conferences</span>
+						</a>
+					</li>
+
+					<li>
+						<a class="ui5con-event-marker ui5con-event-marker-ui5con" href="https://openui5.org/ui5con/germany2025/" aria-label="Jump to UI5con event website">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 324 155" aria-hidden="true">
+								<path fill="currentColor" d="M.009 93.09V.004h33.64v92.522a42.2 42.2 0 0 0 6.845 25.54 25.603 25.603 0 0 0 9.805 6.853 25.694 25.694 0 0 0 11.864 1.662 24.526 24.526 0 0 0 11.608-1.658 24.408 24.408 0 0 0 9.487-6.854 40.217 40.217 0 0 0 6.844-25.543V0h33.072v93.09a92.269 92.269 0 0 1-3.422 24.975 51.031 51.031 0 0 1-11.403 19.302 43.025 43.025 0 0 1-19.386 11.918 81.447 81.447 0 0 1-27.371 3.973 81.447 81.447 0 0 1-27.371-3.973 47.589 47.589 0 0 1-18.913-11.964 47.29 47.29 0 0 1-11.309-19.253A74.384 74.384 0 0 1 .006 93.091h.003Zm152.816 57.898V.003H185.9v150.985h-33.075Zm54.17-17.029 17.111-21.567a68.945 68.945 0 0 0 17.104 11.349 52.19 52.19 0 0 0 20.526 4.542c10.264 0 17.676-2.269 22.241-7.38a27.559 27.559 0 0 0 6.841-19.298 27.245 27.245 0 0 0-6.844-19.864 24.25 24.25 0 0 0-8.857-5.862 24.339 24.339 0 0 0-10.53-1.518 33.596 33.596 0 0 0-14.825 3.404 39.876 39.876 0 0 0-13.117 10.787l-21.666-6.814 6.273-81.17h92.372l-1.708 24.41h-65.005l-2.85 34.058a49.29 49.29 0 0 1 11.403-6.811 60.745 60.745 0 0 1 19.386-2.838 53.641 53.641 0 0 1 21.102 3.972 42.036 42.036 0 0 1 15.623 10.469 41.773 41.773 0 0 1 9.465 16.21 50.87 50.87 0 0 1 2.851 20.432 61.331 61.331 0 0 1-3.994 22.14 51.673 51.673 0 0 1-11.974 17.026 64.268 64.268 0 0 1-18.816 11.352 75.337 75.337 0 0 1-25.088 3.973 81.533 81.533 0 0 1-32.501-5.676 119.006 119.006 0 0 1-24.523-15.326Z"/>
+							</svg>
+						</a>
+					</li>
+
+					<li>
+						<a class="ui5con-event-marker ui5con-event-marker-recap" href="https://recap-conf.dev/" aria-label="Jump to ReCAP event website">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -50 275 275" aria-hidden="true">
+								<path fill="currentColor" d="M8.15 136.29s-10.4 5.84 2.75 13.34c11.7 6.67 25.76-.25 25.76-.25l-11.44-14.92-17.08 1.83ZM272.48 111.53c0 4.74-.23 9.05-.66 12.57-.58 4.78-1.51 8.09-2.67 9.01-.13.11-.26.19-.39.23-32.75 11.78-77.43.19-79.44-.34 0 0-64.36-22.43-115.94-26.43.08-.03.15-.07.23-.1-.17 0-.26.08-.42.08h-.04v-.02l21.14-54.54s2.47-7.4 8.01-15.7c4.69-7.05 11.58-14.74 21.07-19.11 7.23-3.3 16.15-5.31 25.03-6.54 5.76-.8 11.5-1.27 16.75-1.54h.09c7.86-.4 16.39-.78 16.39-.78.83-5.42 6.41-6.09 8.48-5.77 4.75.72 7.28 3.95 6.53 8.06 0 0 33.45 15.65 41.65 22.32 3.81 3.09 19.39 18.53 26.38 34.22A73.05 73.05 0 0 1 268.81 79c2.61 10.39 3.68 22.43 3.69 32.53Z"/>
+								<path d="M189.31 133.01c-1.12 1.16-21.09 21.66-48.16 34.86-6.19-11.33-30.43-51.42-67.85-61.26.02 0 .05-.02.07-.03 51.58 4 115.94 26.43 115.94 26.43Z" fill="currentColor"/>
+								<path d="M141.15 167.87c-9.91 4.83-20.77 8.68-32.01 10.24-6.29.88-12.69 1.03-19.1.24 1.48-19.04 2.1-58.81-16.79-71.71.02 0 .04-.02.06-.03 37.41 9.84 61.65 49.93 67.85 61.26Z" fill="currentColor"/>
+								<path d="M90.03 178.36c-.86-.1-1.72-.23-2.58-.37-8.56-1.39-17.12-4.5-25.45-9.88-13.15-8.49-44.65-32.68-54.14-31.59h-.09l.12-.02c-1.16.14 17.7-8.44 36.8-17.03l-.16-.06h.29c4.04-1.82 8.09-3.64 11.96-5.38 6.2-2.78 11.94-5.36 16.46-7.39 18.9 12.9 18.28 52.68 16.79 71.71Z" fill="currentColor"/>
+							</svg>
+						</a>
+					</li>
+
+					<li>
+						<a class="ui5con-event-marker ui5con-event-marker-hanaconf" href="https://hanatech.community/" aria-label="Jump to HANA Tech Con event website">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 500 500" aria-hidden="true">
+								<rect width="244" height="244" x="128" y="128" fill="currentColor" rx="20"/>
+								<rect width="84" height="31" x="25" y="314" fill="currentColor" rx="15.5"/>
+								<rect width="84" height="31" x="24" y="261" fill="currentColor" rx="15.5"/>
+								<rect width="84" height="31" x="25" y="208" fill="currentColor" rx="15.5"/>
+								<rect width="84" height="31" x="25" y="155" fill="currentColor" rx="15.5"/>
+								<rect width="84" height="31" x="392" y="155" fill="currentColor" rx="15.5"/>
+								<rect width="84" height="31" x="392" y="208" fill="currentColor" rx="15.5"/>
+								<rect width="84" height="31" x="392" y="261" fill="currentColor" rx="15.5"/>
+								<rect width="84" height="31" x="392" y="314" fill="currentColor" rx="15.5"/>
+								<rect width="31" height="84" x="314" y="25" fill="currentColor" rx="15.5"/>
+								<rect width="31" height="84" x="261" y="25" fill="currentColor" rx="15.5"/>
+								<rect width="31" height="84" x="208" y="25" fill="currentColor" rx="15.5"/>
+								<rect width="31" height="84" x="155" y="25" fill="currentColor" rx="15.5"/>
+								<rect width="31" height="84" x="314" y="392" fill="currentColor" rx="15.5"/>
+								<rect width="31" height="84" x="261" y="392" fill="currentColor" rx="15.5"/>
+								<rect width="31" height="84" x="208" y="392" fill="currentColor" rx="15.5"/>
+								<rect width="31" height="84" x="155" y="392" fill="currentColor" rx="15.5"/>
+							</svg>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+		</section>
 	</main>
-	<footer class="ui5con-footer">
-		<div class="ui5con-footer-container">
-			<div class="ui5con-footer-text">© 2024 SAP SE or an SAP affiliate company. All rights reserved.<br>This site is hosted by GitHub Pages.</div>
-			<a class="ui5con-footer-link" href="https://www.sap.com/impressum" target="_blank" rel="noopener noreferrer" hreflang="en" title="Click to open the Legal Disclosure page. Opens in a new window.">Legal Disclosure</a>
-			<a class="ui5con-footer-link" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer" hreflang="en" title="This site is hosted by GitHub Pages. Please see the GitHub Privacy Statement for any information how GitHub processes your personal data. External link.">Privacy</a>
-			<a class="ui5con-footer-link" href="https://www.sap.com/terms-of-use" rel="noopener noreferrer" target="_blank" title="Click to open the Terms of use page. Opens in a new window." hreflang="en">Terms of use</a>
-			<a class="ui5con-footer-link" href="https://www.sap.com/copyright" rel="noopener noreferrer" target="_blank" title="Click to open the Copyright page. Opens in a new window."  hreflang="en">Copyright</a>
-      <a class="ui5con-footer-link" href="https://www.sap.com/trademark" rel="noopener noreferrer" target="_blank" title="Click to open the Trademark page. Opens in a new window."  hreflang="en">Trademark</a>
-		</div>
+
+	<footer id="footer">
+		<footer-section></footer-section>
 	</footer>
 
-	<script src="launchpad/main.js"></script>
+	<script src="./components/nav-section.component.js"></script>
+	<script src="./components/nav-section-mobile.component.js"></script>
+	<script src="./components/footer-section.component.js"></script>
+
+	<script src="./js/main.js"></script>
+	<script src="./js/sendinblue.js"></script>
+	<script src="./js/a11y-dialog.min.js"></script>
+	<script>
+		var dialogEl = document.getElementById('sendinblue-dialog');
+		var dialog = new A11yDialog(dialogEl);
+
+		window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
+		window.REQUIRED_ERROR_MESSAGE = "The email field cannot be left blank. Please try again. ";
+		window.GENERIC_INVALID_MESSAGE = "The email provided is invalid. Please review the field format and try again.";
+	</script>
 </body>
 </html>
