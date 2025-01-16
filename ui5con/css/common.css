@@ -741,8 +741,14 @@ main {
 
 .ui5con-grid-wrap {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
 	gap: 2rem;
+}
+
+@media only screen and (min-width: 450px) {
+	.ui5con-grid-wrap {
+		grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+	}
 }
 
 .ui5con-grid-wrap--split {
