@@ -179,6 +179,11 @@ var main = new Vue({
         image: 'images/team/dorota-josenhans.png'
       },
       {
+        name: 'Benedikt Schoelch',
+        location: 'Sponsor Coordinator',
+        image: 'images/team/benedikt-schoelch.jpg'
+      },
+      {
         name: 'Dina Glatzel',
         location: 'Facility',
         image: 'images/team/dina-glatzel.jpg'
