@@ -1,0 +1,141 @@
+/* ------------------------- Sponsors Section -------------------------  */
+
+.ui5con-sponsors-logos {
+	display: flex;
+	gap: 4rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-block-end: 2rem;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ui5con-sponsors-logos a {
+	display: block;
+}
+
+.ui5con-sponsors-logos svg {
+	width: 12rem;
+	fill: var(--logo-color);
+	color: var(--logo-color);
+	display: block;
+	height: auto;
+}
+
+/* ------------------------- Sponsors Page -------------------------  */
+
+.ui5con-sponsors-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ui5con-sponsors-list > li {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-block-end: 1rem;
+	gap: clamp(1rem, 5vw, 2rem);
+	border-bottom: 4px solid var(--background-color-alternate);
+}
+
+.ui5con-sponsors-list li:last-child {
+	border-bottom: none;
+}
+
+.ui5con-sponsors-list li div:first-child {
+	gap: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex: 1 0 auto;
+}
+
+.ui5con-sponsors-logo {
+	display: block;
+}
+
+.ui5con-sponsors-logo svg {
+	width: 15rem;
+	height: auto;
+}
+
+.ui5con-sponsors-badge {
+	display: inline-block;
+	border-radius: 4px;
+	padding: .1rem .5rem;
+	margin-block-end: .3rem;
+}
+
+.ui5con-sponsors-badge.diamond {
+	background: linear-gradient(to top, #9ac5db, #b8d8e7);
+}
+
+.ui5con-sponsors-badge.platinum {
+	background: linear-gradient(to bottom, #E5E4E2, #aab9c4);
+}
+
+.ui5con-sponsors-badge.gold {
+	background-color: gold;
+}
+
+.ui5con-sponsors-badge.silver {
+	background-color: #c0c0c0;
+}
+
+.ui5con-sponsors-socials {
+	list-style-type: none;
+	padding: 0;
+}
+
+.ui5con-sponsors-socials li {
+	display: inline-block;
+}
+
+.ui5con-sponsors-socials .icon {
+	width: 1.4rem;
+	height: 1.4rem;
+	display: inline-block;
+	margin-inline-end: .5rem;
+	transform: translateY(-1px);
+	color: inherit;
+}
+
+@media only screen and (min-width: 800px) {
+	.ui5con-sponsors-list > li {
+		flex-direction: row;
+	}
+
+	.ui5con-sponsors-list li div:first-child {
+		align-items: center;
+		margin-block-end: 2rem;
+		flex: 0 0 15rem;
+	}
+
+	.ui5con-sponsors-logo {
+		margin-block-start: 2rem;
+	}
+}
+
+/* Sponsor specific */
+
+svg.asbrucon {
+	fill: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+
+	.ui5con-sponsors-badge.diamond,
+	.ui5con-sponsors-badge.platinum,
+	.ui5con-sponsors-badge.gold,
+	.ui5con-sponsors-badge.silver {
+		color: var(--btn-bg-color);
+	}
+
+	svg.asbrucon {
+		fill: var(--logo-color);
+	}
+}

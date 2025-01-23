@@ -40,9 +40,9 @@ Vue.component("nav-section-mobile", {
     </div>
 
     <ul class="ui5con-mobile-nav-menu" v-if="hamburgerMenuVisible">
-        <!--<li>
+        <li>
             <a href="speakerinfo.html" :class="{ active: isActive('speakerinfo') }" :aria-current="isActive('speakerinfo')">Speakers</a>
-        </li>-->
+        </li>
         <li>
             <a href="location.html" :class="{ active: isActive('location') }" :aria-current="isActive('location')">Participants</a>
         </li>

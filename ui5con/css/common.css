@@ -528,6 +528,17 @@ a:is(.active) {
 	outline-offset: -4px;
 }
 
+.ui5con-btn-lite {
+	border-color: var(--brand-color-contrast);
+	padding: .7rem 1rem;
+	color: var(--brand-color-contrast);
+}
+
+
+.ui5con-btn-lite:is(:hover, :focus) {
+	background-color: var(--brand-color-contrast);
+}
+
 .ui5con-btn .icon {
 	width: 1.4rem;
 	height: 1.4rem;
@@ -990,52 +1001,6 @@ p ~ .ui5con-section-heading {
 	}
 }
 
-/* ------------------------- Sponsors Section -------------------------  */
-
-.ui5con-sponsors {
-
-}
-
-.ui5con-sponsors-cta {
-	text-align: center;
-	padding-block-start: 4rem;
-}
-
-.ui5con-sponsors-logos {
-	display: flex;
-	gap: 4rem;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	margin-block-end: 2rem;
-}
-
-.ui5con-sponsors ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-.ui5con-sponsors a {
-	display: block;
-}
-
-.ui5con-sponsors svg,
-.ui5con-sponsors picture {
-	width: clamp(14rem, 15vw, 18rem);
-	fill: var(--logo-color);
-	color: var(--logo-color);
-	display: block;
-	height: 4rem;
-}
-
-.ui5con-sponsors picture img {
-	max-height: 4rem;
-	display: block;
-	margin: auto;
-}
-
 /* ------------------------- Code Connect Section -------------------------  */
 .ui5con-cc-links {
 	gap: 2rem;
@@ -1248,6 +1213,10 @@ footer {
 	aspect-ratio: 16 / 9;
 	inline-size: 100%;
 	object-fit: cover;
+}
+
+.ui5con-speaker-cta {
+	margin-block: 2rem;
 }
 
 .ui5con-archive {
