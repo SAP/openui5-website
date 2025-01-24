@@ -126,6 +126,10 @@ svg.asbrucon {
 	fill: #000;
 }
 
+svg.brandeis text {
+	fill: #0C3C60;
+}
+
 @media (prefers-color-scheme: dark) {
 
 	.ui5con-sponsors-badge.diamond,
@@ -137,5 +141,9 @@ svg.asbrucon {
 
 	svg.asbrucon {
 		fill: var(--logo-color);
+	}
+
+	svg.brandeis text {
+		fill: #fff;
 	}
 }
