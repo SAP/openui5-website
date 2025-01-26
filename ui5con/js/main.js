@@ -144,24 +144,19 @@ var main = new Vue({
         image: 'images/team/fabian-tempel.jpg'
       },
       {
-        name: 'Andreas Kunz',
-        location: 'Program',
-        image: 'images/team/andreas-kunz.jpg'
-      },
-      {
-        name: 'Angelika Kirilin',
-        location: 'Facility',
-        image: 'images/team/angelika-kirilin.jpg'
-      },
-      {
         name: 'Inna Atanasova',
         location: 'Website',
         image: 'images/team/Inna.jpg'
       },
       {
-        name: 'Katja Zoch',
-        location: 'Facility',
-        image: 'images/team/katja-zoch.jpg'
+        name: 'Jennifer Klar',
+        location: 'Communications, Facility',
+        image: 'images/team/jennifer-klar.jpg'
+      },
+      {
+        name: 'Benedikt Schoelch',
+        location: 'Sponsorship',
+        image: 'images/team/benedikt-schoelch.jpg'
       },
       {
         name: 'Judith Schneider',
@@ -169,29 +164,14 @@ var main = new Vue({
         image: 'images/team/judith-schneider.jpg'
       },
       {
-        name: 'Jan Mummenthaler',
-        location: 'Facility',
-        image: 'images/team/jan-mummenthaler.webp'
-      },
-      {
-        name: 'Dorota Josenhans',
-        location: 'Facility, Marketing',
-        image: 'images/team/dorota-josenhans.png'
-      },
-      {
-        name: 'Benedikt Schoelch',
-        location: 'Sponsor Coordinator',
-        image: 'images/team/benedikt-schoelch.jpg'
-      },
-      {
-        name: 'Dina Glatzel',
-        location: 'Facility',
-        image: 'images/team/dina-glatzel.jpg'
-      },
-      {
         name: 'Jacky Dittkowski',
         location: 'Design, Facility',
         image: 'images/team/jacky.jpg'
+      },
+      {
+        name: 'Andreas Kunz',
+        location: 'Program',
+        image: 'images/team/andreas-kunz.jpg'
       },
       {
         name: 'Felix Schubert',
@@ -199,29 +179,34 @@ var main = new Vue({
         image: 'images/team/felix-schubert.jpg'
       },
       {
-        name: 'Alexander Rauh',
-        location: 'Tech Setup',
-        image: 'images/team/alex-rauh.jpg'
+        name: 'Daniel Nowak',
+        location: 'Program, Facility',
+        image: 'images/team/daniel-nowak.jpg'
       },
       {
-        name: 'Arthur Trauter',
-        location: 'Tech Setup',
-        image: 'images/team/arthur-trauter.jpg'
+        name: 'Dorota Josenhans',
+        location: 'Facility',
+        image: 'images/team/dorota-josenhans.png'
       },
       {
-        name: 'Tillmann Swinke',
-        location: 'Tech Setup',
-        image: 'images/team/tillmann-swinke.jpg'
+        name: 'Angelika Kirilin',
+        location: 'Facility',
+        image: 'images/team/angelika-kirilin.jpg'
       },
       {
-        name: 'Jennifer Klar',
-        location: 'Communications',
-        image: 'images/team/jennifer-klar.jpg'
+        name: 'Jan Mummenthaler',
+        location: 'Facility',
+        image: 'images/team/jan-mummenthaler.webp'
       },
       {
-        name: 'Michael Zadikowitsch',
-        location: 'Tech Setup',
-        image: 'images/team/michael-zadikowitsch.jpg'
+        name: 'Katja Zoch',
+        location: 'Facility',
+        image: 'images/team/katja-zoch.jpg'
+      },
+      {
+        name: 'Dina Glatzel',
+        location: 'Facility',
+        image: 'images/team/dina-glatzel.jpg'
       },
       {
         name: 'Nikolay Kolarov',
@@ -229,9 +214,24 @@ var main = new Vue({
         image: 'images/team/nikolay-kolarov.jpg'
       },
       {
-        name: 'Daniel Nowak',
-        location: 'Facility, Program',
-        image: 'images/team/daniel-nowak.jpg'
+        name: 'Arthur Trauter',
+        location: 'Tech Setup',
+        image: 'images/team/arthur-trauter.jpg'
+      },
+      {
+        name: 'Alexander Rauh',
+        location: 'Tech Setup',
+        image: 'images/team/alex-rauh.jpg'
+      },
+      {
+        name: 'Tillmann Swinke',
+        location: 'Tech Setup',
+        image: 'images/team/tillmann-swinke.jpg'
+      },
+      {
+        name: 'Michael Zadikowitsch',
+        location: 'Tech Setup',
+        image: 'images/team/michael-zadikowitsch.jpg'
       },
     ]
    }
