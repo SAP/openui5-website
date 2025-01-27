@@ -1,4 +1,4 @@
-.ui5con-people-list {
+.people-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -8,22 +8,22 @@
 	gap: 1rem;
 }
 
-.ui5con-people-list > li:is(:hover, :focus-within) .ui5con-people-portrait {
+.people-list > li:is(:hover, :focus-within) .people-portrait {
 	transform: scale(1.07);
 }
 
-.ui5con-people-member {
+.people-member {
 	margin: 0;
 }
 
-.ui5con-people-member img {
+.people-member img {
 	max-width: 100%;
 	inline-size: 100%;
 	aspect-ratio: 1/1.25;
 	object-fit: cover;
 }
 
-.ui5con-people-name {
+.people-name {
 	font-weight: 600;
 	margin-block-start: .3rem;
 	margin-block-end: 0;
@@ -31,7 +31,7 @@
 
 @media only screen and (min-width: 768px) {
 
-	.ui5con-people-list {
+	.people-list {
 		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 	}
 }

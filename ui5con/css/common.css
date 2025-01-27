@@ -482,7 +482,7 @@ a:is(:hover) {
 	text-underline-offset: 3px;
 }
 
-a:not(.ui5con-btn):is(:focus, .active, .active:hover) {
+a:not(.btn):is(:focus, .active, .active:hover) {
 	outline: none;
 	color: var(--brand-color-alt);
 	text-decoration: underline;
@@ -495,7 +495,7 @@ a:is(.active) {
 	text-decoration-color: var(--brand-color);
 }
 
-.ui5con-btn {
+.btn {
 	display: inline-block;
 	border-radius: 5px;
 	border: 1px solid var(--dark-brand-color);
@@ -511,35 +511,35 @@ a:is(.active) {
 	transition: none;
 }
 
-.ui5con-btn:is(:hover, :focus) {
+.btn:is(:hover, :focus) {
 	text-decoration: none;
 	background: var(--btn-bg-color);
 	color: var(--text-color-contrast);
 }
 
-.ui5con-btn:is(:focus) {
+.btn:is(:focus) {
 	text-decoration: none;
 	background: var(--btn-bg-color);
 	color: var(--text-color-contrast);
 }
 
-.ui5con-btn:is(:focus-within) {
+.btn:is(:focus-within) {
 	outline: 2px solid var(--text-color-contrast);
 	outline-offset: -4px;
 }
 
-.ui5con-btn-lite {
+.btn-lite {
 	border-color: var(--brand-color-contrast);
 	padding: .7rem 1rem;
 	color: var(--brand-color-contrast);
 }
 
 
-.ui5con-btn-lite:is(:hover, :focus) {
+.btn-lite:is(:hover, :focus) {
 	background-color: var(--brand-color-contrast);
 }
 
-.ui5con-btn .icon {
+.btn .icon {
 	width: 1.4rem;
 	height: 1.4rem;
 	display: inline-block;
@@ -550,7 +550,7 @@ a:is(.active) {
 
 /* ------------------------ Main Navigation ---------------------------  */
 
-.ui5con-nav {
+.nav {
 	max-width: 1240px;
 	margin-block: 0;
 	margin-inline: auto;
@@ -558,7 +558,7 @@ a:is(.active) {
 	padding-inline: 3vw;
 }
 
-.ui5con-nav ul {
+.nav ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -570,72 +570,72 @@ a:is(.active) {
 	gap: .7rem 1.5rem;
 }
 
-.ui5con-nav a:not(:hover, :focus, :focus-within) {
+.nav a:not(:hover, :focus, :focus-within) {
 	text-decoration-color: transparent;
 }
 
-.ui5con-nav li:first-child {
+.nav li:first-child {
 	flex: 1 0 100%
 }
 
-.ui5con-nav li:first-child a {
+.nav li:first-child a {
 	justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
 
-	.ui5con-nav li:first-child {
+	.nav li:first-child {
 		flex: 0 0 auto;
 		margin-inline-end: auto;
 	}
 
-	.ui5con-nav li:first-child a {
+	.nav li:first-child a {
 		justify-content: flex-start;
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 
-	.ui5con-nav {
+	.nav {
 		padding-block: 2rem 1rem;
 	}
 }
 
-.ui5con-nav a:not(.ui5con-header-link) {
+.nav a:not(.header-link) {
 	font-weight: 400;
 	font-size: var(--type-0);
 	white-space: nowrap;
 }
 
-.ui5con-header-link {
+.header-link {
 	display: block;
 }
 
-.ui5con-logo {
+.logo {
 	width: 100px;
 }
 
 /* Mobile Navigation */
 
-.ui5con-mobile-nav .ui5con-mobile-nav-container {
+.mobile-nav .mobile-nav-container {
 	display: flex;
 	justify-content: space-between;
 }
 
-.ui5con-mobile-nav .ui5con-mobile-nav-menu {
+.mobile-nav .mobile-nav-menu {
 	display: flex;
 	flex-direction: column;
 }
 
-.ui5con-mobile-nav .ui5con-mobile-nav-menu li:first-child {
+.mobile-nav .mobile-nav-menu li:first-child {
 	margin-inline-end: 0;
 }
 
-.ui5con-mobile-nav .ui5con-mobile-nav-container {
+.mobile-nav .mobile-nav-container {
 	position: relative;
 }
 
-.ui5con-mobile-nav .ui5con-mobile-nav-menu {
+.mobile-nav .mobile-nav-menu {
 	right: 0;
 	z-index: 10;
 	width: 100%;
@@ -647,19 +647,19 @@ a:is(.active) {
 	border-bottom: 2px solid var(--brand-color-alt);
 }
 
-.ui5con-mobile-nav-menu a {
+.mobile-nav-menu a {
 	line-height: 44px;
 	display: block;
 }
 
-.ui5con-nav:has(.ui5con-mobile-nav) {
+.nav:has(.mobile-nav) {
 	position: sticky;
 	top: 0;
 	background: var(--background-color);
 	z-index: 9;
 }
 
-.ui5con-mobile-nav-btn {
+.mobile-nav-btn {
 	width: 30px;
 	height: 24px;
 	position: relative;
@@ -670,15 +670,15 @@ a:is(.active) {
 	border: none;
 }
 
-.ui5con-mobile-nav-btn:is(:focus, :focus-within) {
+.mobile-nav-btn:is(:focus, :focus-within) {
 	outline: none;
 }
 
-.ui5con-mobile-nav-btn:is(:focus, :focus-within) span {
+.mobile-nav-btn:is(:focus, :focus-within) span {
 	background: var(--brand-color);
 }
 
-.ui5con-mobile-nav-btn span {
+.mobile-nav-btn span {
 	display: block;
 	position: absolute;
 	height: 4px;
@@ -690,12 +690,12 @@ a:is(.active) {
 	transition: .25s ease-in-out;
 }
 
-.ui5con-mobile-nav-btn span:nth-child(1) {
+.mobile-nav-btn span:nth-child(1) {
 	top: 0px;
 	transform-origin: left center;
 }
 
-.ui5con-mobile-nav-btn span:nth-child(2) {
+.mobile-nav-btn span:nth-child(2) {
 	top: 10px;
 	transform-origin: left center;
 	width: 80%;
@@ -703,23 +703,23 @@ a:is(.active) {
 	left: auto;
 }
 
-.ui5con-mobile-nav-btn span:nth-child(3) {
+.mobile-nav-btn span:nth-child(3) {
 	top: 20px;
 	transform-origin: left center;
 }
 
-.ui5con-mobile-nav-btn.open span:nth-child(1) {
+.mobile-nav-btn.open span:nth-child(1) {
 	transform: rotate(45deg);
 	top: -1px;
 	left: 1px;
 }
 
-.ui5con-mobile-nav-btn.open span:nth-child(2) {
+.mobile-nav-btn.open span:nth-child(2) {
 	width: 0%;
 	opacity: 0;
 }
 
-.ui5con-mobile-nav-btn.open span:nth-child(3) {
+.mobile-nav-btn.open span:nth-child(3) {
 	transform: rotate(-45deg);
 	top: 20px;
 	left: 1px;
@@ -734,7 +734,7 @@ main {
 	background-color: var(--background-color-alternate);
 }
 
-.ui5con-wrap {
+.wrap {
 	max-width: 1240px;
 	margin-block: 0;
 	margin-inline: auto;
@@ -744,31 +744,31 @@ main {
 
 /* @media only screen and (min-width: 1440px) {
 
-	.ui5con-wrap,
-	.ui5con-nav {
+	.wrap,
+	.nav {
 		padding-inline: 5vw;
 	}
 } */
 
-.ui5con-grid-wrap {
+.grid-wrap {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
 	gap: 2rem;
 }
 
 @media only screen and (min-width: 450px) {
-	.ui5con-grid-wrap {
+	.grid-wrap {
 		grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
 	}
 }
 
-.ui5con-grid-wrap--split {
+.grid-wrap--split {
 	grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 	gap: 4rem;
 }
 
 /* --------------------------- Main Contents ---------------------------  */
-.ui5con-head {
+.head {
 	position: relative;
 }
 
@@ -778,13 +778,13 @@ main {
 	background-size: 610px auto;
 }
 
-.ui5con-head-banner {
+.head-banner {
 	padding-block-start: 2rem;
 	padding-block-end: 3rem;
 	padding-inline: 2rem;
 }
 
-.ui5con-head .ui5con-wrap {
+.head .wrap {
 	overflow: hidden;
 	position: relative;
 	z-index: 2;
@@ -806,7 +806,7 @@ main {
 		background-position: -45px 0px;
 	}
 
-	.ui5con-head-banner {
+	.head-banner {
 		padding-block-start: 4rem;
 		padding-block-end: 3rem;
 		padding-inline: 3rem;
@@ -820,7 +820,7 @@ main {
 		background-position: center 0px;
 	}
 
-	.ui5con-head-banner {
+	.head-banner {
 		padding-block-start: 5rem;
 		padding-block-end: 5rem;
 		padding-inline: 7rem;
@@ -835,14 +835,14 @@ main {
 		background-size: auto 344px;
 	}
 
-	.ui5con-head-banner {
+	.head-banner {
 		padding-block-start: 7rem;
 		padding-block-end: 7rem;
 		padding-inline: 8rem;
 	}
 }
 
-.ui5con-head-detail {
+.head-detail {
 	display: block;
 	font-weight: 800;
 	text-align: center;
@@ -850,45 +850,45 @@ main {
 	font-size: var(--type-2);
 }
 
-.ui5con-head-detail small {
+.head-detail small {
 	font-weight: 500;
 }
 
-.ui5con-head-container {
+.head-container {
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
 	align-items: center;
 }
 
-.ui5con-head-container h1 {
+.head-container h1 {
 	margin-block-start: 0;
 	font-size: var(--type-4);
 }
 
 @media only screen and (min-width: 821px) {
 
-	.ui5con-head-container {
+	.head-container {
 		gap: 2rem;
 		flex-direction: row;
 	}
 
-	.ui5con-head-container img {
+	.head-container img {
 		width: 35%;
 		align-self: flex-start;
 	}
 
-	.ui5con-head-detail {
+	.head-detail {
 		text-align: start;
 	}
 }
 
 /* ---------------------------- Calendars -----------------------------  */
-.ui5con-calendars {
+.calendars {
 	height: 2rem;
 }
 
-.ui5con-calendars-list {
+.calendars-list {
 	list-style: none;
 	gap: 1rem;
 	display: flex;
@@ -900,7 +900,7 @@ main {
 	width: max-content;
 }
 
-.ui5con-calendars-list a {
+.calendars-list a {
 	gap: 0.25rem;
 	display: flex;
 	text-align: center;
@@ -909,12 +909,12 @@ main {
 
 @media only screen and (min-width: 768px) {
 
-	.ui5con-calendars-list {
+	.calendars-list {
 		gap: 2rem;
 	}
 }
 
-.ui5con-section-heading {
+.section-heading {
 	width: fit-content;
 	padding-inline: 0.75rem;
 	padding-block: 0.25rem;
@@ -922,18 +922,18 @@ main {
 	border-top-width: 0.75rem;
 }
 
-p ~ .ui5con-section-heading {
+p ~ .section-heading {
 	margin-block-start: 4rem;
 }
 
 /* ------------------------------ Teaser -------------------------------  */
 
-.ui5con-teaser {
+.teaser {
 
 }
 
 /* ------------------------ Newsletter section -------------------------  */
-.ui5con-social-links {
+.social-links {
 	gap: 6vw;
 	display: flex;
 	padding-inline: 0;
@@ -943,7 +943,7 @@ p ~ .ui5con-section-heading {
 	transition: all 1s ease-in-out;
 }
 
-.ui5con-social-links a {
+.social-links a {
 	gap: 1rem;
 	display: flex;
 	align-items: center;
@@ -951,30 +951,30 @@ p ~ .ui5con-section-heading {
 	flex-direction: column;
 }
 
-.ui5con-social-links a svg {
+.social-links a svg {
 	transition: all 0.3s ease-in-out;
 }
 
-.ui5con-social-links a:is(:hover) svg {
+.social-links a:is(:hover) svg {
 	color: var(--brand-color);
 }
 
-.ui5con-social-links a:is(:focus) svg {
+.social-links a:is(:focus) svg {
 	color: var(--brand-color);
 	transform: scale(1.15);
 }
 
-.ui5con-social-links svg {
+.social-links svg {
 	width: 2rem;
 	height: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
-	.ui5con-newsletter p {
+	.newsletter p {
 		width: 50%;
 	}
 
-	.ui5con-social-links {
+	.social-links {
 		gap: 2vw;
 	}
 }
@@ -1002,7 +1002,7 @@ p ~ .ui5con-section-heading {
 }
 
 /* ------------------------- Code Connect Section -------------------------  */
-.ui5con-cc-links {
+.cc-links {
 	gap: 2rem;
 	display: flex;
 	flex-wrap: wrap;
@@ -1012,22 +1012,22 @@ p ~ .ui5con-section-heading {
 	margin-block: 2rem;
 }
 
-.ui5con-cc-links li:first-child {
+.cc-links li:first-child {
 	flex: 1 0 100%;
 }
 
-.ui5con-cc-logo {
+.cc-logo {
 	height: 4rem;
 }
 
-.ui5con-cc-logo g {
+.cc-logo g {
 	animation-duration: 15s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 	animation-iteration-count: infinite;
 }
 
-.ui5con-event-marker {
+.event-marker {
 	display: inline-block;
 	border-radius: 50%;
 	background-color: var(--logo-color);
@@ -1041,107 +1041,107 @@ p ~ .ui5con-section-heading {
 	transition: all .1s allow-discrete;
 }
 
-.ui5con-event-marker:is(span) {
+.event-marker:is(span) {
 	cursor: initial;
 }
 
-.ui5con-content-box .ui5con-event-marker {
+.content-box .event-marker {
 	margin-block: 0;
 	margin-inline-end: 0;
 	scroll-margin-block-start: 4rem;
 }
 
-.ui5con-content-box.ui5con-sponsors .ui5con-teaser-content {
+.content-box.sponsors .teaser-content {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
-.ui5con-event-marker svg {
+.event-marker svg {
 	width: 1.6rem;
 	height: 1.9rem;
 	color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
-	.ui5con-event-marker {
+	.event-marker {
 		width: 4rem;
 		height: 4rem;
 		line-height: 3.9rem;
 	}
 
-	.ui5con-event-marker svg {
+	.event-marker svg {
 		width: 2.6rem;
 		height: 3.9rem;
 	}
 
-	.ui5con-cc-logo {
+	.cc-logo {
 		height: 5.6rem;
 	}
 
-	.ui5con-cc-links li:first-child {
+	.cc-links li:first-child {
 		flex: none;
 	}
 }
 
-a.ui5con-event-marker-codejam,
-span.ui5con-event-marker-codejam {
+a.event-marker-codejam,
+span.event-marker-codejam {
 	background-color: var(--brand-color-codejam);
 	color: var(--brand-color-codejam);
 }
 
-a.ui5con-event-marker-codeconnect,
-span.ui5con-event-marker-codeconnect {
+a.event-marker-codeconnect,
+span.event-marker-codeconnect {
 	background-color: var(--logo-color);
 	color: var(--logo-color);
 }
 
-a.ui5con-event-marker-recap,
-span.ui5con-event-marker-recap {
+a.event-marker-recap,
+span.event-marker-recap {
 	background-color: var(--brand-color-recap);
 	color: var(--brand-color-recap);
 }
 
-a.ui5con-event-marker-ui5con,
-span.ui5con-event-marker-ui5con {
+a.event-marker-ui5con,
+span.event-marker-ui5con {
 	background-color: var(--brand-color-ui5con);
 	color: var(--brand-color-ui5con);
 }
 
-a.ui5con-event-marker-hanaconf,
-span.ui5con-event-marker-hanaconf {
+a.event-marker-hanaconf,
+span.event-marker-hanaconf {
 	background-color: var(--brand-color-hana);
 	color: var(--brand-color-hana);
 }
 
-a.ui5con-event-marker-hanaconf svg,
-span.ui5con-event-marker-hanaconf svg {
+a.event-marker-hanaconf svg,
+span.event-marker-hanaconf svg {
 	height: 2.5rem;
 }
 
-.ui5con-cc-links a.ui5con-event-marker:hover,
-.ui5con-cc-links a.ui5con-event-marker:focus {
+.cc-links a.event-marker:hover,
+.cc-links a.event-marker:focus {
 	outline: 2px solid currentColor;
 	outline-offset: 2px;
 }
 
-.ui5con-cc-links a.ui5con-event-marker-recap:hover,
-.ui5con-cc-links a.ui5con-event-marker-recap:focus {
+.cc-links a.event-marker-recap:hover,
+.cc-links a.event-marker-recap:focus {
 	color: var(--brand-color-recap);
 }
 
-.ui5con-cc-links a.ui5con-event-marker-hanaconf:hover,
-.ui5con-cc-links a.ui5con-event-marker-hanaconf:focus {
+.cc-links a.event-marker-hanaconf:hover,
+.cc-links a.event-marker-hanaconf:focus {
 	color: var(--brand-color-hana);
 }
 
-.ui5con-cc-links a.ui5con-event-marker-codejam:hover,
-.ui5con-cc-links a.ui5con-event-marker-codejam:focus {
+.cc-links a.event-marker-codejam:hover,
+.cc-links a.event-marker-codejam:focus {
 	color: var(--brand-color-codejam);
 }
 
-.ui5con-cc-links a.ui5con-event-marker-codeconnect:hover,
-.ui5con-cc-links a.ui5con-event-marker-codeconnect:focus {
+.cc-links a.event-marker-codeconnect:hover,
+.cc-links a.event-marker-codeconnect:focus {
 	color: var(--logo-color);
 }
 
@@ -1156,20 +1156,20 @@ footer {
 	fill: #008fd3;
 }
 
-.ui5con-footer-container {
+.footer-container {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: space-between;
 }
 
-.ui5con-footer-container p {
+.footer-container p {
 	text-wrap: wrap;
 	order: 3;
 	flex-basis: 100%;
 }
 
-.ui5con-links-container {
+.links-container {
 	gap: 1rem 2rem;
 	order: 3;
 	width: 100%;
@@ -1182,22 +1182,22 @@ footer {
 
 @media only screen and (min-width: 768px) {
 
-	.ui5con-links-container {
+	.links-container {
 		order: 2;
 	}
 
-	.ui5con-footer-container {
+	.footer-container {
 		align-items: center;
 	}
 }
 
 /* ---------------------------- misc ----------------------------  */
 
-.ui5con-location-address {
+.location-address {
 	position: relative;
 }
 
-.ui5con-location-address address {
+.location-address address {
 	position: absolute;
 	bottom: 4rem;
 	right: 1rem;
@@ -1207,7 +1207,7 @@ footer {
 	padding: 1vw 2vw;
 }
 
-.ui5con-location-address img {
+.location-address img {
 	max-width: 100%;
 	margin-block-end: 3rem;
 	aspect-ratio: 16 / 9;
@@ -1215,11 +1215,11 @@ footer {
 	object-fit: cover;
 }
 
-.ui5con-speaker-cta {
+.speaker-cta {
 	margin-block: 2rem;
 }
 
-.ui5con-archive {
+.archive {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -1231,7 +1231,7 @@ footer {
 	gap: 2rem 1rem;
 }
 
-.ui5con-archive img {
+.archive img {
 	display: block;
 	max-width: 100%;
 	inline-size: 100%;
@@ -1240,18 +1240,18 @@ footer {
 	margin-block-end: .7rem;
 }
 
-.ui5con-archive a {
+.archive a {
 	font-weight: 700;
 	line-height: 1.2;
 	display: block;
 }
 
-.ui5con-archive a:not(:hover, :focus) {
+.archive a:not(:hover, :focus) {
 	text-decoration: none;
 	color: var(--text-color);
 }
 
-.ui5con-archive a small {
+.archive a small {
 	font-weight: 400;
 	display: block;
 }

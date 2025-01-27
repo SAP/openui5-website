@@ -2,7 +2,7 @@
 	display: none;
 }
 
-.ui5con-newsletter__modal-backdrop {
+.newsletter__modal-backdrop {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -13,7 +13,7 @@
 	background-color: rgba(245, 245, 245, .8);
 }
 
-.ui5con-newsletter__modal {
+.newsletter__modal {
 	top: 50%;
 	left: 50%;
 	width: 94vw;
@@ -27,7 +27,7 @@
 	box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
 }
 
-.ui5con-newsletter__form {
+.newsletter__form {
 	display: flex;
 	position: relative;
 	flex-direction: column;
@@ -52,14 +52,14 @@
 	margin: 0;
 }
 
-.ui5con-newsletter__form fieldset {
+.newsletter__form fieldset {
 	border: none;
 	padding: 0;
 	border: 0;
 	margin: 0;
 }
 
-.ui5con-newsletter__form legend {
+.newsletter__form legend {
 	margin: 0;
 	width: 100%;
 	font-size: 2.2rem;
@@ -67,7 +67,7 @@
 	text-align: left;
 }
 
-.ui5con-newsletter__close-btn {
+.newsletter__close-btn {
 	right: 0;
 	border: none;
 	top: 0.3125rem;
@@ -79,16 +79,16 @@
 	transition: color .2s ease;
 }
 
-.ui5con-newsletter__close-btn:hover {
+.newsletter__close-btn:hover {
 	color: var(--brand-color);
 }
 
-.ui5con-newsletter__close-btn:focus {
+.newsletter__close-btn:focus {
 	border-radius: 0.2rem;
 	outline: 0.0625rem solid var(--brand-color);
 }
 
-.sib-form  .ui5con-newsletter__subheader {
+.sib-form  .newsletter__subheader {
 	font-weight: bold;
 	font-size: 1.1rem;
 	margin: 2.5rem 0 1.5rem 0;
@@ -112,7 +112,7 @@
 	background: rgb(48, 145, 76, .2);
 }
 
-.sib-form .ui5con-newsletter__input {
+.sib-form .newsletter__input {
 	width: 100%;
 	border: 1px solid var(--brand-color-alt);
 	height: 2.5rem;
@@ -126,7 +126,7 @@
 	color: var(--text-color);
 }
 
-.sib-form .ui5con-newsletter__input:focus {
+.sib-form .newsletter__input:focus {
 	border-radius: 0.2rem;
 	outline-offset: -0.1875rem;
 	outline-color: var(--brand-color-alt);
@@ -134,18 +134,18 @@
 	background: var(--background-color);
 }
 
-.sib-form .ui5con-newsletter__input:hover {
+.sib-form .newsletter__input:hover {
 	background: var(--background-color);
 }
 
-.sib-form .ui5con-newsletter__input::placeholder {
+.sib-form .newsletter__input::placeholder {
 	font-size: 1rem;
 	text-transform: normal;
 	font-style: italic;
 	color: var(--text-color);
 }
 
-.sib-form .ui5con-newsletter__checkbox {
+.sib-form .newsletter__checkbox {
 	display: flex;
 	cursor: pointer;
 	font-weight: bold;
@@ -161,7 +161,7 @@
 
 }
 
-.sib-form .ui5con-newsletter__checkbox input {
+.sib-form .newsletter__checkbox input {
 	left: 4px;
 	top: 7px;
 	opacity: 0;
@@ -169,7 +169,7 @@
 	position: absolute;
 }
 
-.sib-form .ui5con-newsletter__checkmark {
+.sib-form .newsletter__checkmark {
 	top: 0;
 	left: 0;
 	width: 1.25rem;
@@ -181,29 +181,29 @@
 	border: 1px solid var(--brand-color-alt);
 }
 
-.ui5con-newsletter__checkbox input:checked ~ .ui5con-newsletter__checkmark {
+.newsletter__checkbox input:checked ~ .newsletter__checkmark {
 	background: var(--background-color);
 }
 
-.ui5con-newsletter__checkbox input:focus ~ .ui5con-newsletter__checkmark {
+.newsletter__checkbox input:focus ~ .newsletter__checkmark {
 	box-shadow: 0 0 0.0625rem 0.125rem var(--brand-color-alt);
 }
 
-.ui5con-newsletter__checkbox input:checked:focus ~ .ui5con-newsletter__checkmark {
+.newsletter__checkbox input:checked:focus ~ .newsletter__checkmark {
 	box-shadow: 0 0 0.0625rem 0.125rem var(--brand-color-alt);
 }
 
-.ui5con-newsletter__checkmark:after {
+.newsletter__checkmark:after {
 	content: "";
 	display: none;
 	position: absolute;
 }
 
-.ui5con-newsletter__checkbox input:checked ~ .ui5con-newsletter__checkmark:after {
+.newsletter__checkbox input:checked ~ .newsletter__checkmark:after {
 	display: block;
 }
 
-.ui5con-newsletter__checkbox .ui5con-newsletter__checkmark:after {
+.newsletter__checkbox .newsletter__checkmark:after {
 	left: 0.45rem;
 	top: 0.25rem;
 	width: 0.375rem;
@@ -215,43 +215,43 @@
 	transform: rotate(45deg);
 }
 
-.ui5con-newsletter__checkbox [data-required] {
+.newsletter__checkbox [data-required] {
 	color: var(--brand-color-alt);
 }
 
-p.ui5con-newsletter__unsubscribe {
+p.newsletter__unsubscribe {
 	margin: 1rem 0;
 	font-size: 0.875rem;
 	color: var(--text-color);
 }
 
-.ui5con-newsletter__sendinblue {
+.newsletter__sendinblue {
 	gap: 1rem;
 	display: flex;
 	align-items: center;
 }
 
-.ui5con-newsletter__sendinblue div {
+.newsletter__sendinblue div {
 	display: flex;
 }
 
-.ui5con-newsletter__sendinblue p {
+.newsletter__sendinblue p {
 	font-size: 0.875rem;
 	line-height: 1.2rem;
 	color: var(--text-color);
 	margin: 1rem 0;
 }
 
-.ui5con-newsletter__sendinblue a {
+.newsletter__sendinblue a {
 	color: var(--brand-color-alt);
 	font-size: 0.875rem;
 }
 
-.ui5con-newsletter_subscribe-btn-block {
+.newsletter_subscribe-btn-block {
 	text-align: center;
 }
 
-.ui5con-newsletter__subscribe-btn {
+.newsletter__subscribe-btn {
 	z-index: 1;
 	display: inline-block;
 	border-radius: 5px;
@@ -267,43 +267,43 @@ p.ui5con-newsletter__unsubscribe {
 	color: var(--text-color);
 }
 
-.ui5con-newsletter__subscribe-btn:is(:hover, :focus) {
+.newsletter__subscribe-btn:is(:hover, :focus) {
 	text-decoration: none;
 	background: var(--btn-bg-color);
 	color: var(--text-color-contrast);
 }
 
-.ui5con-newsletter__subscribe-btn:focus {
+.newsletter__subscribe-btn:focus {
 	text-decoration: none;
 	background: var(--btn-bg-color);
 	color: var(--text-color-contrast);
 }
 
-.ui5con-newsletter__subscribe-btn:is(:focus-within) {
+.newsletter__subscribe-btn:is(:focus-within) {
 	outline: 2px solid var(--text-color-contrast);
 	outline-offset: -4px;
 }
 
 @media screen and (max-width: 900px) {
-	.ui5con-newsletter__modal {
+	.newsletter__modal {
 		padding: 1rem;
 	}
 }
 
 @media screen and (max-width: 500px) {
-	.ui5con-newsletter__form legend {
+	.newsletter__form legend {
 		font-size: 7vw;
 	}
 }
 
 /* ---------------------------- Dark Mode ----------------------------  */
 @media (prefers-color-scheme: dark) {
-	.ui5con-newsletter__modal-backdrop {
+	.newsletter__modal-backdrop {
 		background-color: rgba(50, 50, 50, .7);
 	}
 
-	.ui5con-newsletter__subscribe-btn,
-	.ui5con-newsletter__subscribe-btn:is(:hover, :focus) {
+	.newsletter__subscribe-btn,
+	.newsletter__subscribe-btn:is(:hover, :focus) {
 		color: var(--text-color);
 	}
 }
@@ -311,8 +311,8 @@ p.ui5con-newsletter__unsubscribe {
  * ====================================  Successful subscription page ============================
  */
 
-.subscription-confirmation-page .ui5con-content-header-container,
-.subscription-confirmation-page .ui5con-content-container {
+.subscription-confirmation-page .content-header-container,
+.subscription-confirmation-page .content-container {
 	text-align: center;
 }
 
@@ -320,10 +320,10 @@ p.ui5con-newsletter__unsubscribe {
 	min-height: calc(100vh - 150px);
 }
 
-.confirmation-message .ui5con-date {
+.confirmation-message .date {
 	margin: auto;
 }
 
-.ui5con--sticky-footer {
+.-sticky-footer {
 	height: 100px;
 }

@@ -1,6 +1,6 @@
 /* ------------------------- Sponsors Section -------------------------  */
 
-.ui5con-sponsors-logos {
+.sponsors-logos {
 	display: flex;
 	gap: 4rem;
 	flex-direction: row;
@@ -13,11 +13,11 @@
 	padding: 0;
 }
 
-.ui5con-sponsors-logos a {
+.sponsors-logos a {
 	display: block;
 }
 
-.ui5con-sponsors-logos svg {
+.sponsors-logos svg {
 	width: 12rem;
 	fill: var(--logo-color);
 	color: var(--logo-color);
@@ -27,13 +27,13 @@
 
 /* ------------------------- Sponsors Page -------------------------  */
 
-.ui5con-sponsors-list {
+.sponsors-list {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
 
-.ui5con-sponsors-list > li {
+.sponsors-list > li {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -42,11 +42,11 @@
 	border-bottom: 4px solid var(--background-color-alternate);
 }
 
-.ui5con-sponsors-list li:last-child {
+.sponsors-list li:last-child {
 	border-bottom: none;
 }
 
-.ui5con-sponsors-list li div:first-child {
+.sponsors-list li div:first-child {
 	gap: 1.5rem;
 	display: flex;
 	flex-direction: column;
@@ -54,48 +54,48 @@
 	flex: 1 0 auto;
 }
 
-.ui5con-sponsors-logo {
+.sponsors-logo {
 	display: block;
 }
 
-.ui5con-sponsors-logo svg {
+.sponsors-logo svg {
 	width: 15rem;
 	height: auto;
 }
 
-.ui5con-sponsors-badge {
+.sponsors-badge {
 	display: inline-block;
 	border-radius: 4px;
 	padding: .1rem .5rem;
 	margin-block-end: .3rem;
 }
 
-.ui5con-sponsors-badge.diamond {
+.sponsors-badge.diamond {
 	background: linear-gradient(to top, #9ac5db, #b8d8e7);
 }
 
-.ui5con-sponsors-badge.platinum {
+.sponsors-badge.platinum {
 	background: linear-gradient(to bottom, #E5E4E2, #aab9c4);
 }
 
-.ui5con-sponsors-badge.gold {
+.sponsors-badge.gold {
 	background-color: gold;
 }
 
-.ui5con-sponsors-badge.silver {
+.sponsors-badge.silver {
 	background-color: #c0c0c0;
 }
 
-.ui5con-sponsors-socials {
+.sponsors-socials {
 	list-style-type: none;
 	padding: 0;
 }
 
-.ui5con-sponsors-socials li {
+.sponsors-socials li {
 	display: inline-block;
 }
 
-.ui5con-sponsors-socials .icon {
+.sponsors-socials .icon {
 	width: 1.4rem;
 	height: 1.4rem;
 	display: inline-block;
@@ -105,17 +105,17 @@
 }
 
 @media only screen and (min-width: 800px) {
-	.ui5con-sponsors-list > li {
+	.sponsors-list > li {
 		flex-direction: row;
 	}
 
-	.ui5con-sponsors-list li div:first-child {
+	.sponsors-list li div:first-child {
 		align-items: center;
 		margin-block-end: 2rem;
 		flex: 0 0 15rem;
 	}
 
-	.ui5con-sponsors-logo {
+	.sponsors-logo {
 		margin-block-start: 2rem;
 	}
 }
@@ -132,10 +132,10 @@ svg.brandeis text {
 
 @media (prefers-color-scheme: dark) {
 
-	.ui5con-sponsors-badge.diamond,
-	.ui5con-sponsors-badge.platinum,
-	.ui5con-sponsors-badge.gold,
-	.ui5con-sponsors-badge.silver {
+	.sponsors-badge.diamond,
+	.sponsors-badge.platinum,
+	.sponsors-badge.gold,
+	.sponsors-badge.silver {
 		color: var(--btn-bg-color);
 	}
 

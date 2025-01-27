@@ -1,8 +1,8 @@
 'use strict';
 Vue.component("footer-section", {
-  template:`<div class="ui5con-wrap">
+  template:`<div class="wrap">
 
-      <div class="ui5con-footer-container">
+      <div class="footer-container">
           <div>
               <svg class="sap-logo" aria-hidden="true" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 743.367 368.439">
                   <path d="M0 367.887h375.32L743.367 0H0v367.887"></path>
@@ -10,7 +10,7 @@ Vue.component("footer-section", {
               </svg>
           </div>
 
-          <div class="ui5con-links-container">
+          <div class="links-container">
               <a href="https://www.sap.com/impressum" rel="noopener noreferrer" target="_blank"
                   hreflang="en">Legal Disclaimer</a>
               <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer" target="_blank"

@@ -39,16 +39,16 @@
 </head>
 
 <body>
-	<nav class="ui5con-nav" aria-label="Main navigation" id="nav">
+	<nav class="nav" aria-label="Main navigation" id="nav">
 		<nav-section v-if="!showMobileNav"></nav-section>
 		<nav-section-mobile v-else></nav-section-mobile>
 	</nav>
 
 	<main id="main">
 		<section>
-			<div class="ui5con-wrap">
-				<div class="ui5con-box">
-					<h2 class="ui5con-section-heading">
+			<div class="wrap">
+				<div class="box">
+					<h2 class="section-heading">
 						<span aria-hidden="true">&#8594;</span>
 						<span>About UI5con</span>
 					</h2>
@@ -64,14 +64,14 @@
 
 					<h3>Meet the team</h3>
 
-					<ul class="ui5con-people-list ui5con-people-list--team" role="list">
-						<li role="listitem" class="ui5con-people-list-item" v-for="member in team" :key="member.name">
-						  <figure class="ui5con-people-member">
+					<ul class="people-list people-list--team" role="list">
+						<li role="listitem" class="people-list-item" v-for="member in team" :key="member.name">
+						  <figure class="people-member">
 
 							<img :src="member.image" :alt="`Portrait of ${member.name}`">
 
 							<figcaption>
-								<p class="ui5con-people-name">{{member.name}}</p>
+								<p class="people-name">{{member.name}}</p>
 								<small>{{member.location}}</small>
 							</figcaption>
 						</figure>
