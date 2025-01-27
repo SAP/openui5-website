@@ -1276,7 +1276,7 @@ dd {
 	background: var(--background-color-alternate);
 	padding: 2rem;
 	border-radius: 1rem;
-	margin: 1rem 1rem 0;
+	margin: 1rem 1rem 2rem;
 }
 
 .quote blockquote::before {
@@ -1293,7 +1293,7 @@ dd {
 	font-size: var(--type-0);
 	font-weight: 500;
 	font-style: italic;
-  quotes: "“" "”" "‘" "’";
+	quotes: "“" "”" "‘" "’";
 }
 
 .quote figcaption {
