@@ -226,7 +226,7 @@ var main = new Vue({
       {
         name: 'Tillman Swinke',
         location: 'Tech Setup',
-        image: 'images/team/tillmann-swinke.jpg'
+        image: 'images/team/tillman-swinke.jpg'
       },
       {
         name: 'Michael Zadikowitsch',
