@@ -224,7 +224,7 @@ var main = new Vue({
         image: 'images/team/alex-rauh.jpg'
       },
       {
-        name: 'Tillmann Swinke',
+        name: 'Tillman Swinke',
         location: 'Tech Setup',
         image: 'images/team/tillmann-swinke.jpg'
       },
