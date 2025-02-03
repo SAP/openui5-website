@@ -1,8 +1,8 @@
 ---
 name: Marco Beier
-company: SALT Solutions AG
+company: Accenture
 photo: ./marco-beier.jpg
-twitter: Wridgeu
 linkedin: dev-marco-beier
 github: wridgeu
+bluesky: wridgeu
 ---
