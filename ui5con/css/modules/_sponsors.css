@@ -135,6 +135,10 @@ svg.cbs {
 	color: #000;
 }
 
+svg.js-soft {
+	color: #183248;
+}
+
 @media (prefers-color-scheme: dark) {
 
 	.sponsors-badge.diamond,
@@ -154,5 +158,13 @@ svg.cbs {
 
 	svg.cbs {
 		color: #fff;
+	}
+
+	svg.js-soft {
+		color: #FFB174;
+
+		path:nth-child(2) {
+			fill: #fff;
+		}
 	}
 }
