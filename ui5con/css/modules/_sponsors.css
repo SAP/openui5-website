@@ -139,6 +139,11 @@ svg.js-soft {
 	color: #183248;
 }
 
+svg.uniorg {
+	color: #11232d;
+	max-width: 85%;
+}
+
 @media (prefers-color-scheme: dark) {
 
 	.sponsors-badge.diamond,
@@ -166,5 +171,9 @@ svg.js-soft {
 		path:nth-child(2) {
 			fill: #fff;
 		}
+	}
+
+	svg.uniorg {
+		color: #fff;
 	}
 }
