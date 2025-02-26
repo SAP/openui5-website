@@ -21,7 +21,24 @@
 	inline-size: 100%;
 	aspect-ratio: 1/1.25;
 	object-fit: cover;
+	display: block;
+	margin-block-end: .5rem;
 }
+
+.people-member .placeholder {
+	max-width: 100%;
+	inline-size: 100%;
+	aspect-ratio: 1/1.25;
+	background: transparent url(../../images/committee/placeholder.svg) no-repeat 50% 50%;
+	background-size: 60%;
+}
+
+@media (prefers-color-scheme: dark) {
+	.people-member .placeholder {
+		filter: invert(.8);
+	}
+}
+
 
 .people-name {
 	font-weight: 600;

@@ -44,7 +44,7 @@
 		<nav-section-mobile v-else></nav-section-mobile>
 	</nav>
 
-	<main>
+	<main id="main">
 		<article>
 			<div class="wrap">
 				<h2 class="section-heading">
@@ -52,9 +52,9 @@
 					<span>Speak at UI5con</span>
 				</h2>
 
-				<p>Submit your session proposals and share your expertise with the vibrant UI5 community. 
+				<p>Submit your session proposals and share your expertise with the vibrant UI5 community.
 					This is your chance to inspire, educate, and collaborate with like-minded professionals from around the world.</p>
-				
+
 				<p><strong>Call for Proposals closes on 10. March 2025, at 23:59 UTC.</strong></p>
 
 				<p class="speaker-cta">
@@ -63,12 +63,12 @@
 							<use xlink:href="images/icons/sprite.svg#pen"></use>
 						</svg>Propose your topic</a>
 					</p>
-					
+
 
 				<h3>Inspire, Educate, and Grow with the UI5 Community</h3>
 
-				<p>Speaking at UI5con is your chance for personal and professional growth. Refine your communication skills, expand your network, 
-					and establish yourself as a thought leader in the UI5 community. We value unique ideas, diverse perspectives, and innovative approaches that 
+				<p>Speaking at UI5con is your chance for personal and professional growth. Refine your communication skills, expand your network,
+					and establish yourself as a thought leader in the UI5 community. We value unique ideas, diverse perspectives, and innovative approaches that
 					can contribute to the advancement of the entire UI5 ecosystem.</p>
 
 				<p>We're seeking proposals on a wide range of topics, including but not limited to:</p>
@@ -93,8 +93,8 @@
 					<li><i>*NEW*</i> Pitch Your Idea (5 minutes): A brand new format for 2025! Spark collaboration by pitching your innovative UI5 idea.</li>
 				  </ul>
 
-				<p>All sessions will be conducted in English and held in-person at the conference venue in St.Leon-Rot. 
-					Please note that we are unable to offer speaker compensation or travel expense reimbursement.</p>					
+				<p>All sessions will be conducted in English and held in-person at the conference venue in St.Leon-Rot.
+					Please note that we are unable to offer speaker compensation or travel expense reimbursement.</p>
 
 				<h4>Proposal Requirements:</h4>
 
@@ -119,7 +119,7 @@
 					<li>Tailor your content to fit within the allocated time, ensuring a focused and impactful presentation.</li>
 					<li>Don’t assume that your company’s name buys you credibility. If you’re talking about something important
 						that you have specific knowledge of because of what your company does, spell that out in the description.</li>
-					<li>Avoid marketing and sales language in your proposal.</li>	
+					<li>Avoid marketing and sales language in your proposal.</li>
 					<li>We value diversity and consider it seriously when reviewing proposals to ensure a broad range of speakers.</li>
 				</ul>
 
@@ -131,6 +131,35 @@
 
 			</div>
 		</article>
+
+		<section class="alternate">
+			<div class="wrap" id="jury">
+
+				<h2 class="section-heading">
+					<span aria-hidden="true">↘</span>
+					<span>Jury</span>
+				</h2>
+
+				<ul class="people-list people-list--team" role="list">
+					<li role="listitem" class="people-list-item" v-for="member in committee" :key="member.name">
+						<figure class="people-member">
+
+							<img v-if="member.image" :src="member.image" :alt="`Portrait of ${member.name}`">
+							<div v-else class="placeholder" aria-hidden="true"></div>
+
+							<figcaption>
+								<p class="people-name">{{member.name}}</p>
+								<small>{{member.role}}</small>
+							</figcaption>
+						</figure>
+
+					</li>
+				</ul>
+
+
+			</div>
+		</section>
+
 	</main>
 
 	<footer id="footer">

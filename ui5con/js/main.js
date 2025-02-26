@@ -233,6 +233,53 @@ var main = new Vue({
         location: 'Tech Setup',
         image: 'images/team/michael-zadikowitsch.jpg'
       },
+    ],
+    committee: [
+      {
+        name: "Klaudia Laag",
+        role: "UNIORG",
+        image: "images/committee/klaudia-laag.jpg",
+      },
+      {
+        name: "Marco Beier",
+        role: "Accenture",
+        image: "images/committee/marco-beier.jpg",
+      },
+      {
+        name: "Catrin Kupfer",
+        role: "DZ Bank AG",
+        image: "images/committee/catrin-kupfer.jpg",
+      },
+      {
+        name: "Stefan Beck",
+        role: "SAP",
+        image: "images/committee/stefan-beck.jpg",
+      },
+      {
+        name: "Simon Coen",
+        role: "js-soft AG",
+        image: "images/committee/simon-coen.jpg",
+      },
+      {
+        name: "Stanislava Baltova",
+        role: "SAP",
+        image: "images/committee/stanislava-baltova.jpg",
+      },
+      {
+        name: "Alisdair Templeton",
+        role: "",
+        image: "images/committee/alisdair-templeton.jpg",
+      },
+      {
+        name: "Ilia Klopkov",
+        role: "SAP",
+        image: "images/committee/ilia-klopkov.jpg",
+      },
+      {
+        name: "Jacek Woźniczak",
+        role: "",
+        image: "",
+      },
     ]
    }
   }
