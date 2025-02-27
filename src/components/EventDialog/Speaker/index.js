@@ -74,6 +74,17 @@ const Speaker = (props) => {
         {
           mastodon
           ? (
+            mastodon.startsWith('https:') ? (
+              <a
+              href={`${mastodon}`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_mastodon,
+              )}
+            ></a>              
+            )
+          ) : (
             <a
               href={`https://mastodon.online/@${mastodon}`}
               target="_blank"
