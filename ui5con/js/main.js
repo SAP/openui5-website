@@ -277,7 +277,7 @@ var main = new Vue({
       },
       {
         name: "Jacek Woźniczak",
-        role: "",
+        role: "Nabisoft",
         image: "images/committee/jacek-woźniczak.jpg",
       },
     ]
