@@ -88,7 +88,17 @@ const Speaker = (props) => {
         {
           bluesky
           ? (
-            <a
+            bluesky.include(".") ? (
+              <a
+              href={`https://bsky.app/profile/${bluesky}`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_bluesky,
+              )}
+            ></a>
+            ) : (
+              <a
               href={`https://bsky.app/profile/${bluesky}.bsky.social`}
               target="_blank"
               className={classnames(
@@ -96,6 +106,7 @@ const Speaker = (props) => {
                 styles.view_bluesky,
               )}
             ></a>
+            )
           )
           : null
         }             
