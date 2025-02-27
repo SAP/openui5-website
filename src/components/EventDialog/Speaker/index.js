@@ -88,6 +88,16 @@ const Speaker = (props) => {
         {
           bluesky
           ? (
+            if bluesky.include('.') {
+            <a
+              href={`https://bsky.app/profile/${bluesky}`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_bluesky,
+              )}
+            ></a>
+      } else {
             <a
               href={`https://bsky.app/profile/${bluesky}.bsky.social`}
               target="_blank"
@@ -96,6 +106,7 @@ const Speaker = (props) => {
                 styles.view_bluesky,
               )}
             ></a>
+          }
           )
           : null
         }             
