@@ -77,7 +77,7 @@ const Speaker = (props) => {
             mastodon.split('@').length > 1 
             ? (
               <a
-              href={`https://${mastodon.split('@')[1]}/@${mastodon.split('@')[0]}`}
+              href={`https://${mastodon.split('@').filter(part => part !== '')[1]}/@${mastodon.split('@').filter(part => part !== '')[0]}`}
               target="_blank"
               className={classnames(
                 styles.Icon,
