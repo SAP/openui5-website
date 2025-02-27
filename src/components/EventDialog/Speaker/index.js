@@ -88,7 +88,7 @@ const Speaker = (props) => {
         {
           bluesky
           ? (
-            bluesky.include(".") ? (
+            bluesky.includes(".") ? (
               <a
               href={`https://bsky.app/profile/${bluesky}`}
               target="_blank"
