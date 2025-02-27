@@ -278,7 +278,7 @@ var main = new Vue({
       {
         name: "Jacek Woźniczak",
         role: "",
-        image: "",
+        image: "images/committee/jacek-woźniczak.jpg",
       },
     ]
    }
