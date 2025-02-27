@@ -74,9 +74,9 @@ const Speaker = (props) => {
         {
           mastodon
           ? (
-            mastodon.startsWith('https:') ? (
+            mastodon.split('@').length > 1 ? (
               <a
-              href={`${mastodon}`}
+              href={`https://${mastodon.split('@')[1]}/@${mastodon.split('@')[0]}`}
               target="_blank"
               className={classnames(
                 styles.Icon,
