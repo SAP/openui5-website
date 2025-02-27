@@ -74,7 +74,18 @@ const Speaker = (props) => {
         {
           mastodon
           ? (
-            <a
+            mastodon.split('@').length > 1 
+            ? (
+              <a
+              href={`https://${mastodon.split('@')[1]}/@${mastodon.split('@')[0]}`}
+              target="_blank"
+              className={classnames(
+                styles.Icon,
+                styles.view_mastodon,
+              )}
+              ></a>              
+            ) : (
+              <a
               href={`https://mastodon.online/@${mastodon}`}
               target="_blank"
               className={classnames(
@@ -82,13 +93,15 @@ const Speaker = (props) => {
                 styles.view_mastodon,
               )}
             ></a>
+            )
           )
           : null
         }  
         {
           bluesky
           ? (
-            bluesky.includes(".") ? (
+            bluesky.includes(".") 
+            ? (
               <a
               href={`https://bsky.app/profile/${bluesky}`}
               target="_blank"
