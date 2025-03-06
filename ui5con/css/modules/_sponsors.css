@@ -146,6 +146,11 @@ svg.uniorg {
 
 svg.advades {
 	color: #00bf1c;
+	max-width: 85%;
+}
+
+svg.revtrac {
+	max-width: 85%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -182,6 +187,7 @@ svg.advades {
 	}
 
 	svg.advades {
-		color: #fff;
+		color: #00bf1c;
 	}
+
 }
