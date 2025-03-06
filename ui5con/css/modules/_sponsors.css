@@ -144,6 +144,10 @@ svg.uniorg {
 	max-width: 85%;
 }
 
+svg.advades {
+	color: #00bf1c;
+}
+
 @media (prefers-color-scheme: dark) {
 
 	.sponsors-badge.diamond,
@@ -174,6 +178,10 @@ svg.uniorg {
 	}
 
 	svg.uniorg {
+		color: #fff;
+	}
+
+	svg.advades {
 		color: #fff;
 	}
 }
