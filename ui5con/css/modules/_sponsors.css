@@ -153,6 +153,10 @@ svg.revtrac {
 	max-width: 85%;
 }
 
+svg.neptune {
+	color: #38102A;
+}
+
 @media (prefers-color-scheme: dark) {
 
 	.sponsors-badge.diamond,
@@ -188,6 +192,10 @@ svg.revtrac {
 
 	svg.advades {
 		color: #00bf1c;
+	}
+
+	svg.neptune {
+		color: #fff;
 	}
 
 }
