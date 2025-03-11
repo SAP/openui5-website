@@ -9,7 +9,7 @@ speakers:
 - Matthias Oßwald
 - Florian Vogt
 - Martin Häuser
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/uIG7bSo8wpg
 ---
 In this episode, we will explore two innovative approaches to streamline and enhance the development and testing of SAPUI5/OpenUI5 applications.
 First, Martin Häuser will introduce Joule, SAP's AI assistant, and demonstrate its capabilities in supporting SAPUI5 code writing. He will showcase Joule's available commands, discuss the concepts and ideas behind it, and how it can be leveraged to implement app features efficiently. Additionally, Martin will demonstrate Joule's latest SAPUI5 capability: AI-driven migration of existing SAPUI5 applications to TypeScript, simplifying the transition process for developers.
