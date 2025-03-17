@@ -9,8 +9,10 @@
 	align-items: center;
 	margin-block-end: 2rem;
 	list-style-type: none;
-	margin: 0;
+	margin: 5rem 0 2rem;
 	padding: 0;
+	filter: grayscale(1);
+	opacity: .85;
 }
 
 .sponsors-logos a {
@@ -158,6 +160,11 @@ svg.neptune {
 }
 
 @media (prefers-color-scheme: dark) {
+
+	.sponsors-logos {
+		filter: none;
+		opacity: 1;
+	}
 
 	.sponsors-badge.diamond,
 	.sponsors-badge.platinum,
