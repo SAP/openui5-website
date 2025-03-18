@@ -159,6 +159,10 @@ svg.neptune {
 	color: #38102A;
 }
 
+svg.blackwyse {
+	color: #05102D;
+}
+
 @media (prefers-color-scheme: dark) {
 
 	.sponsors-logos {
@@ -202,6 +206,10 @@ svg.neptune {
 	}
 
 	svg.neptune {
+		color: #fff;
+	}
+
+	svg.blackwyse {
 		color: #fff;
 	}
 
