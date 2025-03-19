@@ -534,9 +534,12 @@ a:is(.active) {
 	color: var(--brand-color-contrast);
 }
 
-
 .btn-lite:is(:hover, :focus) {
 	background-color: var(--brand-color-contrast);
+}
+
+.btn:has( + .btn) {
+	margin-block-end: 1rem;
 }
 
 .btn .icon {
