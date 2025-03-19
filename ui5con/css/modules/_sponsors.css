@@ -11,12 +11,18 @@
 	list-style-type: none;
 	margin: 5rem 0 2rem;
 	padding: 0;
-	filter: grayscale(1);
-	opacity: .85;
 }
 
 .sponsors-logos a {
 	display: block;
+	filter: grayscale(1);
+	opacity: .85;
+}
+
+.sponsors-logos a:is(:hover, :focus) {
+	filter: none;
+	opacity: 1;
+	transition: all .2s ease-in-out;
 }
 
 .sponsors-logos svg {
