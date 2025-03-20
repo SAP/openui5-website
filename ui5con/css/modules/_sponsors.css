@@ -169,6 +169,11 @@ svg.blackwyse {
 	color: #05102D;
 }
 
+svg.fiftyhertz {
+	max-width: 90%;
+	color: #3c4c52;
+}
+
 @media (prefers-color-scheme: dark) {
 
 	.sponsors-logos {
@@ -216,6 +221,10 @@ svg.blackwyse {
 	}
 
 	svg.blackwyse {
+		color: #fff;
+	}
+
+	svg.fiftyhertz {
 		color: #fff;
 	}
 
