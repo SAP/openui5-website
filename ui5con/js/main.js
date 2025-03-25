@@ -144,6 +144,11 @@ var main = new Vue({
         image: 'images/team/fabian-tempel.jpg'
       },
       {
+        name: 'Teresa Vogelbacher',
+        location: 'Event Management',
+        image: 'images/team/teresa-vogelbacher.jpg'
+      },
+      {
         name: 'Inna Atanasova',
         location: 'Website',
         image: 'images/team/Inna.jpg'
