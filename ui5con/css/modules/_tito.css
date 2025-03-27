@@ -16,10 +16,13 @@
 	border-width: 0;
 	background: var(--background-color-alternate);
 	padding-inline: 2rem;
+	padding-block-end: .5rem;
+	max-width: 100%;
 }
 
 .tickets .tito-widget .tito-widget-form .tito-release {
-	border-color: transparent;
+	border-color: var(--background-color);
+	border-width: 4px;
 	padding-block-start: 1rem;
 	padding-block-end: 1rem;
 }
@@ -33,6 +36,7 @@
 .tickets .tito-widget .tito-widget-form .tito-release .tito-release-description .tito-release-description--description p {
 	color: var(--text-color);
 	font-size: 1rem;
+	max-width: 100%;
 }
 
 .tickets .tito-price {
