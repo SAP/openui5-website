@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Ludwig Stockbauer-Muhr
 - Florian Vogt
-- Robin von het Hof
+- Robin van het Hof
 url: https://sap-se.zoom.com/j/94833714827
 ---
 This episode focuses on tools and techniques that can make your OpenUI5 development journey smoother and more efficient.  
