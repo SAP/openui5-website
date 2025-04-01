@@ -1,7 +1,7 @@
 ---
-name: Robin von het Hof
+name: Robin van het Hof
 company: Qualiture
-photo: ./robin-von-het-hof.jepg
+photo: ./robin-van-het-hof.jpeg
 linkedin: robinvanhethof
 github: qualiture
 ---
