@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>UI5con Germany in July 2025 - Agenda</title>
+	<meta name="description"
+		content="If you want to learn more about UI5, you can't miss UI5con 2025. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. Frontend, Framework, SAPUI5, OpenUI5, UI5con, SAP" />
+	<meta name="keywords"
+		content="webstandards, web standards, html, css, JavaScript, Accessibility, Barrierefreiheit, WCAG, OpenUI5, DevOps, SAPUI5, UI5con, UI5 Web Components, Web Components, Webcomponents, Open Source" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="SAP SE" />
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:url" content="https://openui5.org/ui5con/" />
+	<meta property="twitter:title" content="UI5con Germany in July 8th 2025" />
+	<meta property="twitter:description"
+		content="If you want to learn more about UI5, you can't miss UI5con 2025. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 8th 2025" />
+	<meta property="twitter:image" content="https://openui5.org/ui5con/images/share.png" />
+	<meta property="og:title" content="UI5con Germany in July 8th 2025" />
+	<meta property="og:description"
+		content="If you want to learn more about UI5, you can't miss UI5con 2025. A day of inspiration, learning, and networking with like-minded people. Inspiring talks. Endless learning. July 8th" />
+	<meta property="og:image" content="https://openui5.org/ui5con/images/share.png" />
+	<meta name="theme-color" content="#e76500">
+
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+	<link rel="icon" sizes="any" href="images/android-chrome-192x192.png" />
+
+	<link rel="preconnect" href="https://rsms.me/">
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+	<link rel="stylesheet" href="./css/common.css" />
+	<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+	<link rel="stylesheet" href="./css/modules.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+
+<body>
+	<nav class="nav" aria-label="Main navigation" id="nav">
+		<nav-section v-if="!showMobileNav"></nav-section>
+		<nav-section-mobile v-else></nav-section-mobile>
+	</nav>
+
+	<main id="main">
+		<section>
+			<div class="wrap">
+				<div class="box">
+					<h2 class="section-heading">
+						<span aria-hidden="true">&#8594;</span>
+						<span>Agenda</span>
+					</h2>
+
+					<div class="agenda-sort">
+						<div class="agenda-filter-container">
+							<fieldset class="agenda-filter">
+								<legend class="sr-only">Show all elements of the agenda</legend>
+								<div class="agenda-filter__element"><input type="radio" id="all" name="filter" value="all" checked="checked" data-enpassusermodified="yes"> <label for="all" class="agenda-filter__label">All</label></div>
+							</fieldset>
+							<fieldset class="agenda-filter">
+								<legend class="sr-only">Filter by room</legend>
+								<div class="agenda-filter__element"><input type="radio" id="audimax" name="filter" value="audimax" data-enpassusermodified="yes"> <label for="audimax" class="agenda-filter__label">Audimax</label></div>
+								<div class="agenda-filter__element"><input type="radio" id="w1" name="filter" value="w1" data-enpassusermodified="yes"> <label for="w1" class="agenda-filter__label">Room W1/W2</label></div>
+								<div class="agenda-filter__element"><input type="radio" id="w3" name="filter" value="w3" data-enpassusermodified="yes"> <label for="w3" class="agenda-filter__label">Room W3</label></div>
+							</fieldset>
+							<fieldset class="agenda-filter">
+								<legend class="sr-only">
+									Filter by session type
+								</legend>
+								<div class="agenda-filter__element"><input type="radio" id="talks" name="filter" value="talks" data-enpassusermodified="yes"> <label for="talks" class="agenda-filter__label">Talks</label></div>
+								<div class="agenda-filter__element"><input type="radio" id="workshops" name="filter" value="workshops" data-enpassusermodified="yes"> <label for="workshops" class="agenda-filter__label">Workshops</label></div>
+							</fieldset>
+							<fieldset class="agenda-filter">
+								<legend class="sr-only">Filter by type</legend>
+								<div class="agenda-filter__element"><input type="radio" id="rookie" name="filter" value="audimax" data-enpassusermodified="yes"> <label for="rookie" class="agenda-filter__label">Rookie</label></div>
+								<div class="agenda-filter__element"><input type="radio" id="beginner" name="filter" value="w1" data-enpassusermodified="yes"> <label for="beginner" class="agenda-filter__label">Beginner</label></div>
+								<div class="agenda-filter__element"><input type="radio" id="expert" name="filter" value="w3" data-enpassusermodified="yes"> <label for="expert" class="agenda-filter__label">Expert</label></div>
+							</fieldset>
+						</div>
+					</div>
+
+					<ol class="agenda">
+						<li class="agenda-slot">
+							<div class="agenda-slot-header">
+								<div>
+									<p class="agenda-slot-details">
+										<span class="agenda-time">
+											7:30 - 8:30
+										</span>
+										<span class="agenda-room">
+											ROT03 front door
+										</span>
+									</p>
+									<h2 class="agenda-slot-title">Community Run</h2>
+								</div>
+
+							</div>
+							<p class="agenda-slot-description">As conferences usually involve a lot of sitting and standing inside it is a good idea to move a bit outside with sun and fresh air before a long day inside.
+								<br>Get all the details here: <a href="https://community.sap.com/t5/coffee-corner-discussions/recap-ui5con-abapconf-2024-community-run/td-p/13683495" rel="external nofollow" target="_blank">SAP Community</a>
+							</p>
+						</li>
+						<li class="agenda-slot">
+
+							<div class="agenda-slot-header">
+								<div>
+									<p class="agenda-slot-details">
+										<span class="agenda-time">
+											9:00 - 9:10
+										</span>
+										<span class="agenda-room">
+											Audimax
+										</span>
+
+									</p>
+									<h2 class="agenda-slot-title">Welcome &amp; Opening</h2>
+								</div>
+								<div class="agenda-slot-speakers-images">
+									<button id="btn-Frederic-Berg-id-1713193198646-617"><img src="images/speakers/ecc9ddc593bd0a46cc0d65a529a3ba210920ab1f.jpg" alt="Portrait of Frederic Berg"></button></div>
+
+							</div>
+							<p class="agenda-slot-speakers">
+								<span> Frederic Berg (<span>SAP</span>)</span>
+							</p>
+							<p class="agenda-slot-description">Vice President of UI Technology Development at SAP, kicks off UI5con 2024!</p>
+
+							<ul class="agenda-slot-links">
+								<li class="livestream"><a href="https://github.com/marianfoo/ui5con24-dev-env" target="_blank" hreflang="en" rel="noopener noreferrer" class="agenda-slot-linkitem">Livestream</a></li>
+								<li><a href="https://github.com/marianfoo/ui5con24-dev-env" target="_blank" hreflang="en" rel="noopener noreferrer" class="agenda-slot-linkitem">GitHub</a></li>
+								<li><a href="https://github.com/marianfoo#seamless-integration-crafting-the-perfect-ui5-development-environment" target="_blank" hreflang="en" rel="noopener noreferrer" class="agenda-slot-linkitem">Slides</a></li>
+								<li><a href="https://youtu.be/dYRtAlyE0tc" target="_blank" hreflang="en" rel="noopener noreferrer" class="agenda-slot-linkitem">Recording</a></li>
+							</ul>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer id="footer">
+		<footer-section></footer-section>
+	</footer>
+
+	<script src="./components/nav-section.component.js"></script>
+	<script src="./components/nav-section-mobile.component.js"></script>
+	<script src="./components/footer-section.component.js"></script>
+	<script src="./js/main.js"></script>
+</body>
+
+</html>
