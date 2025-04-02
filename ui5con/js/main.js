@@ -285,8 +285,114 @@ var main = new Vue({
         role: "Nabisoft",
         image: "images/committee/jacek-woźniczak.jpg",
       },
-    ]
+    ],
+    activeSpeakers: null,
+    lastFocussedElementID: '',
    }
+  },
+  methods: {
+    openSpeakerInfoModal(speakers, id) {
+      this.activeSpeakers = speakers;
+      this.$refs.agenda.ariaHidden = true;
+      this.$refs.speakerModal.ariaHidden = false;
+      this.$refs.speakerModal.style.display = "flex";
+      this.lastFocussedElementID = id;
+
+      setTimeout(() => {
+        this.$refs.speakerModal.focus();
+      }, 0);
+    },
+    closeSpeakerInfoModal() {
+      this.activeSpeakers = null;
+      this.$refs.agenda.ariaHidden = false;
+      this.$refs.speakerModal.ariaHidden = true;
+      this.$refs.speakerModal.style.display = "none";
+
+      for (const key in this.$refs) {
+        if (
+          key.startsWith("twitter") ||
+          key.startsWith("github") ||
+          key.startsWith("linkedin") ||
+          key.startsWith("mastodon") ||
+          key.startsWith("bluesky")
+        ) {
+          delete this.$refs[key];
+        }
+      }
+      document.getElementById(this.lastFocussedElementID).focus();
+    },
+    focusTrapModal($event) {
+      let focussableElements = [];
+      focussableElements.push(this.$refs.close);
+
+      for (const key in this.$refs) {
+        if (
+          key.startsWith("twitter") ||
+          key.startsWith("github") ||
+          key.startsWith("linkedin") ||
+          key.startsWith("mastodon") ||
+          key.startsWith("bluesky")
+        ) {
+          const element = this.$refs[key];
+          if (Array.isArray(element)) {
+            focussableElements.push(element[0]);
+          } else {
+            focussableElements.push(element);
+          }
+        }
+      }
+
+      const filteredFocussableElements = focussableElements.filter(
+        (el) => el !== undefined
+      );
+      const activeElementIndex = filteredFocussableElements.indexOf(
+        $event.target
+      );
+
+      if (activeElementIndex != filteredFocussableElements.length - 1) {
+        if ($event.shiftKey) {
+          if (activeElementIndex === 0) {
+            filteredFocussableElements[
+              filteredFocussableElements.length - 1
+            ].focus();
+          } else {
+            filteredFocussableElements[activeElementIndex - 1].focus();
+          }
+        } else {
+          filteredFocussableElements[activeElementIndex + 1].focus();
+        }
+      } else {
+        if ($event.shiftKey) {
+          filteredFocussableElements[activeElementIndex - 1].focus();
+        } else {
+          filteredFocussableElements[0].focus();
+        }
+      }
+    },
+  },
+  filters: {
+    formatLocation: function (value) {
+      if (value) {
+        if (value.includes("audimax")) {
+          return "A";
+        } else if (value.includes("w1") || value.includes("w2")) {
+          return "WS1/2";
+        } else if (value.includes("w3")) {
+          return "WS3"
+        } else if (value.includes("expert")) {
+          return "EC"
+        } else if (value.includes("canteen")) {
+          return "CA"
+        } else {
+          return value;
+        }
+      }
+    },
+    formatLevel: function (value) {
+      if (value) {
+          return "E";
+      }
+    },
   }
 });
 
@@ -294,8 +400,6 @@ var footer = new Vue({
   el: '#footer',
   data() {
     return {
-
     };
   },
 });
-
