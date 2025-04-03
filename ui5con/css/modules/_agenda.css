@@ -16,13 +16,20 @@
 	gap: 2rem;
 	width: 100%;
 	justify-content: space-between;
-	margin-block: 4rem;
+	margin-block: 2rem 2rem;
+	padding-block: 2rem 2rem;
+	background: var(--background-color);
+	position: sticky;
+	top: 2rem;
+	left: 0;
+	z-index: 1;
 }
 
 @media only screen and (min-width: 768px) {
 
 	.agenda-sort {
 		flex-direction: column-reverse;
+		top: 0;
 	}
 
 	.agenda-toggle {
@@ -256,6 +263,7 @@
 	display: flex;
 	gap: 0.75rem;
 	align-items: center;
+	margin-block: 0;
 }
 
 .agenda-slot {
@@ -266,8 +274,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+
 	.agenda-slot {
-		gap: 2rem;
+		gap: 1.5rem;
 		flex-direction: row;
 	}
 }
@@ -281,16 +290,16 @@
 	border-radius: 10rem;
 	background: var(--text-color);
 	color: var(--background-color);
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .agenda-room {
-	font-size: var(--type-0);
+	font-size: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 3.5rem;
-	height: 3.5rem;
+	width: 3rem;
+	height: 3rem;
 	border-radius: 10rem;
 	background: var(--audimax);
 	color: black;
@@ -306,12 +315,13 @@
 }
 
 .agenda-level {
-	font-size: var(--type-0);
+	position: relative;
+	font-size: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 3.5rem;
-	height: 3.5rem;
+	width: 3rem;
+	height: 3rem;
 	border-radius: 10rem;
 	background: var(--rookie);
 	color: black;
@@ -340,6 +350,7 @@
 }
 
 @media only screen and (min-width: 768px) {
+
 	.agenda-slot-speakers-images {
 		grid-template-columns: auto auto;
 	}
@@ -350,31 +361,34 @@
 }
 
 .agenda-slot-speakers-images button {
-	width: 5rem;
-	height: 6rem;
+	width: 8rem;
+	height: 9.5rem;
 	padding: 0;
 	border: none;
 	cursor: pointer;
 	overflow: hidden;
 	background: transparent;
+	transition: all .2 ease-in-out;
 }
 
 .agenda-slot-speakers-images button:is(:hover) img {
-	transform: scale(1.07);
+	transform: scale(1.02);
 }
 
 .agenda-slot-speakers-images button:is(:focus) {
-
+	outline: 2px solid var(--brand-color-alt);
+	outline-offset: 2px;
 }
 
 .agenda-slot-speakers-images button img {
-	width: 5rem;
-	height: 6rem;
+	width: 8rem;
+	height: 9.5rem;
 	object-fit: cover;
 	transition: all .2s ease-in-out;
 }
 
 @media only screen and (min-width: 768px) {
+
 	.agenda-slot-header {
 		gap: 1.4rem;
 		flex-direction: row;
@@ -386,11 +400,12 @@
 	display: flex;
 	gap: 1rem;
 	flex-direction: column;
-	margin-block: 1rem 2rem;
+	margin-block: 1rem;
 	align-items: flex-start;
 }
 
 @media only screen and (min-width: 768px) {
+
 	.agenda-slot-inner-container {
 		gap: 1.4rem;
 		flex-direction: row;
@@ -400,14 +415,13 @@
 .agenda-slot-title {
 	font-size: var(--type-2);
 	line-height: 1.35;
-	margin-block: 0 1.5rem;
+	margin-block: 0 1rem;
 }
 
 .agenda-slot-speakers {
 	margin-block: 0 .5rem;
-	font-size: var(--type-0);
-	font-weight: 600;
-	color: var(--dark-brand-color);
+	font-size: var(--type-1);
+	font-weight: 400;
 }
 
 .agenda-slot-description {
@@ -421,15 +435,14 @@
 	margin: 0;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1rem;
+	gap: 0 1rem;
 	width: 100%;
 }
 
 .agenda-slot-linkitem {
 	display: inline-block;
-	color: var(--brand-color-alt);
 	text-align: center;
-	line-height: 2;
+	line-height: 1.7;
 	cursor: pointer;
 }
 

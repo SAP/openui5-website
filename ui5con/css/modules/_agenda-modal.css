@@ -8,7 +8,13 @@
 	z-index: 99;
 	position: fixed;
 	transition: all 0.3s;
-	background-color: rgba(163, 88, 54, 0.55);
+	background-color: rgba(245, 245, 245, .8);
+}
+
+@media (prefers-color-scheme: dark) {
+	.agenda-modal-backdrop {
+		background-color: rgba(50, 50, 50, .7);
+	}
 }
 
 .agenda-modal-backdrop:focus {
@@ -27,9 +33,10 @@
 	-ms-overflow-style: none;
 	transform: translate(-50%, -50%);
 	background: var(--white);
-	backdrop-filter: blur(2px);
-	border-radius: 1.25rem;
-	border: 0.125rem solid var(--brand-color-alt);
+	border: 0.0625rem solid var(--brand-color-alt);
+	border-top-width: 0.75rem;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+	padding: 1.5rem;
 }
 
 .agenda-modal::-webkit-scrollbar {
@@ -41,37 +48,24 @@
 }
 
 .agenda-modal button {
-	top: 0;
-	left: 100%;
-	display: flex;
-	width: 3rem;
-	cursor: pointer;
-	position: sticky;
-	height: 3rem;
-	background: none;
-	font-size: 1.5rem;
-	min-width: 3rem;
-	max-width: 3rem;
-	font-weight: 400;
-	align-items: center;
-	min-height: 3rem;
-	max-height: 3rem;
-	border-radius: 0.25rem;
-	justify-content: center;
-	transition: all .3s ease;
-	color: var(--brand-color-alt);
+	right: 1.5rem;
 	border: none;
+	top: 1.5rem;
+	cursor: pointer;
+	font-size: 1.5rem;
+	position: absolute;
+	background: transparent;
+	color: var(--brand-color-alt);
+	transition: color .2s ease;
 }
 
-.agenda-modal button:hover {
-	font-weight: 700;
+.agenda-modal button:is(:hover) {
 	color: var(--brand-color);
 }
 
-.agenda-modal button:focus {
-	outline: none;
-	color: var(--brand-color);
-	transform: scale(1.2);
+.agenda-modal button:is(:focus) {
+	border-radius: 0.2rem;
+	outline: 0.0625rem solid var(--brand-color);
 }
 
 .agenda-modal figure {
@@ -87,9 +81,8 @@
 }
 
 .agenda-modal img {
-	border-radius: 1.25rem;
-	width: 6rem;
-	height: 6rem;
+	width: 8rem;
+	height: 9.5rem;
 	object-fit: cover;
 }
 
@@ -100,24 +93,25 @@
 }
 
 .agenda-modal header h3 {
-	color: var(--brand-color-alt);
 	margin-block-end: 0;
+	text-box-trim: trim-both;
+	text-box-edge: cap alphabetic;
 }
 
 .agenda-modal header p {
-	color: var(--brand-color);
 	margin-block: 0;
+	font-weight: 600;
 }
 
 .agenda-modal article p {
-	margin-block-start: .3rem;
+	margin-block-start: .8rem;
  }
 
 .agenda-modal-content-container {
 	gap: 1.5rem;
 	display: flex;
 	flex-direction: column;
-	padding: 0 3rem 1.5rem;
+	padding: 0 0 1.5rem 0;
 	padding-top: 0.375rem;
 }
 
