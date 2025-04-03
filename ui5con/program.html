@@ -100,7 +100,7 @@
 					</div>
 
 					<ol class="agenda">
-						<li class="agenda-slot" v-for="event in proposalLineupJson" :key="event.id" v-cloak>
+						<li class="agenda-slot" :class="{w1: event.location.includes('w1') || event.location.includes('w2'), w3: event.location.includes('w3'), audimax: event.location.includes('audimax')}" v-for="event in proposalLineupJson" :key="event.id" v-cloak>
 							<div class="agenda-slot-header">
 								<div>
 									<p class="agenda-slot-details">
