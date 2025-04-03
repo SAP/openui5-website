@@ -109,7 +109,7 @@
 										</span>
 
 										<span class="agenda-room"
-											:class="{w1: event.location.includes('w1') || event.location.includes('w2'), w3: event.location.includes('w3')}">
+											:class="{w1: event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2'), w3: event.location.toLowerCase().includes('w3')}">
 											{{ event.location | formatLocation }}
 										</span>
 
