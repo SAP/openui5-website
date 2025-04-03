@@ -57,19 +57,19 @@
 						<div class="agenda-filter-container">
 							<fieldset class="agenda-filter">
 								<legend class="sr-only">Show all elements of the agenda</legend>
-								<div class="agenda-filter__element"><input type="radio" id="all" name="filter"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="all" name="filter"
 										value="all" checked="checked" data-enpassusermodified="yes"> <label for="all"
 										class="agenda-filter__label">All</label></div>
 							</fieldset>
 							<fieldset class="agenda-filter">
 								<legend class="sr-only">Filter by room</legend>
-								<div class="agenda-filter__element"><input type="radio" id="audimax" name="filter"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="audimax" name="filter"
 										value="audimax" data-enpassusermodified="yes"> <label for="audimax"
 										class="agenda-filter__label">Audimax</label></div>
-								<div class="agenda-filter__element"><input type="radio" id="w1" name="filter" value="w1"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="w1" name="filter" value="w1"
 										data-enpassusermodified="yes"> <label for="w1" class="agenda-filter__label">Room
 										W1/W2</label></div>
-								<div class="agenda-filter__element"><input type="radio" id="w3" name="filter" value="w3"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="w3" name="filter" value="w3"
 										data-enpassusermodified="yes"> <label for="w3" class="agenda-filter__label">Room
 										W3</label></div>
 							</fieldset>
@@ -77,35 +77,35 @@
 								<legend class="sr-only">
 									Filter by session type
 								</legend>
-								<div class="agenda-filter__element"><input type="radio" id="talks" name="filter"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="talks" name="filter"
 										value="talks" data-enpassusermodified="yes"> <label for="talks"
 										class="agenda-filter__label">Talks</label></div>
-								<div class="agenda-filter__element"><input type="radio" id="workshops" name="filter"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="workshops" name="filter"
 										value="workshops" data-enpassusermodified="yes"> <label for="workshops"
 										class="agenda-filter__label">Workshops</label></div>
 							</fieldset>
 							<fieldset class="agenda-filter">
 								<legend class="sr-only">Filter by type</legend>
-								<div class="agenda-filter__element"><input type="radio" id="rookie" name="filter"
-										value="audimax" data-enpassusermodified="yes"> <label for="rookie"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="beginner" name="filter"
+										value="beginner" data-enpassusermodified="yes"> <label for="beginner"
 										class="agenda-filter__label">Beginner</label></div>
-								<div class="agenda-filter__element"><input type="radio" id="beginner" name="filter"
-										value="w1" data-enpassusermodified="yes"> <label for="beginner"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="intermediate" name="filter"
+										value="intermediate" data-enpassusermodified="yes"> <label for="intermediate"
 										class="agenda-filter__label">Intermediate</label></div>
-								<div class="agenda-filter__element"><input type="radio" id="expert" name="filter"
-										value="w3" data-enpassusermodified="yes"> <label for="expert"
+								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="advanced" name="filter"
+										value="advanced" data-enpassusermodified="yes"> <label for="advanced"
 										class="agenda-filter__label">Advanced</label></div>
 							</fieldset>
 						</div>
 					</div>
 
 					<ol class="agenda">
-						<li class="agenda-slot" :class="{w1: event.location.includes('w1') || event.location.includes('w2'), w3: event.location.includes('w3'), audimax: event.location.includes('audimax')}" v-for="event in proposalLineupJson" :key="event.id" v-cloak>
+						<li class="agenda-slot" :class="{w1: event.location.includes('w1') || event.location.includes('w2'), w3: event.location.includes('w3'), audimax: event.location.includes('audimax')}" v-for="event in this.formattedLineup" :key="event.id" v-cloak>
 							<div class="agenda-slot-header">
 								<div>
 									<p class="agenda-slot-details">
 										<span class="agenda-time">
-											{{ event.startTime }}
+											{{event.startTime | trimTime}}
 										</span>
 
 										<span class="agenda-room"
@@ -113,9 +113,9 @@
 											{{ event.location | formatLocation }}
 										</span>
 
-										<span class="agenda-level"
-											:class="{beginner: event.location.includes('beginner'), expert: event.location.includes('expert')}">
-											{{ event.type | formatLevel}}
+										<span class="agenda-level" v-if="event.proficiencyLevel"
+											:class="{ beginner: event.proficiencyLevel === 'beginner', intermediate: event.proficiencyLevel === 'intermediate', advanced: event.proficiencyLevel === 'advanced' }">
+											{{ event.proficiencyLevel | formatLevel}}
 										</span>
 									</p>
 
@@ -141,9 +141,16 @@
 											<button v-if="speaker.hasPhoto"
 												:id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`"
 												@click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)">
-												<img :src="`images/speakers/${speaker.photoUrl}.jpg`"
+												<img :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
 													:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
 											</button>
+											<button v-else
+												:id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`"
+												@click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)">
+												<img src="images/speaker_placeholder.png"
+													:alt="`Placeholder image of ${speaker.firstName} ${speaker.lastName}`" />
+											</button>
+
 										</template>
 									</div>
 
@@ -204,7 +211,7 @@
 						<div v-for="(speaker, index) in activeSpeakers" class="agenda-modal-content-container"
 							:key="index">
 							<figure>
-								<img :src="`images/speakers/${speaker.photoUrl}.jpg`"
+								<img :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
 									:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
 							</figure>
 							<article>
@@ -285,10 +292,11 @@
 		<footer-section></footer-section>
 	</footer>
 
+	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+	<script src="./js/luxon.min.js"></script>
 	<script src="./components/nav-section.component.js"></script>
 	<script src="./components/nav-section-mobile.component.js"></script>
 	<script src="./components/footer-section.component.js"></script>
-	<script src="./js/agenda.js"></script>
 	<script src="./js/main.js"></script>
 
 </body>
