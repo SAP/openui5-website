@@ -100,7 +100,13 @@
 					</div>
 
 					<ol class="agenda">
-						<li class="agenda-slot" :class="{w1: event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2'), w3: event.location.toLowerCase().includes('w3'), audimax: event.location.toLowerCase().includes('audimax')}" v-for="event in this.formattedLineup" :key="event.id" v-cloak>
+						<li 
+							class="agenda-slot" 
+							:class="{
+								w1: filter.toLowerCase() === 'w1' && (event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2')), 
+								w3: filter.toLowerCase() === 'w3' && event.location.toLowerCase().includes('w3'), 
+								audimax: filter.toLowerCase() === 'audimax' &&  event.location.toLowerCase().includes('audimax')}" 
+								v-for="event in this.formattedLineup" :key="event.id" v-cloak>
 							<div class="agenda-slot-header">
 								<div>
 									<p class="agenda-slot-details">
