@@ -44,7 +44,7 @@
 		<nav-section-mobile v-else></nav-section-mobile>
 	</nav>
 
-	<main id="main">
+	<!-- <main id="main">
 		<section id="agenda" ref="agenda">
 			<div class="wrap">
 				<div class="box">
@@ -100,12 +100,12 @@
 					</div>
 
 					<ol class="agenda">
-						<li 
-							class="agenda-slot" 
+						<li
+							class="agenda-slot"
 							:class="{
-								w1: filter.toLowerCase() === 'w1' && (event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2')), 
-								w3: filter.toLowerCase() === 'w3' && event.location.toLowerCase().includes('w3'), 
-								audimax: filter.toLowerCase() === 'audimax' &&  event.location.toLowerCase().includes('audimax')}" 
+								w1: filter.toLowerCase() === 'w1' && (event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2')),
+								w3: filter.toLowerCase() === 'w3' && event.location.toLowerCase().includes('w3'),
+								audimax: filter.toLowerCase() === 'audimax' &&  event.location.toLowerCase().includes('audimax')}"
 								v-for="event in this.formattedLineup" :key="event.id" v-cloak>
 							<div class="agenda-slot-header">
 								<div>
@@ -292,7 +292,7 @@
 			</div>
 			</div>
 		</section>
-	</main>
+	</main> -->
 
 	<footer id="footer">
 		<footer-section></footer-section>
