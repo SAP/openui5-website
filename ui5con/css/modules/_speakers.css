@@ -72,6 +72,14 @@
 .speakers-socials .icon {
 	width: 1.4rem;
 	height: 1.4rem;
+	transition: all 0.3s ease-in-out;
+}
+
+.speakers-socials a:is(:focus) {
+	.icon {
+		transform: scale(1.3);
+		color: var(--brand-color);
+	}
 }
 
 .speakers-socials li {
