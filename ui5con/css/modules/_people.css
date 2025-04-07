@@ -52,3 +52,42 @@
 		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 	}
 }
+
+.people-card {
+	cursor: pointer;
+	transition: all .75s ease;
+	transform-style: preserve-3d;
+}
+
+.people-member:is(:hover, :focus) {
+	outline: none;
+
+	.people-card {
+		transform: rotateY(180deg);
+	}
+}
+
+.people-card-front,
+.people-card-back {
+	top: 0;
+	left: 0;
+	position: relative;
+	backface-visibility: hidden;
+}
+
+.people-card-back {
+	margin: 0;
+	padding: 0.5rem;
+	max-width: 100%;
+	inline-size: 100%;
+	position: absolute;
+	aspect-ratio: 1/1.25;
+	list-style-type: none;
+	transform: rotateY(180deg);
+	border: 0.0625rem solid var(--brand-color-alt);
+
+	li {
+		margin-block-end: 0.5rem;
+		font-size: 0.8rem;
+	}
+}

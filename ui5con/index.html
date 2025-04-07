@@ -132,7 +132,6 @@
 	</header>
 
 	<main id="main">
-
 		<!-- LATEST NEWS SECTION -->
 		<section class="alternate">
 			<div class="wrap">
@@ -171,6 +170,58 @@
 
 			</div>
 		</section>
+
+		<!-- <section class="alternate">
+			<div class="wrap" id="speakers">
+
+				<h2 class="section-heading">
+					<span aria-hidden="true">↘</span>
+					<span>Speakers</span>
+				</h2>
+
+				<ul class="people-list people-list--speakers" role="list">
+					<li 
+						tabindex="-1"
+						role="listitem" 
+						class="people-list-item" 
+						v-for="speaker in speakers" 
+						:key="`${speaker.firstName} ${speaker.firstName}`">
+						
+						<figure class="people-member" tabindex="0">
+							<div class="people-card">
+								<div class="people-card-front">
+									<img 
+										v-if="speaker.hasPhoto"
+										:src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+										:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
+	
+									<img 
+										v-else
+										src="images/speaker_placeholder.png"
+										:alt="`Placeholder image of ${speaker.firstName} ${speaker.lastName}`" />
+								</div>
+	
+								<ul class="people-card-back">
+									<li v-for="topic in speaker.proposals" :key="topic.id">
+										{{topic.title | decodeHtml}}
+									</li>
+								</ul>
+							</div>
+
+							<figcaption>
+								<p class="people-name">{{speaker.firstName}} {{speaker.lastName}}</p>
+								<small>{{speaker.company}}</small>
+							</figcaption>
+						</figure>
+
+						
+
+					</li>
+				</ul>
+
+
+			</div>
+		</section> -->
 
 		<section>
 			<div class="wrap">
@@ -569,6 +620,8 @@
 	<script src="./components/nav-section-mobile.component.js"></script>
 	<script src="./components/footer-section.component.js"></script>
 
+	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+	<script src="./js/luxon.min.js"></script>
 	<script src="./js/main.js"></script>
 	<script src="./js/sendinblue.js"></script>
 	<script src="./js/a11y-dialog.min.js"></script>

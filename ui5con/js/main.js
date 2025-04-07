@@ -300,7 +300,7 @@ var main = new Vue({
     axios
     .get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
     .then(response => {
-      this.speakers = this.formatAndShuffleSpeakersArray(response.data).slice(0, 6);
+      this.speakers = response.data;
     });
 
     axios
@@ -622,6 +622,9 @@ var main = new Vue({
       }
       return value;
     },
+    decodeHtml: function(value) {
+      return new DOMParser().parseFromString(value, 'text/html').body.textContent;
+    }
   }
 });
 
