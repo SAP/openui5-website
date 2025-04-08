@@ -153,8 +153,7 @@
 											<button v-else
 												:id="`btn-${speaker.firstName}-${speaker.lastName}-${event.id}`"
 												@click="openSpeakerInfoModal(event.speakers, `btn-${speaker.firstName}-${speaker.lastName}-${event.id}`)">
-												<img src="images/speaker_placeholder.png"
-													:alt="`Placeholder image of ${speaker.firstName} ${speaker.lastName}`" />
+												<span class="placeholder"></span>
 											</button>
 
 										</template>
@@ -217,8 +216,15 @@
 						<div v-for="(speaker, index) in activeSpeakers" class="agenda-modal-content-container"
 							:key="index">
 							<figure>
-								<img :src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+								<img
+									v-if="speaker.hasPhoto"
+									:src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
 									:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
+
+								<div
+									v-else
+									class="placeholder"
+								></div>
 							</figure>
 							<article>
 								<header>

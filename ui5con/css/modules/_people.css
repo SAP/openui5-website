@@ -14,6 +14,7 @@
 
 .people-member {
 	margin: 0;
+	position: relative;
 }
 
 .people-member img {
@@ -23,6 +24,10 @@
 	object-fit: cover;
 	display: block;
 	margin-block-end: .5rem;
+}
+
+.people-member figcaption {
+	position: relative;
 }
 
 .people-member .placeholder {
@@ -39,7 +44,6 @@
 	}
 }
 
-
 .people-name {
 	font-weight: 600;
 	margin-block-start: .3rem;
@@ -53,41 +57,50 @@
 	}
 }
 
-.people-card {
-	cursor: pointer;
-	transition: all .75s ease;
-	transform-style: preserve-3d;
+.people-topic {
+	opacity: 0;
+	display: none;
+	position: absolute;
+	bottom: calc(100% + .5rem);
+	right: 0;
+	left: 0;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 600;
+	font-style: italic;
+	padding: .7rem .5rem;
+	margin: 0;
+	z-index: 1;
+	transition: all .3s allow-discrete;
+	text-shadow: 0 0 1px black;
+
+	@starting-style {
+		opacity: 0;
+		display: none;
+	}
+}
+
+.people-topic::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	backdrop-filter: blur(10px) brightness(80%);
+	mask: linear-gradient(to top, rgba(231, 101, 0, 1) 60%, rgba(255, 255, 255, 0));
+	z-index: -1;
 }
 
 .people-member:is(:hover, :focus) {
 	outline: none;
 
-	.people-card {
-		transform: rotateY(180deg);
+	img {
+		filter: grayscale(50%);
 	}
-}
 
-.people-card-front,
-.people-card-back {
-	top: 0;
-	left: 0;
-	position: relative;
-	backface-visibility: hidden;
-}
-
-.people-card-back {
-	margin: 0;
-	padding: 0.5rem;
-	max-width: 100%;
-	inline-size: 100%;
-	position: absolute;
-	aspect-ratio: 1/1.25;
-	list-style-type: none;
-	transform: rotateY(180deg);
-	border: 0.0625rem solid var(--brand-color-alt);
-
-	li {
-		margin-block-end: 0.5rem;
-		font-size: 0.8rem;
+	.people-topic {
+		opacity: 1;
+		display: block;
 	}
 }

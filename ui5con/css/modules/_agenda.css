@@ -288,8 +288,7 @@
 		flex-direction: row;
 	}
 
-	/* Work in progress - TEST DUMMY */
-	.agenda-slot.w1:has(~ .agenda-slot.w1)::before {
+	.agenda-slot:is(.w1, .w3, .audimax)::before {
 		content: "";
 		display: block;
 		position: absolute;
@@ -297,7 +296,18 @@
 		top: 55px;
 		left: 110px;
 		bottom: -6.2rem;
+	}
+
+	.agenda-slot.w1:has(~ .agenda-slot.w1)::before {
 		background: var(--w1);
+	}
+
+	.agenda-slot.w3:has(~ .agenda-slot.w3)::before {
+		background: var(--w3);
+	}
+
+	.agenda-slot.audimax:has(~ .agenda-slot.audimax)::before {
+		background: var(--audimax);
 	}
 }
 
@@ -398,6 +408,23 @@
 	height: 9.5rem;
 	object-fit: cover;
 	transition: all .2s ease-in-out;
+}
+
+.agenda-slot-speakers-images .placeholder,
+.agenda-modal .placeholder {
+	display: block;
+	width: 8rem;
+	height: 9.5rem;
+	aspect-ratio: 1/1.25;
+	background: transparent url(../../images/committee/placeholder.svg) no-repeat 50% 50%;
+	background-size: 80%;
+}
+
+@media (prefers-color-scheme: dark) {
+	.agenda-slot-speakers-images .placeholder,
+	.agenda-modal .placeholder {
+		filter: invert(.8);
+	}
 }
 
 @media only screen and (min-width: 768px) {

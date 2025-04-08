@@ -180,45 +180,33 @@
 				</h2>
 
 				<ul class="people-list people-list--speakers" role="list">
-					<li 
+					<li
 						tabindex="-1"
-						role="listitem" 
-						class="people-list-item" 
-						v-for="speaker in speakers" 
+						role="listitem"
+						class="people-list-item"
+						v-for="speaker in speakers.filter(s => s.hasPhoto)"
 						:key="`${speaker.firstName} ${speaker.firstName}`">
-						
+
 						<figure class="people-member" tabindex="0">
-							<div class="people-card">
-								<div class="people-card-front">
-									<img 
-										v-if="speaker.hasPhoto"
-										:src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
-										:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
-	
-									<img 
-										v-else
-										src="images/speaker_placeholder.png"
-										:alt="`Placeholder image of ${speaker.firstName} ${speaker.lastName}`" />
-								</div>
-	
-								<ul class="people-card-back">
-									<li v-for="topic in speaker.proposals" :key="topic.id">
-										{{topic.title | decodeHtml}}
-									</li>
-								</ul>
-							</div>
+
+								<img
+									v-if="speaker.hasPhoto"
+									:src="`https://ui5con.cfapps.eu12.hana.ondemand.com${speaker.photoUrl}`"
+									:alt="`Portrait of ${speaker.firstName} ${speaker.lastName}`" />
+
+								<div v-else class="placeholder"></div>
 
 							<figcaption>
+								<h3 class="people-topic" v-if="speaker.proposals.length">
+									{{ speaker.proposals[0].title | decodeHtml }}
+								</h3>
 								<p class="people-name">{{speaker.firstName}} {{speaker.lastName}}</p>
 								<small>{{speaker.company}}</small>
 							</figcaption>
 						</figure>
 
-						
-
 					</li>
 				</ul>
-
 
 			</div>
 		</section> -->
