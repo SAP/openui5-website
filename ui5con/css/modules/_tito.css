@@ -110,24 +110,27 @@
 }
 
 .tickets .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button {
-	background-image: linear-gradient(45deg, var(--brand-color-alt), var(--brand-color));
-	border-color: transparent;
-	border-width: 0;
-	border-radius: 2rem;
-	font-size: 1.125rem;
-	color: #fff;
-	height: auto;
-	letter-spacing: normal;
-	line-height: 1.5;
-	text-transform: none;
-	padding: .5rem 1rem;
+	display: inline-block;
+	border-radius: 5px;
+	border: 1px solid var(--dark-brand-color);
+	font-size: var(--type-0);
+	font-weight: 600;
+	line-height: 1.3;
+	padding: .7rem;
+	margin-inline-end: .6rem;
+	background: transparent;
+	text-decoration: none;
+	cursor: pointer;
+	color: var(--text-color);
+	transition: none;
 }
 
 .tickets .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button:hover,
 .tickets .tito-widget .tito-widget-form .tito-release .tito-quantity .tito-choose-waiting-list-button:focus {
-	background-image: linear-gradient(15deg, var(--brand-color-alt), var(--brand-color));
-	border-color: transparent;
-}
+	text-decoration: none;
+	background: var(--btn-bg-color);
+	color: var(--text-color-contrast);
+} 
 
 .tickets .tito-widget .tito-locked-ticket-message {
 	margin-block-start: 0;
