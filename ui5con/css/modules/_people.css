@@ -26,10 +26,6 @@
 	margin-block-end: .5rem;
 }
 
-.people-member figcaption {
-	position: relative;
-}
-
 .people-member .placeholder {
 	max-width: 100%;
 	inline-size: 100%;
@@ -61,18 +57,23 @@
 	opacity: 0;
 	display: none;
 	position: absolute;
-	bottom: calc(100% + .5rem);
+	top: 0;
 	right: 0;
 	left: 0;
+	inline-size: 100%;
+	aspect-ratio: 1/1.25;
 	color: #fff;
 	font-size: 1rem;
 	font-weight: 600;
 	font-style: italic;
 	padding: .7rem .5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin: 0;
 	z-index: 1;
 	transition: all .3s allow-discrete;
-	text-shadow: 0 0 1px black;
+	background: var(--w1);
 
 	@starting-style {
 		opacity: 0;
@@ -80,27 +81,22 @@
 	}
 }
 
-.people-topic::after {
+/* .people-topic::after {
 	content: "";
 	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
-	backdrop-filter: blur(10px) brightness(80%);
-	mask: linear-gradient(to top, rgba(231, 101, 0, 1) 60%, rgba(255, 255, 255, 0));
 	z-index: -1;
-}
+	background: var(--w1);
+} */
 
 .people-member:is(:hover, :focus) {
 	outline: none;
 
-	img {
-		filter: grayscale(50%);
-	}
-
 	.people-topic {
 		opacity: 1;
-		display: block;
+		display: flex;
 	}
 }
