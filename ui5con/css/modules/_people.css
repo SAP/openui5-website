@@ -81,6 +81,18 @@
 	}
 }
 
+.people-topic.w1 {
+	background: var(--w1);
+}
+
+.people-topic.w3 {
+	background: var(--w3);
+}
+
+.people-topic.audimax {
+	background: var(--audimax);
+}
+
 /* .people-topic::after {
 	content: "";
 	position: absolute;

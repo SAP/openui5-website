@@ -294,21 +294,21 @@ var main = new Vue({
     lineup: [],
     proposalLineup: [],
     formattedLineup: [],
+    formattedSpeakers: [],
    }
   },
   mounted() {
-    axios
-    .get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/speaker/lineup')
-    .then(response => {
-      this.speakers = response.data;
-    });
-
-    axios
-    .get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
-    .then(response => {
-      this.lineup = response;
+    Promise.all([
+      axios.get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/speaker/lineup'),
+      axios.get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
+    ])
+    .then(([speakersResponse, lineupResponse]) => {
+      this.speakers = speakersResponse.data;
+      this.lineup = lineupResponse;
       this.formattedLineup = this.formatLineup();
-    });
+
+      this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
+    })    
   },
   methods: {
     openSpeakerInfoModal(speakers, id) {
@@ -521,6 +521,8 @@ var main = new Vue({
           location = 'W1/W2'
         } else if (session.type.includes('hands')) {
           location = 'W32'
+        } else {
+          location = 'Audimax';
         }
 
         return {
@@ -583,6 +585,26 @@ var main = new Vue({
         return sortedSchedule;
       }
     },
+    formatSpeakers(talks, speakers) {
+      // Create a lookup map from talk ID to location
+      const talkIdToRoomMap = new Map(
+        talks.map(talk => [talk.id, talk.location])
+      );
+    
+      // Loop through speakers and their proposals to enrich with location
+      speakers.forEach(speaker => {
+        speaker.proposals.forEach(proposal => {
+          const location = talkIdToRoomMap.get(proposal.id);
+          if (location) {
+            proposal.location = location;
+          } else {
+            proposal.location = 'Audimax';
+          }
+        });
+      });
+    
+      return speakers;
+    }
   },
   filters: {
     formatLocation: function (value) {
