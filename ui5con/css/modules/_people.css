@@ -63,10 +63,10 @@
 	inline-size: 100%;
 	aspect-ratio: 1/1.25;
 	color: #fff;
-	font-size: 1rem;
+	font-size: 1.15rem;
 	font-weight: 600;
 	font-style: italic;
-	padding: .7rem .5rem;
+	padding: .8rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -91,18 +91,8 @@
 
 .people-topic.audimax {
 	background: var(--audimax);
+	color: var(--text-color);
 }
-
-/* .people-topic::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	z-index: -1;
-	background: var(--w1);
-} */
 
 .people-member:is(:hover, :focus) {
 	outline: none;
