@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.com/SAP/openui5-website.svg?branch=master)](https://travis-ci.com/SAP/openui5-website)
+[![Build Status](https://api.travis-ci.com/SAP/openui5-website.svg?branch=master)](https://app.travis-ci.com/github/SAP/openui5-website/)
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/openui5-website)](https://api.reuse.software/info/github.com/SAP/openui5-website)
-![Update Versions](https://github.com/SAP/openui5-website/workflows/Update%20Versions/badge.svg)
+[![Update Versions](https://github.com/SAP/openui5-website/workflows/Update%20Versions/badge.svg)](https://github.com/SAP/openui5-website/actions/workflows/updateVersions.yml)
 
 ![OpenUI5 logo](http://openui5.org/images/OpenUI5_new_big_side.png)
 
