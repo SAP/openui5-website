@@ -53,7 +53,7 @@
 		</ul>
 	</nav>
 
-	<table class="timetable">
+	<!-- <table class="timetable" id="monitor">
 		<caption></caption>
 		<thead>
 			<tr>
@@ -65,30 +65,44 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">09:00</th>
+			<tr v-for="event in formattedLineup" :key="event.id" v-cloak>
+				<th scope="row">{{event.startTime | trimTime}}</th>
 				<td>
-					<span class="agenda-room w1">Room W1/W2</span>
+					<span 
+						class="agenda-room" 
+						:class="{
+							w1: event.location.toLowerCase().includes('w1') || 
+							event.location.toLowerCase().includes('w2'), 
+							w3: event.location.toLowerCase().includes('w3')}">
+						{{ event.location | formatLocation }}
+					</span>
 				</td>
-				<td>Streamlining Local App Previews: Virtual Endpoints for Seamless Development</td>
-				<td>Dominik Heim (SAP), Annemarie Frank (SAP)</td>
-				<td>
-					<span class="agenda-level intermediate">Intermediate</span>
+				<td>{{event.title}}</td>
+				<td v-if="event.speakers">
+					<template 
+						v-for="(speaker, index) in event.speakers"
+						:key="`${speaker.firstName} ${speaker.firstName}`">
+						{{speaker.firstName}} {{speaker.lastName}} 
+						(<span v-html="speaker.company"></span>)
+						<template v-if="index != event.speakers.length - 1">, </template>
+					</template>
 				</td>
-			</tr>
-
-			<tr>
-				<th scope="row">10:00</th>
-				<td>
-					<span class="agenda-room audimax">Audimax</span>
-				</td>
-				<td>SAPUI5 Accessibility in Action: Building inclusive Fiori Apps</td>
-				<td>Nicolas Boucaud (VINCI Energies), Nizare Damoumat (VINCI Energies)</td>
-				<td>
-					<span class="agenda-level advanced">Advanced</span>
+				<td v-if="event.proficiencyLevel">
+					<span 
+						class="agenda-level" 
+						:class="{ 
+							beginner: event.proficiencyLevel === 'beginner', 
+							intermediate: event.proficiencyLevel === 'intermediate', 
+							advanced: event.proficiencyLevel === 'advanced' }">
+						{{ event.proficiencyLevel }}
+					</span>
 				</td>
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
+
+	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+	<script src="../js/luxon.min.js"></script>
+	<script src="../js/monitor.js"></script>
 </body>
 </html>
