@@ -4,16 +4,8 @@ var monitor = new Vue({
   el: '#monitor',
   data() {
    return {
-
-    activeSpeakers: null,
-    lastFocussedElementID: '',
-    speakers: [],
-    filter: "all",
-    activeSpeakers: null,
     lineup: [],
-    proposalLineup: [],
     formattedLineup: [],
-    formattedSpeakers: [],
    }
   },
   mounted() {
@@ -21,18 +13,12 @@ var monitor = new Vue({
     .get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
     .then(response => {
       this.lineup = response.data;
-      console.log("this.lineup", this.lineup);
-
-
       this.formattedLineup = this.formatLineup();
-
-      // console.log("this.formattedLineup", this.formattedLineup);
     }); 
   },
   methods: {
     formatLineup() {
       const tempLineUp = this.lineup.map((session) => {
-       
         let start = '9:00';
         let end = '10:00';
 
@@ -50,7 +36,6 @@ var monitor = new Vue({
         let newStartTime = "2025-07-08T" + start + ":00.000+02:00";
         let newEndTime = "2025-07-08T" + end + ":00.000+02:00";
 
-
         let timeNow = new Date().toISOString();
         let sessionTimeStart = new Date(newStartTime).toISOString();
         let sessionTimeEnd = new Date(newEndTime).toISOString();
@@ -66,8 +51,14 @@ var monitor = new Vue({
           location = 'W1/W2'
         } else if (session.type.includes('hands')) {
           location = 'W32'
+        } else if (session.type.includes('expert')) {
+          location = 'Expert Corner'
+        } else if (session.type.includes('z_catering')) {
+          location = 'Canteen'
+        } else if (session.type.includes('other')) {
+          location = 'Audimax'
         } else {
-          location = 'Audimax';
+          location = 'Other';
         }
 
         return {
@@ -117,16 +108,5 @@ var monitor = new Vue({
         : timeSplit[0];
       return hour + ":" + timeSplit[1];
     },
-    convertTime: function (value, eventTime) {
-      if (eventTime === "local") {
-        return luxon.DateTime.fromISO(value)
-          .toLocal()
-          .toISO({ suppressMilliseconds: true });
-      }
-      return value;
-    },
-    decodeHtml: function(value) {
-      return new DOMParser().parseFromString(value, 'text/html').body.textContent;
-    }
   }
 });

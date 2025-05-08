@@ -73,7 +73,11 @@
 						:class="{
 							w1: event.location.toLowerCase().includes('w1') || 
 							event.location.toLowerCase().includes('w2'), 
-							w3: event.location.toLowerCase().includes('w3')}">
+							w3: event.location.toLowerCase().includes('w3'),
+							experts: event.location.toLowerCase().includes('expert'),
+							canteen: event.location.toLowerCase().includes('canteen'),
+							other: event.location.toLowerCase().includes('other'),
+						}">
 						{{ event.location | formatLocation }}
 					</span>
 				</td>

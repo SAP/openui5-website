@@ -4,6 +4,7 @@
 	--w1: rgb(37, 144, 191);
 	--w3: rgb(243, 121, 2);
 	--canteen: rgb(112, 76, 121);
+	--experts: rgb(165, 232, 95);
 	--talks: rgb(0, 0, 255);
 	--workshops: rgb(0, 0, 255);
 	--beginner: rgb(247, 155, 54);
@@ -344,6 +345,18 @@
 
 .agenda-room.w3 {
 	background: var(--w3);
+}
+
+.agenda-room.experts {
+	background: var(--experts);
+}
+
+.agenda-room.canteen {
+	background: var(--canteen);
+}
+
+.agenda-room.other {
+	background: var(--all);
 }
 
 .agenda-level {
