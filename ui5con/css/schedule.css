@@ -1,6 +1,8 @@
 .schedule nav {
 	max-width: 100%;
 	padding: 2rem;
+	background: transparent url(../images/timetable-bg.svg) 101% 102% no-repeat;
+	background-size: 2800px auto;
 }
 
 .timetable {
@@ -50,7 +52,7 @@
 }
 
 .timetable tr {
-	border-top: 1px solid var(--brand-color-alt);
+	border-top: 1px solid var(--text-color);
 }
 
 .timetable th,

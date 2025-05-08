@@ -192,7 +192,7 @@
 
 #w1 + .agenda-filter__label[for="w1"] {
 	background-color: var(--w1);
-	color: #000;
+	color: #fff;
 	outline-color: var(--w1);
 }
 
@@ -339,6 +339,7 @@
 
 .agenda-room.w1 {
 	background: var(--w1);
+	color: #fff;
 }
 
 .agenda-room.w3 {
