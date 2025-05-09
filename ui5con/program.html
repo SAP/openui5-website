@@ -129,7 +129,7 @@
 							</div>
 
 							<div class="agenda-slot-container">
-								<h2 class="agenda-slot-title">{{ event.title }}</h2>
+								<h2 class="agenda-slot-title">{{ event.title | decodeHtml}}</h2>
 
 								<p class="agenda-slot-speakers" v-if="event.speakers.length > 0">
 									<template v-for="(speaker, index) in event.speakers"
@@ -159,7 +159,7 @@
 										</template>
 									</div>
 
-									<p class="agenda-slot-description">{{event.description}}</p>
+									<p class="agenda-slot-description">{{event.description | decodeHtml}}</p>
 								</div>
 
 								<template v-if="event.presentationLinks.length > 0">

@@ -81,7 +81,7 @@
 						{{ event.location | formatLocation }}
 					</span>
 				</td>
-				<td>{{event.title}}</td>
+				<td>{{event.title  | decodeHtml}}</td>
 				<td v-if="event.speakers">
 					<template 
 						v-for="(speaker, index) in event.speakers"

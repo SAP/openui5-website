@@ -52,9 +52,7 @@ var monitor = new Vue({
         } else if (session.type.includes('hands')) {
           location = 'W32'
         } else if (session.type.includes('expert')) {
-          location = 'Expert Corner'
-        } else if (session.type.includes('z_catering')) {
-          location = 'Canteen'
+          location = 'Other'
         } else if (session.type.includes('other')) {
           location = 'Audimax'
         } else {
@@ -108,5 +106,11 @@ var monitor = new Vue({
         : timeSplit[0];
       return hour + ":" + timeSplit[1];
     },
+    decodeHtml: function(value) {
+      if (!value) return '';
+      const txt = document.createElement('textarea');
+      txt.innerHTML = value;
+      return txt.value;
+    }
   }
 });

@@ -645,7 +645,10 @@ var main = new Vue({
       return value;
     },
     decodeHtml: function(value) {
-      return new DOMParser().parseFromString(value, 'text/html').body.textContent;
+      if (!value) return '';
+      const txt = document.createElement('textarea');
+      txt.innerHTML = value;
+      return txt.value;
     }
   }
 });
