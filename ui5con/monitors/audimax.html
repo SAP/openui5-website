@@ -58,9 +58,9 @@
 		<thead>
 			<tr>
 				<th scope="col">Time</th>
-				<th scope="col">Room</th>
+				<th scope="col">Station</th>
 				<th scope="col">Session Title</th>
-				<th scope="col">Presenter</th>
+				<th scope="col">Speaker</th>
 				<th scope="col">Level</th>
 			</tr>
 		</thead>
@@ -68,11 +68,11 @@
 			<tr v-for="event in formattedLineup" :key="event.id" v-cloak>
 				<th scope="row">{{event.startTime | trimTime}}</th>
 				<td>
-					<span 
-						class="agenda-room" 
+					<span
+						class="agenda-room"
 						:class="{
-							w1: event.location.toLowerCase().includes('w1') || 
-							event.location.toLowerCase().includes('w2'), 
+							w1: event.location.toLowerCase().includes('w1') ||
+							event.location.toLowerCase().includes('w2'),
 							w3: event.location.toLowerCase().includes('w3'),
 							experts: event.location.toLowerCase().includes('expert'),
 							canteen: event.location.toLowerCase().includes('canteen'),
@@ -83,20 +83,19 @@
 				</td>
 				<td>{{event.title  | decodeHtml}}</td>
 				<td v-if="event.speakers">
-					<template 
+					<template
 						v-for="(speaker, index) in event.speakers"
 						:key="`${speaker.firstName} ${speaker.firstName}`">
-						{{speaker.firstName}} {{speaker.lastName}} 
-						(<span v-html="speaker.company"></span>)
-						<template v-if="index != event.speakers.length - 1">, </template>
+						{{speaker.firstName}} {{speaker.lastName}}
+						(<span v-html="speaker.company"></span>)<template v-if="index != event.speakers.length - 1">, </template>
 					</template>
 				</td>
 				<td v-if="event.proficiencyLevel">
-					<span 
-						class="agenda-level" 
-						:class="{ 
-							beginner: event.proficiencyLevel === 'beginner', 
-							intermediate: event.proficiencyLevel === 'intermediate', 
+					<span
+						class="agenda-level"
+						:class="{
+							beginner: event.proficiencyLevel === 'beginner',
+							intermediate: event.proficiencyLevel === 'intermediate',
 							advanced: event.proficiencyLevel === 'advanced' }">
 						{{ event.proficiencyLevel }}
 					</span>
