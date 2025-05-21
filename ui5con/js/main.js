@@ -295,6 +295,8 @@ var main = new Vue({
     proposalLineup: [],
     formattedLineup: [],
     formattedSpeakers: [],
+    expertCornerLineup: {},
+    expertCornerLineupUnsorted: [],
    }
   },
   mounted() {
@@ -308,6 +310,7 @@ var main = new Vue({
       this.formattedLineup = this.formatLineup();
 
       this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
+      this.groupExpertCornerTopics();
     })    
   },
   methods: {
@@ -484,11 +487,8 @@ var main = new Vue({
           }
         });
 
-        // let start = session.startTime;
-        // let end = session.endTime;
-
-        let start = '9:00';
-        let end = '10:00';
+        let start = session.startTime;
+        let end = session.endTime;
 
         let tempStart = start.substring(0, start.indexOf(":"));
         let tempEnd = end.substring(0, end.indexOf(":"));
@@ -514,23 +514,11 @@ var main = new Vue({
           sessionLiveStatus = true;
         }
 
-        // TO BE REMOVED WHEN WE HAVE THE ROOMS!!!!!!!!!!
-        let location = 'Audimax';
-
-        if (session.type.includes('presentation')) {
-          location = 'W1/W2'
-        } else if (session.type.includes('hands')) {
-          location = 'W32'
-        } else {
-          location = 'Audimax';
-        }
-
         return {
           ...session,
           startTime: newStartTime,
           endTime: newEndTime,
           isLive: sessionLiveStatus,
-          location: location
         };
       });
 
@@ -604,7 +592,16 @@ var main = new Vue({
       });
     
       return speakers;
-    }
+    },
+    groupExpertCornerTopics() {
+      this.expertCornerLineupUnsorted.forEach((corner) => {
+        const timeSlot = corner.startTime;
+        if (!this.expertCornerLineup[timeSlot]) {
+          this.expertCornerLineup[timeSlot] = [];
+        }
+        this.expertCornerLineup[timeSlot].push(corner);
+      });
+    },
   },
   filters: {
     formatLocation: function (value) {
@@ -616,7 +613,7 @@ var main = new Vue({
         } else if (value.toLowerCase().includes("w3")) {
           return "WS3"
         } else if (value.toLowerCase().includes("expert")) {
-          return "EC"
+          return "Expert Corner"
         } else if (value.toLowerCase().includes("canteen")) {
           return "CA"
         } else {
@@ -635,6 +632,9 @@ var main = new Vue({
         ? timeSplit[0].replace(/^0+/, "")
         : timeSplit[0];
       return hour + ":" + timeSplit[1];
+    },
+    trimExpertText: function (value) {
+      return value.replace(/^Expert Corner: /, '');
     },
     convertTime: function (value, eventTime) {
       if (eventTime === "local") {

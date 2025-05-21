@@ -1,116 +1,91 @@
 'use strict';
 
-var monitor = new Vue({
-  el: '#monitor',
-  data() {
-   return {
-    lineup: [],
-    formattedLineup: [],
-   }
-  },
-  mounted() {
-    axios
-    .get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
-    .then(response => {
-      this.lineup = response.data;
-      this.formattedLineup = this.formatLineup();
-    }); 
-  },
-  methods: {
-    formatLineup() {
-      const tempLineUp = this.lineup.map((session) => {
-        let start = '9:00';
-        let end = '10:00';
-
-        let tempStart = start.substring(0, start.indexOf(":"));
-        let tempEnd = end.substring(0, end.indexOf(":"));
-
-        if (tempStart.length == 1 && !tempStart.startsWith("0")) {
-          start = "0" + start;
-        }
-
-        if (tempEnd.length == 1 && !tempEnd.startsWith("0")) {
-          end = "0" + end;
-        }
-
-        let newStartTime = "2025-07-08T" + start + ":00.000+02:00";
-        let newEndTime = "2025-07-08T" + end + ":00.000+02:00";
-
-        let timeNow = new Date().toISOString();
-        let sessionTimeStart = new Date(newStartTime).toISOString();
-        let sessionTimeEnd = new Date(newEndTime).toISOString();
-        let sessionLiveStatus = false;
-
-        if (timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
-          sessionLiveStatus = true;
-        }
-
-        let location = 'Audimax';
-
-        if (session.type.includes('presentation')) {
-          location = 'W1/W2'
-        } else if (session.type.includes('hands')) {
-          location = 'W32'
-        } else if (session.type.includes('expert')) {
-          location = 'Other'
-        } else if (session.type.includes('other')) {
-          location = 'Audimax'
-        } else {
-          location = 'Other';
-        }
-
-        return {
-          ...session,
-          startTime: newStartTime,
-          endTime: newEndTime,
-          isLive: sessionLiveStatus,
-          location: location
-        };
-      });
-
-      const sortedScheduleTemp = tempLineUp.sort((a, b) =>
-        luxon.DateTime.fromISO(a.startTime) -
-        luxon.DateTime.fromISO(b.startTime)
-      );
-
-      return sortedScheduleTemp;
-    }
-  },
-  filters: {
-    formatLocation: function (value) {
-      if (value) {
-        if (value.toLowerCase().includes("audimax")) {
-          return "Audimax";
-        } else if (value.toLowerCase().includes("w1") || value.toLowerCase().includes("w2")) {
-          return "Room WS1/2";
-        } else if (value.toLowerCase().includes("w3")) {
-          return "Room WS3"
-        } else if (value.toLowerCase().includes("expert")) {
-          return "Expert Corner"
-        } else if (value.toLowerCase().includes("canteen")) {
-          return "Canteen"
-        } else {
-          return value;
-        }
+function createLineupApp(mountElementId, roomFilterFn) {
+  return new Vue({
+    el: `#${mountElementId}`,
+    data() {
+      return {
+        lineup: [],
+        formattedLineup: [],
       }
     },
-    formatLevel: function (value) {
-      if (!value) return ''; 
-      return value.charAt(0).toUpperCase();
+    mounted() {
+      axios
+        .get('https://ui5con.cfapps.eu12.hana.ondemand.com/api/proposal/lineup')
+        .then(response => {
+          this.lineup = response.data.filter(roomFilterFn); // Filter by room
+          this.formattedLineup = this.formatLineup();
+        });
     },
-    trimTime: function (value) {
-      let time = value.substring(value.indexOf("T") + 1);
-      let timeSplit = time.split(":");
-      let hour = timeSplit[0].startsWith("0")
-        ? timeSplit[0].replace(/^0+/, "")
-        : timeSplit[0];
-      return hour + ":" + timeSplit[1];
+    methods: {
+      formatLineup() {
+        const tempLineUp = this.lineup.map((session) => {
+          let start = session.startTime;
+          let end = session.endTime;
+
+          let tempStart = start.substring(0, start.indexOf(":"));
+          let tempEnd = end.substring(0, end.indexOf(":"));
+
+          if (tempStart.length == 1 && !tempStart.startsWith("0")) {
+            start = "0" + start;
+          }
+
+          if (tempEnd.length == 1 && !tempEnd.startsWith("0")) {
+            end = "0" + end;
+          }
+
+          let newStartTime = "2025-07-08T" + start + ":00.000+02:00";
+          let newEndTime = "2025-07-08T" + end + ":00.000+02:00";
+
+          let timeNow = new Date().toISOString();
+          let sessionTimeStart = new Date(newStartTime).toISOString();
+          let sessionTimeEnd = new Date(newEndTime).toISOString();
+          let sessionLiveStatus = false;
+
+          if (timeNow > sessionTimeStart && timeNow < sessionTimeEnd) {
+            sessionLiveStatus = true;
+          }
+
+          return {
+            ...session,
+            startTime: newStartTime,
+            endTime: newEndTime,
+            isLive: sessionLiveStatus,
+          };
+        });
+
+        return tempLineUp.sort((a, b) =>
+          luxon.DateTime.fromISO(a.startTime) - luxon.DateTime.fromISO(b.startTime)
+        );
+      }
     },
-    decodeHtml: function(value) {
-      if (!value) return '';
-      const txt = document.createElement('textarea');
-      txt.innerHTML = value;
-      return txt.value;
+    filters: {
+      formatLocation(value) {
+        if (!value) return '';
+        value = value.toLowerCase();
+        if (value.includes("audimax")) return "Audimax";
+        if (value.includes("w1") || value.includes("w2")) return "Room WS1/2";
+        if (value.includes("w3")) return "Room WS3";
+        if (value.includes("expert")) return "Expert Corner";
+        if (value.includes("canteen")) return "Canteen";
+        return value;
+      },
+      formatLevel(value) {
+        if (!value) return '';
+        return value.charAt(0).toUpperCase();
+      },
+      trimTime(value) {
+        let time = value.substring(value.indexOf("T") + 1);
+        let [hour, minute] = time.split(":");
+        if (hour.startsWith("0")) hour = hour.substring(1);
+        return `${hour}:${minute}`;
+      },
+      decodeHtml(value) {
+        if (!value) return '';
+        const txt = document.createElement('textarea');
+        txt.innerHTML = value;
+        return txt.value;
+      }
     }
-  }
-});
+  });
+}

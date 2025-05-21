@@ -24,7 +24,7 @@
 
 	<meta name="theme-color" content="#e76500">
 
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 	<link rel="icon" type="image/svg+xml" href="../images/icon.svg" />
 	<link rel="icon" sizes="any" href="../images/android-chrome-192x192.png" />
 
@@ -53,7 +53,7 @@
 		</ul>
 	</nav>
 
-	<table class="timetable" id="audimax">
+	<table class="timetable" id="w1w2">
 		<caption></caption>
 		<thead>
 			<tr>
@@ -107,8 +107,8 @@
 	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 	<script src="../js/luxon.min.js"></script>
 	<script>
-		createLineupApp('audimax', session =>
-		  session.location && session.location.toLowerCase().includes('audimax')
+		 createLineupApp('w1w2', session =>
+			session.location && (session.location.toLowerCase().includes('w1') || session.location.toLowerCase().includes('w2'))
 		);
 	  </script>
 
