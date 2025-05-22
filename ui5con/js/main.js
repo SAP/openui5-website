@@ -311,7 +311,7 @@ var main = new Vue({
 
       this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
       this.groupExpertCornerTopics();
-    })    
+    })
   },
   methods: {
     openSpeakerInfoModal(speakers, id) {
@@ -578,7 +578,7 @@ var main = new Vue({
       const talkIdToRoomMap = new Map(
         talks.map(talk => [talk.id, talk.location])
       );
-    
+
       // Loop through speakers and their proposals to enrich with location
       speakers.forEach(speaker => {
         speaker.proposals.forEach(proposal => {
@@ -590,7 +590,7 @@ var main = new Vue({
           }
         });
       });
-    
+
       return speakers;
     },
     groupExpertCornerTopics() {
@@ -613,7 +613,7 @@ var main = new Vue({
         } else if (value.toLowerCase().includes("w3")) {
           return "WS3"
         } else if (value.toLowerCase().includes("expert")) {
-          return "Expert Corner"
+          return "EXP"
         } else if (value.toLowerCase().includes("canteen")) {
           return "CA"
         } else {
@@ -622,7 +622,7 @@ var main = new Vue({
       }
     },
     formatLevel: function (value) {
-      if (!value) return ''; 
+      if (!value) return '';
       return value.charAt(0).toUpperCase();
     },
     trimTime: function (value) {

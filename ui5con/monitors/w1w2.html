@@ -90,8 +90,9 @@
 						(<span v-html="speaker.company"></span>)<template v-if="index != event.speakers.length - 1">, </template>
 					</template>
 				</td>
-				<td v-if="event.proficiencyLevel">
+				<td>
 					<span
+						v-if="event.proficiencyLevel"
 						class="agenda-level"
 						:class="{
 							beginner: event.proficiencyLevel === 'beginner',
@@ -112,7 +113,7 @@
 		);
 	  </script>
 
-	
-	
+
+
 </body>
 </html>

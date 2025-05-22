@@ -12,6 +12,7 @@
 	border: 1px solid var(--brand-color-alt);
 	border-top-width: 0.75rem;
 	border-collapse: collapse;
+	text-wrap: balance;
 }
 
 .timetable thead th {
