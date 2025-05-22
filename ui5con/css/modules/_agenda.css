@@ -320,6 +320,7 @@
 	background: var(--text-color);
 	color: var(--background-color);
 	font-weight: 700;
+	text-align: center;
 }
 
 .agenda-room {

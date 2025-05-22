@@ -111,16 +111,20 @@
 								<div>
 									<p class="agenda-slot-details">
 										<span class="agenda-time">
-											{{event.startTime | trimTime}}
+											{{event.startTime | trimTime}} {{event.endTime | trimTime}}
 										</span>
 
 										<span class="agenda-room"
-											:class="{w1: event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2'), w3: event.location.toLowerCase().includes('w3')}">
+											:class="{w1: event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2'), w3: event.location.toLowerCase().includes('w3')}"
+											:title="formatLocationTitle(event.location)"
+											>
 											{{ event.location | formatLocation }}
 										</span>
 
 										<span class="agenda-level" v-if="event.proficiencyLevel"
-											:class="{ beginner: event.proficiencyLevel === 'beginner', intermediate: event.proficiencyLevel === 'intermediate', advanced: event.proficiencyLevel === 'advanced' }">
+											:class="{ beginner: event.proficiencyLevel === 'beginner', intermediate: event.proficiencyLevel === 'intermediate', advanced: event.proficiencyLevel === 'advanced' }"
+											:title="formatProficiencyLevel(event.proficiencyLevel)"
+										>
 											{{ event.proficiencyLevel | formatLevel}}
 										</span>
 									</p>

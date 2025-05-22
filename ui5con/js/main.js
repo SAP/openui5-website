@@ -602,6 +602,29 @@ var main = new Vue({
         this.expertCornerLineup[timeSlot].push(corner);
       });
     },
+    formatProficiencyLevel(value) {
+      if (!value) return '';
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
+    formatLocationTitle(value) {
+      if (!value) return '';
+      
+      if (value) {
+        if (value.toLowerCase().includes("audimax")) {
+          return "Audimax";
+        } else if (value.toLowerCase().includes("w1") || value.toLowerCase().includes("w2")) {
+          return "Room WS1&2";
+        } else if (value.toLowerCase().includes("w3")) {
+          return "Room WS3"
+        } else if (value.toLowerCase().includes("expert")) {
+          return "EXP"
+        } else if (value.toLowerCase().includes("canteen")) {
+          return "Canteen"
+        } else {
+          return value;
+        }
+      }
+    }
   },
   filters: {
     formatLocation: function (value) {
