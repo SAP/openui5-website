@@ -44,7 +44,7 @@
 		<nav-section-mobile v-else></nav-section-mobile>
 	</nav>
 
-	<!-- <main id="main">
+	<main id="main">
 		<section id="agenda" ref="agenda">
 			<div class="wrap">
 				<div class="box">
@@ -65,13 +65,13 @@
 								<legend class="sr-only">Filter by room</legend>
 								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="audimax" name="filter"
 										value="audimax" data-enpassusermodified="yes"> <label for="audimax"
-										class="agenda-filter__label">Audimax</label></div>
+										class="agenda-filter__label">Yellow</label></div>
 								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="w1" name="filter" value="w1"
-										data-enpassusermodified="yes"> <label for="w1" class="agenda-filter__label">Room
-										W1/W2</label></div>
+										data-enpassusermodified="yes"> <label for="w1" class="agenda-filter__label">Blue</label>
+								</div>
 								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="w3" name="filter" value="w3"
-										data-enpassusermodified="yes"> <label for="w3" class="agenda-filter__label">Room
-										W3</label></div>
+										data-enpassusermodified="yes"> <label for="w3" class="agenda-filter__label">Orange</label>
+								</div>
 							</fieldset>
 							<fieldset class="agenda-filter">
 								<legend class="sr-only">
@@ -115,7 +115,7 @@
 										</span>
 
 										<span class="agenda-room"
-											:class="{w1: event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2'), w3: event.location.toLowerCase().includes('w3')}"
+											:class="{w1: event.location.toLowerCase().includes('w1') || event.location.toLowerCase().includes('w2'), w3: event.location.toLowerCase().includes('w3'), canteen: event.location.toLowerCase().includes('canteen')}"
 											:title="formatLocationTitle(event.location)"
 											>
 											{{ event.location | formatLocation }}
@@ -163,13 +163,13 @@
 										</template>
 									</div>
 
-									<div class="agenda-slot-speakers-images lunch" v-if="event.type === 'z_catering'">
+									<!-- <div class="agenda-slot-speakers-images lunch" v-if="event.type === 'z_catering'">
 										<img src="./images/lunch.svg" alt="Illustration of a meal" />
 									</div>
 
 									<div class="agenda-slot-speakers-images panel" v-if="event.type === 'panel'">
 										<img src="./images/cheers.svg" alt="Illustration of two people having a cup of coffee sitting at a table" />
-									</div>
+									</div> -->
 
 									<p class="agenda-slot-description">{{event.description | decodeHtml}}</p>
 								</div>
@@ -320,10 +320,10 @@
 								<div>
 									<p class="agenda-slot-details">
 										<span class="agenda-time">
-											{{slot[0].startTime| trimTime}}
+											{{slot[0].startTime| trimTime}} {{slot[0].endTime | trimTime}}
 										</span>
 
-										<span class="agenda-room">
+										<span class="agenda-room experts">
 											{{slot[0].location | formatLocation}}
 										</span>
 									</p>
@@ -344,7 +344,7 @@
 			</div>
 
 		</section>
-	</main> -->
+	</main>
 
 	<footer id="footer">
 		<footer-section></footer-section>
