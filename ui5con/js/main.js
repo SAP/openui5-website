@@ -611,11 +611,11 @@ var main = new Vue({
       
       if (value) {
         if (value.toLowerCase().includes("audimax")) {
-          return "Audimax";
+          return "Yellow";
         } else if (value.toLowerCase().includes("w1") || value.toLowerCase().includes("w2")) {
-          return "Room WS1&2";
+          return "Blue";
         } else if (value.toLowerCase().includes("w3")) {
-          return "Room WS3"
+          return "Orange"
         } else if (value.toLowerCase().includes("expert")) {
           return "EXP"
         } else if (value.toLowerCase().includes("canteen")) {
@@ -630,11 +630,11 @@ var main = new Vue({
     formatLocation: function (value) {
       if (value) {
         if (value.toLowerCase().includes("audimax")) {
-          return "A";
+          return "Y";
         } else if (value.toLowerCase().includes("w1") || value.toLowerCase().includes("w2")) {
-          return "WS1/2";
+          return "B";
         } else if (value.toLowerCase().includes("w3")) {
-          return "WS3"
+          return "O"
         } else if (value.toLowerCase().includes("expert")) {
           return "EXP"
         } else if (value.toLowerCase().includes("canteen")) {
