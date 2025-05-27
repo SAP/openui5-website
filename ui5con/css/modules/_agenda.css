@@ -347,6 +347,10 @@
 	background: transparent;
 }
 
+.timetable .agenda-room.w3 {
+	background: var(--w3);
+}
+
 .agenda-room.w3::after {
 	content: "";
 	position: absolute;

@@ -53,7 +53,7 @@
 		</ul>
 	</nav>
 
-	<table class="timetable" id="w3">
+	<table class="timetable" id="all">
 		<caption></caption>
 		<thead>
 			<tr>
@@ -108,8 +108,8 @@
 	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 	<script src="../js/luxon.min.js"></script>
 	<script>
-		createLineupApp('w3', session =>
-		  session.location && session.location.toLowerCase().includes('w3')
+		 createLineupApp('all', session =>
+			session.location && (session.location.toLowerCase().includes('w1') || session.location.toLowerCase().includes('w2') || session.location.toLowerCase().includes('audimax') || session.location.toLowerCase().includes('w3'))
 		);
 	  </script>
 

@@ -63,9 +63,9 @@ function createLineupApp(mountElementId, roomFilterFn) {
       formatLocation(value) {
         if (!value) return '';
         value = value.toLowerCase();
-        if (value.includes("audimax")) return "Audimax";
-        if (value.includes("w1") || value.includes("w2")) return "Room WS1/2";
-        if (value.includes("w3")) return "Room WS3";
+        if (value.includes("audimax")) return "Yellow";
+        if (value.includes("w1") || value.includes("w2")) return "Blue";
+        if (value.includes("w3")) return "Orange";
         if (value.includes("expert")) return "Expert Corner";
         if (value.includes("canteen")) return "Canteen";
         return value;
