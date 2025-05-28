@@ -44,7 +44,7 @@
 		<nav-section-mobile v-else></nav-section-mobile>
 	</nav>
 
-	<main id="main">
+	<!-- <main id="main">
 		<section id="agenda" ref="agenda">
 			<div class="wrap">
 				<div class="box">
@@ -65,12 +65,12 @@
 								<legend class="sr-only">Filter by room</legend>
 								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="audimax" name="filter"
 										value="audimax" data-enpassusermodified="yes"> <label for="audimax"
-										class="agenda-filter__label">Yellow</label></div>
+										class="agenda-filter__label">Yellow Room</label></div>
 								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="w1" name="filter" value="w1"
-										data-enpassusermodified="yes"> <label for="w1" class="agenda-filter__label">Blue</label>
+										data-enpassusermodified="yes"> <label for="w1" class="agenda-filter__label">Blue Room</label>
 								</div>
 								<div class="agenda-filter__element"><input type="radio" @change="onFilterChange($event)" id="w3" name="filter" value="w3"
-										data-enpassusermodified="yes"> <label for="w3" class="agenda-filter__label">Orange</label>
+										data-enpassusermodified="yes"> <label for="w3" class="agenda-filter__label">Orange Room</label>
 								</div>
 							</fieldset>
 							<fieldset class="agenda-filter">
@@ -162,14 +162,6 @@
 
 										</template>
 									</div>
-
-									<!-- <div class="agenda-slot-speakers-images lunch" v-if="event.type === 'z_catering'">
-										<img src="./images/lunch.svg" alt="Illustration of a meal" />
-									</div>
-
-									<div class="agenda-slot-speakers-images panel" v-if="event.type === 'panel'">
-										<img src="./images/cheers.svg" alt="Illustration of two people having a cup of coffee sitting at a table" />
-									</div> -->
 
 									<p class="agenda-slot-description">{{event.description | decodeHtml}}</p>
 								</div>
@@ -344,7 +336,7 @@
 			</div>
 
 		</section>
-	</main>
+	</main> -->
 
 	<footer id="footer">
 		<footer-section></footer-section>
