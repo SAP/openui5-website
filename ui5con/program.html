@@ -44,7 +44,7 @@
 		<nav-section-mobile v-else></nav-section-mobile>
 	</nav>
 
-	<!-- <main id="main">
+	<main id="main">
 		<section id="agenda" ref="agenda">
 			<div class="wrap">
 				<div class="box">
@@ -121,19 +121,26 @@
 											{{ event.location | formatLocation }}
 										</span>
 
-										<span class="agenda-level" v-if="event.proficiencyLevel"
+										<!-- <span class="agenda-level" v-if="event.proficiencyLevel"
 											:class="{ beginner: event.proficiencyLevel === 'beginner', intermediate: event.proficiencyLevel === 'intermediate', advanced: event.proficiencyLevel === 'advanced' }"
 											:title="formatProficiencyLevel(event.proficiencyLevel)"
 										>
 											{{ event.proficiencyLevel | formatLevel}}
-										</span>
+										</span> -->
 									</p>
 
 								</div>
 							</div>
 
 							<div class="agenda-slot-container">
-								<h2 class="agenda-slot-title">{{ event.title | decodeHtml}}</h2>
+								<h2 class="agenda-slot-title">{{ event.title | decodeHtml}}
+									<span class="agenda-level" v-if="event.proficiencyLevel"
+										:class="{ beginner: event.proficiencyLevel === 'beginner', intermediate: event.proficiencyLevel === 'intermediate', advanced: event.proficiencyLevel === 'advanced' }"
+										:title="formatProficiencyLevel(event.proficiencyLevel)"
+									>
+										{{ event.proficiencyLevel}}
+									</span>
+								</h2>
 
 								<p class="agenda-slot-speakers" v-if="event.speakers.length > 0">
 									<template v-for="(speaker, index) in event.speakers"
@@ -336,7 +343,7 @@
 			</div>
 
 		</section>
-	</main> -->
+	</main>
 
 	<footer id="footer">
 		<footer-section></footer-section>

@@ -608,7 +608,7 @@ var main = new Vue({
     },
     formatLocationTitle(value) {
       if (!value) return '';
-      
+
       if (value) {
         if (value.toLowerCase().includes("audimax")) {
           return "Yellow";

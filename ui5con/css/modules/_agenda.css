@@ -1,15 +1,15 @@
 :root {
-	--all: rgb(136, 56, 236);
-	--audimax: rgb(228, 217, 69);
-	--w1: rgb(37, 144, 191);
-	--w3: rgb(243, 121, 2);
+	--all: rgba(136, 56, 236);
+	--audimax: rgba(228, 217, 69);
+	--w1: rgba(0, 155, 226);
+	--w3: rgba(223, 111, 2);
 	--canteen: rgb(112, 76, 121);
 	--experts: rgb(165, 232, 95);
-	--talks: rgb(0, 0, 255);
+	--talks: rgba(53, 242, 212);
 	--workshops: rgb(0, 0, 255);
-	--beginner: rgb(247, 155, 54);
-	--intermediate: rgb(95, 196, 232);
-	--advanced: rgb(165, 232, 95);
+	--beginner: rgba(215, 95, 232);
+	--intermediate: rgba(157, 107, 87);
+	--advanced: rgba(165, 232, 95);
 	--agenda-room-size: 3rem;
 }
 
@@ -200,13 +200,13 @@
 
 #w3 + .agenda-filter__label[for="w3"] {
 	background-color: var(--w3);
-	color: #000;
+	color: #fff;
 	outline-color: var(--w3);
 }
 
 #talks + .agenda-filter__label[for="talks"] {
 	background-color: var(--talks);
-	color: #fff;
+	color: #000;
 	outline-color: var(--talks);
 }
 
@@ -218,13 +218,13 @@
 
 #beginner + .agenda-filter__label[for="beginner"] {
 	background-color: var(--beginner);
-	color: #000;
+	color: #fff;
 	outline-color: var(--beginner);
 }
 
 #intermediate + .agenda-filter__label[for="intermediate"] {
 	background-color: var(--intermediate);
-	color: #000;
+	color: #fff;
 	outline-color: var(--intermediate);
 }
 
@@ -270,7 +270,7 @@
 	align-items: center;
 	margin-block: 0;
 	width: fit-content;
-	grid-template-columns: 1fr var(--agenda-room-size) var(--agenda-room-size);
+	grid-template-columns: 1fr var(--agenda-room-size);
 }
 
 .agenda-slot {
@@ -343,6 +343,7 @@
 }
 
 .agenda-room.w3 {
+	color: #fff;
 	position: relative;
 	background: transparent;
 }
@@ -376,19 +377,24 @@
 .agenda-level {
 	position: relative;
 	font-size: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 3rem;
-	height: 3rem;
-	border-radius: 10rem;
+	display: inline-block;
+	padding-block: 0.25rem;
+	padding-inline: 0.5rem;
+	border-radius: 5px;
 	background: var(--beginner);
 	color: black;
 	font-weight: 600;
+	transform: translateY(-5px);
+	line-height: 1;
+}
+
+.agenda-level.beginner {
+	color: #fff;
 }
 
 .agenda-level.intermediate {
 	background: var(--intermediate);
+	color: #fff;
 }
 
 .agenda-level.advanced {
@@ -502,7 +508,7 @@
 	font-size: var(--type-2);
 	line-height: 1.35;
 	margin-block: 0 1rem;
-	max-width: 95%;
+	max-width: 90%;
 }
 
 .agenda-slot-speakers {
