@@ -136,7 +136,6 @@
 								<h2 class="agenda-slot-title">{{ event.title | decodeHtml}}
 									<span class="agenda-level" v-if="event.proficiencyLevel"
 										:class="{ beginner: event.proficiencyLevel === 'beginner', intermediate: event.proficiencyLevel === 'intermediate', advanced: event.proficiencyLevel === 'advanced' }"
-										:title="formatProficiencyLevel(event.proficiencyLevel)"
 									>
 										{{ event.proficiencyLevel}}
 									</span>

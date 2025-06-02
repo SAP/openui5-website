@@ -386,6 +386,7 @@
 	font-weight: 600;
 	transform: translateY(-5px);
 	line-height: 1;
+	text-transform: capitalize;
 }
 
 .agenda-level.beginner {
@@ -509,6 +510,7 @@
 	line-height: 1.35;
 	margin-block: 0 1rem;
 	max-width: 90%;
+	text-transform: capitalize;
 }
 
 .agenda-slot-speakers {
