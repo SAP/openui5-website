@@ -9,7 +9,7 @@ speakers:
 - Arnaud Buchholz
 - Peter Muessig
 - Mauricio Lauffer
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/9yKep9YmYS4
 ---
 Following the phasing out of Karma last year, the debate around OpenUI5 testing and the karma-ui5 plugin's future heated up. 
 While we initially believed that this wouldn't affect OpenUI5 development in the short term, changing circumstances have led to the 'karma-ui5' plugin's deprecation.
