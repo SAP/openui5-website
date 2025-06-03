@@ -8,7 +8,7 @@ logo: ./logos/ui5ers.svg
 speakers:
 - Dominik Heim
 - Katrin Polloczek
-url: https://sap-se.zoom.com/j/94833714827
+recordingUrl: https://youtu.be/dNmbALBFb9w
 ---
 
 SAP Fiori elements provide a robust toolkit that enables developers to efficiently create SAPUI5 applications. However, many 
