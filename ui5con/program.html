@@ -166,6 +166,8 @@
 									<p class="agenda-slot-description">{{event.description | decodeHtml}}</p>
 								</div>
 
+								<!-- <a v-if="event.location.toLowerCase().includes('audimax')" href="https://youtube.com/live/0D0_M4RDiZY" class="agenda-slot-linkitem" rel="noopener noreferrer" target="_blank" hreflang="en">Livestream</a> -->
+
 								<template v-if="event.presentationLinks.length > 0">
 									<template
 										v-if="!(event.presentationLinks.length == 1 && event.presentationLinks[0].linkType.toLowerCase() == 'feedback')">
@@ -176,10 +178,6 @@
 														hreflang="en" rel="noopener noreferrer">{{link.linkType}}</a>
 												</li>
 											</template>
-
-											<li class="livestream" v-if="event.isLive">
-												<a href="#" class="agenda-slot-linkitem">Livestream</a>
-											</li>
 										</ul>
 									</template>
 								</template>
