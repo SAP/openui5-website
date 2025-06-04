@@ -166,7 +166,16 @@
 									<p class="agenda-slot-description">{{event.description | decodeHtml}}</p>
 								</div>
 
-								<!-- <a v-if="event.location.toLowerCase().includes('audimax')" href="https://youtube.com/live/0D0_M4RDiZY" class="agenda-slot-linkitem" rel="noopener noreferrer" target="_blank" hreflang="en">Livestream</a> -->
+								<!-- <div class="agenda-links">
+									<a v-if="event.location.toLowerCase().includes('audimax')" href="https://youtube.com/live/0D0_M4RDiZY" class="agenda-slot-linkitem" rel="noopener noreferrer" target="_blank" hreflang="en">Livestream</a>
+
+									<ul class="calendar-list is-calendar" v-if="showSessionCalendars(event)">
+										<calendar-link src="images/calendar/google.png" :link="event.calendars[0].google" :cal="true">Google</calendar-link>
+										<calendar-link src="images/calendar/office.png" :link="event.calendars[0].office365" :cal="true">Office 365</calendar-link>
+										<calendar-link src="images/calendar/outlook.png" :link="event.calendars[0].ics" download='ui5con2025.ics' :cal="true">Outlook</calendar-link>
+										<calendar-link src="images/calendar/ical.png" :link="event.calendars[0].ics" download='ui5con2025.ics' :cal="true">iCal</calendar-link>
+									</ul>
+								</div> -->
 
 								<template v-if="event.presentationLinks.length > 0">
 									<template
@@ -342,6 +351,7 @@
 
 	<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 	<script src="./js/luxon.min.js"></script>
+	<script src="./components/calendar-link.component.js"></script>
 	<script src="./components/nav-section.component.js"></script>
 	<script src="./components/nav-section-mobile.component.js"></script>
 	<script src="./components/footer-section.component.js"></script>

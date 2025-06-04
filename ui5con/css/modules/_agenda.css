@@ -546,7 +546,7 @@
 	cursor: pointer;
 }
 
-.agenda-slot-linkitem[href*="github"]::before {
+.agenda-slot-linkitem:not(.is-calendar)[href*="github"]::before {
 	content: "";
 	background: currentColor;
 	mask: url(../../images/icons/github.svg);
@@ -581,6 +581,12 @@
 	vertical-align: middle;
 	line-height: 1;
 	margin-inline: 0 .3rem;
+}
+
+.agenda-slot-linkitem.is-calendar {
+	gap: 0.25rem;
+	display: inline-flex;
+	align-items: center;
 }
 
 .livestream .agenda-slot-linkitem::before {
@@ -631,4 +637,18 @@
 	line-height: 1.75rem;
 	font-size: var(--type-1);
 	color: var(--brand-color);
+}
+
+.agenda-links {
+	gap: 0.75rem;
+	display: inline-flex;
+}
+
+.calendar-list {
+	gap: 0.75rem;
+	margin: 0;
+	padding: 0;
+	line-height: 1.7;
+	display: inline-flex;
+	list-style-type: none;
 }

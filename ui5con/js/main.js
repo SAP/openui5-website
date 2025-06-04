@@ -504,6 +504,63 @@ var main = new Vue({
         let newStartTime = "2025-07-08T" + start + ":00.000+02:00";
         let newEndTime = "2025-07-08T" + end + ":00.000+02:00";
 
+        let calendarStartDate = new Date(newStartTime).toISOString().replace(/-|:|\.\d+/g, '');
+        let calendarEndDate = new Date(newEndTime).toISOString().replace(/-|:|\.\d+/g, '');
+
+        let officeStartDate = new Date(newStartTime).toISOString();
+        let officeEndDate = new Date(newEndTime).toISOString();
+
+        const forbiddenCharacters = new RegExp('#', 'g');
+        const removeForbiddenCharachters = (text) => {
+            if (typeof text === 'string') {
+              let formattedText = text.replace(/(&amp;|&)/g, " and ");
+              return formattedText.replace(forbiddenCharacters, '');
+            }
+            return ''
+        };
+
+        const removeForbiddenCharachtersOutlook = (text) => {
+          if (typeof text === 'string') {
+            let formattedText = text.replace(/(?:\r\n|\r|\n)/g, "\\n");
+            formattedText = formattedText.replace(/<br>/g, "\\n");
+            formattedText = formattedText.replace(/(&amp;|&)/g, " and ");
+            return formattedText.replace(forbiddenCharacters, '');
+          }
+          return '';
+        };
+        const sessionLocation = (location) => {
+          if (location.toLowerCase().includes("audimax")) {
+            return "Yellow Room";
+          } else if (location.toLowerCase().includes("w1") || location.toLowerCase().includes("w2")) {
+            return "Blue Room";
+          } else if (location.toLowerCase().includes("w3")) {
+            return "Orange Room"
+          } else {
+            return location;
+          }
+        }
+
+        let cal = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'BEGIN:VEVENT',
+          'DTSTART:' + calendarStartDate,
+          'DTEND:' + calendarEndDate,
+          'SUMMARY:' + 'UI5con: ' + removeForbiddenCharachtersOutlook(session.title),
+          'LOCATION:' + sessionLocation(session.location),
+          'DESCRIPTION:' + removeForbiddenCharachtersOutlook(session.description),
+          'UID:' + session.id,
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\n');
+
+        let calDescription = '';
+
+        if(session.description) {
+          let formattedDescription = session.description.replace(/&amp;/g, "&");
+          calDescription = formattedDescription.replace(/(?:\r\n|\r|\n)/g, "<br>");
+        }
+
 
         let timeNow = new Date().toISOString();
         let sessionTimeStart = new Date(newStartTime).toISOString();
@@ -519,6 +576,31 @@ var main = new Vue({
           startTime: newStartTime,
           endTime: newEndTime,
           isLive: sessionLiveStatus,
+          calendars: [
+            {
+              google: encodeURI([
+                'https://www.google.com/calendar/render',
+                '?action=TEMPLATE',
+                '&text=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+                '&dates=' + calendarStartDate ,
+                '/' + calendarEndDate,
+                '&location=' + sessionLocation(session.location),
+                '&details=' + removeForbiddenCharachters(calDescription),
+                '&sprop=&sprop=name:'
+              ].join('')),
+              office365: encodeURI([
+                'https://outlook.office365.com/owa/',
+                '?path=/calendar/action/compose',
+                '&rru=addevent',
+                '&subject=' + 'UI5con: ' + removeForbiddenCharachters(session.title),
+                '&startdt=' + officeStartDate,
+                '&enddt=' + officeEndDate,
+                '&location=' + sessionLocation(session.location),
+                '&body=' + removeForbiddenCharachters(calDescription)
+              ].join('')),
+              ics: encodeURI('data:text/calendar;charset=utf8,' + cal)
+            }
+          ]
         };
       });
 
@@ -623,6 +705,20 @@ var main = new Vue({
         } else {
           return value;
         }
+      }
+    },
+    showSessionCalendars(session) {
+      if (
+        (session.location.toLowerCase().includes("audimax") || 
+        session.location.toLowerCase().includes("w1") || 
+        session.location.toLowerCase().includes("w2") || 
+        session.location.toLowerCase().includes("w3")) && 
+        !(session.title.toLowerCase().includes("welcome") ||
+        session.title.toLowerCase().includes("closing"))
+      ) {
+        return true;
+      } else {
+        return false;
       }
     }
   },
