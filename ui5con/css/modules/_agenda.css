@@ -645,6 +645,7 @@
 
 .agenda-links {
 	gap: 0.75rem;
+	flex-wrap: wrap;
 	display: inline-flex;
 }
 
