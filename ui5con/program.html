@@ -170,10 +170,9 @@
 									<a v-if="event.location.toLowerCase().includes('audimax')" href="https://youtube.com/live/0D0_M4RDiZY" class="agenda-slot-linkitem" rel="noopener noreferrer" target="_blank" hreflang="en">Livestream</a>
 
 									<ul class="calendar-list is-calendar" v-if="showSessionCalendars(event)">
-										<calendar-link src="images/calendar/google.png" :link="event.calendars[0].google" :cal="true">Google</calendar-link>
-										<calendar-link src="images/calendar/office.png" :link="event.calendars[0].office365" :cal="true">Office 365</calendar-link>
-										<calendar-link src="images/calendar/outlook.png" :link="event.calendars[0].ics" download='ui5con2025.ics' :cal="true">Outlook</calendar-link>
-										<calendar-link src="images/calendar/ical.png" :link="event.calendars[0].ics" download='ui5con2025.ics' :cal="true">iCal</calendar-link>
+										<calendar-link :type="'google'" :link="event.calendars[0].google" :cal="true">Google</calendar-link>
+										<calendar-link :type="'office'" :link="event.calendars[0].office365" :cal="true">Office 365</calendar-link>
+										<calendar-link :type="'outlook'" :link="event.calendars[0].ics" download='ui5con2025.ics' :cal="true">Outlook</calendar-link>
 									</ul>
 								</div> -->
 
@@ -243,9 +242,7 @@
 										<p v-if="speaker.company" v-html="speaker.company"></p>
 									</div>
 								</header>
-								<p class="" v-if="speaker.bio">
-									{{speaker.bio | formatText }}
-								</p>
+								<p class="" v-if="speaker.bio" v-html="decodeBioHtml(speaker.bio)"></p>
 								<ul class="speakers-socials"
 									v-if="speaker.githubUrl || speaker.linkedInUrl || speaker.twitterHandle || speaker.mastodonHandle || speaker.blueskyHandle">
 									<li v-if="speaker.githubUrl">

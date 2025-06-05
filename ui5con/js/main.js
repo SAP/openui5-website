@@ -720,6 +720,21 @@ var main = new Vue({
       } else {
         return false;
       }
+    },
+    decodeBioHtml(value) {
+      if (!value) return '';
+      const txt = document.createElement('textarea');
+      txt.innerHTML = value;
+
+      let decoded = txt.value;
+
+      // Replace "&amp;" or "&" with " and "
+      decoded = decoded.replace(/&amp;|&/g, ' and ');
+
+      // Replace \n or /n with <br> for HTML rendering
+      decoded = decoded.replace(/\\n|\/n|\n/g, '<br>');
+
+      return decoded;
     }
   },
   filters: {
