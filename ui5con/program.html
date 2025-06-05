@@ -166,7 +166,7 @@
 									<p class="agenda-slot-description">{{event.description | decodeHtml}}</p>
 								</div>
 
-								<!-- <div class="agenda-links">
+								<div class="agenda-links">
 									<a v-if="event.location.toLowerCase().includes('audimax')" href="https://youtube.com/live/0D0_M4RDiZY" class="agenda-slot-linkitem" rel="noopener noreferrer" target="_blank" hreflang="en">Livestream</a>
 
 									<ul class="calendar-list is-calendar" v-if="showSessionCalendars(event)">
@@ -174,7 +174,7 @@
 										<calendar-link :type="'office'" :link="event.calendars[0].office365" :cal="true">Office 365</calendar-link>
 										<calendar-link :type="'outlook'" :link="event.calendars[0].ics" download='ui5con2025.ics' :cal="true">Outlook</calendar-link>
 									</ul>
-								</div> -->
+								</div>
 
 								<template v-if="event.presentationLinks.length > 0">
 									<template
