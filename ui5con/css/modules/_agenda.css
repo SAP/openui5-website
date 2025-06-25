@@ -526,7 +526,7 @@
 
 .agenda-slot-description {
 	margin-block: 0;
-	white-space: pre-line;
+	white-space: pre-wrap;
 }
 
 .agenda-slot-links {
