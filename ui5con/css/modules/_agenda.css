@@ -315,6 +315,21 @@
 	}
 }
 
+@keyframes glowing-pulse {
+	0% {
+	  background-color: #e60000;
+	  box-shadow: 0 0 0 0 rgba(230, 0, 0, 0.7);
+	}
+	70% {
+	  background-color: #ff4d4d;
+	  box-shadow: 0 0 10px 15px rgba(230, 0, 0, 0);
+	}
+	100% {
+	  background-color: #e60000;
+	  box-shadow: 0 0 0 0 rgba(230, 0, 0, 0);
+	}
+}
+  
 .agenda-time {
 	display: flex;
 	justify-content: center;
@@ -326,6 +341,13 @@
 	color: var(--background-color);
 	font-weight: 700;
 	text-align: center;
+	transition: background-color 0.6s ease;
+}
+  
+.agenda-time.live {
+	animation: glowing-pulse 2s ease-in-out infinite;
+	background-color: #e60000;
+	color: #fff;
 }
 
 .agenda-room {
@@ -595,12 +617,14 @@
 
 .livestream.agenda-slot-linkitem::before {
 	content: "●";
-	color: red;
+	color: #e60000;
 	margin-inline: 0 .3rem;
 	animation: blink 1s linear infinite alternate;
 	text-decoration-thickness: 0 !important;
 	display: inline-block;
 	font-size: 85%;
+	mask: none;
+	background: none;
 }
 
 /* EXPERT TRACK */

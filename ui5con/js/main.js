@@ -312,6 +312,31 @@ var main = new Vue({
       this.formattedSpeakers = this.formatSpeakers(this.formattedLineup, this.speakers);
       this.groupExpertCornerTopics();
     })
+
+    this.updateLiveSession();
+
+    let interval;
+
+    let timeNow = new Date().toISOString();
+
+    const startCounterTime = new Date(
+      "2025-07-08T00:50:00.000+02:00"
+    ).toISOString();
+
+    const endCounterTime = new Date(
+      "2025-07-08T18:10:00.000+02:00"
+    ).toISOString();
+
+    if (timeNow > startCounterTime && timeNow <= endCounterTime) {
+      interval = setInterval(() => {
+        timeNow = new Date().toISOString();
+        if (timeNow > endCounterTime) {
+          clearInterval(interval);
+          return;
+        }
+        this.updateLiveSession();
+      }, 30000);
+    }
   },
   methods: {
     openSpeakerInfoModal(speakers, id) {
@@ -561,7 +586,6 @@ var main = new Vue({
           calDescription = formattedDescription.replace(/(?:\r\n|\r|\n)/g, "<br>");
         }
 
-
         let timeNow = new Date().toISOString();
         let sessionTimeStart = new Date(newStartTime).toISOString();
         let sessionTimeEnd = new Date(newEndTime).toISOString();
@@ -735,7 +759,20 @@ var main = new Vue({
       decoded = decoded.replace(/\\n|\/n|\n/g, '<br>');
 
       return decoded;
-    }
+    },
+    updateLiveSession() {
+      return this.formattedLineup.map((session) => {
+        let timeNow = new Date().toISOString();
+        let sessionTimeStart = new Date(session.startTime).toISOString();
+        let sessionTimeEnd = new Date(session.endTime).toISOString();
+
+        if (timeNow >= sessionTimeStart && timeNow < sessionTimeEnd) {
+          session.isLive = true;
+        } else {
+          session.isLive = false;
+        }
+      });
+    },
   },
   filters: {
     formatLocation: function (value) {
