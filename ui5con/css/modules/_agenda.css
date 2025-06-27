@@ -341,7 +341,7 @@
 	  box-shadow: 0 0 0 0 rgba(230, 0, 0, 0);
 	}
 }
-  
+
 .agenda-time {
 	display: flex;
 	justify-content: center;
@@ -355,7 +355,7 @@
 	text-align: center;
 	transition: background-color 0.6s ease;
 }
-  
+
 .agenda-time.live {
 	animation: glowing-pulse 2s ease-in-out infinite;
 	background-color: #e60000;
@@ -561,6 +561,7 @@
 .agenda-slot-description {
 	margin-block: 0;
 	white-space: pre-wrap;
+	hyphens: auto;
 }
 
 .agenda-slot-links {
