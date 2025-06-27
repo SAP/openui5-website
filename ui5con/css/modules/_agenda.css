@@ -20,7 +20,7 @@
 	width: 100%;
 	justify-content: space-between;
 	margin-block: 2rem 2rem;
-	padding-block: 2rem 2rem;
+	padding-block: 2rem 1rem;
 	background: var(--background-color);
 	position: sticky;
 	top: 2rem;
@@ -33,6 +33,7 @@
 	.agenda-sort {
 		flex-direction: column-reverse;
 		top: 0;
+		padding-block: 2rem 2rem;
 	}
 
 	.agenda-toggle {
@@ -123,7 +124,6 @@
 
 .agenda-filter {
 	border: 0;
-	border-right: 1px solid var(--text-color);
 	padding: 0 1rem 0 0;
 	margin: 0 0 0 .3rem;
 	display: flex;
@@ -147,8 +147,20 @@
 	display: flex;
 	align-items: center;
 	color: var(--brand-color-alt);
-	font-size: 1rem;
+	font-size: .85rem;
 	line-height: 1.2;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.agenda-filter__element {
+		font-size: 1rem;
+	}
+
+	.agenda-filter {
+		border: 0;
+		border-right: 1px solid var(--text-color);
+	}
 }
 
 .agenda-filter__label {
