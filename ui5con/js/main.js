@@ -41,11 +41,15 @@ var header = new Vue({
     };
   },
   mounted() {
-    // Set the time to July 8th, 8AM, Munich time
+    // Target date: July 8, 2025, 08:00 Munich (UTC+2)
     const targetDate = new Date('2025-07-08T08:00:00+02:00');
     const timestamp = Math.floor(targetDate.getTime() / 1000);
 
-    new FlipDown(timestamp).start();
+    new FlipDown(timestamp)
+      .start()
+      .ifEnded(() => {
+        document.getElementById('flipdown').style.display = 'none';
+      });
   },
   methods: {
     toggleCalendars() {
