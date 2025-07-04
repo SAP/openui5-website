@@ -41,7 +41,11 @@ var header = new Vue({
     };
   },
   mounted() {
-    // console.log(this.createCalendars());
+    // Set the time to July 8th, 8AM, Munich time
+    const targetDate = new Date('2025-07-08T08:00:00+02:00');
+    const timestamp = Math.floor(targetDate.getTime() / 1000);
+
+    new FlipDown(timestamp).start();
   },
   methods: {
     toggleCalendars() {
