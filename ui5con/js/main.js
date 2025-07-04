@@ -45,19 +45,11 @@ var header = new Vue({
     const targetDate = new Date('2025-07-08T08:00:00+02:00');
     const timestamp = Math.floor(targetDate.getTime() / 1000);
 
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = isDarkMode ? 'light' : 'dark';
-
-    new FlipDown(timestamp, { theme })
+    new FlipDown(timestamp)
       .start()
       .ifEnded(() => {
         document.getElementById('flipdown').style.display = 'none';
       });
-
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      location.reload(); 
-    });
   },
   methods: {
     toggleCalendars() {
@@ -749,10 +741,10 @@ var main = new Vue({
     },
     showSessionCalendars(session) {
       if (
-        (session.location.toLowerCase().includes("audimax") || 
-        session.location.toLowerCase().includes("w1") || 
-        session.location.toLowerCase().includes("w2") || 
-        session.location.toLowerCase().includes("w3")) && 
+        (session.location.toLowerCase().includes("audimax") ||
+        session.location.toLowerCase().includes("w1") ||
+        session.location.toLowerCase().includes("w2") ||
+        session.location.toLowerCase().includes("w3")) &&
         !(session.title.toLowerCase().includes("welcome") ||
         session.title.toLowerCase().includes("closing"))
       ) {

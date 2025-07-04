@@ -7,3 +7,39 @@
 @import url("modules/_tito.css");
 @import url("modules/_agenda.css");
 @import url("modules/_agenda-modal.css");
+@import url("modules/_flipclock.css");
+
+
+.countdown {
+    margin-block: 3rem 0;
+    transform-origin: 50% 0;
+    text-align: center;
+}
+
+.flipdown {
+    font-family: inherit !important;
+    width: auto !important;
+    height: 100% !important;
+    display: inline-block;
+}
+
+@media only screen and (min-width: 550px) {
+    .countdown {
+        transform: scale(.8);
+    }
+}
+
+@media only screen and (min-width: 1060px) {
+
+    .countdown {
+        transform: scale(.8);
+    }
+
+    .flipdown__custom {
+        margin-inline-end: 30px;
+    }
+}
+
+.rotor-group-heading {
+    display: none;
+}
