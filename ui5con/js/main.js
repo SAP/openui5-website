@@ -48,7 +48,7 @@ var header = new Vue({
     new FlipDown(timestamp)
       .start()
       .ifEnded(() => {
-        document.getElementById('flipdown').style.display = 'none';
+        document.getElementById('countdown').style.display = 'none';
       });
   },
   methods: {
