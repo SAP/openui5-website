@@ -46,7 +46,7 @@ var header = new Vue({
     const timestamp = Math.floor(targetDate.getTime() / 1000);
 
     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = isDarkMode ? 'dark' : 'light';
+    const theme = isDarkMode ? 'light' : 'dark';
 
     new FlipDown(timestamp, { theme })
       .start()
