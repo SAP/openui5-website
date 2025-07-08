@@ -110,9 +110,8 @@
 							<div class="agenda-slot-header">
 								<div>
 									<p class="agenda-slot-details">
-										<span class="agenda-time" :class="{live: (event.location.toLowerCase().includes('audimax')) && event.isLive}">
-											<template v-if="(event.location.toLowerCase().includes('audimax')) && event.isLive">LIVE NOW</template>
-											<template v-else>{{event.startTime | trimTime}} {{event.endTime | trimTime}}</template>
+										<span class="agenda-time">
+											{{event.startTime | trimTime}} {{event.endTime | trimTime}}
 										</span>
 
 										<span class="agenda-room"
@@ -166,13 +165,7 @@
 								</div>
 
 								<div class="agenda-links">
-									<a v-if="event.location.toLowerCase().includes('audimax')" href="https://youtube.com/live/0D0_M4RDiZY" rel="noopener noreferrer" target="_blank" hreflang="en"  class="agenda-slot-linkitem" :class="{livestream: event.isLive}">Livestream</a>
-
-									<ul class="calendar-list is-calendar" v-if="showSessionCalendars(event)">
-										<calendar-link :type="'google'" :link="event.calendars[0].google" :cal="true">Google</calendar-link>
-										<calendar-link :type="'office'" :link="event.calendars[0].office365" :cal="true">Office 365</calendar-link>
-										<calendar-link :type="'outlook'" :link="event.calendars[0].ics" download='ui5con2025.ics' :cal="true">Outlook</calendar-link>
-									</ul>
+									<a v-if="event.location.toLowerCase().includes('audimax')" href="https://youtube.com/live/0D0_M4RDiZY" rel="noopener noreferrer" target="_blank" hreflang="en"  class="agenda-slot-linkitem">Livestream</a>
 								</div>
 
 								<template v-if="event.presentationLinks.length > 0">
