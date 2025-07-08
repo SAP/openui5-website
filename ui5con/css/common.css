@@ -886,6 +886,10 @@ main {
 	}
 }
 
+.head-cta {
+	padding-block: 1rem 0;
+}
+
 /* ---------------------------- Calendars -----------------------------  */
 .calendars {
 	height: 2rem;
