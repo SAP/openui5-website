@@ -16,6 +16,30 @@ function createLineupApp(mountElementId, roomFilterFn) {
           this.lineup = response.data.filter(roomFilterFn); // Filter by room
           this.formattedLineup = this.formatLineup();
         });
+
+    this.updateLiveSession();
+    let interval;
+
+    let timeNow = new Date().toISOString();
+
+    const startCounterTime = new Date(
+      "2025-07-08T00:50:00.000+02:00"
+    ).toISOString();
+
+    const endCounterTime = new Date(
+      "2025-07-08T18:10:00.000+02:00"
+    ).toISOString();
+
+    if (timeNow > startCounterTime && timeNow <= endCounterTime) {
+      interval = setInterval(() => {
+        timeNow = new Date().toISOString();
+        if (timeNow > endCounterTime) {
+          clearInterval(interval);
+          return;
+        }
+        this.updateLiveSession();
+      }, 30000);
+    }
     },
     methods: {
       formatLineup() {
@@ -58,21 +82,27 @@ function createLineupApp(mountElementId, roomFilterFn) {
         return tempLineUp.sort((a, b) =>
           luxon.DateTime.fromISO(a.startTime) - luxon.DateTime.fromISO(b.startTime)
         );
-      }
-    },
-    updateLiveSession() {
-      return this.formattedLineup.map((session) => {
-        let timeNow = new Date().toISOString();
-        let sessionTimeStart = new Date(session.startTime).toISOString();
-        let sessionTimeEnd = new Date(session.endTime).toISOString();
+      },
+      updateLiveSession() {
+        return this.formattedLineup.map((session) => {
+          let timeNow = new Date().toISOString();
+          let sessionTimeStart = new Date(session.startTime).toISOString();
+          let sessionTimeEnd = new Date(session.endTime).toISOString();
+  
+          if (timeNow >= sessionTimeStart && timeNow < sessionTimeEnd) {
+            session.isLive = true;
+          } else {
+            session.isLive = false;
+          }
 
-        if (timeNow >= sessionTimeStart && timeNow < sessionTimeEnd) {
-          session.isLive = true;
-        } else {
-          session.isLive = false;
-        }
-      });
+          if( timeNow > sessionTimeEnd) {
+            session.isPast = true;
+          }
+      
+        });
+      },
     },
+   
     filters: {
       formatLocation(value) {
         if (!value) return '';
