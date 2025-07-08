@@ -65,7 +65,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr v-for="event in this.formattedLineup" :key="event.id" v-cloak>
+			<tr v-for="event in this.formattedLineup" :key="event.id" :style="{ display: event.isPast ? 'none' : '' }" v-cloak >
 				<th scope="row">{{event.startTime | trimTime}}</th>
 				<td>
 					<span

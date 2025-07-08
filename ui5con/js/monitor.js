@@ -51,6 +51,7 @@ function createLineupApp(mountElementId, roomFilterFn) {
             startTime: newStartTime,
             endTime: newEndTime,
             isLive: sessionLiveStatus,
+            isPast: timeNow > sessionTimeEnd,
           };
         });
 
@@ -58,6 +59,19 @@ function createLineupApp(mountElementId, roomFilterFn) {
           luxon.DateTime.fromISO(a.startTime) - luxon.DateTime.fromISO(b.startTime)
         );
       }
+    },
+    updateLiveSession() {
+      return this.formattedLineup.map((session) => {
+        let timeNow = new Date().toISOString();
+        let sessionTimeStart = new Date(session.startTime).toISOString();
+        let sessionTimeEnd = new Date(session.endTime).toISOString();
+
+        if (timeNow >= sessionTimeStart && timeNow < sessionTimeEnd) {
+          session.isLive = true;
+        } else {
+          session.isLive = false;
+        }
+      });
     },
     filters: {
       formatLocation(value) {
