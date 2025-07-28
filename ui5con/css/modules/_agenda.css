@@ -605,6 +605,7 @@
 	margin-inline: 0 .3rem;
 }
 
+.agenda-slot-linkitem[href*="eu1"]::before,
 .agenda-slot-linkitem[href*="slideshare"]::before,
 .agenda-slot-linkitem[href*=".pdf"]::before {
 	content: "";
