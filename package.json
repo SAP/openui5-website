@@ -10,10 +10,10 @@
   "license": "License 2.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:SAP/openui5-website.git"
+    "url": "git@github.com:UI5/openui5-website.git"
   },
   "bugs": {
-    "url": "https://github.com/SAP/openui5-website/issues"
+    "url": "https://github.com/UI5/openui5-website/issues"
   },
   "scripts": {
     "build": "gatsby build",

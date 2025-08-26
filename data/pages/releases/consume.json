@@ -14,7 +14,7 @@
     {
         "title": "GitHub",
         "description": "Contribute to OpenUI5, report issues, or consume the latest features straight from the source.",
-        "url": "https://github.com/SAP/openui5",
+        "url": "https://github.com/UI5/openui5",
         "icon": "../../icons/github.svg"
     }
 ]

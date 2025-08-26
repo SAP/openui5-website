@@ -53,7 +53,7 @@ const AnniversaryPage = ({ data: { anniversaryJson: { title }, allEventsJson } }
                             <div>
                                 <h2>OpenUI5 Released on GitHub</h2>
                                 <p>The 10th of October 2014 was a red-letter day for the UI5 team as they successfully pushed their codebase to the public GitHub repository, marking the beginning of transparent and collaborative development. The switch from a Maven-based system to Grunt wasn't a walk in the park, but the satisfaction of overcoming these challenges made the achievement all the more rewarding.</p>
-                                <p><a href="https://github.com/SAP/openui5/commit/707bfef98f188c03bab45626ebf8af48cddac997" rel="nofollow external">Github Commit</a></p>
+                                <p><a href="https://github.com/UI5/openui5/commit/707bfef98f188c03bab45626ebf8af48cddac997" rel="nofollow external">Github Commit</a></p>
 
                                 <figure>
                                     <img src="/images/2014-github-fullen-3.jpg" alt="blaha" />
