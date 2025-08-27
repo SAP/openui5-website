@@ -1,7 +1,7 @@
 ---
 name: Mariana Naboka
 company: SAP
-photo: ./
+photo: ./mariana-naboka.jpg
 linkedin: 
 github: 
 ---
