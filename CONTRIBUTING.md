@@ -19,8 +19,8 @@ You need to have the following tools installed:
 - Open `http://localhost:3030` (or `http://localhost:3030/index` on Windows)
 
 ### Make Your Changes
-- Make sure the `master` branch of your fork is up to date by [syncing your fork](https://help.github.com/articles/syncing-a-fork/). 
-- Create a new feature branch from the latest `master`:
+- Make sure the `main` branch of your fork is up to date by [syncing your fork](https://help.github.com/articles/syncing-a-fork/). 
+- Create a new feature branch from the latest `main`:
 	- Run `git checkout -b the-feature-name`.
 - Make your changes, and save your files.
 - Commit and push your changes to the forked repository:
@@ -28,7 +28,7 @@ You need to have the following tools installed:
 	- To push, run `git push`
 
 ### Create a Pull Request
-[Create a pull request](https://help.github.com/articles/creating-a-pull-request) from the feature branch of the forked repository to the master branch of the original repository.
+[Create a pull request](https://help.github.com/articles/creating-a-pull-request) from the feature branch of the forked repository to the main branch of the original repository.
 
 We will review your changes and get back to you.
 

@@ -51,7 +51,7 @@ const ProjectsPage = ({ data: { projectsJson, allOfficialProjectsJson, allCommun
                 })}
             </List>
             <Button
-                href="https://github.com/UI5/openui5-website/blob/master/docs/CommunityProjects.md"
+                href="https://github.com/UI5/openui5-website/blob/main/docs/CommunityProjects.md"
                 size="2"
                 style={{
                     marginTop: "var(--default-margin-half)",
@@ -64,7 +64,7 @@ const ProjectsPage = ({ data: { projectsJson, allOfficialProjectsJson, allCommun
                     <Tile
                         title="Add a new project"
                         description="You have an open source project that extends or contributes to OpenUI5? Feel free to share it here!"
-                        url="https://github.com/UI5/openui5-website/tree/master/docs/CommunityProjects.md"
+                        url="https://github.com/UI5/openui5-website/tree/main/docs/CommunityProjects.md"
                         icon={() => <Icon size="96x96" src={file.publicURL} imgStyle={{ width: "96px", height: "96px" }} />}
                     />
                 </ListItem>
