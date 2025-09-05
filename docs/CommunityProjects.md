@@ -36,6 +36,8 @@ Name | Owner | Category | Description | License
 [vscode-ui5-explorer](https://github.com/kozubikmichal/vscode-ui5-explorer) | [@kozubikmichal](https://github.com/kozubikmichal) | Extension | UI5 Explorer for Visual Studio Code | MIT
 [XMPPJSONPatchSyncModel](https://github.com/ManuelB/XMPPJSONPatchSyncModel) | [@ManuelB](https://github.com/ManuelB) | Model | This OpenUI5 data model uses a node on an XMPP server to synchronize itself to different connected clients. | Apache 2.0
 [yii2-openui5](https://github.com/rockman84/yii2-openui5) | [Wong Hansen](https://github.com/Wong%20Hansen) | Yii2 Extension | Yii2-openui5 is extension for Yii2 Framework to integrate with OpenUI5. | Apache 2.0
+[srbjslogger](https://github.com/SRBConsultingTeam/SRBJSLogger) | [Michael Henninger @ SRBConsultingTeam](https://github.com/michaelhenningersrb) | JS Library | Library for generating beautifully designed JavaScript log outputs in the browser console| MIT
+[srbinfoandsupportjs](https://www.npmjs.com/package/srbinfoandsupportjs) | [Michael Henninger @ SRBConsultingTeam](https://github.com/michaelhenningersrb) | JS Library | Library to quickly identify UI5 app bugs, simplify analysis, and respond to issues at short notice | MIT
 
 ## Add a new project
 
